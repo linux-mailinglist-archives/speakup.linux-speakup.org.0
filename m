@@ -1,67 +1,46 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id BAA6B19534
-	for <lists+speakup@lfdr.de>; Fri, 10 May 2019 00:21:56 +0200 (CEST)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id 60F101A226
+	for <lists+speakup@lfdr.de>; Fri, 10 May 2019 19:13:48 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 03B9F1C6B5E; Thu,  9 May 2019 18:21:55 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=slint.fr header.i=@slint.fr header.b="nIoK1hK0";
-	dkim-atps=neutral
+	id 850AB1C6B32; Fri, 10 May 2019 13:13:47 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 5CAA51C6B39;
-	Thu,  9 May 2019 18:21:46 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 78F501C6B39;
+	Fri, 10 May 2019 13:13:16 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id CBC111C5A81; Thu,  9 May 2019 18:21:42 -0400 (EDT)
-Received: from mercy.o2switch.cloud (mercy.o2switch.cloud [109.234.163.94])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 665AE1C42B2
- for <speakup@linux-speakup.org>; Thu,  9 May 2019 18:21:38 -0400 (EDT)
-X-Spam-Status: No
-X-MailPropre-MailScanner-From: didier@slint.fr
-X-MailPropre-MailScanner-SpamScore: s
-X-MailPropre-MailScanner-SpamCheck: not spam, SpamAssassin (not cached,
- score=1.2, required 5, autolearn=disabled, DKIM_INVALID 0.10,
- DKIM_SIGNED 0.10, URIBL_BLOCKED 1.00)
-X-MailPropre-MailScanner: Not scanned: please contact your Internet E-Mail
- Service Provider for details
-X-MailPropre-MailScanner-ID: 7B15910006D.A37B5
-X-MailPropre-MailScanner-Information: Please contact the ISP for more
- information
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=slint.fr;
- s=default; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version
- :Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=b5tIE2bYRewQy5ter93OK2rtG9LN8Mi0AMj5OA6MINc=; b=nIoK1hK0t+23+9boNfHo3sxTns
- V18K7AgAqtYwkKZQ8ooqks3ShcmsKqypj1iPDapqQuvrR0uvn5XZl0T9rKlry4jSm7t8hDkLuJAkz
- ECn17CU6qDrGqw3QGb6lBXRKuqO47w+eiPoJNAoVDt1Xea5x7ejOJR4HBbe5jnD0TL1k=;
-Subject: Re: Orca List
-To: speakup@linux-speakup.org
-References: <5BFC3CC3955646C9A93E07C16215638D@NUCPPYH>
-From: Didier Spaier <didier@slint.fr>
-Openpgp: preference=signencrypt
-Message-ID: <2456de15-c3e5-cb30-76e3-b3a27db2af02@slint.fr>
-Date: Fri, 10 May 2019 00:21:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <5BFC3CC3955646C9A93E07C16215638D@NUCPPYH>
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - fox.o2switch.net
-X-AntiAbuse: Original Domain - linux-speakup.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - slint.fr
-X-Get-Message-Sender-Via: fox.o2switch.net: authenticated_id: didier@slint.fr
-X-Authenticated-Sender: fox.o2switch.net: didier@slint.fr
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+ id 420431C43D9; Fri, 10 May 2019 13:13:14 -0400 (EDT)
+Received: from covici.com (unknown [IPv6:2600:3c03::f03c:91ff:fe88:662a])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 5E05A1C42F6
+ for <speakup@linux-speakup.org>; Fri, 10 May 2019 13:13:05 -0400 (EDT)
+Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
+ (authenticated bits=0)
+ by covici.com (8.15.2/8.15.2/Debian-8) with ESMTPSA id x4AHCXNT006753
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <speakup@linux-speakup.org>; Fri, 10 May 2019 13:12:49 -0400
+Received: from ccs.covici.com (localhost [127.0.0.1])
+ by ccs.covici.com (8.14.9/8.14.9) with ESMTP id x4AHCMvw005895
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <speakup@linux-speakup.org>; Fri, 10 May 2019 13:12:22 -0400
+Received: (from covici@localhost)
+ by ccs.covici.com (8.14.9/8.13.7/Submit) id x4AHCMAj005894;
+ Fri, 10 May 2019 13:12:22 -0400
+Date: Fri, 10 May 2019 13:12:22 -0400
+Message-ID: <m35zqii689.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: Mumble server running as a replacement for SpeakFreely
+In-Reply-To: <20190509204419.GA16107@bmcginty.us>
+References: <20190322022136.6DDB37AE80@hurricane.the-brannons.com>
+ <20190509204419.GA16107@bmcginty.us>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: Covici Computer Systems
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,7 +53,7 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: "Speakup is a screen review system for Linux."
+Reply-To: covici@ccs.covici.com, "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -82,29 +61,56 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi,
+I have installed it, but there seem to be a few problems.  One strange
+thing, is my mic does not work unless I am running it as root.  I can
+use the mic normally to make a phone call as a normal user, but this
+program seems to have some kind of permission issue.
 
-I am on the Orca list, which is alive and well.
-I'd just re-subscribe:
-https://mail.gnome.org/mailman/listinfo/orca-list
-Best,
-Didier
+Also, if I hit tab and hit enter on a user, he does not get any text
+and I get no character echo, this is not true if I am just texting to
+main.
 
-On 09/05/2019 22:48, Glenn At Home wrote:
-> Hi,
-> Anyone here on the Orca list?
-> I got a message that I was removed from the list, no reason, and I eMailed the list owner and have gotten no reply.
-> Has the list closed?
-> Glenn
+On Thu, 09 May 2019 16:44:19 -0400,
+Brandon McGinty-Carroll wrote:
+> 
+> Regarding this, I have been working on a fork of Barnard.
+> It allows for per-user volume adjustment, has a redesigned window with a much friendlyer layout, and can handle private mesages.
+> https://github.com/bmmcginty/barnard
+> Feedback and feature requests welcome.
+> 
+> Brandon McGinty-Carroll
 > 
 > 
-> Sent From My Tabletop
-> N0YJV   shade tree computer guy
+> 
+> On Thu, Mar 21, 2019 at 07:21:36PM -0700, Chris Brannon wrote:
+> > Hi,
+> > We've been looking for a voice chat solution for years to replace the
+> > SpeakFreely reflector.  For now, a few of us from the Speakup group are
+> > hanging out on a Mumble server operated by Deedra Waters and myself.
+> > If you have a Mumble client, just point it at mumble.the-brannons.com, port
+> > 64738.
+> > 
+> > Mumble is cross-platform and open source.  There's even a command-line
+> > client for Linux called Barnard.
+> > 
+> > Enjoy,
+> > -- Chris
+> > _______________________________________________
+> > Speakup mailing list
+> > Speakup@linux-speakup.org
+> > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
 > _______________________________________________
 > Speakup mailing list
 > Speakup@linux-speakup.org
 > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-> 
+
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
+
+         John Covici wb2una
+         covici@ccs.covici.com
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
