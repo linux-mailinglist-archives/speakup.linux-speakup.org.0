@@ -2,64 +2,69 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 2164A2E3D4
-	for <lists+speakup@lfdr.de>; Wed, 29 May 2019 19:46:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 36FDD300D5
+	for <lists+speakup@lfdr.de>; Thu, 30 May 2019 19:19:41 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 73E411C6B45; Wed, 29 May 2019 13:46:03 -0400 (EDT)
+	id 5B8321C5462; Thu, 30 May 2019 13:19:40 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=slint.fr header.i=@slint.fr header.b="B4mgWrig";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="pdaLloiV";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0A4971C5A80;
-	Wed, 29 May 2019 13:45:33 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 070CC1C6B4B;
+	Thu, 30 May 2019 13:18:57 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id E0B1D1C438C; Wed, 29 May 2019 13:45:25 -0400 (EDT)
-Received: from angel.o2switch.cloud (angel.o2switch.cloud [109.234.163.93])
- by befuddled.reisers.ca (Postfix) with ESMTPS id A11F61C3815
- for <speakup@linux-speakup.org>; Wed, 29 May 2019 13:45:23 -0400 (EDT)
-X-Spam-Status: No
-X-MailPropre-MailScanner-From: didier@slint.fr
-X-MailPropre-MailScanner-SpamCheck: not spam, SpamAssassin (not cached,
- score=0.202, required 5, autolearn=disabled, DKIM_INVALID 0.10,
- DKIM_SIGNED 0.10, SPF_HELO_NONE 0.00, SPF_NONE 0.00)
-X-MailPropre-MailScanner: Not scanned: please contact your Internet E-Mail
- Service Provider for details
-X-MailPropre-MailScanner-ID: D481B1007E3.A38E3
-X-MailPropre-MailScanner-Information: Please contact the ISP for more
- information
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=slint.fr;
- s=default; h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:
- Message-ID:Subject:From:Cc:To:Sender:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=v2MZCEEpWrAGOXa4GT0ho4dr6SfZ68da++sCw450ez8=; b=B4mgWrigNGm1Cl5h0/ydyrhzV1
- iGvKWuPPYYECilS7C4MyD+kOVw4d5BTWq9CCc2LC8SH61urrp5zF/9CPgpLA6Q9W2XjExHeBR9nWQ
- mBSUjQs23iQAf8lrS7k7jPmdRzm82/u4bfti1w7BkWYNexRp8NintAJioNXkt2T2H044=;
-To: slint <slint@slint.fr>,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-From: Didier Spaier <didier@slint.fr>
-Subject: Settings of synthesizers
-Openpgp: preference=signencrypt
-Message-ID: <92945f81-ca91-c080-9ea5-46abd011f586@slint.fr>
-Date: Wed, 29 May 2019 19:45:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 84DF51C43C5; Thu, 30 May 2019 13:18:53 -0400 (EDT)
+Received: from mail-it1-x12a.google.com (mail-it1-x12a.google.com
+ [IPv6:2607:f8b0:4864:20::12a])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 90FCB1C42CB
+ for <speakup@linux-speakup.org>; Thu, 30 May 2019 13:18:52 -0400 (EDT)
+Received: by mail-it1-x12a.google.com with SMTP id h20so11187829itk.4
+ for <speakup@linux-speakup.org>; Thu, 30 May 2019 10:18:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=B9WD0UIAbqi6ciKq3m7oYgEdzlZzbyEPxq09HEr3dSM=;
+ b=pdaLloiVkKv9/jYMpWcQfIUSbNR4nmrGOIklAOfJdzgWKDWedB3r8eH1VKO5UN2s+2
+ q7Z8tVlvms4kM7ohSqogd+LHAuG2fkGt4VKwzyaT8U69gbqx+xXW1yDnohus35SNluJp
+ a5phRIcZr07Yxs12GnqF0+klJaASVx1qAjUqiDx8hvL+BD7nWC3hbM5yIGEF1ljH0njf
+ 77fcBtq1Eq3imm4+cDmYGKVDlWDM856BfEEGaOWe1pSkXiujCDTUi1+GtY9jak0tM/AA
+ Gvdf3MZbCoJCGZIqBFaOmdOlc5wFHLpjmVKFOJzDAmR549PfTLar/QsUGzEIMbMOO18z
+ 0MyQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=B9WD0UIAbqi6ciKq3m7oYgEdzlZzbyEPxq09HEr3dSM=;
+ b=o4+2XIQ2mLYOOwrzXVJTU8e1UuB2OHzKNHRbcpS2SS7NWJWx3h1Zmk0OLv1Q8U+xCm
+ DlV5kpXvfFa6jwsWB24oIDtUeUecJyj7PzplQI7vQ98imdvGbMJru/hN9jU+3acPa0Fh
+ +aX9lOCouh+4OxIDe5S1K1X12r1sjFpmV2BTA6rzFUaYI+G+rKa/y90CpxVYB52i4Z+p
+ 9gXSicrZXXBO5VH2x9lNNP9jzkDfhTly1gB7PzfLgLI+jrIKThAnUY4KcRuZTdb5qAv9
+ ivWw/ZD0w+ZXIU1NiB48C8gQM2zMYiSeLX6bNllNZV5dnHuFLv6TYdJwJPdVcyxZVDev
+ fO1Q==
+X-Gm-Message-State: APjAAAWZHSO6TtQs+nzJtgFX/s8gXu5USx0L1fQa2PY69lG0c9j478my
+ 2O9dZIHJqkyKofhIfDqE0Nio6QvV
+X-Google-Smtp-Source: APXvYqxoeybEsOv0XWLYcq51FCwvxanGD7ihbRmuOBaueymX/nxrrB+ioxSCyAOHf5SdYFrjEx0grg==
+X-Received: by 2002:a05:660c:a59:: with SMTP id
+ j25mr3688443itl.111.1559236731037; 
+ Thu, 30 May 2019 10:18:51 -0700 (PDT)
+Received: from my-p4 (CPE7085c263c0df-CMa84e3fcdd2d0.cpe.net.cable.rogers.com.
+ [99.251.55.14])
+ by smtp.gmail.com with ESMTPSA id v190sm1475359ita.14.2019.05.30.10.18.50
+ for <speakup@linux-speakup.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 30 May 2019 10:18:50 -0700 (PDT)
+Date: Thu, 30 May 2019 13:18:48 -0400
+From: David <david.a.borowski@gmail.com>
+To: speakup@linux-speakup.org
+Subject: changing synth language
+Message-ID: <20190530171848.5lpqinjusszperc5@my-p4>
+References: <mailman.1.1559232001.29486.speakup@linux-speakup.org>
 MIME-Version: 1.0
-Content-Language: en-US
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - fox.o2switch.net
-X-AntiAbuse: Original Domain - linux-speakup.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - slint.fr
-X-Get-Message-Sender-Via: fox.o2switch.net: authenticated_id: didier@slint.fr
-X-Authenticated-Sender: fox.o2switch.net: didier@slint.fr
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
+Content-Disposition: inline
+In-Reply-To: <mailman.1.1559232001.29486.speakup@linux-speakup.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,39 +79,16 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: Pawel Loba <ploba60@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hello,
-
-The code of the Apollo synthesizer provides attributes for lang and
-voices which are exposed in /sys/accessibity/speakup/apollo.
-
-This reminds me that Pawel uses his Apollo 2 in Polish and English.
-
-How do users set the corresponding values? Only echoing them in
-/sys/accessibity/speakup/apollo/voice and
-/sys/accessibity/speakup/apollo/lang?
-
-Or does anyone use a script or a configuration file?
-
-More generally this question applies to settings available for some but
-not all hard synthesizers, like the tune and the voice.
-
-And, do these devices tell the user to which lang or voice correspond
-each numerical value, or does the user have to read the documentation
-for their devices to find this information?
-
-Just curious.
-
-Best,
-
-Didier 
-
+in the file spk_priv_keyinfo.h there are keys lang_dec and lang_inc.
+You can add them to the speakupmap.map file and then rebuild the kernel and
+the make should see the updated speakupmap.map and run genmap to rebuild
+speakupmap.h. Then synths that support lang should work.
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
