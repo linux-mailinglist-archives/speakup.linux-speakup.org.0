@@ -1,100 +1,70 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 722483A0AC
-	for <lists+speakup@lfdr.de>; Sat,  8 Jun 2019 18:37:50 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id 18D8D3A0D5
+	for <lists+speakup@lfdr.de>; Sat,  8 Jun 2019 19:04:39 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EC8F01C5A3F; Sat,  8 Jun 2019 12:37:48 -0400 (EDT)
+	id 531151C5A5F; Sat,  8 Jun 2019 13:04:38 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=uwprod.onmicrosoft.com header.i=@uwprod.onmicrosoft.com header.b="AqR52KfZ";
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=slint.fr header.i=@slint.fr header.b="LITSmpuv";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 63B791C5A63;
-	Sat,  8 Jun 2019 12:37:09 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 7D0B51C6B45;
+	Sat,  8 Jun 2019 13:03:40 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 5C1041C43BE; Sat,  8 Jun 2019 12:37:05 -0400 (EDT)
-Received: from wmauth2.doit.wisc.edu (wmauth2.doit.wisc.edu [144.92.197.222])
- by befuddled.reisers.ca (Postfix) with ESMTPS id B263F1C42CB
- for <speakup@linux-speakup.org>; Sat,  8 Jun 2019 12:37:00 -0400 (EDT)
-Received: from NAM01-BY2-obe.outbound.protection.outlook.com
- (mail-by2nam01lp2055.outbound.protection.outlook.com [104.47.34.55])
- by smtpauth2.wiscmail.wisc.edu
- (Oracle Communications Messaging Server 8.0.1.2.20170621 64bit (built Jun 21
- 2017)) with ESMTPS id <0PSS00OCNGTMKS10@smtpauth2.wiscmail.wisc.edu> for
- speakup@linux-speakup.org; Sat, 08 Jun 2019 11:36:59 -0500 (CDT)
-X-Spam-Report: AuthenticatedSender=yes, SenderIP=[104.47.34.55]
-X-Wisc-Env-From-B64: amhlaW1AbWF0aC53aXNjLmVkdQ==
-X-Spam-PmxInfo: Server=avs-2, Version=6.4.7.2805085,
- Antispam-Engine: 2.7.2.2107409, Antispam-Data: 2019.6.8.162416,
- AntiVirus-Engine: 5.60.1, AntiVirus-Data: 2019.5.21.5601002,
- SenderIP=[104.47.34.55]
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=uwprod.onmicrosoft.com;
- s=selector1-uwprod-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dXrg+qaF8l8uIZapAJyMjHWsaAcaQE/yZ+qdh4kR0+I=;
- b=AqR52KfZNhoo+lzGmlEjw9JbG/g2Xvg5KQAcq5KmENQduLO/4zgZ7mmF/PdOTjb+EG9MzMFhtrGRGJxKYZsb6/9+Ts+91Coh7kQpGcGON/O3rejD/sgQ4qfvsnqlgggcVZOXOHBy+6S4/lfJjjWXDskhKBQMLpvx+n3bvp9XMZE=
-Received: from DM6PR06MB4169.namprd06.prod.outlook.com (20.176.104.210)
- by DM6PR06MB6170.namprd06.prod.outlook.com (20.178.225.95)
- with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384)
- id 15.20.1965.12; Sat, 8 Jun 2019 16:36:57 +0000
-Received: from DM6PR06MB4169.namprd06.prod.outlook.com
- ([fe80::e8a8:7a41:7fd2:f2a6]) by DM6PR06MB4169.namprd06.prod.outlook.com
- ([fe80::e8a8:7a41:7fd2:f2a6%5]) with mapi id 15.20.1965.017; Sat,
- 8 Jun 2019 16:36:57 +0000
-From: JOHN G HEIM <jheim@math.wisc.edu>
-To: Kirk Reiser <kirk@reisers.ca>, Speakup is a screen review system for Linux.
- <speakup@linux-speakup.org>
+ id 1FFF11C5A3F; Sat,  8 Jun 2019 13:03:38 -0400 (EDT)
+Received: from lobby.o2switch.cloud (lobby.o2switch.cloud [109.234.163.68])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id B368D1C43BE
+ for <speakup@linux-speakup.org>; Sat,  8 Jun 2019 13:03:35 -0400 (EDT)
+X-Spam-Status: No
+X-MailPropre-MailScanner-From: didier@slint.fr
+X-MailPropre-MailScanner-SpamCheck: not spam, SpamAssassin (not cached,
+ score=0.202, required 5, autolearn=disabled, DKIM_INVALID 0.10,
+ DKIM_SIGNED 0.10, SPF_HELO_NONE 0.00, SPF_NONE 0.00)
+X-MailPropre-MailScanner: Not scanned: please contact your Internet E-Mail
+ Service Provider for details
+X-MailPropre-MailScanner-ID: DC814100735.A2543
+X-MailPropre-MailScanner-Information: Please contact the ISP for more
+ information
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=slint.fr;
+ s=default; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version
+ :Date:Message-ID:From:References:To:Subject:Sender:Reply-To:Cc:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=BUEipMAbvFOU2SJjajxOU8/MOlCJf6n6goY4iZq5BAQ=; b=LITSmpuvVNyRfCx0JkVgPrR5j6
+ tN554T5wegz9kAWT7mJKmHTaRIgZT38LDU8kR0jl0dWp5MEAg+e6uqcOkpzQZ5B0e2Qi/OBy30/Lr
+ WpmBN3Ye4jnPfHwT7SDuYZaZasrAqH1kWMa80anMR+BhU0b3NCx5AG5VjwFSv4bn3qjw=;
 Subject: Re: no sound except speakup
-Thread-topic: no sound except speakup
-Thread-index: AQHVG6KtaJQ8xAo6+0unF84VeVH9lqaNHO8AgATcjgA=
-Date: Sat, 8 Jun 2019 16:36:57 +0000
-Message-id: <f072f5e3-caf0-aab8-4224-c1fc9f142ace@math.wisc.edu>
+To: "Speakup is a screen review system for Linux."
+ <speakup@linux-speakup.org>, JOHN G HEIM <jheim@math.wisc.edu>,
+ Kirk Reiser <kirk@reisers.ca>
 References: <bb706092-7289-2093-e7d0-e1788722cc37@math.wisc.edu>
  <alpine.DEB.2.21.1906051019050.12923@befuddled.reisers.ca>
-In-reply-to: <alpine.DEB.2.21.1906051019050.12923@befuddled.reisers.ca>
-Accept-Language: en-US
-Content-language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: DM6PR07CA0027.namprd07.prod.outlook.com (2603:10b6:5:94::40)
- To DM6PR06MB4169.namprd06.prod.outlook.com (2603:10b6:5:2b::18)
-x-ms-exchange-messagesentrepresentingtype: 1
-X-Originating-IP: [108.85.191.186]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: df94048c-c69d-4a81-89c5-08d6ec2f859d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600148)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DM6PR06MB6170; 
-x-ms-traffictypediagnostic: DM6PR06MB6170:
-x-microsoft-antispam-prvs: <DM6PR06MB6170CA4094C01DDAB0C11300F3110@DM6PR06MB6170.namprd06.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0062BDD52C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(366004)(136003)(376002)(346002)(396003)(39860400002)(199004)(189003)(99286004)(52116002)(3846002)(110136005)(6116002)(81156014)(26005)(6346003)(186003)(316002)(786003)(31686004)(88552002)(256004)(53546011)(6506007)(386003)(305945005)(102836004)(76176011)(5660300002)(2906002)(7736002)(81166006)(8676002)(8936002)(66066001)(86362001)(68736007)(31696002)(75432002)(25786009)(53936002)(6436002)(486006)(3480700005)(6512007)(66446008)(64756008)(66556008)(66476007)(66946007)(6246003)(53346004)(6486002)(73956011)(478600001)(229853002)(14454004)(11346002)(446003)(476003)(2616005)(71200400001)(71190400001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR06MB6170;
- H:DM6PR06MB4169.namprd06.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-Received-SPF: None (protection.outlook.com: math.wisc.edu does not designate
- permitted sender hosts)
-Authentication-results: spf=none (sender IP is )
- smtp.mailfrom=jheim@math.wisc.edu;
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: G6vM9U2rzZqxKn61H1CbH31ysiauI/9emnYroFvnFVSnEQVBV0e/691sUwabkmlbdVJWlOIgYGFaJBNswoCls26q6Sdu7Eh/7tpRPnUm/QcRDBIPcMmXDwJxnTNZ0xG3DuvsesI0SJGjDh/OsX5apeQt82/eFP//wwB18I3Jd96lWeFdGxwVeVUFY2BX78GYFVSCkf+L55gIJKkWclMn47gkIKIynPtSbhFbC/Kj+c6P8bUj3Bn9Txr5NkIaSUHHbQ4EhpU4M4vIgosZ7IRjQaY/HpvnFoIkgrdye/rOoULutjT5YOSEB70leCf7YA5+LOvlhXvhDaMdoBwxw04dekX3dUP4nGmB1vPIT3nmC/o630TvBWRY9FhsvH/+VSFVdZbK3+9w6deGGPwQS4qKM5sb84m7Ba+XMrSp9Vz/t94=
-Content-id: <6CD1A3F3DA3AEA449179519A9BFA23E8@namprd06.prod.outlook.com>
-MIME-version: 1.0
-X-OriginatorOrg: math.wisc.edu
-X-MS-Exchange-CrossTenant-Network-Message-Id: df94048c-c69d-4a81-89c5-08d6ec2f859d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Jun 2019 16:36:57.4183 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 2ca68321-0eda-4908-88b2-424a8cb4b0f9
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jheim@wisc.edu
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR06MB6170
+ <f072f5e3-caf0-aab8-4224-c1fc9f142ace@math.wisc.edu>
+From: Didier Spaier <didier@slint.fr>
+Openpgp: preference=signencrypt
+Message-ID: <2036fe0f-e249-6902-3c7c-4001c9d3b690@slint.fr>
+Date: Sat, 8 Jun 2019 19:03:29 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
+MIME-Version: 1.0
+In-Reply-To: <f072f5e3-caf0-aab8-4224-c1fc9f142ace@math.wisc.edu>
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - fox.o2switch.net
+X-AntiAbuse: Original Domain - linux-speakup.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - slint.fr
+X-Get-Message-Sender-Via: fox.o2switch.net: authenticated_id: didier@slint.fr
+X-Authenticated-Sender: fox.o2switch.net: didier@slint.fr
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,36 +85,46 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-DQpJdCB3YXMgaW5kZWVkIHB1bHNlYXVkaW8uIEkga2lsbGVkIHRoZSBwdWxzZWF1ZGlvIHByb2Nl
-c3MgYW5kIHJhbiBhcGxheSANCmFnYWluIGJ1dCBpdCBzdGlsbCBkaWQgbm90IHdvcmsuIEJ1dCBJ
-IG5vdGljZWQgdGhhdCBhbm90aGVyIHB1bHNlYXVkaW8gDQpwcm9jZXNzIGhhZCBiZWVuIHN0YXJ0
-ZWQuIFNvIHRoZW4gSSByZW1vdmVkIHRoZSBwdWxzZWF1ZGlvIHBhY2thZ2UgDQplbnRpcmVseS4g
-Tm93IGl0IHdvcmtzLiBCdXQgdGhlbiBJIHJhbiBzdGFydHggYW5kIGdvdCBubyBzcGVlY2ggZnJv
-bSANCm9yY2EuIEJ1dCB0aGVuIEkgcmFuIHNwZC1jb25mIGFuZCBjb25maWd1cmVkIHNwZWVjaC1k
-aXNwYXRjaGVyIGZvciBhbHNhIA0KYW5kIG5vdyBJIGdldCBzcGVlY2ggaW4gdGhlIEdVSSB0b28u
-IFNvIHRoaXMgaXMgYWxsIGdvb2QuIFRoaXMgaXMgbXkgDQpuZXR3b3JrIHNlcnZlciBzbyBJIGRv
-bid0IGNhcmUgYWJvdXQgdGhlIEdVSSB0b28gbXVjaCBhbnl3YXkuIEJ1dCBpdCANCmxvb2tzIGxp
-a2UgaWYgSSByZWFsbHkgbmVlZCBhIEdVSSwgSSdsbCBoYXZlIGl0Lg0KDQoNClRoYW5rcyBldmVy
-eWJvZHkuIExpbnV4IHJvY2tzLiBXZWxsLCB0aGUgbGludXggc3VwcG9ydCBjb21tdW5pdHksIA0K
-c3BlY2lmaWNhbGx5IHNwZWFrdXAgYW5kIG9yY2EsIHJvY2tzLg0KDQoNCk9uIDYvNS8xOSA5OjIy
-IEFNLCBLaXJrIFJlaXNlciB3cm90ZToNCj4gSGV5IEpvaG46IFdoZW4gSSd2ZSBoYWQgc2ltaWxh
-ciBpc3N1ZXMgd2l0aCBzb3VuZCBpdCdzIGJlY2F1c2UgdGhlcmUNCj4gaXMgdXN1YWxseSBhIHB1
-bHNlIGF1ZGlvIHByb2Nlc3MgcnVubmluZyBvciB0cnlpbmcgdG8gcnVuLiBUaGVyZSBhcmUNCj4g
-d29yayBhcm91bmRzIHRvIGJlIGFibGUgdG8gdXNlIHB1bHNlIGF1ZGlvIGJ1dCBJIGJlbGlldmUg
-aXQgaW5jbHVkZXMNCj4gcnVubmluZyBpdCBhcyByb290IG9yIHNvbWV0aGluZy4gSSBkb24ndCB1
-c2UgcHVsc2UgYXVkaW8gc28gSSdtIG5vdA0KPiBzdXJlIG9mIHRoZSB3b3JrIGFyb3VuZCBidXQg
-b3RoZXJzIGFyZSB1c2luZyBpdC4NCj4NCj4gwqAgS2lyaw0KPg0KPiBPbiBXZWQsIDUgSnVuIDIw
-MTksIEpvaG4gRyBIZWltIHdyb3RlOg0KPg0KPj4gSSBhbSBydW5uaW5nIGEgZGViaWFuIGJ1c3Rl
-ciBtYWNoaW5lIGluIGNoYXJhY3RlciBtb2RlLiBTcGVha3VwIHdpdGggDQo+PiBzb2Z0d2FyZSBz
-cGVlY2ggd29ya3MgZmluZSBidXQgSSBjYW4ndCBnZXQgYW55IG90aGVyIHNvdW5kLiBXaGVuIEkg
-DQo+PiB1c2UgYXBsYXkgdG8gcGxheSBhIHdhdiBmaWxlLCBpdCBwcmludHMgdGhlIGRhdGEgaW5k
-aWNhdGluZyB0aGF0IGl0IA0KPj4gaXMgcGxheWluZyB0aGUgZmlsZSBidXQgdGhlcmUgaXMgbm8g
-c291bmQuIFRoZSBzYW1lIHdpdGggZXNwZWFrIGFuZCANCj4+IHNwZC1zYXkgYXQgdGhlIGNvbW1h
-bmQgbGluZS4gTm8gZXJyb3IgbWVzc2FnZXMgYXJlIGRpc3BsYXllZCBidXQgDQo+PiB0aGVyZSBp
-cyBubyBzb3VuZC4gSSB3b3VsZCB0aGluayBpdCB3YXMgYSB2b2x1bWUgcHJvYmxlbSBleGNlcHQg
-SSBjYW4gDQo+PiBoZWFyIHNwZWFrdXAuIFRoZSBzb3VuZCBjYXJkIGNvbnRyb2xzIGhhdmUgdm9s
-dW1lIHNldHRpbmdzLCB0aGV5IGFyZSANCj4+IG5vdCB1c2VyIHNldHRpbmdzLCByaWdodD8NCj4+
-DQo+Pg0KLS0gDQpKb2huIEcuIEhlaW0sIGpoZWltQG1hdGgud2lzYy5lZHUsIDYwOC0yNjMtNDE4
-OQ0KDQpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpTcGVh
-a3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51eC1z
-cGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
+SGVsbG8sCgpUbyBlbGFib3JhdGUgb24gd2hhdCBLaXJrIHNhaWQgYW5kIGZvciB0aGUgcmVjb3Jk
+cywgaXMgaXMgcG9zc2libGUgdG8KbWFrZSBwdWxzZSBwZWFjZWZ1bGx5IGNvZXhpc3Qgd2l0aCBh
+cHBzIHJlbHlpbmcgb24gQUxTQSB3aXRob3V0IHJ1bm5pbmcKUHVsc2VBdWRpbyBzeXN0ZW0gd2lk
+ZS4KCkp1c3QgdGVsbCBQdWxzZUF1ZGlvIHRvIHVzZSBkbWl4LiBGb3IgaW5zdGFuY2UgaW4gL2V0
+Yy9wdWxzZS9kZWZhdWx0LnBhOgpsb2FkLW1vZHVsZSBtb2R1bGUtYWxzYS1zaW5rIGRldmljZT1k
+bWl4CmxvYWQtbW9kdWxlIG1vZHVsZS1hbHNhLXNvdXJjZSBkZXZpY2U9ZHNub29wCgpBbmQgbWFr
+ZSBzdXJlIHRoYXQgbm8gQUxTQSBjb25maWd1cmF0aW9uIGZpbGUgdGVsbHMgaXQgdG8gZGlyZWN0
+IHRoZQpzdHJlYW1zIHRvIFB1bHNlQXVkaW8sIG9mIGNvdXJzZSA8c21pbGU+CgpBbHNvLCBJIHN0
+YXJ0IFB1bHNlQXVkaW8gb24gZGVtYW5kICh3aGVuIGFuIGFwcGxpY2F0aW9uIHJlcXVlc3RzIGl0
+KSwKbm90IHdoZW4gc3RhcnRpbmcgYSBjb25zb2xlIG9yIGRlc2t0b3Agc2Vzc2lvbi4KCkJlc3Qs
+IERpZGllcgoKT24gMDgvMDYvMjAxOSAxODozNiwgSk9ITiBHIEhFSU0gd3JvdGU6Cj4gCj4gSXQg
+d2FzIGluZGVlZCBwdWxzZWF1ZGlvLiBJIGtpbGxlZCB0aGUgcHVsc2VhdWRpbyBwcm9jZXNzIGFu
+ZCByYW4gYXBsYXkgCj4gYWdhaW4gYnV0IGl0IHN0aWxsIGRpZCBub3Qgd29yay4gQnV0IEkgbm90
+aWNlZCB0aGF0IGFub3RoZXIgcHVsc2VhdWRpbyAKPiBwcm9jZXNzIGhhZCBiZWVuIHN0YXJ0ZWQu
+IFNvIHRoZW4gSSByZW1vdmVkIHRoZSBwdWxzZWF1ZGlvIHBhY2thZ2UgCj4gZW50aXJlbHkuIE5v
+dyBpdCB3b3Jrcy4gQnV0IHRoZW4gSSByYW4gc3RhcnR4IGFuZCBnb3Qgbm8gc3BlZWNoIGZyb20g
+Cj4gb3JjYS4gQnV0IHRoZW4gSSByYW4gc3BkLWNvbmYgYW5kIGNvbmZpZ3VyZWQgc3BlZWNoLWRp
+c3BhdGNoZXIgZm9yIGFsc2EgCj4gYW5kIG5vdyBJIGdldCBzcGVlY2ggaW4gdGhlIEdVSSB0b28u
+IFNvIHRoaXMgaXMgYWxsIGdvb2QuIFRoaXMgaXMgbXkgCj4gbmV0d29yayBzZXJ2ZXIgc28gSSBk
+b24ndCBjYXJlIGFib3V0IHRoZSBHVUkgdG9vIG11Y2ggYW55d2F5LiBCdXQgaXQgCj4gbG9va3Mg
+bGlrZSBpZiBJIHJlYWxseSBuZWVkIGEgR1VJLCBJJ2xsIGhhdmUgaXQuCj4gCj4gCj4gVGhhbmtz
+IGV2ZXJ5Ym9keS4gTGludXggcm9ja3MuIFdlbGwsIHRoZSBsaW51eCBzdXBwb3J0IGNvbW11bml0
+eSwgCj4gc3BlY2lmaWNhbGx5IHNwZWFrdXAgYW5kIG9yY2EsIHJvY2tzLgo+IAo+IAo+IE9uIDYv
+NS8xOSA5OjIyIEFNLCBLaXJrIFJlaXNlciB3cm90ZToKPj4gSGV5IEpvaG46IFdoZW4gSSd2ZSBo
+YWQgc2ltaWxhciBpc3N1ZXMgd2l0aCBzb3VuZCBpdCdzIGJlY2F1c2UgdGhlcmUKPj4gaXMgdXN1
+YWxseSBhIHB1bHNlIGF1ZGlvIHByb2Nlc3MgcnVubmluZyBvciB0cnlpbmcgdG8gcnVuLiBUaGVy
+ZSBhcmUKPj4gd29yayBhcm91bmRzIHRvIGJlIGFibGUgdG8gdXNlIHB1bHNlIGF1ZGlvIGJ1dCBJ
+IGJlbGlldmUgaXQgaW5jbHVkZXMKPj4gcnVubmluZyBpdCBhcyByb290IG9yIHNvbWV0aGluZy4g
+SSBkb24ndCB1c2UgcHVsc2UgYXVkaW8gc28gSSdtIG5vdAo+PiBzdXJlIG9mIHRoZSB3b3JrIGFy
+b3VuZCBidXQgb3RoZXJzIGFyZSB1c2luZyBpdC4KPj4KPj4gwqAgS2lyawo+Pgo+PiBPbiBXZWQs
+IDUgSnVuIDIwMTksIEpvaG4gRyBIZWltIHdyb3RlOgo+Pgo+Pj4gSSBhbSBydW5uaW5nIGEgZGVi
+aWFuIGJ1c3RlciBtYWNoaW5lIGluIGNoYXJhY3RlciBtb2RlLiBTcGVha3VwIHdpdGggCj4+PiBz
+b2Z0d2FyZSBzcGVlY2ggd29ya3MgZmluZSBidXQgSSBjYW4ndCBnZXQgYW55IG90aGVyIHNvdW5k
+LiBXaGVuIEkgCj4+PiB1c2UgYXBsYXkgdG8gcGxheSBhIHdhdiBmaWxlLCBpdCBwcmludHMgdGhl
+IGRhdGEgaW5kaWNhdGluZyB0aGF0IGl0IAo+Pj4gaXMgcGxheWluZyB0aGUgZmlsZSBidXQgdGhl
+cmUgaXMgbm8gc291bmQuIFRoZSBzYW1lIHdpdGggZXNwZWFrIGFuZCAKPj4+IHNwZC1zYXkgYXQg
+dGhlIGNvbW1hbmQgbGluZS4gTm8gZXJyb3IgbWVzc2FnZXMgYXJlIGRpc3BsYXllZCBidXQgCj4+
+PiB0aGVyZSBpcyBubyBzb3VuZC4gSSB3b3VsZCB0aGluayBpdCB3YXMgYSB2b2x1bWUgcHJvYmxl
+bSBleGNlcHQgSSBjYW4gCj4+PiBoZWFyIHNwZWFrdXAuIFRoZSBzb3VuZCBjYXJkIGNvbnRyb2xz
+IGhhdmUgdm9sdW1lIHNldHRpbmdzLCB0aGV5IGFyZSAKPj4+IG5vdCB1c2VyIHNldHRpbmdzLCBy
+aWdodD8KPj4+Cj4+PgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpTcGVha3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6
+Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
