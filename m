@@ -1,58 +1,65 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 96A8F3A357
-	for <lists+speakup@lfdr.de>; Sun,  9 Jun 2019 04:33:29 +0200 (CEST)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id E54713BEB5
+	for <lists+speakup@lfdr.de>; Mon, 10 Jun 2019 23:33:06 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CDFED1C5A7D; Sat,  8 Jun 2019 22:33:28 -0400 (EDT)
+	id A78CB1C435D; Mon, 10 Jun 2019 17:33:05 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="MaBhElkg";
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=slint.fr header.i=@slint.fr header.b="gTE7K6b2";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 360231C6B39;
-	Sat,  8 Jun 2019 22:33:23 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D988B1C5A66;
+	Mon, 10 Jun 2019 17:31:50 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id CE0D11C43D0; Sat,  8 Jun 2019 22:33:20 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [IPv6:2607:f2f8:a260::2])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 61BCC1C42CB
- for <speakup@linux-speakup.org>; Sat,  8 Jun 2019 22:33:19 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:607d:89e1:5807:d28b])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id CD74F8385
- for <speakup@linux-speakup.org>; Sat,  8 Jun 2019 19:34:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1560047667; bh=1oZqX6ae0aklcrE9ElIRUN4BBDU/BYN73SJ5VSNsY7E=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=MaBhElkg4TjqBayDBb+AAf95iPmPb24iixFC0mS0rwldPGn3uS3PUso0go0tujcPd
- M5OFd0cjgZNh3SmZ8TTIqA/iiEIanSFPcsCoqsiNPg3KfdOj5YfTdThuQYbAl00c0X
- F41VMkM2go116yH6bbpGXUM1S9WHv/mKSir03uV+lmm01HLYnrMuF/P/FQVinoK/az
- 023cd7One58JQEVbmhPzWRx3obCHwPNVnSFfvFsrtZRjie9SCWCAXejNFnAAMp3my7
- GKcb3fR6f6dqpmWc2zKZQp8o6EbZv4PFmc9oyfXgMrnVH0h9a+j1hvx4T/mh8MSGAF
- iupHMiB5v+rTA==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>) id 1hZndx-0001yx-Vc
- for speakup@linux-speakup.org; Sat, 08 Jun 2019 19:33:14 -0700
-Date: Sat, 8 Jun 2019 19:33:13 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: no sound except speakup
-Message-ID: <20190609023313.GB4305@gregn.net>
-References: <bb706092-7289-2093-e7d0-e1788722cc37@math.wisc.edu>
- <alpine.DEB.2.21.1906051019050.12923@befuddled.reisers.ca>
- <f072f5e3-caf0-aab8-4224-c1fc9f142ace@math.wisc.edu>
- <2036fe0f-e249-6902-3c7c-4001c9d3b690@slint.fr>
+ id 7D12A1C436F; Mon, 10 Jun 2019 17:31:46 -0400 (EDT)
+Received: from mta02.o2spink.fr (mta02.o2spink.fr [109.234.163.215])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 164031C3813
+ for <speakup@linux-speakup.org>; Mon, 10 Jun 2019 17:31:44 -0400 (EDT)
+X-Spam-Status: No
+X-MailPropre-MailScanner-From: didier@slint.fr
+X-MailPropre-MailScanner-SpamCheck: not spam, SpamAssassin (cached,
+ score=0.202, required 5, autolearn=disabled, DKIM_INVALID 0.10,
+ DKIM_SIGNED 0.10, SPF_HELO_NONE 0.00, SPF_NONE 0.00)
+X-MailPropre-MailScanner: Not scanned: please contact your Internet E-Mail
+ Service Provider for details
+X-MailPropre-MailScanner-ID: 11E38100917.A04F7
+X-MailPropre-MailScanner-Information: Please contact the ISP for more
+ information
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=slint.fr;
+ s=default; h=Content-Transfer-Encoding:Content-Type:MIME-Version:Date:
+ Message-ID:Cc:Subject:From:To:Sender:Reply-To:Content-ID:Content-Description:
+ Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+ In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=/G+/HYc7l3H+XhQwbYNZNFdb0iecdDsOYKc1fVVpgIU=; b=gTE7K6b2vsLO3yVVHlkd4EYtAw
+ zxwSSimxsTQqFTAQHT1olfKjB5a/Obvc6IvAbB/vMLvf6YVEfyPJzfd+Qdma/PMWIY71lMMVgChJW
+ cKuQ1nNDiWdLfScdhy9KMX14w4LzMW28IPOnQh0kuNLIwciGgbHt3+hPGWjmrpm7LnSU=;
+To: slint <slint@slint.fr>
+From: Didier Spaier <didier@slint.fr>
+Subject: Slint update with new scripts to handle speakup and console screen
+ readers
+Openpgp: preference=signencrypt
+Message-ID: <5157c44c-edc5-52c5-2c77-e75f745b3fc4@slint.fr>
+Date: Mon, 10 Jun 2019 23:31:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2036fe0f-e249-6902-3c7c-4001c9d3b690@slint.fr>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.100.3 at vserver
-X-Virus-Status: Clean
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - fox.o2switch.net
+X-AntiAbuse: Original Domain - linux-speakup.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - slint.fr
+X-Get-Message-Sender-Via: fox.o2switch.net: authenticated_id: didier@slint.fr
+X-Authenticated-Sender: fox.o2switch.net: didier@slint.fr
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,53 +74,41 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: The Vinux Support Forum <vinux-support@googlegroups.com>,
+ "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Another solution is apulse, which provides partial pulseaudio
-emulation for applications which expect pulseaudio to be installed
-without pulseaudio being installed:
+Hello,
 
-<https://github.com/i-rinat/apulse.git>
+quoting the ChangeLog at:
+http://slackware.uk/slint/x86_64/slint-testing/ChangeLog.txt
 
-There's also a debian package in the devuan Ascii repository.
+This batch of updates provides a new version of daisy-player, emacspeak
+and new scripts: speak-with, speakup-save and speakup-restore, with
+associated modifications of daemon managers rc.espeakup and
+rc.speechd-up and of switch-on and switch-off. The document SlintSpeaks
+has been added to the Slint documentation in the Accessibility sub-menu
+of the 'slint-doc' command.
 
-Greg
+Or, just follow this link:
+http://slackware.uk/slint/x86_64/slint-14.2.1/doc/Accessibility/SlintSpeaks
 
+To update you system, as usual type as root:
+slapt-get  -u
+slapt-get --upgrade
 
-On Sat, Jun 08, 2019 at 07:03:29PM +0200, Didier Spaier wrote:
-> Hello,
-> 
-> To elaborate on what Kirk said and for the records, is is possible to
-> make pulse peacefully coexist with apps relying on ALSA without running
-> PulseAudio system wide.
-> 
-> Just tell PulseAudio to use dmix. For instance in /etc/pulse/default.pa:
-> load-module module-alsa-sink device=dmix
-> load-module module-alsa-source device=dsnoop
-> 
-> And make sure that no ALSA configuration file tells it to direct the
-> streams to PulseAudio, of course <smile>
-> 
-> Also, I start PulseAudio on demand (when an application requests it),
-> not when starting a console or desktop session.
-> 
-> Best, Didier
-> 
+This will also bring an update of Chromium provided by Eric Hameleers
+if you have his package installed (the sbrepos SOURCE being enabled in
+/etc/slapt-get/slaptgetrc), cf.: https://alien.slackbook.org/blog/
 
+Have fun!
 
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
+Didier 
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
