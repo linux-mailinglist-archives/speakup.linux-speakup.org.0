@@ -2,68 +2,61 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B098A753A3
-	for <lists+speakup@lfdr.de>; Thu, 25 Jul 2019 18:13:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 8D51A8B1A4
+	for <lists+speakup@lfdr.de>; Tue, 13 Aug 2019 09:56:01 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CFA681C43AF; Thu, 25 Jul 2019 12:13:51 -0400 (EDT)
+	id 013AB1C43D4; Tue, 13 Aug 2019 03:55:59 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="SjiZ/EsL";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="EGR/ya50";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D6B151C43D4;
-	Thu, 25 Jul 2019 12:13:36 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 9F7EA1C43D1;
+	Tue, 13 Aug 2019 03:54:58 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 97CE51C436F; Thu, 25 Jul 2019 12:13:34 -0400 (EDT)
-Received: from mail-io1-f68.google.com (mail-io1-f68.google.com
- [209.85.166.68])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 8EC9C1C3663
- for <speakup@linux-speakup.org>; Thu, 25 Jul 2019 12:13:33 -0400 (EDT)
-Received: by mail-io1-f68.google.com with SMTP id k20so98381472ios.10
- for <speakup@linux-speakup.org>; Thu, 25 Jul 2019 09:13:33 -0700 (PDT)
+ id D8B491C4342; Tue, 13 Aug 2019 03:54:53 -0400 (EDT)
+Received: from mail-ot1-f53.google.com (mail-ot1-f53.google.com
+ [209.85.210.53])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id C4C9D1C3563
+ for <speakup@linux-speakup.org>; Tue, 13 Aug 2019 03:54:52 -0400 (EDT)
+Received: by mail-ot1-f53.google.com with SMTP id j7so24349124ota.9
+ for <speakup@linux-speakup.org>; Tue, 13 Aug 2019 00:54:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=AYcM4OjYNMNS08YGrVk1gH5D6/F4IacsCdPRETCcGB0=;
- b=SjiZ/EsLC7IVVyys/zcOqUOJpT6YWM3FXriYBSYJMCWJN3/NxAkc/6qKgZ1Xmz1mr+
- rr2BEZWylr4jrVClE3pxeScYjL2YD4pWvXEQqdtDf6DtkcHPSu7dTvPunkYx8SQyx1S7
- +dn5sjuMgkdS6kve/wwbQI8u6AfULmv40v/3B/L5KwfKSsEBnghjHhH+qoo8TBY9BXId
- 33ZdXYQfRy4DHvZt9yTEoOJCsCXpUMuK5TadfG1XDuE1dphq0WvLqO0YFvyRl5PBhOO7
- ws22u60iVHjT+FjZd6ii9ZH9uz4DefNGeXLugsyomqP7gjqkPAiin2oZxKo5D2C47M7e
- Sa+Q==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zgETSMcQI2SRMRQWksZi4LVnZ9aJE83yHUDfIsA3IRk=;
+ b=EGR/ya50BJ9SMzbAa+SmavIL1EEiFYFFkZnPUc74BnivqusEDitkqGzNGTIikuKtq4
+ VqXiqCnutFkcc+GEWTW8vsH67ZfEDBfE4POCkZGydOpIkeIfXFWRCLzr8F+QbT46X3ih
+ a4bxPrgP/iOyBvbKHVNvkAADXt0zSVxd82jjFKJv50PweK2LLfl2Ns3zwLAXHFqSe4Eh
+ PCYcxOCg+Qg4Mr+wxKSYBKrk6zZ/jKD09RQC73N+j+SUN1h2rEEF4jgJsiZJaUNAfDoC
+ GCv5iQ+2oKdzN0ZoSHEMnhb2bxqeENKD0w5QjUTwJ1FOeDaNnjObUGW/kh25m4zrn7D+
+ pyhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=AYcM4OjYNMNS08YGrVk1gH5D6/F4IacsCdPRETCcGB0=;
- b=qfq9yenuVpZSd522qVnriTWz6rubBPJM9MFcbfEg9uXZuPqtaguA5EHs424q3lMioE
- U8/X23Pq/8zsJwehdO+6Ya+ycvHQV2DGZLI4fwx7bz9p+GjT1jNlY7nMZWM4p6zbtilN
- +UsYaz9MLfv4S8G0cEELxrgNyVcP/Q1nGI9GDtrjONx60lk6iqZXPCHByokbFzrKI9dR
- izsW2j1Hx1bsaYqWbKN8G6eLC6Wmwl8o35wAuYFXl6JHGxiWmUI8dN6qS4p+tU8ja8r4
- Zf5iVNE1r+bxLTvRz4sNteR2BAHRz3qxe4coXpb9Cz/3mi9+ro1xO4Qh3/FD1R0EYJc1
- fSqA==
-X-Gm-Message-State: APjAAAU7XbG3ywv2WuFTz0Zd8DluDP7fEkCmb/albdnI7ujM2w/iLMWX
- bAcqhgxN6vaq7CdXyTvdpKHXtKSv
-X-Google-Smtp-Source: APXvYqz20u57pO5fqwVYY9dkmLd6yBrHK7OvpAq8P56fjbvi1SceI7MUPeTr9MubA3NrCKyTW3ju9Q==
-X-Received: by 2002:a5d:80d6:: with SMTP id h22mr59935595ior.231.1564071150521; 
- Thu, 25 Jul 2019 09:12:30 -0700 (PDT)
-Received: from my-p4 (CPE7085c263c0df-CMa84e3fcdd2d0.cpe.net.cable.rogers.com.
- [99.251.55.14])
- by smtp.gmail.com with ESMTPSA id c81sm76953439iof.28.2019.07.25.09.12.29
- for <speakup@linux-speakup.org>
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 25 Jul 2019 09:12:29 -0700 (PDT)
-Date: Thu, 25 Jul 2019 12:12:27 -0400
-From: David <david.a.borowski@gmail.com>
-To: speakup@linux-speakup.org
-Subject: Re: Speakup Digest, Vol 189, Issue 7
-Message-ID: <20190725161227.slydva44ry32nhqz@my-p4>
-References: <mailman.1.1564070401.27881.speakup@linux-speakup.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zgETSMcQI2SRMRQWksZi4LVnZ9aJE83yHUDfIsA3IRk=;
+ b=eHJQNW9lxvKqALsAppy2HJvZR4BOITvVFghq33wx+P4N/Gj9EMxiYb4pIUkW0ZgQsi
+ tOrLiNi70DqW9nLsicjMZRHvpf7GS3PaaIKAsvccwlUMQJbaqR3vlCid3xmk10F5/wuK
+ w7+q0qbR/HMl+prnrzfrkzUAdY2LEKwfzLHbEaz0JlxfuLH7lFM/2jfTjdpf7V31lfqj
+ 6CgLsS5NPUNUvz50cu2t30/uEyEUsyHUZ5i5er0MkW4mDU6YcwgJYwoBaP3qIKFmoYyC
+ XC3WTutEoxa6zN3Vsjs4kk1HN4w0FJCY7264pflsoptBT2TToM3oyY5Ncd7TSzVhSZAh
+ /86g==
+X-Gm-Message-State: APjAAAU/ba8c33/VSvv0+jVuH2sC2Ytp7I1GB2Md+rzIGAP5yXb8+6xE
+ caE59b2vQ4aF61GIY0q0G1/KDljhu2FzCc7ewJg=
+X-Google-Smtp-Source: APXvYqy1a1GtCNTrk3pbX5cxOWPtfnG/kS4JcfEUcDoHwthhhF+2EeBLqPgM8ZuVBM+4KddVJP9qD5eZ/5+jRrupRec=
+X-Received: by 2002:a05:6830:158:: with SMTP id
+ j24mr3088604otp.236.1565682832182; 
+ Tue, 13 Aug 2019 00:53:52 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <mailman.1.1564070401.27881.speakup@linux-speakup.org>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190721180431.7ce1f716@narunkot>
+ <20190724070600.6gbugq7y6xztosd2@function>
+In-Reply-To: <20190724070600.6gbugq7y6xztosd2@function>
+From: Okash Khawaja <okash.khawaja@gmail.com>
+Date: Tue, 13 Aug 2019 08:53:41 +0100
+Message-ID: <CAOtcWM1K7a4kTKpXzFBaSZ8HSNJq6OBgLUjh5MPse_shZXgBRg@mail.gmail.com>
+Subject: Re: Linux Open Source Presentation
+To: Samuel Thibault <samuel.thibault@ens-lyon.org>
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,20 +71,45 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-The program genmap takes the speakupmap.map file and either generates the
-speakupmap.h which is compiled into speakup or output suitable for keymap.
-run genmap -i to generate speakupmap.h.
-for a keymap on a precompiled kernel or for testing you can do:
-genmap >/sys/accessibility/speakup/keymap
-you should be in /usr/src/linux/drivers/staging/speakup to use genmap.
-the speakup mappings are separate from the kernel key mappings.
-dumpkeys will not show them.
+Hi,
+
+On Wed, Jul 24, 2019 at 8:06 AM Samuel Thibault
+<samuel.thibault@ens-lyon.org> wrote:
+[...]
+> > TODO: tty based vs directly accessing ports
+>
+> Yes, that's an interesting point.
+>
+> Before the tty support, the port knocking was obviously posing
+> problems of conflicting with the existing serial drivers, and supporting
+> only legacy serial ports.
+>
+> You can mention that speakup is particular in that it's a purely
+> software driver that needs to operate the serial port. Thus a line
+> discipline, thus what you implemented.
+
+I implemented but it was your idea. I should mention that in the talk.
+
+[...]
+> > - typical development set up with speakup_dummy:
+> >     - qemu with serial port tied to a file on host
+> >     - load speakup_dummy with dev param pointing to the serial port
+>
+> It'd be useful that you provide the ready-to-run commands so people can
+> try it out.
+
+So these will be qemu commands + commands to load speakup.ko and
+speakup_dummy.ko?
+
+Thanks,
+Okash
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
