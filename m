@@ -2,61 +2,47 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8D51A8B1A4
-	for <lists+speakup@lfdr.de>; Tue, 13 Aug 2019 09:56:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 5D43D8B205
+	for <lists+speakup@lfdr.de>; Tue, 13 Aug 2019 10:09:12 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 013AB1C43D4; Tue, 13 Aug 2019 03:55:59 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="EGR/ya50";
-	dkim-atps=neutral
+	id AE8A41C43D1; Tue, 13 Aug 2019 04:09:11 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9F7EA1C43D1;
-	Tue, 13 Aug 2019 03:54:58 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 985A81C4415;
+	Tue, 13 Aug 2019 04:09:05 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id D8B491C4342; Tue, 13 Aug 2019 03:54:53 -0400 (EDT)
-Received: from mail-ot1-f53.google.com (mail-ot1-f53.google.com
- [209.85.210.53])
- by befuddled.reisers.ca (Postfix) with ESMTPS id C4C9D1C3563
- for <speakup@linux-speakup.org>; Tue, 13 Aug 2019 03:54:52 -0400 (EDT)
-Received: by mail-ot1-f53.google.com with SMTP id j7so24349124ota.9
- for <speakup@linux-speakup.org>; Tue, 13 Aug 2019 00:54:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zgETSMcQI2SRMRQWksZi4LVnZ9aJE83yHUDfIsA3IRk=;
- b=EGR/ya50BJ9SMzbAa+SmavIL1EEiFYFFkZnPUc74BnivqusEDitkqGzNGTIikuKtq4
- VqXiqCnutFkcc+GEWTW8vsH67ZfEDBfE4POCkZGydOpIkeIfXFWRCLzr8F+QbT46X3ih
- a4bxPrgP/iOyBvbKHVNvkAADXt0zSVxd82jjFKJv50PweK2LLfl2Ns3zwLAXHFqSe4Eh
- PCYcxOCg+Qg4Mr+wxKSYBKrk6zZ/jKD09RQC73N+j+SUN1h2rEEF4jgJsiZJaUNAfDoC
- GCv5iQ+2oKdzN0ZoSHEMnhb2bxqeENKD0w5QjUTwJ1FOeDaNnjObUGW/kh25m4zrn7D+
- pyhQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zgETSMcQI2SRMRQWksZi4LVnZ9aJE83yHUDfIsA3IRk=;
- b=eHJQNW9lxvKqALsAppy2HJvZR4BOITvVFghq33wx+P4N/Gj9EMxiYb4pIUkW0ZgQsi
- tOrLiNi70DqW9nLsicjMZRHvpf7GS3PaaIKAsvccwlUMQJbaqR3vlCid3xmk10F5/wuK
- w7+q0qbR/HMl+prnrzfrkzUAdY2LEKwfzLHbEaz0JlxfuLH7lFM/2jfTjdpf7V31lfqj
- 6CgLsS5NPUNUvz50cu2t30/uEyEUsyHUZ5i5er0MkW4mDU6YcwgJYwoBaP3qIKFmoYyC
- XC3WTutEoxa6zN3Vsjs4kk1HN4w0FJCY7264pflsoptBT2TToM3oyY5Ncd7TSzVhSZAh
- /86g==
-X-Gm-Message-State: APjAAAU/ba8c33/VSvv0+jVuH2sC2Ytp7I1GB2Md+rzIGAP5yXb8+6xE
- caE59b2vQ4aF61GIY0q0G1/KDljhu2FzCc7ewJg=
-X-Google-Smtp-Source: APXvYqy1a1GtCNTrk3pbX5cxOWPtfnG/kS4JcfEUcDoHwthhhF+2EeBLqPgM8ZuVBM+4KddVJP9qD5eZ/5+jRrupRec=
-X-Received: by 2002:a05:6830:158:: with SMTP id
- j24mr3088604otp.236.1565682832182; 
- Tue, 13 Aug 2019 00:53:52 -0700 (PDT)
-MIME-Version: 1.0
+ id 13A151C365E; Tue, 13 Aug 2019 04:09:03 -0400 (EDT)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 3F4281C31F1
+ for <speakup@linux-speakup.org>; Tue, 13 Aug 2019 04:09:02 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id A7FEB9263;
+ Tue, 13 Aug 2019 10:08:28 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id xEZMUdmKnjAI; Tue, 13 Aug 2019 10:08:27 +0200 (CEST)
+Received: from function.home (unknown
+ [IPv6:2a01:cb19:979:800:9eb6:d0ff:fe88:c3c7])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id C92E8926F;
+ Tue, 13 Aug 2019 10:08:27 +0200 (CEST)
+Received: from samy by function.home with local (Exim 4.92)
+ (envelope-from <samuel.thibault@ens-lyon.org>)
+ id 1hxRr0-0006Io-My; Tue, 13 Aug 2019 10:08:26 +0200
+Date: Tue, 13 Aug 2019 10:08:26 +0200
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: Okash Khawaja <okash.khawaja@gmail.com>
+Subject: Re: Linux Open Source Presentation
+Message-ID: <20190813080826.5gemx4vok2e6zcg3@function>
 References: <20190721180431.7ce1f716@narunkot>
  <20190724070600.6gbugq7y6xztosd2@function>
-In-Reply-To: <20190724070600.6gbugq7y6xztosd2@function>
-From: Okash Khawaja <okash.khawaja@gmail.com>
-Date: Tue, 13 Aug 2019 08:53:41 +0100
-Message-ID: <CAOtcWM1K7a4kTKpXzFBaSZ8HSNJq6OBgLUjh5MPse_shZXgBRg@mail.gmail.com>
-Subject: Re: Linux Open Source Presentation
-To: Samuel Thibault <samuel.thibault@ens-lyon.org>
+ <CAOtcWM2K-ch9yJaL5C+-ZGPn4hu=ntGDT926_pPsr9Hz74zijA@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAOtcWM2K-ch9yJaL5C+-ZGPn4hu=ntGDT926_pPsr9Hz74zijA@mail.gmail.com>
+Organization: I am not organized
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,38 +64,43 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi,
+Hello,
 
-On Wed, Jul 24, 2019 at 8:06 AM Samuel Thibault
-<samuel.thibault@ens-lyon.org> wrote:
-[...]
-> > TODO: tty based vs directly accessing ports
->
-> Yes, that's an interesting point.
->
-> Before the tty support, the port knocking was obviously posing
-> problems of conflicting with the existing serial drivers, and supporting
-> only legacy serial ports.
->
-> You can mention that speakup is particular in that it's a purely
-> software driver that needs to operate the serial port. Thus a line
-> discipline, thus what you implemented.
+The slides look good overall :)
 
-I implemented but it was your idea. I should mention that in the talk.
+For better readability (accessibility too? ;) ), I would say to avoid
+the small shadow being letters.
 
-[...]
-> > - typical development set up with speakup_dummy:
-> >     - qemu with serial port tied to a file on host
-> >     - load speakup_dummy with dev param pointing to the serial port
->
-> It'd be useful that you provide the ready-to-run commands so people can
-> try it out.
+I don't know which distros ship it, I'm afraid mostly only
+accessibility-oriented ones. But going out of staging will help so much
+on that front :)
 
-So these will be qemu commands + commands to load speakup.ko and
-speakup_dummy.ko?
+On slide 6 the URL is split, you can reduce its font size a bit.
 
-Thanks,
-Okash
+On slide 10 you could add a picture of the synth you have :)
+
+On slide 13 you should write on the slide the answer to the
+why-synth-to-CPU question, for people who will miss it in your talk:
+synths report their speaking progress.
+
+Slide 16: yes, a diagram would be useful :)
+
+If you have the time before the deadline, on slides 7 and 18 you could
+draw a picture to show the flow.
+
+
+I don't know if you have already made this kind of presentation.  If
+not, I strongly advise to train :) for two reasons:
+
+- train by yourself to get an idea of how it fits in the 35 minutes you
+  have, to know how much time you can spend on the details.
+
+- train in from of colleagues or friends (who have some technical
+  understanding), just to check how it feels to talk about it in front
+  of people :) and get their feedback as well (even if you will not be
+  able to change the slides).
+
+Samuel
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
