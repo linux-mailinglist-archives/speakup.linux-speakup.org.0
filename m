@@ -2,51 +2,51 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id EFBEF8E6F1
-	for <lists+speakup@lfdr.de>; Thu, 15 Aug 2019 10:38:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id ADD058EEBE
+	for <lists+speakup@lfdr.de>; Thu, 15 Aug 2019 16:56:42 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 039D51C4427; Thu, 15 Aug 2019 04:38:07 -0400 (EDT)
+	id 978DE1C43D4; Thu, 15 Aug 2019 10:56:41 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="OE//3Nqf";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="gWba9doy";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id DB9081C440D;
-	Thu, 15 Aug 2019 04:37:49 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 72E2F1C4425;
+	Thu, 15 Aug 2019 10:55:51 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 1F6431C43D1; Thu, 15 Aug 2019 04:37:42 -0400 (EDT)
-Received: from mail-ot1-f45.google.com (mail-ot1-f45.google.com
- [209.85.210.45])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 34AD51C43C7
- for <speakup@linux-speakup.org>; Thu, 15 Aug 2019 04:37:38 -0400 (EDT)
-Received: by mail-ot1-f45.google.com with SMTP id b1so4319141otp.6
- for <speakup@linux-speakup.org>; Thu, 15 Aug 2019 01:37:38 -0700 (PDT)
+ id 0E3B51C43D4; Thu, 15 Aug 2019 10:55:49 -0400 (EDT)
+Received: from mail-oi1-f176.google.com (mail-oi1-f176.google.com
+ [209.85.167.176])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 14A031C363C
+ for <speakup@linux-speakup.org>; Thu, 15 Aug 2019 10:55:48 -0400 (EDT)
+Received: by mail-oi1-f176.google.com with SMTP id y8so2295766oih.10
+ for <speakup@linux-speakup.org>; Thu, 15 Aug 2019 07:55:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=HR5y3emsPe4v1KhXMc8qT4gQRKIXI2wh14Bm1VJ4yNk=;
- b=OE//3Nqf60BfmdpvU1pQq7EQtvzjy0R7No7f2b5JTvfiMsCk6PBcesOx5n901VGrGQ
- zewWH4MC+3E5X8AQ0IU9q4sYLe8PEv7szMDuZJqZXgX0bHHyPXveT3BLro+Yk7J9t6Ry
- PgePRZAwIIu8pIP1gTufLZOxjjfP9LSPLVnNIOb2AxFxbgR+RwMDJt42015cN6njhTaD
- QMbKAWeqc6XNLKV2FrI2SbpKGA2Uh2X8O2tbiccqv0Ki1wQFIyPLCQhZqsfnDBRdU0Jj
- JiEIKaJL9TZe6So+h4ioh7mNYNb6iUjSTIlNmS4HnFkMLP2pOQ7kVeNDFbMJFaKG3VFQ
- juLw==
+ bh=NhWPcks9WMxkWGxMKaMmuyYVPTgCg2cSEkbpJ9dWSXA=;
+ b=gWba9doycJ56mtmoI/PODb/wzmU2A3HtPHdpIm+9Hk4i9soCTRbzxpPJwAtKRR5KbH
+ 1SY6AmcPshEof8NcXEg51a71S948tUeel9D539DMCo3aQpEoYQCM+RbRka/Y3tscIL6k
+ 5j5o8xp5B/bCWLb/j9XExfTN3FPkn1lcnCwcwFChWLXS5Tqn39YIMVlOyqXme0hESaVH
+ P0eSBU7ZdLAlDj3LcfFrM1HvcHapVKWe7ih/9N86mUXjaiUMPxL+LHbHnpLN5KRljiRw
+ 8OiN7ZqwqIQMlHlyPyJUelFHF0G5XD6OQYYQo1VFcM3Ct/3ZeYLuQjRmKApjVjDPUEuj
+ 8xSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to;
- bh=HR5y3emsPe4v1KhXMc8qT4gQRKIXI2wh14Bm1VJ4yNk=;
- b=n+W5DTcUeT2jX6lVx5MzexI8I/gRyx85eFCqiclkOzpFzz966dXwIrfMjjrX4r8OKR
- 27EsamI5TqiOGTEcfPLYwsG0wLaQ8DjOFcHDLKfj5pBIeV5DYDNxjRAn9c78JccovIeZ
- Kjziy1Cry1OLa4mO99Fsd6nOkTBcHwO2wRNmU1X2bN9cPjSbjpooCA4tz6MQYkvoGk4c
- 9Bic4oKBPbuRk5i683LqIYlS9vR69kFYBYRwo4JKRD7Q/kwufe7PU+OpFiFuFQyYnkCC
- KZTml5p0JwPKsmpNzZMyCAInqXLMSXfTjTGUr7mRoguKIOULpPJYzQ505AnbMhea+1Jm
- Bs/w==
-X-Gm-Message-State: APjAAAVQZeWPmvPVKK4mx2D7BDafzFghqpnw4CLv5HJ4/R1Pnijv2FTx
- cFFGRqTIMV/O/+dRXHgwoVoYTwKb6+k+J2AYjOoLmzn6
-X-Google-Smtp-Source: APXvYqwKzQ8fV7Z3R9vBkToO7WzBGG1ZDiNYQDfgnZU/mGiv9RsW9fG3kSr3l62y59JEeqVGGbKBgfBztkgCMQ+Hf1Y=
-X-Received: by 2002:a9d:76da:: with SMTP id p26mr372967otl.311.1565858197007; 
- Thu, 15 Aug 2019 01:36:37 -0700 (PDT)
+ bh=NhWPcks9WMxkWGxMKaMmuyYVPTgCg2cSEkbpJ9dWSXA=;
+ b=P9jJ2lDWL0DKhdNxWY01YofAOmLuAXwHZawmp83JYdM0NSq4lEcTVelf5MylNHzKEZ
+ 0g/SgNKQ6ZIjC8RjH8dpxjbT27ZhT2HjHfduowpFhuaj30iuJf8orwiA6MFs8Q0CMXxV
+ hA1s3e7Pz/TPReSUeBD09+Zc8+6LvJ8jj6+DxFmfVjiXMnKmHBfrcIGJFpFZ1a7HXBwW
+ b6FsCHc6hEl/XtOnm5t2GiJNLQktmgpRaebl63fWwnCAy180YtkGY7y6eskOPRsLlGS5
+ 05ZfxSA2utdp4aix1ZcBCV50U2VJtX7Qp5P3bxR8JpolREp0DtoillAiefxy54Hx3X5n
+ H8sw==
+X-Gm-Message-State: APjAAAXMMeT5+ILFTVHawGH6SLm7KV5Wpz932EairpnNQSl9/H73+2w0
+ VTVinU+GSkVmsmU1H7Qhp2bkjakcCGzRuCVEOM0wimcG
+X-Google-Smtp-Source: APXvYqwRVMSPDxn8FVatx1dQtO4m7UFc9SrGP4P/9m1Io50pDZ+YI3hK9HlGdXwcwdNvTGGeepQGK/AyXpyJoJY9GUU=
+X-Received: by 2002:aca:e10a:: with SMTP id y10mr1627873oig.111.1565880885738; 
+ Thu, 15 Aug 2019 07:54:45 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190721180431.7ce1f716@narunkot>
  <20190724070600.6gbugq7y6xztosd2@function>
@@ -58,10 +58,11 @@ References: <20190721180431.7ce1f716@narunkot>
  <20190814215134.dl5pywebjghezslx@function>
  <Pine.LNX.4.64.1908141832440.26398@server2.shellworld.net>
  <20190814231603.GA5329@gregn.net>
-In-Reply-To: <20190814231603.GA5329@gregn.net>
+ <CAOtcWM2K4NFHg0enkzy+EJmzouQXdwPsOZ=38ByJY+8=iRgqmg@mail.gmail.com>
+In-Reply-To: <CAOtcWM2K4NFHg0enkzy+EJmzouQXdwPsOZ=38ByJY+8=iRgqmg@mail.gmail.com>
 From: Okash Khawaja <okash.khawaja@gmail.com>
-Date: Thu, 15 Aug 2019 09:36:25 +0100
-Message-ID: <CAOtcWM2K4NFHg0enkzy+EJmzouQXdwPsOZ=38ByJY+8=iRgqmg@mail.gmail.com>
+Date: Thu, 15 Aug 2019 15:54:33 +0100
+Message-ID: <CAOtcWM0Vt7-K_a2TF14UzExebgejek-6KY2Tz0jTDrMaugOiKg@mail.gmail.com>
 Subject: Re: Linux Open Source Presentation
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
  Gregory Nowak <greg@gregn.net>, 
@@ -88,42 +89,49 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Yes, I think so too that it will be recorded. I have asked them for
-confirming.
+Got the reply. They are recording a subset of talks and our talk is one of
+those being recorded. This link shows which talks will be recorded:
+https://ossna19.sched.com/audience/Yes
 
-thanks,
-Okash
+On Thu, 15 Aug 2019, 09:36 Okash Khawaja, <okash.khawaja@gmail.com> wrote:
 
-
-On Thu, 15 Aug 2019, 00:16 Gregory Nowak, <greg@gregn.net> wrote:
-
-> The web site for the conference seems to state the presentation will
-> be recorded.
+> Yes, I think so too that it will be recorded. I have asked them for
+> confirming.
 >
-> Greg
+> thanks,
+> Okash
 >
 >
-> On Wed, Aug 14, 2019 at 06:33:58PM -0400, Karen Lewellen wrote:
-> > Will this presentation be recorded or preserved in some way?  Would like
-> to
-> > share   it with some general Linux users groups.
-> > Karen
+> On Thu, 15 Aug 2019, 00:16 Gregory Nowak, <greg@gregn.net> wrote:
 >
->
-> --
-> web site: http://www.gregn.net
-> gpg public key: http://www.gregn.net/pubkey.asc
-> skype: gregn1
-> (authorization required, add me to your contacts list first)
-> If we haven't been in touch before, e-mail me before adding me to your
-> contacts.
->
-> --
-> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+>> The web site for the conference seems to state the presentation will
+>> be recorded.
+>>
+>> Greg
+>>
+>>
+>> On Wed, Aug 14, 2019 at 06:33:58PM -0400, Karen Lewellen wrote:
+>> > Will this presentation be recorded or preserved in some way?  Would
+>> like to
+>> > share   it with some general Linux users groups.
+>> > Karen
+>>
+>>
+>> --
+>> web site: http://www.gregn.net
+>> gpg public key: http://www.gregn.net/pubkey.asc
+>> skype: gregn1
+>> (authorization required, add me to your contacts list first)
+>> If we haven't been in touch before, e-mail me before adding me to your
+>> contacts.
+>>
+>> --
+>> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+>> _______________________________________________
+>> Speakup mailing list
+>> Speakup@linux-speakup.org
+>> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+>>
 >
 _______________________________________________
 Speakup mailing list
