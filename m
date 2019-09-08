@@ -2,61 +2,69 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8FF0898713
-	for <lists+speakup@lfdr.de>; Thu, 22 Aug 2019 00:23:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 63E83ACBD6
+	for <lists+speakup@lfdr.de>; Sun,  8 Sep 2019 11:44:52 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A9E751C441B; Wed, 21 Aug 2019 18:23:07 -0400 (EDT)
+	id 480E41C4445; Sun,  8 Sep 2019 05:44:50 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="nV+cWVQm";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="MOKPAMBV";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1BE051C443F;
-	Wed, 21 Aug 2019 18:22:47 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 47F5D1C4429;
+	Sun,  8 Sep 2019 05:44:26 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id E3DC31C43E9; Wed, 21 Aug 2019 18:22:43 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 7EE331C361D
- for <speakup@linux-speakup.org>; Wed, 21 Aug 2019 18:22:42 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:6ccc:a12a:8d2e:4f7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id 702AE6E2;
- Wed, 21 Aug 2019 15:22:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1566426131; bh=144Ohs+i0Q11OCQeediSILhYP4LPx0bUH56q3gXaKrY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=nV+cWVQmXrejg6AE9X7t2ZjZb7Qj1BYYfkz6+ujg5sznVDYfC7KcswQg2O19hSbrM
- 0kogOgMWe17p/voMqsZUMogjFXdls+VZWlH+RYfup/dOC1WlAgJ/XxlC7gA7rb02R3
- b4gNMLF+u8bej+jToajN7LDtLlUPSWa/d6u6+q5KuqAkecHVztniLeMhnm/lCspvlF
- 7Xutc7YMcQnRBqrfbmdVMpb9wq0tH0x9fs+x9IwIUcGYvmqn0co8mp5COh5obE/CHP
- XnbRtJTwZRRyyedV412XyK+GFi7ceK5nT2wuaqkyYm2mGIV4JoPyXbhmSjPTdRmctl
- CG1I9Y50TEnnA==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>)
- id 1i0YzZ-0001Up-I9; Wed, 21 Aug 2019 15:22:09 -0700
-Date: Wed, 21 Aug 2019 15:22:09 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
-Message-ID: <20190821222209.GA4577@gregn.net>
+ id B33B01C42B8; Sun,  8 Sep 2019 05:44:21 -0400 (EDT)
+Received: from mail-ot1-f50.google.com (mail-ot1-f50.google.com
+ [209.85.210.50])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id ADDFD1C3220
+ for <speakup@linux-speakup.org>; Sun,  8 Sep 2019 05:44:17 -0400 (EDT)
+Received: by mail-ot1-f50.google.com with SMTP id z26so476803oto.1
+ for <speakup@linux-speakup.org>; Sun, 08 Sep 2019 02:44:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=H0aCFYLWWsw9XbsDwRcJGWbuffYIbA5nq3wzYx1JSTE=;
+ b=MOKPAMBVye7ohlZPamS+5wXEgG6VuOSPSme1HCy2VGSbaoT/tc+Ry4GANknkqSbnG0
+ rI5LZEN7dQyHJeiJ7hrz/vQdpj8tPUmhyqRGtw4GUI15Z8nA1wR+jUazGW9VCa0SmVWb
+ Z9XUq37Yh/sINIckT2+9YLpfknwhA8Hari/qCbw1FKbtKZymgVFWRNk2h2ry4quSuyZy
+ 0AUmOicq3uJIybwjVTYFa6C1mq7rV4UrbB3YFIqk9e08ETXaRziwZOvY17YE4TxBNfzH
+ ej2bHLXDAIuuq7vhzG1b6CP7loxNdPs2wSu4UPW0DRfAU0+q55Ob8ivI1/0hS2iiC9JJ
+ sBHQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=H0aCFYLWWsw9XbsDwRcJGWbuffYIbA5nq3wzYx1JSTE=;
+ b=RbYDu9tA0AkhEnFvvPo2oe8maReF4SxiazqnU+MBlpka8ZtvLaXCh3txlJL+k6G/wz
+ 8tS6pyjkZZXOipFcZ6H+22wrckQTMix7DY0ee8onxY5PUSqmLQhpmpzex97A7g61LIwe
+ uohH+Csck/hSW/OJaDnxIk4n4RrQl3baLqYKIHAVzL7SPzMIOma8yOCAAXFy7naVi8yj
+ Ii63lwKDNYrkwpK8J2HE1fia3s5B3Lf0CnU10EOYhACz03fdPCnSVcfoNYe+/xXA8uwW
+ J/7pYINhHHMNx/whAepWuWCOkWe98hm+lZEj/wWNMvKM9j/e/vjpTyvJ+qm12GYPZPll
+ lADg==
+X-Gm-Message-State: APjAAAVwlhbs209VT7YlFWNrszjM8wTgExXW8yZIf2i9OUVRS84PAzEE
+ TLIa5tR/bgTNMx1rDF2ORJVPp3wq9aCINfVvR2+qDz9a
+X-Google-Smtp-Source: APXvYqx0FVoT8jwMh/4Ix4eqT8GvqZ0zur1TMAfh8vRT8Jq3iZ2aH0372H1avk1/yWtpoG9EWkyXnVnIPe6NZGK9sTI=
+X-Received: by 2002:a05:6830:1288:: with SMTP id
+ z8mr14641847otp.236.1567935793630; 
+ Sun, 08 Sep 2019 02:43:13 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190316031831.GA2499@kroah.com>
  <20190706200857.22918345@narunkot>
  <20190707065710.GA5560@kroah.com> <20190712083819.GA8862@kroah.com>
- <20190712092319.wmke4i7zqzr26tly@function>
- <20190713004623.GA9159@gregn.net> <20190725035352.GA7717@gregn.net>
+ <20190712092319.wmke4i7zqzr26tly@function> <20190713004623.GA9159@gregn.net>
+ <20190725035352.GA7717@gregn.net>
  <875znqhia0.fsf@cmbmachine.messageid.invalid>
  <m3sgqucs1x.wl-covici@ccs.covici.com>
  <CAOtcWM0qynSjnF6TtY_s7a51B7JweDb7jwdxStEmPvB9tJFU4Q@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOtcWM0qynSjnF6TtY_s7a51B7JweDb7jwdxStEmPvB9tJFU4Q@mail.gmail.com>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.100.3 at vserver
-X-Virus-Status: Clean
+ <20190821222209.GA4577@gregn.net>
+In-Reply-To: <20190821222209.GA4577@gregn.net>
+From: Okash Khawaja <okash.khawaja@gmail.com>
+Date: Sun, 8 Sep 2019 10:43:02 +0100
+Message-ID: <CAOtcWM0Jzo+wew-uiOmde+eZXEWZ310L8wXscWjJv5OXqXJe6Q@mail.gmail.com>
+Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Content-Type: multipart/mixed; boundary="00000000000002b3bf05920780e5"
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,38 +82,198 @@ Reply-To: "Speakup is a screen review system for Linux."
 Cc: devel@driverdev.osuosl.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Simon Dickson <simonhdickson@gmail.com>, linux-kernel@vger.kernel.org,
  John Covici <covici@ccs.covici.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Wed, Aug 21, 2019 at 09:39:25AM -0700, Okash Khawaja wrote:
-> Hi Greg N,
-> 
-> Would like to send this as a patch as Greg K-H suggested? If not, I
-> can do that with your email in Authored-by: tag?
-> 
-> Thanks,
-> Okash
+--00000000000002b3bf05920780e5
+Content-Type: text/plain; charset="UTF-8"
 
-Hi Okash and all,
-feel free to submit the patch with my email in the Authored-by:
-tag if that's OK. Thanks, and good luck on your presentation.
+Sorry, I have only now got round to working on this. It's not complete
+yet but I have assimilated the feedback and converted subjective
+phrases, like "I think..." into objective statements or put them in
+TODO: so that someone else may verify. I have attached it to this
+email.
 
-Greg
+Next step will be to convert the format to match Documentation/ABI/
+requirements.
 
+Thanks,
+Okash
 
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
+On Wed, Aug 21, 2019 at 11:23 PM Gregory Nowak <greg@gregn.net> wrote:
+>
+> On Wed, Aug 21, 2019 at 09:39:25AM -0700, Okash Khawaja wrote:
+> > Hi Greg N,
+> >
+> > Would like to send this as a patch as Greg K-H suggested? If not, I
+> > can do that with your email in Authored-by: tag?
+> >
+> > Thanks,
+> > Okash
+>
+> Hi Okash and all,
+> feel free to submit the patch with my email in the Authored-by:
+> tag if that's OK. Thanks, and good luck on your presentation.
+>
+> Greg
+>
+>
+> --
+> web site: http://www.gregn.net
+> gpg public key: http://www.gregn.net/pubkey.asc
+> skype: gregn1
+> (authorization required, add me to your contacts list first)
+> If we haven't been in touch before, e-mail me before adding me to your contacts.
+>
+> --
+> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+--00000000000002b3bf05920780e5
+Content-Type: text/plain; charset="US-ASCII"; name="speakup-sysfs.txt"
+Content-Disposition: attachment; filename="speakup-sysfs.txt"
+Content-Transfer-Encoding: base64
+Content-ID: <f_k0as879e0>
+X-Attachment-Id: f_k0as879e0
+
+YXR0cmliX2JsZWVwCkJlZXBzIHRoZSBQQyBzcGVha2VyIHdoZW4gdGhlcmUgaXMgYW4gYXR0cmli
+dXRlIGNoYW5nZSBzdWNoIGFzCmZvcmVncm91bmQgb3IgYmFja2dyb3VuZCBjb2xvciB3aGVuIHVz
+aW5nIHNwZWFrdXAgcmV2aWV3IGNvbW1hbmRzLiBPbmUKPSBvbiwgemVybyA9IG9mZi4KCmJlbGxf
+cG9zClRoaXMgd29ya3MgbXVjaCBsaWtlIGEgdHlwZXdyaXRlciBiZWxsLiBJZiBmb3IgZXhhbXBs
+ZSA3MiBpcyBlY2hvZWQgdG8KYmVsbF9wb3MsIGl0IHdpbGwgYmVlcCB0aGUgUEMgc3BlYWtlciB3
+aGVuIHR5cGluZyBvbiBhIGxpbmUgcGFzdCBjaGFyYWN0ZXIgNzIuCgoKYmxlZXBzClRoaXMgY29u
+dHJvbHMgd2hldGhlciBvbmUgaGVhcnMgYmVlcHMgdGhyb3VnaCB0aGUgUEMgc3BlYWtlciB3aGVu
+IHVzaW5nCnNwZWFrdXAncyByZXZpZXcgY29tbWFuZHMuCgpibGVlcF90aW1lClRoaXMgY29udHJv
+bHMgdGhlIGR1cmF0aW9uIG9mIHRoZSBQQyBzcGVha2VyIGJlZXBzIHNwZWFrdXAgcHJvZHVjZXMu
+ClRPRE86IFdoYXQgYXJlIHRoZSB1bml0cz8gSmlmZmllcz8KCmN1cnNvcl90aW1lClRoaXMgY29u
+dHJvbHMgY3Vyc29yIGRlbGF5IHdoZW4gdXNpbmcgYXJyb3cga2V5cy4gV2hlbiBhIGNvbm5lY3Rp
+b24gaXMgdmVyeQpzbG93LCB3aXRoIHRoZSBkZWZhdWx0IHNldHRpbmcsIHdoZW4gbW92aW5nIHdp
+dGggIHRoZSBhcnJvd3MsIG9yIGJhY2tzcGFjaW5nCmV0Yy4gc3BlYWt1cCBzYXlzIHRoZSBpbmNv
+cnJlY3QgY2hhcmFjdGVycy4gU2V0IHRoaXMgdG8gYSBoaWdoZXIgdmFsdWUgdG8KYWRqdXN0IGZv
+ciB0aGUgZGVsYXkgYW5kIGJldHRlciBzeW5jaHJvbmlzYXRpb24gYmV0d2VlbiBjdXJzb3IgcG9z
+aXRpb24gYW5kCnNwZWVjaC4KCmRlbGltaXRlcnMKRGVsaW1pdCBhIHdvcmQgZnJvbSBzcGVha3Vw
+LgpUT0RPOiBhZGQgbW9yZSBpbmZvCgpleF9udW0KVE9ETzoKCmtleV9lY2hvCkNvbnRyb2xzIGlm
+IHNwZWFrdXAgc3BlYWtzIGtleXMgd2hlbiB0aGV5IGFyZSB0eXBlZC4gT25lID0gb24sIHplcm8g
+PQpvZmYgb3IgZG9uJ3QgZWNobyBrZXlzLgoKa2V5bWFwClNwZWFrdXAga2V5bWFwIHJlbWFwcyBr
+ZXlzIHRvIFNwZWFrdXAgZnVuY3RpbnMuIEl0IHVzZXMgYSBiaW5hcnkgZm9ybWF0LiBBCnNwZWNp
+YWwgcHJvZ3JhbSBjYWxsZWQgZ2VubWFwIGlzIG5lZWRlZCB0byBjb21waWxlIGEgdGV4dHVhbCBr
+ZXltYXAgaW50byB0aGUKYmluYXJ5IGZvcm1hdCB3aGljaCBpcyB0aGVuIGxvYWRlZCBpbnRvIC9z
+eXMvYWNjZXNzaWJpbGl0eS9zcGVha3VwL2tleW1hcC4KCm5vX2ludGVycnVwdApDb250cm9scyBp
+ZiB0eXBpbmcgaW50ZXJydXB0cyBvdXRwdXQgZnJvbSBzcGVha3VwLiBXaXRoIG5vX2ludGVycnVw
+dApzZXQgdG8gemVybywgdHlwaW5nIG9uIHRoZSBrZXlib2FyZCB3aWxsIGludGVycnVwdCBzcGVh
+a3VwIGlmIGZvcgpleGFtcGxlIHRoZSBzYXkgc2NyZWVuIGNvbW1hbmQgaXMgdXNlZCBiZWZvcmUg
+dGhlIGVudGlyZSBzY3JlZW4gaXMKcmVhZC4gV2l0aCBub19pbnRlcnJ1cHQgc2V0IHRvIG9uZSwg
+aWYgdGhlIHNheSBzY3JlZW4gY29tbWFuZCBpcyB1c2VkLAphbmQgb25lIHRoZW4gdHlwZXMgb24g
+dGhlIGtleWJvYXJkLCBzcGVha3VwIHdpbGwgY29udGludWUgdG8gc2F5IHRoZQp3aG9sZSBzY3Jl
+ZW4gcmVnYXJkbGVzcyB1bnRpbCBpdCBmaW5pc2hlcy4KCnB1bmNfYWxsClRoaXMgaXMgYSBsaXN0
+IG9mIGFsbCB0aGUgcHVuY3R1YXRpb24gc3BlYWt1cCBzaG91bGQgc3BlYWsgd2hlbgpwdW5jX2xl
+dmVsIGlzIHNldCB0byBmb3VyLgoKcHVuY19sZXZlbApDb250cm9scyB0aGUgbGV2ZWwgb2YgcHVu
+Y3R1YXRpb24gc3Bva2VuIGFzIHRoZSBzY3JlZW4gaXMgZGlzcGxheWVkLApub3QgcmV2aWV3ZWQu
+IExldmVscyByYW5nZSBmcm9tIHplcm8gbm8gcHVuY3R1YXRpb24sIHRvIGZvdXIsIGFsbApwdW5j
+dHVhdGlvbi4gT25lIGNvcnJlc3BvbmRzIHRvIHB1bmNfc29tZSwgdHdvCmNvcnJlc3BvbmRzIHRv
+IHB1bmNfbW9zdCwgYW5kIHRocmVlIGFzIHdlbGwgYXMgZm91ciBib3RoCmNvcnJlc3BvbmQgdG8g
+cHVuY19hbGwuIFNvbWUgaGFyZHdhcmUKc3ludGhlc2l6ZXJzIG1heSBoYXZlIGRpZmZlcmVudCBs
+ZXZlbHMgZWFjaCBjb3JyZXNwb25kaW5nIHRvIHRocmVlIGFuZCBmb3VyCmZvciBwdW5jX2xldmVs
+LiBBbHNvIG5vdGUgdGhhdCBpZiBwdW5jX2xldmVsIGlzIHNldCB0byB6ZXJvLCBhbmQKa2V5X2Vj
+aG8gaXMgc2V0IHRvIG9uZSwgdHlwZWQgcHVuY3R1YXRpb24gaXMgc3RpbGwgc3Bva2VuIGFzIGl0
+IGlzCnR5cGVkLgoKcHVuY19tb3N0ClRoaXMgaXMgYSBsaXN0IG9mIGFsbCB0aGUgcHVuY3R1YXRp
+b24gc3BlYWt1cCBzaG91bGQgc3BlYWsgd2hlbgpwdW5jX2xldmVsIGlzIHNldCB0byB0d28uCgpw
+dW5jX3NvbWUKVGhpcyBpcyBhIGxpc3Qgb2YgYWxsIHRoZSBwdW5jdHVhdGlvbiBzcGVha3VwIHNo
+b3VsZCBzcGVhayB3aGVuCnB1bmNfbGV2ZWwgaXMgc2V0IHRvIG9uZS4KCnJlYWRpbmdfcHVuYwpB
+bG1vc3QgdGhlIHNhbWUgYXMgcHVuY19sZXZlbCwgdGhlIGRpZmZlcmVuY2VzIGJlaW5nIHRoYXQg
+cmVhZGluZ19wdW5jIGNvbnRyb2xzCnRoZSBsZXZlbCBvZiBwdW5jdHVhdGlvbiB3aGVuIHJldmll
+d2luZyB0aGUgc2NyZWVuIHdpdGggc3BlYWt1cCdzCnNjcmVlbiByZXZpZXcgY29tbWFuZHMuIFRo
+ZSBvdGhlciBkaWZmZXJlbmNlIGlzIHRoYXQgcmVhZGluZ19wdW5jIHNldAp0byB0aHJlZSBzcGVh
+a3MgcHVuY19hbGwsIGFuZCByZWFkaW5nX3B1bmMgc2V0IHRvIGZvdXIgc3BlYWtzIGFsbApwdW5j
+dHVhdGlvbiwgaW5jbHVkaW5nIHNwYWNlcy4KCnJlcGVhdHMKQSBsaXN0IG9mIGNoYXJhY3RlcnMg
+c3BlYWt1cCByZXBlYXRzLiBOb3JtYWxseSwgd2hlbiB0aGVyZSBhcmUKbW9yZSB0aGFuIHRocmVl
+IGNoYXJhY3RlcnMgaW4gYSByb3csIHNwZWFrdXAganVzdCByZWFkcyB0aHJlZSBvZiB0aG9zZQpj
+aGFyYWN0ZXJzLiBGb3IgZXhhbXBsZSwgIi4uLi4uLiIgd291bGQgYmUgcmVhZCBhcyBkb3QsIGRv
+dCwgZG90LiBJZiBhCi4gaXMgYWRkZWQgdG8gdGhlIGxpc3Qgb2YgY2hhcmFjdGVycyBpbiByZXBl
+YXRzLCAiLi4uLi4uIiB3b3VsZCBiZQpyZWFkIGFzIGRvdCwgZG90LCBkb3QsIHRpbWVzIHNpeC4K
+CnNheV9jb250cm9sCklmIHNldCB0byBvbmUsIHNwZWFrdXAgc3BlYWtzIHNoaWZ0LCBhbHQgYW5k
+IGNvbnRyb2wgd2hlbiB0aG9zZSBrZXlzIGFyZQpwcmVzc2VkLiBJZiBzYXlfY29udHJvbCBpcyBz
+ZXQgdG8gemVybywgc2hpZnQsIGN0cmwsIGFuZCBhbHQgYXJlIG5vdApzcG9rZW4gd2hlbiB0aGV5
+IGFyZSBwcmVzc2VkLgoKc2F5X3dvcmRfY3RsClRPRE86CgpzaWxlbnQKVE9ETzoKCnNwZWxsX2Rl
+bGF5ClRoaXMgY29udHJvbHMgaG93IGZhc3QgYSB3b3JkIGlzIHNwZWxsZWQgd2hlbgpzcGVha3Vw
+J3Mgc2F5IHdvcmQgcmV2aWV3IGNvbW1hbmQgaXMgcHJlc3NlZCB0d2ljZSBxdWlja2x5IHRvIHNw
+ZWFrCnRoZSBjdXJyZW50IHdvcmQgYmVpbmcgcmV2aWV3ZWQuIFplcm8ganVzdCBzcGVha3MgdGhl
+IGxldHRlcnMgb25lCmFmdGVyIGFub3RoZXIsIHdoaWxlIHZhbHVlcyBvbmUgdGhyb3VnaCBmb3Vy
+IHNlZW0gdG8gaW50cm9kdWNlIG1vcmUgb2YKYSBwYXVzZSBiZXR3ZWVuIHRoZSBzcGVsbGluZyBv
+ZiBlYWNoIGxldHRlciBieSBzcGVha3VwLgoKc3ludGgKR2V0cyBvciBzZXRzIHRoZSBzeW50aGVz
+aXplciBkcml2ZXIgY3VycmVudGx5IGluIHVzZS4gUmVhZGluZyBzeW50aApyZXR1cm5zIHRoZSBz
+eW50aGVzaXplciBkcml2ZXIgY3VycmVudGx5IGluIHVzZS4gV3JpdGluZyBzeW50aApzd2l0Y2hl
+cyB0byB0aGUgZ2l2ZW4gc3ludGhlc2l6ZXIgZHJpdmVyLCBwcm92aWRlZCBpdCBpcyBlaXRoZXIg
+YnVpbHQKaW50byB0aGUga2VybmVsLCBvciBhbHJlYWR5IGxvYWRlZCBhcyBhIG1vZHVsZS4KCnN5
+bnRoX2RpcmVjdApTZW5kcyB3aGF0ZXZlciBpcyB3cml0dGVuIHRvIHN5bnRoX2RpcmVjdApkaXJl
+Y3RseSB0byB0aGUgc3BlZWNoIHN5bnRoZXNpemVyIGluIHVzZSwgYnlwYXNzaW5nIHNwZWFrdXAu
+IFRoaXMKY291bGQgYmUgdXNlZCB0byBtYWtlIHRoZSBzeW50aGVzaXplciBzcGVhayBhIHN0cmlu
+Zywgb3IgdG8gc2VuZApjb250cm9sIHNlcXVlbmNlcyB0byB0aGUgc3ludGhlc2l6ZXIgdG8gY2hh
+bmdlIGhvdyB0aGUgc3ludGhlc2l6ZXIKYmVoYXZlcy4KCnZlcnNpb24KUmVhZGluZyB2ZXJzaW9u
+IHJldHVybnMgdGhlIHZlcnNpb24gb2Ygc3BlYWt1cCwgYW5kIHRoZSB2ZXJzaW9uIG9mIHRoZQpz
+eW50aGVzaXplciBkcml2ZXIgY3VycmVudGx5IGluIHVzZS4KClN5bnRoZXNpemVyIERyaXZlciBQ
+YXJhbWV0ZXJzCkluIGAvc3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cGAgaXMgYSBkaXJlY3Rvcnkg
+Y29ycmVzcG9uZGluZyB0byB0aGUKc3ludGhlc2l6ZXIgZHJpdmVyIGN1cnJlbnRseSBpbiB1c2Ug
+KEUuRykgYHNvZnRgIGZvciB0aGUgc29mdApkcml2ZXIuIFRoaXMgZGlyZWN0b3J5IGNvbnRhaW5z
+IGZpbGVzIHdoaWNoIGNvbnRyb2wgdGhlIHNwZWVjaApzeW50aGVzaXplciBpdHNlbGYsIGFzIG9w
+cG9zZWQgdG8gY29udHJvbGxpbmcgdGhlIHNwZWFrdXAgc2NyZWVuCnJlYWRlci4gVGhlIHBhcmFt
+ZXRlcnMgaW4gdGhpcyBkaXJlY3RvcnkgaGF2ZSB0aGUKc2FtZSBuYW1lcyBhbmQgZnVuY3Rpb25z
+IGFjcm9zcyBhbGwgc3VwcG9ydGVkIHN5bnRoZXNpemVycy4gVGhlIHJhbmdlIG9mCnZhbHVlcyBm
+b3IgZnJlcSwgcGl0Y2gsIHJhdGUsIGFuZCB2b2wgaXMKdGhlIHNhbWUgZm9yIGFsbCBzdXBwb3J0
+ZWQgc3ludGhlc2l6ZXJzLAp3aXRoIHRoZSBnaXZlbiByYW5nZSBiZWluZyBpbnRlcm5hbGx5IG1h
+cHBlZCBieSB0aGUgZHJpdmVyIHRvIG1vcmUgb3IKbGVzcyBmaXQgdGhlIHJhbmdlIG9mIHZhbHVl
+cyBzdXBwb3J0ZWQgZm9yIGEgZ2l2ZW4gcGFyYW1ldGVyIGJ5IHRoZQppbmRpdmlkdWFsIHN5bnRo
+ZXNpemVyLiBCZWxvdyBpcyBhIGRlc2NyaXB0aW9uIG9mIHZhbHVlcyBhbmQgcGFyYW1ldGVycyBm
+b3IKc29mdCBzeW50aGVzaXplciwgd2hpY2ggaXMgY3VycmVudGx5IHRoZSBtb3N0IGNvbW1vbmx5
+IHVzZWQuCgpjYXBzX3N0YXJ0ClRoaXMgaXMgdGhlIHN0cmluZyB0aGF0IGlzIHNlbnQgdG8gdGhl
+IHN5bnRoZXNpemVyIHRvIGNhdXNlCml0IHRvIHN0YXJ0IHNwZWFraW5nIHVwcGVyY2FzZSBsZXR0
+ZXJzLiBGb3IgdGhlIHNvZnQgc3ludGhlc2l6ZXIgYW5kCm1vc3Qgb3RoZXJzLCB0aGlzIGNhdXNl
+cyB0aGUgcGl0Y2ggb2YgdGhlIHZvaWNlIHRvIHJpc2UgYWJvdmUgdGhlCmN1cnJlbnRseSBzZXQg
+cGl0Y2guCgpjYXBzX3N0b3AKVGhpcyBpcyB0aGUgc3RyaW5nIHNlbnQgdG8gdGhlIHN5bnRoZXNp
+emVyIHRvIGNhdXNlIGl0IHRvCnN0b3Agc3BlYWtpbmcgdXBwZXJjYXNlIGxldHRlcnMuIEluIHRo
+ZSBjYXNlIG9mIHRoZSBzb2Z0IHN5bnRoZXNpemVyCmFuZCBtb3N0IG90aGVycywgdGhpcyByZXR1
+cm5zIHRoZSBwaXRjaCBvZiB0aGUgdm9pY2UgZG93biB0byB0aGUKY3VycmVudGx5IHNldCBwaXRj
+aC4KCmRlbGF5X3RpbWUKVE9ETzoKCmRpcmVjdApDb250cm9scyBpZiBwdW5jdHVhdGlvbiBpcyBz
+cG9rZW4gYnkgc3BlYWt1cCwgb3IgYnkgdGhlCnN5bnRoZXNpemVyLiBGb3IgZXhhbXBsZSwgc3Bl
+YWt1cCBzcGVha3MgIj4iIGFzICJncmVhdGVyIiwgd2hpbGUgdGhlCmVzcGVhayBzeW50aGVzaXpl
+ciB1c2VkIGJ5IHRoZSBzb2Z0IGRyaXZlciBzcGVha3MgImdyZWF0ZXIgdGhhbiIuIFplcm8KbGV0
+cyBzcGVha3VwIHNwZWFrIHRoZSBwdW5jdHVhdGlvbi4gT25lIGxldHMgdGhlIHN5bnRoZXNpemVy
+IGl0c2VsZgpzcGVhayBwdW5jdHVhdGlvbi4KCmZyZXEKR2V0cyBvciBzZXRzIHRoZSBmcmVxdWVu
+Y3kgb2YgdGhlIHNwZWVjaCBzeW50aGVzaXplci4gUmFuZ2UgaXMgMC05LgoKZnVsbF90aW1lClRP
+RE86CgpqaWZmeV9kZWx0YQpUaGlzIGNvbnRyb2xzIGhvdyBtYW55IGppZmZ5cyB0aGUga2VybmVs
+IGdpdmVzIHRvCnRoZSBzeW50aGVzaXplci4gU2V0dGluZyB0aGlzIHRvbwpoaWdoIGNhbiBtYWtl
+IGEgc3lzdGVtIHVuc3RhYmxlLCBvciBldmVuIGNyYXNoIGl0LgoKcGl0Y2gKR2V0cyBvciBzZXRz
+IHRoZSBwaXRjaCBvZiB0aGUgc3ludGhlc2l6ZXIuIFRoZSByYW5nZSBpcyAwLTkuCgpwdW5jdApH
+ZXRzIG9yIHNldHMgdGhlIGFtb3VudCBvZiBwdW5jdHVhdGlvbiBzcG9rZW4gYnkgdGhlIHN5bnRo
+ZXNpemVyLiBUaGUKcmFuZ2UgZm9yIHRoZSBzb2Z0IGRyaXZlciBzZWVtcyB0byBiZSAwLTIuIApU
+T0RPOiBIb3cgaXMgdGhpcyByZWxhdGVkIHRvIHNwZWFrdXAncyBwdW5jX2xldmVsLCBvciByZWFk
+aW5nX3B1bmMKCnJhdGUKR2V0cyBvciBzZXRzIHRoZSByYXRlIG9mIHRoZSBzeW50aGVzaXplci4g
+UmFuZ2UgaXMgZnJvbSB6ZXJvIHNsb3dlc3QsCnRvIG5pbmUgZmFzdGVzdC4KCnRvbmUKR2V0cyBv
+ciBzZXRzIHRoZSB0b25lIG9mIHRoZSBzcGVlY2ggc3ludGhlc2l6ZXIuIFRoZSByYW5nZSBmb3Ig
+dGhlCnNvZnQgZHJpdmVyIHNlZW1zIHRvIGJlIDAtMi4gVGhpcyBzZWVtcyB0byBtYWtlIG5vIGRp
+ZmZlcmVuY2UgaWYgdXNpbmcKZXNwZWFrIGFuZCB0aGUgZXNwZWFrdXAgY29ubmVjdG9yLgpUT0RP
+OiBkb2VzIGVzcGVha3VwIHN1cHBvcnQgZGlmZmVyZW50IHRvbmFsaXRpZXM/Cgp0cmlnZ2VyX3Rp
+bWUKRG9uJ3Qga25vdy4KCnZvaWNlCkdldHMgb3Igc2V0cyB0aGUgdm9pY2UgdXNlZCBieSB0aGUg
+c3ludGhlc2l6ZXIgaWYgdGhlIHN5bnRoZXNpemVyIGNhbgpzcGVhayBpbiBtb3JlIHRoYW4gb25l
+IHZvaWNlLiBUaGUgcmFuZ2UgZm9yIHRoZSBzb2Z0IGRyaXZlciBpcwowLTcuIE5vdGUgdGhhdCB3
+aGlsZSBlc3BlYWsgc3VwcG9ydHMgbXVsdGlwbGUgdm9pY2VzLCB0aGlzIHBhcmFtZXRlcgp3aWxs
+IG5vdCBzZXQgdGhlIHZvaWNlIHdoZW4gdGhlIGVzcGVha3VwIGNvbm5lY3RvciBpcyB1c2VkIGJl
+dHdlZW4Kc3BlYWt1cCBhbmQgZXNwZWFrLgoKdm9sCkdldHMgb3Igc2V0cyB0aGUgdm9sdW1lIG9m
+IHRoZSBzcGVlY2ggc3ludGhlc2l6ZXIuIFJhbmdlIGlzIDAtOSwgd2l0aAp6ZXJvIGJlaW5nIHRo
+ZSBzb2Z0ZXN0LCBhbmQgbmluZSBiZWluZyB0aGUgbG91ZGVzdC4K
+--00000000000002b3bf05920780e5
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
 http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+
+--00000000000002b3bf05920780e5--
