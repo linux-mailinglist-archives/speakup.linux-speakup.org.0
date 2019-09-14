@@ -2,61 +2,67 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9B15CAD20F
-	for <lists+speakup@lfdr.de>; Mon,  9 Sep 2019 04:57:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 21582B2D1B
+	for <lists+speakup@lfdr.de>; Sat, 14 Sep 2019 23:10:14 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0FFFF1C42C4; Sun,  8 Sep 2019 22:57:22 -0400 (EDT)
+	id CD1E61C4437; Sat, 14 Sep 2019 17:10:11 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="BlfG1xld";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="HvZan/wT";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 5985B1C4434;
-	Sun,  8 Sep 2019 22:56:11 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0F4FB1C4441;
+	Sat, 14 Sep 2019 17:09:55 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 5CDBD1C433C; Sun,  8 Sep 2019 22:56:04 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id C1A891C355B
- for <speakup@linux-speakup.org>; Sun,  8 Sep 2019 22:56:02 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:25fc:7f29:f51b:876c])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id 056412129;
- Sun,  8 Sep 2019 19:55:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1567997758; bh=yasw5GiTAHxfDIbfiK6YMsktGcS73mmCaajaZVY6UW8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BlfG1xldAPhqEcm9W1RU9XyiH6SPlhwbH276UlDv1uqGeXf06uo4UrABs6bO8DTkF
- P5gznjkvDbIya4pp1GtQTkTXhObelN6wgOVU9qddnHitVMns7USlB38fKLTdMCccoC
- fA7nwYuCUpgOckYROartOU+iyEWQKtM8tyHS6zpAc2ZX+XaseBabZdeTtYjnsk80BR
- +7raSF7MAACjoVTU5f5J4BEexH2IW2a0uLInU5Q0nUkMuT28uJx/GJ5qbOn5PdU6Hy
- mCH5XhF73LiyvcKRgoLJYJJDs6lZqRy1ixz9fo9QN2oO9Dc4lzkpeCwcPGMDWvw3Pb
- zja79zeP/exRA==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>)
- id 1i79oz-0001P2-Qj; Sun, 08 Sep 2019 19:54:29 -0700
-Date: Sun, 8 Sep 2019 19:54:29 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: Okash Khawaja <okash.khawaja@gmail.com>
-Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
-Message-ID: <20190909025429.GA4144@gregn.net>
+ id 974471C435F; Sat, 14 Sep 2019 17:09:50 -0400 (EDT)
+Received: from mail-oi1-f171.google.com (mail-oi1-f171.google.com
+ [209.85.167.171])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 844761C323F
+ for <speakup@linux-speakup.org>; Sat, 14 Sep 2019 17:09:48 -0400 (EDT)
+Received: by mail-oi1-f171.google.com with SMTP id k20so5436171oih.3
+ for <speakup@linux-speakup.org>; Sat, 14 Sep 2019 14:09:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jMW5QQfqB3GgO3Rwut+y8ooMRK6oMNFBtSgXBDuvbgY=;
+ b=HvZan/wTdVlLNfNBct/c1zeuudQeshyJ69LVka0uJo6QZJZo61cdvd+XXNRN0uAfcd
+ mNzatB28Ta5FEYbS5cfOJzsSDH5QkOqZN4x+d1vF6pcackIOVqwSvfheY2l+MUlNueE0
+ lf7pi3eDjXxGYy9rATo0prNP0WfwnDS27R/Ode++EuNQ3wgXCZs0L5t2GetmQmWVa05z
+ 8hPCTxflzywUPju7Uf5g4+PZtS+rzmSL+dgiNENDhkTEd5xIZtzLPfvewT4Q2i8Bn3mr
+ 1b+qVHom0OkoHtSK7Y5ZxhaA5JvsACyQ2uu5alvI/SIf2NNKBq6GlFfA7ZqB4RIuf6yf
+ Cr9w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jMW5QQfqB3GgO3Rwut+y8ooMRK6oMNFBtSgXBDuvbgY=;
+ b=HXBSa4fAlnfRZJFZ1kqnaPUFzEPY26cQblh/Xd38+NkgJ00LAZ8q/b6LEdl5Wv19Sc
+ rRoXMoLQ0bOgoM2k9PiL1y6plftMYZdtW/cDaorgb+pFeHBHNoixuqiFfWZnIXD0bjb/
+ NT1IkQMccqJKRdI+8cBt4So2Cv5a6O67JquizAEEXx4nWfGwT6aUNsHmAWyxHPBFzdIb
+ /2W5gT+JhjFc4pK+ERKNXASKSbSSGKBnR8ZR8Pej+geejqpvLmCWZfe/VWEZawITP0wD
+ ZgnUAGO8qtMvDara6fpv/Fu3u0nuHFcVmAPZO6HwkzBFG/vPYhqGExfQEwupOPWzsVRB
+ ZXcQ==
+X-Gm-Message-State: APjAAAX8eK60lf0hLCCt3L8bCcA+WoIwe4fVigNV0bKGHME0nnSpW2JF
+ CI/Ui9wNtZKTS/9kXZtvsC7oMSJS40A6dyKmOHw=
+X-Google-Smtp-Source: APXvYqzfdOCMLTAlz0b2bARRrW5zytkIb1s5zlrSoVgDJNzlQtpbzvMiBem0XyrOtygyCcs/mxPD4cgAbfUaj5V97r0=
+X-Received: by 2002:aca:7509:: with SMTP id q9mr8093677oic.111.1568495326122; 
+ Sat, 14 Sep 2019 14:08:46 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190707065710.GA5560@kroah.com> <20190712083819.GA8862@kroah.com>
- <20190712092319.wmke4i7zqzr26tly@function>
- <20190713004623.GA9159@gregn.net> <20190725035352.GA7717@gregn.net>
+ <20190712092319.wmke4i7zqzr26tly@function> <20190713004623.GA9159@gregn.net>
+ <20190725035352.GA7717@gregn.net>
  <875znqhia0.fsf@cmbmachine.messageid.invalid>
  <m3sgqucs1x.wl-covici@ccs.covici.com>
  <CAOtcWM0qynSjnF6TtY_s7a51B7JweDb7jwdxStEmPvB9tJFU4Q@mail.gmail.com>
  <20190821222209.GA4577@gregn.net>
  <CAOtcWM0Jzo+wew-uiOmde+eZXEWZ310L8wXscWjJv5OXqXJe6Q@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOtcWM0Jzo+wew-uiOmde+eZXEWZ310L8wXscWjJv5OXqXJe6Q@mail.gmail.com>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.100.3 at vserver
-X-Virus-Status: Clean
+ <20190909025429.GA4144@gregn.net>
+In-Reply-To: <20190909025429.GA4144@gregn.net>
+From: Okash Khawaja <okash.khawaja@gmail.com>
+Date: Sat, 14 Sep 2019 22:08:35 +0100
+Message-ID: <CAOtcWM0P=w-iBZzwekVrSpp7t2WO9RA5WP956zgDrNKvzA+4ZA@mail.gmail.com>
+Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
+To: Gregory Nowak <greg@gregn.net>
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,30 +87,82 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Sun, Sep 08, 2019 at 10:43:02AM +0100, Okash Khawaja wrote:
-> Sorry, I have only now got round to working on this. It's not complete
-> yet but I have assimilated the feedback and converted subjective
-> phrases, like "I think..." into objective statements or put them in
-> TODO: so that someone else may verify. I have attached it to this
-> email.
+On Mon, Sep 9, 2019 at 3:55 AM Gregory Nowak <greg@gregn.net> wrote:
+>
+> On Sun, Sep 08, 2019 at 10:43:02AM +0100, Okash Khawaja wrote:
+> > Sorry, I have only now got round to working on this. It's not complete
+> > yet but I have assimilated the feedback and converted subjective
+> > phrases, like "I think..." into objective statements or put them in
+> > TODO: so that someone else may verify. I have attached it to this
+> > email.
+>
+> I think bleeps needs a TODO, since we don't know what values it accepts, or
+> what difference those values make. Also, to keep things uniform, we
+> should replace my "don't know" for trigger_time with a TODO. Looks
+> good to me otherwise. Thanks.
 
-I think bleeps needs a TODO, since we don't know what values it accepts, or
-what difference those values make. Also, to keep things uniform, we
-should replace my "don't know" for trigger_time with a TODO. Looks
-good to me otherwise. Thanks.
+Great thanks. I have updated.
 
-Greg
+I have two questions:
 
+1. Is it okay for these descriptions to go inside
+Documentation/ABI/stable? They have been around since 2.6 (2010). Or
+would we prefer Documentation/ABI/testing/?
+2. We are still missing descriptions for i18n/ directory. I have added
+filenames below. can someone can add description please:
 
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
+What:           /sys/accessibility/speakup/i18n/announcements
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+What:           /sys/accessibility/speakup/i18n/chartab
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+
+What:           /sys/accessibility/speakup/i18n/ctl_keys
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+
+What:           /sys/accessibility/speakup/i18n/function_names
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+
+What:           /sys/accessibility/speakup/i18n/states
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+What:           /sys/accessibility/speakup/i18n/characters
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+What:           /sys/accessibility/speakup/i18n/colors
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+What:           /sys/accessibility/speakup/i18n/formatted
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+What:           /sys/accessibility/speakup/i18n/key_names
+KernelVersion:  2.6
+Contact:        speakup@linux-speakup.org
+Description:
+                TODO
+
+Thanks,
+Okash
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
