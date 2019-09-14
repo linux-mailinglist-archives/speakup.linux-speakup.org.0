@@ -2,67 +2,73 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 21582B2D1B
-	for <lists+speakup@lfdr.de>; Sat, 14 Sep 2019 23:10:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 3F3F0B2D1E
+	for <lists+speakup@lfdr.de>; Sat, 14 Sep 2019 23:13:43 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CD1E61C4437; Sat, 14 Sep 2019 17:10:11 -0400 (EDT)
+	id 83A8E1C4415; Sat, 14 Sep 2019 17:13:42 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="HvZan/wT";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="CFSWnCIV";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0F4FB1C4441;
-	Sat, 14 Sep 2019 17:09:55 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 753721C446E;
+	Sat, 14 Sep 2019 17:13:12 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 974471C435F; Sat, 14 Sep 2019 17:09:50 -0400 (EDT)
-Received: from mail-oi1-f171.google.com (mail-oi1-f171.google.com
- [209.85.167.171])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 844761C323F
- for <speakup@linux-speakup.org>; Sat, 14 Sep 2019 17:09:48 -0400 (EDT)
-Received: by mail-oi1-f171.google.com with SMTP id k20so5436171oih.3
- for <speakup@linux-speakup.org>; Sat, 14 Sep 2019 14:09:48 -0700 (PDT)
+ id 5848B1C42B8; Sat, 14 Sep 2019 17:13:09 -0400 (EDT)
+Received: from mail-oi1-f193.google.com (mail-oi1-f193.google.com
+ [209.85.167.193])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 4A6941C42EF
+ for <speakup@linux-speakup.org>; Sat, 14 Sep 2019 17:13:07 -0400 (EDT)
+Received: by mail-oi1-f193.google.com with SMTP id k20so5439440oih.3
+ for <speakup@linux-speakup.org>; Sat, 14 Sep 2019 14:13:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jMW5QQfqB3GgO3Rwut+y8ooMRK6oMNFBtSgXBDuvbgY=;
- b=HvZan/wTdVlLNfNBct/c1zeuudQeshyJ69LVka0uJo6QZJZo61cdvd+XXNRN0uAfcd
- mNzatB28Ta5FEYbS5cfOJzsSDH5QkOqZN4x+d1vF6pcackIOVqwSvfheY2l+MUlNueE0
- lf7pi3eDjXxGYy9rATo0prNP0WfwnDS27R/Ode++EuNQ3wgXCZs0L5t2GetmQmWVa05z
- 8hPCTxflzywUPju7Uf5g4+PZtS+rzmSL+dgiNENDhkTEd5xIZtzLPfvewT4Q2i8Bn3mr
- 1b+qVHom0OkoHtSK7Y5ZxhaA5JvsACyQ2uu5alvI/SIf2NNKBq6GlFfA7ZqB4RIuf6yf
- Cr9w==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+ bh=DDcfkjWAlJDlYlDmtLpplyY3vfzjVOYI/sTUQlbUnqo=;
+ b=CFSWnCIVglRGS0DdIPgS31hkR+YEFjJV7zBEeNuXHHOl+MeteQkjccD/ZKTRrggTHV
+ ZQlwIKrznslejAetiI5p/XwbHSBg7mx1t9b3GjrR21bIp3is2mCjewRPud4SRZQJ6T/6
+ HcLj8u1jpVuPouk7fePd+pPkfIUsxhYNg2w9FhB+2/zGMEVMUY2RQm5FMRojWvDk5V9R
+ t4syXF7Xapcb5o/LG8gMgqmgvy8+5bF2A25lwf5ro+ZOqoMwJnBK9l468rAti66D62RD
+ HoZMJ86i4OSa2WnMloKnEUtBZEHSaz8JFKl/N8C2hEUtwBT3pIKeHnAPj/jFsuaTamdo
+ 3kFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=jMW5QQfqB3GgO3Rwut+y8ooMRK6oMNFBtSgXBDuvbgY=;
- b=HXBSa4fAlnfRZJFZ1kqnaPUFzEPY26cQblh/Xd38+NkgJ00LAZ8q/b6LEdl5Wv19Sc
- rRoXMoLQ0bOgoM2k9PiL1y6plftMYZdtW/cDaorgb+pFeHBHNoixuqiFfWZnIXD0bjb/
- NT1IkQMccqJKRdI+8cBt4So2Cv5a6O67JquizAEEXx4nWfGwT6aUNsHmAWyxHPBFzdIb
- /2W5gT+JhjFc4pK+ERKNXASKSbSSGKBnR8ZR8Pej+geejqpvLmCWZfe/VWEZawITP0wD
- ZgnUAGO8qtMvDara6fpv/Fu3u0nuHFcVmAPZO6HwkzBFG/vPYhqGExfQEwupOPWzsVRB
- ZXcQ==
-X-Gm-Message-State: APjAAAX8eK60lf0hLCCt3L8bCcA+WoIwe4fVigNV0bKGHME0nnSpW2JF
- CI/Ui9wNtZKTS/9kXZtvsC7oMSJS40A6dyKmOHw=
-X-Google-Smtp-Source: APXvYqzfdOCMLTAlz0b2bARRrW5zytkIb1s5zlrSoVgDJNzlQtpbzvMiBem0XyrOtygyCcs/mxPD4cgAbfUaj5V97r0=
-X-Received: by 2002:aca:7509:: with SMTP id q9mr8093677oic.111.1568495326122; 
- Sat, 14 Sep 2019 14:08:46 -0700 (PDT)
+ :message-id:subject:to;
+ bh=DDcfkjWAlJDlYlDmtLpplyY3vfzjVOYI/sTUQlbUnqo=;
+ b=aHnjvHHZByznwvt9/YYxsWXcrBddVmzv0uddycBpoOPm6Zw4jtRIa3bu8Plr4g0wph
+ ARre3ZeWrBxogA5JSh8gA+0BS6lLJ5P08UPDUKKikwv8ZoBhgL81hYB8FA1qpLxGTTQX
+ q5gZ1yzkBuN3mvUF5dNs0HwiErHmX9zFWQLvYhDYW1v2zhx+5y407BbzDpr4LQkxpiAp
+ RnicOdojiwihrofqv6ewohqFYSZiLrl8IMtjkKt8+iHp6vJkwTlBOXzD+KZIF8dQ17Hd
+ ukgmyvgLr39hzEGPw+tYO0MFts9XMNxTvO5dTi8fNUPdnjnsR3RznyCuQ7xFBKBxQyki
+ Gj1g==
+X-Gm-Message-State: APjAAAWPRpmKNudUBoVEVXQj4emHp7VwL7bpZ3XBmEYprQksi8kwf2HJ
+ iJu7hZ04fV1rDNGCcEaxxmc/kPq4vxr4DcsdV7Sjpw==
+X-Google-Smtp-Source: APXvYqy8YBuvMK9LNyHsY0EpTB/Z2wDU9NyP28VdwQ02e6kOW8ifB3QVt6VHe65Ist6/B0qU5aKUwhHyrZ9gSwCW038=
+X-Received: by 2002:aca:fd58:: with SMTP id b85mr6661100oii.94.1568495525578; 
+ Sat, 14 Sep 2019 14:12:05 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190707065710.GA5560@kroah.com> <20190712083819.GA8862@kroah.com>
- <20190712092319.wmke4i7zqzr26tly@function> <20190713004623.GA9159@gregn.net>
- <20190725035352.GA7717@gregn.net>
- <875znqhia0.fsf@cmbmachine.messageid.invalid>
- <m3sgqucs1x.wl-covici@ccs.covici.com>
- <CAOtcWM0qynSjnF6TtY_s7a51B7JweDb7jwdxStEmPvB9tJFU4Q@mail.gmail.com>
- <20190821222209.GA4577@gregn.net>
- <CAOtcWM0Jzo+wew-uiOmde+eZXEWZ310L8wXscWjJv5OXqXJe6Q@mail.gmail.com>
- <20190909025429.GA4144@gregn.net>
-In-Reply-To: <20190909025429.GA4144@gregn.net>
+References: <20190721180431.7ce1f716@narunkot>
+ <20190724070600.6gbugq7y6xztosd2@function>
+ <CAOtcWM2K-ch9yJaL5C+-ZGPn4hu=ntGDT926_pPsr9Hz74zijA@mail.gmail.com>
+ <20190813080826.5gemx4vok2e6zcg3@function>
+ <CAOtcWM0OPjtcY=rnSSn2us7kWPG7MDe=Jfh+WAVSGLjibQGUxw@mail.gmail.com>
+ <20190814083104.fh7a6t4kosxpzoe3@function>
+ <CAOtcWM2n8kMxROwuXrf0YzCf8zsnDSy9VbWRBQJsg3kvyqO4vQ@mail.gmail.com>
+ <20190814215134.dl5pywebjghezslx@function>
+ <Pine.LNX.4.64.1908141832440.26398@server2.shellworld.net>
+ <20190814231603.GA5329@gregn.net>
+ <CAOtcWM2K4NFHg0enkzy+EJmzouQXdwPsOZ=38ByJY+8=iRgqmg@mail.gmail.com>
+ <CAOtcWM0Vt7-K_a2TF14UzExebgejek-6KY2Tz0jTDrMaugOiKg@mail.gmail.com>
+In-Reply-To: <CAOtcWM0Vt7-K_a2TF14UzExebgejek-6KY2Tz0jTDrMaugOiKg@mail.gmail.com>
 From: Okash Khawaja <okash.khawaja@gmail.com>
-Date: Sat, 14 Sep 2019 22:08:35 +0100
-Message-ID: <CAOtcWM0P=w-iBZzwekVrSpp7t2WO9RA5WP956zgDrNKvzA+4ZA@mail.gmail.com>
-Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
-To: Gregory Nowak <greg@gregn.net>
+Date: Sat, 14 Sep 2019 22:11:54 +0100
+Message-ID: <CAOtcWM1XzfSTzz0xGrqQ21homRFiBQNfDhrqST6h1=xW3dT9Og@mail.gmail.com>
+Subject: Re: Linux Open Source Presentation
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
+ Gregory Nowak <greg@gregn.net>, 
+ Samuel Thibault <samuel.thibault@ens-lyon.org>, Kirk Reiser <kirk@reisers.ca>,
+ klewellen@shellworld.net
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,92 +83,59 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: devel@driverdev.osuosl.org, Simon Dickson <simonhdickson@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
- linux-kernel@vger.kernel.org, John Covici <covici@ccs.covici.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Mon, Sep 9, 2019 at 3:55 AM Gregory Nowak <greg@gregn.net> wrote:
->
-> On Sun, Sep 08, 2019 at 10:43:02AM +0100, Okash Khawaja wrote:
-> > Sorry, I have only now got round to working on this. It's not complete
-> > yet but I have assimilated the feedback and converted subjective
-> > phrases, like "I think..." into objective statements or put them in
-> > TODO: so that someone else may verify. I have attached it to this
-> > email.
->
-> I think bleeps needs a TODO, since we don't know what values it accepts, or
-> what difference those values make. Also, to keep things uniform, we
-> should replace my "don't know" for trigger_time with a TODO. Looks
-> good to me otherwise. Thanks.
+Hi,
 
-Great thanks. I have updated.
-
-I have two questions:
-
-1. Is it okay for these descriptions to go inside
-Documentation/ABI/stable? They have been around since 2.6 (2010). Or
-would we prefer Documentation/ABI/testing/?
-2. We are still missing descriptions for i18n/ directory. I have added
-filenames below. can someone can add description please:
-
-What:           /sys/accessibility/speakup/i18n/announcements
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-
-What:           /sys/accessibility/speakup/i18n/chartab
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-
-What:           /sys/accessibility/speakup/i18n/ctl_keys
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-
-What:           /sys/accessibility/speakup/i18n/function_names
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-
-What:           /sys/accessibility/speakup/i18n/states
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-What:           /sys/accessibility/speakup/i18n/characters
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-What:           /sys/accessibility/speakup/i18n/colors
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-What:           /sys/accessibility/speakup/i18n/formatted
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
-What:           /sys/accessibility/speakup/i18n/key_names
-KernelVersion:  2.6
-Contact:        speakup@linux-speakup.org
-Description:
-                TODO
+I haven't yet received a link to the talk's recording. As soon as I
+get it, I'll share it here.
 
 Thanks,
 Okash
+
+On Thu, Aug 15, 2019 at 3:54 PM Okash Khawaja <okash.khawaja@gmail.com> wrote:
+>
+> Got the reply. They are recording a subset of talks and our talk is one of those being recorded. This link shows which talks will be recorded: https://ossna19.sched.com/audience/Yes
+>
+> On Thu, 15 Aug 2019, 09:36 Okash Khawaja, <okash.khawaja@gmail.com> wrote:
+>>
+>> Yes, I think so too that it will be recorded. I have asked them for confirming.
+>>
+>> thanks,
+>> Okash
+>>
+>>
+>> On Thu, 15 Aug 2019, 00:16 Gregory Nowak, <greg@gregn.net> wrote:
+>>>
+>>> The web site for the conference seems to state the presentation will
+>>> be recorded.
+>>>
+>>> Greg
+>>>
+>>>
+>>> On Wed, Aug 14, 2019 at 06:33:58PM -0400, Karen Lewellen wrote:
+>>> > Will this presentation be recorded or preserved in some way?  Would like to
+>>> > share   it with some general Linux users groups.
+>>> > Karen
+>>>
+>>>
+>>> --
+>>> web site: http://www.gregn.net
+>>> gpg public key: http://www.gregn.net/pubkey.asc
+>>> skype: gregn1
+>>> (authorization required, add me to your contacts list first)
+>>> If we haven't been in touch before, e-mail me before adding me to your contacts.
+>>>
+>>> --
+>>> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+>>> _______________________________________________
+>>> Speakup mailing list
+>>> Speakup@linux-speakup.org
+>>> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
