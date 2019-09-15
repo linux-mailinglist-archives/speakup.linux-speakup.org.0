@@ -1,46 +1,53 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id CE386B2D58
-	for <lists+speakup@lfdr.de>; Sun, 15 Sep 2019 01:33:24 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id 09346B3AD1
+	for <lists+speakup@lfdr.de>; Mon, 16 Sep 2019 14:56:09 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0D6EC1C446A; Sat, 14 Sep 2019 19:33:24 -0400 (EDT)
+	id DAEBE1C381C; Mon, 16 Sep 2019 08:56:06 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="hjXExtf/";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id EA1961C446D;
-	Sat, 14 Sep 2019 19:33:12 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1AFDB1C4455;
+	Mon, 16 Sep 2019 08:54:52 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id B5B6B1C435F; Sat, 14 Sep 2019 19:33:10 -0400 (EDT)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 9776F1C42B8
- for <speakup@linux-speakup.org>; Sat, 14 Sep 2019 19:33:09 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id 08D131CA64;
- Sun, 15 Sep 2019 01:32:35 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id J-KoI0jHpXVu; Sun, 15 Sep 2019 01:32:34 +0200 (CEST)
-Received: from function.home (unknown
- [IPv6:2a01:cb19:979:800:9eb6:d0ff:fe88:c3c7])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 664361CA47;
- Sun, 15 Sep 2019 01:32:34 +0200 (CEST)
-Received: from samy by function.home with local (Exim 4.92.2)
- (envelope-from <samuel.thibault@ens-lyon.org>)
- id 1i9HWr-0001im-EC; Sun, 15 Sep 2019 01:32:33 +0200
-Date: Sun, 15 Sep 2019 01:32:33 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
-Message-ID: <20190914233233.lvlxd3p4josiir7w@function>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
- Gregory Nowak <greg@gregn.net>, devel@driverdev.osuosl.org,
- Simon Dickson <simonhdickson@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-kernel@vger.kernel.org, John Covici <covici@ccs.covici.com>
+ id 3B6571C4363; Sun, 15 Sep 2019 14:42:46 -0400 (EDT)
+Received: from mail-ot1-f46.google.com (mail-ot1-f46.google.com
+ [209.85.210.46])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 0BA541C42B8
+ for <speakup@linux-speakup.org>; Sun, 15 Sep 2019 14:42:45 -0400 (EDT)
+Received: by mail-ot1-f46.google.com with SMTP id c10so33717439otd.9
+ for <speakup@linux-speakup.org>; Sun, 15 Sep 2019 11:42:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Gx+rYzzGDeHRnBeRwlQ4w3kWo3tKj4SZh14IROBu6h8=;
+ b=hjXExtf/3RduAc31bPc9VvqfGCUWJiKR33f+857uWDFHOc9PK894zfo96HGccoH9Dl
+ gncsWnch7EC4mU8KV8tF33aVTYcZdKqaOT48iViBNLDlPOHaYY4SEB1eXBBB+OgQf4P1
+ 9ohtxSqoNFkUOS5MstWZdJY08+dWfa5EoRAkfb49H8uITSQNQABVUFuIxBDgMhmFjh0l
+ nwJeGt7R3iavD/blgfqK2pThWyxaDEykucFwhDJStNjUFfvKQ4Zbzyt8LZ9HUZSt7Z98
+ 69DqV3Z2YGnv2CTocwxto6iBjApdc76yzAdpbSOIg+EAORU3Ke02+gzNYaZwKr9/H4JF
+ Ilcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Gx+rYzzGDeHRnBeRwlQ4w3kWo3tKj4SZh14IROBu6h8=;
+ b=svLbI274nU6wvVzfOdWBSCDAuF22b+AvCQDDLhCx/rPp4OqKzJaQuUtrY3hB31O17s
+ rNZiyf628gu+r/6Ov1T3bOwTYEfwi8kF2d+srHMvef9RsPn7gh79Y6DfgkIdf2zc93JO
+ M0eexcD7i2O/q2jrN/7c/wfk7EA93F1yTUWw5NQZtr4aXlhkR/1dfnOUCpILv5LNOwuq
+ wjuSrLWYgzgcsN67W+Ful+h0nKmPWxqugzbgP3lDOkarLWBcsSFvo3axpHgHyd6VoDls
+ NO3EdeCsJn4wshG430PxnxPabzoKzrtqVwt8Y3tP6BmJn5rulRfdH0goiV6Kx62dh9D5
+ y1ng==
+X-Gm-Message-State: APjAAAXrqh8V9f7dKfkBrt0ZM1LCWFq4htr9QVZtU6OBxGMXeX6YjDAo
+ SPo1k9Wf9KRm+b63fQSFxkuDFNWVKv07Qmn99qo=
+X-Google-Smtp-Source: APXvYqx7LtVegLs/013AIpPTrc2+YSenHMlYYbAvPFVEqCeaT2dZwhIvKZv30WJnEcSe8uDS5CvNCPNhpD+di2da1xg=
+X-Received: by 2002:a9d:621a:: with SMTP id g26mr6843287otj.236.1568572902170; 
+ Sun, 15 Sep 2019 11:41:42 -0700 (PDT)
+MIME-Version: 1.0
 References: <20190712092319.wmke4i7zqzr26tly@function>
  <20190713004623.GA9159@gregn.net> <20190725035352.GA7717@gregn.net>
  <875znqhia0.fsf@cmbmachine.messageid.invalid>
@@ -50,11 +57,15 @@ References: <20190712092319.wmke4i7zqzr26tly@function>
  <CAOtcWM0Jzo+wew-uiOmde+eZXEWZ310L8wXscWjJv5OXqXJe6Q@mail.gmail.com>
  <20190909025429.GA4144@gregn.net>
  <CAOtcWM0P=w-iBZzwekVrSpp7t2WO9RA5WP956zgDrNKvzA+4ZA@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAOtcWM0P=w-iBZzwekVrSpp7t2WO9RA5WP956zgDrNKvzA+4ZA@mail.gmail.com>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+ <20190915134300.GA552892@kroah.com>
+In-Reply-To: <20190915134300.GA552892@kroah.com>
+From: Okash Khawaja <okash.khawaja@gmail.com>
+Date: Sun, 15 Sep 2019 19:41:30 +0100
+Message-ID: <CAOtcWM2MD-Z1tg7gdgzrXiv7y62JrV7eHnTgXpv-LFW7zRApjg@mail.gmail.com>
+Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+X-Mailman-Approved-At: Mon, 16 Sep 2019 08:54:49 -0400
+X-Content-Filtered-By: Mailman/MimeDel 2.1.29
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,24 +82,53 @@ Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
 Cc: devel@driverdev.osuosl.org, Simon Dickson <simonhdickson@gmail.com>,
  Gregory Nowak <greg@gregn.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- John Covici <covici@ccs.covici.com>
+ "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
+ linux-kernel@vger.kernel.org, John Covici <covici@ccs.covici.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hello,
+On Sun, Sep 15, 2019 at 2:43 PM Greg Kroah-Hartman
+<gregkh@linuxfoundation.org> wrote:
+>
+> On Sat, Sep 14, 2019 at 10:08:35PM +0100, Okash Khawaja wrote:
+> > On Mon, Sep 9, 2019 at 3:55 AM Gregory Nowak <greg@gregn.net> wrote:
+> > >
+> > > On Sun, Sep 08, 2019 at 10:43:02AM +0100, Okash Khawaja wrote:
+> > > > Sorry, I have only now got round to working on this. It's not complete
+> > > > yet but I have assimilated the feedback and converted subjective
+> > > > phrases, like "I think..." into objective statements or put them in
+> > > > TODO: so that someone else may verify. I have attached it to this
+> > > > email.
+> > >
+> > > I think bleeps needs a TODO, since we don't know what values it accepts, or
+> > > what difference those values make. Also, to keep things uniform, we
+> > > should replace my "don't know" for trigger_time with a TODO. Looks
+> > > good to me otherwise. Thanks.
+> >
+> > Great thanks. I have updated.
+> >
+> > I have two questions:
+> >
+> > 1. Is it okay for these descriptions to go inside
+> > Documentation/ABI/stable? They have been around since 2.6 (2010). Or
+> > would we prefer Documentation/ABI/testing/?
+>
+> stable is fine.
+>
+> thanks,
+>
+> greg k-h
 
-Okash Khawaja, le sam. 14 sept. 2019 22:08:35 +0100, a ecrit:
-> 2. We are still missing descriptions for i18n/ directory. I have added
-> filenames below. can someone can add description please:
+Thanks Samuel and Greg.
 
-There are some descriptions in the "14.1.  Files Under the i18n
-Subdirectory" section of spkguide.txt
+I have attached the descriptions. There are still some files marked
+with TODO, whose descriptions are incomplete or missing.
 
-Samuel
+Thanks,
+Okash
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
