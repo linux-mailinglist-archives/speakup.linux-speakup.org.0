@@ -2,65 +2,64 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 5B645B6388
-	for <lists+speakup@lfdr.de>; Wed, 18 Sep 2019 14:49:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 22691B6463
+	for <lists+speakup@lfdr.de>; Wed, 18 Sep 2019 15:30:02 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 86D711C445D; Wed, 18 Sep 2019 08:49:37 -0400 (EDT)
+	id 65A721C43BD; Wed, 18 Sep 2019 09:30:01 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="UaRpdxCb";
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=slint.fr header.i=@slint.fr header.b="FAtcBz+M";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 15F2D1C448B;
-	Wed, 18 Sep 2019 08:47:30 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id A892F1C4488;
+	Wed, 18 Sep 2019 09:28:14 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 807991C4437; Tue, 17 Sep 2019 21:04:10 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 0EA851C3551
- for <speakup@linux-speakup.org>; Tue, 17 Sep 2019 21:04:04 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:d160:a7bd:83cb:f0e0])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id 85D43C7D;
- Tue, 17 Sep 2019 18:04:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1568768674; bh=M4CRdn4a+6tBBU/aHmbM1LUvA1hKXk0WFMnBz0gNlbI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UaRpdxCbdEIupohYfft4/Q8D6j6+90fIWsXvfyU9GrMhepSLfg7eq2lrmT/0tBwfd
- MtR4VjpGCruwBUbniJkUXi6S/VtCZgaIQJ6cT58mL/a/xvQIDitzTo+uvVTO+NvaeC
- m3iP8mxP5nu/csoRctcslWMcfy2Ep4Af/uTKdbs0YjmfD/FAXsLzHXBxTnFG0M2VAV
- ePPd7PSMd8PwZ+hh9mS6dpmKcxKMq8W+czXWPtneemo4j1R+2390FJpDh1DkFc7lw2
- u5AMz9Ae8+FjrDuG83qS6t4nkYxSZw3cpDm7h19hfbIW27ayuO+vd5s03x58H9agj7
- TpNKhEMXpqaRA==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>)
- id 1iAONt-0002ys-TT; Tue, 17 Sep 2019 18:03:53 -0700
-Date: Tue, 17 Sep 2019 18:03:53 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+ id C91C71C43BD; Wed, 18 Sep 2019 09:28:11 -0400 (EDT)
+Received: from captain.jabatus.com (captain.jabatus.com [109.234.166.18])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 18D9B1C3247
+ for <speakup@linux-speakup.org>; Wed, 18 Sep 2019 09:28:10 -0400 (EDT)
+X-Spam-Status: No
+X-MailPropre-MailScanner-From: didier@slint.fr
+X-MailPropre-MailScanner-SpamCheck: not spam, SpamAssassin (not cached,
+ score=0.002, required 5, autolearn=disabled, SPF_HELO_NONE 0.00,
+ SPF_NONE 0.00)
+X-MailPropre-MailScanner: Not scanned: please contact your Internet E-Mail
+ Service Provider for details
+X-MailPropre-MailScanner-ID: 4C44D100F6E.AF9C2
+X-MailPropre-MailScanner-Information: Please contact the ISP for more
+ information
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=slint.fr;
+ s=default; h=Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:To:
+ References:Subject:Sender:Reply-To:Cc:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=m6T6YT+vyknHESr8sVliJbtNm/h5H+dR3iPNl9hMYNY=; b=FAtcBz+M7zDyOfiQEYq4JYlZfx
+ qDQzIc746+14bUsmtx0cQrbcYHH/vSdI2UKG9YK8Q6B9UaF3fYfKAZIhDuIMGe3yu73OHDeiONhL9
+ uybf2GtsY68wLw7g8o6sCQCBH2j3png7mwnBe38NO6R/08Wkj+mX+NWiw1pAslA4cuoc=;
 Subject: Re: [HELP REQUESTED from the community] Was: Staging status of speakup
-Message-ID: <20190918010351.GA10455@gregn.net>
-References: <20190821222209.GA4577@gregn.net>
- <CAOtcWM0Jzo+wew-uiOmde+eZXEWZ310L8wXscWjJv5OXqXJe6Q@mail.gmail.com>
- <20190909025429.GA4144@gregn.net>
- <CAOtcWM0P=w-iBZzwekVrSpp7t2WO9RA5WP956zgDrNKvzA+4ZA@mail.gmail.com>
- <20190915134300.GA552892@kroah.com>
- <CAOtcWM2MD-Z1tg7gdgzrXiv7y62JrV7eHnTgXpv-LFW7zRApjg@mail.gmail.com>
- <20190916134727.4gi6rvz4sm6znrqc@function>
- <20190916141100.GA1595107@kroah.com>
- <20190916223848.GA8679@gregn.net>
- <20190917080118.GC2075173@kroah.com>
+References: <bb82127a-7ceb-865c-491e-72fd8f8dbb9e@slint.fr>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: Didier Spaier <didier@slint.fr>
+X-Forwarded-Message-Id: <bb82127a-7ceb-865c-491e-72fd8f8dbb9e@slint.fr>
+Message-ID: <0503c26b-4818-66e8-bc3f-8878c5b18222@slint.fr>
+Date: Wed, 18 Sep 2019 15:28:05 +0200
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="huq684BweRXVnRxX"
-Content-Disposition: inline
-In-Reply-To: <20190917080118.GC2075173@kroah.com>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.101.4 at vserver
-X-Virus-Status: Clean
-X-Mailman-Approved-At: Wed, 18 Sep 2019 08:47:28 -0400
+In-Reply-To: <bb82127a-7ceb-865c-491e-72fd8f8dbb9e@slint.fr>
+Content-Type: multipart/mixed; boundary="------------B0F6947FE72D7FBEA2ACF05F"
+Content-Language: en-US
+X-AntiAbuse: This header was added to track abuse,
+ please include it with any abuse report
+X-AntiAbuse: Primary Hostname - fox.o2switch.net
+X-AntiAbuse: Original Domain - linux-speakup.org
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - slint.fr
+X-Get-Message-Sender-Via: fox.o2switch.net: authenticated_id: didier@slint.fr
+X-Authenticated-Sender: fox.o2switch.net: didier@slint.fr
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,79 +74,48 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: devel@driverdev.osuosl.org, Simon Dickson <simonhdickson@gmail.com>,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
- linux-kernel@vger.kernel.org, John Covici <covici@ccs.covici.com>
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
+This is a multi-part message in MIME format.
+--------------B0F6947FE72D7FBEA2ACF05F
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 7bit
 
---huq684BweRXVnRxX
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Tue, Sep 17, 2019 at 10:01:18AM +0200, Greg Kroah-Hartman wrote:
-> On Mon, Sep 16, 2019 at 03:38:48PM -0700, Gregory Nowak wrote:
-> > On Mon, Sep 16, 2019 at 04:11:00PM +0200, Greg Kroah-Hartman wrote:
-> > > On Mon, Sep 16, 2019 at 03:47:28PM +0200, Samuel Thibault wrote:
-> > > > Okash Khawaja, le dim. 15 sept. 2019 19:41:30 +0100, a ecrit:
-> > > > > I have attached the descriptions.
-> > > > 
-> > > > Attachment is missing :)
-> > > 
-> > > I saw it :)
-> > > 
-> > > Anyway, please put the Description: lines without a blank after that,
-> > > with the description text starting on that same line.
-> > > 
-> > > thanks!
-> > > 
-> > > greg k-h
-> > 
-> > It's attached. Hope the indentation is OK.
+> I put in the tabs after "Description:" and did the best I could to fix
+> the alignment, and to find and get rid of the white space. If the
+> alignment is still off, or if there is still white space I missed,
+> could someone else please correct that? Thanks.
 > 
-> Alignment is a bit off, you forgot a tab after "Description:"
-> 
-> And you have some trailing whitespace in the document :(
-> 
-> thanks,
-> 
-> greg k-h
-> 
+> Greg
 
-I put in the tabs after "Description:" and did the best I could to fix
-the alignment, and to find and get rid of the white space. If the
-alignment is still off, or if there is still white space I missed,
-could someone else please correct that? Thanks.
+Trailing white spaces removed in attachment.
+Alignment LGTM.
 
-Greg
+Best,
+
+Didier
 
 
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-
---huq684BweRXVnRxX
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: attachment; filename=sysfs-driver-speakup
+--------------B0F6947FE72D7FBEA2ACF05F
+Content-Type: text/plain; charset=UTF-8;
+ name="sysfs-driver-speakup.new"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment;
+ filename="sysfs-driver-speakup.new"
 
 What:		/sys/accessibility/speakup/attrib_bleep
 KernelVersion:	2.6
 Contact:	speakup@linux-speakup.org
 Description:	Beeps the PC speaker when there is an attribute change such as
-		foreground or background color when using speakup review 
+		foreground or background color when using speakup review
 		commands. One = on, zero = off.
 What:		/sys/accessibility/speakup/bell_pos
 KernelVersion:	2.6
 Contact:	speakup@linux-speakup.org
-Description:	This works much like a typewriter bell. If for example 72 is 
+Description:	This works much like a typewriter bell. If for example 72 is
 		echoed to bell_pos, it will beep the PC speaker when typing on
 		a line past character 72.
 What:		/sys/accessibility/speakup/bleeps
@@ -461,7 +429,8 @@ Contact:	speakup@linux-speakup.org
 Description:	Gets or sets the volume of the speech synthesizer. Range is 0-9,
 		with zero being the softest, and nine being the loudest.
 
---huq684BweRXVnRxX
+
+--------------B0F6947FE72D7FBEA2ACF05F
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -472,4 +441,4 @@ Speakup mailing list
 Speakup@linux-speakup.org
 http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
 
---huq684BweRXVnRxX--
+--------------B0F6947FE72D7FBEA2ACF05F--
