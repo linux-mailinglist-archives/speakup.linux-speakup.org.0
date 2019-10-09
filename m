@@ -1,55 +1,55 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id B4FBDD1B90
-	for <lists+speakup@lfdr.de>; Thu, 10 Oct 2019 00:20:09 +0200 (CEST)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id 0ECFFD1BC3
+	for <lists+speakup@lfdr.de>; Thu, 10 Oct 2019 00:29:59 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EAACA1C46BC; Wed,  9 Oct 2019 18:20:08 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="KdBJoU0a";
-	dkim-atps=neutral
+	id 548851C4491; Wed,  9 Oct 2019 18:29:58 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CD6351C4693;
-	Wed,  9 Oct 2019 18:20:03 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1844C1C4698;
+	Wed,  9 Oct 2019 18:29:39 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 6875B1C444D; Wed,  9 Oct 2019 18:20:01 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 84C091C43BD
- for <speakup@linux-speakup.org>; Wed,  9 Oct 2019 18:19:59 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:b07e:6dbd:6ee8:c560])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id 30A3CC4A
- for <speakup@linux-speakup.org>; Wed,  9 Oct 2019 15:21:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1570659669; bh=bMQUg9lmk9k4EHOZPTKauPg1sRvX8XCmbA2yk3eUYV8=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=KdBJoU0awBBvJmapp2VlyjhGw1xpMTOglBNJSojE/rEhr8iruV5eOz77dIO3K6VN/
- uTKg7wTma/eJhF0zVZnz1cDG9zTDLcjL59uSUwopZe1bfZf3E/2z/NdxVhW+P7+eg1
- RB0cUSJTqi+gIcF1jd0Ej9+30jJ4EZDSAmCcumOnKqHNY5maORFTPkCUPvlgWs7icQ
- dIVmjrsDjCt7Hff2GYY+m1TY/YfGSVlbo52ImuZiVwIH77lGEFIEKqYYMU2WF+R3yo
- yFJFIucuAJC7f2J/T5wenQoHnjq4UJNxquT8uXhvnvkbl8RQ/f2xrRBqkqIFBNjx/t
- 6/Ys5AqB6xxiQ==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>) id 1iIKJI-0001al-W9
- for speakup@linux-speakup.org; Wed, 09 Oct 2019 15:19:57 -0700
-Date: Wed, 9 Oct 2019 15:19:56 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Okash's talk
-Message-ID: <20191009221956.GA5196@gregn.net>
-References: <alpine.DEB.2.21.1910061248420.25696@befuddled.reisers.ca>
+ id 1EC461C444F; Wed,  9 Oct 2019 18:29:37 -0400 (EDT)
+Received: from hera.aquilenet.fr (unknown [IPv6:2a0c:e300::1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id D9B141C4449
+ for <speakup@linux-speakup.org>; Wed,  9 Oct 2019 18:29:35 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id 96BE913E3;
+ Thu, 10 Oct 2019 00:29:32 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id GnP6fjd9XBK6; Thu, 10 Oct 2019 00:29:31 +0200 (CEST)
+Received: from function (lfbn-bor-1-306-163.w109-215.abo.wanadoo.fr
+ [109.215.28.163])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id CE4099D3;
+ Thu, 10 Oct 2019 00:29:31 +0200 (CEST)
+Received: from samy by function with local (Exim 4.92.2)
+ (envelope-from <samuel.thibault@ens-lyon.org>)
+ id 1iIKSX-0000du-UK; Thu, 10 Oct 2019 00:29:29 +0200
+Date: Thu, 10 Oct 2019 00:29:29 +0200
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: Okash Khawaja <okash.khawaja@gmail.com>
+Subject: Re: Linux Open Source Presentation
+Message-ID: <20191009222929.nudvcpvp2mnejxhx@function>
+References: <CAOtcWM0OPjtcY=rnSSn2us7kWPG7MDe=Jfh+WAVSGLjibQGUxw@mail.gmail.com>
+ <20190814083104.fh7a6t4kosxpzoe3@function>
+ <CAOtcWM2n8kMxROwuXrf0YzCf8zsnDSy9VbWRBQJsg3kvyqO4vQ@mail.gmail.com>
+ <20190814215134.dl5pywebjghezslx@function>
+ <Pine.LNX.4.64.1908141832440.26398@server2.shellworld.net>
+ <20190814231603.GA5329@gregn.net>
+ <CAOtcWM2K4NFHg0enkzy+EJmzouQXdwPsOZ=38ByJY+8=iRgqmg@mail.gmail.com>
+ <CAOtcWM0Vt7-K_a2TF14UzExebgejek-6KY2Tz0jTDrMaugOiKg@mail.gmail.com>
+ <CAOtcWM1XzfSTzz0xGrqQ21homRFiBQNfDhrqST6h1=xW3dT9Og@mail.gmail.com>
+ <CAOtcWM0Tu2CL-7stgKNowaWa1nBs_bn_XwhahJxtoLuUOAeUEw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <alpine.DEB.2.21.1910061248420.25696@befuddled.reisers.ca>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.101.4 at vserver
-X-Virus-Status: Clean
+In-Reply-To: <CAOtcWM0Tu2CL-7stgKNowaWa1nBs_bn_XwhahJxtoLuUOAeUEw@mail.gmail.com>
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,56 +64,19 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
+ Gregory Nowak <greg@gregn.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-I'll second what Kirk said. I just listened to the talk yesterday, and
-think Okash gave a great overview of what speakup is, what it does,
-how its development progressed, and where it is now. I also found the
-overview of how the speakup code is put together and what each
-part does to be informative. I also noticed in the Q and A
-there was only one question asked. I'd like to think that's due to how
-well Okash covered things rather than due to disinterest from the
-attendees.
-
-Greg
-
-
-On Sun, Oct 06, 2019 at 12:56:16PM -0400, Kirk Reiser wrote:
-> Hi Okash er al: I want to thank you for that very interesting talk. I
-> stupidly deleted your original message and link before listening to
-> the talk so I couldn't reply to that message because it hasn't shown
-> up in the archives yet.
-> 
-> Could you please give us some info on how the talk was received? How
-> many folks attended? Were there any blinks/users in attendence?
-> 
-> I believe you gave a very good overview of speakup. I certainly enjoyed
-> the talk and am glad to have heard your voice. That's one of those
-> blink things you know! 'grin'
-> 
-> Once again thank you very much.
->   Kirk
-> 
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-> 
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+SGVsbG8sCgpPa2FzaCBLaGF3YWphLCBsZSBkaW0uIDA2IG9jdC4gMjAxOSAxNDo0NzoxNCArMDEw
+MCwgYSBlY3JpdDoKPiBIZXJlJ3MgbGluayB0byB0aGUgdGFsazrCoFsxXWh0dHBzOi8veW91dHUu
+YmUvRnJNLUpFSThPSXMKCk5pY2UgdGFsayA6KQoKWW91IGRpZCB3ZWxsIGluIHByZXNlbnRpbmcg
+aW4gYSBiZXR0ZXIgb3JkZXIgdGhhbiB0aGUgc2xpZGVzIHRoZXkgaGFkCmFza2VkIHNvIG11Y2gg
+aW4gYWR2YW5jZS4KClNhbXVlbApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpTcGVha3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3Jn
+Cmh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1
+cAo=
