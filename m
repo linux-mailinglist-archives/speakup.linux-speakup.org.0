@@ -2,57 +2,44 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 36B79D19CF
-	for <lists+speakup@lfdr.de>; Wed,  9 Oct 2019 22:42:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 27EF3D1AF2
+	for <lists+speakup@lfdr.de>; Wed,  9 Oct 2019 23:30:06 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 591011C4690; Wed,  9 Oct 2019 16:42:31 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1570653751;
-	bh=DvOkXxJZJ8kT6Qc9gN+6GVzBth8Ggr5RupW++CU4+ao=;
-	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
-	 List-Post:List-Help:List-Subscribe:Reply-To:From;
-	b=q5PWVx062cXA6qx7OyFm0AGNvnsStLDzklB0dSZoPDSDKUerKzxABE6bLOjvZ+bBK
-	 iEjocsZ+CMxCHmAtY+UPqk09Af7C0YUTvfFSiynnBs95t5rNsMqkqxkS2vb6veMmzK
-	 oE2SbPD560jIgb8VJ3auVS9+7BUoZV2fTGcIhZUQ=
+	id 7C6371C448E; Wed,  9 Oct 2019 17:30:05 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7CF8F1C46C6;
-	Wed,  9 Oct 2019 16:40:54 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1570653654;
-	bh=DvOkXxJZJ8kT6Qc9gN+6GVzBth8Ggr5RupW++CU4+ao=;
-	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
-	 List-Post:List-Help:List-Subscribe:Reply-To:From;
-	b=ra4It31XGaCWdxOGGzSCX4u/RRkftfDXuiFgVxkktzJk7gzPECgiR31LbPMAup3Gh
-	 66/kXgI0ZFEsdLcKFU4zsMGRx5+S7OhoZu6UuAw1nceitdO4DTWbz5UBiPTAEpZdc0
-	 uqEr47T4GSl3GIuZoGAegK9dzSaXAGDL9Z2ywK00=
+	by befuddled.reisers.ca (Postfix) with ESMTP id 7A7BB1C4664;
+	Wed,  9 Oct 2019 17:29:21 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 3A83C1C330C; Sun,  6 Oct 2019 12:56:18 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1570380978;
- bh=XZ+2q8+low7Ig8iwTncnatHY83Vr54aF74WlUCrn5uQ=;
- h=Date:From:To:Subject:From;
- b=lg0c6RyE1t0AHSc3dibX5jEtr0fqKvStwT+MNkpDUKRnPXBA2OKtuLtbEy0QzoDfm
- B2fHmG9M94mJi6ImXrd234VixIgsSF2XyGp/R1+5puArXWXTtC8zizTZAFOLeFrVea
- IJkng1OGu/NRWCKynXIda/N/+hiBoYYPjHTY3hns=
-Received: from localhost (localhost [IPv6:::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 44BD71C3292
- for <speakup@linux-speakup.org>; Sun,  6 Oct 2019 12:56:16 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1570380976;
- bh=XZ+2q8+low7Ig8iwTncnatHY83Vr54aF74WlUCrn5uQ=;
- h=Date:From:To:Subject:From;
- b=kYOVH1/yRsMi++YCDWj72D8DFSncFMcmysB1vV69RiiA29O7XHKPCE0W8uwE4bBxo
- GGxXvUvENd3CJZ+b2P8Qc9fCTSxBRs5TA+g+bSvNoL0GftBJ2KtlB0yiNLdA5Cc16P
- FpgzyMZtWcofQjt2ZHaqisnYULYrUSO/+QzzpVb0=
-Date: Sun, 6 Oct 2019 12:56:16 -0400 (EDT)
-From: Kirk Reiser <kirk@reisers.ca>
-To: speakup@linux-speakup.org
-Subject: Okash's talk
-Message-ID: <alpine.DEB.2.21.1910061248420.25696@befuddled.reisers.ca>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 3CA911C444D; Wed,  9 Oct 2019 17:29:18 -0400 (EDT)
+Received: from omta04.suddenlink.net (omta04.suddenlink.net [208.180.40.74])
+ by befuddled.reisers.ca (Postfix) with ESMTP id D80451C43BD
+ for <speakup@linux-speakup.org>; Wed,  9 Oct 2019 17:29:13 -0400 (EDT)
+Received: from wb5agz ([47.217.105.76]) by dalofep04.suddenlink.net
+ (InterMail vM.8.04.03.22.02 201-2389-100-169-20190213) with ESMTP
+ id <20191009212912.WWJN13146.dalofep04.suddenlink.net@wb5agz>
+ for <speakup@linux-speakup.org>; Wed, 9 Oct 2019 16:29:12 -0500
+Received: from martin by wb5agz with local (Exim 4.92)
+ (envelope-from <martin.m@suddenlink.net>) id 1iIJWB-0006Go-Oi
+ for speakup@linux-speakup.org; Wed, 09 Oct 2019 16:29:11 -0500
+From: "Martin McCormick" <martin.m@suddenlink.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Dealing with Slow Input
 MIME-Version: 1.0
+Content-ID: <24104.1570656551.1@wb5agz>
+Date: Wed, 09 Oct 2019 16:29:11 -0500
+Message-Id: <E1iIJWB-0006Go-Oi@wb5agz>
+X-Authentication-Info: Submitted using SMTP AUTH PLAIN at
+ dalofep04.suddenlink.net from [47.217.105.76] using ID
+ martin.m@suddenlink.net at Wed, 9 Oct 2019 16:29:12 -0500
+X-CM-Analysis: v=2.3 cv=JvWPU/wC c=1 sm=1 tr=0 cx=a_idp_d
+ a=0S4FDTH59LdN14syvppWKg==:117 a=0S4FDTH59LdN14syvppWKg==:17
+ a=kj9zAlcOel0A:10 a=XobE76Q3jBoA:10 a=7jTcn3IT1uMA:10
+ a=iblfO_iLRM-IHBe-k-kA:9 a=CjuIK1q_8ugA:10 a=pHzHmUro8NiASowvMSCR:22
+ a=xoEH_sTeL_Rfw54TyV31:22
+X-CM-Envelope: MS4wfNgry2PjPEDTtUms+g0UcrCKrWLLNgHc4//CyTfWLZrbJx99yxDd3kweZPNXlbx6QoRtAm7y/Zb5OGbmHzvxjlXMaxE8cZiCTfY3S2v3oLo18kaGd/lg
+ drQtf5Rno6DyVnhckaEa8uCzuBivnp8nWp3PZX4sEDwl+fdl8yFGVuTy
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,27 +54,36 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi Okash er al: I want to thank you for that very interesting talk. I
-stupidly deleted your original message and link before listening to
-the talk so I couldn't reply to that message because it hasn't shown
-up in the archives yet.
+	The last time I dealt with something like this was about
+ten years ago and I have forgotten much about it plus things may
+have changed.
 
-Could you please give us some info on how the talk was received? How
-many folks attended? Were there any blinks/users in attendence?
+	I am receiving serial input from a device that reads the
+parallel port and converts that output to serial.  The highest
+speed that is possible out of that device is 37400  which sounds
+a bit odd in speakup because it may be trying to say words before
+they are fully formed.  In anyway, you have to get up to 115200
+baud before things sound truly normal but I remember a value that
+one can set which makes the timer between characters not time out
+as quickly.  It is useful in situations like this where the data
+are not coming as fast as one might like.
 
-I believe you gave a very good overview of speakup. I certainly enjoyed
-the talk and am glad to have heard your voice. That's one of those
-blink things you know! 'grin'
+	When not using this device and running normally, this
+timer must be set back to what it was or speakup gets a bit
+sluggish.
 
-Once again thank you very much.
-   Kirk
+	Can someone please remind me what this variable is so I
+can slow things down again?
 
+	Thank you.
+
+Martin McCormick
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
