@@ -1,45 +1,55 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 6375ED1B09
-	for <lists+speakup@lfdr.de>; Wed,  9 Oct 2019 23:38:11 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id B4FBDD1B90
+	for <lists+speakup@lfdr.de>; Thu, 10 Oct 2019 00:20:09 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A2E4B1C444A; Wed,  9 Oct 2019 17:38:10 -0400 (EDT)
+	id EAACA1C46BC; Wed,  9 Oct 2019 18:20:08 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="KdBJoU0a";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 01B511C469B;
-	Wed,  9 Oct 2019 17:37:50 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id CD6351C4693;
+	Wed,  9 Oct 2019 18:20:03 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id B8C321C4449; Wed,  9 Oct 2019 17:37:47 -0400 (EDT)
-Received: from omta02.suddenlink.net (omta02.suddenlink.net [208.180.40.72])
- by befuddled.reisers.ca (Postfix) with ESMTP id 8F9791C444A
- for <speakup@linux-speakup.org>; Wed,  9 Oct 2019 17:37:44 -0400 (EDT)
-Received: from wb5agz ([47.217.105.76]) by dalofep02.suddenlink.net
- (InterMail vM.8.04.03.22.02 201-2389-100-169-20190213) with ESMTP
- id <20191009213744.EYUC18019.dalofep02.suddenlink.net@wb5agz>
- for <speakup@linux-speakup.org>; Wed, 9 Oct 2019 16:37:44 -0500
-Received: from martin by wb5agz with local (Exim 4.92)
- (envelope-from <martin.m@suddenlink.net>) id 1iIJeR-0006I8-MK
- for speakup@linux-speakup.org; Wed, 09 Oct 2019 16:37:43 -0500
-From: "Martin McCormick" <martin.m@suddenlink.net>
+ id 6875B1C444D; Wed,  9 Oct 2019 18:20:01 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 84C091C43BD
+ for <speakup@linux-speakup.org>; Wed,  9 Oct 2019 18:19:59 -0400 (EDT)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2001:470:d:6c5:b07e:6dbd:6ee8:c560])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id 30A3CC4A
+ for <speakup@linux-speakup.org>; Wed,  9 Oct 2019 15:21:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1570659669; bh=bMQUg9lmk9k4EHOZPTKauPg1sRvX8XCmbA2yk3eUYV8=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=KdBJoU0awBBvJmapp2VlyjhGw1xpMTOglBNJSojE/rEhr8iruV5eOz77dIO3K6VN/
+ uTKg7wTma/eJhF0zVZnz1cDG9zTDLcjL59uSUwopZe1bfZf3E/2z/NdxVhW+P7+eg1
+ RB0cUSJTqi+gIcF1jd0Ej9+30jJ4EZDSAmCcumOnKqHNY5maORFTPkCUPvlgWs7icQ
+ dIVmjrsDjCt7Hff2GYY+m1TY/YfGSVlbo52ImuZiVwIH77lGEFIEKqYYMU2WF+R3yo
+ yFJFIucuAJC7f2J/T5wenQoHnjq4UJNxquT8uXhvnvkbl8RQ/f2xrRBqkqIFBNjx/t
+ 6/Ys5AqB6xxiQ==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>) id 1iIKJI-0001al-W9
+ for speakup@linux-speakup.org; Wed, 09 Oct 2019 15:19:57 -0700
+Date: Wed, 9 Oct 2019 15:19:56 -0700
+From: Gregory Nowak <greg@gregn.net>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Dealing with Slow Input
+Subject: Re: Okash's talk
+Message-ID: <20191009221956.GA5196@gregn.net>
+References: <alpine.DEB.2.21.1910061248420.25696@befuddled.reisers.ca>
 MIME-Version: 1.0
-Content-ID: <24186.1570657063.1@wb5agz>
-Date: Wed, 09 Oct 2019 16:37:43 -0500
-Message-Id: <E1iIJeR-0006I8-MK@wb5agz>
-X-Authentication-Info: Submitted using SMTP AUTH PLAIN at
- dalofep02.suddenlink.net from [47.217.105.76] using ID
- martin.m@suddenlink.net at Wed, 9 Oct 2019 16:37:44 -0500
-X-CM-Analysis: v=2.3 cv=PfaBeRpd c=1 sm=1 tr=0 cx=a_idp_d
- a=0S4FDTH59LdN14syvppWKg==:117 a=0S4FDTH59LdN14syvppWKg==:17
- a=kj9zAlcOel0A:10 a=XobE76Q3jBoA:10 a=7jTcn3IT1uMA:10
- a=JwuIfpkUhXJN6p7OcXoA:9 a=CjuIK1q_8ugA:10 a=pHzHmUro8NiASowvMSCR:22
- a=xoEH_sTeL_Rfw54TyV31:22
-X-CM-Envelope: MS4wfFdCKppxYWVnWvt68xmTELDnpxuwQcYEkfgEH/EaH5njB6gQfx4Z475WYnpy29mvyqJ5GyF/acZ4PwUkFF2HdYoC4ZItvB7PInpRgY+iU+4hEs/ngJkh
- s41kM08S/FAfjkMt6o6Jah+8tDd9/+XsZZ7OH4aCBISEfttIkD7ipCGp
+Content-Disposition: inline
+In-Reply-To: <alpine.DEB.2.21.1910061248420.25696@befuddled.reisers.ca>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.101.4 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,11 +70,49 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-I mistyped the baud rate for what it is worth.  The
-parallel-to-serial converter's highest speed is 38400.  Of course
-I didn't realize what I did until I sent the message.
+I'll second what Kirk said. I just listened to the talk yesterday, and
+think Okash gave a great overview of what speakup is, what it does,
+how its development progressed, and where it is now. I also found the
+overview of how the speakup code is put together and what each
+part does to be informative. I also noticed in the Q and A
+there was only one question asked. I'd like to think that's due to how
+well Okash covered things rather than due to disinterest from the
+attendees.
 
-Martin
+Greg
+
+
+On Sun, Oct 06, 2019 at 12:56:16PM -0400, Kirk Reiser wrote:
+> Hi Okash er al: I want to thank you for that very interesting talk. I
+> stupidly deleted your original message and link before listening to
+> the talk so I couldn't reply to that message because it hasn't shown
+> up in the archives yet.
+> 
+> Could you please give us some info on how the talk was received? How
+> many folks attended? Were there any blinks/users in attendence?
+> 
+> I believe you gave a very good overview of speakup. I certainly enjoyed
+> the talk and am glad to have heard your voice. That's one of those
+> blink things you know! 'grin'
+> 
+> Once again thank you very much.
+>   Kirk
+> 
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+> 
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
