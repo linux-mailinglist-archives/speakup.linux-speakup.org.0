@@ -2,35 +2,62 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id BC955E622E
-	for <lists+speakup@lfdr.de>; Sun, 27 Oct 2019 12:14:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id C1DF1ECDDD
+	for <lists+speakup@lfdr.de>; Sat,  2 Nov 2019 10:39:10 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 43E0D1C43D0; Sun, 27 Oct 2019 07:14:52 -0400 (EDT)
+	id 707861C46EA; Sat,  2 Nov 2019 05:39:09 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="gbMu+anP";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 819141C4488;
-	Sun, 27 Oct 2019 07:10:22 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1703C1C46F0;
+	Sat,  2 Nov 2019 05:38:21 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id A826E1C3336; Sun, 27 Oct 2019 07:10:13 -0400 (EDT)
-Received: from smtp4-g21.free.fr (smtp4-g21.free.fr [212.27.42.4])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 3DBAB1C3336
- for <speakup@linux-speakup.org>; Sun, 27 Oct 2019 07:09:56 -0400 (EDT)
-Received: from slint.slint.fr (unknown
- [IPv6:2a01:e34:ed09:d470:f98e:ae61:edb5:45b1])
- by smtp4-g21.free.fr (Postfix) with ESMTP id 1BAA919F5C4
- for <speakup@linux-speakup.org>; Sun, 27 Oct 2019 12:09:52 +0100 (CET)
-Subject: Re: Help needed, TalkingArch
-To: speakup@linux-speakup.org
-References: <alpine.DEB.2.21.1910270652240.7442@kappa.cleveland.inc>
-From: Didier Spaier <didier@slint.fr>
-Message-ID: <24021445-0a7a-6b4b-96a8-faa82d8b95b3@slint.fr>
-Date: Sun, 27 Oct 2019 12:09:52 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id A849B1C46CB; Sat,  2 Nov 2019 05:38:06 -0400 (EDT)
+Received: from mail-ot1-x344.google.com (mail-ot1-x344.google.com
+ [IPv6:2607:f8b0:4864:20::344])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 183FE1C46C7
+ for <speakup@linux-speakup.org>; Sat,  2 Nov 2019 05:38:04 -0400 (EDT)
+Received: by mail-ot1-x344.google.com with SMTP id u13so10474209ote.0
+ for <speakup@linux-speakup.org>; Sat, 02 Nov 2019 02:38:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ueo+b72K2pYE5qGgh3oVIzpmjvxXGQPLFgWRE6uQDss=;
+ b=gbMu+anPnTWo2F034WcniURCLtAD8IxiiQCA6e4YjtnTVbvso10F6O18PnrgDBY0v5
+ xfffpKsS9Lah0bL3svibl/cF7p2es9/D61WFkY1CHC7LunbAo51p8BAS+idZPQnLXAO3
+ uMQpYHfHef1j8JQ3UZY9zXPCSrwjyp1qVTN2944CTZldFdeBMxdIb2IhPZxkEMBANab9
+ Dkj48LGxd5sYulWDNo14d6+BHsFrvgSaLdOYleaJjo71Mdp1FFR08XeYeiPTGsTFA95p
+ Ta/wIHaMDmKaonk6L0rxENKjNgb3xYn1KwOpBw/d9LPV1eDQ/IiMN3saz0GrkC2eF1e5
+ NDPQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ueo+b72K2pYE5qGgh3oVIzpmjvxXGQPLFgWRE6uQDss=;
+ b=pKeeBbrMefUXCbNhftyz9ep1jLHwd41QbEjfANaxSr/w3myrkSt5K8xJpub73w3c0M
+ NsFtphlSngBz+m99SbR2FJX3/9GHzL0TidoyegIHhFoQ+8avs+FdD3vGPBtW5MeojWfr
+ +JfhR/KoAPeW7o2lNpeI7epYd9kB05BhSW3DmtZvCTI6p1AdDStg478Grbb+0118WVTJ
+ SbMHPKupRYUbwMTx68Smp/oqTFiZWkDG/UOQsGRb5nqnhrQ5hKhGm6Mjzl7X/KlGpjeE
+ bO1iYGz9XcXjOQ+wVUZR8Qt/EZbtr6WnGwfvS4WShSdByVLSCthdyhzbffl1OMBY9SVU
+ rWOQ==
+X-Gm-Message-State: APjAAAUCNRb2vjzoS/TBlGCmru+IhLpzSEvb+Vd9xvFszeVtdFnRjbtr
+ lu0NiJIe6QDJSagsBNkoMZbFeO/xaL2aN1NjsgU=
+X-Google-Smtp-Source: APXvYqyf/QFd5s3GpIH/i9e57uYpNCGAFhD/TQVgkDMbKXBGyyrZkBYzxHU2cfEOEzY6G4/Lm6qk9SbrZa6xjMpODo0=
+X-Received: by 2002:a9d:6949:: with SMTP id p9mr12096850oto.328.1572687482470; 
+ Sat, 02 Nov 2019 02:38:02 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <alpine.DEB.2.21.1910270652240.7442@kappa.cleveland.inc>
-Content-Language: fr
+References: <alpine.LNX.2.21.9999.1909081006120.8372@io.coolip.net>
+ <CAOtcWM23S7PhQzyQ+Cdpbd8gTAiKCuc6DdSrrMZx+0=WASBUXQ@mail.gmail.com>
+ <87impqh7tt.fsf@cmbmachine.messageid.invalid>
+ <CAOtcWM1_234zvRCwFeG3p6=t751y-sBa3whiz4P-i-oADXneOw@mail.gmail.com>
+In-Reply-To: <CAOtcWM1_234zvRCwFeG3p6=t751y-sBa3whiz4P-i-oADXneOw@mail.gmail.com>
+From: Okash Khawaja <okash.khawaja@gmail.com>
+Date: Sat, 2 Nov 2019 09:37:51 +0000
+Message-ID: <CAOtcWM3viSGs4BNYyMA_rLc8kidNmYVg6H7+XfxRbYqMeao-AA@mail.gmail.com>
+Subject: Re: help fixing speakup hang problem w smp kernels
+To: kprescott@coolip.net, deedra Waters <deedra@the-brannons.com>
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -45,39 +72,60 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SGkgQ2h1Y2sgYW5kIGFsbCwKCmh0dHBzOi8vdGFyY2gub3JnLwpodHRwczovL3RhcmNoLm9yZy9k
-b3dubG9hZC10aGUtbmV3LXRhbGtpbmctYXJjaC8KClRoYXQncyB0aGUgbmV3IHRhbGtpbmcgQXJj
-aCwgYXBwcm92ZWQgYnkgS3lsZSBJIHRoaW5rLgoKQmVzdCByZWdhcmRzLAoKRGlkaWVyCgpPbiAy
-Ny8xMC8yMDE5IDExOjU0LCBDaHVjayBIYWxsZW5iZWNrIHdyb3RlOgo+IEhpIGFsbCwKPiAKPiBJ
-IGhhdmUgZm91bmQgbXlzZWxmIGluIG5lZWQgb2YgYSBUYWxraW5nQXJjaCBpbnN0YWxsYXRpb24g
-SVNPIHJlY2VudGx5LAo+IGFuZCBoYXZlIGZvdW5kIHRoZSBsYXRlc3QgcmVsZWFzZSBub3QgdG8g
-d29yayBhbnkgbW9yZS7CoCBJIHRyaWVkIGNhdGNoaW5nCj4gdXAgb24gdGhlIHJlY2VudCBzdGF0
-ZSBvZiB0aGluZ3MsIGFuZCBmb3VuZCB0aGUgQXJjaCB3aWtpIFRhbGtpbmdBcmNoCj4gcGFnZSB0
-byBiZSB2ZXJ5IGluZm9ybWF0aXZlLCBhbmQgdmVyeSBkaXNjb3VyYWdpbmcuwqAgSSByZXZpZXdl
-ZCB0aGUKPiBpbnN0YWxsYXRpb24gZ3VpZGUsIG5vdGljZWQgYSBjb3VwbGUgb2YgZGlzY3JlcGFu
-Y2llcyBmcm9tIEt5bGUncyBhdWRpbwo+IHR1dG9yaWFsLCBhbmQgbW9kaWZpZWQgbXkgcHJvY2Vk
-dXJlIGFjY29yZGluZ2x5LsKgIEF0IHRoZSBtb21lbnQsIEkgZ2V0Cj4gaWRlbnRpY2FsIGZhaWx1
-cmVzIG9uIHNldmVyYWwgWDg2LTY0IHN5c3RlbXMsIGV2ZW4gYWZ0ZXIgcmVwbGFjaW5nIHRoZQo+
-IG1pcnJvcmxpc3Qgd2l0aCBhIHZlcnNpb24ga25vd24gdG8gd29yayBjdXJyZW50bHksIGFuZCBh
-c2tpbmcgcGFjc3RyYXAKPiB0byBmZXRjaCBhbiBhcHByb3ByaWF0ZSBzZXQgb2YgcGFja2FnZXMu
-wqAgUGFjc3RyYXAgZG93bmxvYWRzIHRoZW0sCj4gYmVnaW5zIHRoZSBpbnN0YWxsYXRpb24sIHRo
-ZW4gZmFpbHMgd2l0aCBhIHNjcmVlbmZ1bCBvZiBjb21wbGFpbnRzIGFib3V0Cj4gcG9zc2libHkg
-Y29ycnVwdGVkIHBhY2thZ2VzIG9yIG9ic29sZXRlIHBhY2thZ2Uga2V5cy4KPiAKPiBJbnNwZWN0
-aW5nIHRoZSByb290IGRpcmVjdG9yeSBJIHdhcyBhdHRlbXB0aW5nIHRvIHBvcHVsYXRlLCBJIHNl
-ZQo+IHRoYXQgYWxsIHRvcCBsZXZlbCBkaXJlY3RvcmllcyBhcmUgZW1wdHkuwqAgZXhjZXB0IHZh
-ciwgd2hpY2ggc2hvd3MgdGhlCj4gZXhwZWN0ZWQgc3ViZGlyZWN0b3J5IHN0cnVjdHVyZSwgaW5j
-bHVkaW5nIHRoZSAxNDAgb3Igc28gcGFja2FnZXMgdGhhdAo+IGhhZCBiZWVuIGRvd25sb2FkZWQu
-Cj4gCj4gQXQgcHJlc2VudCBJIGhhdmUgYSBWUFMgb24gTGlub2RlIHJ1bm5pbmcgQXJjaExpbnV4
-LCBidXQgb2YgY291cnNlIGl0J3MKPiBub3QgVGFsa2luZ0FyY2gsIGFuZCBJIGhhdmUgRGViaWFu
-IEJ1c3RlciBpbiBjb25zb2xlIG1vZGUgb24gbXkgZGVza3RvcC4KPiAKPiBBbnlvbmUga25vdyB3
-aGVyZSBJIGNhbiBnZXQgYSBUYWxraW5nQXJjaCBJbnN0YWxsYXRpb24gSVNPIHRoYXQgd29ya3M/
-IG9yCj4gYW55IG90aGVyIGlkZWFzPwo+IAo+IFRoYW5rcywKPiAKPiBDaHVjayBILgo+IAo+IApf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpTcGVha3VwIG1h
-aWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51eC1zcGVha3Vw
-Lm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
+Hi,
+
+Would it be possible to supply vmlinux file with debug symbols? If
+speakup was out of kernel then speakup.ko and speakup_soft.ko with
+debug symbols.
+
+In general, the stack trace only tells part of the story. As Samuel
+pointed out here [1] we also need corresponding binaries to know the
+point of failure.
+
+Thanks,
+Okash
+
+[1] https://github.com/bytefire/speakup/issues/10#issuecomment-548924921
+
+
+On Wed, Oct 2, 2019 at 9:31 AM Okash Khawaja <okash.khawaja@gmail.com> wrote:
+>
+>
+>
+> On Tue, 17 Sep 2019, 23:33 Chris Brannon, <chris@the-brannons.com> wrote:
+>>
+>> Okash Khawaja <okash.khawaja@gmail.com> writes:
+>>
+>> > Hi Kelly,
+>> >
+>> > Thanks very much for pointing this out :) If you could capture kernel
+>> > dump of this hang that will be a great starting point of the
+>> > investigation.
+>>
+>> Quite plausibly the hangs reported by Kelly are the same as those
+>> experienced by the person who reported in on IRC.  Deedra posted a link
+>> to the dump from one of those yesterday.  Others in the Arch community
+>> are noticing the same issue.  As far as I know, everyone who has
+>> reported about recent hangs is using a 5.2 kernel.
+>>
+>> For those on Arch, switching to the linux-lts package (4.19 kernel) will
+>> fix it for now.
+>
+>
+> Hi,
+>
+> I haven't yet got round to looking at it. But I've created this bug which collects relevant info in one place: https://github.com/bytefire/speakup/issues/10
+>
+> Thanks,
+> Okash
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
