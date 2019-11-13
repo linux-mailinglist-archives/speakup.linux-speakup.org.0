@@ -2,35 +2,35 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id EE00CFAEA9
-	for <lists+speakup@lfdr.de>; Wed, 13 Nov 2019 11:40:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 93160FB011
+	for <lists+speakup@lfdr.de>; Wed, 13 Nov 2019 12:57:24 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 81A491C4697; Wed, 13 Nov 2019 05:40:36 -0500 (EST)
+	id 090D91C46A6; Wed, 13 Nov 2019 06:57:24 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B62421C46BB;
-	Wed, 13 Nov 2019 05:39:56 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0743A1C46D6;
+	Wed, 13 Nov 2019 06:56:56 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 79D4B1C3562; Wed, 13 Nov 2019 05:39:55 -0500 (EST)
-Received: from emh03.mail.saunalahti.fi (emh03.mail.saunalahti.fi
- [62.142.5.109])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 41ED81C26CF
- for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 05:39:54 -0500 (EST)
-Received: from nkl.local (unknown [193.185.8.218])
- by emh03.mail.saunalahti.fi (Postfix) with SMTP id 43B7E4007B
- for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 12:39:48 +0200 (EET)
-Received: (qmail 500 invoked from network); 13 Nov 2019 10:39:47 -0000
-Received: from localhost (127.0.0.1)
- by nkl.local with SMTP; 13 Nov 2019 10:39:47 -0000
-Date: Wed, 13 Nov 2019 12:39:47 +0200 (EET)
-From: Ari Moisio <arimo@iki.fi>
+ id DEEA81C3562; Wed, 13 Nov 2019 06:56:53 -0500 (EST)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 243041C26CF
+ for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 06:56:53 -0500 (EST)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+ by mailbackend.panix.com (Postfix) with ESMTP id 47Cjl72SX8z1nDQ
+ for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 06:56:51 -0500 (EST)
+Received: by panix1.panix.com (Postfix, from userid 20712)
+ id 47Cjl71hZpzcbW; Wed, 13 Nov 2019 06:56:51 -0500 (EST)
+Received: from localhost (localhost [127.0.0.1])
+ by panix1.panix.com (Postfix) with ESMTP id 47Cjl71f1RzcbV
+ for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 06:56:51 -0500 (EST)
+Date: Wed, 13 Nov 2019 06:56:51 -0500
+From: Jude DaShiell <jdashiel@panix.com>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: cannot go to google search results with lynx 
+Subject: Re: cannot go to google search results with lynx
 In-Reply-To: <alpine.DEB.2.21.1.1911131209350.30457@willempc.meraka.csir.co.za>
-Message-ID: <alpine.DEB.2.20.1911131239050.10535@nkl.local>
+Message-ID: <alpine.NEB.2.21.1911130655370.15686@panix1.panix.com>
 References: <alpine.DEB.2.21.1.1911131209350.30457@willempc.meraka.csir.co.za>
-User-Agent: Alpine 2.20 (DEB 67 2015-01-07)
 MIME-Version: 1.0
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
@@ -46,29 +46,24 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi
+No problems here, but I don't use google directly either.  I use surfraw
+and have surfraw run duckduckgo to find what I find from google.
 
-I noticed same behaviour. Not found any workaround yet.
+On Wed, 13 Nov 2019, Willem van der Walt wrote:
 
-
-
--- 
-mr. M01510 & guide Loadstone-GPS  Lat: 62.38718, lon: 25.64672
-hkp://wwwkeys.pgp.net B784D020 fp:0C1F6A76 DC9DDD58 33838B5D 0E769600 B7840D02
-
-
-  Willem van der Walt kirjoitti
-> Subject: cannot go to google search results with lynx 
-> Date: Wed, 13 Nov 2019 12:10:56
+> Date: Wed, 13 Nov 2019 05:10:56
 > From: Willem van der Walt <wvdwalt@csir.co.za>
+> Reply-To: Speakup is a screen review system for Linux.
+>     <speakup@linux-speakup.org>
 > To: Speakup is a screen review system for Linux. <speakup@linux-speakup.org>
-> 
+> Subject: cannot go to google search results with lynx
+>
 >
 > Hi, Willem here.
 > In the last few days, the google search results through lynx became unusable.
@@ -83,6 +78,9 @@ hkp://wwwkeys.pgp.net B784D020 fp:0C1F6A76 DC9DDD58 33838B5D 0E769600 B7840D02
 > Speakup@linux-speakup.org
 > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
 >
+
+-- 
+
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
