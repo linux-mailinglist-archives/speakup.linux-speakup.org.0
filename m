@@ -1,33 +1,37 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 2D386FBCB2
-	for <lists+speakup@lfdr.de>; Thu, 14 Nov 2019 00:47:09 +0100 (CET)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id 9D208FBCB6
+	for <lists+speakup@lfdr.de>; Thu, 14 Nov 2019 00:51:31 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A1FEC1C46BB; Wed, 13 Nov 2019 18:47:08 -0500 (EST)
+	id D134C1C46BF; Wed, 13 Nov 2019 18:51:30 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1029E1C46EA;
-	Wed, 13 Nov 2019 18:46:54 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1F3741C470C;
+	Wed, 13 Nov 2019 18:50:54 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 524A21C4696; Wed, 13 Nov 2019 18:46:51 -0500 (EST)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
- by befuddled.reisers.ca (Postfix) with ESMTPS id A5FB61C43BB
- for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:46:50 -0500 (EST)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
- id 3368D8C030A; Wed, 13 Nov 2019 23:46:19 +0000 (UTC)
+ id A52951C4696; Wed, 13 Nov 2019 18:50:51 -0500 (EST)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id BC4CC1C43BB
+ for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+ by mailbackend.panix.com (Postfix) with ESMTP id 47D1Zy1smvz1dRF
+ for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
+Received: by panix1.panix.com (Postfix, from userid 20712)
+ id 47D1Zy0dKQzcbW; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
 Received: from localhost (localhost [127.0.0.1])
- by server2.shellworld.net (Postfix) with ESMTP id 32E0B8C01E3
- for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:46:19 -0500 (EST)
-Date: Wed, 13 Nov 2019 18:46:19 -0500 (EST)
-From: Karen Lewellen <klewellen@shellworld.net>
+ by panix1.panix.com (Postfix) with ESMTP id 47D1Zy0LQQzcbV
+ for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
+Date: Wed, 13 Nov 2019 18:50:49 -0500
+From: Jude DaShiell <jdashiel@panix.com>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: cannot go to google search results with lynx 
-In-Reply-To: <alpine.DEB.2.21.1.1911131209350.30457@willempc.meraka.csir.co.za>
-Message-ID: <Pine.LNX.4.64.1911131845100.770@server2.shellworld.net>
+Subject: Re: cannot go to google search results with lynx
+In-Reply-To: <Pine.LNX.4.64.1911131845100.770@server2.shellworld.net>
+Message-ID: <alpine.NEB.2.21.1911131848530.2570@panix1.panix.com>
 References: <alpine.DEB.2.21.1.1911131209350.30457@willempc.meraka.csir.co.za>
+ <Pine.LNX.4.64.1911131845100.770@server2.shellworld.net>
 MIME-Version: 1.0
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
@@ -43,37 +47,60 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Granted, I am not sure where you are trying.
-Although things disapeared eaarlier today, as of a few moments ago things 
-seem to be back.
-  perhaps try again?
+There is one particular piece of ransomware specifically attacking
+servers and it could have attacked google servers.  I can't say this is
+a change in google configuration or servers being compromised or a
+combination of both.
 
+On Wed, 13 Nov 2019, Karen Lewellen wrote:
 
-
-On Wed, 13 Nov 2019, Willem van der Walt wrote:
-
+> Date: Wed, 13 Nov 2019 18:46:19
+> From: Karen Lewellen <klewellen@shellworld.net>
+> Reply-To: Speakup is a screen review system for Linux.
+>     <speakup@linux-speakup.org>
+> To: Speakup is a screen review system for Linux. <speakup@linux-speakup.org>
+> Subject: Re: cannot go to google search results with lynx
 >
-> Hi, Willem here.
-> In the last few days, the google search results through lynx became unusable.
-> Does anyone else also experience this?
-> If so, is there a work-around apart from using another browser?
-> TIA, Willem
+> Granted, I am not sure where you are trying.
+> Although things disapeared eaarlier today, as of a few moments ago things seem
+> to be back.
+>  perhaps try again?
 >
 >
 >
+> On Wed, 13 Nov 2019, Willem van der Walt wrote:
+>
+> >
+> > Hi, Willem here.
+> > In the last few days, the google search results through lynx became
+> > unusable.
+> > Does anyone else also experience this?
+> > If so, is there a work-around apart from using another browser?
+> > TIA, Willem
+> >
+> >
+> >
+> > _______________________________________________
+> > Speakup mailing list
+> > Speakup@linux-speakup.org
+> > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+> >
+> >
+> >
 > _______________________________________________
 > Speakup mailing list
 > Speakup@linux-speakup.org
 > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
 >
->
->
+
+-- 
+
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
