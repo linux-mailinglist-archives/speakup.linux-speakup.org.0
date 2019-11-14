@@ -1,38 +1,77 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9D208FBCB6
-	for <lists+speakup@lfdr.de>; Thu, 14 Nov 2019 00:51:31 +0100 (CET)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id A2AFEFBEE8
+	for <lists+speakup@lfdr.de>; Thu, 14 Nov 2019 06:02:35 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D134C1C46BF; Wed, 13 Nov 2019 18:51:30 -0500 (EST)
+	id 1F9C81C46B0; Thu, 14 Nov 2019 00:02:35 -0500 (EST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=fastmail.fm header.i=@fastmail.fm header.b="fAk68c+I";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.b="D0ypWL7u";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1F3741C470C;
-	Wed, 13 Nov 2019 18:50:54 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 811321C46B8;
+	Thu, 14 Nov 2019 00:01:17 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id A52951C4696; Wed, 13 Nov 2019 18:50:51 -0500 (EST)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
- by befuddled.reisers.ca (Postfix) with ESMTPS id BC4CC1C43BB
- for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
- by mailbackend.panix.com (Postfix) with ESMTP id 47D1Zy1smvz1dRF
- for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
-Received: by panix1.panix.com (Postfix, from userid 20712)
- id 47D1Zy0dKQzcbW; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
- by panix1.panix.com (Postfix) with ESMTP id 47D1Zy0LQQzcbV
- for <speakup@linux-speakup.org>; Wed, 13 Nov 2019 18:50:50 -0500 (EST)
-Date: Wed, 13 Nov 2019 18:50:49 -0500
-From: Jude DaShiell <jdashiel@panix.com>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+ id 65CC61C4384; Thu, 14 Nov 2019 00:01:10 -0500 (EST)
+Received: from out3-smtp.messagingengine.com (out3-smtp.messagingengine.com
+ [66.111.4.27])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 7A9D71C31E1
+ for <speakup@linux-speakup.org>; Thu, 14 Nov 2019 00:01:07 -0500 (EST)
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
+ by mailout.nyi.internal (Postfix) with ESMTP id BC11B21F82
+ for <speakup@linux-speakup.org>; Thu, 14 Nov 2019 00:01:04 -0500 (EST)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute2.internal (MEProxy); Thu, 14 Nov 2019 00:01:04 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fastmail.fm; h=
+ date:from:to:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm1; bh=4R9efwFI26hi5pptR4QgBrc91Rv
+ Qbicw6w0TlK1N/dY=; b=fAk68c+IK3u6InBkj1Y0RRRRLR145E1dEXz6Y6oR1dD
+ 682s5A9dqlJuui2BC7YIWV/+Ael7nP7LGFpv6R9NGCHUXj/Au+4iqNe01obS86d7
+ e5ce44sNerGKAdarPdAvhyMStIm8/kYZ71dbzqTySfJ4zB4rAU8t/eLFc88HOOmG
+ 9QWBbAWMgF9j8rppd/Dx5FpPgvTNp02tzrX/s18HbA9k6GU23nkNq1J4R7ojtrdl
+ /0Uq+d9omT2oQp242xQJLPGIDEMSjBSj7p6kE0UV2uf4c/2tJgvqGEqNA3LOlW2V
+ DH92lwCvxTlWFBEmDVrip/FVrWvCcvu3iiBW9TNXI/g==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=4R9efw
+ FI26hi5pptR4QgBrc91RvQbicw6w0TlK1N/dY=; b=D0ypWL7uf67OXiIKBPmfbY
+ +wzBnJvbmegw5JjcsiKWzGDKId51sDSKacZ0usiTxpXbOrUX/DRSqW1T3BUbaWPT
+ ArAYLSvjVGfMNNzTXFEb5oQb9lsaTz5LgWqtDheK9Nz6E1IoAR3E8I5fU6p4UN3r
+ uLOBUf0GPij3O3OovP5j7DXORBX1foSNOOnlBdqmAXdOTSrMAAnfNYPxxZ2SVM5k
+ phc6rKAzpH9JQXgzmNMBnh2EceEphS4qnG2rgV0oOUu6bqLleJEwtUgcz+fQH+2E
+ qpUR8VWIlUOT/M4HUQo9nKT3V3xEUzMZTqGyNjtt/YB13rJLcBUnLK92E5QGvlVw
+ ==
+X-ME-Sender: <xms:kN_MXeV9HEtGqsGk7UCvRFmCVs4XbJI3IaZEwfR0cojlUllJLek22Q>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrudefvddgjeelucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkfhggtggujggfsehttd
+ ertddtredvnecuhfhrohhmpefvohhmucfhohiflhgvuceofigriehivhhgthhfsehfrghs
+ thhmrghilhdrfhhmqeenucffohhmrghinheplhhinhhugidqshhpvggrkhhuphdrohhrgh
+ enucfkphepgeejrddvtdekrddugeeirdeftdenucfrrghrrghmpehmrghilhhfrhhomhep
+ figriehivhhgthhfsehfrghsthhmrghilhdrfhhmnecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:kN_MXe1NftrwC7qMasthmqKJamYl_QHaoO0FDd0AaAY6yEyKdoMaGw>
+ <xmx:kN_MXdYI8Z_mNadijkFH_29R6FAxXFIjYKrxRPsAeNboAUF7s4_NUw>
+ <xmx:kN_MXZoQ2G_XNdYQt8osNOcUbX7JT8OCP737rMmfnQ19YnQwcQSSWA>
+ <xmx:kN_MXbewQBHujGoB1VWdGwQlriom34BHL_9wBvfSEGFyPpdHA-t0Rw>
+Received: from qlf.suddenlink.net (unknown [47.208.146.30])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 24B173060065
+ for <speakup@linux-speakup.org>; Thu, 14 Nov 2019 00:01:04 -0500 (EST)
+Date: Wed, 13 Nov 2019 21:00:55 -0800
+From: Tom Fowle <wa6ivgtf@fastmail.fm>
+To: speakup@linux-speakup.org
 Subject: Re: cannot go to google search results with lynx
-In-Reply-To: <Pine.LNX.4.64.1911131845100.770@server2.shellworld.net>
-Message-ID: <alpine.NEB.2.21.1911131848530.2570@panix1.panix.com>
+Message-ID: <20191114050055.GA1138@qlf.suddenlink.net>
+Mail-Followup-To: speakup@linux-speakup.org
 References: <alpine.DEB.2.21.1.1911131209350.30457@willempc.meraka.csir.co.za>
- <Pine.LNX.4.64.1911131845100.770@server2.shellworld.net>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <alpine.DEB.2.21.1.1911131209350.30457@willempc.meraka.csir.co.za>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -53,54 +92,32 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-There is one particular piece of ransomware specifically attacking
-servers and it could have attacked google servers.  I can't say this is
-a change in google configuration or servers being compromised or a
-combination of both.
+Willem,
+I simply put in "solder" in the google search box and hit "I'm feeling
+lucky"
+came up with a definition of solder and lots of stuff including catalog
+entries from Mouser etc.
+using lynx-2.8.8
 
-On Wed, 13 Nov 2019, Karen Lewellen wrote:
+I did allow and accept cookies and "invalid cookie paths"
+what ever those are.
 
-> Date: Wed, 13 Nov 2019 18:46:19
-> From: Karen Lewellen <klewellen@shellworld.net>
-> Reply-To: Speakup is a screen review system for Linux.
->     <speakup@linux-speakup.org>
-> To: Speakup is a screen review system for Linux. <speakup@linux-speakup.org>
-> Subject: Re: cannot go to google search results with lynx
->
-> Granted, I am not sure where you are trying.
-> Although things disapeared eaarlier today, as of a few moments ago things seem
-> to be back.
->  perhaps try again?
->
->
->
-> On Wed, 13 Nov 2019, Willem van der Walt wrote:
->
-> >
-> > Hi, Willem here.
-> > In the last few days, the google search results through lynx became
-> > unusable.
-> > Does anyone else also experience this?
-> > If so, is there a work-around apart from using another browser?
-> > TIA, Willem
-> >
-> >
-> >
-> > _______________________________________________
-> > Speakup mailing list
-> > Speakup@linux-speakup.org
-> > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-> >
-> >
-> >
+Tom Fowle WA6IVG
+
+On Wed, Nov 13, 2019 at 12:10:56PM +0200, Willem van der Walt wrote:
+> 
+> Hi, Willem here.
+> In the last few days, the google search results through lynx became unusable.
+> Does anyone else also experience this?
+> If so, is there a work-around apart from using another browser?
+> TIA, Willem
+> 
+> 
+> 
 > _______________________________________________
 > Speakup mailing list
 > Speakup@linux-speakup.org
 > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->
-
--- 
-
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
