@@ -2,30 +2,32 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AC16410D816
-	for <lists+speakup@lfdr.de>; Fri, 29 Nov 2019 16:50:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 816E810D82A
+	for <lists+speakup@lfdr.de>; Fri, 29 Nov 2019 17:00:56 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E60B31C4736; Fri, 29 Nov 2019 10:50:33 -0500 (EST)
+	id BD45B1C472C; Fri, 29 Nov 2019 11:00:55 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 95C6D1C473A;
-	Fri, 29 Nov 2019 10:50:22 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id A69251C473C;
+	Fri, 29 Nov 2019 11:00:43 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id C875B1C43F6; Fri, 29 Nov 2019 10:50:09 -0500 (EST)
+ id 53D851C4441; Fri, 29 Nov 2019 11:00:41 -0500 (EST)
 Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 9C23B1C26CA
- for <speakup@linux-speakup.org>; Fri, 29 Nov 2019 10:50:08 -0500 (EST)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
- id 610FB8C04F2; Fri, 29 Nov 2019 15:50:01 +0000 (UTC)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 8B2501C43E7
+ for <speakup@linux-speakup.org>; Fri, 29 Nov 2019 11:00:40 -0500 (EST)
+Received: by server2.shellworld.net (Postfix, from userid 1028)
+ id B99768C04F2; Fri, 29 Nov 2019 16:00:03 +0000 (UTC)
 Received: from localhost (localhost [127.0.0.1])
- by server2.shellworld.net (Postfix) with ESMTP id 608B88C01E3
- for <speakup@linux-speakup.org>; Fri, 29 Nov 2019 10:50:01 -0500 (EST)
-Date: Fri, 29 Nov 2019 10:50:01 -0500 (EST)
-From: Karen Lewellen <klewellen@shellworld.net>
+ by server2.shellworld.net (Postfix) with ESMTP id B41938C01E3
+ for <speakup@linux-speakup.org>; Fri, 29 Nov 2019 08:00:03 -0800 (PST)
+Date: Fri, 29 Nov 2019 08:00:03 -0800
+From: Chime Hart <chime@hubert-humphrey.com>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: ot: slightly, improving how the Links browser speaks?
-Message-ID: <Pine.LNX.4.64.1911291041280.2952@server2.shellworld.net>
+Subject: Re: ot: slightly, improving how the Links browser speaks?
+In-Reply-To: <Pine.LNX.4.64.1911291041280.2952@server2.shellworld.net>
+Message-ID: <Pine.LNX.4.64.1911290755520.3103@server2.shellworld.net>
+References: <Pine.LNX.4.64.1911291041280.2952@server2.shellworld.net>
 MIME-Version: 1.0
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
@@ -47,24 +49,11 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi folks,
-Hope to ask this clearly, as it may also apply to speakup, at least for 
-those   using  a command line setup.
-My goal mirrors the command line options included in some tools that write 
-information to the screen in a way that speech happens largely 
-automatically.
-For example, some programs call this writing to the BIOS, or used to do as 
-much.
-My ssh telnet client for example has a -b option that performs the 
-function I desire.
-I am seeking such a command line option for the links  as in the chain 
-browser.  I believe? it should exist because there is a command line 
-option that establishes numbered links.
-hoping that my question is clear, can anyone tell me what command line 
-option improves  how content is spoken when using the links browser?
-Thanks,
-Karen
-
+While I cannot answer Karens question, I can say that many times, listening to L 
+Y N X in an options or drop down list, is not always easy. Sometimes options are 
+jumbled or hard to pick out. Almost sounds as if an x gets added to many items. 
+Obviously I have never been a fan of these sorts of drop down menus.
+Chime
 
 _______________________________________________
 Speakup mailing list
