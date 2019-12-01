@@ -2,36 +2,51 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id EF22C10DFEE
-	for <lists+speakup@lfdr.de>; Sun,  1 Dec 2019 01:29:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id D3BFE10E274
+	for <lists+speakup@lfdr.de>; Sun,  1 Dec 2019 17:05:17 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 105DE1C4732; Sat, 30 Nov 2019 19:29:09 -0500 (EST)
+	id A079C1C476C; Sun,  1 Dec 2019 11:05:16 -0500 (EST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (1024-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.b="fnqUmkEW";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8D3A21C472B;
-	Sat, 30 Nov 2019 19:28:14 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6E4261C4778;
+	Sun,  1 Dec 2019 11:04:39 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id E2CE81C4728; Sat, 30 Nov 2019 19:28:04 -0500 (EST)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 32C711C435A
- for <speakup@linux-speakup.org>; Sat, 30 Nov 2019 19:28:01 -0500 (EST)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
- id EB9E18C0452; Sun,  1 Dec 2019 00:27:54 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
- by server2.shellworld.net (Postfix) with ESMTP id E8EA48C0141
- for <speakup@linux-speakup.org>; Sat, 30 Nov 2019 19:27:54 -0500 (EST)
-Date: Sat, 30 Nov 2019 19:27:54 -0500 (EST)
-From: Karen Lewellen <klewellen@shellworld.net>
+ id 7669A1C4754; Sun,  1 Dec 2019 11:04:27 -0500 (EST)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id C0ED41C474C
+ for <speakup@linux-speakup.org>; Sun,  1 Dec 2019 11:04:23 -0500 (EST)
+Received: from [192.168.1.243] (unknown
+ [IPv6:2601:85:c380:11f6:2462:9cdf:fd09:d76f])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by svr.jasonjgw.net (Postfix) with ESMTPSA id CF0B644E01D
+ for <speakup@linux-speakup.org>; Sun,  1 Dec 2019 16:03:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+ s=mail; t=1575216231;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=4g9QMZM6BflTJydHEple7WEsm0d8spV1dEZewde82wc=;
+ b=fnqUmkEWlSfDA9r2xrqydVY3lyJl/eeB2m3FPEzN1W26yLJTZyH2r8Sfn0+IOYvKvBjZg5
+ 79l6fJpWTr84vdHFirN7V6o3z0HbWkHPxEKWoWm0QL4wv8Uf619Y2rwvbenrUzXwSjSVvU
+ Jk+DFIsJciVbt4oxpDFWY1mHLzgjqyk=
+User-Agent: Microsoft-MacOutlook/10.1f.0.191110
+Date: Sun, 01 Dec 2019 11:03:51 -0500
+Subject: Re: slightly, improving how the Links browser speaks?
+From: Jason White <jason@jasonjgw.net>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: improving the speach output of Links the chain?
-In-Reply-To: <20191130050126.GA1054@qlf.suddenlink.net>
-Message-ID: <Pine.LNX.4.64.1911301925070.2274@server2.shellworld.net>
-References: <mailman.1.1575046802.6422.speakup@linux-speakup.org>
- <20191129184957.GB24896@panix.com>
- <Pine.LNX.4.64.1911291353180.6589@server2.shellworld.net>
- <20191130050126.GA1054@qlf.suddenlink.net>
-MIME-Version: 1.0
+Message-ID: <E7C9BF53-C9A9-4486-9743-663752BCA8A9@jasonjgw.net>
+Thread-Topic: slightly, improving how the Links browser speaks?
+References: <Pine.LNX.4.64.1911291041280.2952@server2.shellworld.net>
+In-Reply-To: <Pine.LNX.4.64.1911291041280.2952@server2.shellworld.net>
+Mime-version: 1.0
+Authentication-Results: svr.jasonjgw.net;
+ auth=pass smtp.auth=jason smtp.mailfrom=jason@jasonjgw.net
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -46,112 +61,42 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-hi tom,
-I will search for that option.
-I recall that there is a braille terminal option, as I am not a braille 
-user I cannot speak to its function.  Still it may provide something 
-comparative.  Also there is a block cursor  option too.
-Frankly I need a list to ask questions as not everything is discussed in 
-the users guide.
-Thanks again,
-Karen
-
-
-
-On Fri, 29 Nov 2019, Tom Fowle wrote:
-
-> Hi Karen,
-> If you're using dos, you must be using a dos screen reader. I think you want
-> an option like lynx's "show cursor" option which causes the browser to make
-> the system "hardware cursor" follow the browser's cursor.  This makes it
-> more likely your dos screen reader will be able to find the correct text to
-> speak.
->
-> Sorry I can't find a command line option in links that does that but
-> perhaps my discription will guide you to it.
-> It's likely the option is in an option screen as it is in lynx's Alt-o
->
-> Hope this helps a bit
->
-> Tom Fowle WA6IVG
->
->
-> On Fri, Nov 29, 2019 at 01:57:07PM -0500, Karen Lewellen wrote:
->> As stated before though,  I get no clutter  on websites when using  well
->> anything I use.
->> I felt there was an option for links the chain, because when I use the
->> browser  on shellworld, information gets spoken, i. e.  the progress  of my
->> reaching  a website.
->> I will ask on the Dos Ain't Dead list instead, since my compile of Links the
->> chain is for DOS.
->> Karen
->>
->>
->> On Fri, 29 Nov 2019, Rudy Vener wrote:
->>
->>> Hi Karen,
->>>
->>> I am not aware of any arguments for links the chain to improve readability.
->>>
->>> With either links (the chain) , lynx (the cat), or w3m,
->>> I get the best results with a combination of browser keys to get me
->>> close to the target text, and speakup keys. to actually read it.
->>> With all the text clutter on most pages, your best bet is to become familiar with
->>> specific landmarks on the site you want to review so you
->>> can jump straight to your target using the text search functions.
->>> For example, I use slash day of week, /Friday to
->>> jump to the latest article links on realclearpolitics.com.
->>>
->>>
->>> On Fri, Nov 29, 2019 at 12:00:02PM -0500, speakup-request@linux-speakup.org wrote:
->>>> Subject: ot: slightly, improving how the Links browser speaks?
->>>>
->>>> Hi folks,
->>>> Hope to ask this clearly, as it may also apply to speakup, at least for
->>>> those   using  a command line setup.
->>>> My goal mirrors the command line options included in some tools that write
->>>> information to the screen in a way that speech happens largely
->>>> automatically.
->>>> For example, some programs call this writing to the BIOS, or used to do as
->>>> much.
->>>> My ssh telnet client for example has a -b option that performs the
->>>> function I desire.
->>>> I am seeking such a command line option for the links  as in the chain
->>>> browser.  I believe? it should exist because there is a command line
->>>> option that establishes numbered links.
->>>> hoping that my question is clear, can anyone tell me what command line
->>>> option improves  how content is spoken when using the links browser?
->>>> Thanks,
->>>> Karen
->>>>
->>>>
->>>
->>> --
->>> Rudy Vener
->>> Website: http://www.rudyvener.com
->>> _______________________________________________
->>> Speakup mailing list
->>> Speakup@linux-speakup.org
->>> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->>>
->>>
->> _______________________________________________
->> Speakup mailing list
->> Speakup@linux-speakup.org
->> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->
->
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+SSBkb24ndCBrbm93IGhvdyBMaW5rcyBpcyBsYWlkIG91dCBvbiBzY3JlZW4sIGJ1dCBhc3N1bWlu
+ZyB0aGF0IGl0IGhhcyBhIGZpeGVkLXNpemUgd2luZG93IGZvciB0aGUgV2ViIHBhZ2UgY29udGVu
+dCwgeW91IGNvdWxkIHNldCB1cCBhIHdpbmRvdyBpbiB5b3VyIERPUyBzY3JlZW4gcmVhZGVyIHRo
+YXQgY292ZXJzIHRoYXQgYXJlYSwgdGhlbiByZWFkIHRoYXQgd2luZG93IHdoZW5ldmVyIHlvdSBu
+ZWVkIHRvIC0gZm9yIGV4YW1wbGUsIHdoZW4geW91IG1vdmUgdG8gYSBuZXcgc2NyZWVuIG9mIHRl
+eHQuIAoKVGhpcyBpc24ndCBpZGVhbCwgb2YgY291cnNlLCBidXQgaXQgd291bGQgYmUgYmV0dGVy
+IHRoYW4gcmV2aWV3aW5nIGxpbmUgYnkgbGluZS4KCkkgcmVtZW1iZXIgaGF2aW5nIERvc2x5bngs
+IGJ1dCBJJ20gbm90IHN1cmUgd2hldGhlciBJIGV2ZXIgaGFkIExpbmtzICh0aGUgY2hhaW4pIG9u
+IG15IERPUyBzeXN0ZW0uIEkgZGlkIGhhdmUgRE9TIHZlcnNpb25zIG9mIGEgbG90IG9mIFVuaXgt
+YmFzZWQgcHJvZ3JhbXMuCgrvu79PbiAxMS8yOS8xOSwgMTA6NTEsICJTcGVha3VwIG9uIGJlaGFs
+ZiBvZiBLYXJlbiBMZXdlbGxlbiIgPHNwZWFrdXAtYm91bmNlc0BsaW51eC1zcGVha3VwLm9yZyBv
+biBiZWhhbGYgb2Yga2xld2VsbGVuQHNoZWxsd29ybGQubmV0PiB3cm90ZToKCiAgICBIaSBmb2xr
+cywKICAgIEhvcGUgdG8gYXNrIHRoaXMgY2xlYXJseSwgYXMgaXQgbWF5IGFsc28gYXBwbHkgdG8g
+c3BlYWt1cCwgYXQgbGVhc3QgZm9yIAogICAgdGhvc2UgICB1c2luZyAgYSBjb21tYW5kIGxpbmUg
+c2V0dXAuCiAgICBNeSBnb2FsIG1pcnJvcnMgdGhlIGNvbW1hbmQgbGluZSBvcHRpb25zIGluY2x1
+ZGVkIGluIHNvbWUgdG9vbHMgdGhhdCB3cml0ZSAKICAgIGluZm9ybWF0aW9uIHRvIHRoZSBzY3Jl
+ZW4gaW4gYSB3YXkgdGhhdCBzcGVlY2ggaGFwcGVucyBsYXJnZWx5IAogICAgYXV0b21hdGljYWxs
+eS4KICAgIEZvciBleGFtcGxlLCBzb21lIHByb2dyYW1zIGNhbGwgdGhpcyB3cml0aW5nIHRvIHRo
+ZSBCSU9TLCBvciB1c2VkIHRvIGRvIGFzIAogICAgbXVjaC4KICAgIE15IHNzaCB0ZWxuZXQgY2xp
+ZW50IGZvciBleGFtcGxlIGhhcyBhIC1iIG9wdGlvbiB0aGF0IHBlcmZvcm1zIHRoZSAKICAgIGZ1
+bmN0aW9uIEkgZGVzaXJlLgogICAgSSBhbSBzZWVraW5nIHN1Y2ggYSBjb21tYW5kIGxpbmUgb3B0
+aW9uIGZvciB0aGUgbGlua3MgIGFzIGluIHRoZSBjaGFpbiAKICAgIGJyb3dzZXIuICBJIGJlbGll
+dmU/IGl0IHNob3VsZCBleGlzdCBiZWNhdXNlIHRoZXJlIGlzIGEgY29tbWFuZCBsaW5lIAogICAg
+b3B0aW9uIHRoYXQgZXN0YWJsaXNoZXMgbnVtYmVyZWQgbGlua3MuCiAgICBob3BpbmcgdGhhdCBt
+eSBxdWVzdGlvbiBpcyBjbGVhciwgY2FuIGFueW9uZSB0ZWxsIG1lIHdoYXQgY29tbWFuZCBsaW5l
+IAogICAgb3B0aW9uIGltcHJvdmVzICBob3cgY29udGVudCBpcyBzcG9rZW4gd2hlbiB1c2luZyB0
+aGUgbGlua3MgYnJvd3Nlcj8KICAgIFRoYW5rcywKICAgIEthcmVuCiAgICAKICAgIAogICAgX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KICAgIFNwZWFrdXAg
+bWFpbGluZyBsaXN0CiAgICBTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCiAgICBodHRwOi8vbGlu
+dXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAKICAgIAoKCl9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fClNwZWFrdXAgbWFp
+bGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xpbnV4LXNwZWFrdXAu
+b3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCg==
