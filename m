@@ -2,35 +2,37 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id AC8A41266AF
-	for <lists+speakup@lfdr.de>; Thu, 19 Dec 2019 17:20:34 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id C76C2126729
+	for <lists+speakup@lfdr.de>; Thu, 19 Dec 2019 17:33:24 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 14C651C469F; Thu, 19 Dec 2019 11:20:34 -0500 (EST)
+	id 19E191C4664; Thu, 19 Dec 2019 11:33:24 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 989D91C46A2;
-	Thu, 19 Dec 2019 11:19:59 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6AA781C469C;
+	Thu, 19 Dec 2019 11:32:31 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 8BA871C3369; Thu, 19 Dec 2019 11:19:56 -0500 (EST)
-Received: from smtp4-g21.free.fr (smtp4-g21.free.fr [212.27.42.4])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 56F3C1C0136
- for <speakup@linux-speakup.org>; Thu, 19 Dec 2019 11:19:54 -0500 (EST)
-Received: from slint.slint.fr (unknown [176.172.247.100])
- (Authenticated sender: appartement.cdm)
- by smtp4-g21.free.fr (Postfix) with ESMTPSA id C0F2019F59E
- for <speakup@linux-speakup.org>; Thu, 19 Dec 2019 17:19:50 +0100 (CET)
+ id A452B1C3369; Thu, 19 Dec 2019 11:32:27 -0500 (EST)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id DCBBD1C0136
+ for <speakup@linux-speakup.org>; Thu, 19 Dec 2019 11:32:25 -0500 (EST)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+ by mailbackend.panix.com (Postfix) with ESMTP id 47dy8T42Szzmnt
+ for <speakup@linux-speakup.org>; Thu, 19 Dec 2019 11:32:25 -0500 (EST)
+Received: by panix1.panix.com (Postfix, from userid 20712)
+ id 47dy8T2pLRzcbc; Thu, 19 Dec 2019 11:32:25 -0500 (EST)
+Received: from localhost (localhost [127.0.0.1])
+ by panix1.panix.com (Postfix) with ESMTP id 47dy8T2MW3zcbV
+ for <speakup@linux-speakup.org>; Thu, 19 Dec 2019 11:32:25 -0500 (EST)
+Date: Thu, 19 Dec 2019 11:32:25 -0500
+From: Jude DaShiell <jdashiel@panix.com>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: audionoir.sh
-To: speakup@linux-speakup.org
+In-Reply-To: <cae926b2-99c7-d1e1-ebfc-d2fb2bb8932d@slint.fr>
+Message-ID: <alpine.NEB.2.21.1912191130270.5097@panix1.panix.com>
 References: <alpine.NEB.2.21.1912191043150.10818@panix1.panix.com>
-From: Didier Spaier <didier@slint.fr>
-Message-ID: <cae926b2-99c7-d1e1-ebfc-d2fb2bb8932d@slint.fr>
-Date: Thu, 19 Dec 2019 17:19:50 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+ <cae926b2-99c7-d1e1-ebfc-d2fb2bb8932d@slint.fr>
 MIME-Version: 1.0
-In-Reply-To: <alpine.NEB.2.21.1912191043150.10818@panix1.panix.com>
-Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -45,23 +47,55 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SGkgSnVkZSwKCk1heWJlIHlvdSBpbnRlbmRlZCB0byBwb3N0IGluIGFub3RoZXIgbGlzdCwgbGlr
-ZSB0aGUgU2xpbnQgbWFpbGluZyBsaXN0PwoKSSBhc2ssIGFzIHRoaXMgd29ya3MgYnV0IGRvZXMg
-bm90IHNlZW0gdG8gYmUgaW52b2x2ZSBzcGVha3VwLgoKQmVzdCwKCkRpZGllcgoKTGUgMTkvMTIv
-MTkgw6AgMTY6NDUsIEp1ZGUgRGFTaGllbGwgYSDDqWNyaXTCoDoKPiBIZXJlJ3MgYSBzY3JpcHQg
-dGhhdCBwbGF5cyBhdWRpb25vaXIuc2ggbm93LiAgTW9kaWZ5IHRoZSBzdGF0aW9uIHZhcmlhYmxl
-Cj4gdGhvdWdoIHRvIGFub3RoZXIgd29ya2luZyByYWRpbyBzdHJlYW0gYW5kIHlvdSBjYW4gZ2V0
-IGl0IHBsYXlpbmcgdGhhdAo+IHN0cmVhbSB0b28uCj4gCj4gIyEvdXNyL2Jpbi9lbnYgYmFzaAo+
-ICMgZmlsZTogYXVkaW9ub2lyLnNoIC0gbGlzdGVuIHRvIGF1ZGlvbm9pciByYWRpbyBzY3JpcHQK
-PiAjIGZyb206IHJhZGlvLnNoIC0gdGVtcGxhdGUgZm9yIG5ldyBzdGF0aW9ucwo+IHN0YXRpb249
-Imh0dHA6Ly8xOTguMjQ1LjYxLjEyMzo4MDAwL25vaXIvIgo+IHJ2bGMgLS1xdWlldCAtLW5vdmlk
-ZW8gLS1rZXktdm9sLXVwIDEyMyAtLW5vLXNraW5uZWQtcGxheWxpc3QgJHN0YXRpb24KPiAKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KU3BlYWt1cCBtYWls
-aW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgtc3BlYWt1cC5v
-cmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
+In the past other projects not related to speakup had been made
+available some of which on the speakup web page itself so that was my
+reason for posting this script here.
+
+On Thu, 19 Dec 2019, Didier Spaier wrote:
+
+> Date: Thu, 19 Dec 2019 11:19:50
+> From: Didier Spaier <didier@slint.fr>
+> Reply-To: Speakup is a screen review system for Linux.
+>     <speakup@linux-speakup.org>
+> To: speakup@linux-speakup.org
+> Subject: Re: audionoir.sh
+>
+> Hi Jude,
+>
+> Maybe you intended to post in another list, like the Slint mailing list?
+>
+> I ask, as this works but does not seem to be involve speakup.
+>
+> Best,
+>
+> Didier
+>
+> Le 19/12/19 ? 16:45, Jude DaShiell a ?crit?:
+> > Here's a script that plays audionoir.sh now.  Modify the station variable
+> > though to another working radio stream and you can get it playing that
+> > stream too.
+> >
+> > #!/usr/bin/env bash
+> > # file: audionoir.sh - listen to audionoir radio script
+> > # from: radio.sh - template for new stations
+> > station="http://198.245.61.123:8000/noir/"
+> > rvlc --quiet --novideo --key-vol-up 123 --no-skinned-playlist $station
+> >
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+>
+
+-- 
+
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
