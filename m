@@ -1,57 +1,39 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 2AC6A12720F
-	for <lists+speakup@lfdr.de>; Fri, 20 Dec 2019 01:12:50 +0100 (CET)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id 963351275CC
+	for <lists+speakup@lfdr.de>; Fri, 20 Dec 2019 07:33:17 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2C37C1C46A6; Thu, 19 Dec 2019 19:12:49 -0500 (EST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="XrmUCmS3";
-	dkim-atps=neutral
+	id 2231B1C46A3; Fri, 20 Dec 2019 01:33:17 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 651FC1C4691;
-	Thu, 19 Dec 2019 19:12:36 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 66E9B1C4693;
+	Fri, 20 Dec 2019 01:32:48 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 090E71C3386; Thu, 19 Dec 2019 19:12:23 -0500 (EST)
-Received: from vserver.gregn.net (vserver.gregn.net [IPv6:2607:f2f8:a260::2])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 659531C0136
- for <speakup@linux-speakup.org>; Thu, 19 Dec 2019 19:12:20 -0500 (EST)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:8896:7dab:dd82:21ac])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id A857938ED
- for <speakup@linux-speakup.org>; Thu, 19 Dec 2019 16:15:12 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1576800912; bh=hZrvjbWv+JA3LIlEDK4SlXzpuDcWOBdaxP8Izw9L+rM=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=XrmUCmS3zdgCVJ89N+6I3Q+RybeXwMH+oBowchfeK9pimUxSNqFbbwy2qB0edaSF+
- QS9Jezbha+nnwls5OIVjuAElY54AK/eK5+gswnVZqmw/8W02SALPUksly7TDwM4d4k
- mc7Klw/THyM+nqetsCGZO70fWpyQ6jJCsQRrRD7eF1HfevIjmd0mda0ZO9H2VwRy1K
- g5491nZU6eRHk9kjVFxp1l8gpEDqg5klr2iU9RvSNQR2pR7dXkHbjXZSVDlXZM9P1J
- dpzDUALYPOVjepnX4DzzbU3nFusYcjK3Wy0v0tzlQlhOebDEg/Emfe7lPQAM6Sq8JW
- XPJhBxdJ5kcMA==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>) id 1ii5ty-0001eW-HM
- for speakup@linux-speakup.org; Thu, 19 Dec 2019 17:12:18 -0700
-Date: Thu, 19 Dec 2019 17:12:18 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+ id 941F41C337A; Fri, 20 Dec 2019 01:32:39 -0500 (EST)
+Received: from smtp4-g21.free.fr (smtp4-g21.free.fr [IPv6:2a01:e0c:1:1599::13])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 6FB051C0136
+ for <speakup@linux-speakup.org>; Fri, 20 Dec 2019 01:32:37 -0500 (EST)
+Received: from slint.slint.fr (unknown [176.172.247.100])
+ (Authenticated sender: appartement.cdm)
+ by smtp4-g21.free.fr (Postfix) with ESMTPSA id C8A8519F58D
+ for <speakup@linux-speakup.org>; Fri, 20 Dec 2019 07:32:31 +0100 (CET)
 Subject: Re: audionoir.sh
-Message-ID: <20191220001218.GA5531@gregn.net>
+To: speakup@linux-speakup.org
 References: <alpine.NEB.2.21.1912191043150.10818@panix1.panix.com>
  <cae926b2-99c7-d1e1-ebfc-d2fb2bb8932d@slint.fr>
  <alpine.NEB.2.21.1912191130270.5097@panix1.panix.com>
+ <20191220001218.GA5531@gregn.net>
+From: Didier Spaier <didier@slint.fr>
+Message-ID: <1445baa1-7312-e4b9-ad4d-ba32117d2ee0@slint.fr>
+Date: Fri, 20 Dec 2019 07:32:30 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <alpine.NEB.2.21.1912191130270.5097@panix1.panix.com>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.101.4 at vserver
-X-Virus-Status: Clean
+In-Reply-To: <20191220001218.GA5531@gregn.net>
+Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,35 +48,24 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Here's a refresher from the list archives:
-
-<http://linux-speakup.org/pipermail/speakup/2007-April/046531.html>
-
-Greg
-
-
-On Thu, Dec 19, 2019 at 11:32:25AM -0500, Jude DaShiell wrote:
-> In the past other projects not related to speakup had been made
-> available some of which on the speakup web page itself so that was my
-> reason for posting this script here.
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+V2VsbCwgSSBjZXJ0YWlubHkgZG9uJ3Qgd2FudCB0byBiZSBwZXJjZWl2ZWQgYnkgS2lyayBvciBh
+bnlvbmUgZWxzZSBhcyBhCmxpc3QgTmF6aSwgc29ycnkgaWYgbXkgYW5zd2VyIGxlYWRlZCB0byBz
+dWNoIGEgY29uY2x1c2lvbi4KCkkgc2hvdWxkIGhhdmUgaW5zdGVhZCBqdXN0IHN1Z2dlc3RlZCB0
+aGF0IEp1ZGUgcG9zdGVkIGhpcyB0aXAgKmFsc28qIGluCm90aGVyIGxpc3RzLCBteSBtaXN0YWtl
+LgoKQmVzdCByZWdhcmRzLAoKRGlkaWVyCgpMZSAyMC8xMi8xOSDDoCAwMToxMiwgR3JlZ29yeSBO
+b3dhayBhIMOpY3JpdMKgOgo+IEhlcmUncyBhIHJlZnJlc2hlciBmcm9tIHRoZSBsaXN0IGFyY2hp
+dmVzOgo+IAo+IDxodHRwOi8vbGludXgtc3BlYWt1cC5vcmcvcGlwZXJtYWlsL3NwZWFrdXAvMjAw
+Ny1BcHJpbC8wNDY1MzEuaHRtbD4KPiAKPiBHcmVnCj4gCj4gCj4gT24gVGh1LCBEZWMgMTksIDIw
+MTkgYXQgMTE6MzI6MjVBTSAtMDUwMCwgSnVkZSBEYVNoaWVsbCB3cm90ZToKPj4gSW4gdGhlIHBh
+c3Qgb3RoZXIgcHJvamVjdHMgbm90IHJlbGF0ZWQgdG8gc3BlYWt1cCBoYWQgYmVlbiBtYWRlCj4+
+IGF2YWlsYWJsZSBzb21lIG9mIHdoaWNoIG9uIHRoZSBzcGVha3VwIHdlYiBwYWdlIGl0c2VsZiBz
+byB0aGF0IHdhcyBteQo+PiByZWFzb24gZm9yIHBvc3RpbmcgdGhpcyBzY3JpcHQgaGVyZS4KX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KU3BlYWt1cCBtYWls
+aW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgtc3BlYWt1cC5v
+cmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
