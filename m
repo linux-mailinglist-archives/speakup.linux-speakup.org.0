@@ -2,38 +2,57 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 963351275CC
-	for <lists+speakup@lfdr.de>; Fri, 20 Dec 2019 07:33:17 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 1AAF01290F7
+	for <lists+speakup@lfdr.de>; Mon, 23 Dec 2019 03:46:59 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2231B1C46A3; Fri, 20 Dec 2019 01:33:17 -0500 (EST)
+	id ACE121C46B5; Sun, 22 Dec 2019 21:46:55 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1577069215;
+	bh=rpNZutp6J4MUGKHa8En40U8XWQzJULyV4MEw8WfwSrc=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
+	 List-Post:List-Help:List-Subscribe:Reply-To:From;
+	b=B7ebCRvyL78X7+U3XiOLMZ6XhZqTwvhumfNDLG10+4PdXN/00Sqgp7O1GH865o6dH
+	 kJ/D76E8CgJEuwxspeSkjwu644cDotJk9uwHJT4TcrHacWsmCWvZBHTLImwH8JUBeV
+	 4ytzlKohdogz/QmijNI9T2/mf50vUbBDcG2WmyNM=
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 66E9B1C4693;
-	Fri, 20 Dec 2019 01:32:48 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id BDD8E1C46A2;
+	Sun, 22 Dec 2019 21:46:43 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1577069203;
+	bh=rpNZutp6J4MUGKHa8En40U8XWQzJULyV4MEw8WfwSrc=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
+	 List-Post:List-Help:List-Subscribe:Reply-To:From;
+	b=Z2Bj3C2ieXytNFynr67fVFB86e6JdRmPRV3tiBGOc2RVci1CpZRg4dAzSIv6i8yCj
+	 bD5U+1/egNP1SBv1DweNW6q2Hmk1bCrkgd2MgwdQzxH+n4VeQwTft1Yx/R+kxsL9fO
+	 yN6bufQAuD3PoJDDMt/Kd65nuxwVJG1v9AIPmYXc=
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 941F41C337A; Fri, 20 Dec 2019 01:32:39 -0500 (EST)
-Received: from smtp4-g21.free.fr (smtp4-g21.free.fr [IPv6:2a01:e0c:1:1599::13])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 6FB051C0136
- for <speakup@linux-speakup.org>; Fri, 20 Dec 2019 01:32:37 -0500 (EST)
-Received: from slint.slint.fr (unknown [176.172.247.100])
- (Authenticated sender: appartement.cdm)
- by smtp4-g21.free.fr (Postfix) with ESMTPSA id C8A8519F58D
- for <speakup@linux-speakup.org>; Fri, 20 Dec 2019 07:32:31 +0100 (CET)
-Subject: Re: audionoir.sh
+ id A60581C469A; Sun, 22 Dec 2019 21:46:22 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+ s=befuddled; t=1577069182;
+ bh=xhwrCJ8Xoujoe8bKGVXlA5SOcfUUmtFzZXgR/ZGxOB0=;
+ h=Date:From:To:Subject:From;
+ b=nB4FLYN+lif3U1UzgDUHvu3KzHTuN08Qk3Gb5vFOdSE5YnCdwMVPC3Ma27plJx3fn
+ Jud7KzNOJ5bCma7hgakqLaiCmOeyyBI7/QENTJ3pUygzHLVEy6eaPLQ0pOUSz0vkWg
+ ClJ+44gntIlB3j+E2urMYBLDsNoB6/y8uWyPklY0=
+Received: from localhost (localhost [IPv6:::1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 67E081C0B50
+ for <speakup@linux-speakup.org>; Sun, 22 Dec 2019 21:46:18 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+ s=befuddled; t=1577069178;
+ bh=xhwrCJ8Xoujoe8bKGVXlA5SOcfUUmtFzZXgR/ZGxOB0=;
+ h=Date:From:To:Subject:From;
+ b=piZlUyCv6A1Bfv+oqss8ExdKHD2xk8pud8bZRGF0in4PH4tKLiRSxW/H60abXppD9
+ /5v0ZoKHWFC4hqUKj3DCZH+FZz4GlEpLgwXW9Djaz8Sb4sQyMxlas8c/RQHb6+Ygw6
+ hPcbyIABtMzTaVO1OYY3V8p/lhdecHu+naGaCrCs=
+Date: Sun, 22 Dec 2019 21:46:18 -0500 (EST)
+From: Kirk Reiser <kirk@reisers.ca>
 To: speakup@linux-speakup.org
-References: <alpine.NEB.2.21.1912191043150.10818@panix1.panix.com>
- <cae926b2-99c7-d1e1-ebfc-d2fb2bb8932d@slint.fr>
- <alpine.NEB.2.21.1912191130270.5097@panix1.panix.com>
- <20191220001218.GA5531@gregn.net>
-From: Didier Spaier <didier@slint.fr>
-Message-ID: <1445baa1-7312-e4b9-ad4d-ba32117d2ee0@slint.fr>
-Date: Fri, 20 Dec 2019 07:32:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.3.0
+Subject: speakup locking box on latest linux 5.3.15-1
+Message-ID: <alpine.DEB.2.21.1912222137490.31217@befuddled.reisers.ca>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-In-Reply-To: <20191220001218.GA5531@gregn.net>
-Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -48,24 +67,26 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-V2VsbCwgSSBjZXJ0YWlubHkgZG9uJ3Qgd2FudCB0byBiZSBwZXJjZWl2ZWQgYnkgS2lyayBvciBh
-bnlvbmUgZWxzZSBhcyBhCmxpc3QgTmF6aSwgc29ycnkgaWYgbXkgYW5zd2VyIGxlYWRlZCB0byBz
-dWNoIGEgY29uY2x1c2lvbi4KCkkgc2hvdWxkIGhhdmUgaW5zdGVhZCBqdXN0IHN1Z2dlc3RlZCB0
-aGF0IEp1ZGUgcG9zdGVkIGhpcyB0aXAgKmFsc28qIGluCm90aGVyIGxpc3RzLCBteSBtaXN0YWtl
-LgoKQmVzdCByZWdhcmRzLAoKRGlkaWVyCgpMZSAyMC8xMi8xOSDDoCAwMToxMiwgR3JlZ29yeSBO
-b3dhayBhIMOpY3JpdMKgOgo+IEhlcmUncyBhIHJlZnJlc2hlciBmcm9tIHRoZSBsaXN0IGFyY2hp
-dmVzOgo+IAo+IDxodHRwOi8vbGludXgtc3BlYWt1cC5vcmcvcGlwZXJtYWlsL3NwZWFrdXAvMjAw
-Ny1BcHJpbC8wNDY1MzEuaHRtbD4KPiAKPiBHcmVnCj4gCj4gCj4gT24gVGh1LCBEZWMgMTksIDIw
-MTkgYXQgMTE6MzI6MjVBTSAtMDUwMCwgSnVkZSBEYVNoaWVsbCB3cm90ZToKPj4gSW4gdGhlIHBh
-c3Qgb3RoZXIgcHJvamVjdHMgbm90IHJlbGF0ZWQgdG8gc3BlYWt1cCBoYWQgYmVlbiBtYWRlCj4+
-IGF2YWlsYWJsZSBzb21lIG9mIHdoaWNoIG9uIHRoZSBzcGVha3VwIHdlYiBwYWdlIGl0c2VsZiBz
-byB0aGF0IHdhcyBteQo+PiByZWFzb24gZm9yIHBvc3RpbmcgdGhpcyBzY3JpcHQgaGVyZS4KX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KU3BlYWt1cCBtYWls
-aW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgtc3BlYWt1cC5v
-cmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
+Hello folks: It appears the bug that visited speakup back in late
+August is back and active. In kernel version 5.3.15-1 built on
+2019-12-07. It can very easily be reproduced by hitting the next-word
+or previous-word functions quickly in series. In fact it is veryd
+ifficult to not trigger the bug. This is in debian sid BTW. My
+machines are amd64 based so I'm not sure if it's active on Intel
+processors.
+
+   Kirk
+
+
+
+
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
