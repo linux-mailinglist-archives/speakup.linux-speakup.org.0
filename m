@@ -1,58 +1,50 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 1AAF01290F7
-	for <lists+speakup@lfdr.de>; Mon, 23 Dec 2019 03:46:59 +0100 (CET)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id EDF9F12D874
+	for <lists+speakup@lfdr.de>; Tue, 31 Dec 2019 12:43:15 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ACE121C46B5; Sun, 22 Dec 2019 21:46:55 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1577069215;
-	bh=rpNZutp6J4MUGKHa8En40U8XWQzJULyV4MEw8WfwSrc=;
-	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
-	 List-Post:List-Help:List-Subscribe:Reply-To:From;
-	b=B7ebCRvyL78X7+U3XiOLMZ6XhZqTwvhumfNDLG10+4PdXN/00Sqgp7O1GH865o6dH
-	 kJ/D76E8CgJEuwxspeSkjwu644cDotJk9uwHJT4TcrHacWsmCWvZBHTLImwH8JUBeV
-	 4ytzlKohdogz/QmijNI9T2/mf50vUbBDcG2WmyNM=
+	id 06F861C46C1; Tue, 31 Dec 2019 06:43:12 -0500 (EST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.b="NDqgHRl8";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id BDD8E1C46A2;
-	Sun, 22 Dec 2019 21:46:43 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1577069203;
-	bh=rpNZutp6J4MUGKHa8En40U8XWQzJULyV4MEw8WfwSrc=;
-	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
-	 List-Post:List-Help:List-Subscribe:Reply-To:From;
-	b=Z2Bj3C2ieXytNFynr67fVFB86e6JdRmPRV3tiBGOc2RVci1CpZRg4dAzSIv6i8yCj
-	 bD5U+1/egNP1SBv1DweNW6q2Hmk1bCrkgd2MgwdQzxH+n4VeQwTft1Yx/R+kxsL9fO
-	 yN6bufQAuD3PoJDDMt/Kd65nuxwVJG1v9AIPmYXc=
+	by befuddled.reisers.ca (Postfix) with ESMTP id B01071C46CA;
+	Tue, 31 Dec 2019 06:41:48 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id A60581C469A; Sun, 22 Dec 2019 21:46:22 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1577069182;
- bh=xhwrCJ8Xoujoe8bKGVXlA5SOcfUUmtFzZXgR/ZGxOB0=;
- h=Date:From:To:Subject:From;
- b=nB4FLYN+lif3U1UzgDUHvu3KzHTuN08Qk3Gb5vFOdSE5YnCdwMVPC3Ma27plJx3fn
- Jud7KzNOJ5bCma7hgakqLaiCmOeyyBI7/QENTJ3pUygzHLVEy6eaPLQ0pOUSz0vkWg
- ClJ+44gntIlB3j+E2urMYBLDsNoB6/y8uWyPklY0=
-Received: from localhost (localhost [IPv6:::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 67E081C0B50
- for <speakup@linux-speakup.org>; Sun, 22 Dec 2019 21:46:18 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1577069178;
- bh=xhwrCJ8Xoujoe8bKGVXlA5SOcfUUmtFzZXgR/ZGxOB0=;
- h=Date:From:To:Subject:From;
- b=piZlUyCv6A1Bfv+oqss8ExdKHD2xk8pud8bZRGF0in4PH4tKLiRSxW/H60abXppD9
- /5v0ZoKHWFC4hqUKj3DCZH+FZz4GlEpLgwXW9Djaz8Sb4sQyMxlas8c/RQHb6+Ygw6
- hPcbyIABtMzTaVO1OYY3V8p/lhdecHu+naGaCrCs=
-Date: Sun, 22 Dec 2019 21:46:18 -0500 (EST)
-From: Kirk Reiser <kirk@reisers.ca>
-To: speakup@linux-speakup.org
-Subject: speakup locking box on latest linux 5.3.15-1
-Message-ID: <alpine.DEB.2.21.1912222137490.31217@befuddled.reisers.ca>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id C38F91C0145; Tue, 31 Dec 2019 06:41:36 -0500 (EST)
+Received: from opera.rednote.net (opera.rednote.net
+ [IPv6:2600:3c03::f03c:91ff:fe70:e783])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 0E5541C0145
+ for <speakup@linux-speakup.org>; Tue, 31 Dec 2019 06:41:32 -0500 (EST)
+Received: from rednote.net (localhost [127.0.0.1])
+ by opera.rednote.net (8.15.2/8.15.2) with ESMTPS id xBVBfTOS184661
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO)
+ for <speakup@linux-speakup.org>; Tue, 31 Dec 2019 11:41:29 GMT
+DKIM-Filter: OpenDKIM Filter v2.11.0 opera.rednote.net xBVBfTOS184661
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rednote.net;
+ s=default; t=1577792489;
+ bh=tGWJdWrsdTy2++97byDRKs9TklUIjMnxluqccIHLOk0=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=NDqgHRl81m7kGngCcDazK4/CGuEujiBDNUZBECLmfwKbUQ+H+7Kx1y0NmZeQApCkH
+ arbccRsw46HxtwftOIUMFM7DOCBBjKJc3htSsbuko2vnfPHzoNDKwuery7WW0cFTvq
+ WdIouwWs5/xd3zBQ8fm0M2xNfCSkhlLpyC7EDPgU=
+Received: (from janina@localhost)
+ by rednote.net (8.15.2/8.15.2/Submit) id xBVBfT9d184660
+ for speakup@linux-speakup.org; Tue, 31 Dec 2019 06:41:29 -0500
+Date: Tue, 31 Dec 2019 06:41:29 -0500
+From: Janina Sajka <janina@rednote.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: speakup locking box on latest linux 5.3.15-1
+Message-ID: <20191231114129.GA1937@rednote.net>
+References: <alpine.DEB.2.21.1912222137490.31217@befuddled.reisers.ca>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <alpine.DEB.2.21.1912222137490.31217@befuddled.reisers.ca>
+X-Operating-System: Linux opera.rednote.net 5.0.17-300.fc30.x86_64
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,24 +59,51 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hello folks: It appears the bug that visited speakup back in late
-August is back and active. In kernel version 5.3.15-1 built on
-2019-12-07. It can very easily be reproduced by hitting the next-word
-or previous-word functions quickly in series. In fact it is veryd
-ifficult to not trigger the bug. This is in debian sid BTW. My
-machines are amd64 based so I'm not sure if it's active on Intel
-processors.
+Kirk:
 
-   Kirk
+I think I'm also seeing this on my Arch system.
 
+The behavior is speech dies, and there seems no way to get it back short
+of a reboot.
 
+Best,
 
+Janina
+
+Kirk Reiser writes:
+> Hello folks: It appears the bug that visited speakup back in late
+> August is back and active. In kernel version 5.3.15-1 built on
+> 2019-12-07. It can very easily be reproduced by hitting the next-word
+> or previous-word functions quickly in series. In fact it is veryd
+> ifficult to not trigger the bug. This is in debian sid BTW. My
+> machines are amd64 based so I'm not sure if it's active on Intel
+> processors.
+> 
+>   Kirk
+> 
+> 
+> 
+> 
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+
+-- 
+
+Janina Sajka
+
+Linux Foundation Fellow
+Executive Chair, Accessibility Workgroup:	http://a11y.org
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
 
 _______________________________________________
 Speakup mailing list
