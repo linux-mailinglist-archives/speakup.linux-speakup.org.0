@@ -1,53 +1,76 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AB90B12DF51
-	for <lists+speakup@lfdr.de>; Wed,  1 Jan 2020 16:45:36 +0100 (CET)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id F393612F6C5
+	for <lists+speakup@lfdr.de>; Fri,  3 Jan 2020 11:37:12 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 03AED1C4A9F; Wed,  1 Jan 2020 10:45:33 -0500 (EST)
+	id B8E3A1C4756; Fri,  3 Jan 2020 05:37:10 -0500 (EST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.b="kV7RMBEw";
+	dkim=fail reason="key not found in DNS" (0-bit key; unprotected) header.d=slint.fr header.i=@slint.fr header.b="M+mywDY4";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C94031C4764;
-	Wed,  1 Jan 2020 10:45:28 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 35DD11C4789;
+	Fri,  3 Jan 2020 05:36:49 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 50D241C473B; Wed,  1 Jan 2020 10:45:15 -0500 (EST)
-Received: from opera.rednote.net (opera.rednote.net
- [IPv6:2600:3c03::f03c:91ff:fe70:e783])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 10D631C4732
- for <speakup@linux-speakup.org>; Wed,  1 Jan 2020 10:45:12 -0500 (EST)
-Received: from rednote.net (localhost [127.0.0.1])
- by opera.rednote.net (8.15.2/8.15.2) with ESMTPS id 001Fj99x222646
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO)
- for <speakup@linux-speakup.org>; Wed, 1 Jan 2020 15:45:09 GMT
-DKIM-Filter: OpenDKIM Filter v2.11.0 opera.rednote.net 001Fj99x222646
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rednote.net;
- s=default; t=1577893509;
- bh=+tFQIDHKAWDFXklIpX4zIa/IjNncyHqijyaypancSG0=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=kV7RMBEwvBvAmgO45eYE6yk4jYrA+eSm5rIJVDtcnhIkG6BZm4l298z81hAJHdVHF
- 7TEdz5VPxlNiyx9neEqhf1ZN6HQITqGS++LjPlGWOVhCRIwojZwAtHL7vYt+8xIwAt
- OiOpDA36VIRf9knkWyHVpR/V/YncfVzrpNlc10A0=
-Received: (from janina@localhost)
- by rednote.net (8.15.2/8.15.2/Submit) id 001Fj9m2222645
- for speakup@linux-speakup.org; Wed, 1 Jan 2020 10:45:09 -0500
-Date: Wed, 1 Jan 2020 10:45:09 -0500
-From: Janina Sajka <janina@rednote.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+ id 778681C2E07; Fri,  3 Jan 2020 05:36:31 -0500 (EST)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+ by befuddled.reisers.ca (Postfix) with ESMTP id F20CD1C2E07
+ for <speakup@linux-speakup.org>; Fri,  3 Jan 2020 05:36:22 -0500 (EST)
+Received: from darkstar.slint.fr
+ (men75-h08-176-172-247-100.dsl.sta.abo.bbox.fr [176.172.247.100])
+ by darkstar.slint.fr (Postfix) with ESMTPSA id 071A8BE736
+ for <speakup@linux-speakup.org>; Fri,  3 Jan 2020 10:36:18 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+ t=1578044179; bh=hkb0Q01/Xy1fAdqigl5L5N2p4+hpaWXN5oEIEx+z49c=;
+ h=Subject:To:References:From:Date:In-Reply-To:From;
+ b=M+mywDY4wOZtbIM1WdS6HKxsU2RD8G5nIKt3/YBGZxl65z0ak0WlvYVjosFyBqEJJ
+ WF48PeARCyLY6WZtcXLTmnYC36MG6S0kPJvpfCcW1IudAJ9J67eTHHFYXqYi4XpIom
+ 23TXkPnjijtusAU/O/MypiQbXHARiiyGgtkdKAjY65uHLK2l2u635+XtR/6/ITvMHv
+ PuZFejGYvPizFyXSqTEGX4ER66vIwVPjr/MqkHX/D/vgBSvEs5GrKULeqU9wIJ4tsP
+ NhsSWQ+/fNbc2azrmhKXNbbk9odoYq7UwzA4ImLDd9YKGB7W56u26M6fAiL1VVnIts
+ DDzMzu2YOfi1Q==
 Subject: Re: speakup locking box on latest linux 5.3.15-1
-Message-ID: <20200101154509.GB1937@rednote.net>
+To: speakup@linux-speakup.org
 References: <alpine.DEB.2.21.1912222137490.31217@befuddled.reisers.ca>
  <20191231114129.GA1937@rednote.net>
  <alpine.DEB.2.21.1912310943070.9526@befuddled.reisers.ca>
  <8d32a2c2-8cbf-c5c7-6f48-b4fd440a5da8@slint.fr>
+ <alpine.DEB.2.21.1912311045030.12026@befuddled.reisers.ca>
+From: Didier Spaier <didier@slint.fr>
+Autocrypt: addr=didier@slint.fr; prefer-encrypt=mutual; keydata=
+ xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
+ dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
+ TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
+ jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
+ 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
+ AAHNH0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj7CwH8EEwEKACkCGwMHCwkIBwMC
+ AQYVCAIJCgsEFgIDAQIeAQIXgAUCXcBjnwUJGlHqEgAKCRDVAgLvYMA+6v/ICAC8Oa2zXOne
+ zyuFrPtNsciJWYwWamW+g5TNaY9NPnyMRNKDi7IcP6PoDwHRI8YBgo+Z9w0qFKQ/WVSI/O6s
+ gm7LnOX7OEHjnub4sjrr5PHcsPRjm6iJFIgGgD+waz0K5fxcc65ti3lgHLH1tkhORyiT5EFp
+ 0VllWDQfPHw5avm9oopJv1FuPfZhSlFT6QhjD2ARmOrxfFBjELQZjDidckOYf/8Stoh+aK5F
+ 5q69DpF+bSZzOtCht+S6LT+Im5zqMgq1Dfqb3FpnVO3MyhSLeGI2nB+OFNTBGByRFKHYRsHc
+ VaQBjtfsr4HnC0UR2P/bDIk/oxLnIN9nHJuL6btcf9M6zsBNBFY6fG8BCACqDQKHSw0ElDkw
+ PPpNguL0ujOyygO30xlLyfW9pWOEycHSLhLzvDTlFkvr5IxvyCDBIFBdzpkeQqh1+ZxrFliw
+ Wyj+9/roJlIjxeAyNs2xQZ7tQM6K5xtbUs8O5YtkCCO3OegAiLgmzzgxes79Qy+V3ciKbl+v
+ rsNu7T9ro3zZhyinci1eOCcKEtXFPQW5P4woB+6+JheN9pIiDkjojmdC+xkvDadP7kJYKp19
+ Itys/CbNvxEoOLsgeJhsZSmNU2QNhXkLfr7+AC99fb/c5ZDTNPRBqgLJCp+gTxn1QVJrAbq2
+ OP3refmSRxdA3yUDMjxEeHwDNZJL9aEtTDlTzPk5ABEBAAHCwGUEGAEKAA8CGwwFAl1EQo4F
+ CQjq+XYACgkQ1QIC72DAPurGhAf+LKNM5AajZNNnccq3bWawqsY1P5ZtFvZLPxMbx2xsnYaM
+ 8UPe/tGfuxp+q1ouCRKgvtefjd2eBLGXaysCA5r3Jv+hgdjPKEJut3rARhTJMaDwjKOcOTHG
+ AhFtpsjBkVXuCBxEpNBEypyis3w4kQUCxP7nro4yzdXY7s6EbadNd8nG4B8qFt4JxnqJnZWl
+ 97mBQFJjFXlkAM+0eAkpF+rYzL6QKCKydO2Xcz7UTSMe/blXtZUjHxyr8Nh1G+ywEbkmQP+l
+ QhcxJYJbK+q4zNM0U64zzLRwIvVknpdEzJKiFXsydnm9VFE9tzC6a+h40du2OdhkoNDVuFSq
+ aG2M5OmN/Q==
+Message-ID: <70aee62a-8e5f-f0d9-2260-7eafb16366a2@slint.fr>
+Date: Fri, 3 Jan 2020 11:36:20 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.3.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8d32a2c2-8cbf-c5c7-6f48-b4fd440a5da8@slint.fr>
-X-Operating-System: Linux opera.rednote.net 5.0.17-300.fc30.x86_64
+In-Reply-To: <alpine.DEB.2.21.1912311045030.12026@befuddled.reisers.ca>
+Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,113 +85,33 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi Didier, All:
-
-I'm seeing this problem with software speech, too. I haven't had a
-working hardware synth for some time for various reasons.
-
-I locked up like Kirk describes earlier this week even. I'm currently on
-kernel 5.4.6-arch3-1.
-
-I guess I need another way to know when the fix makes it into the Arch
-kernels! <smile>
-
-Happy New Year!
-
-Janina
-
-
-Didier Spaier writes:
-> Hi Kirk and Janina,
-> =
-
-> I won't ship a 5.3.x Kernel in Slint anyway as it is officially EOL
-> upstream, however I plan to provide a 5.4 kernel soon and would like
-> to have it tested wrt this issue.
-> =
-
-> I do not own a hard synth so can only test with speakup_soft myself, but
-> I could ask Slint users to do so with a hard synth (ltlk at least and
-> probably apollo as well).
-> =
-
-> With which driver did you try: soft or hard and then which hard synth?
-> =
-
-> Also Janina, does this issue occur also with linux 5.4.6.arch3-1?
-> =
-
-> As an aside, Kirk did you try one of the package labeled
-> linux-image-5.4.0-1-<something> provided for Debian SID?
-> =
-
-> Best regards,
-> =
-
-> Didier
-> =
-
-> Le 31/12/19 =E0 15:46, Kirk Reiser a =E9crit=A0:
-> > Yes Janina: On my boxes the machine is locked up solid as in not able
-> > to even ssh or ping the machine.
-> > =
-
-> > I have had to revert back to a 5.2.x series kernel to by-pass the
-> > problem. I tried three different 5.3.x kernels extensively before
-> > reverting.
-> > =
-
-> > =A0 Kirk
-> > =
-
-> > On Tue, 31 Dec 2019, Janina Sajka wrote:
-> > =
-
-> >> Kirk:
-> >>
-> >> I think I'm also seeing this on my Arch system.
-> >>
-> >> The behavior is speech dies, and there seems no way to get it back sho=
-rt
-> >> of a reboot.
-> >>
-> >> Best,
-> >>
-> >> Janina
-> >>
-> >> Kirk Reiser writes:
-> >>> Hello folks: It appears the bug that visited speakup back in late
-> >>> August is back and active. In kernel version 5.3.15-1 built on
-> >>> 2019-12-07. It can very easily be reproduced by hitting the next-word
-> >>> or previous-word functions quickly in series. In fact it is veryd
-> >>> ifficult to not trigger the bug. This is in debian sid BTW. My
-> >>> machines are amd64 based so I'm not sure if it's active on Intel
-> >>> processors.
-> >>>
-> >>> =A0 Kirk
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-
--- =
-
-
-Janina Sajka
-
-Linux Foundation Fellow
-Executive Chair, Accessibility Workgroup:	http://a11y.org
-
-The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
-
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+SGkgS2lyaywgSmFuaW5hLCBTYW11ZWwgYW5kIGFsbDoKCkxlIDMxLzEyLzE5IMOgIDE2OjUzLCBL
+aXJrIFJlaXNlciBhIMOpY3JpdCA6Cj4gSSB3b3VsZCBiZSB3aWxsaW5nIHRvIHRlc3QgeW91ciBr
+ZXJuZWxzIGlmIHlvdSBjb3VsZCBzZW5kIG1lIGEgZHJvcCBpbgo+IHJlcGxhY2VtZW50IHdpdGgg
+dGhlIFN5c3RlbS5tYXAgZXRjLgpQbGVhc2UgZmluZCBhIGNvbXByZXNzZWQgYXJjaGl2ZSBoZXJl
+IGFsb25nc2lkZSBpdHMgc2hhMjU2IGNoZWNrc3VtIGhlcmU6Cmh0dHBzOi8vc2xpbnQuZnIvdGVz
+dGluZy8KCkluc3RhbGxhdGlvbjoKd2dldCBodHRwczovL3NsaW50LmZyL3Rlc3RpbmcvbGludXgt
+NS40LjdfYnVpbGRfZm9yX1NsaW50X3dpdGhfbW9kdWxlcy50YXIueHoKd2dldCBodHRwczovL3Ns
+aW50LmZyL3Rlc3RpbmcvbGludXgtNS40LjdfYnVpbGRfZm9yX1NsaW50X3dpdGhfbW9kdWxlcy50
+YXIueHouc2hhMjU2CnNoYTI1NnN1bSAtYyBsaW51eC01LjQuN19idWlsZF9mb3JfU2xpbnRfd2l0
+aF9tb2R1bGVzLnRhci54ei5zaGEyNTYgI291dHB1dCBzaG91c2wgYmU6IE9LCnRhciB4ZiBsaW51
+eC01LjQuN19idWlsZF9mb3JfU2xpbnRfd2l0aF9tb2R1bGVzLnRhci54egpUaGVuIGFzIHJvb3Qg
+b3IgdXNpbmcgc3VkbzoKY3AgLXIgYm9vdC8qIC9ib290LwpjcCAtciBsaWIvbW9kdWxlcy81LjQu
+NyAvbGliL21vZHVsZXMvClRoZW4gdXBncmFkZSBncnViLgoKSW4gL2Jvb3QveW91IHdpbGwgZmlu
+ZDoKY29uZmlnLTUuNC43Lng2NApTeXN0ZW0ubWFwLTUuNC43CnZtbGludXotNS40LjcKcmVuYW1l
+IHRoZW0gYXMgeW91IHNlZSBmaXQuCgpBbGwgSSBjYW4gc2F5IGlzIHRoYXQgSSBoYXZlIG5vIGlz
+c3VlIGhlcmUgdXNpbmcgZXNwZWFrdXAgd2l0aCB0aGlzCmtlcm5lbCwgaS5lLiBwcmVzc2luZyBz
+ZXZlcmFsIHRpbWVzIApzcGsga2V5X2oKc3BrIGtleV9sCnNheSBwcmV2aW91cyBhbmQgbmV4dCB3
+b3JkIGV2ZXJ5IHRpbWUgYXMgZXhwZWN0ZWQgYWNjb3JkaW5nIHRvIG15IHRlc3RzLgpCZWluZyBz
+aWdodGVkIEkgbWF5IG5vdCBiZSB0aGUgYmVzdCB0ZXN0ZXIgb3V0IHRoZXJlIHRob3VnaC4KCkFs
+bCBzcGVha3VwIGRyaXZlcnMgYXJlIHNoaXBwZWQgYXMgbW9kdWxlcywgdGhlIGtlcm5lbCBpcyB2
+YW5pbGxhCihub3QgcGF0Y2hlZCkuCgpCZXN0IHJlZ2FyZHMgYW5kIGEgSGFwcHkgTmV3IFllYXIs
+CgpEaWRpZXIKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+XwpTcGVha3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9s
+aW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
