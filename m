@@ -2,37 +2,55 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 347FF155FC7
-	for <lists+speakup@lfdr.de>; Fri,  7 Feb 2020 21:40:40 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 90743156164
+	for <lists+speakup@lfdr.de>; Fri,  7 Feb 2020 23:57:57 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BF1471C2CD1; Fri,  7 Feb 2020 15:40:38 -0500 (EST)
+	id B09D41C2C76; Fri,  7 Feb 2020 17:57:56 -0500 (EST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=a+xLPXz4;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 18C041C2CDB;
-	Fri,  7 Feb 2020 15:40:07 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 16ECB1C2C75;
+	Fri,  7 Feb 2020 17:57:25 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 788B91C2C6C; Fri,  7 Feb 2020 15:40:04 -0500 (EST)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 207061C0148
- for <speakup@linux-speakup.org>; Fri,  7 Feb 2020 15:40:01 -0500 (EST)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
- id 7C78A8C0424; Fri,  7 Feb 2020 20:39:29 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
- by server2.shellworld.net (Postfix) with ESMTP id 758278C0308;
- Fri,  7 Feb 2020 15:39:29 -0500 (EST)
-Date: Fri, 7 Feb 2020 15:39:29 -0500 (EST)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: jheim@math.wisc.edu, 
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+ id 3D5021C0148; Fri,  7 Feb 2020 17:57:12 -0500 (EST)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 0154B1C0148
+ for <speakup@linux-speakup.org>; Fri,  7 Feb 2020 17:57:05 -0500 (EST)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2607:fb90:a690:641:a00:27ff:fe01:8e92])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id 3CBFCF1A
+ for <speakup@linux-speakup.org>; Fri,  7 Feb 2020 14:57:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1581116228; bh=/TQ+Djmx4arZSr1F55F4VwE1NF7u2Hs2VCUMyP0EK/I=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=a+xLPXz4Ji8xxMqCoWIbBG14y9GvuTQnAAO4yYF02g9NENyFQmaW3np/+VRstRujH
+ fTAd5To2P5SufRtXFbrsYWVyr4uXLmKEEWHRDgiAvDismzfJvRR8uPjAVhUlL9vCml
+ uDtQBHK9pRyTdUmFqmZzLJV4ozPrEEInVbz7HgjdJT209P29dW3mMSCQQI9+fOxlVM
+ SLaE9aUbGpSgOpSdbk3M+fDE/zdZLAg5KuXOlkPGRqDLv1hPmEeahF9FsUfIpPVlYp
+ qk9VfhhqZbhWvUW2Qq8Sbzd4WwNpmUoFB/DuSR/mkoQgLVv/wtJnd8pRUNum/Y5475
+ BH/x6T7vpajuw==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>) id 1j0CYY-0001lB-RG
+ for speakup@linux-speakup.org; Fri, 07 Feb 2020 15:57:02 -0700
+Date: Fri, 7 Feb 2020 15:57:02 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: driving a serial synthesizer through speech-dispatcher
-In-Reply-To: <fb224ce0-b5ca-516b-5ef9-7ce48c662812@math.wisc.edu>
-Message-ID: <Pine.LNX.4.64.2002071537440.28670@server2.shellworld.net>
+Message-ID: <20200207225702.GA5375@gregn.net>
 References: <20200207000127.GA6319@gregn.net>
- <m3v9ojhwb3.wl-covici@ccs.covici.com>
- <20200207042943.GA12133@gregn.net> <m3tv42j2s1.wl-covici@ccs.covici.com>
- <fb224ce0-b5ca-516b-5ef9-7ce48c662812@math.wisc.edu>
+ <20200207081024.o7e7hm7k7ddi7cj2@function>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200207081024.o7e7hm7k7ddi7cj2@function>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.101.4 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -47,81 +65,52 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: covici@ccs.covici.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-My understanding from the first post  is that the goal is using serial 
-synthesizers  in more graphical settings comparative to how orca functions.
-Would not speekup present limitations for such a goal?
+Thanks to everyone for all the input so far. I didn't realize that
+some of the modules with the .conf files also have binaries as the
+backend. I do indeed see that they're there in
+/usr/lib/speech-dispatcher on my system. I'll have to look at the
+speech-dispatcher code, and see how they do what they do.
+
+I'm still in favor of letting speakup drive the serial synth. Thanks
+to Samuel's comment below, I know what part of the speakup code to
+look at, and the comment that it should be a fairly simple beginner kernel
+hacking project is encouraging. I'll add this project to my to do list,
+and will explore it once I have more time, hopefully sooner rather
+than later. Thanks again.
+
+Greg
 
 
-
-On Fri, 7 Feb 2020, John G Heim wrote:
-
-> There would already be code in speakup to talk to different hardware synths. 
-> I don't know how portable that code is. But you could probably look at the 
-> speakup code to see how to set the speech rate for a liteTalk for example. If 
-> that code is portable, a large part of the work would already be done.
-> On 2/7/20 1:05 AM, John Covici wrote:
->>  You can treat the serial port like a file (this is linux after all),
->>  just do open in the i nit section and write characters to the file.
->>  The name will be something like /dev/ttyS0 or similar.  Note the
->>  capital S.  As an example look at the espeak  driver, so you get all
->>  the things in the right places.
->>
->>
->>  On Thu, 06 Feb 2020 23:29:43 -0500,
->>  Gregory Nowak wrote:
->> > 
->> >  Right, this would require a speech-dispatcher module file. The thing
->> >  I'm not sure about is how to do the serial port I/O from
->> >  speech-dispatcher. The speech-dispatcher modules are .conf files, so
->> >  maybe the answer would be a separate program to expose the serial port
->> >  to speech-dispatcher modules, or a modification to the actual
->> >  speech-dispatcher code to do that.
->> > 
->> >  What I like about the synth_direct approach is that speakup already
->> >  does the heavy lifting, and speakup and gnome-speech would use
->> >  speakup's interface to talk to the synth, which would mean they both
->> >  wouldn't be setting parameters and causing a mess. The disadvantage is
->> >  it requires speakup to be loaded, which I already use anyway, so it
->> >  doesn't bother me personally.
->> > 
->> >  Greg
->> > 
->> > 
->> >  On Thu, Feb 06, 2020 at 11:10:24PM -0500, John Covici wrote:
->> > >  You might need to write a driver in speech-dispatcher, that would do
->> > >  exactly what you want.  I have been thinking about this for years, but
->> > >  never had the time to do it.
->> > 
->> > 
->> >  -- 
->> >  web site: http://www.gregn.net
->> >  gpg public key: http://www.gregn.net/pubkey.asc
->> >  skype: gregn1
->> >  (authorization required, add me to your contacts list first)
->> >  If we haven't been in touch before, e-mail me before adding me to your 
->> >  contacts.
->> > 
->> >  --
->> >  Free domains: http://www.eu.org/ or mail dns-manager@EU.org
->> >  _______________________________________________
->> >  Speakup mailing list
->> >  Speakup@linux-speakup.org
->> >  http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->> >
->> 
+On Fri, Feb 07, 2020 at 09:10:24AM +0100, Samuel Thibault wrote:
+> Indeed. But there is another approach, which was made for this: using
+> /dev/synth. For now that file only supports writing to it to get
+> text emitted, but ioctls can be defined to drive it, such as setting
+> pitch etc. in a portable way across synthesizers (speakup will handle
+> these details), but also interrupting. That all happens in speakup's
+> devsynth.c and can be a relatively easy task for kernel hacking
+> beginners.
+> 
+> Samuel
 > _______________________________________________
 > Speakup mailing list
 > Speakup@linux-speakup.org
 > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->
->
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
