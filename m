@@ -2,74 +2,56 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id E423914FE6B
-	for <lists+speakup@lfdr.de>; Sun,  2 Feb 2020 17:57:27 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 59B68155062
+	for <lists+speakup@lfdr.de>; Fri,  7 Feb 2020 03:01:26 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 23BE01C2F0B; Sun,  2 Feb 2020 11:57:26 -0500 (EST)
+	id 18F1B1C0E0A; Thu,  6 Feb 2020 21:01:23 -0500 (EST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=geekonskates.com header.i=@geekonskates.com header.a=rsa-sha256 header.s=default header.b=ZrQHf5gm;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=G1/7QsI6;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0A90A1C2EDD;
-	Sun,  2 Feb 2020 11:56:53 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id F0CEA1C2CD4;
+	Thu,  6 Feb 2020 21:00:19 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 624321C2CE3; Sun,  2 Feb 2020 11:56:42 -0500 (EST)
-Received: from gateway23.websitewelcome.com (gateway23.websitewelcome.com
- [192.185.50.108])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 9695A1C2CE3
- for <speakup@linux-speakup.org>; Sun,  2 Feb 2020 11:56:38 -0500 (EST)
-Received: from cm10.websitewelcome.com (cm10.websitewelcome.com [100.42.49.4])
- by gateway23.websitewelcome.com (Postfix) with ESMTP id 17F6B30D
- for <speakup@linux-speakup.org>; Sun,  2 Feb 2020 10:56:37 -0600 (CST)
-Received: from box2045.bluehost.com ([67.222.38.79]) by cmsmtp with SMTP
- id yIY0iweoXKnV5yIY0ijbTn; Sun, 02 Feb 2020 10:56:37 -0600
-X-Authority-Reason: nr=8
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=geekonskates.com; s=default; h=Message-ID:References:In-Reply-To:Subject:To
- :From:Date:Content-Transfer-Encoding:Content-Type:MIME-Version:Sender:
- Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=2SYGrxNESQvI8CbYy7jp8cMkHAflxMVejrOMAhA0tNM=; b=ZrQHf5gmT9QqjAT2CMr+uPyzsO
- eAjaU2Tn7c+HFzbQ0glOylv1SKr+Qb/oOsxlN89iieKaeXH8X9UcR1tN57D+LAAPPzoxHiR0UWb9n
- k/DKVhZzbvTBUfs6FySm4YL1uSLjtRYlAvIOnwQZM0OwH1gT9zE7kiedLx06tOLSJthy3vrPNJFtE
- Lo9G0MJ2KCL0JjccnKZg51U2vHkr8vIQSmXqipNK8EQ0xT36NEgW1Vf8r9FNamAM5GbCU4SM9PFF2
- 93hOJp+FZbrVoC7lWUj0QM5XQBC1bXHR+TCKodI37RBwVdyYmjtu3xMhatNzvNHV/fTmVtp89/euK
- xi3vJDZQ==;
-Received: from box2045.bluehost.com ([67.222.38.79]:41762)
- by box2045.bluehost.com with esmtpa (Exim 4.92)
- (envelope-from <geek@geekonskates.com>) id 1iyIY0-001Dvd-F1
- for speakup@linux-speakup.org; Sun, 02 Feb 2020 09:56:36 -0700
-MIME-Version: 1.0
-Date: Sun, 02 Feb 2020 09:56:36 -0700
-From: geek@geekonskates.com
+ id 845FB1C0DDF; Thu,  6 Feb 2020 21:00:11 -0500 (EST)
+Received: from vserver.gregn.net (vserver.gregn.net [IPv6:2607:f2f8:a260::2])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id ACFAE1C0DBA
+ for <speakup@linux-speakup.org>; Thu,  6 Feb 2020 21:00:07 -0500 (EST)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2607:fb90:a690:641:a00:27ff:fe01:8e92])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id 78BFA1D24
+ for <speakup@linux-speakup.org>; Thu,  6 Feb 2020 18:00:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1581040808; bh=/+Nf1E1Xpav6PY2OWakUkn2EcqMeZw5SONpOtBpBFCs=;
+ h=Resent-From:Resent-Date:Resent-To:Date:From:To:Subject:From;
+ b=G1/7QsI6Csae6jdZGvXPkeqGJOdI6d7BmRgFinKkE8rEwJL325wLilvIu4qmJtZyA
+ JERu+3juALLMSBzqPgfMaAMqiQBLiBlq58KFfOxY5q1L9ancI65D631HQyBjQc0rik
+ 5+VIdrbpaTw9Tv/nfc7Lt6O5DJq3LHiAWKcA0PXS2aoxfEAncqbDxhYZ+5jBHnidHD
+ 3aOPsf2Ydi05R5HV1ZnyIwEwZVt/8Y8C6MuW/TQ66fxrQ/4ORN0W5SbHdXPySrdwvf
+ FKVP0ljnzrrQS3wiWC/aAQC9f2jtdxlbIh4HvEAp2POba2IIClhAdSjHxF/NBONo9k
+ QSk7ROA/KZI9w==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>) id 1izsw8-0002tn-6z
+ for speakup@linux-speakup.org; Thu, 06 Feb 2020 19:00:04 -0700
+Resent-From: Gregory Nowak <greg@gregn.net>
+Resent-Date: Thu, 6 Feb 2020 19:00:04 -0700
+Resent-Message-ID: <20200207020004.GA11107@gregn.net>
+Resent-To: speakup@linux-speakup.org
+Date: Thu, 6 Feb 2020 17:01:27 -0700
+From: Gregory Nowak <greg@gregn.net>
 To: speakup@linux-speakup.org
-Subject: Re: Intro and a couple questions
-In-Reply-To: <mailman.1.1580576402.439533.speakup@linux-speakup.org>
-References: <mailman.1.1580576402.439533.speakup@linux-speakup.org>
-Message-ID: <a8bba49058c8016d56eb68431661353d@geekonskates.com>
-X-Sender: geek@geekonskates.com
-User-Agent: Roundcube Webmail/1.3.7
-X-AntiAbuse: This header was added to track abuse,
- please include it with any abuse report
-X-AntiAbuse: Primary Hostname - box2045.bluehost.com
-X-AntiAbuse: Original Domain - linux-speakup.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - geekonskates.com
-X-BWhitelist: no
-X-Source-IP: 67.222.38.79
-X-Source-L: Yes
-X-Exim-ID: 1iyIY0-001Dvd-F1
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-Source-Sender: box2045.bluehost.com [67.222.38.79]:41762
-X-Source-Auth: geek@geekonskates.com
-X-Email-Count: 1
-X-Source-Cap: ZG9qb21pa2U7ZG9qb21pa2U7Ym94MjA0NS5ibHVlaG9zdC5jb20=
-X-Local-Domain: yes
+Subject: driving a serial synthesizer through speech-dispatcher
+Message-ID: <20200207000127.GA6319@gregn.net>
+MIME-Version: 1.0
+Content-Disposition: inline
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.101.4 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,15 +66,52 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Thanks for all the great info!  I still have a lot to learn, but I'm 
-looking forward to learning it.  And thanks for the tips on making 
-software I write work well with Speakup. :)
+Hi all.
+
+I'm wondering if it's possible to drive a serial synthesizer through
+speech-dispatcher? My goal here is to use orca to output to a serial
+synthesizer.
+
+While speech-dispatcher itself has no facility a far as I can tell to
+communicate through serial ports, something like cat could be used to
+send a text of string to the serial port for the synthesizer to
+speak. This is crude, and there is no way to interrupt speech until it
+completes.
+
+An even better approach is to use
+/sys/accessibility/speakup/synth_direct for the speech output. This
+would use speakup settings in use for the synthesizer. The problem
+with this is the same as with the cat command; no way to interrupt
+speech, at least until the todo items in /sys/accessibility/speakup
+are resolved, and maybe not even then. Interrupting could probably be
+done by sending the silence command for the synthesizer in question to
+/sys/accessibility/speakup/synth_direct, to cause the synthesizer to
+stop speaking, and flush its buffer. Again, simply invoking speakup's
+interrupt command by sending something to
+/sys/accessibility/speakup/filename would make this synthesizer
+generic.
+
+Has anyone here done what I'm thinking of? If yes, can you please
+describe your approach?
+
+Greg
+
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
