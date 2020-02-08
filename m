@@ -2,34 +2,34 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id C094D1562B4
-	for <lists+speakup@lfdr.de>; Sat,  8 Feb 2020 03:18:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id A126E1562B5
+	for <lists+speakup@lfdr.de>; Sat,  8 Feb 2020 03:19:08 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id AB3021C2DA6; Fri,  7 Feb 2020 21:18:32 -0500 (EST)
+	id EDB871C2C77; Fri,  7 Feb 2020 21:19:07 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 94E471C2C75;
-	Fri,  7 Feb 2020 21:15:58 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6FE521C47BF;
+	Fri,  7 Feb 2020 21:16:01 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 513A71C2C6C; Fri,  7 Feb 2020 21:15:28 -0500 (EST)
+ id 78F5B1C2C6C; Fri,  7 Feb 2020 21:15:45 -0500 (EST)
 Received: from covici.com (debian-2.covici.com [IPv6:2600:3c03:e000:39d::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 0FC3E1C0148
- for <speakup@linux-speakup.org>; Fri,  7 Feb 2020 21:15:05 -0500 (EST)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 928141C0148
+ for <speakup@linux-speakup.org>; Fri,  7 Feb 2020 21:15:42 -0500 (EST)
 Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
  (authenticated bits=0)
- by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 0182EWT6031768
+ by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 0182FASx031771
  (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
- for <speakup@linux-speakup.org>; Fri, 7 Feb 2020 21:14:49 -0500
+ for <speakup@linux-speakup.org>; Fri, 7 Feb 2020 21:15:26 -0500
 Received: from ccs.covici.com (localhost [127.0.0.1])
- by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 0182EKMp2658715
+ by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 0182Ewml2659309
  (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
- for <speakup@linux-speakup.org>; Fri, 7 Feb 2020 21:14:20 -0500
+ for <speakup@linux-speakup.org>; Fri, 7 Feb 2020 21:14:58 -0500
 Received: (from covici@localhost)
- by ccs.covici.com (8.15.2/8.15.2/Submit) id 0182EJU02658713;
- Fri, 7 Feb 2020 21:14:19 -0500
-Date: Fri, 07 Feb 2020 21:14:19 -0500
-Message-ID: <m3mu9tj05g.wl-covici@ccs.covici.com>
+ by ccs.covici.com (8.15.2/8.15.2/Submit) id 0182EwWj2659308;
+ Fri, 7 Feb 2020 21:14:58 -0500
+Date: Fri, 07 Feb 2020 21:14:58 -0500
+Message-ID: <m3lfpdj04d.wl-covici@ccs.covici.com>
 From: John Covici <covici@ccs.covici.com>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: driving a serial synthesizer through speech-dispatcher
@@ -62,9 +62,7 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-The reason I got interested in speechd-up is that the espeak module
-does not let you use the equivalent of indexing, as far as I know, to
-test in a document try speakup-r and see if it works.
+Sorry instead of espeak I meant espeakup.
 
 On Fri, 07 Feb 2020 18:02:58 -0500,
 Gregory Nowak wrote:
