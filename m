@@ -2,41 +2,56 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id B4084183ECB
-	for <lists+speakup@lfdr.de>; Fri, 13 Mar 2020 02:47:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 435A6183ED4
+	for <lists+speakup@lfdr.de>; Fri, 13 Mar 2020 02:47:35 +0100 (CET)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id D154F4280513; Thu, 12 Mar 2020 21:47:00 -0400 (EDT)
+	id B4564428050C; Thu, 12 Mar 2020 21:47:34 -0400 (EDT)
+Authentication-Results: grumpy.reisers.ca;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.b="LfCi7uxX";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id 78B65428050B
-	for <lists+speakup@lfdr.de>; Thu, 12 Mar 2020 21:46:53 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id EB8FC42804EB
+	for <lists+speakup@lfdr.de>; Thu, 12 Mar 2020 21:47:33 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6AE831C7293; Thu, 12 Mar 2020 21:46:53 -0400 (EDT)
+	id 9C22B1C7293; Thu, 12 Mar 2020 21:47:33 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=default header.b=LfCi7uxX;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 535821C730C;
-	Thu, 12 Mar 2020 21:30:45 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 857C21C7310;
+	Thu, 12 Mar 2020 21:30:47 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id F29DC1C2393; Thu,  5 Mar 2020 16:38:06 -0500 (EST)
-Received: from hurricane.the-brannons.com (hurricane.the-brannons.com
- [71.19.155.94])
- by befuddled.reisers.ca (Postfix) with ESMTP id 83BDA1C0D99
- for <speakup@linux-speakup.org>; Thu,  5 Mar 2020 16:38:04 -0500 (EST)
-Received: from [10.4.20.3] (unknown [63.224.249.220])
- by hurricane.the-brannons.com (Postfix) with ESMTPSA id 9D87E7B5B2
- for <speakup@linux-speakup.org>; Thu,  5 Mar 2020 13:37:31 -0800 (PST)
-References: <F1525F3C-3928-4A6D-A1D3-97FD9B3A7FE6@linux-a11y.org>
-Subject: Fwd: [fenrir-screenreader] Linux Accessibility Patreon
+ id D405B1C2DE6; Wed, 11 Mar 2020 09:32:50 -0400 (EDT)
+Received: from opera.rednote.net (opera.rednote.net [66.228.34.147])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 927771C2C7A
+ for <speakup@linux-speakup.org>; Wed, 11 Mar 2020 09:32:39 -0400 (EDT)
+Received: from rednote.net (localhost [127.0.0.1])
+ by opera.rednote.net (8.15.2/8.15.2) with ESMTPS id 02BDUQ0P198050
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO)
+ for <speakup@linux-speakup.org>; Wed, 11 Mar 2020 13:30:27 GMT
+DKIM-Filter: OpenDKIM Filter v2.11.0 opera.rednote.net 02BDUQ0P198050
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rednote.net;
+ s=default; t=1583933427;
+ bh=s/ngbY0r7fsEroiwL89qFbM7olqgJdFWrH2QpbBgzVY=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=LfCi7uxXevs9Waj5k1Fu9Nbk0t8prMohLBaoKUrJyMyCl/nm8K5Ki9Yc/hYxDZgL7
+ 6ior3q8ocQqpaSLE+ET5NoWymvEDXBxxoW6IP4AMK1nVRrAyR8NoJKxnujL/+jEM9z
+ Mx52NYnm3IQQNXbw6yJ1DuwF5Uo0DK/hgsGqgPIg=
+Received: (from janina@localhost)
+ by rednote.net (8.15.2/8.15.2/Submit) id 02BDUQvi198049
+ for speakup@linux-speakup.org; Wed, 11 Mar 2020 09:30:26 -0400
+Date: Wed, 11 Mar 2020 09:30:26 -0400
+From: Janina Sajka <janina@rednote.net>
 To: speakup@linux-speakup.org
-From: deedra waters <deedra@the-brannons.com>
-X-Forwarded-Message-Id: <F1525F3C-3928-4A6D-A1D3-97FD9B3A7FE6@linux-a11y.org>
-Message-ID: <b8d44561-7b21-41a3-b874-503a5b5692dc@the-brannons.com>
-Date: Thu, 5 Mar 2020 13:37:31 -0800
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Firefox/52.0 SeaMonkey/2.49.4
+Subject: Re: alsamixer for visually impaired
+Message-ID: <20200311133026.GA2494@rednote.net>
+References: <20190417185158.gld2rxl6lfvgfkdg@davidb1.opentext.com>
 MIME-Version: 1.0
-In-Reply-To: <F1525F3C-3928-4A6D-A1D3-97FD9B3A7FE6@linux-a11y.org>
-X-Content-Filtered-By: Mailman/MimeDel 2.1.29
+Content-Disposition: inline
+In-Reply-To: <20190417185158.gld2rxl6lfvgfkdg@davidb1.opentext.com>
+X-Operating-System: Linux opera.rednote.net 5.0.17-300.fc30.x86_64
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -51,17 +66,46 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SSdtIHNlbmRpbmcgdGhpcyBhbG9uZyB0byBmb2xrcyBiZWNhdXNlIGkgc3VzcGVjdCB0aGlzIG1h
-eSBiZSBvZiAKaW50ZXJlc3QgdG8gcGVvcGxlLiBJJ3ZlIGhlbHBlZCBiZXRhIHRlc3QgZmVucmly
-IGFzIHdlbGwgYXMgdXNlZCBzb21lIG9mIApjaHJ5cydzwqAgb3RoZXIgcHJvamVjdHMgYW5kIGkg
-dGhpbmsgdGhpcyB3b3VsZCBiZSBhIGdvb2Qgd2F5IG9mIGhlbHBpbmcgCnRoZSBsaW51eCBhY2Nl
-c3NpYmlsaXR5IGVmZm9ydCBhbG9uZy4KCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fXwpTcGVha3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFr
-dXAub3JnCmh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8v
-c3BlYWt1cAo=
+Hi, David:
+
+Just wondering whether you got your feature enhancement into alsamixer?
+Did they accept it? If so, I'd be up for installing it and giving it a
+spin.
+
+I've been in the habit of using amixer, but no way can I remember all
+the numid for my various cards! So, your patch sounds enticing.
+
+Best,
+
+Janina
+
+David writes:
+> Instead of reinventing the wheel, a small patch to the standard alsamixer makes it usable.
+> I added a -v or --non-visual switch to the options.
+> It makes the cursor visible and puts it on line 5 at the start of the item.
+> How does one get this included in the real alsamixer distribution?
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+
+-- 
+
+Janina Sajka
+
+Linux Foundation Fellow
+Executive Chair, Accessibility Workgroup:	http://a11y.org
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
