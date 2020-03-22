@@ -2,51 +2,40 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id 3814718EC67
-	for <lists+speakup@lfdr.de>; Sun, 22 Mar 2020 22:05:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id A8FD818ECC7
+	for <lists+speakup@lfdr.de>; Sun, 22 Mar 2020 23:02:00 +0100 (CET)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id 7FBBC428048A; Sun, 22 Mar 2020 17:05:47 -0400 (EDT)
+	id 719CB428048E; Sun, 22 Mar 2020 18:01:47 -0400 (EDT)
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id 814104280499
-	for <lists+speakup@lfdr.de>; Sun, 22 Mar 2020 17:03:32 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id 8536242804C5
+	for <lists+speakup@lfdr.de>; Sun, 22 Mar 2020 17:59:16 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2184E1C73C3; Sun, 22 Mar 2020 17:03:32 -0400 (EDT)
+	id 2F1D31C73BA; Sun, 22 Mar 2020 17:59:16 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2CCF91C57C1;
-	Sun, 22 Mar 2020 17:03:09 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id BE0BB1C73BC;
+	Sun, 22 Mar 2020 17:58:49 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 94A131C2CDD; Sun, 22 Mar 2020 17:03:05 -0400 (EDT)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 079EA1C0148
- for <speakup@linux-speakup.org>; Sun, 22 Mar 2020 17:03:04 -0400 (EDT)
+ id CCF7F1C2CDD; Sun, 22 Mar 2020 17:58:48 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id A9CDA1C0148
+ for <speakup@linux-speakup.org>; Sun, 22 Mar 2020 17:58:47 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1005)
+ id CB6658C0340; Sun, 22 Mar 2020 21:58:11 +0000 (UTC)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id BDD863494;
- Sun, 22 Mar 2020 22:02:59 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id UnyU25VeBsaQ; Sun, 22 Mar 2020 22:02:58 +0100 (CET)
-Received: from function.home (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
- [86.234.239.11])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 798E11D00;
- Sun, 22 Mar 2020 22:02:58 +0100 (CET)
-Received: from samy by function.home with local (Exim 4.93)
- (envelope-from <samuel.thibault@ens-lyon.org>)
- id 1jG7kH-000tqj-F8; Sun, 22 Mar 2020 22:02:57 +0100
-Date: Sun, 22 Mar 2020 22:02:57 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Karen Lewellen <klewellen@shellworld.net>, old78rpm@gmail.com
-Subject: Re: [raspberry-vi] A bit off topic, Speakup and Debian
- Stretch-Buster (fwd)
-Message-ID: <20200322210257.zqxh5jp7fo64hp36@function>
+ by server2.shellworld.net (Postfix) with ESMTP id CAC428C02D8;
+ Sun, 22 Mar 2020 17:58:11 -0400 (EDT)
+Date: Sun, 22 Mar 2020 17:58:11 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Subject: Re: [raspberry-vi] A bit off topic, Speakup and Debian Stretch-Buster
+ (fwd)
+In-Reply-To: <20200322210257.zqxh5jp7fo64hp36@function>
+Message-ID: <Pine.LNX.4.64.2003221756190.19613@server2.shellworld.net>
 References: <Pine.LNX.4.64.2003211738470.31197@server2.shellworld.net>
+ <20200322210257.zqxh5jp7fo64hp36@function>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Pine.LNX.4.64.2003211738470.31197@server2.shellworld.net>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,35 +50,47 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
+ old78rpm@gmail.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hello,
+  this communication should be directed to the person who actually wrote 
+that post.  My goal   was simply forwarding their  exchange so someone 
+could 
+reach them.
 
-Karen Lewellen, le sam. 21 mars 2020 17:39:53 -0400, a ecrit:
-> It appears the old Speakup list is long dead.
 
-? it is up and running, there were messages on each of the past months.
 
-> After several attempts to get somebody at the Debian accessibility email
-> address to respond
+On Sun, 22 Mar 2020, Samuel Thibault wrote:
 
-Neither the speakup nor the debian-accessibility mailing lists have
-however received any of your emails, there must be some smtp issue
-between your ISP and them.
-
-> Speech just goes dead.
-[...]
-> It seems to be related to how frequently I cause speech interupts by typing
-> or stopping speech during long output.
-
-Did anybody notice something like this?
-
-Samuel
+> Hello,
+>
+> Karen Lewellen, le sam. 21 mars 2020 17:39:53 -0400, a ecrit:
+>> It appears the old Speakup list is long dead.
+>
+> ? it is up and running, there were messages on each of the past months.
+>
+>> After several attempts to get somebody at the Debian accessibility email
+>> address to respond
+>
+> Neither the speakup nor the debian-accessibility mailing lists have
+> however received any of your emails, there must be some smtp issue
+> between your ISP and them.
+>
+>> Speech just goes dead.
+> [...]
+>> It seems to be related to how frequently I cause speech interupts by typing
+>> or stopping speech during long output.
+>
+> Did anybody notice something like this?
+>
+> Samuel
+>
+>
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
