@@ -2,64 +2,76 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id B423618EF9E
-	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 07:06:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id C0B1518F7D2
+	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 15:57:49 +0100 (CET)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id A86414280475; Mon, 23 Mar 2020 02:06:27 -0400 (EDT)
+	id 409244280493; Mon, 23 Mar 2020 10:57:47 -0400 (EDT)
 Authentication-Results: grumpy.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="di0nALzz";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.b="ZiaK4/dR";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id BC3534280492
-	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 02:02:12 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id DE4AE428049C
+	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 10:53:47 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7BB571C73BB; Mon, 23 Mar 2020 02:02:12 -0400 (EDT)
+	id 27BE41C73BB; Mon, 23 Mar 2020 10:53:47 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=di0nALzz;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=ZiaK4/dR;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8A73D1C73AF;
-	Mon, 23 Mar 2020 02:01:32 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id EF3081C73AF;
+	Mon, 23 Mar 2020 10:53:06 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id D1DC71C436A; Mon, 23 Mar 2020 02:01:22 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id C7F991C0148
- for <speakup@linux-speakup.org>; Mon, 23 Mar 2020 02:01:15 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:14f3:2890:4ef5:7b22])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id D47F248F6;
- Sun, 22 Mar 2020 23:02:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1584943340; bh=aqaX5pFgmoTC8P7H45OXaSHiNQ8pD3sXdeInfjS2q58=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=di0nALzzPz0sfIekg/kG829XS+WqBtlJzusVm6BpA9vBmhYfVlMo4FXyX0tRQsti/
- G1p+zGGbaW2dJ9tX02vQyioO4wWckU2Xbt5r35eRiNl5/kUXV9rJz0Wy+vBpvZbH2x
- VHZx8WdNe0OeP2MCx4lvSNmQt3FG7w8DILkWtUYVIvDAO5sk3LSjay+PLlsxB1hZa3
- +XjGaqcAp8IEzbIjAMtPEn77aIc+e7cAcxEUxzluTeXHfVEJYwBiFQqQPkBNqXYIQX
- 8UIGu7tBMB08VC5TJe6StRdGM1V8DX1Avco2wandbpjOJYjLIVqux2ihm3ZsbAlnUk
- wy+fgGpjE0t2Q==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>)
- id 1jGG8e-0001jI-BN; Sun, 22 Mar 2020 23:00:40 -0700
-Date: Sun, 22 Mar 2020 23:00:40 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: [raspberry-vi] A bit off topic, Speakup and Debian
- Stretch-Buster (fwd)
-Message-ID: <20200323060039.GB4138@gregn.net>
-References: <Pine.LNX.4.64.2003211738470.31197@server2.shellworld.net>
- <20200322210257.zqxh5jp7fo64hp36@function>
+ id 9B5661C436A; Mon, 23 Mar 2020 10:53:02 -0400 (EDT)
+Received: from mail-qk1-f171.google.com (mail-qk1-f171.google.com
+ [209.85.222.171])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id D0A821C0135
+ for <speakup@linux-speakup.org>; Mon, 23 Mar 2020 10:53:00 -0400 (EDT)
+Received: by mail-qk1-f171.google.com with SMTP id q188so10163908qke.8
+ for <speakup@linux-speakup.org>; Mon, 23 Mar 2020 07:53:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version:thread-index
+ :content-language;
+ bh=NO0PMrRCTOtAbveEb1nrmrgfHvi1pIGENPKLIL9qb+Q=;
+ b=ZiaK4/dRItO/WL/txNzhMSQchSgp9L0gaD/37IunRZmEQnm2pL+3xpCoK1rPq3emvU
+ +tj5lp0tN0/kIGEr0TiX/8h8pWYPz1suIS+bosTMP+kQK9vFWxlXePdi+Z+UnmNvPBds
+ U0Fm256qi5TziR0wQASYcmOZNzgmzxqtuLiUP/7qfH+pSFOpNHkeXOKVHabklrQFPukZ
+ K9n4Pv87i74S/Lpw15QDYrzrLPd/IJ+6hEqscORRhqu9KWiG3wP5jVkSjLy29TBqa4Aj
+ muiciZlAt8WOocKqBGDo71E+sh3JU3AKmNeKrMhjlQy4seMqh82jK9LyRpXZn0KOpQ4e
+ uaBA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :thread-index:content-language;
+ bh=NO0PMrRCTOtAbveEb1nrmrgfHvi1pIGENPKLIL9qb+Q=;
+ b=mextudWvcy2unWC8vejc/RpKW0eK5O6S5AcKQpC1iss7l8yQRV9EbssNy6EzKLPEKA
+ rJyHfMeY2e+f7pQNKl4j+unRxIZIWDiiKWMgL1uZLNk4/w0gAbZ9AXqd4rGLaqwmF9P+
+ +zTtOOywiRWVM4eaBn2dUR0iQqpgTW7GAy9AIMx1VxRMODlCN8OyQjpUu1APt98pHCPF
+ 71jqdpLPQZbeOOxQ6Xh96KBhxrsbSh4/w/Icg23XkDftvaCFaJWUrCZHnhS5y4NColTb
+ NftZ7+WI9Xl0fwT6ekG5DqOYlSbUXswZI9K22DIjCg7Ghi4WHkiE5VCAeFZc5jLQylJz
+ ucKA==
+X-Gm-Message-State: ANhLgQ0YlKmlZV7xNPgRrU7G1ru69JDuAo7jZw2ZY4zMWYjOzYkvMM/f
+ YZjXScC7vsOLw/7AxoLdyB98uNNMnMk=
+X-Google-Smtp-Source: ADFU+vtR9WX3yVrS6VcmhtUPuvFDmjWaSvtVBoFJnxGn0ImGTtdfMU1lIfHPXXHyCyvyqbC/BTLDcw==
+X-Received: by 2002:a37:8101:: with SMTP id c1mr21478401qkd.60.1584975119984; 
+ Mon, 23 Mar 2020 07:51:59 -0700 (PDT)
+Received: from X230 (99-72-244-221.lightspeed.mdsnwi.sbcglobal.net.
+ [99.72.244.221])
+ by smtp.gmail.com with ESMTPSA id f19sm7642538qtq.78.2020.03.23.07.51.59
+ for <speakup@linux-speakup.org>
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 23 Mar 2020 07:51:59 -0700 (PDT)
+From: "Chris Zenchenko" <old78rpm@gmail.com>
+To: <speakup@linux-speakup.org>
+Subject: Back on the list, test
+Date: Mon, 23 Mar 2020 09:51:57 -0500
+Message-ID: <011b01d60122$9a808c80$cf81a580$@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200322210257.zqxh5jp7fo64hp36@function>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.2 at vserver
-X-Virus-Status: Clean
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AdYBIhHH+fa6O4WrSBeHgv03L7wkSA==
+Content-Language: en-us
+X-Content-Filtered-By: Mailman/MimeDel 2.1.29
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,51 +86,19 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: old78rpm@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Sun, Mar 22, 2020 at 10:02:57PM +0100, Samuel Thibault wrote:
-Chris wrote:
-> > Speech just goes dead.
-> [...]
-> > It seems to be related to how frequently I cause speech interupts by typing
-> > or stopping speech during long output.
-> 
+Well after all the fun I had over on the Raspberry-vi list I went digging
+back through about 7 years of email.
+I can't quite figure out when I dropped off this list but I must have missed
+one of those are you still alive yearly confirmation messages.
+I still had my original thanks/welcome messages from a long time ago.
+Anyway testing seems like a good idea to make sure I made it back on.
 
-Samuel wrote:
-
-> Did anybody notice something like this?
-
-Yes, I've been testing devuan 3 beta install isos this past week,
-which is based on debian 11. If I
-attempt to do the install in a VirtualBox 5.2.38 guest using software
-speech, speech goes away right after I get the screen to select the
-language, and I try to adjust volume/rate. On my intel core i5 laptop,
-the guest just crashes every time, regardless of if I use software or
-hardware speech. On a guest running on my ryzen system, the same thing
-happens. The difference is I can switch to the second console, press
-enter, and modprobing a hardware synth module still works. I suspect
-this is possibly related to the 4.19 kernel, and possibly speakup in
-that kernel. This is as far as I've been able to investigate so far. I don't
-yet know what happens on my ryzen system guest; if espeakup just crashes
-and needs to be restarted, or something more serious.
-
-Greg
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
