@@ -2,56 +2,65 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id A6D7E18F825
-	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 16:05:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id E555519026C
+	for <lists+speakup@lfdr.de>; Tue, 24 Mar 2020 01:04:02 +0100 (CET)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id 9F0354280458; Mon, 23 Mar 2020 11:05:27 -0400 (EDT)
+	id 020EF4280512; Mon, 23 Mar 2020 19:47:44 -0400 (EDT)
+Authentication-Results: grumpy.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="STcVgUTF";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id 117474280481
-	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 11:04:30 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id 7BEAC4280469
+	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 19:45:42 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0C98B1C73BE; Mon, 23 Mar 2020 11:04:25 -0400 (EDT)
+	id 641121C73D8; Mon, 23 Mar 2020 19:45:25 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=STcVgUTF;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B09C31C73D8;
-	Mon, 23 Mar 2020 11:04:16 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6099B1C57BF;
+	Mon, 23 Mar 2020 19:45:13 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 919071C436A; Mon, 23 Mar 2020 11:04:14 -0400 (EDT)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 30E9A1C0135
- for <speakup@linux-speakup.org>; Mon, 23 Mar 2020 11:04:13 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id D4184E607;
- Mon, 23 Mar 2020 16:03:40 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 6tRvTzKG0Usc; Mon, 23 Mar 2020 16:03:40 +0100 (CET)
-Received: from function.home (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
- [86.234.239.11])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id D6F49C34F;
- Mon, 23 Mar 2020 16:03:39 +0100 (CET)
-Received: from samy by function.home with local (Exim 4.93)
- (envelope-from <samuel.thibault@ens-lyon.org>)
- id 1jGOc6-0045af-K6; Mon, 23 Mar 2020 16:03:38 +0100
-Date: Mon, 23 Mar 2020 16:03:38 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Gregory Nowak <greg@gregn.net>
-Subject: Re: speakup on latest kernels
-Message-ID: <20200323150338.3siu2dwnvccpxbun@function>
-References: <77f47396-554f-3d0a-fd9d-fc760ecb2dfe@the-brannons.com>
- <20200130053303.GA4319@gregn.net>
- <9ca2e37d-f293-9b7b-80a2-177cbccfb08e@gmail.com>
- <alpine.NEB.2.21.2001301518500.16863@panix1.panix.com>
- <20200303131128.7d4uitw7feevimoj@function>
- <20200313234801.GA28428@gregn.net>
- <20200322233440.xs6r5uxevwifa6lo@function>
+ id 6F4DB1C57BE; Mon, 23 Mar 2020 19:45:05 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 481741C0135
+ for <speakup@linux-speakup.org>; Mon, 23 Mar 2020 19:45:03 -0400 (EDT)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2607:fb90:a686:c07f:a00:27ff:fe01:8e92])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id 2DB79239A;
+ Mon, 23 Mar 2020 16:46:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1585007171; bh=I/Q2T0DGtIrvRO9qq5E3D7oS1sdchqCRpEsO4bj4dZc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=STcVgUTFzh0dUdalA3bgP8S2ifbYhyF/5FFmFUJbFWY22l4toQqBid4zo9vYeb7oj
+ ok+ODmj/NPuxkJhwoxsOZxw7F5YTMdVR07NS1n4l4jzlIRkuSY/npVNdH33L9QV52B
+ V6tah4sMUPGOWIc8PchxEDroyrs685ZSh+blIsX14FjMwryWYgpXzeVd7qim0P9FTN
+ /uBbosDzqxEwVuCDULBr94hm5plazekkLBcqK/o9WF62BY/GPvGAGptKdJMm4PPyYo
+ /bQ3l0kiRQKWyGlWRoNeXZSyUgifq4ciMteJYMdPJ7m7u0JUfuPioX8BXDGyNKyyHO
+ W1RWotvYH+jRA==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>)
+ id 1jGWke-0001Bw-Vh; Mon, 23 Mar 2020 16:45:00 -0700
+Date: Mon, 23 Mar 2020 16:45:00 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: [raspberry-vi] A bit off topic, Speakup and Debian
+ Stretch-Buster (fwd)
+Message-ID: <20200323234500.GB4024@gregn.net>
+References: <Pine.LNX.4.64.2003211738470.31197@server2.shellworld.net>
+ <20200322210257.zqxh5jp7fo64hp36@function>
+ <20200323060039.GB4138@gregn.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200322233440.xs6r5uxevwifa6lo@function>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+In-Reply-To: <20200323060039.GB4138@gregn.net>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.102.2 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,21 +75,30 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: Janina Sajka <janina@rednote.net>,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Samuel Thibault, le lun. 23 mars 2020 00:34:40 +0100, a ecrit:
-> The fix is in Linus' 5.6-rc7 snapshot, so it will be in Linux 5.6.
+On Sun, Mar 22, 2020 at 11:00:40PM -0700, Gregory Nowak wrote:
+> Yes, I've been testing devuan 3 beta install isos this past week,
+> which is based on debian 11.
 
-And it got applied in the stable trees, so for the upcoming
-5.5.12, 5.4.28, 4.19.113, 4.14.175, 4.9.218, 4.4.218.
+Oops, I meant debian 10.
 
-Samuel
+Greg
+
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
