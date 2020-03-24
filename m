@@ -2,65 +2,72 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id E555519026C
-	for <lists+speakup@lfdr.de>; Tue, 24 Mar 2020 01:04:02 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id DE9DB1916BF
+	for <lists+speakup@lfdr.de>; Tue, 24 Mar 2020 17:45:09 +0100 (CET)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id 020EF4280512; Mon, 23 Mar 2020 19:47:44 -0400 (EDT)
+	id 0C0F44280463; Tue, 24 Mar 2020 12:45:08 -0400 (EDT)
 Authentication-Results: grumpy.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="STcVgUTF";
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=cableone.net header.i=@cableone.net header.b="k4z/DPU/";
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id 7BEAC4280469
-	for <lists+speakup@lfdr.de>; Mon, 23 Mar 2020 19:45:42 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id 1BD6842804F1
+	for <lists+speakup@lfdr.de>; Tue, 24 Mar 2020 12:44:34 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 641121C73D8; Mon, 23 Mar 2020 19:45:25 -0400 (EDT)
+	id DF7141C436A; Tue, 24 Mar 2020 12:44:33 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=STcVgUTF;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=cableone.net header.i=@cableone.net header.a=rsa-sha1 header.s=20180516 header.b=k4z/DPU/;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6099B1C57BF;
-	Mon, 23 Mar 2020 19:45:13 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3523C1C73C3;
+	Tue, 24 Mar 2020 12:43:05 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 6F4DB1C57BE; Mon, 23 Mar 2020 19:45:05 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 481741C0135
- for <speakup@linux-speakup.org>; Mon, 23 Mar 2020 19:45:03 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2607:fb90:a686:c07f:a00:27ff:fe01:8e92])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id 2DB79239A;
- Mon, 23 Mar 2020 16:46:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1585007171; bh=I/Q2T0DGtIrvRO9qq5E3D7oS1sdchqCRpEsO4bj4dZc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=STcVgUTFzh0dUdalA3bgP8S2ifbYhyF/5FFmFUJbFWY22l4toQqBid4zo9vYeb7oj
- ok+ODmj/NPuxkJhwoxsOZxw7F5YTMdVR07NS1n4l4jzlIRkuSY/npVNdH33L9QV52B
- V6tah4sMUPGOWIc8PchxEDroyrs685ZSh+blIsX14FjMwryWYgpXzeVd7qim0P9FTN
- /uBbosDzqxEwVuCDULBr94hm5plazekkLBcqK/o9WF62BY/GPvGAGptKdJMm4PPyYo
- /bQ3l0kiRQKWyGlWRoNeXZSyUgifq4ciMteJYMdPJ7m7u0JUfuPioX8BXDGyNKyyHO
- W1RWotvYH+jRA==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>)
- id 1jGWke-0001Bw-Vh; Mon, 23 Mar 2020 16:45:00 -0700
-Date: Mon, 23 Mar 2020 16:45:00 -0700
-From: Gregory Nowak <greg@gregn.net>
+ id EA03B1C57BD; Tue, 24 Mar 2020 12:43:01 -0400 (EDT)
+Received: from mail.cableone.net (mail2.cableone.syn-alias.com [69.168.106.66])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id F0A2F1C0D87
+ for <speakup@linux-speakup.org>; Tue, 24 Mar 2020 12:42:58 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha1; d=cableone.net; s=20180516; c=relaxed/simple; 
+ q=dns/txt; i=@cableone.net; t=1585068178;
+ h=From:Subject:Date:To:MIME-Version:Content-Type;
+ bh=Nod7w+7jrOOHm2yG9JOh76ZKLXs=;
+ b=k4z/DPU/FTVq9kZq758AKobX0/QEALtJs6oTAglN48E5kLsdsvxRYwQLO32bDD/D
+ WtqIVSqru0iwVxzBRWIU8jYY3h7JuvxC7ZDg7PDxCQtlwlphcg5QLEklcwSJP7B3
+ tGVzibGOmcXx0lm1rYD0nwfQfpt9rMZMSXjE9IVfYLdqqXFPTmfEJpjoEeqrSQxu
+ JaX1Ti3ZNpdIhs9QT2fiZim3JWbSC3kDFXupw7RHE22gc1tWipGbVQyHyd4Z2lqW
+ U/9UiN+g6p5IMVk3MkdHdhqT0UIfbi6Z3JT9gTdubjiFU6pYDIzsGCY/GJ5qTxS2
+ MHLWPzCnhEHc7y+DNd2Wwg==;
+X_CMAE_Category: , ,
+X-CNFS-Analysis: v=2.3 cv=UNaj4xXy c=1 sm=1 tr=0
+ a=83sKN6Zl7IuxNZWA8nrnjA==:117 a=83sKN6Zl7IuxNZWA8nrnjA==:17
+ a=KGjhK52YXX0A:10 a=8nJEP1OIZ-IA:10 a=SS2py6AdgQ4A:10 a=P7xTaY_ng_sA:10
+ a=m8YGQp87AAAA:8 a=9_GH9xibAAAA:8 a=pGLkceISAAAA:8 a=qPKtzgQbAAAA:8
+ a=wXLH96sks8ThCeFt3pcA:9 a=wPNLvfGTeEIA:10 a=sQmdjVoOy41DRvcrsFdt:22
+ a=dO7qa_Xy17WzffDKgyPM:22 a=OTAqJWGB1laLS8RTg9aS:22
+X-CM-Score: 0
+X-Scanned-by: Cloudmark Authority Engine
+X-Authed-Username: Z2xlbm5lcnZpbkBjYWJsZW9uZS5uZXQ=
+Authentication-Results: smtp01.lapis.bos.sync.lan
+ smtp.user=glennervin@cableone.net; auth=pass (LOGIN)
+Received: from [160.3.126.27] ([160.3.126.27:60517] helo=NUCPPYH)
+ by mail.cableone.net (envelope-from <glennervin@cableone.net>)
+ (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
+ (cipher=DHE-RSA-AES256-SHA) 
+ id 4E/56-00904-1983A7E5; Tue, 24 Mar 2020 12:42:58 -0400
+Message-ID: <030f01d601fb$4cb137f0$7001a8c0@NUCPPYH>
+From: "Glenn K0LNY" <glennervin@cableone.net>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: [raspberry-vi] A bit off topic, Speakup and Debian
- Stretch-Buster (fwd)
-Message-ID: <20200323234500.GB4024@gregn.net>
 References: <Pine.LNX.4.64.2003211738470.31197@server2.shellworld.net>
  <20200322210257.zqxh5jp7fo64hp36@function>
- <20200323060039.GB4138@gregn.net>
+Subject: Re: [raspberry-vi] A bit off topic,
+ Speakup and Debian Stretch-Buster (fwd)
+Date: Tue, 24 Mar 2020 11:40:56 -0500
+Organization: Home
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200323060039.GB4138@gregn.net>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.2 at vserver
-X-Virus-Status: Clean
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.3790.1830
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,32 +80,74 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: "Speakup is a screen review system for Linux."
+Reply-To: Glenn K0LNY <GlennErvin@cableone.net>,
+ "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Sun, Mar 22, 2020 at 11:00:40PM -0700, Gregory Nowak wrote:
-> Yes, I've been testing devuan 3 beta install isos this past week,
-> which is based on debian 11.
+I have a Raspberry PI Model B, version 2, and I'm trying to get eSpeak and 
+speakup going.
+I installed the version:
+2020-02-13-raspbian-buster.img
+and I can SSH into it, and I was getting audio out with:
+speaker-test -c 2
+but if I tried espeak "hello"
+I didn't get anything until I installed pulseaudio.
+Now the espeak works, but still no speakup on boot-up.
+I installed speakup and that did not work, although it seemed to install 
+okay.
+I installed Orca with:
+apt-get install gnome-orca
+and that seemed to install okay, but it did not help speakup.
+I had done a general Debian update before doing all the above.
+The only way eSpeak works with strings of text is via SSH, not the plugged 
+in keyboard.
+I would like to get a desktop going, but this RPI may not have the RAM for 
+it.
+Glenn
 
-Oops, I meant debian 10.
+----- Original Message ----- 
+From: "Samuel Thibault" <samuel.thibault@ens-lyon.org>
+To: "Karen Lewellen" <klewellen@shellworld.net>; <old78rpm@gmail.com>
+Cc: "Speakup is a screen review system for Linux." 
+<speakup@linux-speakup.org>
+Sent: Sunday, March 22, 2020 4:02 PM
+Subject: Re: [raspberry-vi] A bit off topic, Speakup and Debian 
+Stretch-Buster (fwd)
 
-Greg
 
+> Hello,
+>
+> Karen Lewellen, le sam. 21 mars 2020 17:39:53 -0400, a ecrit:
+>> It appears the old Speakup list is long dead.
+>
+> ? it is up and running, there were messages on each of the past months.
+>
+>> After several attempts to get somebody at the Debian accessibility email
+>> address to respond
+>
+> Neither the speakup nor the debian-accessibility mailing lists have
+> however received any of your emails, there must be some smtp issue
+> between your ISP and them.
+>
+>> Speech just goes dead.
+> [...]
+>> It seems to be related to how frequently I cause speech interupts by 
+>> typing
+>> or stopping speech during long output.
+>
+> Did anybody notice something like this?
+>
+> Samuel
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup 
 
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
