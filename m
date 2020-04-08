@@ -1,51 +1,71 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id DE9E819A06D
-	for <lists+speakup@lfdr.de>; Tue, 31 Mar 2020 23:06:26 +0200 (CEST)
+Received: from grumpy.reisers.ca (unknown [IPv6:2001:470:1d:288:8e89:a5ff:fe59:6a4d])
+	by mail.lfdr.de (Postfix) with ESMTP id 058C21A270D
+	for <lists+speakup@lfdr.de>; Wed,  8 Apr 2020 18:20:32 +0200 (CEST)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id C0F14428046E; Tue, 31 Mar 2020 17:06:25 -0400 (EDT)
+	id 647E14280480; Wed,  8 Apr 2020 12:20:13 -0400 (EDT)
+Authentication-Results: grumpy.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=cableone.net header.i=@cableone.net header.b="PxuaDn58";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id 856A54280502
-	for <lists+speakup@lfdr.de>; Tue, 31 Mar 2020 17:02:56 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id 1FF834280509
+	for <lists+speakup@lfdr.de>; Wed,  8 Apr 2020 12:18:19 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 758C61C57C9; Tue, 31 Mar 2020 17:02:56 -0400 (EDT)
+	id CCF011C579D; Wed,  8 Apr 2020 12:18:18 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=cableone.net header.i=@cableone.net header.a=rsa-sha1 header.s=20180516 header.b=PxuaDn58;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id DCA941C73C6;
-	Tue, 31 Mar 2020 17:01:30 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6A3381C57F4;
+	Wed,  8 Apr 2020 12:16:42 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 67F451C57AE; Tue, 31 Mar 2020 17:01:26 -0400 (EDT)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [IPv6:2a0c:e300::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 8CDEE1C0129
- for <speakup@linux-speakup.org>; Tue, 31 Mar 2020 17:01:22 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id BDCB22F33;
- Tue, 31 Mar 2020 23:01:15 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id MPeLkAHGjvCI; Tue, 31 Mar 2020 23:01:14 +0200 (CEST)
-Received: from function (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
- [86.234.239.11])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id D0CA91CA8;
- Tue, 31 Mar 2020 23:01:14 +0200 (CEST)
-Received: from samy by function with local (Exim 4.93)
- (envelope-from <samuel.thibault@ens-lyon.org>)
- id 1jJO0X-00HQbc-MN; Tue, 31 Mar 2020 23:01:13 +0200
-Date: Tue, 31 Mar 2020 23:01:13 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+ id DC8751C0129; Wed,  8 Apr 2020 12:16:32 -0400 (EDT)
+Received: from mail.cableone.net (mail2.cableone.syn-alias.com [69.168.106.66])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 142931C0129
+ for <speakup@linux-speakup.org>; Wed,  8 Apr 2020 12:16:26 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha1; d=cableone.net; s=20180516; c=relaxed/simple; 
+ q=dns/txt; i=@cableone.net; t=1586362581;
+ h=From:Subject:Date:To:MIME-Version:Content-Type;
+ bh=IqRwL9MA7PBMZTKBjYC1z8bFKXI=;
+ b=PxuaDn58ouQ4bRxNXtC4tgFR6xe9H2ihtO2xw7i4VbyiP1IG5TpPIntIBWKftx5w
+ y+96eWF/bmJlSaSfouQVhfZmctxOow/hnRJ+fNgh1z/pyMZDE/i8EupwsexX3H5i
+ AeE4Zzkdhq7YEDPvbayYfsHtHwvZr4Z3nqy7IwUmQph+/K25yFm6j2zZ9EYtcwi+
+ N66OFv/TyJOoE9Lk4root4IlFH0jFe1sES6xdNb13QfEt+Q3F4zz7Y3tvWtMVSNC
+ H9rC/6fDFifTpjKOcB5MchmWkYZTGiF+r1OjHtGDdKvYMKGKOMR1cu3gpk3sUXTr
+ UC3SRwiIM3f46AS2j8SqCQ==;
+X_CMAE_Category: , ,
+X-CNFS-Analysis: v=2.3 cv=EuCsUhUA c=1 sm=1 tr=0
+ a=83sKN6Zl7IuxNZWA8nrnjA==:117 a=83sKN6Zl7IuxNZWA8nrnjA==:17
+ a=KGjhK52YXX0A:10 a=cl8xLZFz6L8A:10 a=P7xTaY_ng_sA:10
+ a=r77TgQKjGQsHNAKrUKIA:9 a=fxJcL_dCAAAA:8 a=lrNvW2i8h_J9R0P1QR8A:9
+ a=wPNLvfGTeEIA:10 a=LwE7R6pCFlH8wZhcImkA:9 a=DKOFUVYgRh9mvBms:21
+ a=_W_S_7VecoQA:10 a=pHzHmUro8NiASowvMSCR:22 a=6VlIyEUom7LUIeUMNQJH:22
+X-CM-Score: 0
+X-Scanned-by: Cloudmark Authority Engine
+X-Authed-Username: Z2xlbm5lcnZpbkBjYWJsZW9uZS5uZXQ=
+Authentication-Results: smtp02.lapis.bos.sync.lan
+ smtp.user=glennervin@cableone.net; auth=pass (LOGIN)
+Received: from [160.3.126.27] ([160.3.126.27:49473] helo=NUCPPYH)
+ by mail.cableone.net (envelope-from <glennervin@cableone.net>)
+ (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
+ (cipher=DHE-RSA-AES256-SHA) 
+ id C8/8C-04467-5D8FD8E5; Wed, 08 Apr 2020 12:16:21 -0400
+Message-ID: <001401d60dc1$0b9d8490$7001a8c0@NUCPPYH>
+From: "Glenn K0LNY" <glennervin@cableone.net>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: trouble booting debian10.3 with speakup
-Message-ID: <20200331210113.5aejgk5kfwcau7s7@function>
-References: <E1jJNjh-0001Je-B6@rings.ka0vba.ampr.org>
+Subject: Installing eSpeakup
+Date: Wed, 8 Apr 2020 11:16:21 -0500
+Organization: Home
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <E1jJNjh-0001Je-B6@rings.ka0vba.ampr.org>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.3790.1830
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Content-Filtered-By: Mailman/MimeDel 2.1.29
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,35 +78,36 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: "Speakup is a screen review system for Linux."
+Reply-To: Glenn K0LNY <GlennErvin@cableone.net>,
+ "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: ka0vba@dicom.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-D. Curtis Willoughby, le mar. 31 mars 2020 14:43:49 -0600, a ecrit:
-> I'll skip the gory details of how I had to boot the usb stick.
-> If you really want them, I can provide.
+Hi,
+I keep trying different distros on this netbook, an Asus 701 with little success.
+I did get Ubuntu 11.04 working with Orca.
+I want to try something newer, so I downloaded Ubuntu Server 14.10, and it will come without the GUI.
+So if I can get it talking with eSpeakup, I will try to install Mate or Gnome.
+But what are the proper steps to get espeakup going in the CLI after it boots up?
+perhaps just apt-get install espeakup?
+Or will I need to get something going first?
+I have had no luck with Talking Arch or Vinux 4.1.
+Thanks.
 
-That could have its importance, yes. I have heard that e.g. unetbootin
-does horrible hacks which could very well have impact over what actually
-happens in the installer. Normally all you need to do to write the usb
-stick is a mere "dd" command, nothing more.
+Glenn
 
->  They included "fb=false", "graphics=no", or "graphics=none",
 
-They should not be needed at all, 's' is enough to stay in text mode.
+--------------------------------------------------------------------------------
 
-> and always ending up with "debconf/priority=medium".
 
-Note that you can also change that from within the installer: at the
-first menu, type character '<' to get back to the main menu, from which
-you can choose "Change debconf priority".
-
-Samuel
+-- 
+Ubuntu-accessibility mailing list
+Ubuntu-accessibility@lists.ubuntu.com
+https://lists.ubuntu.com/mailman/listinfo/ubuntu-accessibility
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
