@@ -1,45 +1,51 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id 57CC21A2D98
-	for <lists+speakup@lfdr.de>; Thu,  9 Apr 2020 04:28:43 +0200 (CEST)
+Received: from grumpy.reisers.ca (unknown [IPv6:2001:470:1d:288:8e89:a5ff:fe59:6a4d])
+	by mail.lfdr.de (Postfix) with ESMTP id A01FE1A5F82
+	for <lists+speakup@lfdr.de>; Sun, 12 Apr 2020 19:18:49 +0200 (CEST)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id 58C62428045E; Wed,  8 Apr 2020 22:28:42 -0400 (EDT)
+	id 750A442804D4; Sun, 12 Apr 2020 13:18:30 -0400 (EDT)
+Authentication-Results: grumpy.reisers.ca;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=tait.tech header.i=@tait.tech header.b="T4eKoJqP";
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id 2BD9742804F7
-	for <lists+speakup@lfdr.de>; Wed,  8 Apr 2020 22:26:43 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id E19244280463
+	for <lists+speakup@lfdr.de>; Sun, 12 Apr 2020 13:17:36 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D75C81C5619; Wed,  8 Apr 2020 22:26:42 -0400 (EDT)
+	id B0B391C2C5E; Sun, 12 Apr 2020 13:17:36 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=tait.tech header.i=@tait.tech header.a=rsa-sha256 header.s=protonmail header.b=T4eKoJqP;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 871671C57BA;
-	Wed,  8 Apr 2020 22:24:25 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 781221C57FF;
+	Sun, 12 Apr 2020 13:17:06 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id EC7F01C579D; Wed,  8 Apr 2020 22:24:19 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 563DC1C0129
- for <speakup@linux-speakup.org>; Wed,  8 Apr 2020 22:24:10 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
- by mailbackend.panix.com (Postfix) with ESMTP id 48yQ1z4hCNzv9m;
- Wed,  8 Apr 2020 22:24:07 -0400 (EDT)
-Received: by panix1.panix.com (Postfix, from userid 20712)
- id 48yQ1z4LMczcbc; Wed,  8 Apr 2020 22:24:07 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
- by panix1.panix.com (Postfix) with ESMTP id 48yQ1z4FFTzcbW;
- Wed,  8 Apr 2020 22:24:07 -0400 (EDT)
-Date: Wed, 8 Apr 2020 22:24:07 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>, 
- Glenn K0LNY <glennervin@cableone.net>
-Subject: Re: Installing eSpeakup
-In-Reply-To: <20200409020419.GA5996@gregn.net>
-Message-ID: <alpine.NEB.2.21.2004082219440.2459@panix1.panix.com>
-References: <001401d60dc1$0b9d8490$7001a8c0@NUCPPYH>
- <20200408201524.GA3865@gregn.net> <000301d60e34$46414820$7001a8c0@NUCPPYH>
- <20200409020419.GA5996@gregn.net>
+ id AD9C31C2C5E; Sun, 12 Apr 2020 13:17:03 -0400 (EDT)
+Received: from mail-40131.protonmail.ch (mail-40131.protonmail.ch
+ [185.70.40.131])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 673A71C0129
+ for <speakup@linux-speakup.org>; Sun, 12 Apr 2020 13:17:00 -0400 (EDT)
+Date: Sun, 12 Apr 2020 17:16:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=tait.tech;
+ s=protonmail; t=1586711817;
+ bh=B2ChemolYetafhZKjuisFhrxncJpfsY9ok/IiNeEcd0=;
+ h=Date:To:From:Reply-To:Subject:From;
+ b=T4eKoJqPT0xMZa/G/iUx3vv4QXamqPoQgckml2Oe6STbhVrX5GxSyg2f/jIbcocic
+ 6cY29NnxQk2Fk79+uICO08F1Pcnp6ToA3C+Ua8bic8rraUBf/TkdMzhWU9DlLDuP+p
+ TkGq6AnKVhG0Wc8uBnuKw7ZWY/pt19/aQzipSv6s=
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: Tait Hoyem <tait@tait.tech>
+Subject: Questions More General Than Speakup
+Message-ID: <6kVN_WQmeo167AqZoKYo6jwc9KPHubdfHGhujAqvCjefb8eHgBliH-_sWRItn24JRCq-ZVxN4LLG-3Ra8Tu-rjcMO_vOt65VSt6mbjVCajI=@tait.tech>
 MIME-Version: 1.0
+X-Spam-Status: No, score=-1.2 required=7.0 tests=ALL_TRUSTED,DKIM_SIGNED,
+ DKIM_VALID,DKIM_VALID_AU,DKIM_VALID_EF,HTML_MESSAGE shortcircuit=no
+ autolearn=disabled version=3.4.4
+X-Spam-Checker-Version: SpamAssassin 3.4.4 (2020-01-24) on mail.protonmail.ch
+X-Content-Filtered-By: Mailman/MimeDel 2.1.29
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -52,120 +58,70 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: "Speakup is a screen review system for Linux."
+Reply-To: Tait Hoyem <tait@tait.tech>,
+ "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-orca uses speech-dispatcher and speech-dispatcher can be configured to use
-alsa. Use the spd-conf command to do that. I don't know did that version
-of ubuntu change from systemv to systemd?  To find out try which systemctl
-if nothing returns it's systemv you're using.  If a file path is returned
-before rebooting as root type systemctl enable espeakup.  That way speech
-eventually will come up if your netbook can do it.
-
-On Wed, 8 Apr 2020,
-Gregory Nowak wrote:
-
-> Date: Wed, 8 Apr 2020 22:04:19
-> From: Gregory Nowak <greg@gregn.net>
-> Reply-To: Speakup is a screen review system for Linux.
->     <speakup@linux-speakup.org>
-> To: Glenn K0LNY <glennervin@cableone.net>, speakup@linux-speakup.org
-> Subject: Re: Installing eSpeakup
->
-> Forwarding back on list.
->
->
-> On Thu, Apr 09, 2020 at 01:01:12AM -0500, Glenn K0LNY wrote:
-> > If pulseaudio is removed, what does espeakup use as a sound device?
->
-> It uses the alsa driver directly.
->
-> > I don't really understand the different parts.
-> > I believe speech-dispatcher is the go-between for a screenreader and a sound
-> > module.
->
-> It can be, but doesn't have to be.
->
-> > But I don't know what they all use, espeakup and Orca.
->
-> The espeakup package uses alsa directly as far as I know, while orca
-> uses speech-dispatcher, which can use multiple audio backends, alsa
-> directly, and through pulseaudio among them. There is another package,
-> speechd-up which was written as a proof of concept, and it can replace
-> espeakup to join speakup's software synthesizer with speech-dispatcher.
->
-> Greg
->
->
-> > Glenn
-> > ----- Original Message -----
-> > From: "Gregory Nowak" <greg@gregn.net>
-> > To: "Glenn K0LNY" <GlennErvin@cableone.net>; "Speakup is a screen review
-> > system for Linux." <speakup@linux-speakup.org>
-> > Sent: Wednesday, April 08, 2020 3:15 PM
-> > Subject: Re: Installing eSpeakup
-> >
-> >
-> > You'll likely  need to add speakup_soft to /etc/modules, and apt-get
-> > install espeakup. You may also have to work with, or purge pulseaudio.
-> >
-> > Greg
-> >
-> >
-> > On Wed, Apr 08, 2020 at 11:16:21AM -0500, Glenn K0LNY wrote:
-> > > Hi,
-> > > I keep trying different distros on this netbook, an Asus 701 with little
-> > > success.
-> > > I did get Ubuntu 11.04 working with Orca.
-> > > I want to try something newer, so I downloaded Ubuntu Server 14.10, and it
-> > > will come without the GUI.
-> > > So if I can get it talking with eSpeakup, I will try to install Mate or
-> > > Gnome.
-> > > But what are the proper steps to get espeakup going in the CLI after it
-> > > boots up?
-> > > perhaps just apt-get install espeakup?
-> > > Or will I need to get something going first?
-> > > I have had no luck with Talking Arch or Vinux 4.1.
-> > > Thanks.
-> > >
-> > > Glenn
-> > >
-> > >
-> > > --------------------------------------------------------------------------------
-> > >
-> > >
-> > > --
-> > > Ubuntu-accessibility mailing list
-> > > Ubuntu-accessibility@lists.ubuntu.com
-> > > https://lists.ubuntu.com/mailman/listinfo/ubuntu-accessibility
-> > > _______________________________________________
-> > > Speakup mailing list
-> > > Speakup@linux-speakup.org
-> > > http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-> > >
-> >
-> > --
-> > web site: http://www.gregn.net
-> > gpg public key: http://www.gregn.net/pubkey.asc
-> > skype: gregn1
-> > (authorization required, add me to your contacts list first)
-> > If we haven't been in touch before, e-mail me before adding me to your
-> > contacts.
-> >
-> > --
-> > Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-> >
->
->
-
--- 
-
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+SGVsbG8gU3BlYWt1cCBtZW1iZXJzLAoKSSBoYXZlIGEgZmV3IHF1ZXN0aW9ucyBhYm91dCBicmFp
+bGxlIGRpc3BsYXlzLCB3aGF0IHRoZXkgcnVuLCBhbmQgc29tZSBvdGhlciBtaXNjZWxsYW5lb3Vz
+IHF1ZXN0aW9ucyByZWxhdGVkIHRvIHRoZW0uCgpXaGVuIGxvb2tpbmcgaW50byBvcHRpb25zIGZv
+ciBhIExpbnV4LWJhc2VkIG5vdGV0YWtlciwgSSB3YXMgZGlyZWN0ZWQgdG93YXJkcyB0aGlzIHBy
+b2plY3QuIEknbSBub3QgMTAwJSBzdXJlIHRoaXMgaXMgdGhlIHJpZ2h0IHBsYWNlIG9yIG5vdCwg
+YnV0IHdvdWxkIGxvdmUgdG8gaGVhciBmcm9tIHlvdSBndXlzLgoKQXMgcGFydCBvZiBhIHBlcnNv
+bmFsIHNpZGUgcHJvamVjdCwgSSBhbSBpbnRlcmVzdGVkIGluIGdldHRpbmcgYSBMaW51eCAob3Ig
+KkJTRCkgc3lzdGVtIHJ1bm5pbmcgb24gYSBub3RldGFrZXIuIEFyZSB0aGVyZSBhbnkgY29tbWVy
+Y2lhbCBvcHRpb25zIGZvciB0aGlzPwpDb21tZXJjaWFsIG9wdGlvbnMgYXJlIGdvb2QgZm9yIHN0
+YWJpbGl0eSwgYnV0IEknbSBhbHNvIGludGVyZXN0ZWQgaW4gd2hhdCdzIGluc2lkZSB0aGVzZSB0
+aGluZ3M/CldoYXQga2luZCBvZiBoYXJkd2FyZSBkbyB0aGVzZSBzeXN0ZW1zIHJ1biB0aGVzZSBk
+YXlzPyBBUk0sIEludGVsPwpJZiBzbywgY2FuIEkganVzdCBpbnN0YWxsIGEgc3RhbmRhcmQgTGlu
+dXggdG8gaXQgYW5kIGhhdmUgc29tZXRoaW5nIHJ1bm5pbmc/IE9yIHdpbGwgc29tZSBvYnNjdXJl
+IGRyaXZlcnMgYmUgbmVlZGVkIHRvIG1ha2Ugc3VyZSBpdCBpcyBjb21wYXRpYmxlIHdpdGggdGhp
+cyBub3RldGFrZXIgb3IgdGhhdCBub3RldGFrZXI/CkFyZSB0aGV5IGdlbmVyYWxseSBydW5uaW5n
+IG9uIFdpbmRvd3M/IE9yIHNvbWUgbW9kaWZpZWQgTGludXgvQlNEIHZhcmlhbnQgdG8gYWNjb21t
+b2RhdGUgdGhlaXIgdXNlcnM/CkFsc28sIGRvIHRoZXkgaGF2ZSBzb21lIGtpbmQgb2YgdmlkZW8g
+b3V0IGZvciBvcHRpb25hbCB2aWV3aW5nIG9mIHdoYXQncyBiZWluZyB3cml0dGVuPyBPciBpcyB0
+aGF0IG5vdCBuZWVkZWQgYmVjYXVzZSB0aGV5IGFyZSBtZWFudCBzcGVjaWZpY2FsbHkgZm9yIHZl
+cnkgdmlzdWFsbHkgaW1wYWlyZWQgcGVvcGxlPwoKVGhlIGxhc3QgdGltZSBJIHVzZWQgb25lIHdh
+cyBiYWNrIGluIGxpa2UgMjAxMCwgc28gZnJvbSB3aGF0IEkgcmVtZW1iZXIgdGhleSB3ZXJlIHZl
+cnkgbGltaXRlZCBpbiB1c2FnZS4gVGhpcyB3YXMgYWxzbyBiZWZvcmUgc21hcnRwaG9uZXMgYW5k
+IHdpZGVzcHJlYWQgYWNjZXNzaWJpbGl0eSBpbiBtYWluc3RyZWFtIG9wZXJhdGluZyBzeXN0ZW1z
+IGxpa2UgV2luZG93cyBhbmQgTWFjIHdpdGhvdXQgZXhwZW5zaXZlIHNvZnR3YXJlIHBhY2thZ2Vz
+LgoKSGFzIHRoZSBzbWFydHBob25lIHJldm9sdXRpb24gY2F1c2VkIGEgZGlzdHVyYmFuY2UgaW4g
+dGhlIG5vdGV0YWtlciBtYXJrZXQ/CklmIHNvLCB3aGF0IGlzIGl0IGJlaW5nIHJlcGxhY2VkIHdp
+dGg/IEp1c3QgYSBwaG9uZSB3aXRoIGFjY2Vzc2liaWxpdHkgdHVybmVkIG9uPyBPciBhcmUgdGhl
+cmUgZG9uZ2xlZCwgYWRhcHRlcnMsIHNwZWNpYWxpemVkIGNhc2VzIG9yIGFueSBvZiB0aGVzZSB0
+aGluZ3MgdG8gYWRkIG9uIHRvIHRoZSBiYXNpYyBoYXJkd2FyZT8KCkkgYXBvbG9naXplIGZvciBh
+bGwgdGhlIHF1ZXN0aW9ucyBpbiBhIGhhcGhhemFyZCBmb3JtYXQsIGhlcmUgdGhleSBhcmUgaW4g
+bGlzdCBmb3JtOgoxLiBBcmUgdGhlcmUgY29tbWVyY2lhbCBMaW51eCBiYXNlZCBub3RldGFrZXJz
+PwoyLiBXaGF0IGtpbmQgb2YgaGFyZHdhcmUgaXMgcnVubmluZyBvbiBub3RldGFrZXJzIHRoZXNl
+IGRheXM/CjMuIENvdWxkIHlvdSBpbnN0YWxsIExpbnV4IG9uIGFueSBvbGQgbm90ZXRha2VyIGFu
+ZCBoYXZlIGl0IHdvcmssIG9yIGlzIHRoZXJlIG1vcmUgaW52b2x2ZWQ/CjMuNSBJcyB0aGVyZSBh
+IHZpZGVvIG91dCBvbiBhbG90IG9mIHRoZXNlIGRldmljZXMgc28gaWYgc29tZXRoaW5nIGdvZXMg
+d3JvbmcgKGJ1bSBkcml2ZXJzLCBldGMuKSBJIGNhbiBmaXggaXQ/CjQuIEFyZSBub3RldGFrZXJz
+IGV2ZW4gcmVhbGx5IHVzZWQgYW55bW9yZSBnaXZlbiB0aGUgYWR2YW5jZSBvZiBzbWFydHBob25l
+cz8KNC4xIFdoYXQgYWNjZXNzb3JpZXMgb3IgbGFjay10aGVyZW9mIGFyZSB2aXN1YWxseSBpbXBh
+aXJlZCBwZW9wbGUgdXNpbmcgd2l0aCB0aGVpciBwaG9uZXMsIGlmIHRoZXJlIGlzIGEgbW92ZSBh
+d2F5IGZyb20gdGhlIG1vcmUgdHJhZGl0aW9uYWwgbm90ZXRha2VyPwo1LiBBcmUgYW55IG9mIHlv
+dSBhd2FyZSBvZiBhbnkgKkJTRCBwcm9qZWN0IGRlYWxpbmcgd2l0aCBicmFpbGxlL3NwZWVjaCBv
+dXRwdXQgc3BlY2lmaWNhbGx5PwoKVGhhbmtzIGZvciB0aGUgd29yayB5J2FsbCBoYXZlIHB1dCBp
+bnRvIHNwZWFrdXAhCk9uIHRoZSBvZmYgY2hhbmNlIHRoYXQgbm90ZXRha2VycyBhcmUgYmVpbmcg
+cGhhc2VkIG91dCwgcnVuIFdpbmRvd3MgYW55d2F5LCBkb24ndCBoYXZlIGEgdmlkZW8gb3V0LCBh
+bmQgcnVuIHNwZWNpYWxpemVkIENQVXMgaW5jb21wYXRpYmxlIHdpdGggbWFqb3IgdmVyc2lvbnMg
+b2YgTGludXjigJR0aGVuIEkgbWF5IG5lZWQgbW9yZSB0aW1lIGF0IHRoZSBkcmF3aW5nIGJvYXJk
+LgoKSSB3YW50IHRvIGhlbHAgY29tbWFuZC1saW5lIHRlY2ggdG8gYmUgYWNjZXNzaWJsZSBieSBt
+b3JlIHBlb3BsZSwgaWYgdGhhdCBtZWFucyBoZWxwaW5nIHlvdSBndXlzIHdpdGggdGhlIHNwZWFr
+dXAgcHJvamVjdDogSSdtIGluISBJZiBpdCBtZWFucyBsb29raW5nIG1vcmUgdG93YXJkcyBCU0Qg
+YXMgeW91IGd1eXMgaGF2ZSB0aGlzIGNvdmVyZWQ6IEknbGwgZG8gdGhhdC4KSSB3YW50IHRvIGhl
+bHAuIFdpdGggbW9yZSBpbmZvcm1hdGlvbiBJIGNhbiBkZWNpZGUgd2hlcmUgdG8gZ28uCgpUaGFu
+a3MgaW4gYWR2YW5jZSBmb3IgcmVhZGluZyB0aGUgc2xpZ2h0bHkgb2ZmLXRvcGljIHJhbWJsZSBh
+bmQgYW5zd2VyaW5nIGFueSBxdWVzdGlvbnMgeW91IG1pZ2h0IGhhdmUgYW5zd2VycyB0by4KCuKA
+lFRhaXQgSG95ZW0KV2Vic2l0ZTogaHR0cHM6Ly90YWl0LnRlY2gKRW1haWw6IHRhaXRAdGFpdC50
+ZWNoCgoiTGl2ZSB1bnRpbCB5b3UgZGllOyBsZWFybiB1bnRpbCB5b3UgZGllLiIKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KU3BlYWt1cCBtYWlsaW5nIGxp
+c3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgtc3BlYWt1cC5vcmcvY2dp
+LWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
