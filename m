@@ -1,41 +1,41 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from grumpy.reisers.ca (unknown [IPv6:2001:470:1d:288:8e89:a5ff:fe59:6a4d])
-	by mail.lfdr.de (Postfix) with ESMTP id 0A6F11A6007
-	for <lists+speakup@lfdr.de>; Sun, 12 Apr 2020 21:34:52 +0200 (CEST)
+Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
+	by mail.lfdr.de (Postfix) with ESMTP id E45B71A6006
+	for <lists+speakup@lfdr.de>; Sun, 12 Apr 2020 21:33:53 +0200 (CEST)
 Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id 15D6A4280480; Sun, 12 Apr 2020 15:34:35 -0400 (EDT)
+	id AA39442804CF; Sun, 12 Apr 2020 15:33:52 -0400 (EDT)
 Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id 23F774280462
-	for <lists+speakup@lfdr.de>; Sun, 12 Apr 2020 15:30:15 -0400 (EDT)
+	by grumpy.reisers.ca (Postfix) with ESMTP id EFE174280528
+	for <lists+speakup@lfdr.de>; Sun, 12 Apr 2020 15:32:26 -0400 (EDT)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D35221C2C5E; Sun, 12 Apr 2020 15:30:14 -0400 (EDT)
+	id E33681C57FF; Sun, 12 Apr 2020 15:32:25 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 28C511C57FF;
-	Sun, 12 Apr 2020 15:29:32 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E68DB1C73DA;
+	Sun, 12 Apr 2020 15:31:39 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 034971C0129; Sun, 12 Apr 2020 15:29:29 -0400 (EDT)
+ id 679581C2C5E; Sun, 12 Apr 2020 15:31:37 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
- by befuddled.reisers.ca (Postfix) with ESMTPS id ECC3E1C0129
- for <speakup@linux-speakup.org>; Sun, 12 Apr 2020 15:29:26 -0400 (EDT)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 4C2321C0129
+ for <speakup@linux-speakup.org>; Sun, 12 Apr 2020 15:31:36 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
- by mailbackend.panix.com (Postfix) with ESMTP id 490hdb69vKz19y4;
- Sun, 12 Apr 2020 15:29:23 -0400 (EDT)
+ by mailbackend.panix.com (Postfix) with ESMTP id 490hh73zZkz1Bch;
+ Sun, 12 Apr 2020 15:31:35 -0400 (EDT)
 Received: by panix1.panix.com (Postfix, from userid 20712)
- id 490hdb5BNhzcbc; Sun, 12 Apr 2020 15:29:23 -0400 (EDT)
+ id 490hh72yNBzcbc; Sun, 12 Apr 2020 15:31:35 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
- by panix1.panix.com (Postfix) with ESMTP id 490hdb4YWTzcbV;
- Sun, 12 Apr 2020 15:29:23 -0400 (EDT)
-Date: Sun, 12 Apr 2020 15:29:23 -0400
+ by panix1.panix.com (Postfix) with ESMTP id 490hh72MShzcbV;
+ Sun, 12 Apr 2020 15:31:35 -0400 (EDT)
+Date: Sun, 12 Apr 2020 15:31:35 -0400
 From: Jude DaShiell <jdashiel@panix.com>
 To: Tait Hoyem <tait@tait.tech>, 
  "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: Questions More General Than Speakup
 In-Reply-To: <6kVN_WQmeo167AqZoKYo6jwc9KPHubdfHGhujAqvCjefb8eHgBliH-_sWRItn24JRCq-ZVxN4LLG-3Ra8Tu-rjcMO_vOt65VSt6mbjVCajI=@tait.tech>
-Message-ID: <alpine.NEB.2.21.2004121528520.2823@panix1.panix.com>
+Message-ID: <alpine.NEB.2.21.2004121529290.2823@panix1.panix.com>
 References: <6kVN_WQmeo167AqZoKYo6jwc9KPHubdfHGhujAqvCjefb8eHgBliH-_sWRItn24JRCq-ZVxN4LLG-3Ra8Tu-rjcMO_vOt65VSt6mbjVCajI=@tait.tech>
 MIME-Version: 1.0
 X-BeenThere: speakup@linux-speakup.org
@@ -58,9 +58,13 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-https://thinkpenguin.com/ can help you I think.
+thinkpenguin.com knows nothing about braille displays so be specific
+when requesting the kind of ports you need on anything you buy from
+them.  The blinux-list may be able to help with braille display
+questions or the slint list though the slint list is for a specific
+distribution of linux.
 
-On Sun, 12 Apr 2020, Tait Hoyem wrote:
+Hoyem wrote:
 
 > Date: Sun, 12 Apr 2020 13:16:51
 > From: Tait Hoyem <tait@tait.tech>
