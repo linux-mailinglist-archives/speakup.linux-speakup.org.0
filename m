@@ -1,64 +1,70 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from grumpy.reisers.ca (grumpy.reisers.ca [206.248.184.126])
-	by mail.lfdr.de (Postfix) with ESMTP id A9EAB1A617D
-	for <lists+speakup@lfdr.de>; Mon, 13 Apr 2020 04:22:57 +0200 (CEST)
-Received: by grumpy.reisers.ca (Postfix, from userid 65534)
-	id 3337B4280514; Sun, 12 Apr 2020 22:22:53 -0400 (EDT)
-Authentication-Results: grumpy.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.b="Kg5jYIKM";
-	dkim-atps=neutral
-Received: from befuddled.reisers.ca (unknown [10.10.10.10])
-	by grumpy.reisers.ca (Postfix) with ESMTP id B3029428048A
-	for <lists+speakup@lfdr.de>; Sun, 12 Apr 2020 22:21:35 -0400 (EDT)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id 053AC1A703C
+	for <lists+speakup@lfdr.de>; Tue, 14 Apr 2020 02:46:53 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6948D1C57F9; Sun, 12 Apr 2020 22:21:35 -0400 (EDT)
+	id CF6791C741B; Mon, 13 Apr 2020 05:32:59 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=Kg5jYIKM;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=EM9n5QKH;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 037DF1C5800;
-	Sun, 12 Apr 2020 22:21:18 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 865C41C57FF;
+	Mon, 13 Apr 2020 05:32:29 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 079181C2C5E; Sun, 12 Apr 2020 22:21:14 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [IPv6:2607:f2f8:a260::2])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 286881C0129
- for <speakup@linux-speakup.org>; Sun, 12 Apr 2020 22:21:07 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2607:fb90:4aeb:6c22:10bc:63db:65be:f5f])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id AFB6B2510;
- Sun, 12 Apr 2020 19:22:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1586744562; bh=HXMI4WxCtrQEbTdOk4u0L91HdLWlQ93m7G2DheNBaWU=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=Kg5jYIKMfFJsXtq9NCNPTbRWMUgzwlTqv0FlE/Xl/6bCwUF8k9sBq4WCuL0EMLj/V
- reYmwZW0c3M8t6QtUrUToHLnLJZo5NLliyaP8w4gPjuGfUyYjkeGRMzFO21U5BPnvS
- WS/YhuzGPwNbFZthhUhUsTVIU+eAtuNINsJU44SwvD2ZotV5MtUL9uteNXRA8iNBT/
- WVQocnhvp7WFa2KVu1q2ivrQU0vDcdoCTLQLy80mWpp01S+ZpTc8HJ+F7XCsSyMtm+
- yHXofufGDGHl2Cj+5Rf4QRWubMotOv7fA22MgmmD+d/06athdDIxhtCXs3MIDi4QoU
- B6kkqgPQdPqTA==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>)
- id 1jNoiI-0001H6-5K; Sun, 12 Apr 2020 19:20:42 -0700
-Date: Sun, 12 Apr 2020 19:20:42 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: Tait Hoyem <tait@tait.tech>,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Questions More General Than Speakup
-Message-ID: <20200413022041.GA3960@gregn.net>
-References: <6kVN_WQmeo167AqZoKYo6jwc9KPHubdfHGhujAqvCjefb8eHgBliH-_sWRItn24JRCq-ZVxN4LLG-3Ra8Tu-rjcMO_vOt65VSt6mbjVCajI=@tait.tech>
+ id D07621C57B0; Mon, 13 Apr 2020 05:32:17 -0400 (EDT)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+ by befuddled.reisers.ca (Postfix) with ESMTP id 24A551C0129
+ for <speakup@linux-speakup.org>; Mon, 13 Apr 2020 05:32:12 -0400 (EDT)
+Received: from darkstar.slint.fr (sfa89-1-78-208-157-71.fbx.proxad.net
+ [78.208.157.71])
+ by darkstar.slint.fr (Postfix) with ESMTPSA id 80E3BBE791
+ for <speakup@linux-speakup.org>; Mon, 13 Apr 2020 10:31:50 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+ t=1586766710; bh=cxR89Geahf7d3hmcWLMZmtCDosJ6vxBZbB/QB+aydzo=;
+ h=To:From:Subject:Date:From;
+ b=EM9n5QKH+z7wIoNiEptgZzZ/A7PAVfvwbjmGvFG4QRT/LjWd136KDI8DWlCKui/MF
+ Bu6mXONZvJLc4g6yNVldPUr5KdR/Dr0EWigkSs+OAggenYOfuZny9vXuBan1Z8Jkrp
+ OmVD/67NL2bEacH/5mk026/3csYn1EQ2mJpyx8Byn+I2JYqyXbwn3EEsINs58V2a6u
+ +ETlkK67bbeA8iniM76hNElJax1nDi+g9N/PGlUYFCY1oCyuzTI6NNJKgt5enAtKh7
+ 9/txY5pb4PUjupZWIfIqr62bsQa8SRlDPDF2Omw4ANKCRNkS0ZrTLugEqGwww5wO7e
+ Xp2fe8kqJclcw==
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: Didier Spaier <didier@slint.fr>
+Subject: speakup soon out of staging?
+Autocrypt: addr=didier@slint.fr; prefer-encrypt=mutual; keydata=
+ xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
+ dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
+ TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
+ jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
+ 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
+ AAHNH0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj7CwH8EEwEKACkCGwMHCwkIBwMC
+ AQYVCAIJCgsEFgIDAQIeAQIXgAUCXcBjnwUJGlHqEgAKCRDVAgLvYMA+6v/ICAC8Oa2zXOne
+ zyuFrPtNsciJWYwWamW+g5TNaY9NPnyMRNKDi7IcP6PoDwHRI8YBgo+Z9w0qFKQ/WVSI/O6s
+ gm7LnOX7OEHjnub4sjrr5PHcsPRjm6iJFIgGgD+waz0K5fxcc65ti3lgHLH1tkhORyiT5EFp
+ 0VllWDQfPHw5avm9oopJv1FuPfZhSlFT6QhjD2ARmOrxfFBjELQZjDidckOYf/8Stoh+aK5F
+ 5q69DpF+bSZzOtCht+S6LT+Im5zqMgq1Dfqb3FpnVO3MyhSLeGI2nB+OFNTBGByRFKHYRsHc
+ VaQBjtfsr4HnC0UR2P/bDIk/oxLnIN9nHJuL6btcf9M6zsBNBFY6fG8BCACqDQKHSw0ElDkw
+ PPpNguL0ujOyygO30xlLyfW9pWOEycHSLhLzvDTlFkvr5IxvyCDBIFBdzpkeQqh1+ZxrFliw
+ Wyj+9/roJlIjxeAyNs2xQZ7tQM6K5xtbUs8O5YtkCCO3OegAiLgmzzgxes79Qy+V3ciKbl+v
+ rsNu7T9ro3zZhyinci1eOCcKEtXFPQW5P4woB+6+JheN9pIiDkjojmdC+xkvDadP7kJYKp19
+ Itys/CbNvxEoOLsgeJhsZSmNU2QNhXkLfr7+AC99fb/c5ZDTNPRBqgLJCp+gTxn1QVJrAbq2
+ OP3refmSRxdA3yUDMjxEeHwDNZJL9aEtTDlTzPk5ABEBAAHCwGUEGAEKAA8CGwwFAl1EQo4F
+ CQjq+XYACgkQ1QIC72DAPurGhAf+LKNM5AajZNNnccq3bWawqsY1P5ZtFvZLPxMbx2xsnYaM
+ 8UPe/tGfuxp+q1ouCRKgvtefjd2eBLGXaysCA5r3Jv+hgdjPKEJut3rARhTJMaDwjKOcOTHG
+ AhFtpsjBkVXuCBxEpNBEypyis3w4kQUCxP7nro4yzdXY7s6EbadNd8nG4B8qFt4JxnqJnZWl
+ 97mBQFJjFXlkAM+0eAkpF+rYzL6QKCKydO2Xcz7UTSMe/blXtZUjHxyr8Nh1G+ywEbkmQP+l
+ QhcxJYJbK+q4zNM0U64zzLRwIvVknpdEzJKiFXsydnm9VFE9tzC6a+h40du2OdhkoNDVuFSq
+ aG2M5OmN/Q==
+Message-ID: <0e72318b-5271-b55d-c340-0ea13a9d46b0@slint.fr>
+Date: Mon, 13 Apr 2020 11:32:07 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6kVN_WQmeo167AqZoKYo6jwc9KPHubdfHGhujAqvCjefb8eHgBliH-_sWRItn24JRCq-ZVxN4LLG-3Ra8Tu-rjcMO_vOt65VSt6mbjVCajI=@tait.tech>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.2 at vserver
-X-Virus-Status: Clean
+Content-Language: fr
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,66 +85,17 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Sun, Apr 12, 2020 at 05:16:51PM +0000, Tait Hoyem wrote:
-> I apologize for all the questions in a haphazard format, here they are in list form:
-> 1. Are there commercial Linux based notetakers?
+Hello list,
 
-The last one I'm aware of was the levelstar icon, but that was phased
-out six or seven years ago I think. I'm not aware of notetakers
-running linux these days, but see below.
+I just saw this:
+https://old.reddit.com/r/linux/comments/fx5e4v/im_greg_kroahhartman_linux_kernel_developer_ama/fmw5zjc/
 
-> 2. What kind of hardware is running on notetakers these days?
+Maybe 5.8 will be an LTS, who knows?
 
-They're all proprietary with closed specs as far as I'm aware. The
-only way to answer that I think would be to get one of each, and crack
-it open to find out. Given they still cost an arm and a leg, that
-would require thousands of dollars.
+Have a good day,
 
-> 3. Could you install Linux on any old notetaker and have it work, or is there more involved?
-A number of the notetakers on the market today are running out dated
-versions of android from what I know, so they technically already use
-the linux kernel. How much of that is pure android, and how much of it
-is proprietary I  don't know. It likely depends from device to device.
+Didier
 
-> 3.5 Is there a video out on alot of these devices so if something goes wrong (bum drivers, etc.) I can fix it?
-
-My understanding is that the video out is there for parents and
-teachers, so they can see what children are doing on their
-devices. This could also be used of course by professionals who want
-to show something on their notetaker to their sited colleagues. Whether
-the video out is used for diagnostics by repair personnel or not I
-don't know, but it might well be. That kind of information is again
-proprietary I suspect.
-
-> 4. Are notetakers even really used anymore given the advance of smartphones?
-
-Without statistics to go on, it seems to me that note takers are
-mostly used by students these days, while everyone else seems to be
-using a smart phone.
-
-> 4.1 What accessories or lack-thereof are visually impaired people using with their phones, if there is a move away from the more traditional notetaker?
-
-The touch screen itself, bluetooth qwerty keyboards, braille displays,
-and orbit research recently released a bluetooth braille keyboard as
-well. I'm not sure there is a lack of accessories that a notetaker
-provides which smart phone users would lack.
-
-> 5. Are any of you aware of any *BSD project dealing with braille/speech output specifically?
-
-No, however, brlTTY is a cross platform project.
-
-Greg
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
