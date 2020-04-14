@@ -1,63 +1,72 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 7A0C91A7A53
-	for <lists+speakup@lfdr.de>; Tue, 14 Apr 2020 14:07:12 +0200 (CEST)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id 7824D1A7D5B
+	for <lists+speakup@lfdr.de>; Tue, 14 Apr 2020 15:24:40 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B67F81C73D2; Tue, 14 Apr 2020 08:07:11 -0400 (EDT)
+	id B11D51C73D4; Tue, 14 Apr 2020 09:24:39 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=qda3J2xV;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=O9lxIArb;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 70B531C73D4;
-	Tue, 14 Apr 2020 08:06:57 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id C7A9C1C73CA;
+	Tue, 14 Apr 2020 09:24:27 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 3000B1C5800; Tue, 14 Apr 2020 08:06:56 -0400 (EDT)
-Received: from mail-io1-xd43.google.com (mail-io1-xd43.google.com
- [IPv6:2607:f8b0:4864:20::d43])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 501201C578F
- for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 08:06:54 -0400 (EDT)
-Received: by mail-io1-xd43.google.com with SMTP id i3so12883508ioo.13
- for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 05:06:54 -0700 (PDT)
+ id ED2EA1C73BB; Tue, 14 Apr 2020 09:24:24 -0400 (EDT)
+Received: from mail-wm1-x329.google.com (mail-wm1-x329.google.com
+ [IPv6:2a00:1450:4864:20::329])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id EA2131C5791
+ for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 09:24:22 -0400 (EDT)
+Received: by mail-wm1-x329.google.com with SMTP id x25so12970898wmc.0
+ for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 06:24:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :content-transfer-encoding;
- bh=Bra/qlvSwMGq1Yu+f+2U/M2LGdKWO68DJWC9JSbWyCU=;
- b=qda3J2xVd1e7Vhm08bub8Wp6z/wtrMt+sKMSMWwxOQfxgLOD6guKwBXMEXLSKJoxWZ
- 911w3acBl1Zq85wA4zSmZ5A139YmXRJG7oU/4sR9VYAA4XGXhO4MVwrwtp/tpqmE3L3p
- KEELP8CHy5ZvgxVafGR/dfsC89pd2XvsWOsCsx9qRVhz8JXMvsO43LOMTZ6GbZ18ipQq
- rCOFsY8t+uoJ6ltWG8ef3dq2DVdvz2+F2xoYdHl5MVfbkIHifEa/nkrYOVeIYKJPU6eL
- /xUnQ4tqVzXaQlZF9V1xzHoLxQ1d011sZpsJpT60vm1tdkF3umiL6il0tycNldAYqut7
- ssiw==
+ h=subject:to:references:cc:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language;
+ bh=lOYVGrc3fe+iedX8Ud86L02oVbh7jvawq59K78vxa/Q=;
+ b=O9lxIArbLZNcopYrpojFCIwXE+H/zyXVWUlgpgiCcbbRMAqcujLLyyGCsSBIFTcwNO
+ vpuX/dS0yVjKTphAdpR4cMjS9cYtLt1x4/MnMW4aVAA5CZZatmio1lBHvMAeh44wBeR+
+ +xs69GcsPMAyJVtuaJ1RwkhVlrNOcJfRIpAA4PXxVizKk+p2zXCDymTJoWY3BFmIJmDD
+ u7+MhFPXlvzZ44bVU/idO56sp8sRFSj5+DAYJBs9PVURiVhgelsmv8+lvpIzFfEfOEky
+ PUjDiRx2h5CRTBO8i9w73GdGZGUReNJcSTZw/G7DTQ1WIJJ6zTXNa52vu53xiHwxJA71
+ zSzQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:content-transfer-encoding;
- bh=Bra/qlvSwMGq1Yu+f+2U/M2LGdKWO68DJWC9JSbWyCU=;
- b=HlhZ/C53EegG1S3uAZ7erSYfZgCLJg/udeKGv1Z2pXGj+SIjP04LXSTyHQv6JEGd8d
- o5afSCKdCMTW9bwe1jDGhgBbICdiWskAjTuPxM2kU4Mm4JFRQ9oeayeKkTood4fYaqkP
- lcVgIM5o8JkqY8eTwK2NL0ESN75FzPLO57OkCW1fzPLMOE1nnDIn0PFxw4+0Xri1v9lL
- YJdsxLcG4G64gGS/GG2ggeFY3Q+IXqB89Yhmj+MvnnT8N5/oJlsxy61nQcPniY+jsFZf
- czxfb23PV+Wi5PqSSQ8bxL1YsRBLJ5lJjlFenDZyrbYhvyQZVrMdhW04wERQuGOFqFU0
- S0Xw==
-X-Gm-Message-State: AGi0PuYNUX2/pVqdLvtuK4tmHg5x3NbRlCFQ1cA5M8qCRu9aonfyx94P
- a8nfVEU1qoVbDIYaSUgoG3uikQUqrMy+3QcQHgWamQ==
-X-Google-Smtp-Source: APiQypJ1UDwQBtzZJ8k9KXIRMHJ40eFS9+5VzXkUPY3RagwjXvvWvoH/LGDWlQ5H9GQ6PcQj+LNJI4KrqDhrZrQwxZw=
-X-Received: by 2002:a5e:c008:: with SMTP id u8mr4795425iol.4.1586866009236;
- Tue, 14 Apr 2020 05:06:49 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:subject:to:references:cc:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language;
+ bh=lOYVGrc3fe+iedX8Ud86L02oVbh7jvawq59K78vxa/Q=;
+ b=Jv5SQqf9kzB85gnX+EcOvfCRuBt8klapOeK6kwFaOSbmXgWIm9BQ2DMBFYBLkQiKZm
+ +e5j6aQrTpPScQOOqXIOX50f3X469bnvI47gpA7Iof4V7C6Zkyw+YHORq3rAgvxkIR9H
+ 2LHIRMLkGBrYLxhUeR2yBIPgdwqrfC14NK+IPpfcdlkiE7OfIxvxjqrCpnEkyRVjBPtu
+ M4lMd/aI824l6C/OE3HrPwYszw62DKt5fuKwaw21nP+Aq6NH9dSsxlHl+qtZwVYlezXx
+ cOqRugAdQXaadeYgdpySCY60Ue/siR161Hqr/GEDRyCOJymTviu3adxHgIQLTlvuaEbC
+ czog==
+X-Gm-Message-State: AGi0PubzB/+UVo4n3diWspi3+hojVB0lxpQyQKqNSPISMeVftRZFlaFp
+ rKGBcFu2PcALwzJpk7bLF7AWyORWfaY=
+X-Google-Smtp-Source: APiQypJ8NPBdMjPNhyww1QncGY3WsE9qbns3WjrosAURGwLCikIT6eQxQMAdNT6HeJzClZelt2iEgQ==
+X-Received: by 2002:a1c:3885:: with SMTP id
+ f127mr23157425wma.134.1586870655272; 
+ Tue, 14 Apr 2020 06:24:15 -0700 (PDT)
+Received: from [192.168.1.73] ([91.77.167.245])
+ by smtp.gmail.com with ESMTPSA id d7sm19109901wrr.77.2020.04.14.06.24.14
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 14 Apr 2020 06:24:14 -0700 (PDT)
+Subject: Re: speakup soon out of staging?
+To: Didier Spaier <didier@slint.fr>
 References: <0e72318b-5271-b55d-c340-0ea13a9d46b0@slint.fr>
  <ad934fe6-a20b-3aaa-8784-930ac144c727@gmail.com>
  <9a033b9a-8ac8-70df-d7b5-200900c7d5d5@slint.fr>
+From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
+Message-ID: <529f8af9-b938-ea64-eeb2-d2a9874faa9b@gmail.com>
+Date: Tue, 14 Apr 2020 16:24:13 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
+MIME-Version: 1.0
 In-Reply-To: <9a033b9a-8ac8-70df-d7b5-200900c7d5d5@slint.fr>
-From: Okash Khawaja <okash.khawaja@gmail.com>
-Date: Tue, 14 Apr 2020 13:06:38 +0100
-Message-ID: <CAOtcWM1PkPtDY_4WAkwGMwSGt-hk-Uek5YawaRrU2iJN7HvZiw@mail.gmail.com>
-Subject: Re: speakup soon out of staging?
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Content-Language: en-US
+X-Content-Filtered-By: Mailman/MimeDel 2.1.29
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,24 +81,23 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-V293IHRoaXMgaXMgZ3JlYXQgbmV3cyEgVGhhbmtzIGZvciBzaGFyaW5nIDopCgpPbiBUdWUsIEFw
-ciAxNCwgMjAyMCBhdCAxOjA0IFBNIERpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj4gd3Jv
-dGU6Cj4KPiBMZSAxNC8wNC8yMDIwIMOgIDA5OjM5LCBBbGV4YW5kZXIgRXBhbmVzaG5pa292IGEg
-w6ljcml0IDoKPiA+IGFzIGZvciBsdHMuLi4gaSBkb24ndCB0aGluayB0aGF0IDUuOCB3aWxsIGJl
-Y2FtZSBhIGx0cyBrZXJuZWwuIGJ1dCB0aGlzCj4gPiBpcyBub3Qgc28gaW1wb3J0YW50IGluIG15
-IG9waW5pb24uCj4KPiBNYXliZSBub3Qgc28gaW1wb3J0YW50IGZvciBBcmNoIHRoYXQgc2hpcHMg
-dGhlIGtlcm5lbCBvZiB0aGUgZGF5IGFzIHdlbGwKPiBhcyBsaW51eC1sdHMsIGJ1dCBpbXBvcnRh
-bnQgZm9yIFNsYWNrd2FyZSBhbmQgZGVyaXZhdGl2ZXMgbGlrZSBTbGludAo+IHRoYXQgaGF2ZSBz
-aGlwcGVkIG9ubHkgYSB2YW5pbGxhIGx0cyBrZXJuZWwgb25lIHNvIGZhci4KPgo+IENoZWVycywK
-PiBEaWRpZXIKPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-Xwo+IFNwZWFrdXAgbWFpbGluZyBsaXN0Cj4gU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwo+IGh0
-dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cApf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpTcGVha3VwIG1h
-aWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51eC1zcGVha3Vw
-Lm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
+b2guIEkgZ2V0IGl0IG5vdy5zb21ldGltZXMgSSBhbSB2ZXJ5YXJjaENlbnRyaWMuCgovLypqdXN0
+IGEgRGVmb3JtYXRpb24gcHJvZmVzc2lvbm5lbGxlKi8vLiBzb3JyeSBhYm91dCB0aGF0LgoKMTQu
+MDQuMjAyMCAxNTowNCwgRGlkaWVyIFNwYWllciDQv9C40YjQtdGCOgo+IExlIDE0LzA0LzIwMjAg
+w6AgMDk6MzksIEFsZXhhbmRlciBFcGFuZXNobmlrb3YgYSDDqWNyaXQgOgo+PiBhcyBmb3IgbHRz
+Li4uIGkgZG9uJ3QgdGhpbmsgdGhhdCA1Ljggd2lsbCBiZWNhbWUgYSBsdHMga2VybmVsLiBidXQg
+dGhpcwo+PiBpcyBub3Qgc28gaW1wb3J0YW50IGluIG15IG9waW5pb24uCj4gTWF5YmUgbm90IHNv
+IGltcG9ydGFudCBmb3IgQXJjaCB0aGF0IHNoaXBzIHRoZSBrZXJuZWwgb2YgdGhlIGRheSBhcyB3
+ZWxsCj4gYXMgbGludXgtbHRzLCBidXQgaW1wb3J0YW50IGZvciBTbGFja3dhcmUgYW5kIGRlcml2
+YXRpdmVzIGxpa2UgU2xpbnQKPiB0aGF0IGhhdmUgc2hpcHBlZCBvbmx5IGEgdmFuaWxsYSBsdHMg
+a2VybmVsIG9uZSBzbyBmYXIuCj4KPiBDaGVlcnMsCj4gRGlkaWVyCgo+IFNpbmNlcmVseSwgQWxl
+eGFuZGVyCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fClNw
+ZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xpbnV4
+LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCg==
