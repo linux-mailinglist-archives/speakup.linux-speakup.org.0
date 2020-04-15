@@ -1,72 +1,32 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7824D1A7D5B
-	for <lists+speakup@lfdr.de>; Tue, 14 Apr 2020 15:24:40 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id EE20F1A908F
+	for <lists+speakup@lfdr.de>; Wed, 15 Apr 2020 03:41:11 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B11D51C73D4; Tue, 14 Apr 2020 09:24:39 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=O9lxIArb;
-	dkim-atps=neutral
+	id D9C8A1C73C0; Tue, 14 Apr 2020 21:41:08 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C7A9C1C73CA;
-	Tue, 14 Apr 2020 09:24:27 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id BD78C1C73BB;
+	Tue, 14 Apr 2020 21:40:29 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id ED2EA1C73BB; Tue, 14 Apr 2020 09:24:24 -0400 (EDT)
-Received: from mail-wm1-x329.google.com (mail-wm1-x329.google.com
- [IPv6:2a00:1450:4864:20::329])
- by befuddled.reisers.ca (Postfix) with ESMTPS id EA2131C5791
- for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 09:24:22 -0400 (EDT)
-Received: by mail-wm1-x329.google.com with SMTP id x25so12970898wmc.0
- for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 06:24:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:cc:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language;
- bh=lOYVGrc3fe+iedX8Ud86L02oVbh7jvawq59K78vxa/Q=;
- b=O9lxIArbLZNcopYrpojFCIwXE+H/zyXVWUlgpgiCcbbRMAqcujLLyyGCsSBIFTcwNO
- vpuX/dS0yVjKTphAdpR4cMjS9cYtLt1x4/MnMW4aVAA5CZZatmio1lBHvMAeh44wBeR+
- +xs69GcsPMAyJVtuaJ1RwkhVlrNOcJfRIpAA4PXxVizKk+p2zXCDymTJoWY3BFmIJmDD
- u7+MhFPXlvzZ44bVU/idO56sp8sRFSj5+DAYJBs9PVURiVhgelsmv8+lvpIzFfEfOEky
- PUjDiRx2h5CRTBO8i9w73GdGZGUReNJcSTZw/G7DTQ1WIJJ6zTXNa52vu53xiHwxJA71
- zSzQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:cc:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language;
- bh=lOYVGrc3fe+iedX8Ud86L02oVbh7jvawq59K78vxa/Q=;
- b=Jv5SQqf9kzB85gnX+EcOvfCRuBt8klapOeK6kwFaOSbmXgWIm9BQ2DMBFYBLkQiKZm
- +e5j6aQrTpPScQOOqXIOX50f3X469bnvI47gpA7Iof4V7C6Zkyw+YHORq3rAgvxkIR9H
- 2LHIRMLkGBrYLxhUeR2yBIPgdwqrfC14NK+IPpfcdlkiE7OfIxvxjqrCpnEkyRVjBPtu
- M4lMd/aI824l6C/OE3HrPwYszw62DKt5fuKwaw21nP+Aq6NH9dSsxlHl+qtZwVYlezXx
- cOqRugAdQXaadeYgdpySCY60Ue/siR161Hqr/GEDRyCOJymTviu3adxHgIQLTlvuaEbC
- czog==
-X-Gm-Message-State: AGi0PubzB/+UVo4n3diWspi3+hojVB0lxpQyQKqNSPISMeVftRZFlaFp
- rKGBcFu2PcALwzJpk7bLF7AWyORWfaY=
-X-Google-Smtp-Source: APiQypJ8NPBdMjPNhyww1QncGY3WsE9qbns3WjrosAURGwLCikIT6eQxQMAdNT6HeJzClZelt2iEgQ==
-X-Received: by 2002:a1c:3885:: with SMTP id
- f127mr23157425wma.134.1586870655272; 
- Tue, 14 Apr 2020 06:24:15 -0700 (PDT)
-Received: from [192.168.1.73] ([91.77.167.245])
- by smtp.gmail.com with ESMTPSA id d7sm19109901wrr.77.2020.04.14.06.24.14
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 14 Apr 2020 06:24:14 -0700 (PDT)
-Subject: Re: speakup soon out of staging?
-To: Didier Spaier <didier@slint.fr>
-References: <0e72318b-5271-b55d-c340-0ea13a9d46b0@slint.fr>
- <ad934fe6-a20b-3aaa-8784-930ac144c727@gmail.com>
- <9a033b9a-8ac8-70df-d7b5-200900c7d5d5@slint.fr>
-From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
-Message-ID: <529f8af9-b938-ea64-eeb2-d2a9874faa9b@gmail.com>
-Date: Tue, 14 Apr 2020 16:24:13 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 13CB81C5791; Tue, 14 Apr 2020 21:40:19 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 4A4D61C2C7B
+ for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 21:40:16 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1028)
+ id E6F758C0563; Wed, 15 Apr 2020 01:39:40 +0000 (UTC)
+Received: from localhost (localhost [127.0.0.1])
+ by server2.shellworld.net (Postfix) with ESMTP id DC1C88C0233
+ for <speakup@linux-speakup.org>; Tue, 14 Apr 2020 18:39:40 -0700 (PDT)
+Date: Tue, 14 Apr 2020 18:39:40 -0700
+From: Chime Hart <chime@hubert-humphrey.com>
+To: speakup@linux-speakup.org
+Subject: DecTalk Settings from Within Speakup?
+Message-ID: <Pine.LNX.4.64.2004141805070.1871@server2.shellworld.net>
 MIME-Version: 1.0
-In-Reply-To: <9a033b9a-8ac8-70df-d7b5-200900c7d5d5@slint.fr>
-Content-Language: en-US
-X-Content-Filtered-By: Mailman/MimeDel 2.1.29
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,23 +41,36 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-b2guIEkgZ2V0IGl0IG5vdy5zb21ldGltZXMgSSBhbSB2ZXJ5YXJjaENlbnRyaWMuCgovLypqdXN0
-IGEgRGVmb3JtYXRpb24gcHJvZmVzc2lvbm5lbGxlKi8vLiBzb3JyeSBhYm91dCB0aGF0LgoKMTQu
-MDQuMjAyMCAxNTowNCwgRGlkaWVyIFNwYWllciDQv9C40YjQtdGCOgo+IExlIDE0LzA0LzIwMjAg
-w6AgMDk6MzksIEFsZXhhbmRlciBFcGFuZXNobmlrb3YgYSDDqWNyaXQgOgo+PiBhcyBmb3IgbHRz
-Li4uIGkgZG9uJ3QgdGhpbmsgdGhhdCA1Ljggd2lsbCBiZWNhbWUgYSBsdHMga2VybmVsLiBidXQg
-dGhpcwo+PiBpcyBub3Qgc28gaW1wb3J0YW50IGluIG15IG9waW5pb24uCj4gTWF5YmUgbm90IHNv
-IGltcG9ydGFudCBmb3IgQXJjaCB0aGF0IHNoaXBzIHRoZSBrZXJuZWwgb2YgdGhlIGRheSBhcyB3
-ZWxsCj4gYXMgbGludXgtbHRzLCBidXQgaW1wb3J0YW50IGZvciBTbGFja3dhcmUgYW5kIGRlcml2
-YXRpdmVzIGxpa2UgU2xpbnQKPiB0aGF0IGhhdmUgc2hpcHBlZCBvbmx5IGEgdmFuaWxsYSBsdHMg
-a2VybmVsIG9uZSBzbyBmYXIuCj4KPiBDaGVlcnMsCj4gRGlkaWVyCgo+IFNpbmNlcmVseSwgQWxl
-eGFuZGVyCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fClNw
-ZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xpbnV4
-LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCg==
+For maybe 16years since I purchased a DecTalk U S B, many of you know I 
+experience frustrations many times a day as the pitch, volume, and rate drop 
+suddenly. Well, a couple of months ago, 1 of my Linux experts had an e-mail 
+exchange with Kirk, who mentioned something about defalt settings. Well, I 
+looked in a copy of speakup_dectlk.c, was able to see where the rate says 180, 
+meanwhile we set it at 229. Or the volume which I think says 60 when we set at 
+86. Those are just 2 examples. Only by jussling those insert functions to alter 
+volume or pitch will put them back after a sudden drop. Some time ago we created 
+an alias to reload this dectalk when it gets hozed.
+/usr/bin/sudo /sbin/modprobe  -r speakup_dectlk; /usr/bin/sudo /sbin/modprobe 
+speakup_dectlk; sudo cp /usr/local/bin/characters 
+/sys/accessibility/speakup/i18n/
+However, even altering some of those values, I would also need to know what 
+replacement to send dectalk so it might `always respect my changes.
+I guess David in Canada was the last person who modified these drivers. I will 
+be quite honest, each time I see Okash post, I become hopeful. But now with some 
+amunision from Kirk, I hope among the movers-and-shakers, maybesome sort of fix 
+or even better a real U S B driver can be created.
+I realize, I am only a user-and-not a programmer, but if I were to guess, most 
+Speakup users are programmers. Anyway, thanks in advance, whatever any of you 
+can do. I had even considered sending Kirk an audio file demonstrating these 
+issues, but I haven't yet patched out of an ear-phone jack to a recorder.
+Chime
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
