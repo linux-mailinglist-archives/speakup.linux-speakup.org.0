@@ -1,44 +1,32 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 184B71AF0E1
-	for <lists+speakup@lfdr.de>; Sat, 18 Apr 2020 16:53:21 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id 967801AF2F5
+	for <lists+speakup@lfdr.de>; Sat, 18 Apr 2020 19:57:34 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 682031C57CB; Sat, 18 Apr 2020 10:53:20 -0400 (EDT)
+	id CD5C91C73C4; Sat, 18 Apr 2020 13:57:33 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9AD561C73DC;
-	Sat, 18 Apr 2020 10:52:43 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id A44591C73C1;
+	Sat, 18 Apr 2020 13:57:14 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 959211C57B4; Sat, 18 Apr 2020 10:52:41 -0400 (EDT)
-Received: from pta-smg1.csir.co.za (pta-smg1.csir.co.za [146.64.81.180])
- by befuddled.reisers.ca (Postfix) with ESMTP id 243601C0B50
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 10:52:40 -0400 (EDT)
-Received: from pta-smg1.csir.co.za (localhost.localdomain [127.0.0.1])
- by localhost (Email Security Appliance) with SMTP id 086DB2978DB0_E9B1436B
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 14:52:38 +0000 (GMT)
-Received: from willempc.meraka.csir.co.za (willempc.dhcp.meraka.csir.co.za
- [146.64.216.169])
- by pta-smg1.csir.co.za (Sophos Email Appliance) with ESMTP id
- 9159E29760A5_E9B1434F
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 14:52:36 +0000 (GMT)
-Received: from [127.0.0.1] (helo=localhost)
- by willempc.meraka.csir.co.za with esmtp (Exim 4.90_1)
- (envelope-from <wvdwalt@csir.co.za>) id 1jPopg-0001dK-EA
- for speakup@linux-speakup.org; Sat, 18 Apr 2020 16:52:36 +0200
-Date: Sat, 18 Apr 2020 16:52:36 +0200 (SAST)
-From: Willem van der Walt <wvdwalt@csir.co.za>
-X-X-Sender: wvdwalt@willempc.meraka.csir.co.za
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: log file noise
-In-Reply-To: <006d01d6158d$a10093f0$e301bbd0$@gmail.com>
-Message-ID: <alpine.DEB.2.21.1.2004181650280.6234@willempc.meraka.csir.co.za>
-References: <006d01d6158d$a10093f0$e301bbd0$@gmail.com>
-User-Agent: Alpine 2.21.1 (DEB 211 2017-05-04)
+ id 031541C57B4; Sat, 18 Apr 2020 13:57:13 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 166701C0B50
+ for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 13:57:12 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1028)
+ id 999C38C034C; Sat, 18 Apr 2020 17:57:10 +0000 (UTC)
+Received: from localhost (localhost [127.0.0.1])
+ by server2.shellworld.net (Postfix) with ESMTP id 943C18C0133
+ for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 10:57:10 -0700 (PDT)
+Date: Sat, 18 Apr 2020 10:57:10 -0700
+From: Chime Hart <chime@hubert-humphrey.com>
+To: speakup@linux-speakup.org
+Subject: Is Their an Insert+k in Speakup?
+Message-ID: <Pine.LNX.4.64.2004181048520.31500@server2.shellworld.net>
 MIME-Version: 1.0
-X-SASI-RCODE: 200
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,30 +47,15 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi,
-Something like tail -50 /var/log/syslog|cut -f5- -d' '
-man cut for details, but basicly, it says show all columns starting with 
-column 5 where columns are delimmited by space.
-HTH, Willem
-
-
-On Sat, 18 Apr 2020, Chris Zenchenko wrote:
-
-> [The e-mail server of the sender could not be verified (SPF Record)]
->
-> Not exactly a Speakup issue but I'm wondering if anyone has figured out a
-> way to read through log files minus the date and time.
-> I'd like to be able to run through a file without all that extra info at the
-> start of each entry.
-> If I find something important then of course I want to know when but for
-> just skimming through a file all that extra speech is making me crazy.
-> Ok, more crazy than I am already!
->
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->
+Well, experimenting, typing an insert through an alphabet, when I hit insert+k 
+my system seemed to freeze, no speech, no back space beep, so I pushed the power 
+button, and booted successfully in to
+Linux chime 5.5.0-2-amd64 #1 SMP Debian 5.5.17-1 (2020-04-15) x86_64
+I was actually wanting to asign insert+t for tone, but I have no idea how or 
+where this is done? I also looked in /var/log/messages, didn't find anything 
+strange. Thanks so much in advance for any guidance, or if by accident if I 
+found some bug.
+Chime
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
