@@ -2,34 +2,54 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 59E0A1AF52B
-	for <lists+speakup@lfdr.de>; Sat, 18 Apr 2020 23:39:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D973F1AF53A
+	for <lists+speakup@lfdr.de>; Sat, 18 Apr 2020 23:47:24 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7A25C1C73C6; Sat, 18 Apr 2020 17:39:14 -0400 (EDT)
+	id 5277A1C73BD; Sat, 18 Apr 2020 17:47:24 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (1024-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=MrROzIul;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 496EE1C73BE;
-	Sat, 18 Apr 2020 17:39:12 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D50691C73DC;
+	Sat, 18 Apr 2020 17:47:14 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 7155F1C57B4; Sat, 18 Apr 2020 17:39:09 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 6122A1C0B50
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 17:39:08 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1028)
- id 15FF28C034C; Sat, 18 Apr 2020 21:39:06 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
- by server2.shellworld.net (Postfix) with ESMTP id ED06F8C0141
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 14:39:06 -0700 (PDT)
-Date: Sat, 18 Apr 2020 14:39:06 -0700
-From: Chime Hart <chime@hubert-humphrey.com>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Is Their an Insert+k in Speakup?
-In-Reply-To: <20200418211936.GP16446@novena-choice-citizen>
-Message-ID: <Pine.LNX.4.64.2004181434590.1455@server2.shellworld.net>
-References: <Pine.LNX.4.64.2004181048520.31500@server2.shellworld.net>
- <20200418211936.GP16446@novena-choice-citizen>
+ id AC41E1C57B4; Sat, 18 Apr 2020 17:47:12 -0400 (EDT)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [IPv6:2600:3c03:e000:9b::c])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 0A0851C0B50
+ for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 17:47:11 -0400 (EDT)
+Received: from [IPv6:2601:85:c380:11f6::d23] (unknown
+ [IPv6:2601:85:c380:11f6::d23])
+ (using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+ key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+ (Client did not present a certificate)
+ by svr.jasonjgw.net (Postfix) with ESMTPSA id E7D69323FF;
+ Sat, 18 Apr 2020 21:47:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+ s=mail; t=1587246429;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=2tx+MW4e9BP43fgrAwfgliYD9Y0H8OXeohKLPf0wFZQ=;
+ b=MrROzIulY+M3lYa3S8o8TFRALuNHToGdgu7Ioq+r6GBAj721gFRHSO6WnA7n1Ornwo3fv0
+ zqtrqKhFE0fatXjLxcrDH2CFm6ZgeLYttbgb1YnvuWyaG8ZECJRQ0s+w9q/+He1B3SE8dy
+ omq2Nt8EK0q35I1yy0SKrVAK2MnsO4I=
+Subject: Re: log file noise
+To: "Speakup is a screen review system for Linux."
+ <speakup@linux-speakup.org>, Chris Zenchenko <old78rpm@gmail.com>
+References: <006d01d6158d$a10093f0$e301bbd0$@gmail.com>
+From: Jason White <jason@jasonjgw.net>
+Message-ID: <272d3036-9319-8265-2526-91a53800324b@jasonjgw.net>
+Date: Sat, 18 Apr 2020 17:47:08 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <006d01d6158d$a10093f0$e301bbd0$@gmail.com>
+Content-Language: en-US
+Authentication-Results: svr.jasonjgw.net;
+ auth=pass smtp.auth=jason smtp.mailfrom=jason@jasonjgw.net
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -50,9 +70,14 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Thank you so much, I am running in Bullseye 5.5-17
-Looks like this morning I went from 5.5-17 to 5.5-2
-Chime
+
+On 4/18/20 10:28 AM, Chris Zenchenko wrote:
+> Not exactly a Speakup issue but I'm wondering if anyone has figured out a
+> way to read through log files minus the date and time.
+
+The journalctl -o short option may be useful if the logs are created by 
+systemd-journald.
+
 
 _______________________________________________
 Speakup mailing list
