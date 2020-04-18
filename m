@@ -2,55 +2,67 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9F1CC1AEA8A
-	for <lists+speakup@lfdr.de>; Sat, 18 Apr 2020 09:42:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 557D81AEEB4
+	for <lists+speakup@lfdr.de>; Sat, 18 Apr 2020 16:28:56 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BC3C91C57CB; Sat, 18 Apr 2020 03:42:09 -0400 (EDT)
+	id 7083A1C57B4; Sat, 18 Apr 2020 10:28:55 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=YInSJmNn;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0FEA41C57CD;
-	Sat, 18 Apr 2020 03:40:48 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 00C251C5801;
+	Sat, 18 Apr 2020 10:28:38 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 840521C57B4; Sat, 18 Apr 2020 03:40:37 -0400 (EDT)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 6073A1C0DBF
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 03:40:34 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id DA55433D2
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 09:40:31 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id HqPE15xYjI1H for <speakup@linux-speakup.org>;
- Sat, 18 Apr 2020 09:40:30 +0200 (CEST)
-Received: from function (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
- [86.234.239.11])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 89153F428
- for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 03:16:25 +0200 (CEST)
-Received: from samy by function with local (Exim 4.93)
- (envelope-from <samuel.thibault@ens-lyon.org>) id 1jPc3f-009Ha6-3f
- for speakup@linux-speakup.org; Sat, 18 Apr 2020 03:14:11 +0200
-Date: Sat, 18 Apr 2020 03:14:11 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: DecTalk Settings from Within Speakup?
-Message-ID: <20200418011411.3z37lu4w54yszjt6@function>
-References: <20200415034841.GA5932@gregn.net>
- <Pine.LNX.4.64.2004142055040.3919@server2.shellworld.net>
- <20200415044239.GA6357@gregn.net>
- <Pine.LNX.4.64.2004150141390.8315@server2.shellworld.net>
- <20200416232813.t2zszb42qd2icfks@function>
- <20200417004033.GA5829@gregn.net>
- <20200417011211.yz4a7gch76ewp6j5@function>
- <Pine.LNX.4.64.2004171438170.15807@server2.shellworld.net>
- <20200417193714.enlesc2vad3phjls@function>
- <Pine.LNX.4.64.2004172029030.20019@server2.shellworld.net>
+ id 4C0281C57B4; Sat, 18 Apr 2020 10:28:34 -0400 (EDT)
+Received: from mail-qt1-x82c.google.com (mail-qt1-x82c.google.com
+ [IPv6:2607:f8b0:4864:20::82c])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 98AA71C0B50
+ for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 10:28:32 -0400 (EDT)
+Received: by mail-qt1-x82c.google.com with SMTP id 71so4564415qtc.12
+ for <speakup@linux-speakup.org>; Sat, 18 Apr 2020 07:28:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:subject:date:message-id:mime-version:content-language
+ :thread-index; bh=XyF7/xQXvbAtXGyi4rAYIXxcWbxepbMVbBCwXDSPki8=;
+ b=YInSJmNna+FZhoSOqCjzm0gq4DfF66hlGRSSip1Mb5FQSftkJqgl4uJ6DPmqt2oKe1
+ BZpYa41urHGy/6xsdrvMVkrLIg+rFjdlasYHtdCeEdV+LsPgjpu/JaruRevPpIYvbBwi
+ DtN195QyHbmuUA+GnaiL2+/pM4qPd4f9rfetbE5AZ92SgSuFtCpCniR8SxI00gFXFlkN
+ VI6nR1AJVFzEFjrPja3NkKuSg3CLcZRaVPOhzUbvTSqIeL+JYk5Ebi5NT4p2UpCngqc8
+ QuoNmLURK8ykpf6/BcDnZVdN5xsPGIdlBIpYQs77pePgIpbSe1i8OSXMSmUocGhEbV8b
+ wFxA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:subject:date:message-id:mime-version
+ :content-language:thread-index;
+ bh=XyF7/xQXvbAtXGyi4rAYIXxcWbxepbMVbBCwXDSPki8=;
+ b=ljIntwEH9EJuNSqGwWsS0t8KaGc5fJoVePCHEDfNF0BmV/qRal53H67z82sNHmA2v4
+ GFmbWmM52wvXhJLRvPaaxo81/PKFTuaRO8QcETzQ8UPwGWbxAIAKX6GMt8+vaIVSxFVR
+ 5JOTGnVZOZ5/kIwgT7M22aaEHAxJkbWMVoSx3yKDYgoXtnSEUMsiBRiAJP8IsuiDjEZo
+ 6Gy4nnnXcfAzZ6x/TYtWvqST0NcZuo7HcZS+5rpWILx8D2Ms7KZH5931d5KACbHL/m1l
+ Yl5y7RAD066FzKifSIiPPTM4ET43vl6rYyU5kiSRv0Ox5vBboHPHNajoZfX1uGd8E6yh
+ 1yIg==
+X-Gm-Message-State: AGi0PubEzHn+k28Oehu2G9zcCUST5X3EqhqWTgx13onuPsDBMYmkOaEe
+ I2gEFkFLhey7iHX/HbxMZySB46b3
+X-Google-Smtp-Source: APiQypKaMdYs7t3hiFQXsFdzcFrziQSpcok5vxF6CHmp3UBg/6UBLlFVeMnW2KpxKHbpPgI58y45ww==
+X-Received: by 2002:ac8:2fda:: with SMTP id m26mr7982469qta.80.1587220109891; 
+ Sat, 18 Apr 2020 07:28:29 -0700 (PDT)
+Received: from X230 (99-72-244-221.lightspeed.mdsnwi.sbcglobal.net.
+ [99.72.244.221])
+ by smtp.gmail.com with ESMTPSA id j9sm2236495qkk.99.2020.04.18.07.28.28
+ for <speakup@linux-speakup.org>
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 18 Apr 2020 07:28:29 -0700 (PDT)
+From: "Chris Zenchenko" <old78rpm@gmail.com>
+To: <speakup@linux-speakup.org>
+Subject: log file noise
+Date: Sat, 18 Apr 2020 09:28:27 -0500
+Message-ID: <006d01d6158d$a10093f0$e301bbd0$@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Pine.LNX.4.64.2004172029030.20019@server2.shellworld.net>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+X-Mailer: Microsoft Outlook 16.0
+Content-Language: en-us
+Thread-Index: AdYVjT0b26smgrAGSY+xTFIIrNfdHA==
+X-Content-Filtered-By: Mailman/MimeDel 2.1.29
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,46 +83,14 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Karen Lewellen wrote:
-> I hope you realize its importance to the function of any quality
-> screen reader.
+Not exactly a Speakup issue but I'm wondering if anyone has figured out a
+way to read through log files minus the date and time.
+I'd like to be able to run through a file without all that extra info at the
+start of each entry.
+If I find something important then of course I want to know when but for
+just skimming through a file all that extra speech is making me crazy.
+Ok, more crazy than I am already!
 
-Sure, I was just commenting on the rest. See my mail date Fri, 17 Apr
-2020 03:12:11 +0200 about including it as a parameter.
-
-Karen Lewellen wrote:
-> From what you say, the quality will depend on the synthesizer not the
-> screen reader program.
-
-Yes: the screen reader can't do much if the synthesizer doesn't support
-good inflection. It can not make the synthesizer magically change its
-behavior if the synthesizer itself doesn't support it.
-
-Karen Lewellen wrote:
-> Of course individuals are going to fine tune those factors, why ever
-> would they not?
-
-The question was not whether they would tune it or not, but about
-knowing it was existing at all. I simply had no idea this notion
-was existing at all in synthesizers, since I have basically zero
-actual practice of speech synthesizer. Why am I working on speakup
-then? Frankly, when I read messages like yours, I do wonder. I just
-happened to go by and see that speakup needed help. If it's not welcome
-I can just merely leave out speakup as it is. But I don't think that's
-what you hoped for? Then like I said, avoid sending the kind of harsh
-message you did, I don't see how they can help in any way.
-
-Karen Lewellen wrote:
-> As for users of speekup updating the files, that would require a
-> uniform experience, which as you seem to illustrate here is beyond
-> what a user should expect to fine.
-
-???? ON THE CONTRARY.
-
-I was precisely exactly saying that we should just put the parameter
-just along the others, instead of tinkering with synth_direct.
-
-Samuel
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
