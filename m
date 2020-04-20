@@ -2,55 +2,42 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 898571AFF26
-	for <lists+speakup@lfdr.de>; Mon, 20 Apr 2020 02:21:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E2D431AFF77
+	for <lists+speakup@lfdr.de>; Mon, 20 Apr 2020 03:10:35 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B62611C57F5; Sun, 19 Apr 2020 20:21:18 -0400 (EDT)
+	id 508301C73BE; Sun, 19 Apr 2020 21:10:34 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 33B001C73C9;
-	Sun, 19 Apr 2020 20:21:10 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3C0791C73DA;
+	Sun, 19 Apr 2020 21:10:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id E35951C2C6F; Sun, 19 Apr 2020 20:21:08 -0400 (EDT)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [IPv6:2a0c:e300::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 5A8E81C0129
- for <speakup@linux-speakup.org>; Sun, 19 Apr 2020 20:21:06 -0400 (EDT)
+ id 3AEE31C0129; Sun, 19 Apr 2020 21:10:20 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 0822D1C0129
+ for <speakup@linux-speakup.org>; Sun, 19 Apr 2020 21:10:18 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1028)
+ id 06E5C8C04AF; Mon, 20 Apr 2020 01:10:17 +0000 (UTC)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id 05F21DB3B
- for <speakup@linux-speakup.org>; Mon, 20 Apr 2020 02:21:02 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 223rOzJ5qeln for <speakup@linux-speakup.org>;
- Mon, 20 Apr 2020 02:21:00 +0200 (CEST)
-Received: from function (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
- [86.234.239.11])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id A42D54B4C
- for <speakup@linux-speakup.org>; Mon, 20 Apr 2020 02:21:00 +0200 (CEST)
-Received: from samy by function with local (Exim 4.93)
- (envelope-from <samuel.thibault@ens-lyon.org>) id 1jQKBG-00Gwb8-VV
- for speakup@linux-speakup.org; Mon, 20 Apr 2020 02:20:58 +0200
-Date: Mon, 20 Apr 2020 02:20:58 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+ by server2.shellworld.net (Postfix) with ESMTP id 01A1F8C03E0
+ for <speakup@linux-speakup.org>; Sun, 19 Apr 2020 18:10:16 -0700 (PDT)
+Date: Sun, 19 Apr 2020 18:10:16 -0700
+From: Chime Hart <chime@hubert-humphrey.com>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: DecTalk Settings from Within Speakup?
-Message-ID: <20200420002058.dzdm3nvydxtjkvw2@function>
+In-Reply-To: <20200420002058.dzdm3nvydxtjkvw2@function>
+Message-ID: <Pine.LNX.4.64.2004191729530.19150@server2.shellworld.net>
 References: <20200416232813.t2zszb42qd2icfks@function>
  <20200417004033.GA5829@gregn.net>
  <20200417011211.yz4a7gch76ewp6j5@function>
  <Pine.LNX.4.64.2004171438170.15807@server2.shellworld.net>
  <20200417193714.enlesc2vad3phjls@function>
  <Pine.LNX.4.64.2004172029030.20019@server2.shellworld.net>
- <20200418011411.3z37lu4w54yszjt6@function>
- <20200419022742.GA4101@gregn.net>
+ <20200418011411.3z37lu4w54yszjt6@function> <20200419022742.GA4101@gregn.net>
  <20200419033024.GA2777@qlf.suddenlink.net>
  <Pine.LNX.4.64.2004191959390.18776@server2.shellworld.net>
+ <20200420002058.dzdm3nvydxtjkvw2@function>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <Pine.LNX.4.64.2004191959390.18776@server2.shellworld.net>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,49 +52,38 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Karen Lewellen, le dim. 19 avril 2020 20:05:51 -0400, a ecrit:
-> that it took more than 16 years for Debian to declare speakup stable,
-
-It took 16 years for some people to find volunteer time on revamping
-the configuration, plumbering access to the console, access to keyboard
-shortcuts, plumbering USB support, fixing all the bogus speakup code
-etc. Kernel development is hard, and none of these were a simple task,
-even by kernel standards. Doing it when not even having the hardware is
-even harder. There is no company behind this, just a couple volunteers.
-
-> that something as  important as inflection is only now even noticed,
-
-That is rather a user-reporting problem. I don't remember the question
-being raised on this list. I'm thus not surprised at all that it's not
-implemented since AFAICT nobody asked for it. Don't blame the engineers
-if the users didn't ask for something.
-
-> and that many involved with testing accessibility from a w3c-wai
-> standpoint do not even consider Linux,
-
-That's the 90% market rule playing again. No big surprise here either.
-
-> let alone Speakup as worthy of inclusion in their testing says a great
-> deal.
-
-Please actually express instead of just waving hands.
-
-Do you mean Linux accessibility is not seriously taken care of? I can
-only agree: there's no big company behind any more, after Oracle bought
-Sun and basically shut down the accessibility department that was making
-Gnome accessible.
-
-Spreading oil on the fire at the face of people who are trying to do
-what they can with the situation won't help with the matter, at any
-rate.
-
-Samuel
+Hi Samuel-and-All: And yes, even though I have some frustrations in Speakup, as 
+a user, I am quite thankful there are folks such as you-and-others still working 
+on it. You indirectly aluded to something I've been thinking over the years. I 
+don't think there are any commercial screen-readers in Linux. After enjoying 
+Vocal-Eyes for maybe 12years, because it was commercial it was feature rich, as 
+well, you could either trade individual mail with the same people who would 
+gladly answer the phone-and-walk you through an opperation.
+Back then whether you called Arkenstone about OpenBook or another vender, they 
+all understood these DecTalks. Many years ago we tried getting YASR working with 
+this unit, but no luck.
+So, yes, other than e-macs-speak which I don't understand, if there were another 
+similar option like Vocal-Eyes, I would jump at it.
+On another point, I probably mentioned an inflection 
+option while asking for 
+guidance. However, for 16years or more since I've been useing Speakup, I have 
+constantly mentioned trouble with these DecTalk drivers, but since I am not a 
+programmer I know nothing about writing code. Unlike other opperating systems, 
+you know I have never once had another knowlegable Speakup user here working on 
+my system. Many years ago when the latest kernel which would work with a DecTalk 
+was 2.6.32, I did have a very good sighted Linux expert here who was on I R C 
+with Speakup folks. Unfortunately he eventually figured out that nobody cared. 
+In addition I've gotten alot of value from others creating helpful tools which 
+either edited audio which was sorely needed or wrote a much more robust usenet 
+news client. Thanks so much for listening-and-I hope I adequately explained my 
+position.
+Chime
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
