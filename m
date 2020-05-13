@@ -2,147 +2,94 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9881A1CC476
-	for <lists+speakup@lfdr.de>; Sat,  9 May 2020 22:13:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 12A8D1D1FCB
+	for <lists+speakup@lfdr.de>; Wed, 13 May 2020 22:02:23 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D3EF81C73D9; Sat,  9 May 2020 16:13:52 -0400 (EDT)
+	id C91651C07F4; Wed, 13 May 2020 16:02:21 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=COeKR6Ss;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hotmail.com header.i=@hotmail.com header.a=rsa-sha256 header.s=selector1 header.b=iaZkI9Aw;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A176A1C73C1;
-	Sat,  9 May 2020 16:13:31 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 48F1F1C083A;
+	Wed, 13 May 2020 16:01:30 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 3ADFA1C57B4; Sat,  9 May 2020 16:13:27 -0400 (EDT)
-Received: from mail-lf1-f43.google.com (mail-lf1-f43.google.com
- [209.85.167.43])
- by befuddled.reisers.ca (Postfix) with ESMTPS id EA11A1C0129
- for <speakup@linux-speakup.org>; Sat,  9 May 2020 16:13:24 -0400 (EDT)
-Received: by mail-lf1-f43.google.com with SMTP id d25so4157084lfi.11
- for <speakup@linux-speakup.org>; Sat, 09 May 2020 13:13:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=0FiHEyxWptjFmCW5o9to1iiBlCsz8/BbPPRjZdM3iMs=;
- b=COeKR6Ss1KHC4/vFivLaJaYeXkGhKBJ/rmmUK2IckyhOK0kHLh8vitDqTDIzwuxYyY
- RgNyaSsXx4xYlKcqmLk92jhc6oE2vmpEzldthMjGdCAA88ST8x25LgvJW0TW5VAIFOV1
- E2bI1tZTOEsq2+GKPvyCWKQ+qOnePj6sBglwf0BOZTGUcnI7wMoPloJkxKjdeOXmgLXc
- zhui762yvOHBq5oZG1Vlp07TBqsGoZwTDq5wMzFWRQAXz3MbbaSPcQicCm5gPRKHqkQo
- NDBzvVDKoOG7W8N7t7wB5SCgAPnKDEIA6MiPFTQo6howWdjJRsJiXVRbSQE/CSc/YIqz
- xttw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-transfer-encoding:content-language;
- bh=0FiHEyxWptjFmCW5o9to1iiBlCsz8/BbPPRjZdM3iMs=;
- b=b021x3h8GJ7Nthw36JPdnrmUWXHW3b82oKee16I9vJskMEu5VgCUa59Zhp/52iRSfa
- 4KJIBMhS/QvZO+iUWeTb/dVrbUpwoY3kzsdjvw3UWGUHqEsVGkjX2iIvbWPVvmeu75zL
- 7JLPL2k8VO/Jpo/2lRHr8lozj27SHARcQMpOHEMZNms6F6LKRqAofoPZthw2BbAM06Wj
- 7OqDaDYSll8KMz8Tt2t9iCXfnzrpFLQ/4RQOUDW5obaIyL2dI3n8bd2ylromm9/96LDo
- wRPwje92dwaBWX5/0knTIKNO/9QDAusMml8qNtNijHyhzYUj6t/sDULg4Shm1LPQqiqZ
- 2FPw==
-X-Gm-Message-State: AOAM533I511+RjpMcc6F2hJSbp9qaYymoQ1sdYzKYCogxlv6Pg9GB2OI
- iGHppTq88tINjZ4G+16ddw7Ca5n2GNj3VQ==
-X-Google-Smtp-Source: ABdhPJwqP/4eQF9+yxspKAAdU/DuSo1qiC6NsbGAgYf6qWv+CYqI0RCVgE6nxAYldCq0dZQEZH8iNg==
-X-Received: by 2002:a05:6512:2027:: with SMTP id
- s7mr5704202lfs.39.1589055143312; 
- Sat, 09 May 2020 13:12:23 -0700 (PDT)
-Received: from [192.168.1.73] ([91.77.167.245])
- by smtp.gmail.com with ESMTPSA id 5sm4876871lfy.60.2020.05.09.13.12.22
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 09 May 2020 13:12:22 -0700 (PDT)
-Subject: Re: acsint support in espeakup
-To: Samuel Thibault <samuel.thibault@ens-lyon.org>
-References: <de1e60e2-1ebc-77c2-3e90-0d0adfa6b532@gmail.com>
- <20200509193238.fpzna4j2k2rwwi4b@function>
- <ae1d34b1-1a98-3f6e-bad0-a4e2a439e12a@gmail.com>
- <20200509195223.jjpfjpfnif3uqo72@function>
-From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
-Autocrypt: addr=aarnaarn2@gmail.com; keydata=
- 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
- 444rpcPy
-Message-ID: <84ae2a76-9928-00a1-121b-454719f2fcc9@gmail.com>
-Date: Sat, 9 May 2020 23:12:22 +0300
+ id 51E631C07EF; Wed, 13 May 2020 16:01:20 -0400 (EDT)
+Received: from NAM02-CY1-obe.outbound.protection.outlook.com (unknown
+ [40.92.4.84])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 76A901C0129
+ for <speakup@linux-speakup.org>; Wed, 13 May 2020 16:01:15 -0400 (EDT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=VMuscZeUyuLrubf+tzh0A6NZSclpFosR6+Tu7mGQmGZX2XtsUgAAHygmjokLIkMMqNvS3qVJPvfkRJxVLVMB5rlMBfmiBiZ37W8JgWgrLOvYit7e/GgfExA2YdvuCPeWr6reaazxtncNHdZQZ+hVVrFWDt4AL1neXqdaaL0qhBSn80Rv9h83sNmUF85Pq1sUlpvo0gwErBJHQRcLMrKGbPKweZjYDJU78GQMN3qPK54iJfHaQo3MUDG8EGtSGGudm9XHCJUURDXLrvqbxN/LNrLk6l+h39QlMBIY6E+6vFN/vu2ajJmiWyT8CtjSateAycAtFob9NIpysqUrYLbBrw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PxxIeZU/D3rE05JyY1+hLpGHxLAO5iFl0bjZHdic6ow=;
+ b=M6PXXOdhop0rn0rIGdjcTEvLN8xNnW/cwnsYnSQon1ZsAqezuoZYJKjxmloj1A8goeDpRfCtvHEpl+Bhu4CfHRTRqMX/RMLXX6BntYOpz7NJz0Nhh6SMIJdjiqR94GdiCp9+MOdWNRQ1CGtku2+mHsTy+E0AlA59AV1ucc+dpWGPvHVVur3ZC8R/F8ADXc8UFSPzCH8UHFPdB9d7z3dfbaoN9+DAOda7XargQRcBGKvb63RqWTpL0g8DyfRsRgDbG+DHGbci3jPGGKewZVR+NPmtH75xdtPt3Jbaew+rzM+RzbBJqXQDT6IhvAS15afSqb9y45n6idG7FLILT5ZPJg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=hotmail.com; dmarc=pass action=none header.from=hotmail.com;
+ dkim=pass header.d=hotmail.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PxxIeZU/D3rE05JyY1+hLpGHxLAO5iFl0bjZHdic6ow=;
+ b=iaZkI9Awino2qxEqHT0oOT9t8HxiNoe8ccu2+h1NO6pjaHAmK6G9OD6pxbVMlcrKaHYNsrOy+mwoWsze2xub1jIdVc40sSwV9+jpuz4vKErZ/R4zWalHW/TdfaO5qUE0oZprGrAsznRBhfgXB47GduLNjdoLsRvXjyxdl19eo5khWDWjd368E9pK8odcs20fG+J7alISwC7O+rBUhdkcJJo9HW9ydX0UH5uemL4bdDVFosMjy6TVBKrcUndhAUToF8ol41HoiyCipy7AMgGx9m/ij8LjiPyGp8tMMx0r8Kl+4iD+DkNgF4Xcg/PXp3l1U2FlEmXln4xPr5PLT5Yg9w==
+Received: from BL2NAM02FT043.eop-nam02.prod.protection.outlook.com
+ (10.152.76.60) by BL2NAM02HT088.eop-nam02.prod.protection.outlook.com
+ (10.152.77.64) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.29; Wed, 13 May
+ 2020 20:01:04 +0000
+Received: from DM6PR14MB3647.namprd14.prod.outlook.com
+ (2a01:111:e400:7e46::42) by BL2NAM02FT043.mail.protection.outlook.com
+ (2a01:111:e400:7e46::351) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.29 via Frontend
+ Transport; Wed, 13 May 2020 20:01:04 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:D31F3190852DCE4DFDC1D7197849C3812269F190763A95E160CCD949122D0A0E;
+ UpperCasedChecksum:72797ED51F5344EE9DD737DA9C3B40AE23260A349BD090C7E8F9205B6DD35E51;
+ SizeAsReceived:8563; Count:47
+Received: from DM6PR14MB3647.namprd14.prod.outlook.com
+ ([fe80::7cbc:9a27:8f87:b616]) by DM6PR14MB3647.namprd14.prod.outlook.com
+ ([fe80::7cbc:9a27:8f87:b616%9]) with mapi id 15.20.2979.033; Wed, 13 May 2020
+ 20:01:04 +0000
+To: speakup@linux-speakup.org
+From: Criss <crisspro@hotmail.com>
+Subject: speakup crashed in Vmware
+Message-ID: <DM6PR14MB3647DD1F4448E4D621813D67DABF0@DM6PR14MB3647.namprd14.prod.outlook.com>
+Date: Wed, 13 May 2020 16:00:58 -0400
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
+Content-Language: es-CL
+X-ClientProxiedBy: SC1PR80CA0099.lamprd80.prod.outlook.com (2603:10d6:2::26)
+ To DM6PR14MB3647.namprd14.prod.outlook.com (2603:10b6:5:1ba::16)
+X-Microsoft-Original-Message-ID: <f2aa7b38-e080-4b20-d4ee-55cebe0865b4@hotmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200509195223.jjpfjpfnif3uqo72@function>
-Content-Language: en-US
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [192.168.0.5] (190.5.52.129) by
+ SC1PR80CA0099.lamprd80.prod.outlook.com (2603:10d6:2::26) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3000.20 via Frontend Transport; Wed, 13 May 2020 20:01:03 +0000
+X-Microsoft-Original-Message-ID: <f2aa7b38-e080-4b20-d4ee-55cebe0865b4@hotmail.com>
+X-TMN: [/5Wty1whF12PzbusWOu309EGB83rBlGf]
+X-MS-PublicTrafficType: Email
+X-IncomingHeaderCount: 47
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-Correlation-Id: 161852a6-bbb4-4fac-7421-08d7f7785db0
+X-MS-TrafficTypeDiagnostic: BL2NAM02HT088:
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: Nj8OsDfVykZKRarkI77k4bUErwN5IXbTapfn9WH1c+J7A5qIj3OkZ1XqEwstSCUDeWZd48HtZN8wQwViMwNm0Xx2XBjM+VR32W9tc16ThjYt+BgqhpFrhNtQXDt80CghEwsp1SluJxLMMFHHv5pdX+zgvBqxI0WVjIoiHdR6yVHR7bpTfPs5iNk31dAOfoHtikhKU5mNNaZNzUOhkuSvQQ==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM6PR14MB3647.namprd14.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:; SFS:; DIR:OUT; SFP:1901; 
+X-MS-Exchange-AntiSpam-MessageData: wbp3vDGkmMfZig2Dq8M4K2qYlGNWK2AmBDoHIelg+/t4JdZIRkEy+dud0LsRJ0xnKQW0GXO8wAfsHrque9TEH3woff64+sfwdpF65m+Y/KK6tOGWQFd69rU3NSzCwdgPa1nbmYI2j7eVwuPQ2Ywc8g==
+X-OriginatorOrg: hotmail.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 161852a6-bbb4-4fac-7421-08d7f7785db0
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 May 2020 20:01:04.1980 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL2NAM02HT088
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -157,22 +104,24 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-b2suIHRoYW5rcyBmb3IgaW5mby4gd2lsbCByZXNlYXJjaC4KCjA5LjA1LjIwMjAgMjI6NTIsIFNh
-bXVlbCBUaGliYXVsdCDQv9C40YjQtdGCOgo+IEFsZXhhbmRlciBFcGFuZXNobmlrb3YsIGxlIHNh
-bS4gMDkgbWFpIDIwMjAgMjI6NDU6MTQgKzAzMDAsIGEgZWNyaXQ6Cj4+IGhlbGxvIFNhbXVlbC4g
-aXMgaXQgaW4ga2VybmVsIHRyZWUgb3IgdXNlZCBieSBhbnkgbGludXggZGlzdHJvPwo+IEl0J3Mg
-bm90IGluIHRoZSBrZXJuZWwgdHJlZSwgSSBkb24ndCBrbm93IGFueSBkaXN0cm8gdGhhdCBzaGlw
-cyBpdC4KPgo+PiBpIGFtIHRhbGtpbmcgYWJvdXQgZXNwZWFrdXAgc3VwcG9ydC4KPiBPaCwgc29y
-cnksIHJlYWQgdG9vIGZhc3QuCj4KPj4gaW4gc291cmNlIGNvZGUgd2UgaGF2ZSBmdW5jdGlvbnMg
-cmVsYXRlZCB0byBhY3NpbnQuCj4gSW5kZWVkLCBJIGRvbid0IGtub3cgYWJvdXQgdGhpcy4KPgo+
-IFNhbXVlbAoKLS0gClNpbmNlcmVseSwgQWxleGFuZGVyLgoKX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KU3BlYWt1cCBtYWlsaW5nIGxpc3QKU3BlYWt1cEBs
-aW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFu
-L2xpc3RpbmZvL3NwZWFrdXAK
+Hello.
+
+
+When I tryed install debian with speakup in VMware virtual machine, I 
+can't continue because speakup crashing, (with arch in vmware crashed 
+too). Is this a speakup bug? How can I restart speakup in debian 
+installation?.
+
+
+regards.
+
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
