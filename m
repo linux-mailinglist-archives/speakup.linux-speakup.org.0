@@ -2,94 +2,71 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 12A8D1D1FCB
-	for <lists+speakup@lfdr.de>; Wed, 13 May 2020 22:02:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 44BC71D1FE0
+	for <lists+speakup@lfdr.de>; Wed, 13 May 2020 22:12:32 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C91651C07F4; Wed, 13 May 2020 16:02:21 -0400 (EDT)
+	id D0E691C0803; Wed, 13 May 2020 16:12:31 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hotmail.com header.i=@hotmail.com header.a=rsa-sha256 header.s=selector1 header.b=iaZkI9Aw;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=NHtxfkC2;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 48F1F1C083A;
-	Wed, 13 May 2020 16:01:30 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id DCC991C0B32;
+	Wed, 13 May 2020 16:11:49 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 51E631C07EF; Wed, 13 May 2020 16:01:20 -0400 (EDT)
-Received: from NAM02-CY1-obe.outbound.protection.outlook.com (unknown
- [40.92.4.84])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 76A901C0129
- for <speakup@linux-speakup.org>; Wed, 13 May 2020 16:01:15 -0400 (EDT)
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=VMuscZeUyuLrubf+tzh0A6NZSclpFosR6+Tu7mGQmGZX2XtsUgAAHygmjokLIkMMqNvS3qVJPvfkRJxVLVMB5rlMBfmiBiZ37W8JgWgrLOvYit7e/GgfExA2YdvuCPeWr6reaazxtncNHdZQZ+hVVrFWDt4AL1neXqdaaL0qhBSn80Rv9h83sNmUF85Pq1sUlpvo0gwErBJHQRcLMrKGbPKweZjYDJU78GQMN3qPK54iJfHaQo3MUDG8EGtSGGudm9XHCJUURDXLrvqbxN/LNrLk6l+h39QlMBIY6E+6vFN/vu2ajJmiWyT8CtjSateAycAtFob9NIpysqUrYLbBrw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PxxIeZU/D3rE05JyY1+hLpGHxLAO5iFl0bjZHdic6ow=;
- b=M6PXXOdhop0rn0rIGdjcTEvLN8xNnW/cwnsYnSQon1ZsAqezuoZYJKjxmloj1A8goeDpRfCtvHEpl+Bhu4CfHRTRqMX/RMLXX6BntYOpz7NJz0Nhh6SMIJdjiqR94GdiCp9+MOdWNRQ1CGtku2+mHsTy+E0AlA59AV1ucc+dpWGPvHVVur3ZC8R/F8ADXc8UFSPzCH8UHFPdB9d7z3dfbaoN9+DAOda7XargQRcBGKvb63RqWTpL0g8DyfRsRgDbG+DHGbci3jPGGKewZVR+NPmtH75xdtPt3Jbaew+rzM+RzbBJqXQDT6IhvAS15afSqb9y45n6idG7FLILT5ZPJg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=hotmail.com; dmarc=pass action=none header.from=hotmail.com;
- dkim=pass header.d=hotmail.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=hotmail.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=PxxIeZU/D3rE05JyY1+hLpGHxLAO5iFl0bjZHdic6ow=;
- b=iaZkI9Awino2qxEqHT0oOT9t8HxiNoe8ccu2+h1NO6pjaHAmK6G9OD6pxbVMlcrKaHYNsrOy+mwoWsze2xub1jIdVc40sSwV9+jpuz4vKErZ/R4zWalHW/TdfaO5qUE0oZprGrAsznRBhfgXB47GduLNjdoLsRvXjyxdl19eo5khWDWjd368E9pK8odcs20fG+J7alISwC7O+rBUhdkcJJo9HW9ydX0UH5uemL4bdDVFosMjy6TVBKrcUndhAUToF8ol41HoiyCipy7AMgGx9m/ij8LjiPyGp8tMMx0r8Kl+4iD+DkNgF4Xcg/PXp3l1U2FlEmXln4xPr5PLT5Yg9w==
-Received: from BL2NAM02FT043.eop-nam02.prod.protection.outlook.com
- (10.152.76.60) by BL2NAM02HT088.eop-nam02.prod.protection.outlook.com
- (10.152.77.64) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.29; Wed, 13 May
- 2020 20:01:04 +0000
-Received: from DM6PR14MB3647.namprd14.prod.outlook.com
- (2a01:111:e400:7e46::42) by BL2NAM02FT043.mail.protection.outlook.com
- (2a01:111:e400:7e46::351) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.29 via Frontend
- Transport; Wed, 13 May 2020 20:01:04 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:D31F3190852DCE4DFDC1D7197849C3812269F190763A95E160CCD949122D0A0E;
- UpperCasedChecksum:72797ED51F5344EE9DD737DA9C3B40AE23260A349BD090C7E8F9205B6DD35E51;
- SizeAsReceived:8563; Count:47
-Received: from DM6PR14MB3647.namprd14.prod.outlook.com
- ([fe80::7cbc:9a27:8f87:b616]) by DM6PR14MB3647.namprd14.prod.outlook.com
- ([fe80::7cbc:9a27:8f87:b616%9]) with mapi id 15.20.2979.033; Wed, 13 May 2020
- 20:01:04 +0000
+ id 7406A1C07EF; Wed, 13 May 2020 16:11:47 -0400 (EDT)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+ by befuddled.reisers.ca (Postfix) with ESMTP id 023B21C0129
+ for <speakup@linux-speakup.org>; Wed, 13 May 2020 16:11:45 -0400 (EDT)
+Received: from darkstar.slint.fr (sfa89-1-78-208-157-71.fbx.proxad.net
+ [78.208.157.71])
+ by darkstar.slint.fr (Postfix) with ESMTPSA id 7E72FBE791
+ for <speakup@linux-speakup.org>; Wed, 13 May 2020 21:11:20 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+ t=1589397080; bh=wttAsYxHPf6HnHBQ5NfRSdGtCOkQsK++ZG9JtkHXIUY=;
+ h=Subject:To:References:From:Date:In-Reply-To:From;
+ b=NHtxfkC2k4uDTS6hotz4FMOKpG6ec3XduaDbBLyMA26SK0Dxva8XPEO/nUKIRadXI
+ mH8zxL81yHydWMUn326EY9D0IvCA2Y7vPruX1gB0HIXt/Rh9Jjc9hP5++lbfEwtLXC
+ WzzCOjoOWWfUgmnhr0AIjMU4aEeKaxWT0TE2chJ2e0Zx21/OZwRiO3EdPVn5KobtWS
+ fltLqB1CNBmqAaXSlT34ecXJjwhgbfHQRfF1hRjB3umaY4JlFWEm+7xt5GEupbkfZ0
+ Q0K2xXcmJJ4Mz7VtYJX2irpbR8yggd9SP7s+lmDmr0M3oSBXUkK6fe8T8OpoLC+UKI
+ ftiI6n0cqVklw==
+Subject: Re: speakup crashed in Vmware
 To: speakup@linux-speakup.org
-From: Criss <crisspro@hotmail.com>
-Subject: speakup crashed in Vmware
-Message-ID: <DM6PR14MB3647DD1F4448E4D621813D67DABF0@DM6PR14MB3647.namprd14.prod.outlook.com>
-Date: Wed, 13 May 2020 16:00:58 -0400
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+References: <DM6PR14MB3647DD1F4448E4D621813D67DABF0@DM6PR14MB3647.namprd14.prod.outlook.com>
+From: Didier Spaier <didier@slint.fr>
+Autocrypt: addr=didier@slint.fr; prefer-encrypt=mutual; keydata=
+ xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
+ dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
+ TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
+ jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
+ 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
+ AAHNH0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj7CwH8EEwEKACkCGwMHCwkIBwMC
+ AQYVCAIJCgsEFgIDAQIeAQIXgAUCXcBjnwUJGlHqEgAKCRDVAgLvYMA+6v/ICAC8Oa2zXOne
+ zyuFrPtNsciJWYwWamW+g5TNaY9NPnyMRNKDi7IcP6PoDwHRI8YBgo+Z9w0qFKQ/WVSI/O6s
+ gm7LnOX7OEHjnub4sjrr5PHcsPRjm6iJFIgGgD+waz0K5fxcc65ti3lgHLH1tkhORyiT5EFp
+ 0VllWDQfPHw5avm9oopJv1FuPfZhSlFT6QhjD2ARmOrxfFBjELQZjDidckOYf/8Stoh+aK5F
+ 5q69DpF+bSZzOtCht+S6LT+Im5zqMgq1Dfqb3FpnVO3MyhSLeGI2nB+OFNTBGByRFKHYRsHc
+ VaQBjtfsr4HnC0UR2P/bDIk/oxLnIN9nHJuL6btcf9M6zsBNBFY6fG8BCACqDQKHSw0ElDkw
+ PPpNguL0ujOyygO30xlLyfW9pWOEycHSLhLzvDTlFkvr5IxvyCDBIFBdzpkeQqh1+ZxrFliw
+ Wyj+9/roJlIjxeAyNs2xQZ7tQM6K5xtbUs8O5YtkCCO3OegAiLgmzzgxes79Qy+V3ciKbl+v
+ rsNu7T9ro3zZhyinci1eOCcKEtXFPQW5P4woB+6+JheN9pIiDkjojmdC+xkvDadP7kJYKp19
+ Itys/CbNvxEoOLsgeJhsZSmNU2QNhXkLfr7+AC99fb/c5ZDTNPRBqgLJCp+gTxn1QVJrAbq2
+ OP3refmSRxdA3yUDMjxEeHwDNZJL9aEtTDlTzPk5ABEBAAHCwGUEGAEKAA8CGwwFAl1EQo4F
+ CQjq+XYACgkQ1QIC72DAPurGhAf+LKNM5AajZNNnccq3bWawqsY1P5ZtFvZLPxMbx2xsnYaM
+ 8UPe/tGfuxp+q1ouCRKgvtefjd2eBLGXaysCA5r3Jv+hgdjPKEJut3rARhTJMaDwjKOcOTHG
+ AhFtpsjBkVXuCBxEpNBEypyis3w4kQUCxP7nro4yzdXY7s6EbadNd8nG4B8qFt4JxnqJnZWl
+ 97mBQFJjFXlkAM+0eAkpF+rYzL6QKCKydO2Xcz7UTSMe/blXtZUjHxyr8Nh1G+ywEbkmQP+l
+ QhcxJYJbK+q4zNM0U64zzLRwIvVknpdEzJKiFXsydnm9VFE9tzC6a+h40du2OdhkoNDVuFSq
+ aG2M5OmN/Q==
+Message-ID: <d0cb97ac-0964-c850-6405-3f892c45b31b@slint.fr>
+Date: Wed, 13 May 2020 22:11:41 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
-Content-Language: es-CL
-X-ClientProxiedBy: SC1PR80CA0099.lamprd80.prod.outlook.com (2603:10d6:2::26)
- To DM6PR14MB3647.namprd14.prod.outlook.com (2603:10b6:5:1ba::16)
-X-Microsoft-Original-Message-ID: <f2aa7b38-e080-4b20-d4ee-55cebe0865b4@hotmail.com>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.0.5] (190.5.52.129) by
- SC1PR80CA0099.lamprd80.prod.outlook.com (2603:10d6:2::26) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.3000.20 via Frontend Transport; Wed, 13 May 2020 20:01:03 +0000
-X-Microsoft-Original-Message-ID: <f2aa7b38-e080-4b20-d4ee-55cebe0865b4@hotmail.com>
-X-TMN: [/5Wty1whF12PzbusWOu309EGB83rBlGf]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 47
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: 161852a6-bbb4-4fac-7421-08d7f7785db0
-X-MS-TrafficTypeDiagnostic: BL2NAM02HT088:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Nj8OsDfVykZKRarkI77k4bUErwN5IXbTapfn9WH1c+J7A5qIj3OkZ1XqEwstSCUDeWZd48HtZN8wQwViMwNm0Xx2XBjM+VR32W9tc16ThjYt+BgqhpFrhNtQXDt80CghEwsp1SluJxLMMFHHv5pdX+zgvBqxI0WVjIoiHdR6yVHR7bpTfPs5iNk31dAOfoHtikhKU5mNNaZNzUOhkuSvQQ==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:DM6PR14MB3647.namprd14.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: wbp3vDGkmMfZig2Dq8M4K2qYlGNWK2AmBDoHIelg+/t4JdZIRkEy+dud0LsRJ0xnKQW0GXO8wAfsHrque9TEH3woff64+sfwdpF65m+Y/KK6tOGWQFd69rU3NSzCwdgPa1nbmYI2j7eVwuPQ2Ywc8g==
-X-OriginatorOrg: hotmail.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 161852a6-bbb4-4fac-7421-08d7f7785db0
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 May 2020 20:01:04.1980 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BL2NAM02HT088
+In-Reply-To: <DM6PR14MB3647DD1F4448E4D621813D67DABF0@DM6PR14MB3647.namprd14.prod.outlook.com>
+Content-Language: fr
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,24 +81,20 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hello.
-
-
-When I tryed install debian with speakup in VMware virtual machine, I 
-can't continue because speakup crashing, (with arch in vmware crashed 
-too). Is this a speakup bug? How can I restart speakup in debian 
-installation?.
-
-
-regards.
-
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+SGVsbG8gQ3Jpc3MsCgpJIGRvdWJ0IHRoaXMgYmUgYW4gZXNwZWFrdXAgaXNzdWUuIEknZCByYXRo
+ZXIgYmV0IGZvciBhIFZNd2FyZSBvbmUuCgpJIG9ubHkgdXNlIFFlbXUgVk1zLCBhcyBRZW11IGhh
+cyBhbiBvdXN0YW5kaW5nIHNvdW5kIHN1cHBvcnQuCgpDaGVlcnMsCkRpZGllcgoKTGUgMTMvMDUv
+MjAyMCDDoCAyMjowMCwgQ3Jpc3MgYSDDqWNyaXTCoDoKPiBIZWxsby4KPiAKPiAKPiBXaGVuIEkg
+dHJ5ZWQgaW5zdGFsbCBkZWJpYW4gd2l0aCBzcGVha3VwIGluIFZNd2FyZSB2aXJ0dWFsIG1hY2hp
+bmUsIEkgY2FuJ3QgY29udGludWUgYmVjYXVzZSBzcGVha3VwIGNyYXNoaW5nLCAod2l0aCBhcmNo
+IGluIHZtd2FyZSBjcmFzaGVkIHRvbykuIElzIHRoaXMgYSBzcGVha3VwIGJ1Zz8gSG93IGNhbiBJ
+IHJlc3RhcnQgc3BlYWt1cCBpbiBkZWJpYW4gaW5zdGFsbGF0aW9uPy4KPiAKPiAKPiByZWdhcmRz
+LgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpTcGVha3Vw
+IG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51eC1zcGVh
+a3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
