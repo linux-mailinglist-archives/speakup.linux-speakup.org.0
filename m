@@ -2,33 +2,47 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 895E71D2689
-	for <lists+speakup@lfdr.de>; Thu, 14 May 2020 07:11:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id AF2021D2910
+	for <lists+speakup@lfdr.de>; Thu, 14 May 2020 09:51:11 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EF4EC1C0BE6; Thu, 14 May 2020 01:11:37 -0400 (EDT)
+	id 07D441C0829; Thu, 14 May 2020 03:51:10 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id DD6771C0B07;
-	Thu, 14 May 2020 01:11:27 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6A4131C0AD9;
+	Thu, 14 May 2020 03:50:59 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 486591C0828; Thu, 14 May 2020 01:11:26 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
- by befuddled.reisers.ca (Postfix) with ESMTPS id C140F1C080D
- for <speakup@linux-speakup.org>; Thu, 14 May 2020 01:11:24 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1028)
- id 2C0C28C09EC; Thu, 14 May 2020 05:11:23 +0000 (UTC)
+ id ACDCA1C0828; Thu, 14 May 2020 03:50:57 -0400 (EDT)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [IPv6:2a0c:e300::1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 58F801C080D
+ for <speakup@linux-speakup.org>; Thu, 14 May 2020 03:50:55 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
- by server2.shellworld.net (Postfix) with ESMTP id 28D418C02C5
- for <speakup@linux-speakup.org>; Wed, 13 May 2020 22:11:23 -0700 (PDT)
-Date: Wed, 13 May 2020 22:11:23 -0700
-From: Chime Hart <chime@hubert-humphrey.com>
+ by hera.aquilenet.fr (Postfix) with ESMTP id 403123832
+ for <speakup@linux-speakup.org>; Thu, 14 May 2020 09:50:53 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id xNLSlVg5PMKd for <speakup@linux-speakup.org>;
+ Thu, 14 May 2020 09:50:52 +0200 (CEST)
+Received: from function (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
+ [86.234.239.11])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 4F4F237F1
+ for <speakup@linux-speakup.org>; Thu, 14 May 2020 09:50:52 +0200 (CEST)
+Received: from samy by function with local (Exim 4.93)
+ (envelope-from <samuel.thibault@ens-lyon.org>) id 1jZ8dn-007nyk-9y
+ for speakup@linux-speakup.org; Thu, 14 May 2020 09:50:51 +0200
+Date: Thu, 14 May 2020 09:50:51 +0200
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: calling all dectalk users
-In-Reply-To: <20200514022100.GA6582@gregn.net>
-Message-ID: <Pine.LNX.4.64.2005132206150.8251@server2.shellworld.net>
+Message-ID: <20200514075051.izikiby5hcvbx6kk@function>
 References: <20200514022100.GA6582@gregn.net>
+ <Pine.LNX.4.64.2005132206150.8251@server2.shellworld.net>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <Pine.LNX.4.64.2005132206150.8251@server2.shellworld.net>
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -43,20 +57,24 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi Greg-and-All: Thanks so much for following up. When I first saw Sam's 
-request, I didn't really know how to talk to the DecTalk? So this evening 1 of 
-my Linux experts gave me a hand. Yes, all 3 commands work, but only the 3rd made 
-the pitch any hier. My friend was looking in the DecTalk manual on how to 
-increase intonation, but while it says its ajustable, we couldn't find it. 
-Obviously, please inform if I can help more.
-Chime
+Hello,
 
+Chime Hart, le mer. 13 mai 2020 22:11:23 -0700, a ecrit:
+> all 3 commands work, but only the 3rd made the pitch any hier.
+
+That is expected.
+The question is not about the pitch, but about the intonation. According
+to the manual, the second command should have more intonation than the
+first, and the thirs should have the same amount of intonation as the
+second.
+
+Samuel
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
