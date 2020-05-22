@@ -1,48 +1,52 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 981501D4060
-	for <lists+speakup@lfdr.de>; Thu, 14 May 2020 23:46:21 +0200 (CEST)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id 239D21DE2ED
+	for <lists+speakup@lfdr.de>; Fri, 22 May 2020 11:23:03 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DADE51C0BE1; Thu, 14 May 2020 17:46:20 -0400 (EDT)
+	id 46FC61C0D5C; Fri, 22 May 2020 05:23:01 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7FB501C0C72;
-	Thu, 14 May 2020 17:45:43 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B9E371C0D51;
+	Fri, 22 May 2020 05:22:05 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 7EB851C0B32; Thu, 14 May 2020 17:45:41 -0400 (EDT)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [IPv6:2a0c:e300::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id E924E1C0B22
- for <speakup@linux-speakup.org>; Thu, 14 May 2020 17:45:39 -0400 (EDT)
+ id 799BF1C0D4C; Fri, 22 May 2020 05:21:59 -0400 (EDT)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 82C371C07F4
+ for <speakup@linux-speakup.org>; Fri, 22 May 2020 05:21:57 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id C9F7AF476
- for <speakup@linux-speakup.org>; Thu, 14 May 2020 23:45:38 +0200 (CEST)
+ by hera.aquilenet.fr (Postfix) with ESMTP id 1F7462D2B;
+ Fri, 22 May 2020 11:21:50 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
 Received: from hera.aquilenet.fr ([127.0.0.1])
  by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id RJlv1BapvbkV for <speakup@linux-speakup.org>;
- Thu, 14 May 2020 23:45:37 +0200 (CEST)
+ with ESMTP id OYOLJKbB0yKe; Fri, 22 May 2020 11:21:48 +0200 (CEST)
 Received: from function (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
  [86.234.239.11])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id A866FF475
- for <speakup@linux-speakup.org>; Thu, 14 May 2020 23:45:37 +0200 (CEST)
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 3DEC82C0C;
+ Fri, 22 May 2020 11:21:48 +0200 (CEST)
 Received: from samy by function with local (Exim 4.93)
- (envelope-from <samuel.thibault@ens-lyon.org>) id 1jZLfc-00Awgb-Fq
- for speakup@linux-speakup.org; Thu, 14 May 2020 23:45:36 +0200
-Date: Thu, 14 May 2020 23:45:36 +0200
+ (envelope-from <samuel.thibault@ens-lyon.org>)
+ id 1jc3sA-00GDlb-Nu; Fri, 22 May 2020 11:21:46 +0200
+Date: Fri, 22 May 2020 11:21:46 +0200
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: calling all dectalk users
-Message-ID: <20200514214536.l34etv744ydn6vsk@function>
-References: <20200514022100.GA6582@gregn.net>
- <Pine.LNX.4.64.2005141023131.14733@server2.shellworld.net>
- <20200514204058.GA6486@gregn.net>
- <Pine.LNX.4.64.2005141735240.20179@server2.shellworld.net>
+To: MugilRaj <dmugil2000@gmail.com>
+Subject: Re: [PATCH] taging: speakup: remove volatile
+Message-ID: <20200522092146.6ijoma4re7ijai7a@function>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+ MugilRaj <dmugil2000@gmail.com>,
+ William Hubbs <w.d.hubbs@gmail.com>,
+ Chris Brannon <chris@the-brannons.com>,
+ Kirk Reiser <kirk@reisers.ca>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ speakup@linux-speakup.org, devel@driverdev.osuosl.org,
+ linux-kernel@vger.kernel.org
+References: <1590138989-6091-1-git-send-email-dmugil2000@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <Pine.LNX.4.64.2005141735240.20179@server2.shellworld.net>
+In-Reply-To: <1590138989-6091-1-git-send-email-dmugil2000@gmail.com>
 Organization: I am not organized
 User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
@@ -59,29 +63,50 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: devel@driverdev.osuosl.org, William Hubbs <w.d.hubbs@gmail.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, speakup@linux-speakup.org,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Karen Lewellen, le jeu. 14 mai 2020 17:37:47 -0400, a ecrit:
-> I wonder how Linux users discover all these steps, if not on this list?
+Hello,
 
-It is documented in the Debian installation manual
+MugilRaj, le ven. 22 mai 2020 14:46:28 +0530, a ecrit:
+> fix checkpatch.pl warning, which is Use of volatile is usually wrong: see
+> Documentation/process/volatile-considered-harmful.rst
 
-The accessibility wiki
-https://wiki.debian.org/accessibility
+Yes, but the proper fix is usually not to just remove the volatile
+qualifier, which will not fix anything and potentially break things.
 
-contains a pointer to the precise chapter
-https://www.debian.org/releases/stable/i386/ch05s02
+Fixing this requires really understanding what is at stake here, between
+the read_buff_add function and the use of synth_full(). That goes
+through interrupt handlers, tty disciplines, and the actual behavior
+expected by speakup. Not a simple task, henceforth :)
 
-> Out of curiosity, the install would not find a dectalk connected via USB why
-> exactly?
-
-Because USB autodetection is still on the speakup TODO list.
-
-Samuel
+> Signed-off-by: MugilRaj <dmugil2000@gmail.com>
+> ---
+>  drivers/staging/speakup/speakup_decext.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/staging/speakup/speakup_decext.c b/drivers/staging/speakup/speakup_decext.c
+> index ddbb7e9..22baaeb 100644
+> --- a/drivers/staging/speakup/speakup_decext.c
+> +++ b/drivers/staging/speakup/speakup_decext.c
+> @@ -21,7 +21,7 @@
+>  #define SYNTH_CLEAR 0x03
+>  #define PROCSPEECH 0x0b
+>  
+> -static volatile unsigned char last_char;
+> +static unsigned char last_char;
+>  
+>  static void read_buff_add(u_char ch)
+>  {
+> -- 
+> 2.7.4
+> 
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
