@@ -2,47 +2,46 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 2B5C72316E8
-	for <lists+speakup@lfdr.de>; Wed, 29 Jul 2020 02:46:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E55C9231E71
+	for <lists+speakup@lfdr.de>; Wed, 29 Jul 2020 14:20:25 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 55AA11C0347; Tue, 28 Jul 2020 20:37:59 -0400 (EDT)
+	id 11CBD1C055F; Wed, 29 Jul 2020 08:20:25 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7FF6B1C0446;
-	Tue, 28 Jul 2020 20:36:30 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8CBC71C06AF;
+	Wed, 29 Jul 2020 08:19:43 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 544C41C02DD; Tue, 28 Jul 2020 20:36:28 -0400 (EDT)
+ id E66EB1C047E; Wed, 29 Jul 2020 08:19:41 -0400 (EDT)
 Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 6E11B1C0170
- for <speakup@linux-speakup.org>; Tue, 28 Jul 2020 20:36:26 -0400 (EDT)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 6C9261C047A
+ for <speakup@linux-speakup.org>; Wed, 29 Jul 2020 08:19:40 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id 59C08A608;
- Wed, 29 Jul 2020 02:36:24 +0200 (CEST)
+ by hera.aquilenet.fr (Postfix) with ESMTP id 9E8F214A6;
+ Wed, 29 Jul 2020 14:19:38 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
 Received: from hera.aquilenet.fr ([127.0.0.1])
  by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 8TYzVrFxfY_g; Wed, 29 Jul 2020 02:36:23 +0200 (CEST)
-Received: from function (lfbn-bor-1-797-11.w86-234.abo.wanadoo.fr
- [86.234.239.11])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id C7FF2A5BF;
- Wed, 29 Jul 2020 02:36:23 +0200 (CEST)
+ with ESMTP id 2yM3dG0QQnhW; Wed, 29 Jul 2020 14:19:38 +0200 (CEST)
+Received: from function (unknown [IPv6:2a01:cb19:956:1b00:9eb6:d0ff:fe88:c3c7])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id EC929148D;
+ Wed, 29 Jul 2020 14:19:37 +0200 (CEST)
 Received: from samy by function with local (Exim 4.94)
  (envelope-from <samuel.thibault@ens-lyon.org>)
- id 1k0a51-003o5G-4E; Wed, 29 Jul 2020 02:36:23 +0200
-Date: Wed, 29 Jul 2020 02:36:23 +0200
+ id 1k0l3Y-0051na-9a; Wed, 29 Jul 2020 14:19:36 +0200
+Date: Wed, 29 Jul 2020 14:19:36 +0200
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Joe Perches <joe@perches.com>
-Subject: Re: [PATCH] staging/speakup: Move out of staging
-Message-ID: <20200729003623.d42ljafn6sd7y2be@function>
+To: Greg KH <gregkh@linuxfoundation.org>
+Subject: Re: [PATCHv2] staging/speakup: Move out of staging
+Message-ID: <20200729121936.6ajd3b6vc5oox2aw@function>
 Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
- Joe Perches <joe@perches.com>, linux-kernel@vger.kernel.org,
- gregkh@linuxfoundation.org, speakup@linux-speakup.org
-References: <20200728211208.691249-1-samuel.thibault@ens-lyon.org>
- <c4cb56cca7928f92d642aef467244db434bff26f.camel@perches.com>
+ Greg KH <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ speakup@linux-speakup.org
+References: <20200729003531.907370-1-samuel.thibault@ens-lyon.org>
+ <20200729120533.GA2883831@kroah.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <c4cb56cca7928f92d642aef467244db434bff26f.camel@perches.com>
+In-Reply-To: <20200729120533.GA2883831@kroah.com>
 Organization: I am not organized
 User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
@@ -59,38 +58,28 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: gregkh@linuxfoundation.org, speakup@linux-speakup.org,
- linux-kernel@vger.kernel.org
+Cc: speakup@linux-speakup.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Joe Perches, le mar. 28 juil. 2020 17:24:47 -0700, a ecrit:
-> On Tue, 2020-07-28 at 23:12 +0200, Samuel Thibault wrote:
-> > diff --git a/MAINTAINERS b/MAINTAINERS
-> []
-> > @@ -16077,6 +16077,15 @@ Q:	https://patchwork.kernel.org/project/linux-sparse/list/
-> >  B:	https://bugzilla.kernel.org/enter_bug.cgi?component=Sparse&product=Tools
-> >  F:	include/linux/compiler.h
-> >  
-> > +SPEAKUP CONSOLE SPEECH DRIVER
-> > +M:	William Hubbs <w.d.hubbs@gmail.com>
-> > +M:	Chris Brannon <chris@the-brannons.com>
-> > +M:	Kirk Reiser <kirk@reisers.ca>
-> > +M:	Samuel Thibault <samuel.thibault@ens-lyon.org>
-> > +L:	speakup@linux-speakup.org
-> > +W:	http://www.linux-speakup.org/
-> > +F:	drivers/accessibility/speakup/
+Greg KH, le mer. 29 juil. 2020 14:05:33 +0200, a ecrit:
+> On Wed, Jul 29, 2020 at 02:35:31AM +0200, Samuel Thibault wrote:
+> > The nasty TODO items are done.
+> > 
+> > Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 > 
-> S:? 	Supported / Maintained / Odd Fixes ?
+> Now applied, thanks for all of the work so far.
+> 
+> I will be glad to merge patches for this subsystem to Linus if you want
+> me to collect them.  If so, feel free to forward them on to me, or send
+> me a pull request.
 
-Ah, yes.  I should have read the documentation at the top, instead of
-assuming that "S:" standed for the reason for being in "S"taging.
+Ok!
 
-Submitted a v2.
-
+Thanks,
 Samuel
 _______________________________________________
 Speakup mailing list
