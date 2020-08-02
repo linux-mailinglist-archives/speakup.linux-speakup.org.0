@@ -2,55 +2,74 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D1082233374
-	for <lists+speakup@lfdr.de>; Thu, 30 Jul 2020 15:52:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 4213A23597D
+	for <lists+speakup@lfdr.de>; Sun,  2 Aug 2020 19:29:50 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4B1961C06D1; Thu, 30 Jul 2020 09:52:39 -0400 (EDT)
+	id 7F9F01C0755; Sun,  2 Aug 2020 13:29:48 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=default header.b=YpxuVqFg;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=i2pXR7UB;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=QBeqFv90;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 840611C06DB;
-	Thu, 30 Jul 2020 09:51:27 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id EC9131C076D;
+	Sun,  2 Aug 2020 13:28:40 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 616461C06CF; Thu, 30 Jul 2020 09:51:24 -0400 (EDT)
-Received: from opera.rednote.net (opera.rednote.net [66.228.34.147])
- by befuddled.reisers.ca (Postfix) with ESMTPS id B5F5A1C0453
- for <speakup@linux-speakup.org>; Thu, 30 Jul 2020 09:51:19 -0400 (EDT)
-Received: from rednote.net (localhost [IPv6:0:0:0:0:0:0:0:1])
- by opera.rednote.net (8.15.2/8.15.2) with ESMTPS id 06UDn5fO283873
- (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO)
- for <speakup@linux-speakup.org>; Thu, 30 Jul 2020 13:49:05 GMT
-DMARC-Filter: OpenDMARC Filter v1.3.2 opera.rednote.net 06UDn5fO283873
-Authentication-Results: opera.rednote.net;
- dmarc=pass (p=reject dis=none) header.from=rednote.net
-Authentication-Results: opera.rednote.net;
- spf=pass smtp.mailfrom=janina@rednote.net
-DKIM-Filter: OpenDKIM Filter v2.11.0 opera.rednote.net 06UDn5fO283873
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rednote.net;
- s=default; t=1596116945;
- bh=X1PS4AhuPztfUBlg9YGjJfds4G+HtjxDI6QiextMYkA=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=YpxuVqFgLfuK1v3nVWNmSvyDlpMaXYDRgaTJKqu0Vhwfwy/iiWsxIbaqoKsipM1TP
- f7rDnDn/6xFkfgPZGq6cV44Pc/ytfgktmB+rb+vAGuunK6bsgb5CzD41gfNVJF20KH
- 8bP2lI96tPOr4hp/5QezjI7Ir3rpz7kisK6aN5iI=
-Received: (from janina@localhost)
- by rednote.net (8.15.2/8.15.2/Submit) id 06UDn5Jh283872
- for speakup@linux-speakup.org; Thu, 30 Jul 2020 09:49:05 -0400
-Date: Thu, 30 Jul 2020 09:49:05 -0400
-From: Janina Sajka <janina@rednote.net>
+ id 9F69B1C074F; Sun,  2 Aug 2020 13:28:30 -0400 (EDT)
+Received: from out5-smtp.messagingengine.com (out5-smtp.messagingengine.com
+ [66.111.4.29])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 0046E1C0713
+ for <speakup@linux-speakup.org>; Sun,  2 Aug 2020 13:28:26 -0400 (EDT)
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+ by mailout.nyi.internal (Postfix) with ESMTP id 444815C00DD
+ for <speakup@linux-speakup.org>; Sun,  2 Aug 2020 13:28:24 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute1.internal (MEProxy); Sun, 02 Aug 2020 13:28:24 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ hubert-humphrey.com; h=date:from:to:subject:message-id
+ :mime-version:content-type; s=fm1; bh=Ip/bArOh4uv8ysG0NWNNwDJQLz
+ 9unA5/efXn90LggK8=; b=i2pXR7UB/s3sFEnKOCjUKZlN6heSBU74dDO+sQkRLx
+ 6MCZXFsrsV3bBdYcrXt3Y5wytzx/24slTrFZny/6yJb+GwyJ1hPlaxCxZUiWak/D
+ ofcKCfkcyOVY5vDauUK8gLlPDrCgKfVacTVjqAb4g9zOS3ecRDoz3zC+qgFVAgTd
+ /ePRSFZTOZUc7x1wpbBnXBK9yVqpLOYfdR9oi2CDxgkiBRuv5P4MxFx5Reve4x0y
+ xpq439iXu3NIZqMbib/Li8mlPlH5Dn4GjARsm7skwm6IYCAx+Y2180oCBHaH4u9J
+ FQev9wmtOOoZ/j58rSd+gK1Noba7A2tuIYwCSFD8H32w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-type:date:from:message-id
+ :mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
+ :x-me-sender:x-sasl-enc; s=fm3; bh=Ip/bArOh4uv8ysG0NWNNwDJQLz9un
+ A5/efXn90LggK8=; b=QBeqFv909kLLMwJGxaFEvkcupgiRr60qrEPRSS0xE6R9H
+ O9V9v/MKXk/+WMSMuYnQ/WcoZcYTzCnW8PBrfz90L/CaX1Z9zZtZGHyp5FiPNyB0
+ B3ZD3OnO6KG8DT01L9CFL+jbIbqaYBv1JUw+uAD3S5UM60vLQajATvdu8JQCcZhT
+ y3BJhTBmdvAULIH44J2kTHb+b+pCPGSYEhXyTvsqoBbU3ZujHWDQhiV8gSRBOawo
+ 0JOqITIxcYODzpaU77A0u6MTHQuNB/GIjFZPIhr6FBa3Af4aQ5KfseiLh0N8My7u
+ G/Ydabyg2igjOEwPs8BsOZLeM5ReAskYdrW/isAcg==
+X-ME-Sender: <xms:uPcmX28yK344XkULvD9GtzBH_OG0qdG_5q6WLyrfDazO5kfJux5lkQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduiedrjedvgdduudehucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkfgggtgesthdtredttd
+ ervdenucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhh
+ uhhmphhhrhgvhidrtghomheqnecuggftrfgrthhtvghrnhephfdvjefgfefhvdfhvdegvd
+ eivdfhteetjedvjefhtdehleeftefhteejtdduhefhnecukfhppedutdegrddujedvrddt
+ rddugeefnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+ eptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
+X-ME-Proxy: <xmx:uPcmX2tP_o-WszuMkUNZ4hwjWgcwcekZgX26OAhY2P6KHjK3F6fLww>
+ <xmx:uPcmX8BKpsJFrcDyn7JCZ8u7kCZkF9xgppQ1wnuHutnhPpZIOHCTIA>
+ <xmx:uPcmX-e_2fWk2MsjpZoj96c2YA5AQLB6CPKC2A2IpQ-kFY6buHAXkA>
+ <xmx:uPcmXxsijYl1B2uorkm81p856hcXyuoKlgF3zSXSfLVDejl1GocRWg>
+Received: from [192.168.0.3] (cpe-104-172-0-143.socal.res.rr.com
+ [104.172.0.143])
+ by mail.messagingengine.com (Postfix) with ESMTPA id AE13E30600A6
+ for <speakup@linux-speakup.org>; Sun,  2 Aug 2020 13:28:23 -0400 (EDT)
+Date: Sun, 2 Aug 2020 10:28:17 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime
 To: speakup@linux-speakup.org
-Subject: Re: [PATCH] staging/speakup: Move out of staging
-Message-ID: <20200730134905.GB2791@rednote.net>
-References: <20200728211208.691249-1-samuel.thibault@ens-lyon.org>
- <c4cb56cca7928f92d642aef467244db434bff26f.camel@perches.com>
- <20200729003623.d42ljafn6sd7y2be@function>
+Subject: Especially for Samuel, About the DecTalk
+Message-ID: <alpine.DEB.2.23.453.2008021022050.2718091@chime>
+User-Agent: Alpine 2.23 (DEB 453 2020-06-18)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200729003623.d42ljafn6sd7y2be@function>
-X-Operating-System: Linux opera.rednote.net 5.7.9-100.fc31.x86_64
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,59 +84,17 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Thanks again for all your patience and support over the many
-yearsgetting to this point, Samuel. You're a hero to us.
-
-Janina
-
-Samuel Thibault writes:
-> Joe Perches, le mar. 28 juil. 2020 17:24:47 -0700, a ecrit:
-> > On Tue, 2020-07-28 at 23:12 +0200, Samuel Thibault wrote:
-> > > diff --git a/MAINTAINERS b/MAINTAINERS
-> > []
-> > > @@ -16077,6 +16077,15 @@ Q:	https://patchwork.kernel.org/project/linux-sparse/list/
-> > >  B:	https://bugzilla.kernel.org/enter_bug.cgi?component=Sparse&product=Tools
-> > >  F:	include/linux/compiler.h
-> > >  
-> > > +SPEAKUP CONSOLE SPEECH DRIVER
-> > > +M:	William Hubbs <w.d.hubbs@gmail.com>
-> > > +M:	Chris Brannon <chris@the-brannons.com>
-> > > +M:	Kirk Reiser <kirk@reisers.ca>
-> > > +M:	Samuel Thibault <samuel.thibault@ens-lyon.org>
-> > > +L:	speakup@linux-speakup.org
-> > > +W:	http://www.linux-speakup.org/
-> > > +F:	drivers/accessibility/speakup/
-> > 
-> > S:? 	Supported / Maintained / Odd Fixes ?
-> 
-> Ah, yes.  I should have read the documentation at the top, instead of
-> assuming that "S:" standed for the reason for being in "S"taging.
-> 
-> Submitted a v2.
-> 
-> Samuel
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-
--- 
-
-Janina Sajka
-https://linkedin.com/in/jsajka
-
-Linux Foundation Fellow
-Executive Chair, Accessibility Workgroup:	http://a11y.org
-
-The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
-Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
-
+Well, after examining the manual-and-experimenting, I found the
+echo "[:dv hr 10]
+provides much more inflection-and-punch to the voice.
+Hope this helps
+Chime
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
