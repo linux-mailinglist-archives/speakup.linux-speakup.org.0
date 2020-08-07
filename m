@@ -2,47 +2,54 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3065623F402
-	for <lists+speakup@lfdr.de>; Fri,  7 Aug 2020 22:50:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C4A8C23F412
+	for <lists+speakup@lfdr.de>; Fri,  7 Aug 2020 23:06:33 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B6BD81C06F8; Fri,  7 Aug 2020 16:50:50 -0400 (EDT)
+	id B6E391C06F9; Fri,  7 Aug 2020 17:06:32 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=owG6Qsfb;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=gi6a8xLD;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 52B661C073E;
-	Fri,  7 Aug 2020 16:50:14 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E7DBA1C0751;
+	Fri,  7 Aug 2020 17:03:52 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 7F24C1C06F5; Fri,  7 Aug 2020 16:50:11 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
- by befuddled.reisers.ca (Postfix) with ESMTP id 25DC41C06DA
- for <speakup@linux-speakup.org>; Fri,  7 Aug 2020 16:50:09 -0400 (EDT)
-Received: from ici.slint.fr (sfa89-1-78-208-157-71.fbx.proxad.net
- [78.208.157.71])
- by darkstar.slint.fr (Postfix) with ESMTPSA id EA8E8BE7DC
- for <speakup@linux-speakup.org>; Fri,  7 Aug 2020 21:49:28 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
- t=1596829769; bh=Fnvos0ee1PYWYI8JDZAL2rIhZtph9uVKMJgRTcfjUl4=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=owG6Qsfb5MHnlhSbKg3sgICyJXI2po0hfF3usyOEPql284uF6nYcKUdWQ2FQqvxCJ
- XvVlOFSy03WBjUMhs66+UWLm7jKHvXJpOJz4uGQRNHFW3MH8XV9w1TzmPlXDKI+kH2
- lYBrLPV8dUuVT+uUXXRPZC8P2Q07Tz7/+duTSo2yDqbSLicc8ambJwqzHh7NX4x+MF
- 3Du34j6IlamZWhMnRP8Z75kZWRH/ttAFqPZwKeBzC/N+7SCcTNGHgFrJn1O07q2YdV
- HQzqEZ6jHVtI932ki69tEq4Tw/rUs/Vrnw6GpKuWdkxlrq77kVzc6Tb0Qe6ChEpNXZ
- 9XGsPbgQMK7zw==
+ id CE8EF1C06F6; Fri,  7 Aug 2020 17:03:49 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 1BCB71C06E6
+ for <speakup@linux-speakup.org>; Fri,  7 Aug 2020 17:03:47 -0400 (EDT)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2607:fb90:4a38:b2e4:a00:27ff:fe01:8e92])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id B9FF11C3E
+ for <speakup@linux-speakup.org>; Fri,  7 Aug 2020 14:03:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1596834201; bh=2QLBIpxu1DcwttrwDh/+iL0aI7hFaeqjoe+TMb/8agE=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=gi6a8xLDuS1elWSvfbL5g8hLG/ZYrKu7WmCNbFhOU27M6c1o7hlow+hA+IIb4GftM
+ InVv2UtLLx8kvE/O68775J3yiot97DLvIJVLCqNs09DTRGagWu0t/CzQ5Dp5IkhHK6
+ c5nZRJTdTgD39tzhud6/YZnqXogtR03+UL6UvjHB+E2fjyqZNHYYn0+JOaO+neSi9G
+ nSa5E/Vo2qkM539lWGRBreiBMH4Cx0Az7jhBC/sSio7fvkkM/0+mruyEjeG9rcenJa
+ lM4P7QxPk7AbNRKeIx5K67auKt2iOQOL4HhQMh+qgHG0zxRh7tMs2GsWN49sokA0fZ
+ cm+cntPYLokyw==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>) id 1k49WC-00018Z-JK
+ for speakup@linux-speakup.org; Fri, 07 Aug 2020 14:03:12 -0700
+Date: Fri, 7 Aug 2020 14:03:12 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: Problems with espeakup and CFDisk
-To: speakup@linux-speakup.org
+Message-ID: <20200807210312.GC3805@gregn.net>
 References: <DM6PR14MB3647F5E81DF1F02FFDF68F6ADA490@DM6PR14MB3647.namprd14.prod.outlook.com>
-From: Didier Spaier <didier@slint.fr>
-Message-ID: <860b06c6-3ef2-458a-06bc-b356f9f28631@slint.fr>
-Date: Fri, 7 Aug 2020 22:50:03 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.11.0
 MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <DM6PR14MB3647F5E81DF1F02FFDF68F6ADA490@DM6PR14MB3647.namprd14.prod.outlook.com>
-Content-Language: en-US
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.102.4 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,30 +64,55 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SGVsbG8gQ3Jpc3MsCgphbnN3ZXIgaW4gbGluZQoKTGUgMDcvMDgvMjAyMCDDoCAyMTo1NywgQ3Jp
-c3MgYSDDqWNyaXQgOgo+IElzIHBvc2libGUgdXNlIGVzcGVha3VwIGFuZCBDRkRpc2sgY29ycmVj
-dGx5Py4gV2hlbiBJIHJ1biBDRkRpc2sgZnJvbSBzaGVsbEkgY2FuIHNlbGVjdCB0YWJsZSBwYXJ0
-aXRpb24gdHlwZSwgY3JlYXRlIGFuZCBkZWxldGUgcGFydGl0aW9ucywgYnV0IHdoZW4gaSB0cnkg
-Y2hvb3NlIGEgcGFydGl0aW9uIHR5cGUsIGVzcGVha3VwIHJlYWQgbmFtYmVycyAoSSBkb24ndCBr
-bm93IHdoYXQgYXJlKS4gRXNwZWFrdXAgbXVzdCB0YWxrOiBsaW51eCBzd2FwLCB3ZWZpIGV0Yy4g
-SWYgSSB1c2UgbnVtYmVycyBrZXkgdG8gbmF2ZWdhdGnDs24sIEVzcGVhayByZWFkIHRoZSB0eXBl
-IHBhcnRpdGlvbnMsIGJ1dCB3aGVuIEkgbmF2ZWdhdGUgd2l0aCBhcnJvd3Mga2V5LCBhcHBlYXIg
-dGhlIG51bWJlcnMuCgpUaGVzZSBudW1iZXJzIGFyZSB0aGUgcGFydGl0aW9uIHR5cGVzIFVVSUQs
-IGRpc3BsYXllZCBpbiByZWNlbnQgdmVyc2lvbnMgb2YKY2ZkaXNrLiBJIGRvbid0IGtub3cgd2h5
-IGVzcGVha3VwIHJlYWRzIHRoaXMgVVVJRCBidXQgbm90IHRoZSB0eXBlLgoKTWF5YmUgZmRpc2sg
-aXMgZWFzaWVyIHRvIHVzZS4KCklmIGJ5IGNoYW5jZSAgeW91ciBwYXJ0aXRpb24gaXMgYSBncHQs
-IGRvIHVzZSBpbnN0ZWFkLCBlaXRoZXI6CmNnZGlzayAtYSA8ZGV2aWNlPgpvcjoKZ2Rpc2sgPGRl
-dmljZT4KClRoZW4gd2hlbiBzZXR0aW5nIG9yIGNoYW5naW5nIHRoZSB0eXBlIHlvdSBjYW4gZGlz
-cGxheSB0aGUgd2hvbGUgbGlzdCBvZiB0eXBlcwoobmFtZXMgb2YgdHlwZXMgYW5kIGFzc29jaWF0
-ZWQgc2hvcnQgbnVtYmVycykgYnV0IGFsc28gdHlwZSB0aGUgZmlyc3QgY2hhcmFjdGVycwpvZiB0
-aGUgdHlwZSBuYW1lIChsaWtlIEVGSSksIHByZXNzIHRhYiBhbmQgZ2V0IGEgbGlzdCBvZiBhbGwg
-bWF0Y2hpbmcgdHlwZSBuYW1lcwp0byBjaG9vc2UgZnJvbSwgd2hpY2ggaXMgdmVyeSBoYW5keS4K
-CkJlc3QsCgpEaWRpZXIKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KU3BlYWt1cCBtYWlsaW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRw
-Oi8vbGludXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
+Sounds like the numbers are the partition types to choose
+from. Setting speakup to highlight tracking might help you.
+
+Greg
+
+
+On Fri, Aug 07, 2020 at 03:57:10PM -0400, Criss wrote:
+> Hello.
+> =
+
+> Is posible use espeakup and CFDisk correctly?. When I run CFDisk from she=
+llI
+> can select table partition type, create and delete partitions, but when i
+> try choose a partition type, espeakup read nambers (I don't know what are=
+).
+> Espeakup must talk: linux swap, wefi etc. If I use numbers key to
+> navegati=F3n, Espeak read the type partitions, but when I navegate with a=
+rrows
+> key, appear the numbers.
+> =
+
+> =
+
+> Best regards.
+> =
+
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+
+-- =
+
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your cont=
+acts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
