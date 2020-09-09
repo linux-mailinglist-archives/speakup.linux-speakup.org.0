@@ -2,49 +2,56 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 61A7C260E2C
-	for <lists+speakup@lfdr.de>; Tue,  8 Sep 2020 10:56:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1162C2626CE
+	for <lists+speakup@lfdr.de>; Wed,  9 Sep 2020 07:39:23 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0505E1C0706; Tue,  8 Sep 2020 04:56:04 -0400 (EDT)
+	id 5014E1C0853; Wed,  9 Sep 2020 01:39:22 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=DCzjVcZV;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=kxG4ji1H;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C66CB1C0748;
-	Tue,  8 Sep 2020 04:54:51 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3415A1C0748;
+	Wed,  9 Sep 2020 01:39:06 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 706B71C0706; Tue,  8 Sep 2020 04:54:43 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
- by befuddled.reisers.ca (Postfix) with ESMTP id 9613B1C0135
- for <speakup@linux-speakup.org>; Tue,  8 Sep 2020 04:54:38 -0400 (EDT)
-Received: from darkstar.machine.fr (static-176-175-66-67.ftth.abo.bbox.fr
- [176.175.66.67])
- by darkstar.slint.fr (Postfix) with ESMTPSA id 3BE8CBE797;
- Tue,  8 Sep 2020 09:53:53 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
- t=1599551633; bh=7RR5nWAlArTjIvascRWKKvnYm/hhxJtG+C2z51NsurQ=;
- h=From:Subject:To:References:Date:In-Reply-To:From;
- b=DCzjVcZVT3hQUfcIgZk26utBAHJlHhdrHg8mEdlxZbGWxDkS76THI4hITfUnOSLCQ
- hel2A/iNNktbfdZl1iiR0t+0ZXqaIhgZai6Vatln221HdhdUTIlLOLhfWPWeOi2Lvk
- +aFWnsRHgDBCXZ1/jESDGJJ7YPD+GLAW2VqNDM1guq0ng5sA94vEbo+RnLxc+nFpBF
- E7xO018yIeM9N1n76wuB94+/LOoN5XltFiCLAxi4lBsBfcf/kvjTl4VkqO8wOybT6T
- NDZR1S/566bJurZeEwQW0nMgKIl8q/8W+QVwBSbHu7cNs0G+K0oRpHpV4javgQMKz5
- xghQZoNpkztWg==
-From: Didier Spaier <didier@slint.fr>
+ id 35DFD1C06B0; Wed,  9 Sep 2020 01:38:59 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 14C481C0129
+ for <speakup@linux-speakup.org>; Wed,  9 Sep 2020 01:38:55 -0400 (EDT)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2001:470:d:6c5:a081:8e84:358c:f763])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id AEFEA39
+ for <speakup@linux-speakup.org>; Tue,  8 Sep 2020 22:38:55 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1599629935; bh=/mcREVOZpcteiQ7oMyoqtQAqoDsKdBRUTygNzUODVpo=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=kxG4ji1Hd5w2wIY6EfkJZFM9nIWwxD7+D5dyxuT3JlrpjSkZN2s4fwl7uOgVhuvYU
+ Cci3qtvUuNivOMossyCiyw0qyc6bN8kQjRRPn2lQq2YIuF8THSJucX1HDTDN99XY6j
+ Rhzq5tcHeDzhH/f5jlQaOxKOW45/vt73TnLcsYe/MQjHTzD0OQXrYT61ogsPK7a/9j
+ U1Bg5UcZx7xpI8GkeiNuLcsTIu/9N6no9qkZT2zJRfBBRSpEMUtWeI5pFzlCVxzyqa
+ sEZq0T2og1+PTrSdYwwT2ShL0lu5bdP48P8UZhqjRx27JOgKtaLybYjCiTWYmchzn0
+ gMsw66e7vvp8w==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>) id 1kFszn-0000uB-W5
+ for speakup@linux-speakup.org; Tue, 08 Sep 2020 22:50:16 -0700
+Date: Tue, 8 Sep 2020 22:50:15 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: [slint] Re: Fwd: New kernel, automatic handling of kernel
  upgradess.
-To: slint@freelists.org,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Message-ID: <20200909055015.GA3434@gregn.net>
 References: <f0c4a735.76bc.4cdd.aabc.76c4d1d3aab8@samobile.net>
-Message-ID: <68157db2-1b90-f216-47ea-e2239649f737@slint.fr>
-Date: Tue, 8 Sep 2020 10:54:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.11.0
+ <68157db2-1b90-f216-47ea-e2239649f737@slint.fr>
 MIME-Version: 1.0
-In-Reply-To: <f0c4a735.76bc.4cdd.aabc.76c4d1d3aab8@samobile.net>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <68157db2-1b90-f216-47ea-e2239649f737@slint.fr>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.102.4 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,51 +66,123 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SGkgVG9ueSwKCkNDaW5nIHRoaXMgYW5zd2VyIHRvIHRoZSBzcGVha3VwIG1haWxpbmcgbGlzdC4K
-CkBzcGVha3VwIGxpc3Q6IHRoZSByZXBvcnQgaXMgYWZ0ZXIgdXBncmFkaW5nIGEga2VybmVsIGZy
-b20gNC4xOS42NyB0byA1LjQuNjIuCkRpZCBhbnlvbmUgb2JzZXJ2ZWQgYSBzaW1pbGFyIGJlaGF2
-aW9yPwoKVGhlIGlzc3VlIHdpdGggdGhlIGxpbmUgaW4gcmMubG9jYWwgaW5lZmZlY3RpdmUgYXQg
-Ym9vdCB0aW1lIGlzIGluZGVlZCB3ZWlyZC4KCQpUaGlzIGZpbGUgaXMgZXhlY3V0ZWQgYXQgdGhl
-IHZlcnkgZW5kIG9mIHRoZSBib290aW5nIHNlcXVlbmNlLCBzbyBJIHByZXR0eQptdWNoIGRvdWJ0
-IHRoYXQgc3lzZnMgYmUgbm90IHlldCBhdmFpbGFibGUuCgpUbyBjaGVjayBJIGRpZCB0aGlzIChh
-biB5b3UgY2FuIGRvIGl0IHRvbyk6CkkgaW5zZXJ0ZWQgdGhlIGZvbGxvd2luZyBsaW5lIGluIC9l
-dGMvcmMuZC9yYy5sb2NhbDoKZWNobyAidGhlIGNvbW1hbmQgcnVuIGJ5IHJjLmxvY2FsIHNob3Vs
-ZCBiZSBleGVjdXRlZCBub3cuIiA+IC9kZXYva21zZwp0aGVuIG1hZGUgZXhlY3V0YWJsZSByYy5s
-b2NhbCB0eXBpbmcgImNobW9kIDc1NSAvZXRjL3JjLmQvcmMubG9jYWwiCgpUaGVuIGFmdGVyIGEg
-cmVib290IEkgdHlwZWQgYXMgcm9vdDoKZG1lc2d8Z3JlcCByYy5sb2NhbApUaGUgb3V0cHV0IHdh
-czoKWyAgIDE3LjEyODc4NF0gdGhlIGNvbW1hbmQgcnVuIGJ5IHJjLmxvY2FsIHNob3VsZCBiZSBl
-eGVjdXRlZCBub3cuCgpTbyB5b3VyIGNvbW1hbmQgd291bGQgaGF2ZSBiZWVuIGV4ZWN1dGVkIDE3
-IHNlY29uZHMgYWZ0ZXIgYm9vdGluZy4KCkluY2lkZW50YWxseSwgaW5zdGVhZCBvZiBpbmNsdWRp
-bmcgdGhlIGVjaG8gY29tbWFuZCBpbiByYy5sb2NhbCB5b3UgY291bGQsIG9uY2UKeW91ciBzcGVh
-a3VwIHNldHRpbmdzIGFyZSBkb25lIHRvIHlvdXIgbGlraW5nLCBqdXN0IHR5cGUgYXMgcm9vdDoK
-c3BlYWt1cC1zYXZlCgpUaGVuIHRoZXNlIHNldHRpbmdzIHNob3VsZCBiZSByZXN0b3JlZCBhZnRl
-ciBuZXh0IGJvb3QuCgpUaGV5IGFyZSBzdG9yZWQgaW5kZXBlbmRlbnRseSBmb3IgZWFjaCBoYXJk
-IHN5bnRoZXNpemVyIGFuZCB0aGUgc29mdCBvbmUuCgpEb2VzIHRoaXMgd29yayBmb3IgeW91PwoK
-Q2hlZXJzLApEaWRpZXIKCkxlIDA4LzA5LzIwMjAgw6AgMDI6MDgsIHRvbnkgc2V0aCBhIMOpY3Jp
-dMKgOgo+IEhleWEgdGhlcmUgYW5kIGdvb2QgZXZlbmluZyEKPiBXZWxsLCB5YSB0b2xkIG1lIHRv
-IGluc3RhbGwgdGhlIGtlcm5lbCBhbmQgc2VlIHdoYXQgYnJlYWtzLCBhbmQgSSBkaWQuCj4gVGhl
-IGtlcm5lbCB1cGdyYWRlIHdlbnQgZmluZSwgYW5kIGFsbCBzZWVtcyBmaW5lLCBleGNlcHQgZm9y
-IGEgdGlueSBidXQgaW1wb3J0YW50IHRoaW5nLgo+IEkgaGF2ZSBhbiAvZXRjL3JjLmQvcmMubG9j
-YWwgZmlsZSB3aGljaCB0dXJucyBvZmYgZWNob2luZyBvZiBjaGFyYWN0ZXJzIHR5cGVkIGluIHRo
-ZSBjb25zb2xlIHdoZW4gSSB1c2UgU3BlYWt1cC4KPiBUaGUgbGluZSBpbiB0aGUgZmlsZSBpcyB0
-aGlzOgo+IGVjaG8gMCA+IC9zeXMvYWNjZXNzaWJpbGl0eS9zcGVha3VwL2tleV9lY2hvCj4gCj4g
-VXAgdW50aWwgdGhlIHVwZ3JhZGUgdGhpcyB3b3JrZWQganVzdCBmaW5lLCBidXQgYWZ0ZXJ3YXJk
-LCBpdCBkb2Vzbid0LiBDaGFyYWN0ZXJzIGFyZSBlY2hvZWQgYWdhaW4sIHVubGVzcyBJIHJ1biBh
-cyByb290Ogo+IC9ldGMvcmMuZC9yYy5sb2NhbAo+IFRoaXMgZml4ZXMgdGhlIHByb2JsZW0gdW50
-aWwgbmV4dCByZWJvb3QuCj4gSnVzdCBjdXJpb3VzIGhvdyBJIGNvdWxkIGZpeCB0aGlzLCBvciBp
-cyBpdCB0aGF0IHRoZSBzeXNmcyBpc24ndCBiZWluZyBjcmVhdGVkIGVhcmx5IGVub3VnaCBmb3Ig
-dGhlIHJjLmxvY2FsIGZpbGUgdG8gd29yayBvbiB0aGUga2V5X2VjaG8gZW50cnk/Cj4gVGhhbmtz
-IG11Y2ggYXMgYWx3YXlzIHRob3VnaCwgb3RoZXIgdGhlbiB0aGF0IEkndmUgbm90IGhhZCBhbnkg
-cHJvYmxlbXMsIGFuZCB0aGUgYnJhaWxsZSBkaXNwbGF5IHdvcmtzIGZpbmUgYXMgd2VsbC4KPiBJ
-IGJyaW5nIHRoYXQgdXAgYmVjYXVzZSB5b3UgbWVudGlvbmVkIFBoaWxsaXAgaGF2aW5nIHRoZSBi
-cmFpbGxlIGRpc3BsYXkgcHJvYmxlbS4KPiBJJ20gdXNpbmcgYW4gSW5jZXB0b3IgQnJhaWxsZSBN
-ZSBpbiB1c2IgbW9kZS4KPiBUaGFua3MgYWdhaW4uLi4KPiBUYWtlIGNhcmUuLi4gQ2hlZXJlbyEK
-PiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fClNwZWFr
-dXAgbWFpbGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xpbnV4LXNw
-ZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCg==
+For what it's worth, I'm running a self compiled 5.4.63 kernel on a
+devuan 2.1 system. I added the line:
+
+echo 0 > /sys/accessibility/speakup/key_echo
+
+to my /etc/rc.local above the last "exit 0" line, and rebooted. After
+reboot, I wasn't able to hear characters I typed from speakup, which
+was expected.
+
+Greg
+
+
+On Tue, Sep 08, 2020 at 10:54:33AM +0200, Didier Spaier wrote:
+> Hi Tony,
+> =
+
+> CCing this answer to the speakup mailing list.
+> =
+
+> @speakup list: the report is after upgrading a kernel from 4.19.67 to 5.4=
+.62.
+> Did anyone observed a similar behavior?
+> =
+
+> The issue with the line in rc.local ineffective at boot time is indeed we=
+ird.
+> 	=
+
+> This file is executed at the very end of the booting sequence, so I pretty
+> much doubt that sysfs be not yet available.
+> =
+
+> To check I did this (an you can do it too):
+> I inserted the following line in /etc/rc.d/rc.local:
+> echo "the command run by rc.local should be executed now." > /dev/kmsg
+> then made executable rc.local typing "chmod 755 /etc/rc.d/rc.local"
+> =
+
+> Then after a reboot I typed as root:
+> dmesg|grep rc.local
+> The output was:
+> [   17.128784] the command run by rc.local should be executed now.
+> =
+
+> So your command would have been executed 17 seconds after booting.
+> =
+
+> Incidentally, instead of including the echo command in rc.local you could=
+, once
+> your speakup settings are done to your liking, just type as root:
+> speakup-save
+> =
+
+> Then these settings should be restored after next boot.
+> =
+
+> They are stored independently for each hard synthesizer and the soft one.
+> =
+
+> Does this work for you?
+> =
+
+> Cheers,
+> Didier
+> =
+
+> Le 08/09/2020 =E0 02:08, tony seth a =E9crit=A0:
+> > Heya there and good evening!
+> > Well, ya told me to install the kernel and see what breaks, and I did.
+> > The kernel upgrade went fine, and all seems fine, except for a tiny but=
+ important thing.
+> > I have an /etc/rc.d/rc.local file which turns off echoing of characters=
+ typed in the console when I use Speakup.
+> > The line in the file is this:
+> > echo 0 > /sys/accessibility/speakup/key_echo
+> > =
+
+> > Up until the upgrade this worked just fine, but afterward, it doesn't. =
+Characters are echoed again, unless I run as root:
+> > /etc/rc.d/rc.local
+> > This fixes the problem until next reboot.
+> > Just curious how I could fix this, or is it that the sysfs isn't being =
+created early enough for the rc.local file to work on the key_echo entry?
+> > Thanks much as always though, other then that I've not had any problems=
+, and the braille display works fine as well.
+> > I bring that up because you mentioned Phillip having the braille displa=
+y problem.
+> > I'm using an Inceptor Braille Me in usb mode.
+> > Thanks again...
+> > Take care... Cheereo!
+> > =
+
+> =
+
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+
+-- =
+
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your cont=
+acts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
