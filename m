@@ -2,56 +2,49 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1162C2626CE
-	for <lists+speakup@lfdr.de>; Wed,  9 Sep 2020 07:39:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 8C9F8262BBD
+	for <lists+speakup@lfdr.de>; Wed,  9 Sep 2020 11:24:49 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5014E1C0853; Wed,  9 Sep 2020 01:39:22 -0400 (EDT)
+	id AE5391C0745; Wed,  9 Sep 2020 05:24:47 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=kxG4ji1H;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=CHrMBLTy;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 3415A1C0748;
-	Wed,  9 Sep 2020 01:39:06 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 44CBE1C077D;
+	Wed,  9 Sep 2020 05:23:39 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 35DFD1C06B0; Wed,  9 Sep 2020 01:38:59 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 14C481C0129
- for <speakup@linux-speakup.org>; Wed,  9 Sep 2020 01:38:55 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2001:470:d:6c5:a081:8e84:358c:f763])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id AEFEA39
- for <speakup@linux-speakup.org>; Tue,  8 Sep 2020 22:38:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1599629935; bh=/mcREVOZpcteiQ7oMyoqtQAqoDsKdBRUTygNzUODVpo=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=kxG4ji1Hd5w2wIY6EfkJZFM9nIWwxD7+D5dyxuT3JlrpjSkZN2s4fwl7uOgVhuvYU
- Cci3qtvUuNivOMossyCiyw0qyc6bN8kQjRRPn2lQq2YIuF8THSJucX1HDTDN99XY6j
- Rhzq5tcHeDzhH/f5jlQaOxKOW45/vt73TnLcsYe/MQjHTzD0OQXrYT61ogsPK7a/9j
- U1Bg5UcZx7xpI8GkeiNuLcsTIu/9N6no9qkZT2zJRfBBRSpEMUtWeI5pFzlCVxzyqa
- sEZq0T2og1+PTrSdYwwT2ShL0lu5bdP48P8UZhqjRx27JOgKtaLybYjCiTWYmchzn0
- gMsw66e7vvp8w==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>) id 1kFszn-0000uB-W5
- for speakup@linux-speakup.org; Tue, 08 Sep 2020 22:50:16 -0700
-Date: Tue, 8 Sep 2020 22:50:15 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: [slint] Re: Fwd: New kernel, automatic handling of kernel
+ id 3FB741C06B0; Wed,  9 Sep 2020 05:23:36 -0400 (EDT)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+ by befuddled.reisers.ca (Postfix) with ESMTP id D3E071C0129
+ for <speakup@linux-speakup.org>; Wed,  9 Sep 2020 05:23:34 -0400 (EDT)
+Received: from darkstar.machine.fr (static-176-175-66-67.ftth.abo.bbox.fr
+ [176.175.66.67])
+ by darkstar.slint.fr (Postfix) with ESMTPSA id 5CB43BE797
+ for <speakup@linux-speakup.org>; Wed,  9 Sep 2020 10:22:52 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+ t=1599639772; bh=m5ALctb5BN6tEiafytHLrthOgRPzGKQZZzdcdbDumng=;
+ h=Subject:References:To:From:Date:In-Reply-To:From;
+ b=CHrMBLTyujJRh1/a/I0FTQWVMl+I9Q9JkSc0nylP1mfgRQjtjM/epEFN2EQXJYLVd
+ Tb7mjupy6LFoQGy0Em9mXDFc2CJv6PoUqCG4x5UsUzWj7kidQlRDG8eyEsRDNSzeOU
+ FCrumcBnQcry0n0vCI5FxULuL+l1bz4zxFf9QdY4zP2AQhajDutJcdVKeo9hogzXOt
+ 1FKb0l/yEKZSZogPxzxJOHO5AnkgzBvVfIIkBFtfG+IqXzeMzV+vHyE5jE/cJNrQOg
+ ZYsK6I5G4nQtW6322QG1I2MMmP5tzWei7YJnKw2dVZsPvdZ9UFulfU0mv64re21qby
+ cNcJe/2L0QT+Q==
+Subject: Fwd: [slint] Re: Fwd: New kernel, automatic handling of kernel
  upgradess.
-Message-ID: <20200909055015.GA3434@gregn.net>
-References: <f0c4a735.76bc.4cdd.aabc.76c4d1d3aab8@samobile.net>
- <68157db2-1b90-f216-47ea-e2239649f737@slint.fr>
+References: <cf4d2320-17cd-1ced-2766-f5b1dcb8cb63@slint.fr>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: Didier Spaier <didier@slint.fr>
+X-Forwarded-Message-Id: <cf4d2320-17cd-1ced-2766-f5b1dcb8cb63@slint.fr>
+Message-ID: <0499a0ec-e2bb-3ab2-5f33-d5ab3347e3cc@slint.fr>
+Date: Wed, 9 Sep 2020 11:23:32 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.11.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <68157db2-1b90-f216-47ea-e2239649f737@slint.fr>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.4 at vserver
-X-Virus-Status: Clean
+In-Reply-To: <cf4d2320-17cd-1ced-2766-f5b1dcb8cb63@slint.fr>
+Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,123 +59,82 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-For what it's worth, I'm running a self compiled 5.4.63 kernel on a
-devuan 2.1 system. I added the line:
-
-echo 0 > /sys/accessibility/speakup/key_echo
-
-to my /etc/rc.local above the last "exit 0" line, and rebooted. After
-reboot, I wasn't able to hear characters I typed from speakup, which
-was expected.
-
-Greg
-
-
-On Tue, Sep 08, 2020 at 10:54:33AM +0200, Didier Spaier wrote:
-> Hi Tony,
-> =
-
-> CCing this answer to the speakup mailing list.
-> =
-
-> @speakup list: the report is after upgrading a kernel from 4.19.67 to 5.4=
-.62.
-> Did anyone observed a similar behavior?
-> =
-
-> The issue with the line in rc.local ineffective at boot time is indeed we=
-ird.
-> 	=
-
-> This file is executed at the very end of the booting sequence, so I pretty
-> much doubt that sysfs be not yet available.
-> =
-
-> To check I did this (an you can do it too):
-> I inserted the following line in /etc/rc.d/rc.local:
-> echo "the command run by rc.local should be executed now." > /dev/kmsg
-> then made executable rc.local typing "chmod 755 /etc/rc.d/rc.local"
-> =
-
-> Then after a reboot I typed as root:
-> dmesg|grep rc.local
-> The output was:
-> [   17.128784] the command run by rc.local should be executed now.
-> =
-
-> So your command would have been executed 17 seconds after booting.
-> =
-
-> Incidentally, instead of including the echo command in rc.local you could=
-, once
-> your speakup settings are done to your liking, just type as root:
-> speakup-save
-> =
-
-> Then these settings should be restored after next boot.
-> =
-
-> They are stored independently for each hard synthesizer and the soft one.
-> =
-
-> Does this work for you?
-> =
-
-> Cheers,
-> Didier
-> =
-
-> Le 08/09/2020 =E0 02:08, tony seth a =E9crit=A0:
-> > Heya there and good evening!
-> > Well, ya told me to install the kernel and see what breaks, and I did.
-> > The kernel upgrade went fine, and all seems fine, except for a tiny but=
- important thing.
-> > I have an /etc/rc.d/rc.local file which turns off echoing of characters=
- typed in the console when I use Speakup.
-> > The line in the file is this:
-> > echo 0 > /sys/accessibility/speakup/key_echo
-> > =
-
-> > Up until the upgrade this worked just fine, but afterward, it doesn't. =
-Characters are echoed again, unless I run as root:
-> > /etc/rc.d/rc.local
-> > This fixes the problem until next reboot.
-> > Just curious how I could fix this, or is it that the sysfs isn't being =
-created early enough for the rc.local file to work on the key_echo entry?
-> > Thanks much as always though, other then that I've not had any problems=
-, and the braille display works fine as well.
-> > I bring that up because you mentioned Phillip having the braille displa=
-y problem.
-> > I'm using an Inceptor Braille Me in usb mode.
-> > Thanks again...
-> > Take care... Cheereo!
-> > =
-
-> =
-
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-
--- =
-
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your cont=
-acts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+W05vdGVdIG1lc3NhZ2UgaW5pdGlhbGx5IGFsc28gc2VudCBhbHNvIHRvIHRoZSBzbGludCBtYWls
+aW5nIGxpc3QsIHJlc2VudCB0bwp0aGlzIG9uZSBvbmx5IHdpdGggY29tcHJlc3NlZCBhdHRhY2ht
+ZW50cyBub3QgdG8gYmUgdG8gYmlnIHRvIGdldCB0aHJvdWdoLgoKVGhhbmtzIEdyZWdvcnkgZm9y
+IHRoaXMgZmVlZC1iYWNrLgoKQFRvbnk6CkkganVzdCBjaGVja2VkLCBpbiBTbGludCdzIC9ldGMv
+cmMuZC9yYy5NIChhdHRhY2hlZCksIHdlIHN0YXJ0IHJjLmVzcGVha3VwCihhdHRhY2hlZCkgYWZ0
+ZXIgcmMubG9jYWwgYW5kIHJjLmVzcGVha3VwIHJlc3RvcmVzIHRoZSBzYXZlZCBzcGVha3VwIHNl
+dHRpbmdzLgoKTWF5YmUgeW91IHNhdmVkIGEgc3BlYWt1cCBzZXR0aW5nICh1c2luZyBzcGVha3Vw
+LXNhdmUpIGNvbmZsaWN0aW5nIHdpdGggdGhlIG9uZQppbiByYy5sb2NhbD8gVGhpcyB3b3VsZCBs
+ZWFkIHRvIHRoZSBiZWhhdmlvciB5b3Ugb2JzZXJ2ZWQuCgpBbnl3YXkgYXMgd2Ugb25seSBtb2Rw
+cm9iZSBlc3BlYWt1cCBpbiByYy5lc3BlYWt1cCwgSSBkb24ndCB0aGluayB0aGF0Ci9zeXMvYWNj
+ZXNzaWJpbGl0eS9zcGVha3VwIGJlIHdyaXRhYmxlIGJlZm9yZSB0aGF0LgoKVGhpcyBzZWVtcyB0
+byBiZSBjb25maXJtZWQgaGVyZTogSSBnZXQgdGhpcyBib290IG1lc3NhZ2UganVzdCBiZXJvcmUg
+dGhlIG9uZXMKZnJvbSByYy5lc3BlYWt1cDoKCi9ldGMvcmMuZC9yYy5sb2NhbDogbGluZSAxMDog
+L3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAva2V5X2VjaG86IE5vIHN1Y2ggZmlsZSBvciBkaXJl
+Y3RvcnkKCklmIG15IGFzc3VtcHRpb25zIGFyZSBjb3JyZWN0LCBkb24ndCB1c2UgcmMubG9jYWwg
+Zm9yIHRoaXMga2luZCBvZiBzZXR0aW5nLCB1c2UKc3BlYWt1cC1zYXZlIGluc3RlYWQsIGFuZCB0
+aGlzIGlzIG5vdCByZWxhdGVkIHRvIHRoZSBrZXJuZWwgdXBncmFkZS4KCkJlc3QgcmVnYXJkcywK
+CkRpZGllcgoKCkxlIDA5LzA5LzIwMjAgw6AgMDc6NTAsIEdyZWdvcnkgTm93YWsgYSDDqWNyaXTC
+oDoKPiBGb3Igd2hhdCBpdCdzIHdvcnRoLCBJJ20gcnVubmluZyBhIHNlbGYgY29tcGlsZWQgNS40
+LjYzIGtlcm5lbCBvbiBhCj4gZGV2dWFuIDIuMSBzeXN0ZW0uIEkgYWRkZWQgdGhlIGxpbmU6Cj4g
+Cj4gZWNobyAwID4gL3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAva2V5X2VjaG8KPiAKPiB0byBt
+eSAvZXRjL3JjLmxvY2FsIGFib3ZlIHRoZSBsYXN0ICJleGl0IDAiIGxpbmUsIGFuZCByZWJvb3Rl
+ZC4gQWZ0ZXIKPiByZWJvb3QsIEkgd2Fzbid0IGFibGUgdG8gaGVhciBjaGFyYWN0ZXJzIEkgdHlw
+ZWQgZnJvbSBzcGVha3VwLCB3aGljaAo+IHdhcyBleHBlY3RlZC4KPiAKPiBHcmVnCj4gCj4gCj4g
+T24gVHVlLCBTZXAgMDgsIDIwMjAgYXQgMTA6NTQ6MzNBTSArMDIwMCwgRGlkaWVyIFNwYWllciB3
+cm90ZToKPj4gSGkgVG9ueSwKPj4KPj4gQ0NpbmcgdGhpcyBhbnN3ZXIgdG8gdGhlIHNwZWFrdXAg
+bWFpbGluZyBsaXN0Lgo+Pgo+PiBAc3BlYWt1cCBsaXN0OiB0aGUgcmVwb3J0IGlzIGFmdGVyIHVw
+Z3JhZGluZyBhIGtlcm5lbCBmcm9tIDQuMTkuNjcgdG8gNS40LjYyLgo+PiBEaWQgYW55b25lIG9i
+c2VydmVkIGEgc2ltaWxhciBiZWhhdmlvcj8KPj4KPj4gVGhlIGlzc3VlIHdpdGggdGhlIGxpbmUg
+aW4gcmMubG9jYWwgaW5lZmZlY3RpdmUgYXQgYm9vdCB0aW1lIGlzIGluZGVlZCB3ZWlyZC4KPj4g
+CQo+PiBUaGlzIGZpbGUgaXMgZXhlY3V0ZWQgYXQgdGhlIHZlcnkgZW5kIG9mIHRoZSBib290aW5n
+IHNlcXVlbmNlLCBzbyBJIHByZXR0eQo+PiBtdWNoIGRvdWJ0IHRoYXQgc3lzZnMgYmUgbm90IHll
+dCBhdmFpbGFibGUuCj4+Cj4+IFRvIGNoZWNrIEkgZGlkIHRoaXMgKGFuIHlvdSBjYW4gZG8gaXQg
+dG9vKToKPj4gSSBpbnNlcnRlZCB0aGUgZm9sbG93aW5nIGxpbmUgaW4gL2V0Yy9yYy5kL3JjLmxv
+Y2FsOgo+PiBlY2hvICJ0aGUgY29tbWFuZCBydW4gYnkgcmMubG9jYWwgc2hvdWxkIGJlIGV4ZWN1
+dGVkIG5vdy4iID4gL2Rldi9rbXNnCj4+IHRoZW4gbWFkZSBleGVjdXRhYmxlIHJjLmxvY2FsIHR5
+cGluZyAiY2htb2QgNzU1IC9ldGMvcmMuZC9yYy5sb2NhbCIKPj4KPj4gVGhlbiBhZnRlciBhIHJl
+Ym9vdCBJIHR5cGVkIGFzIHJvb3Q6Cj4+IGRtZXNnfGdyZXAgcmMubG9jYWwKPj4gVGhlIG91dHB1
+dCB3YXM6Cj4+IFsgICAxNy4xMjg3ODRdIHRoZSBjb21tYW5kIHJ1biBieSByYy5sb2NhbCBzaG91
+bGQgYmUgZXhlY3V0ZWQgbm93Lgo+Pgo+PiBTbyB5b3VyIGNvbW1hbmQgd291bGQgaGF2ZSBiZWVu
+IGV4ZWN1dGVkIDE3IHNlY29uZHMgYWZ0ZXIgYm9vdGluZy4KPj4KPj4gSW5jaWRlbnRhbGx5LCBp
+bnN0ZWFkIG9mIGluY2x1ZGluZyB0aGUgZWNobyBjb21tYW5kIGluIHJjLmxvY2FsIHlvdSBjb3Vs
+ZCwgb25jZQo+PiB5b3VyIHNwZWFrdXAgc2V0dGluZ3MgYXJlIGRvbmUgdG8geW91ciBsaWtpbmcs
+IGp1c3QgdHlwZSBhcyByb290Ogo+PiBzcGVha3VwLXNhdmUKPj4KPj4gVGhlbiB0aGVzZSBzZXR0
+aW5ncyBzaG91bGQgYmUgcmVzdG9yZWQgYWZ0ZXIgbmV4dCBib290Lgo+Pgo+PiBUaGV5IGFyZSBz
+dG9yZWQgaW5kZXBlbmRlbnRseSBmb3IgZWFjaCBoYXJkIHN5bnRoZXNpemVyIGFuZCB0aGUgc29m
+dCBvbmUuCj4+Cj4+IERvZXMgdGhpcyB3b3JrIGZvciB5b3U/Cj4+Cj4+IENoZWVycywKPj4gRGlk
+aWVyCj4+Cj4+IExlIDA4LzA5LzIwMjAgw6AgMDI6MDgsIHRvbnkgc2V0aCBhIMOpY3JpdMKgOgo+
+Pj4gSGV5YSB0aGVyZSBhbmQgZ29vZCBldmVuaW5nIQo+Pj4gV2VsbCwgeWEgdG9sZCBtZSB0byBp
+bnN0YWxsIHRoZSBrZXJuZWwgYW5kIHNlZSB3aGF0IGJyZWFrcywgYW5kIEkgZGlkLgo+Pj4gVGhl
+IGtlcm5lbCB1cGdyYWRlIHdlbnQgZmluZSwgYW5kIGFsbCBzZWVtcyBmaW5lLCBleGNlcHQgZm9y
+IGEgdGlueSBidXQgaW1wb3J0YW50IHRoaW5nLgo+Pj4gSSBoYXZlIGFuIC9ldGMvcmMuZC9yYy5s
+b2NhbCBmaWxlIHdoaWNoIHR1cm5zIG9mZiBlY2hvaW5nIG9mIGNoYXJhY3RlcnMgdHlwZWQgaW4g
+dGhlIGNvbnNvbGUgd2hlbiBJIHVzZSBTcGVha3VwLgo+Pj4gVGhlIGxpbmUgaW4gdGhlIGZpbGUg
+aXMgdGhpczoKPj4+IGVjaG8gMCA+IC9zeXMvYWNjZXNzaWJpbGl0eS9zcGVha3VwL2tleV9lY2hv
+Cj4+Pgo+Pj4gVXAgdW50aWwgdGhlIHVwZ3JhZGUgdGhpcyB3b3JrZWQganVzdCBmaW5lLCBidXQg
+YWZ0ZXJ3YXJkLCBpdCBkb2Vzbid0LiBDaGFyYWN0ZXJzIGFyZSBlY2hvZWQgYWdhaW4sIHVubGVz
+cyBJIHJ1biBhcyByb290Ogo+Pj4gL2V0Yy9yYy5kL3JjLmxvY2FsCj4+PiBUaGlzIGZpeGVzIHRo
+ZSBwcm9ibGVtIHVudGlsIG5leHQgcmVib290Lgo+Pj4gSnVzdCBjdXJpb3VzIGhvdyBJIGNvdWxk
+IGZpeCB0aGlzLCBvciBpcyBpdCB0aGF0IHRoZSBzeXNmcyBpc24ndCBiZWluZyBjcmVhdGVkIGVh
+cmx5IGVub3VnaCBmb3IgdGhlIHJjLmxvY2FsIGZpbGUgdG8gd29yayBvbiB0aGUga2V5X2VjaG8g
+ZW50cnk/Cj4+PiBUaGFua3MgbXVjaCBhcyBhbHdheXMgdGhvdWdoLCBvdGhlciB0aGVuIHRoYXQg
+SSd2ZSBub3QgaGFkIGFueSBwcm9ibGVtcywgYW5kIHRoZSBicmFpbGxlIGRpc3BsYXkgd29ya3Mg
+ZmluZSBhcyB3ZWxsLgo+Pj4gSSBicmluZyB0aGF0IHVwIGJlY2F1c2UgeW91IG1lbnRpb25lZCBQ
+aGlsbGlwIGhhdmluZyB0aGUgYnJhaWxsZSBkaXNwbGF5IHByb2JsZW0uCj4+PiBJJ20gdXNpbmcg
+YW4gSW5jZXB0b3IgQnJhaWxsZSBNZSBpbiB1c2IgbW9kZS4KPj4+IFRoYW5rcyBhZ2Fpbi4uLgo+
+Pj4gVGFrZSBjYXJlLi4uIENoZWVyZW8hCj4+Pgo+Pgo+PiBfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwo+PiBTcGVha3VwIG1haWxpbmcgbGlzdAo+PiBTcGVh
+a3VwQGxpbnV4LXNwZWFrdXAub3JnCj4+IGh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmlu
+L21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo+IAoKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpTcGVha3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4
+LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlz
+dGluZm8vc3BlYWt1cAo=
