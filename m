@@ -2,50 +2,77 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id ED0AF262BE5
-	for <lists+speakup@lfdr.de>; Wed,  9 Sep 2020 11:33:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1F76D268ACC
+	for <lists+speakup@lfdr.de>; Mon, 14 Sep 2020 14:23:31 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7ED781C06EE; Wed,  9 Sep 2020 05:33:33 -0400 (EDT)
+	id 681D91C077D; Mon, 14 Sep 2020 08:23:29 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=oi+FjB4w;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=mm.st header.i=@mm.st header.a=rsa-sha256 header.s=fm1 header.b=HdTUSn5Z;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=PCV34cup;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C6BB51C0858;
-	Wed,  9 Sep 2020 05:32:44 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 338791C0746;
+	Mon, 14 Sep 2020 08:22:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 432881C06B0; Wed,  9 Sep 2020 05:32:43 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
- by befuddled.reisers.ca (Postfix) with ESMTP id 69CA11C0129
- for <speakup@linux-speakup.org>; Wed,  9 Sep 2020 05:32:42 -0400 (EDT)
-Received: from darkstar.machine.fr (static-176-175-66-67.ftth.abo.bbox.fr
- [176.175.66.67])
- by darkstar.slint.fr (Postfix) with ESMTPSA id E718DBE797
- for <speakup@linux-speakup.org>; Wed,  9 Sep 2020 10:31:59 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
- t=1599640319; bh=2fkZhg/eeoHBlL/xXuZGQ6JEr5Lcw2WqJoUJnv1c4Hs=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=oi+FjB4wRyOz+kLpovTZqgoKy7vR3DdALaKEpVMLJR+Lup4IS5NElxGcVG6DwOrzT
- hxYJug5uElVg7ntsnTBVfxuVzE/WopeO8cwmNQvV4XGkh/Z+hci73wixfFeTG3OIiI
- Uwx4tgNIB3iUXgirXys+HDOKUiHSu/ob7KdGivCLp0xJ/eKOykreTxp9RawFGnREeF
- NZ8QcDXOV+viblK7P9CZfsRxQ/15lAIajLcjXcLdgs6YPuKx6UavLODXCnbl7xGtxA
- ujD1Bv1xn7vDbi2G6mCZOlNqv/idVXU/F18N1hQ8tjtTa7i1NOl0+w4qrJtxkLAgtw
- eOhyBAIpRmY2g==
-Subject: Re: Fwd: [slint] Re: Fwd: New kernel, automatic handling of kernel
- upgradess.
-To: speakup@linux-speakup.org
-References: <cf4d2320-17cd-1ced-2766-f5b1dcb8cb63@slint.fr>
- <0499a0ec-e2bb-3ab2-5f33-d5ab3347e3cc@slint.fr>
-From: Didier Spaier <didier@slint.fr>
-Message-ID: <95cfe57a-1267-c903-eaf0-55bf204fabf3@slint.fr>
-Date: Wed, 9 Sep 2020 11:32:39 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.11.0
+ id 008D61C0707; Mon, 14 Sep 2020 08:22:11 -0400 (EDT)
+Received: from out1-smtp.messagingengine.com (out1-smtp.messagingengine.com
+ [66.111.4.25])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 67E0B1C0135
+ for <speakup@linux-speakup.org>; Mon, 14 Sep 2020 08:22:08 -0400 (EDT)
+Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
+ by mailout.nyi.internal (Postfix) with ESMTP id 970575C00DB
+ for <speakup@linux-speakup.org>; Mon, 14 Sep 2020 08:22:07 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute1.internal (MEProxy); Mon, 14 Sep 2020 08:22:07 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mm.st; h=to:from
+ :subject:message-id:date:mime-version:content-type
+ :content-transfer-encoding; s=fm1; bh=lNJmIrgMyYeTWU8yeYSzzrOX6N
+ DzG8DfUyF44eNrAeM=; b=HdTUSn5ZE/75ARPefJrwI2hQfi6Xq3Cysuf1Zgxcw6
+ GDBmCbIsOCxc/1+QoaKO8GUPGzQuvXLvqYx65NKV7xedjs6rImhjTNIuqhDqXH6f
+ GlCvDt/ofCHgXL97rjOFcO2k2P5uXzb7I7IW/nyzAruQuCU56TbtdIw/x9VoEqDw
+ xitMqYww+KVTFMUaGZb4ox5bXIUrTr6Shw9Rd7OsBBQJa+jtdy6RGWlWVMdVqh5u
+ GONcItUg8e5OI1JtHenSCfSipNRvZVWMXaJ/5Yb3thzWnsMUptqzveZS08/lHaZc
+ eUPYqb+kzeDCgEtzSZ63pXcQBmQsxblE8eHSo+HUsrjA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-transfer-encoding:content-type
+ :date:from:message-id:mime-version:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=lNJmIr
+ gMyYeTWU8yeYSzzrOX6NDzG8DfUyF44eNrAeM=; b=PCV34cupdK9D2IsD9XzLjU
+ goARXUSERAfXRTopNtA5TXmeXAVE++a129XmkBS066ZsvRKLxv8i0llRw5u3d4OU
+ FyXQcmnuj8HRT7HqcNoUKD5vMN3HX+YthOIGZKcPjJwj3SYNfbvDKtryHWy9lQy7
+ j0z5ktxt04XFA2PcYt+kfGFS46p2iyyBYo+ek1RDO3wSpwGz9nTeQHK+V4IZ7rvh
+ hLRGSAwyh2GvZ1r8X+T2peVqPMX8rDlkynfAfCLOccWV0NfhPg9aFI3R2dCFg3Qy
+ S75Eg8Zvbs47ZjWvjdANLC5nxDyRpl1OIV9If8MT6caOCt1aooFULxRtLVtaJMMg
+ ==
+X-ME-Sender: <xms:b2BfX4IgYUSiCxniKY5PnZOTktpmeiw3-NBIm-64kz_N57oQM2KMdw>
+ <xme:b2BfX4K_XVwiqDiKE6B7VBx-4jrxVjCjSidzvLtdnC0sdK-aI0MihDqlBxGICHXV2
+ HJwKHRGHouNcWR6uVE>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduiedrudeiiedghedvucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepvffhuffkffgfgggtgfesthejredttdefjeenucfhrhhomhepvehlvghvvghr
+ shhonhcuvegrshgrrhhinhcufghlihgrnhgruceotghluhhlsehmmhdrshhtqeenucggtf
+ frrghtthgvrhhnpeduhfeuudehffetvdeigfejffdvuddvleetveeghedvffelvdehteel
+ ueekgfdthfenucfkphepudekjedrieejrddvtdekrddvtdegnecuvehluhhsthgvrhfuih
+ iivgeptdenucfrrghrrghmpehmrghilhhfrhhomheptghluhhlsehmmhdrshht
+X-ME-Proxy: <xmx:b2BfX4uuMc2-TQoPCz_Upkvl3HrYOm1o4Jp5M3-yRULiLvpnuna2lQ>
+ <xmx:b2BfX1af_7eMbt-UGs8Nok_nGrWpNSZ-wBdsRhTtUwcIsNR8DtaPSw>
+ <xmx:b2BfX_bfibQfjmJgrgtp2avBo2AwG6Dn6ze_V4zSOxihCvn9ON_tJQ>
+ <xmx:b2BfX4lZ0CCoMnhv_ZU20k5eXME4KreI0t0Qv6ssR8JqViMeub_oXQ>
+Received: from [192.168.0.23] (unknown [187.67.208.204])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 07F0C3280065
+ for <speakup@linux-speakup.org>; Mon, 14 Sep 2020 08:22:06 -0400 (EDT)
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: Cleverson Casarin Uliana <clul@mm.st>
+Subject: Speech stops responding on Talking Arch
+Message-ID: <4212af47-2452-fbcc-a376-1a48e5aa9d7c@mm.st>
+Date: Mon, 14 Sep 2020 09:22:03 -0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.1
 MIME-Version: 1.0
-In-Reply-To: <0499a0ec-e2bb-3ab2-5f33-d5ab3347e3cc@slint.fr>
-Content-Language: fr
-X-Content-Filtered-By: Mailman/MimeDel 2.1.29
+Content-Language: pt-BR
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,16 +87,29 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Rm9yZ290IHRoZSBhdHRhY2htZW50cywgc29ycnkuCgpMZSAwOS8wOS8yMDIwIMOgIDExOjIzLCBE
-aWRpZXIgU3BhaWVyIGEgw6ljcml0wqA6Cj4gW05vdGVdIG1lc3NhZ2UgaW5pdGlhbGx5IGFsc28g
-c2VudCBhbHNvIHRvIHRoZSBzbGludCBtYWlsaW5nIGxpc3QsIHJlc2VudCB0bwo+IHRoaXMgb25l
-IG9ubHkgd2l0aCBjb21wcmVzc2VkIGF0dGFjaG1lbnRzIG5vdCB0byBiZSB0byBiaWcgdG8gZ2V0
-IHRocm91Z2guCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-ClNwZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xp
-bnV4LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCg==
+Hi all, there is a bug I couldn't yet reproduce reliably on the Talking 
+Arch live image. It apears to manifest when I type several characters 
+quickly, or when I press speakup review commands when the screen is 
+changing. The speech simply gets muted, and any command to try 
+restarting espeakup via systemCTL, or even trying to make espeak speak 
+something, doesn't work. Still, the shell responds to commands such as 
+poweroff.
+
+Does anyone know this problem? Is it possible to resume speech without 
+turning off the system completely?
+
+FYI, the Talking Arch image was generated last 09 september, and my 
+machine is a HP 246G7 laptop with a Logitech USB keyboard attached.
+
+Thanks,
+Cleverson
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
