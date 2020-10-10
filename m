@@ -1,71 +1,83 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 43F1828A0E0
-	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 18:13:29 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id E55C728A0FB
+	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 19:17:56 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B594F380BE4; Sat, 10 Oct 2020 12:13:28 -0400 (EDT)
+	id C0CDE380BE0; Sat, 10 Oct 2020 13:17:55 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=YR/C/a91;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=dqN8jRid;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=qLgDTtqA;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7F6C8380B3B;
-	Sat, 10 Oct 2020 12:13:28 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 076F5380B34;
+	Sat, 10 Oct 2020 13:17:54 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 2635D380B2C; Sat, 10 Oct 2020 12:13:27 -0400 (EDT)
-Received: from mail-ed1-x52a.google.com (mail-ed1-x52a.google.com
- [IPv6:2a00:1450:4864:20::52a])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 05F69380B29
- for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 12:13:27 -0400 (EDT)
-Received: by mail-ed1-x52a.google.com with SMTP id p13so12558198edi.7
- for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 09:13:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:references:from:message-id:date:user-agent:mime-version
- :in-reply-to:content-transfer-encoding:content-language;
- bh=r8tEgK8HUfQX80e9BnhVjYD1OVFpxtXR0NryOMV9YIY=;
- b=YR/C/a91nsPIdRMGHsydY9OvYOy8bLHaClQyzRvi6TlEG3Ok0FwaxdOpQBw004nK7U
- xFt0h7I8HiktqsDhL07yYlDNbc7Xdw+KOWk18s97DmdqUf6dJU4dWs25neCGqMigxa2c
- DmCPqwtupQVm3cP1BH3weVYeUZkpR/x9SbDLpAf9OYAjOAH5EyUPn7c3t9oX2Rys+1u2
- PQow2Xm22RfEuOBGHfGR6i0u2NYATmRy1PzSVylLRS5wvTSM0RF8FpNBYtE/aqd3AQIm
- e/e9DtE/CVAAczLyB93U1zAx2Sx09dA3Ef0A9znPfz2U6oruRMl6cezoldqXZu2yinAn
- 7biQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=r8tEgK8HUfQX80e9BnhVjYD1OVFpxtXR0NryOMV9YIY=;
- b=afdeI/rcoFoUW6Bl5qWzMw55y1VqNRRyp24WrGGOXoCcxbzt4GGezuy7AUd2MSmK9A
- cmiHYXvxos+tpewwsuOys2WTZKIEmro/bDbpOgG0+FcxHrarzwPWszJuaQwuShfvNjP3
- Y7UfLBKn9EgeoHVWCgbPmhOS6S590CwCoDlZtfLLZzeDAfTF2lxTI8j3uYIKbxXvbxx2
- 71qq4CRI4mUXm5CVOfuuT5XDi8oJaEOEKyyu4aN2rTA4kvP+/J8A6iUEgAzH9IH6b7jH
- nwOVcm/r2j7x1FnTFXiF6NkBXy/MHop8cdal7JautF9HS4OyqNauurDy2qz6toUfbv30
- 7bOA==
-X-Gm-Message-State: AOAM531vSvLBFk479Ik62yHfCqhIhKLNu7dQjmhL2RIgVqHFbDSiH0Vp
- Gw/p++OBDldv+qXUKC3DXy/T3P2HMlm1aw==
-X-Google-Smtp-Source: ABdhPJzqoUjw64Wy4AshDVja95H99Q4YgjRekNj0/9b75AbjOVpkQ5AuimOK5lxvFIF5e7m6jxdrIw==
-X-Received: by 2002:aa7:ce18:: with SMTP id d24mr5365035edv.9.1602346404800;
- Sat, 10 Oct 2020 09:13:24 -0700 (PDT)
-Received: from [192.168.1.73] ([91.77.167.245])
- by smtp.gmail.com with ESMTPSA id bv8sm8152916ejb.3.2020.10.10.09.13.24
- for <speakup@linux-speakup.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Sat, 10 Oct 2020 09:13:24 -0700 (PDT)
+ id 9DE9D380B2D; Sat, 10 Oct 2020 13:17:52 -0400 (EDT)
+Received: from wout4-smtp.messagingengine.com (wout4-smtp.messagingengine.com
+ [64.147.123.20])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 2C699380B2A
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 13:17:52 -0400 (EDT)
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
+ by mailout.west.internal (Postfix) with ESMTP id 87F33F68
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 13:17:48 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute2.internal (MEProxy); Sat, 10 Oct 2020 13:17:48 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ hubert-humphrey.com; h=date:from:to:subject:in-reply-to
+ :message-id:references:mime-version:content-type; s=fm2; bh=mCvn
+ GXAsdCgDI2fnNmqJxzA8S96+pVKi/AYDBIhQIys=; b=dqN8jRidkhTEykMNcsj0
+ bsOz9soow8TMAxr3he1urCoeYitsAEkZO2E5uQprpeF6ozCpdK55NtzPta5kBSRo
+ B/JAmw7wX3lgP7+QecN15mJgnEaGI1JVDMCu36v8B1Z7dgd6p8tw7OScdthvPn6U
+ Y3hMXFvDc5IqzQkFF2xBg4R/oZzFURAW4Z4+dh4j1JP911FHxgCNAkrSKV+U1Jqi
+ a7cWmq7xnUeZ835F5K7cYHcs1LOxszElfcWaZkW1Tj6CAXxU82AUJz11Cmc+FVPs
+ 4QXPVGVcCt8Rzb30G4sTtUBX/VI+3qtfvm/9FxXkjCmT5BcoMwYSTBdHgb+mtnzV
+ Rw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=mCvnGX
+ AsdCgDI2fnNmqJxzA8S96+pVKi/AYDBIhQIys=; b=qLgDTtqAll8OgQTiYdKZTL
+ NFmR82jvj5V5auRnpZRd2PknEtKv1ctM6L7scw4/yne+vkEffTo1rSGiPxOqub/R
+ NvcZ239Wocnr9HXPn88u9Dh3mYKD02hQ+mn5GbGh5nO4utRb76oShh4ZeYuAyejU
+ lH9+P+zubYPWmFK22hKKjjLrmKR4MSBKWt+Vb4/Y1uyBGRcM6WcfMTWk++6cYTkH
+ NNcr2ewajxqEFOA+kO2pRRsZQYWll3XoHBZPaiEqiCO1KH+yS116vpw7t6huAyIs
+ SEdpr4XnCA45Ww+XBGqZegGjwc+ILG5dricM379jOhq5Li0dVt41UUKlFWgiMqqA
+ ==
+X-ME-Sender: <xms:u-yBX6Vu2m9Jf1MXeRPxkTeBxfFsXZ77VVR88filfsvL4vbvH1-mHg>
+ <xme:u-yBX2l2ez2DsCSqFCgqEtak32ZLqc4M2IuitC4egDc4WcVEcwQ12uMAoCn2kcVFC
+ 1ho7l75HXh22KSNymo>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedujedrheefgdduudduucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepfffhvffujgfkfhgfgggtsehttdertddtredvnecuhfhrohhmpeevhhhimhgv
+ ucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenuc
+ ggtffrrghtthgvrhhnpeefuddvuddvvefffeevgeejfffggfeiiefgtdeugfehgfejhedt
+ ieelhfeuleelffenucfkphepuddtgedrudejvddrfedrieefnecuvehluhhsthgvrhfuih
+ iivgeptdenucfrrghrrghmpehmrghilhhfrhhomheptghhihhmvgeshhhusggvrhhtqdhh
+ uhhmphhhrhgvhidrtghomh
+X-ME-Proxy: <xmx:u-yBX-YYIEgRm_dOCCRpQfTUKWgDJkba_EuGF88IHwzIwztPVQ8yeg>
+ <xmx:u-yBXxWq9DhCvBLU_yCw5JK8nH1Fs9PcsTloBNTL5FU1AGMv9d1X4Q>
+ <xmx:u-yBX0kNm071XcJxbA8lcXBnmDjnnAjx7oYnQPf7EcIafPqNNoq2bA>
+ <xmx:vOyBXwwpChuyUAGVwktudtyhH_Jg9tNdt-8HdIJARWwLgggQsVd4EA>
+Received: from chime.lan (cpe-104-172-3-63.socal.res.rr.com [104.172.3.63])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 71B5E328005D
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 13:17:47 -0400 (EDT)
+Date: Sat, 10 Oct 2020 10:17:46 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: So, where'd the volume controls get to?
-To: speakup@linux-speakup.org
+In-Reply-To: <8782d637-e5c8-a847-47c9-a2ed3f1664ba@gmail.com>
+Message-ID: <alpine.DEB.2.23.453.2010101015460.4131538@chime>
 References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
  <20201010151312.fbz27eyoua2574tw@function>
-From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
-Message-ID: <8782d637-e5c8-a847-47c9-a2ed3f1664ba@gmail.com>
-Date: Sat, 10 Oct 2020 19:13:22 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.3.2
+ <8782d637-e5c8-a847-47c9-a2ed3f1664ba@gmail.com>
+User-Agent: Alpine 2.23 (DEB 453 2020-06-18)
 MIME-Version: 1.0
-In-Reply-To: <20201010151312.fbz27eyoua2574tw@function>
-Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,31 +92,18 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-aGVsbG8gU2FtdWVsLiBub3cgd2hlbiBwcmVzc2luZyBzcGVha3VwICsgMS8yIHlvdXIgY2hhbmdp
-bmcgZW5mbGVjdGlvbiAKaW5zdGVhZCBvZiB2b2x1bWUuCgoxMC4xMC4yMDIwIDE4OjEzLCBTYW11
-ZWwgVGhpYmF1bHQg0L/QuNGI0LXRgjoKPiBIZWxsbywKPgo+IEtpcmsgUmVpc2VyLCBsZSB2ZW4u
-IDA5IG9jdC4gMjAyMCAxMToxOTowMSAtMDQwMCwgYSBlY3JpdDoKPj4gSGVsbG8gU2FtdWVsIGV0
-IGFsOiBUaGUgbGF0ZXN0IHZlcnNpb24gb2Ygc3BlYWt1cCBhcHBlYXJzIHRvIGhhdmUKPj4gcmVw
-bGFjZWQgdGhlIHZvbHVtZSBjb250cm9scyB3aXRoIGluZmxlY3Rpb24gY29udHJvbHMuCj4gPz8g
-SSdtIG5vdCBhd2FyZSBvZiB0aGlzLiBJbmZsZWN0aW9uIHdhcyBhZGRlZCBpbiB0aGUgL3N5cyBw
-YXJhbWV0ZXJzLAo+IGJ1dCBvbmx5IHRvIGJlIGNvbmZpZ3VyZWQgbWFudWFsIGJ5IGVjaG9pbmcg
-dGhlcmUuIFdoYXQgaGFyZHdhcmUgYXJlIHlvdQo+IHVzaW5nPwo+Cj4+IElNTyBlc3BlYWt1cCBp
-cyBzdGlsbCBlbnRpcmVseSBicmFpbiBkZWFkIHNvIGEgbG90IG9mIHVzIHN0aWxsIGhhdmUgdG8K
-Pj4gdXNlIHZlcnkgb2xkIHZlcnNpb25zIGZyb20gYmFjayBiZWZvcmUgZXNwZWFrLWVuIHRvIGdl
-dCBkZWNlbnQKPj4gcGVyZm9ybWVuY2UuIEl0J3MganVzdCBhbiBvYnNlcnZhdGlvbi4KPiAiUGVy
-Zm9ybWFuY2UiPyBXaGF0IGRvIHlvdSBtZWFuPwo+Cj4gQWdhaW4sIEknbSBub3QgYW4gYWN0dWFs
-IHVzZXIgb2Ygc3BlYWt1cCwgc28gcGVvcGxlIGhhdmUgdG8gZXhwbGFpbiB3aGF0Cj4gdGhleSBt
-ZWFuIGluIGRldGFpbHMgb3RoZXJ3aXNlIEkgd29uJ3QgYmUgYWJsZSB0byBncmFzcCB3aGF0IHBy
-b2JsZW0KPiB0aGVyZSBhY3R1YWxseSBpcy4KPgo+IFNhbXVlbAo+IF9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gU3BlYWt1cCBtYWlsaW5nIGxpc3QKPiBT
-cGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCj4gaHR0cDovL2xpbnV4LXNwZWFrdXAub3JnL2NnaS1i
-aW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCgotLSAKU2luY2VyZWx5LCBBbGV4YW5kZXIuCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpTcGVha3VwIG1h
-aWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51eC1zcGVha3Vw
-Lm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
+So Alexander, is their an easy way in Debian to run a later version, 
+considering Speakup doesn't upgrade with an apt-get? Thanks so much in 
+advance.
+Chime
+
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
