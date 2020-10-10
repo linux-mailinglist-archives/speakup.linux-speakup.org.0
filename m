@@ -2,60 +2,46 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AEB1028A0B8
-	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 17:01:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 674FB28A0BF
+	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 17:13:23 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0B841380B2C; Sat, 10 Oct 2020 11:01:40 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (1024-bit key; secure) header.d=yandex.com header.i=@yandex.com header.a=rsa-sha256 header.s=mail header.b=S6doa5YL;
-	dkim-atps=neutral
+	id BF223380B2C; Sat, 10 Oct 2020 11:13:22 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9313B380B37;
-	Sat, 10 Oct 2020 11:01:37 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6FCC9380B34;
+	Sat, 10 Oct 2020 11:13:19 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 97884380B2A; Sat, 10 Oct 2020 11:01:36 -0400 (EDT)
-Received: from forward101p.mail.yandex.net (forward101p.mail.yandex.net
- [77.88.28.101])
- by befuddled.reisers.ca (Postfix) with ESMTPS id AD470380B27
- for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 11:01:35 -0400 (EDT)
-Received: from forward102q.mail.yandex.net (forward102q.mail.yandex.net
- [IPv6:2a02:6b8:c0e:1ba:0:640:516:4e7d])
- by forward101p.mail.yandex.net (Yandex) with ESMTP id 6F7832643C06;
- Sat, 10 Oct 2020 18:01:07 +0300 (MSK)
-Received: from mxback2q.mail.yandex.net (mxback2q.mail.yandex.net
- [IPv6:2a02:6b8:c0e:40:0:640:9c8c:4946])
- by forward102q.mail.yandex.net (Yandex) with ESMTP id 6AFC37F20002;
- Sat, 10 Oct 2020 18:01:07 +0300 (MSK)
-Received: from vla5-445dc1c4c112.qloud-c.yandex.net
- (vla5-445dc1c4c112.qloud-c.yandex.net [2a02:6b8:c18:3609:0:640:445d:c1c4])
- by mxback2q.mail.yandex.net (mxback/Yandex) with ESMTP id ddlvHLxHh6-16jChF9a; 
- Sat, 10 Oct 2020 18:01:07 +0300
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yandex.com; s=mail;
- t=1602342067; bh=wbliBLNEQQEAjnPAhAVt7kDLT1Z+rJL+T+gAyuMi3z8=;
- h=Subject:In-Reply-To:To:From:Cc:Date:References:Message-ID;
- b=S6doa5YLFZNXhh2x22veLFa6ZjgHVgkk1nUV25S7X6LClu3v5s6TCVuUeqmpAmUcu
- iu0d9gDg5k4dKYpPiHo/y8TkivyDttBrvGiO8NFXk7kPzO2Gpj7cVFUVeMqqI19gcY
- BKerSJsVZX3uvB6Kba9q92KfDjUjPLT1k21V963A=
-Authentication-Results: mxback2q.mail.yandex.net;
- dkim=pass header.i=@yandex.com
-Received: by vla5-445dc1c4c112.qloud-c.yandex.net (smtp/Yandex) with ESMTPSA
- id 56s1rf8FMg-16nmt9nt; Sat, 10 Oct 2020 18:01:06 +0300
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (Client certificate not present)
-From: "Nikita" <nikitamailings@yandex.com>
-To: "'Speakup is a screen review system for Linux.'"
- <speakup@linux-speakup.org>
-References: <E1kQ0tf-0003mJ-Ng@curtis3.ka0vba.org>
-In-Reply-To: <E1kQ0tf-0003mJ-Ng@curtis3.ka0vba.org>
-Subject: RE: settings for blind people using android
-Date: Sat, 10 Oct 2020 18:01:06 +0300
-Message-ID: <00df01d69f16$2e5297f0$8af7c7d0$@yandex.com>
+ id B954A380B2C; Sat, 10 Oct 2020 11:13:17 -0400 (EDT)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 8D1A9380B29
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 11:13:17 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id 3BC481027
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 17:13:14 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 7YtTeBA5r4w5 for <speakup@linux-speakup.org>;
+ Sat, 10 Oct 2020 17:13:13 +0200 (CEST)
+Received: from function.home (unknown
+ [IPv6:2a01:cb19:956:1b00:9eb6:d0ff:fe88:c3c7])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 8FEAE5F0
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 17:13:13 +0200 (CEST)
+Received: from samy by function.home with local (Exim 4.94)
+ (envelope-from <samuel.thibault@ens-lyon.org>) id 1kRGYa-001qzp-Pz
+ for speakup@linux-speakup.org; Sat, 10 Oct 2020 17:13:12 +0200
+Date: Sat, 10 Oct 2020 17:13:12 +0200
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: So, where'd the volume controls get to?
+Message-ID: <20201010151312.fbz27eyoua2574tw@function>
+References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
 MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 16.0
-Content-Language: ru
-Thread-Index: AQEVT6F6GTLuhEseHAh1gB0NY+f20qsTjMsQ
+Content-Disposition: inline
+In-Reply-To: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,45 +56,33 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Cc: -@curtis3.ka0vba.ampr.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi Curtis,
-In my opinion you need to subscribe to the androidaccessibility mailing
-list.
-Here is the subscription address - androidaccessibility+subscribe@groups.io
-This is the Android blind users mailing list.
-Also see
-https://support.google.com/accessibility/android/answer/6283677?hl=en
-Best regards, Nikita.
+Hello,
 
------Original Message-----
-From: Speakup <speakup-bounces@linux-speakup.org> On Behalf Of D. Curtis
-Willoughby
-Sent: Wednesday, October 07, 2020 7:18 AM
-To: ka0vba@dimcom.net; speakup@linux-speakup.org
-Cc: -@curtis3.ka0vba.ampr.org
-Subject: settings for blind people using android
+Kirk Reiser, le ven. 09 oct. 2020 11:19:01 -0400, a ecrit:
+> Hello Samuel et al: The latest version of speakup appears to have
+> replaced the volume controls with inflection controls.
 
-dear speakup users.
+?? I'm not aware of this. Inflection was added in the /sys parameters,
+but only to be configured manual by echoing there. What hardware are you
+using?
 
-I have just completed the following rules for setting up an iphone
-It is not really my work, but that of Curtis Chong.
+> IMO espeakup is still entirely brain dead so a lot of us still have to
+> use very old versions from back before espeak-en to get decent
+> performence. It's just an observation.
 
-I am in a facility that has lots of android users  as well as
- iphone users.   Many of them know nothing of blindness, save that
-they have it.  I know nothing of android, save that it exists.
-I have a friend who knoes a lot about android, and a little
+"Performance"? What do you mean?
 
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+Again, I'm not an actual user of speakup, so people have to explain what
+they mean in details otherwise I won't be able to grasp what problem
+there actually is.
 
+Samuel
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
