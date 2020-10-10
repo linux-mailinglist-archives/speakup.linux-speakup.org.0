@@ -2,45 +2,44 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id E8FC628A13A
-	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 21:36:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id A9A2128A13B
+	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 21:46:17 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8887E380B9D; Sat, 10 Oct 2020 15:36:43 -0400 (EDT)
+	id 43744380BB4; Sat, 10 Oct 2020 15:46:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 66363380B3F;
-	Sat, 10 Oct 2020 15:36:41 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1FCD9380B44;
+	Sat, 10 Oct 2020 15:46:15 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id DB6D4380B2F; Sat, 10 Oct 2020 15:36:40 -0400 (EDT)
+ id C0492380B32; Sat, 10 Oct 2020 15:46:14 -0400 (EDT)
 Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id B27F0380B2C
- for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 15:36:40 -0400 (EDT)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 9A68A380B2E
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 15:46:14 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id 8916B573
- for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 21:36:39 +0200 (CEST)
+ by hera.aquilenet.fr (Postfix) with ESMTP id 8AF05573
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 21:46:13 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
 Received: from hera.aquilenet.fr ([127.0.0.1])
  by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id j5s9I3hkRSO0 for <speakup@linux-speakup.org>;
- Sat, 10 Oct 2020 21:36:38 +0200 (CEST)
+ with ESMTP id LzkDeeibh-4P for <speakup@linux-speakup.org>;
+ Sat, 10 Oct 2020 21:46:13 +0200 (CEST)
 Received: from function (lfbn-bor-1-56-204.w90-50.abo.wanadoo.fr
  [90.50.148.204])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 25792AD3
- for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 21:36:38 +0200 (CEST)
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 10A4525D
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 21:46:13 +0200 (CEST)
 Received: from samy by function with local (Exim 4.94)
- (envelope-from <samuel.thibault@ens-lyon.org>) id 1kRKfV-002PmT-1Q
- for speakup@linux-speakup.org; Sat, 10 Oct 2020 21:36:37 +0200
-Date: Sat, 10 Oct 2020 21:36:36 +0200
+ (envelope-from <samuel.thibault@ens-lyon.org>) id 1kRKom-002QV9-5P
+ for speakup@linux-speakup.org; Sat, 10 Oct 2020 21:46:12 +0200
+Date: Sat, 10 Oct 2020 21:46:12 +0200
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: So, where'd the volume controls get to?
-Message-ID: <20201010193636.35lws35s7dyliyto@function>
+Subject: Flushing issue (was: So, where'd the volume controls get to?)
+Message-ID: <20201010194612.ut6md7liw4e47ky7@function>
 References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
  <20201010151312.fbz27eyoua2574tw@function>
  <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="4q47jptzcbtyx7nx"
 Content-Disposition: inline
 In-Reply-To: <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
 Organization: I am not organized
@@ -59,87 +58,26 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-
---4q47jptzcbtyx7nx
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hello,
-
 Kirk Reiser, le sam. 10 oct. 2020 14:56:38 -0400, a ecrit:
-> So, if you didn't move the controls who did? Curious minds and all
-> that.
+> The voice doesn't flush quickly enough to be able to move up and down
+> with either the review keys or arrow keys so it generates a jumbling
+> of voices which is completely unusable when moving quickly.
 
-It seems that it's the introduction of the inflection variable that
-changed the values of the var_id_t enum, and these happen to be used by
-the default speakupmap.h, thus shifting all meanings...
-
-Would you be able to try the attached patch?
+Ok.  Which versions of espeakup and espeak-ng do you use exactly?  I
+do remember fixing some things in that regard, and it was then working
+fine.  When I'm testing with the versions of Debian 10 for instance,
+when I move around extremely quickly, the espeak-ng speech synthesis
+doesn't even have the time to speak anything (since I interrupt it
+extremely quickly)
 
 Samuel
-
---4q47jptzcbtyx7nx
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: attachment; filename=patch
-
-commit d9ef20b2061908f968d21579efd5b28d668f528a
-Author: Samuel Thibault <samuel.thibault@ens-lyon.org>
-Date:   Sat Oct 10 21:30:45 2020 +0200
-
-    speakup: Fix keymap
-    
-    d97a9d7aea04 ("staging/speakup: Add inflection synth parameter") introduced
-    a new "inflection" speakup parameter next to "pitch", but the values of the
-    var_id_t enum are actually used by the keymap tables so we must not renumber
-    them. The effect was that notably the volume control shortcut (speakup-1 or
-    2) was then changing the inflection.
-    
-    This moves the INFLECTION value at the end of the var_id_t enum to fix back
-    the enum values. This also adds a warning about it.
-    
-    Fixes: d97a9d7aea04 ("staging/speakup: Add inflection synth parameter")
-    Reported-by: Kirk Reiser <kirk@reisers.ca>
-    Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
-
-diff --git a/drivers/accessibility/speakup/spk_types.h b/drivers/accessibility/speakup/spk_types.h
-index 7398f1196e10..37163118485a 100644
---- a/drivers/accessibility/speakup/spk_types.h
-+++ b/drivers/accessibility/speakup/spk_types.h
-@@ -32,6 +32,8 @@ enum {
- 	E_NEW_DEFAULT,
- };
- 
-+/* XXX: add new members after, speakupmap.h depends on the values of the enum
-+ * starting from SPELL_DELAY (see inc_dec_var) */
- enum var_id_t {
- 	VERSION = 0, SYNTH, SILENT, SYNTH_DIRECT,
- 	KEYMAP, CHARS,
-@@ -42,9 +44,9 @@ enum var_id_t {
- 	SAY_CONTROL, SAY_WORD_CTL, NO_INTERRUPT, KEY_ECHO,
- 	SPELL_DELAY, PUNC_LEVEL, READING_PUNC,
- 	ATTRIB_BLEEP, BLEEPS,
--	RATE, PITCH, INFLECTION, VOL, TONE, PUNCT, VOICE, FREQUENCY, LANG,
-+	RATE, PITCH, VOL, TONE, PUNCT, VOICE, FREQUENCY, LANG,
- 	DIRECT, PAUSE,
--	CAPS_START, CAPS_STOP, CHARTAB,
-+	CAPS_START, CAPS_STOP, CHARTAB, INFLECTION,
- 	MAXVARS
- };
- 
-
---4q47jptzcbtyx7nx
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
 http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-
---4q47jptzcbtyx7nx--
