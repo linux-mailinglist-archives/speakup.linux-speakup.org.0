@@ -2,62 +2,49 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id BFF7028A12D
-	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 20:56:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E8FC628A13A
+	for <lists+speakup@lfdr.de>; Sat, 10 Oct 2020 21:36:43 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4D031380B9F; Sat, 10 Oct 2020 14:56:41 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1602356201;
-	bh=VdfZ07+oCCG2hE7tsVlLWfclnFPcYH2sE+Rigzzy/UY=;
-	h=Date:From:To:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Archive:List-Post:List-Help:List-Subscribe:
-	 Reply-To:From;
-	b=JbvcKxgsTEWPMfji6dATI7utwzXlI/skPELJtlUBJyRWRyf7EOuufFtsDsdKiVec4
-	 67hUsFUyUyS2gDT6WJSYBi5PyTABpTDpBEnKf8tDr+vNvNW3o75jvDd/LE6arlH8IV
-	 xt60f8HX/PJ3L9ekIvzmZsXsfJFUqC4mY2+C0Kj4=
+	id 8887E380B9D; Sat, 10 Oct 2020 15:36:43 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8B4AA380B3D;
-	Sat, 10 Oct 2020 14:56:40 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1602356200;
-	bh=VdfZ07+oCCG2hE7tsVlLWfclnFPcYH2sE+Rigzzy/UY=;
-	h=Date:From:To:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Archive:List-Post:List-Help:List-Subscribe:
-	 Reply-To:From;
-	b=LdSyJyc7u4wV179QDXEEreC64ZPYB0BR6aROXqPnn0S9NDyXWPWkJeuGe6vrk7wQt
-	 6cgPfLVzlplMjYQd5N3nvTd61JDEt29WKBnea406AR2wSXbxvrq+PiZ8jFbIAbrbrZ
-	 DZkKbgi5iPqOnJmX8sRh0HR4IZd5iEn+YCLTsYCE=
+	by befuddled.reisers.ca (Postfix) with ESMTP id 66363380B3F;
+	Sat, 10 Oct 2020 15:36:41 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id BD9C0380B2E; Sat, 10 Oct 2020 14:56:38 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1602356198;
- bh=Q8OGdu5LAKaP2U7i966t08tQYQu1eTg7mTAfI1N5gBs=;
- h=Date:From:To:Subject:In-Reply-To:References:From;
- b=EBrYmMboKz2yLBftR27A5s+zDNtkpgTSaFRLuCN6X6y3+G6HzFeOAFKuA1h3qggH8
- 9Wha8FJTSvN9OktSSR0mYMAHK1+4X/pYifJmAkmAidn9g6aMdwA5+Ikre72GzisVXB
- T8Av5AZG10yiUlZXeBqJ2rRdekg8ZtHbgNm2mT5o=
-Received: from localhost (localhost [IPv6:::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id AA65A380B2B
- for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 14:56:38 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1602356198;
- bh=Q8OGdu5LAKaP2U7i966t08tQYQu1eTg7mTAfI1N5gBs=;
- h=Date:From:To:Subject:In-Reply-To:References:From;
- b=EBrYmMboKz2yLBftR27A5s+zDNtkpgTSaFRLuCN6X6y3+G6HzFeOAFKuA1h3qggH8
- 9Wha8FJTSvN9OktSSR0mYMAHK1+4X/pYifJmAkmAidn9g6aMdwA5+Ikre72GzisVXB
- T8Av5AZG10yiUlZXeBqJ2rRdekg8ZtHbgNm2mT5o=
-Date: Sat, 10 Oct 2020 14:56:38 -0400 (EDT)
-From: Kirk Reiser <kirk@reisers.ca>
+ id DB6D4380B2F; Sat, 10 Oct 2020 15:36:40 -0400 (EDT)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id B27F0380B2C
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 15:36:40 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id 8916B573
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 21:36:39 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id j5s9I3hkRSO0 for <speakup@linux-speakup.org>;
+ Sat, 10 Oct 2020 21:36:38 +0200 (CEST)
+Received: from function (lfbn-bor-1-56-204.w90-50.abo.wanadoo.fr
+ [90.50.148.204])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 25792AD3
+ for <speakup@linux-speakup.org>; Sat, 10 Oct 2020 21:36:38 +0200 (CEST)
+Received: from samy by function with local (Exim 4.94)
+ (envelope-from <samuel.thibault@ens-lyon.org>) id 1kRKfV-002PmT-1Q
+ for speakup@linux-speakup.org; Sat, 10 Oct 2020 21:36:37 +0200
+Date: Sat, 10 Oct 2020 21:36:36 +0200
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: So, where'd the volume controls get to?
-In-Reply-To: <20201010151312.fbz27eyoua2574tw@function>
-Message-ID: <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
+Message-ID: <20201010193636.35lws35s7dyliyto@function>
 References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
  <20201010151312.fbz27eyoua2574tw@function>
-User-Agent: Alpine 2.23 (DEB 453 2020-06-18)
+ <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
 MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="4q47jptzcbtyx7nx"
+Content-Disposition: inline
+In-Reply-To: <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,64 +59,87 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Well, I doubt if it matters exactly what hardware I'm running speakup
-on but the two machines I've upgraded are both amd64 machines.
 
-The volume controls have always been on speakup- one and two but now
-they report inflection instead. Like I said I've not found the volume
-controls moved any place else.
+--4q47jptzcbtyx7nx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-The espeakup problems are as I've pointed out many times before. The
-voice doesn't flush quickly enough to be able to move up and down with
-either the review keys or arrow keys so it generates a jumbling of
-voices which is completely unusable when moving quickly. I'm not
-exactly sure how to describe it but the problem shows up on all
-machines I've tested with espeakup since espeak-ng. It is very easy to
-produce just review up and down quickly with espeakup. I don't know
-how speech-dispatcher works when using speechd-up and the espeak
-voice. Someone with that would have to speak to that.
+Hello,
 
-So, if you didn't move the controls who did? Curious minds and all
-that.
+Kirk Reiser, le sam. 10 oct. 2020 14:56:38 -0400, a ecrit:
+> So, if you didn't move the controls who did? Curious minds and all
+> that.
 
-   Kirk
+It seems that it's the introduction of the inflection variable that
+changed the values of the var_id_t enum, and these happen to be used by
+the default speakupmap.h, thus shifting all meanings...
 
+Would you be able to try the attached patch?
 
-On Sat, 10 Oct 2020, Samuel Thibault wrote:
+Samuel
 
-> Hello,
->
-> Kirk Reiser, le ven. 09 oct. 2020 11:19:01 -0400, a ecrit:
->> Hello Samuel et al: The latest version of speakup appears to have
->> replaced the volume controls with inflection controls.
->
-> ?? I'm not aware of this. Inflection was added in the /sys parameters,
-> but only to be configured manual by echoing there. What hardware are you
-> using?
->
->> IMO espeakup is still entirely brain dead so a lot of us still have to
->> use very old versions from back before espeak-en to get decent
->> performence. It's just an observation.
->
-> "Performance"? What do you mean?
->
-> Again, I'm not an actual user of speakup, so people have to explain what
-> they mean in details otherwise I won't be able to grasp what problem
-> there actually is.
->
-> Samuel
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->
+--4q47jptzcbtyx7nx
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: attachment; filename=patch
+
+commit d9ef20b2061908f968d21579efd5b28d668f528a
+Author: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Date:   Sat Oct 10 21:30:45 2020 +0200
+
+    speakup: Fix keymap
+    
+    d97a9d7aea04 ("staging/speakup: Add inflection synth parameter") introduced
+    a new "inflection" speakup parameter next to "pitch", but the values of the
+    var_id_t enum are actually used by the keymap tables so we must not renumber
+    them. The effect was that notably the volume control shortcut (speakup-1 or
+    2) was then changing the inflection.
+    
+    This moves the INFLECTION value at the end of the var_id_t enum to fix back
+    the enum values. This also adds a warning about it.
+    
+    Fixes: d97a9d7aea04 ("staging/speakup: Add inflection synth parameter")
+    Reported-by: Kirk Reiser <kirk@reisers.ca>
+    Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+
+diff --git a/drivers/accessibility/speakup/spk_types.h b/drivers/accessibility/speakup/spk_types.h
+index 7398f1196e10..37163118485a 100644
+--- a/drivers/accessibility/speakup/spk_types.h
++++ b/drivers/accessibility/speakup/spk_types.h
+@@ -32,6 +32,8 @@ enum {
+ 	E_NEW_DEFAULT,
+ };
+ 
++/* XXX: add new members after, speakupmap.h depends on the values of the enum
++ * starting from SPELL_DELAY (see inc_dec_var) */
+ enum var_id_t {
+ 	VERSION = 0, SYNTH, SILENT, SYNTH_DIRECT,
+ 	KEYMAP, CHARS,
+@@ -42,9 +44,9 @@ enum var_id_t {
+ 	SAY_CONTROL, SAY_WORD_CTL, NO_INTERRUPT, KEY_ECHO,
+ 	SPELL_DELAY, PUNC_LEVEL, READING_PUNC,
+ 	ATTRIB_BLEEP, BLEEPS,
+-	RATE, PITCH, INFLECTION, VOL, TONE, PUNCT, VOICE, FREQUENCY, LANG,
++	RATE, PITCH, VOL, TONE, PUNCT, VOICE, FREQUENCY, LANG,
+ 	DIRECT, PAUSE,
+-	CAPS_START, CAPS_STOP, CHARTAB,
++	CAPS_START, CAPS_STOP, CHARTAB, INFLECTION,
+ 	MAXVARS
+ };
+ 
+
+--4q47jptzcbtyx7nx
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
 http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+
+--4q47jptzcbtyx7nx--
