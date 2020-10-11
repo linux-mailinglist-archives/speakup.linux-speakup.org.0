@@ -2,50 +2,50 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 247E128A7B7
-	for <lists+speakup@lfdr.de>; Sun, 11 Oct 2020 16:16:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 4D1BB28A7B9
+	for <lists+speakup@lfdr.de>; Sun, 11 Oct 2020 16:17:50 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 907D4380BD0; Sun, 11 Oct 2020 10:16:04 -0400 (EDT)
+	id E1396380BE2; Sun, 11 Oct 2020 10:17:49 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2AA52380BB4;
-	Sun, 11 Oct 2020 10:16:03 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 57D3E380BB2;
+	Sun, 11 Oct 2020 10:17:48 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id ABCCF380B28; Sun, 11 Oct 2020 10:16:01 -0400 (EDT)
+ id 3ACF8380B2A; Sun, 11 Oct 2020 10:17:47 -0400 (EDT)
 Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 8957E380AC5
- for <speakup@linux-speakup.org>; Sun, 11 Oct 2020 10:16:01 -0400 (EDT)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 14A21380AC5
+ for <speakup@linux-speakup.org>; Sun, 11 Oct 2020 10:17:47 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id 3457C1085
- for <speakup@linux-speakup.org>; Sun, 11 Oct 2020 16:16:00 +0200 (CEST)
+ by hera.aquilenet.fr (Postfix) with ESMTP id 15D90E10
+ for <speakup@linux-speakup.org>; Sun, 11 Oct 2020 16:17:46 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
 Received: from hera.aquilenet.fr ([127.0.0.1])
  by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id qd9nFQMMGJDN for <speakup@linux-speakup.org>;
- Sun, 11 Oct 2020 16:15:59 +0200 (CEST)
+ with ESMTP id BscbI4uZ30zu for <speakup@linux-speakup.org>;
+ Sun, 11 Oct 2020 16:17:45 +0200 (CEST)
 Received: from function (lfbn-bor-1-56-204.w90-50.abo.wanadoo.fr
  [90.50.148.204])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 6BBCCE10
- for <speakup@linux-speakup.org>; Sun, 11 Oct 2020 16:15:59 +0200 (CEST)
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 26710D87
+ for <speakup@linux-speakup.org>; Sun, 11 Oct 2020 16:17:45 +0200 (CEST)
 Received: from samy by function with local (Exim 4.94)
- (envelope-from <samuel.thibault@ens-lyon.org>) id 1kRc8k-004R5v-8e
- for speakup@linux-speakup.org; Sun, 11 Oct 2020 16:15:58 +0200
-Date: Sun, 11 Oct 2020 16:15:58 +0200
+ (envelope-from <samuel.thibault@ens-lyon.org>) id 1kRcAS-004RAp-Bp
+ for speakup@linux-speakup.org; Sun, 11 Oct 2020 16:17:44 +0200
+Date: Sun, 11 Oct 2020 16:17:44 +0200
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Flushing issue
-Message-ID: <20201011141558.heqzdjqhr2s2gmwm@function>
+Subject: Re: Flushing issue (was: So, where'd the volume controls get to?)
+Message-ID: <20201011141744.pwte6hjbijqyb7my@function>
 References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
  <20201010151312.fbz27eyoua2574tw@function>
  <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
  <20201010194612.ut6md7liw4e47ky7@function>
  <alpine.DEB.2.23.453.2010101905240.36490@befuddled.reisers.ca>
  <20201010235355.uqqvyyjqxupfw5qw@function>
- <32185047-b54c-4841-9021-09f8fcb25eda@pcdesk.net>
+ <alpine.DEB.2.23.453.2010102053100.39482@befuddled.reisers.ca>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <32185047-b54c-4841-9021-09f8fcb25eda@pcdesk.net>
+In-Reply-To: <alpine.DEB.2.23.453.2010102053100.39482@befuddled.reisers.ca>
 Organization: I am not organized
 User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
@@ -68,21 +68,30 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hello,
+Kirk Reiser, le sam. 10 oct. 2020 20:58:56 -0400, a ecrit:
+> On Sun, 11 Oct 2020, Samuel Thibault wrote:
+> > Ok but isn't it getting interrupted by the next key press also very
+> > fast?
+> 
+> It does interrupt quickly but there is previously spoken speech that
+> gets jammed against the new speech.
 
-Tyler Spivey, le sam. 10 oct. 2020 17:46:58 -0700, a ecrit:
-> It might be getting interrupted quickly, but at the wrong time.
-> IIRC, the core issue with espeak-ng (without speech dispatcher) is that
-> there's no way to flush the audio without at least one buffer of audio
-> playing.
+So they get mixed? This really looks like what I fixed in the Debian
+patch that upstream still hasn't integrated.
 
-Which version of espeak-ng are you using exactly? In Debian we have
-a patch to cancel the audio as early as possible, it was discussed
-upstream on https://github.com/espeak-ng/espeak-ng/issues/172
+> > > the libespeak library as reported by ldd is:
+> > > 
+> > > libespeak.so.1 => /usr/lib/x86_64-linux-gnu/libespeak.so.1 (0x00007f6298
+> > 
+> > That is not precise enough, that has never changed since the espeak
+> > times. The last version of espeak-ng I'm aware of is 1.50.
+> 
+> Okay, the espeakup I'm using isn't using espeak-ng at all. It's using:
+> 
+> libespeak1:amd64                       1.48.04+dfsg-9
 
-The Debian patch is available on 
-
-https://salsa.debian.org/a11y-team/espeak-ng/-/raw/master/debian/patches/fix-cancel
+That's really old them. You'd want to use a more recent version, at
+least libespeak-ng1 1.49.0+dfsg-7
 
 Samuel
 _______________________________________________
