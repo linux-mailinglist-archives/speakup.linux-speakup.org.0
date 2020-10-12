@@ -1,58 +1,65 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C853828AD63
-	for <lists+speakup@lfdr.de>; Mon, 12 Oct 2020 06:54:11 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id D563428B5F5
+	for <lists+speakup@lfdr.de>; Mon, 12 Oct 2020 15:20:31 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DA2D1380BC7; Mon, 12 Oct 2020 00:54:10 -0400 (EDT)
+	id 6F366380BB5; Mon, 12 Oct 2020 09:20:31 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=iWBkH3x4;
+	dkim=fail reason="key not found in DNS" header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=default header.b=Kgv3uCsI;
+	dkim=fail reason="key not found in DNS" header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=twLIVg1g;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A5171380BBD;
-	Mon, 12 Oct 2020 00:54:09 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D40C9380BDB;
+	Mon, 12 Oct 2020 09:20:27 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 981EB380BB1; Mon, 12 Oct 2020 00:54:07 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [IPv6:2607:f2f8:a260::2])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 31B1A380917
- for <speakup@linux-speakup.org>; Mon, 12 Oct 2020 00:54:07 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2607:fb90:4a3f:1b72:a00:27ff:fe01:8e92])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id 04807203
- for <speakup@linux-speakup.org>; Sun, 11 Oct 2020 21:54:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1602478448; bh=+xVDpGMf3RuPGuGtmMKuouZo+VsQSdVS92s9RiVX/ME=;
+ id 3AF5D380BB4; Mon, 12 Oct 2020 09:20:26 -0400 (EDT)
+Received: from opera.rednote.net (opera.rednote.net
+ [IPv6:2600:3c03:e000:295::e])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id CEC52380974
+ for <speakup@linux-speakup.org>; Mon, 12 Oct 2020 09:20:25 -0400 (EDT)
+Received: from rednote.net (localhost [IPv6:0:0:0:0:0:0:0:1])
+ by opera.rednote.net (8.15.2/8.15.2) with ESMTPS id 09CDKNd8038945
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO)
+ for <speakup@linux-speakup.org>; Mon, 12 Oct 2020 13:20:23 GMT
+DMARC-Filter: OpenDMARC Filter v1.3.2 opera.rednote.net 09CDKNd8038945
+Authentication-Results: opera.rednote.net;
+ dmarc=pass (p=reject dis=none) header.from=rednote.net
+Authentication-Results: opera.rednote.net;
+ spf=pass smtp.mailfrom=janina@rednote.net
+DKIM-Filter: OpenDKIM Filter v2.11.0 opera.rednote.net 09CDKNd8038945
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rednote.net;
+ s=default; t=1602508823;
+ bh=YdSfWfUlmHQPC46J3MdxF+KzUFGO5ZzlSN1+n1KhKx4=;
  h=Date:From:To:Subject:References:In-Reply-To:From;
- b=iWBkH3x4n4y37THdKnL+G/jqh7MMEiR19mPYQXc5OwmAkN5O6mBIugJwqQgE9JGWe
- uo7/ktFZJPdSyKELiAwRub33fGbNuF3olv/lOhLUTnDFaeNzFleCtYa0MjKMD1kxux
- 8oxDRXyZAWPbfaZli1FtfhasWn5ouFCHHcaUBmdPy6Mc7m3GrbrN7E1L28SPWpYMpi
- E/P970HySdrrNFEZ5vaTqet4013G3XtZAThEZ1xebZdT91T6kWquPQASg1WILllVgM
- +scnWGvp8RL339S5GE/6XOjeL4DqyHirv0jf2GX5RFnxrxZbs1kcyjJiqu7YSDEu9y
- grdFdQKdPwLww==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>) id 1kRpqK-0000tO-22
- for speakup@linux-speakup.org; Sun, 11 Oct 2020 21:53:52 -0700
-Date: Sun, 11 Oct 2020 21:53:52 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+ b=Kgv3uCsINCQguzjE8AMz0ZPWFxo5N1fD0B8m1N4UQQsM4+Cvp7E21zfJy5KzpqqoM
+ lx8d0k5P2N+vreAThQsXCcHBpY3G10DkILUJMEmD7WORmRNiyiLdpSNjQH1HcDLBXb
+ Q2QpWf1VVr5DrUALqbXOraYeClaBZvbpyadUF/vs=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
+ t=1602508823;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=CNwP4NVvFrenLXJIxJ2bpyZQbky2JJt2qYU1d2D/5E4=;
+ b=twLIVg1g+t5UTTGvcQFGxZmUb5eusS+XJLiyrZrPw+TXx9///JqMOzDNjZForRp5otcpSL
+ 6pyskl/0cLf7zMhAmAcYLrbtYeKvXKMGK2Mzh31KFltdLACF/1uOmcJEfodhIhNN8xHStu
+ xxdtkwAQ4l/r6JoKjEX3Q+6Hg8SNGHA=
+Received: (from janina@localhost)
+ by rednote.net (8.15.2/8.15.2/Submit) id 09CDKNpt038944
+ for speakup@linux-speakup.org; Mon, 12 Oct 2020 09:20:23 -0400
+Date: Mon, 12 Oct 2020 09:20:23 -0400
+From: Janina Sajka <janina@rednote.net>
+To: speakup@linux-speakup.org
 Subject: Re: So, where'd the volume controls get to?
-Message-ID: <20201012045350.GA3377@gregn.net>
+Message-ID: <20201012132023.GA1585@rednote.net>
 References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
- <20201010151312.fbz27eyoua2574tw@function>
- <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
- <20201010193636.35lws35s7dyliyto@function>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20201010193636.35lws35s7dyliyto@function>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.4 at vserver
-X-Virus-Status: Clean
+In-Reply-To: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
+X-Operating-System: Linux opera.rednote.net 5.8.13-100.fc31.x86_64
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,45 +80,52 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Sat, Oct 10, 2020 at 09:36:36PM +0200, Samuel Thibault wrote:
-> Would you be able to try the attached patch?
++1 to Kirk. I'm also wondering about volume control and I'm also still
+stuck on the old espeak.
 
-I can confirm that Samuel's patch fixes the issue so that speakup+1
-and speakup+2 controls volume again.
+Of the two the volume control is actually more important for me, because
+I have Orca using the same audio device and need to level the volume
+with Speakup. This was always so much easier to do on the Speakup side.
 
-Since I feel that volume control on the fly is fairly critical, I've
-decided to release my kernel build. The debian packages were built for
-a devuan Beowulf system, and should work on debian buster. This kernel
-should boot on most if not all x86_64 systems. There are modules for a
-variety of SATA controllers, and file systems. The debian packages
-aren't signed, and the kernel isn't signed either which your UEFI
-and/or boot loader might not like. If any of this makes you
-uncomfortable, wait for the fix to make it to where ever you get your
-kernel updates from, or build your own kernel with the patch (the www
-is your friend).
+Best,
 
-For those who don't want to or can't install debian packages, the
-amd64_binaries directory has binaries for the kernel, modules, and
-headers. If installing this kernel breaks your system in any way, you
-get to keep all the pieces.
+Janina
 
-You can find all of this at:
-
-<https://www.gregn.net/linux-5.8.14/>
-
-Greg
-
-
+Kirk Reiser writes:
+> Hello Samuel et al: The latest version of speakup appears to have
+> replaced the volume controls with inflection controls. I don't really
+> have a problem with this if the volume controls have just been moved
+> to another key combination but I haven't been able to find where they
+> are now. I may also be out to lunch but I don't remember any
+> discussion about moving them or the reason for doing so here on the
+> list. Can someone clarify the situation for me please?
+> 
+> BTW, a lot of people use the volume controls so I hope they haven't
+> been arbitrarily removed.
+> 
+> IMO espeakup is still entirely brain dead so a lot of us still have to
+> use very old versions from back before espeak-en to get decent
+> performence. It's just an observation.
+> 
+>   Kirk
+> 
+> 
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
 
 -- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+Janina Sajka
+https://linkedin.com/in/jsajka
+
+Linux Foundation Fellow
+Executive Chair, Accessibility Workgroup:	http://a11y.org
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
