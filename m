@@ -2,63 +2,66 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8064428B774
-	for <lists+speakup@lfdr.de>; Mon, 12 Oct 2020 15:44:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id CFEFF28B826
+	for <lists+speakup@lfdr.de>; Mon, 12 Oct 2020 15:50:07 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B0F1E380BDA; Mon, 12 Oct 2020 09:44:02 -0400 (EDT)
+	id 65814380BB6; Mon, 12 Oct 2020 09:50:06 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1602510242;
-	bh=df2qxBLgcv6B4d/9oR+9N57w7rQ8j6YUKVFCTf1EHEE=;
+	s=befuddled; t=1602510606;
+	bh=1RLTftSqm5+WywYMKqbecov6Qe8OsbqOk2QTbWntVX0=;
 	h=Date:From:To:Subject:In-Reply-To:References:List-Id:
 	 List-Unsubscribe:List-Archive:List-Post:List-Help:List-Subscribe:
 	 Reply-To:From;
-	b=aw35UfnH+qIffpB0cLZJzDGSisPpo2KOnrBYyXEB3rFF+zQ/IKdDcDf920qZYX334
-	 HqAsgOcYQrf4mue+HoG39x+uzcK7dlKRth0qODX6PUYyfN2yvEpYOHH+WtTvikNfGa
-	 Qu4BnDVYFnF3oH6AZUvd1d6/s2/wAppku6K2Bm1w=
+	b=CFqObcGZvQFr8XyWFpjyNmiK8L3ixzqZEn5ONFUUipJDT1wwqNoXUBnIKbXBC3xdQ
+	 yoCQsknhhnHz8hilat7qT+o4y5M0i6/IVJNLTG/nDf0Sm+n1FzzckIECyGK/hjvls/
+	 vnPGMTiAxUFc65m8N6EFH1jigb7Jk0oMcYtpuIlQ=
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9FB97380BDF;
-	Mon, 12 Oct 2020 09:44:01 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1FB14380BC7;
+	Mon, 12 Oct 2020 09:50:03 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1602510241;
-	bh=df2qxBLgcv6B4d/9oR+9N57w7rQ8j6YUKVFCTf1EHEE=;
+	s=befuddled; t=1602510603;
+	bh=1RLTftSqm5+WywYMKqbecov6Qe8OsbqOk2QTbWntVX0=;
 	h=Date:From:To:Subject:In-Reply-To:References:List-Id:
 	 List-Unsubscribe:List-Archive:List-Post:List-Help:List-Subscribe:
 	 Reply-To:From;
-	b=T0sBcGgAXfSA+z5bbD6yTs2pexxNgT256oAVIPxeoPhGuF19Uv50Pqze0VSEyMJVv
-	 nrXbHLbqdyaJPY01amWpuizgX0gjGxmzGjMi1Pxy8ENcaY2UzJB7kC7QSEf4oBJaz+
-	 n6374vPFbuzSgdCpO+hEA/CvFfiaUiai7CCB2cc0=
+	b=o3BOoenYGSPodxNLwU5/Bx2fdu+wH4tQklSn2GIxdWdb1HZnWzBP8jpXbbdH3hszb
+	 UIdQX9ctPh0wNYl1t512aphm0excV+O5xZxuW78BCTybwJv1x/VfVfUjqA4WPbfapP
+	 qHTOx36S56sNPYgUbexD5Bo/pf5kNWzcJ+vd2W30=
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 283C2380BB7; Mon, 12 Oct 2020 09:44:00 -0400 (EDT)
+ id C6E30380BB6; Mon, 12 Oct 2020 09:50:02 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1602510240;
- bh=+GuASD9AvN4UoahWH7ic7dgBSFZQXkIYE6u/GpQjHxs=;
+ s=befuddled; t=1602510602;
+ bh=QNNXMXu9Lq0CpkTd+4bu4ithFc6k7NsnaEwyx+213LY=;
  h=Date:From:To:Subject:In-Reply-To:References:From;
- b=Hdd66HGJMMyPU2RGhAO2Jv03eu5sf0dwn72NbxvfQi0gOot7L06a0LdND2OTQcs0v
- 7y+qcEQigiRLIaEqya7ct9JZAhogFEbdMaR1al7hkdO9xT3kF60D4PNcQZxIErYRnH
- xdJUAJPYh/60FKQRRZRW6NWobkd9Xu1cegq6HMNA=
+ b=VsfzzGZoLplLxJhKqLjp3CSPoQRkxxtbafkGEry10nX0H1TkY2a0E9spaHnuwAymC
+ 5h2qt0j/cCkC+8TrOPzT9N7RGFHLFDMdJweMBYHodiFJ+A6k+CWhpNMwipUJ+lVgtG
+ sihsWjxTOYG15k+CIxbotw/Nxd3g+suJtTAZr2xU=
 Received: from localhost (localhost [IPv6:::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id F19DF380BB4
- for <speakup@linux-speakup.org>; Mon, 12 Oct 2020 09:43:59 -0400 (EDT)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id A03FF380BB2
+ for <speakup@linux-speakup.org>; Mon, 12 Oct 2020 09:50:02 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1602510240;
- bh=+GuASD9AvN4UoahWH7ic7dgBSFZQXkIYE6u/GpQjHxs=;
+ s=befuddled; t=1602510602;
+ bh=QNNXMXu9Lq0CpkTd+4bu4ithFc6k7NsnaEwyx+213LY=;
  h=Date:From:To:Subject:In-Reply-To:References:From;
- b=Hdd66HGJMMyPU2RGhAO2Jv03eu5sf0dwn72NbxvfQi0gOot7L06a0LdND2OTQcs0v
- 7y+qcEQigiRLIaEqya7ct9JZAhogFEbdMaR1al7hkdO9xT3kF60D4PNcQZxIErYRnH
- xdJUAJPYh/60FKQRRZRW6NWobkd9Xu1cegq6HMNA=
-Date: Mon, 12 Oct 2020 09:43:59 -0400 (EDT)
+ b=VsfzzGZoLplLxJhKqLjp3CSPoQRkxxtbafkGEry10nX0H1TkY2a0E9spaHnuwAymC
+ 5h2qt0j/cCkC+8TrOPzT9N7RGFHLFDMdJweMBYHodiFJ+A6k+CWhpNMwipUJ+lVgtG
+ sihsWjxTOYG15k+CIxbotw/Nxd3g+suJtTAZr2xU=
+Date: Mon, 12 Oct 2020 09:50:02 -0400 (EDT)
 From: Kirk Reiser <kirk@reisers.ca>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: So, where'd the volume controls get to?
-In-Reply-To: <20201012045350.GA3377@gregn.net>
-Message-ID: <alpine.DEB.2.23.453.2010120941280.74954@befuddled.reisers.ca>
+Subject: Re: Flushing issue (was: So, where'd the volume controls get to?)
+In-Reply-To: <20201011141744.pwte6hjbijqyb7my@function>
+Message-ID: <alpine.DEB.2.23.453.2010120945410.74954@befuddled.reisers.ca>
 References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
  <20201010151312.fbz27eyoua2574tw@function>
  <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
- <20201010193636.35lws35s7dyliyto@function>
- <20201012045350.GA3377@gregn.net>
+ <20201010194612.ut6md7liw4e47ky7@function>
+ <alpine.DEB.2.23.453.2010101905240.36490@befuddled.reisers.ca>
+ <20201010235355.uqqvyyjqxupfw5qw@function>
+ <alpine.DEB.2.23.453.2010102053100.39482@befuddled.reisers.ca>
+ <20201011141744.pwte6hjbijqyb7my@function>
 User-Agent: Alpine 2.23 (DEB 453 2020-06-18)
 MIME-Version: 1.0
 X-BeenThere: speakup@linux-speakup.org
@@ -81,44 +84,20 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Thanks Greg for taking on testing the patches and releasing your
-results. Also thanks again to Samuel for getting a fix out so quickly.
+On Sun, 11 Oct 2020, Samuel Thibault wrote:
 
-   Kirk
+> Kirk Reiser, le sam. 10 oct. 2020 20:58:56 -0400, a ecrit:
+>> Okay, the espeakup I'm using isn't using espeak-ng at all. It's using:
+>>
+>> libespeak1:amd64                       1.48.04+dfsg-9
+>
+> That's really old them. You'd want to use a more recent version, at
+> least libespeak-ng1 1.49.0+dfsg-7
 
-On Sun, 11 Oct 2020, Gregory Nowak wrote:
-
-> On Sat, Oct 10, 2020 at 09:36:36PM +0200, Samuel Thibault wrote:
->> Would you be able to try the attached patch?
->
-> I can confirm that Samuel's patch fixes the issue so that speakup+1
-> and speakup+2 controls volume again.
->
-> Since I feel that volume control on the fly is fairly critical, I've
-> decided to release my kernel build. The debian packages were built for
-> a devuan Beowulf system, and should work on debian buster. This kernel
-> should boot on most if not all x86_64 systems. There are modules for a
-> variety of SATA controllers, and file systems. The debian packages
-> aren't signed, and the kernel isn't signed either which your UEFI
-> and/or boot loader might not like. If any of this makes you
-> uncomfortable, wait for the fix to make it to where ever you get your
-> kernel updates from, or build your own kernel with the patch (the www
-> is your friend).
->
-> For those who don't want to or can't install debian packages, the
-> amd64_binaries directory has binaries for the kernel, modules, and
-> headers. If installing this kernel breaks your system in any way, you
-> get to keep all the pieces.
->
-> You can find all of this at:
->
-> <https://www.gregn.net/linux-5.8.14/>
->
-> Greg
->
->
->
->
+I won't upgrade from my old crusty but faithful version of espeakup
+and espeak until what's available now is as usable. I do appreciate
+you working on fixing it however and I hope this new set of patches
+you've put together does in fact fix the problem.
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
