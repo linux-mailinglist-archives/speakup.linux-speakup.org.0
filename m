@@ -1,61 +1,43 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1EBB428C128
-	for <lists+speakup@lfdr.de>; Mon, 12 Oct 2020 21:09:44 +0200 (CEST)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id 3F2D328C9B4
+	for <lists+speakup@lfdr.de>; Tue, 13 Oct 2020 10:02:18 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B20A8380BC8; Mon, 12 Oct 2020 15:09:43 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=DfFo4/h8;
-	dkim-atps=neutral
+	id C9763380E5E; Tue, 13 Oct 2020 04:02:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8E0B4380BD5;
-	Mon, 12 Oct 2020 15:09:42 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id EC94D380BD4;
+	Tue, 13 Oct 2020 04:02:16 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 1269E380BC2; Mon, 12 Oct 2020 15:09:42 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
- by befuddled.reisers.ca (Postfix) with ESMTP id E2F5A380BB8
- for <speakup@linux-speakup.org>; Mon, 12 Oct 2020 15:09:41 -0400 (EDT)
-Received: from darkstar.machine.fr (sfa89-1-78-208-157-71.fbx.proxad.net
- [78.208.157.71])
- by darkstar.slint.fr (Postfix) with ESMTPSA id C4A76BE27E
- for <speakup@linux-speakup.org>; Mon, 12 Oct 2020 20:08:53 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
- t=1602526133; bh=hVq+dCNZ53Zp2QUVhFYY6dZgmNCwWC0DqcrLW9RT8RM=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=DfFo4/h8U9j5D8LjwqxtoSJr+ckodsroxB6yV9Zd/xuCIQlYQJ6aqiFm4ttqtgpup
- W065OSK22np2sWLNLA/xaIXUyGpvmeE+AfBdvZIOd8XKOIbVH/c5OrppV+fAra7GsM
- /DDsTUieohDf8bkeRIk+PcVVFNTgAQpXe+hPPfnHTJzpTrU4nPD1cF1ZZNnEOHlEFy
- SEIDU+7f0xCxKWmvZk9tpncxBFjD0cG+3FtN2ycx3p9/rLBQDtbHTxiITRzQiPYdc0
- 8H73EflThX1Gu1ruw48egJtk7vAIiItq/+2HsESrQqZeGqXg+LZFckzJ8UQmv2tkBp
- xskWs6c+vTSuw==
-Subject: Re: Linux 5.9 is out with speakup
+ id 96169380BC3; Tue, 13 Oct 2020 04:02:15 -0400 (EDT)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 70AE0380974
+ for <speakup@linux-speakup.org>; Tue, 13 Oct 2020 04:02:15 -0400 (EDT)
+Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
+ (authenticated bits=0)
+ by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 09D82VMk020490
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+ for <speakup@linux-speakup.org>; Tue, 13 Oct 2020 04:02:32 -0400
+Received: from ccs.covici.com (localhost [127.0.0.1])
+ by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 09D829bI208402
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+ for <speakup@linux-speakup.org>; Tue, 13 Oct 2020 04:02:10 -0400
+Received: (from covici@localhost)
+ by ccs.covici.com (8.15.2/8.15.2/Submit) id 09D829ie208401;
+ Tue, 13 Oct 2020 04:02:09 -0400
+Date: Tue, 13 Oct 2020 04:02:09 -0400
+Message-ID: <m3o8l6sge6.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
 To: speakup@linux-speakup.org
-References: <20201012132922.mghdcuf5zotung5w@function>
-From: Didier Spaier <didier@slint.fr>
-Autocrypt: addr=didier@slint.fr; prefer-encrypt=mutual; keydata=
- mQENBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
- dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
- TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
- jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
- 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
- AAG0H0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj6JAT8EEwEKACkCGwMHCwkIBwMC
- AQYVCAIJCgsEFgIDAQIeAQIXgAUCXcBjnwUJGlHqEgAKCRDVAgLvYMA+6v/ICAC8Oa2zXOne
- zyuFrPtNsciJWYwWamW+g5TNaY9NPnyMRNKDi7IcP6PoDwHRI8YBgo+Z9w0qFKQ/WVSI/O6s
- gm7LnOX7OEHjnub4sjrr5PHcsPRjm6iJFIgGgD+waz0K5fxcc65ti3lgHLH1tkhORyiT5EFp
- 0VllWDQfPHw5avm9oopJv1FuPfZhSlFT6QhjD2ARmOrxfFBjELQZjDidckOYf/8Stoh+aK5F
- 5q69DpF+bSZzOtCht+S6LT+Im5zqMgq1Dfqb3FpnVO3MyhSLeGI2nB+OFNTBGByRFKHYRsHc
- VaQBjtfsr4HnC0UR2P/bDIk/oxLnIN9nHJuL6btcf9M6
-Message-ID: <b5735876-ba5e-7d0a-be49-6a705d760a90@slint.fr>
-Date: Mon, 12 Oct 2020 21:09:26 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.12.0
-MIME-Version: 1.0
-In-Reply-To: <20201012132922.mghdcuf5zotung5w@function>
-Content-Language: fr
+Subject: speakup crashes with kernel 5.4.69
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: Covici Computer Systems
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,18 +50,93 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: "Speakup is a screen review system for Linux."
+Reply-To: covici@ccs.covici.com, "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SGVsbG8sCgpMZSAxMi8xMC8yMDIwIMOgIDE1OjI5LCBTYW11ZWwgVGhpYmF1bHQgYSDDqWNyaXTC
-oDoKPiBMaW51eCA1LjkgaXMgb3V0LCBpbiB3aGljaCBzcGVha3VwIGlzIGV4cG9zZWQgbWFpbmxp
-bmUgYW5kIG5vdCBpbgo+IHN0YWdpbmcgYW55IG1vcmUhCgpUaGFua3MgU2FtdWVsLCBrZWVwIHVw
-IHRoZSBnb29kIHdvcmshCkRpZGllcgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpTcGVha3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAu
-b3JnCmh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3Bl
-YWt1cAo=
+Hi.  When I just tried to boot with kernel 5.4.69, it did come up, but
+soon crashed with a lot of kernel: basd schedule from idle thread.  At
+least one of those traces had speakup in the trace and this is what I
+see in my  syslog:
+
+Oct 13 02:41:09 ccs.covici.com kernel: bad: scheduling from the idle
+thread!
+Oct 13 02:41:09 ccs.covici.com kernel: CPU: 5 PID: 0 Comm: swapper/5
+Tainted: P        W  O      5.4.69-gentoo #1
+Oct 13 02:41:09 ccs.covici.com kernel: Hardware name: Supermicro Super
+Server/X11SCA-W, BIOS 1.2 12/05/2019
+Oct 13 02:41:09 ccs.covici.com kernel: Call Trace:
+Oct 13 02:41:09 ccs.covici.com kernel:  <IRQ>
+Oct 13 02:41:09 ccs.covici.com kernel:  dump_stack+0x71/0x98
+Oct 13 02:41:09 ccs.covici.com kernel:  dequeue_task_idle+0x1f/0x28
+Oct 13 02:41:09 ccs.covici.com kernel:  __schedule+0x167/0x5d6
+Oct 13 02:41:09 ccs.covici.com kernel:  ? trace_hardirqs_on+0x2e/0x3a
+Oct 13 02:41:09 ccs.covici.com kernel:  ? usleep_range+0x7f/0x7f
+Oct 13 02:41:09 ccs.covici.com kernel:  schedule+0x8a/0xae
+Oct 13 02:41:09 ccs.covici.com kernel:  schedule_timeout+0xb1/0xea
+Oct 13 02:41:09 ccs.covici.com kernel:  ? del_timer_sync+0x31/0x31
+Oct 13 02:41:09 ccs.covici.com kernel:  do_wait_for_common+0xba/0x12b
+Oct 13 02:41:09 ccs.covici.com kernel:  ? wake_up_q+0x45/0x45
+Oct 13 02:41:09 ccs.covici.com kernel:  wait_for_common+0x37/0x50
+Oct 13 02:41:09 ccs.covici.com kernel:  ttyio_in+0x2a/0x6b
+Oct 13 02:41:09 ccs.covici.com kernel:  spk_ttyio_in_nowait+0xc/0x13
+Oct 13 02:41:09 ccs.covici.com kernel:  spk_get_index_count+0x20/0x93
+Oct 13 02:41:09 ccs.covici.com kernel:  cursor_done+0x1c6/0x4c6
+Oct 13 02:41:09 ccs.covici.com kernel:  ? read_all_doc+0xb1/0xb1
+Oct 13 02:41:09 ccs.covici.com kernel:  call_timer_fn+0x89/0x140
+Oct 13 02:41:09 ccs.covici.com kernel:  run_timer_softirq+0x164/0x1a5
+Oct 13 02:41:09 ccs.covici.com kernel:  ? read_all_doc+0xb1/0xb1
+Oct 13 02:41:09 ccs.covici.com kernel:  ? hrtimer_forward+0x7b/0x87
+Oct 13 02:41:09 ccs.covici.com kernel:  ? timerqueue_add+0x62/0x68
+Oct 13 02:41:09 ccs.covici.com kernel:  ? enqueue_hrtimer+0x95/0x9f
+Oct 13 02:41:09 ccs.covici.com kernel:  __do_softirq+0x181/0x31f
+Oct 13 02:41:09 ccs.covici.com kernel:  irq_exit+0x6a/0x86
+Oct 13 02:41:09 ccs.covici.com kernel:
+smp_apic_timer_interrupt+0x15e/0x183
+Oct 13 02:41:09 ccs.covici.com kernel:  apic_timer_interrupt+0xf/0x20
+Oct 13 02:41:09 ccs.covici.com kernel:  </IRQ>
+Oct 13 02:41:09 ccs.covici.com kernel: RIP:
+0010:cpuidle_enter_state+0xfb/0x1f5
+Oct 13 02:41:09 ccs.covici.com kernel: Code: e8 c7 b3 b8 ff 45 84 ff
+74 17 9c 58 0f ba e0 09 73 08 0f 0b fa e8 41 0d c1 ff 31 ff e8 82 b3
+bc ff e8 54 0e c1 ff fb 45 85 e4 <0f> 88 df 00 00 00 49 63 cc 4c 89 f0
+bf e8 03 00 00 48 6b f1 60 4c
+Oct 13 02:41:09 ccs.covici.com kernel: RSP: 0018:ffffc90000103e98
+EFLAGS: 00000202 ORIG_RAX: ffffffffffffff13
+Oct 13 02:41:09 ccs.covici.com kernel: RAX: 0000000000000000 RBX:
+ffffe8ffffd52400 RCX: 000000000000001f
+Oct 13 02:41:09 ccs.covici.com kernel: RDX: 0000000080000001 RSI:
+0000000000000000 RDI: ffffffff814f508c
+Oct 13 02:41:09 ccs.covici.com kernel: RBP: ffffffff820b6dc0 R08:
+0000085f9a763e7f R09: 0000000000000009
+Oct 13 02:41:09 ccs.covici.com kernel: R10: ffffffff8214281c R11:
+0000000000000002 R12: 0000000000000007
+Oct 13 02:41:09 ccs.covici.com kernel: R13: 0000085f9a66ff9c R14:
+0000085f9a763e7f R15: 0000000000000000
+Oct 13 02:41:09 ccs.covici.com kernel:  ?
+cpuidle_enter_state+0xf7/0x1f5
+Oct 13 02:41:09 ccs.covici.com kernel:  ?
+cpuidle_enter_state+0xf7/0x1f5
+Oct 13 02:41:09 ccs.covici.com kernel:  cpuidle_enter+0x30/0x3c
+Oct 13 02:41:09 ccs.covici.com kernel:  do_idle+0x188/0x1f2
+Oct 13 02:41:09 ccs.covici.com kernel:  cpu_startup_entry+0x1d/0x1f
+Oct 13 02:41:09 ccs.covici.com kernel:  start_secondary+0x17b/0x198
+Oct 13 02:41:09 ccs.covici.com kernel:  secondary_startup_64+0xa4/0xb0
+
+Any help on  this would be appreciated.
+
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
+
+         John Covici wb2una
+         covici@ccs.covici.com
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
