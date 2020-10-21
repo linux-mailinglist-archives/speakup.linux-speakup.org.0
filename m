@@ -2,62 +2,45 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 30D662961AB
-	for <lists+speakup@lfdr.de>; Thu, 22 Oct 2020 17:27:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C18AF2961AA
+	for <lists+speakup@lfdr.de>; Thu, 22 Oct 2020 17:27:35 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 49426380EAA; Thu, 22 Oct 2020 11:27:37 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=r8k4PT0k;
-	dkim-atps=neutral
+	id 1C411380F16; Thu, 22 Oct 2020 11:27:35 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 77ACE380F4A;
+	by befuddled.reisers.ca (Postfix) with ESMTP id 94927380F51;
 	Thu, 22 Oct 2020 11:27:28 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id EC702380C18; Sun, 18 Oct 2020 22:41:03 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
- by befuddled.reisers.ca (Postfix) with ESMTPS id AE95E380982
- for <speakup@linux-speakup.org>; Sun, 18 Oct 2020 22:41:03 -0400 (EDT)
-Received: from vbox.gregn.net (unknown
- [IPv6:2607:fb90:a697:e510:a00:27ff:fe01:8e92])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by vserver.gregn.net (Postfix) with ESMTPSA id A66981CA
- for <speakup@linux-speakup.org>; Sun, 18 Oct 2020 19:41:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
- t=1603075264; bh=1JGSnVwQSQBmC2I5Mx7wm9kTjYfBE7XhGXDVmjuLAic=;
- h=Date:From:To:Subject:References:In-Reply-To:From;
- b=r8k4PT0kMIuY4icfFvLYR+mtMmcWWaGtjdoX2lwY4USIoI6oHJwuk8jJYhTwMjubF
- MBDotcH889KCuUIlVYWiBP2K1WFvuz8Y9btcFL8FsYYiX3V0A/4EVBrskDSt7fELv0
- BZztr5q7i9bveCFn4NfXBfVSnEsetMGILtjVbAgeR8zG1T/QKLI65yjURbqxJuOH+U
- rS8FoJp3Q5+8gITcwxhkWCJ6aWimTfwIMn3GhYnuHgfnA9OuzMnjiRogIhZqjgIivW
- EWior/1nJHMqmriuqjFB5M7vd8s+9U5LEFIWCoj7uCVdIcoh0IzgGvuos9+TLKJbhz
- Xb33/N+9g6y9A==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
- (envelope-from <greg@gregn.net>) id 1kUL68-0001FO-Gw
- for speakup@linux-speakup.org; Sun, 18 Oct 2020 19:40:32 -0700
-Date: Sun, 18 Oct 2020 19:40:32 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Flushing issue (was: So, where'd the volume controls get to?)
-Message-ID: <20201019024032.GA4659@gregn.net>
-References: <alpine.DEB.2.23.453.2010091111480.51713@befuddled.reisers.ca>
- <20201010151312.fbz27eyoua2574tw@function>
- <alpine.DEB.2.23.453.2010101446340.31356@befuddled.reisers.ca>
- <20201010194612.ut6md7liw4e47ky7@function>
- <alpine.DEB.2.23.453.2010101905240.36490@befuddled.reisers.ca>
- <20201010235355.uqqvyyjqxupfw5qw@function>
- <20201011035532.GC4584@gregn.net>
- <20201011143516.dq6ldzdt4j6aqvus@function>
- <20201011151640.2zj4itd6etcbthab@function>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20201011151640.2zj4itd6etcbthab@function>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.4 at vserver
-X-Virus-Status: Clean
+ id 7BA09380BD6; Wed, 21 Oct 2020 01:40:18 -0400 (EDT)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 2BA3D380995
+ for <speakup@linux-speakup.org>; Wed, 21 Oct 2020 01:40:18 -0400 (EDT)
+Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
+ (authenticated bits=0)
+ by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 09L5eZkZ031820
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+ for <speakup@linux-speakup.org>; Wed, 21 Oct 2020 01:40:37 -0400
+Received: from ccs.covici.com (localhost [127.0.0.1])
+ by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 09L5e1EF956663
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+ Wed, 21 Oct 2020 01:40:01 -0400
+Received: (from covici@localhost)
+ by ccs.covici.com (8.15.2/8.15.2/Submit) id 09L5e1g1956662;
+ Wed, 21 Oct 2020 01:40:01 -0400
+Date: Wed, 21 Oct 2020 01:40:00 -0400
+Message-ID: <m33628i1cf.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
+To: covici@ccs.covici.com, "Speakup is a screen review system for Linux."
+ <speakup@linux-speakup.org>
+Subject: Re: speakup crashes with kernel 5.4.69
+In-Reply-To: <m3o8l6sge6.wl-covici@ccs.covici.com>
+References: <m3o8l6sge6.wl-covici@ccs.covici.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: Covici Computer Systems
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,7 +53,7 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: "Speakup is a screen review system for Linux."
+Reply-To: covici@ccs.covici.com, "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -78,29 +61,102 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-On Sun, Oct 11, 2020 at 05:16:40PM +0200, Samuel Thibault wrote:
-> It seems the buffering is happening inside alsa's dmix then. Could you
-> try the attached patch on pcaudiolib? (which is the one that configures
-> the buffering)
+bump, any thoughts?  Seems read-all-doc is involved.
 
-I just got around to trying this patch, and it seems to be working for
-me under ALSA. If necessary, I can install debian configured for
-pulseaudio in a virtual machine, and try it under pulseaudio as
-well. I don't want to reconfigure my sound setup on my production
-machines for pulseaudio. Thanks Samuel for your fixes.
-
-Greg
-
+On Tue, 13 Oct 2020 04:02:09 -0400,
+John Covici wrote:
+> 
+> Hi.  When I just tried to boot with kernel 5.4.69, it did come up, but
+> soon crashed with a lot of kernel: basd schedule from idle thread.  At
+> least one of those traces had speakup in the trace and this is what I
+> see in my  syslog:
+> 
+> Oct 13 02:41:09 ccs.covici.com kernel: bad: scheduling from the idle
+> thread!
+> Oct 13 02:41:09 ccs.covici.com kernel: CPU: 5 PID: 0 Comm: swapper/5
+> Tainted: P        W  O      5.4.69-gentoo #1
+> Oct 13 02:41:09 ccs.covici.com kernel: Hardware name: Supermicro Super
+> Server/X11SCA-W, BIOS 1.2 12/05/2019
+> Oct 13 02:41:09 ccs.covici.com kernel: Call Trace:
+> Oct 13 02:41:09 ccs.covici.com kernel:  <IRQ>
+> Oct 13 02:41:09 ccs.covici.com kernel:  dump_stack+0x71/0x98
+> Oct 13 02:41:09 ccs.covici.com kernel:  dequeue_task_idle+0x1f/0x28
+> Oct 13 02:41:09 ccs.covici.com kernel:  __schedule+0x167/0x5d6
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? trace_hardirqs_on+0x2e/0x3a
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? usleep_range+0x7f/0x7f
+> Oct 13 02:41:09 ccs.covici.com kernel:  schedule+0x8a/0xae
+> Oct 13 02:41:09 ccs.covici.com kernel:  schedule_timeout+0xb1/0xea
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? del_timer_sync+0x31/0x31
+> Oct 13 02:41:09 ccs.covici.com kernel:  do_wait_for_common+0xba/0x12b
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? wake_up_q+0x45/0x45
+> Oct 13 02:41:09 ccs.covici.com kernel:  wait_for_common+0x37/0x50
+> Oct 13 02:41:09 ccs.covici.com kernel:  ttyio_in+0x2a/0x6b
+> Oct 13 02:41:09 ccs.covici.com kernel:  spk_ttyio_in_nowait+0xc/0x13
+> Oct 13 02:41:09 ccs.covici.com kernel:  spk_get_index_count+0x20/0x93
+> Oct 13 02:41:09 ccs.covici.com kernel:  cursor_done+0x1c6/0x4c6
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? read_all_doc+0xb1/0xb1
+> Oct 13 02:41:09 ccs.covici.com kernel:  call_timer_fn+0x89/0x140
+> Oct 13 02:41:09 ccs.covici.com kernel:  run_timer_softirq+0x164/0x1a5
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? read_all_doc+0xb1/0xb1
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? hrtimer_forward+0x7b/0x87
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? timerqueue_add+0x62/0x68
+> Oct 13 02:41:09 ccs.covici.com kernel:  ? enqueue_hrtimer+0x95/0x9f
+> Oct 13 02:41:09 ccs.covici.com kernel:  __do_softirq+0x181/0x31f
+> Oct 13 02:41:09 ccs.covici.com kernel:  irq_exit+0x6a/0x86
+> Oct 13 02:41:09 ccs.covici.com kernel:
+> smp_apic_timer_interrupt+0x15e/0x183
+> Oct 13 02:41:09 ccs.covici.com kernel:  apic_timer_interrupt+0xf/0x20
+> Oct 13 02:41:09 ccs.covici.com kernel:  </IRQ>
+> Oct 13 02:41:09 ccs.covici.com kernel: RIP:
+> 0010:cpuidle_enter_state+0xfb/0x1f5
+> Oct 13 02:41:09 ccs.covici.com kernel: Code: e8 c7 b3 b8 ff 45 84 ff
+> 74 17 9c 58 0f ba e0 09 73 08 0f 0b fa e8 41 0d c1 ff 31 ff e8 82 b3
+> bc ff e8 54 0e c1 ff fb 45 85 e4 <0f> 88 df 00 00 00 49 63 cc 4c 89 f0
+> bf e8 03 00 00 48 6b f1 60 4c
+> Oct 13 02:41:09 ccs.covici.com kernel: RSP: 0018:ffffc90000103e98
+> EFLAGS: 00000202 ORIG_RAX: ffffffffffffff13
+> Oct 13 02:41:09 ccs.covici.com kernel: RAX: 0000000000000000 RBX:
+> ffffe8ffffd52400 RCX: 000000000000001f
+> Oct 13 02:41:09 ccs.covici.com kernel: RDX: 0000000080000001 RSI:
+> 0000000000000000 RDI: ffffffff814f508c
+> Oct 13 02:41:09 ccs.covici.com kernel: RBP: ffffffff820b6dc0 R08:
+> 0000085f9a763e7f R09: 0000000000000009
+> Oct 13 02:41:09 ccs.covici.com kernel: R10: ffffffff8214281c R11:
+> 0000000000000002 R12: 0000000000000007
+> Oct 13 02:41:09 ccs.covici.com kernel: R13: 0000085f9a66ff9c R14:
+> 0000085f9a763e7f R15: 0000000000000000
+> Oct 13 02:41:09 ccs.covici.com kernel:  ?
+> cpuidle_enter_state+0xf7/0x1f5
+> Oct 13 02:41:09 ccs.covici.com kernel:  ?
+> cpuidle_enter_state+0xf7/0x1f5
+> Oct 13 02:41:09 ccs.covici.com kernel:  cpuidle_enter+0x30/0x3c
+> Oct 13 02:41:09 ccs.covici.com kernel:  do_idle+0x188/0x1f2
+> Oct 13 02:41:09 ccs.covici.com kernel:  cpu_startup_entry+0x1d/0x1f
+> Oct 13 02:41:09 ccs.covici.com kernel:  start_secondary+0x17b/0x198
+> Oct 13 02:41:09 ccs.covici.com kernel:  secondary_startup_64+0xa4/0xb0
+> 
+> Any help on  this would be appreciated.
+> 
+> -- 
+> Your life is like a penny.  You're going to lose it.  The question is:
+> How do
+> you spend it?
+> 
+>          John Covici wb2una
+>          covici@ccs.covici.com
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+> 
 
 -- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+         John Covici wb2una
+         covici@ccs.covici.com
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
