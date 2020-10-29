@@ -2,53 +2,53 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 7DAF2299A52
-	for <lists+speakup@lfdr.de>; Tue, 27 Oct 2020 00:19:50 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 5166B29E32C
+	for <lists+speakup@lfdr.de>; Thu, 29 Oct 2020 04:04:22 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A438D380EE1; Mon, 26 Oct 2020 19:19:47 -0400 (EDT)
+	id 30BA6380EED; Wed, 28 Oct 2020 23:04:19 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=ckY2OEEm;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=BSCBOV5c;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=UeLELt6p;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=qH81DSi/;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C9F19380EBC;
-	Mon, 26 Oct 2020 19:19:46 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0D8F8380EC2;
+	Wed, 28 Oct 2020 23:04:18 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 6B0C3380BEA; Mon, 26 Oct 2020 19:19:46 -0400 (EDT)
-Received: from out3-smtp.messagingengine.com (out3-smtp.messagingengine.com
- [66.111.4.27])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 02D7F380BB4
- for <speakup@linux-speakup.org>; Mon, 26 Oct 2020 19:19:46 -0400 (EDT)
+ id BA537380E94; Wed, 28 Oct 2020 23:04:17 -0400 (EDT)
+Received: from wout3-smtp.messagingengine.com (wout3-smtp.messagingengine.com
+ [64.147.123.19])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 1647B380BEB
+ for <speakup@linux-speakup.org>; Wed, 28 Oct 2020 23:04:17 -0400 (EDT)
 Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
- by mailout.nyi.internal (Postfix) with ESMTP id CEDCC5C014B
- for <speakup@linux-speakup.org>; Mon, 26 Oct 2020 19:19:42 -0400 (EDT)
+ by mailout.west.internal (Postfix) with ESMTP id A3AA2DD5
+ for <speakup@linux-speakup.org>; Wed, 28 Oct 2020 23:04:13 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute2.internal (MEProxy); Mon, 26 Oct 2020 19:19:42 -0400
+ by compute2.internal (MEProxy); Wed, 28 Oct 2020 23:04:13 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  hubert-humphrey.com; h=date:from:to:subject:message-id
- :mime-version:content-type; s=fm2; bh=kkTmh68H+eQWxOCtObEdVif5h3
- TSWMu5cFVQiV3m7DA=; b=ckY2OEEmIdql+Vt8TUkDAWHk+WWi6n+K4ULqQwPqik
- H2fVtErZKpYkD9Eqhfx+5IY4etQg+bEVpHdD+pkcPFVSaV4SYsQp5Iz6H5hzWVGX
- YYJkcT+W1ChVVxhzrj1GVoK299Eo9UtLwwVnmg9FD6pvpMDIHoFAmjmLDTtCvtvS
- lghPAEWv6GOnxvXpiRCz+Y7aQLdpon0pNvoyhXhnfmBYPXONqqEqw6NQwMYN3RHB
- kx4XoseXBb8UD4iLhbpO2HjM74FPnmb649QBLw1yQiL1iClWRQWlcaaoCy+ZCGuJ
- TYp+tTD68msTMDAfvaYHYSbDuE/bnsI2vzW+fIXXNrFQ==
+ :mime-version:content-type; s=fm2; bh=Oobjw4JZw5SahQI01JCAvO4bDd
+ QlfmDzwcTX40jDM3Y=; b=UeLELt6ptTvFGo/3Qw1hMXdqILOV6SsYgJKx0XSkoZ
+ VaXKL6XdODq8ABp7Zk8eWa+Sjo8az2m2aA3FIo7JWHbEHEp0oSiyfnKEidtAN0L7
+ stooRflbt0bYymGRTtkBgjICjMlZUi55btl8RquDjnaAl7bPtTX8D9czGeo1zVQW
+ E9LRlD1AIyoGf/8n8OTez/4NGMCSC+aYBgTJ5K25E9/3OPvJT7NRPC5cTmVBdewH
+ ncFnz7HpED6tBe12yCQMlFFu+XmN3XQQX9cEChNLc4DfyR65/2AMehb7PPLgWCGH
+ 2hYRo2ovPotNV534SN6WQ9+NrFTMQeYqAffeSq55Z6dw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=content-type:date:from:message-id
  :mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
- :x-me-sender:x-sasl-enc; s=fm1; bh=kkTmh68H+eQWxOCtObEdVif5h3TSW
- Mu5cFVQiV3m7DA=; b=BSCBOV5cXATSg1/w12yU9++7Clq5NdN6cwcaoo5yFRyE9
- k/KRrrEHVq2hn12Hsmg/up1UkrSOKWEg4c7WqLp0ZAevVEH4vFCqfnM1RtqnulPT
- ULBmHoOfSdX1F0z9gfaSGerlU+WYRAKE1Mpst8uN316E0uLeZbd3QMFSiGBqMx+p
- iCVKd1tBvcQtWyUdwHnbi3l9/vSohouMI8CwOIipRTIhNwrFwENEHu81gnJ3xZUv
- RXjUUIVtmYeoITghU5N/7w+EKlVHnsCR8xBji4y7Wd/rB0Gyl7t0uyctm6ai8vsq
- EYZcPrnPW1vmivAWDT1qD+dEeEwknemNpSsvb9ATQ==
-X-ME-Sender: <xms:jlmXX2vbKqtlkJncynsQkDUHKqY7AQmTz84dqYsWn9tJma3VfSekrw>
- <xme:jlmXX7eq-7ql6l4Rd85nhzRY2GgR1dUa7gCQK_qWX3AeRpG_SDIrk1swznJQgdPTf
- D_kQox1_OYSadbrS_8>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedujedrkeekgddtiecutefuodetggdotefrodftvf
+ :x-me-sender:x-sasl-enc; s=fm1; bh=Oobjw4JZw5SahQI01JCAvO4bDdQlf
+ mDzwcTX40jDM3Y=; b=qH81DSi/kPShxNJ60m7ThUQqb5SyStffF+JqiGuXaw8kI
+ kvOgUWXhEq2b1PLf0OuzhX28aMFG3BItipoo0BwfOn4udd4ZIfDzkf1XpARRANFt
+ 7IvksWnh2uKMg8vZc5F8FSxgR0URfrEvPsUT1wXl7MudtFcuuW/AKC3Ifk9eMfOn
+ 5sZVt6ILiLtE8HImadGoXYWyMp5Vb6K/muOsTvEx+GqID5Op1+YEHd7PnbtV+/Mw
+ ews04ugW1yJDzNhPGIsNV3r6mk6s+y8pj1Td4DBx0VfGZXGRfeWgczNrjuEJTu46
+ Vkj8hmFEwa7weC5OyC4zRNXVa6HIxWyR54Vz1JaaQ==
+X-ME-Sender: <xms:LTGaX1DC0nbitAtYPmGbSvkB91O4OSdWiXedNU7LaDTZmIzxLUR33A>
+ <xme:LTGaXzi4BrzUS_ZO4GKsh5sT71gh5T8Tmlkn-dTzJ4-x0nGZrix2YWuBgrquRtoeE
+ miEIjC8n1-uyr2fidQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedujedrledvgdekudcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfggtgesthdtredttddtvd
  enucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhm
@@ -56,18 +56,18 @@ X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedujedrkeekgddtiecutefuodetggdote
  ettdekgffgkedvueejteektdehfefhhfdvteeknecukfhppedutdegrddujedvrdefrdei
  feenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpegthh
  himhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
-X-ME-Proxy: <xmx:jlmXXxxynMJkr8O8QpgpX6f6yd7SWNwl0vEBg_RsPP4Lpw929GVntA>
- <xmx:jlmXXxMq1Sl5KOYmHeYVVhVfrHktHOoamPeIL33oBUvNx3W8Q6hfSw>
- <xmx:jlmXX2_AV9MDztdN0HlAA-_S3oSt7MybVY-_WqGNC1pgPfAj6bMLWQ>
- <xmx:jlmXX5IolWbxB56T1VRtoah4UJ4awKsXBbaPrCXAxyNwnL7-8nO_Bw>
+X-ME-Proxy: <xmx:LTGaXwkYX3MJoMxmma8G7JKPLOGMCeNVeeYRWLo3-odhA6C0Aqk3Tw>
+ <xmx:LTGaX_y9RMqSXeRjuHujFcdHJf5MMWqOZb11Y3NCU5z2xjuBo_rlSQ>
+ <xmx:LTGaX6QQiconYRCEVFYJ_p8ZuzG9Cjke_qu_2LdqcYV9q9gB3qIXTA>
+ <xmx:LTGaXxcnu4kLydVRQEm5MsmMqHVcPJ-9gwu5zpG9tTDWtVRCIKYGWQ>
 Received: from chime.lan (cpe-104-172-3-63.socal.res.rr.com [104.172.3.63])
- by mail.messagingengine.com (Postfix) with ESMTPA id 2B16B3064680
- for <speakup@linux-speakup.org>; Mon, 26 Oct 2020 19:19:42 -0400 (EDT)
-Date: Mon, 26 Oct 2020 16:19:40 -0700 (PDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id AE0A33064683
+ for <speakup@linux-speakup.org>; Wed, 28 Oct 2020 23:04:12 -0400 (EDT)
+Date: Wed, 28 Oct 2020 20:04:11 -0700 (PDT)
 From: Chime Hart <chime@hubert-humphrey.com>
 To: speakup@linux-speakup.org
-Subject: More About Cut-and-Paste
-Message-ID: <dfbeb060-3e8c-b52a-c686-f56263d358@hubert-humphrey.com>
+Subject: 11 Lines of Kernel Code?
+Message-ID: <206c843-1b79-9fa-f56e-fcb1b3fc80f3@hubert-humphrey.com>
 MIME-Version: 1.0
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
@@ -89,16 +89,29 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-OK, first, back on Saturday I tried sending a 326kb zip file of 
-/var/log/messages and kern.log  to this list, but it was awaiting an owner 
-approval because of its size.  I also sent the file to Samuel-and-would be 
-happy to send to any 1 else who would want to examin it.
-This issue involes my laptop running Voxin, where if I paste nothing gets 
-pasted-and-it hangs a console with errors. Now, running same kernel but on 
-a desktop machine, I pasted with no trouble, but on that machine I am 
-strugling with a 4second delay after typing with a DecTalk, so for 
-convenience until an idea comes along to fix that, I will be on a laptop. 
-Thanks so much in advance
+Hi All Last Friday evening I traded messages on this list with 
+Samuel-and-others about my console hang or lockup. Reviewing again, on 
+this laptop running a Debian Sid 5.9.0.1 with Voxin. Multiple times when 
+attempting to paste in an article, nothing was inserted, but I got tons of 
+errors, which you will see in this small extract. Cut-and-paste still 
+works on my desktop machine, same kernel, but with a DecTalk, still with a 
+4second delay. Here is a sampling of kernel.log, where we see each time 
+speakup is mentioned, also these errors beginning with 3thousand are after 
+pasting.
+Oct 19 11:38:45 dance kernel: [   14.295312] input: Speakup as /devices/virtual/input/input14
+Oct 19 11:38:45 dance kernel: [   14.295548] speakup 3.1.6: initialized
+Oct 20 17:24:44 dance kernel: [   14.350316] input: Speakup as /devices/virtual/input/input14
+Oct 20 17:24:44 dance kernel: [   14.350557] speakup 3.1.6: initialized
+Oct 22 11:09:32 dance kernel: [  137.964575] input: Speakup as /devices/virtual/input/input20
+Oct 22 11:09:32 dance kernel: [  137.971851] speakup 3.1.6: initialized
+Oct 23 17:54:34 dance kernel: [   14.963060] input: Speakup as /devices/virtual/input/input14
+Oct 23 17:54:34 dance kernel: [   14.963303] speakup 3.1.6: initialized
+Oct 23 18:44:28 dance kernel: [ 3021.908980] INFO: task kworker/u8:1:1674 blocked for more than 120 seconds.
+Oct 23 18:44:28 dance kernel: [ 3021.909048]       Not tainted 5.9.0-1-amd64 #1 Debian 5.9.1-1
+Oct 23 18:44:28 dance kernel: [ 3021.909090] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+Back again live. Other than the flat review, I think cut-and-paste are the 
+Speakup items I use the most. Thanks in advance for any analysis. After my 
+console got hung, I booted, thinking that would have fixed it.
 Chime
 _______________________________________________
 Speakup mailing list
