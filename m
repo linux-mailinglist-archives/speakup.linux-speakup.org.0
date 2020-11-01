@@ -2,63 +2,71 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 633282A21FD
-	for <lists+speakup@lfdr.de>; Sun,  1 Nov 2020 23:05:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 2FE522A223D
+	for <lists+speakup@lfdr.de>; Sun,  1 Nov 2020 23:55:24 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 60646380F51; Sun,  1 Nov 2020 17:05:57 -0500 (EST)
+	id 2BAEC380F36; Sun,  1 Nov 2020 17:55:22 -0500 (EST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=tCGVubm4;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=FhgKnTLr;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 01252380F26;
-	Sun,  1 Nov 2020 17:05:55 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 4071B380F39;
+	Sun,  1 Nov 2020 17:55:21 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id E919E380F13; Sun,  1 Nov 2020 17:05:53 -0500 (EST)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
- by befuddled.reisers.ca (Postfix) with ESMTP id C79A2380F0E
- for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 17:05:53 -0500 (EST)
-Received: from [192.168.0.11] (sfa89-1-78-208-157-71.fbx.proxad.net
- [78.208.157.71])
- by darkstar.slint.fr (Postfix) with ESMTPSA id 597D2BE27E
- for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 22:05:02 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
- t=1604264702; bh=9ykYC3gtAsOrj/i8Y07bFkAYLOod2UPsjPP/rOAHxvE=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=tCGVubm428LwwHqdSkxcD5Uxo9HrDYnUD3YhN3Rag5FZvxXKa11/ntjZ2MvTGJKrS
- ei92XM+OK1Ac0KeohOOE9aGUbIZ9s9LZepPtIxi0MIt5STrPt7+ZS8CZjReDReMQNR
- 7o6/1zpcF/iNaKYsj8tim7mcUBRgydv72QA59/OmcWM16CoBKMz5P1YNMah8QxzrQf
- XRltoech/nzXVO+wiK1U7NdMHB4tjAEywJAI/CQBVkCUkHrOejylWgRcl3PmlaHkpD
- KH8KQ1BoQqr/UBGuQJ6W5OvviweeZdt4gTe+/JkozQoOIozUny1lzT9LGetEU72kpf
- 7EvYgFTKu2GRQ==
+ id C0AB4380F14; Sun,  1 Nov 2020 17:55:19 -0500 (EST)
+Received: from mail-ej1-x629.google.com (mail-ej1-x629.google.com
+ [IPv6:2a00:1450:4864:20::629])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 9CF94380F11
+ for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 17:55:19 -0500 (EST)
+Received: by mail-ej1-x629.google.com with SMTP id w13so2905730eju.13
+ for <speakup@linux-speakup.org>; Sun, 01 Nov 2020 14:55:19 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:references:cc:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=AeHdwj+bvk+KYHNT222cZ89hzIoj1I1qvdUjEimA3Mc=;
+ b=FhgKnTLr4HGCj5HVq32WDFp0CVIGddXyD7PwzcYeXSILB8jY2ld7wc/2bXUhRgAwlp
+ Mr+3EG3/0xtaV7sHFsrTcIO9CoB9R9U8pkvMmN+C2A9Lb0aYnrKBOKz/xwAhNzsUGmdu
+ O9BQzRDjLEZtKP5tVcHlAYOOPJNxxWXL43sjCThJlhZNhcNVyFHHa3dgDe++wloWVgOE
+ zuYvrWmpT01o43DXHrb/3hCN0r6mOQFyR8fsO80aa54bKKrCm2wFYprNK4fWqt73ndMI
+ 6o/lq4Ec/9Wf8M94K5zvSyzZoAMpPzFVfOFmGpeEtf6yeUhuzb/WC+ISsHt8JhbgHaPW
+ mqwg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:references:cc:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=AeHdwj+bvk+KYHNT222cZ89hzIoj1I1qvdUjEimA3Mc=;
+ b=gyMcqbOmRtyIUfl7MKuv33vnRhkH8Dpr2eNMEmxQMfhdS+6OfVY0JNkO4nZMwjE9D0
+ 2BFCPOUKLFrvnor4rXkGjQoRdjVMcIJAqwWd2b5uh95rUsNZ+Xo350xrQN/xTzYYALp+
+ edEoTYvdPD1wH2S/+aJ3T32khy8Ivxper04p1MLYjYHewUYF4ZfFY+FVKq+BSLzZO0L5
+ TyuLFJ+uuMYa7zK5pp/3jr99Xyx0/gY2jbUuLP4ToVU3xFhzvxEG2d7mU9UozFaNmzwi
+ dzY78FDWVsijWuaPjq8ar1gw8suD21H00skvuvkQoNWy419gkeFx04PpAwvW2TJoLNUv
+ dFQQ==
+X-Gm-Message-State: AOAM5305TmcDRXC7PJW6Zjig1f4Pf+uJrB9X0Sj9TQPW+42JwAYQJm2Z
+ pmyQa0FaYkXzZDuk2wgOE2WDPNWEKsoPuK2c
+X-Google-Smtp-Source: ABdhPJyzbf+3FMdKYRn17b0GFA30VmjnYPwd84YeqKMpBVJzGg84vl07tjWNnKnYsxrBoS7FezXlbw==
+X-Received: by 2002:a17:906:4d93:: with SMTP id
+ s19mr8402393eju.271.1604271316539; 
+ Sun, 01 Nov 2020 14:55:16 -0800 (PST)
+Received: from [192.168.1.73] ([91.77.167.245])
+ by smtp.gmail.com with ESMTPSA id n3sm9247204edq.24.2020.11.01.14.55.15
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Sun, 01 Nov 2020 14:55:15 -0800 (PST)
 Subject: Re: speakup crashes with kernel 5.4.69
-To: speakup@linux-speakup.org
+To: Didier Spaier <didier@slint.fr>
 References: <m3o8l6sge6.wl-covici@ccs.covici.com>
  <20201101205909.zz2ihrr6zmucrfbq@function>
  <5123cc09-8314-7bb4-82dd-5511b53b3703@slint.fr>
- <20201101214000.u6al47enhggqputs@function>
-From: Didier Spaier <didier@slint.fr>
-Autocrypt: addr=didier@slint.fr; prefer-encrypt=mutual; keydata=
- mQENBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
- dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
- TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
- jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
- 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
- AAG0H0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj6JAT8EEwEKACkCGwMHCwkIBwMC
- AQYVCAIJCgsEFgIDAQIeAQIXgAUCXcBjnwUJGlHqEgAKCRDVAgLvYMA+6v/ICAC8Oa2zXOne
- zyuFrPtNsciJWYwWamW+g5TNaY9NPnyMRNKDi7IcP6PoDwHRI8YBgo+Z9w0qFKQ/WVSI/O6s
- gm7LnOX7OEHjnub4sjrr5PHcsPRjm6iJFIgGgD+waz0K5fxcc65ti3lgHLH1tkhORyiT5EFp
- 0VllWDQfPHw5avm9oopJv1FuPfZhSlFT6QhjD2ARmOrxfFBjELQZjDidckOYf/8Stoh+aK5F
- 5q69DpF+bSZzOtCht+S6LT+Im5zqMgq1Dfqb3FpnVO3MyhSLeGI2nB+OFNTBGByRFKHYRsHc
- VaQBjtfsr4HnC0UR2P/bDIk/oxLnIN9nHJuL6btcf9M6
-Message-ID: <e2b1ecc4-8b03-e9a5-dc54-6b8b17e72ce6@slint.fr>
-Date: Sun, 1 Nov 2020 23:05:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.12.0
+From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
+Message-ID: <fbeb3bb7-d926-840a-fbca-8f5d3349eff9@gmail.com>
+Date: Mon, 2 Nov 2020 01:55:14 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
+ Thunderbird/78.4.0
 MIME-Version: 1.0
-In-Reply-To: <20201101214000.u6al47enhggqputs@function>
-Content-Language: fr
+In-Reply-To: <5123cc09-8314-7bb4-82dd-5511b53b3703@slint.fr>
+Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,18 +81,26 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-TGUgMDEvMTEvMjAyMCDDoCAyMjo0MCwgU2FtdWVsIFRoaWJhdWx0IGEgw6ljcml0wqA6Cj4gSXQn
-cyBzcGVjaWZpYyB0byB0aGUgbHRsayBhbmQgc3Brb3V0IHN5bnRocy4KClRoYW5rcyBmb3IgdGhl
-IGZhc3QgYW5zd2VyLiBJIHdpbGwgdXBsb2FkIDUuNC43MiBhbmQgbGV0IHBlb3BsZSBrbm93Cmlm
-IHRoZXkgZW5jb3VudGVyIHRoZSBpc3N1ZSB0aGF0IGEgcGF0Y2ggaXMgYmVpbmcgdGVzdGVkIChJ
-IGhhdmUKY29uc2lkZXJlZCB1cGdyYWRpbmcgdG8gNS45LnggYnV0IHdpbGwgd2FpdCBmb3IgNS4x
-MCBhcyBpdCB3aWxsIGJlIExUUykuCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fClNwZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5v
-cmcKaHR0cDovL2xpbnV4LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVh
-a3VwCg==
+MDIuMTEuMjAyMCAwOjI4LCBEaWRpZXIgU3BhaWVyINC/0LjRiNC10YI6Cgo+IEhpLAo+IExlIDAx
+LzExLzIwMjAgw6AgMjE6NTksIFNhbXVlbCBUaGliYXVsdCBhIMOpY3JpdMKgOgo+PiBKb2huIENv
+dmljaSwgbGUgbWFyLiAxMyBvY3QuIDIwMjAgMDQ6MDI6MDkgLTA0MDAsIGEgZWNyaXQ6Cj4+PiBI
+aS4gIFdoZW4gSSBqdXN0IHRyaWVkIHRvIGJvb3Qgd2l0aCBrZXJuZWwgNS40LjY5LCBpdCBkaWQg
+Y29tZSB1cCwgYnV0Cj4+PiBzb29uIGNyYXNoZWQgd2l0aCBhIGxvdCBvZiBrZXJuZWw6IGJhc2Qg
+c2NoZWR1bGUgZnJvbSBpZGxlIHRocmVhZC4KPj4gT2ssIEkgc2VlIHRoZSBjb25jZXJuLiBXb3Vs
+ZCB5b3UgYmUgYWJsZSB0byB0cnkgdGhlIGF0dGFjaGVkIHBhdGNoPwo+Pgo+PiBTYW11ZWwKPiBE
+b2VzIHRoaXMgaXNzdWUgYWZmZWN0L2NhbiB0aGlzIHBhdGNoIGJlIGFwcGxpZWQgYWdhaW5zdC8g
+NS40LjYyLzUuNC43Mj8KPgo+IEkgYXNrIGFzIFNsaW50IGN1cnJlbnRseSBpbmNsdWRlcyA1LjQu
+NjIgYnV0IEkgd2FzIGFib3V0IHRvIHVwZ3JhZGUgdG8gNS41LjcyCj4gKGFuZCBubyBTbGludCB1
+c2VyIGNvbXBsYWluZWQgc28gZmFyLiBNYXliZSBvbmx5IHNvbWUgdXNlcyBjYXNlcyBvcgo+IGhh
+cmQgc3ludGhzIGFyZSBpbiBjb25jZXJuPykKPgo+IERpZGllcgoKbyBpIHRob3VnaHQgc2xpbnQg
+aGFzIG9ubHkgbHRzIGtlcm5lbHMuIG1heWJlIGEgdHlwbz8KLS0gClNpbmNlcmVseSwgQWxleGFu
+ZGVyLgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KU3Bl
+YWt1cCBtYWlsaW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgt
+c3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
