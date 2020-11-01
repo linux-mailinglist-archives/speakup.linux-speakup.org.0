@@ -1,63 +1,49 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B13032A21EB
-	for <lists+speakup@lfdr.de>; Sun,  1 Nov 2020 22:36:22 +0100 (CET)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id BD8492A21EF
+	for <lists+speakup@lfdr.de>; Sun,  1 Nov 2020 22:40:07 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 49FF5380F48; Sun,  1 Nov 2020 16:36:22 -0500 (EST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=Z6IWDBe0;
-	dkim-atps=neutral
+	id 5F121380F28; Sun,  1 Nov 2020 16:40:07 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D1345380F23;
-	Sun,  1 Nov 2020 16:36:20 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 2F159380F25;
+	Sun,  1 Nov 2020 16:40:05 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id CB30F380F12; Sun,  1 Nov 2020 16:36:19 -0500 (EST)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
- by befuddled.reisers.ca (Postfix) with ESMTP id A9EF4380EEC
- for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 16:36:19 -0500 (EST)
-Received: from [192.168.0.11] (sfa89-1-78-208-157-71.fbx.proxad.net
- [78.208.157.71])
- by darkstar.slint.fr (Postfix) with ESMTPSA id 3BF89BE27E
- for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 21:35:28 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
- t=1604262928; bh=G99jTC7r6XnQrEpShvioaXz5tOFaaz1jFf4cvfn0wMs=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=Z6IWDBe03d8ExTbBwJo6CD2gpUplJjUxMecePZwwa2EvXI2LYJPXTeSduyZ/v2C9V
- R/9KVpDzYDc06mdwdz1iWMCEeL40TPxWk017hFLkb6IA5GQs4jLOugnOM8slOv3ZXa
- VNGSIU5UlNX/PurUdBngfsZQh6kFuQYawhWrzxvkvepinWuoxAH5Fj4YxpsQLS1ush
- qQSfsXD/Fnqjntu6qLyJEmuw4DHuOrdmQk8OMGZuRk4b3s9Bq2DbtyQE5ap0yipANR
- 2DtfICWwaWYiyDYFI12/Z07+KNmApL3kSEVYOJFdPRx3wUfh2tC94aGIPCkFzO0VHP
- id//7NPEgmHvg==
+ id ABB4A380F13; Sun,  1 Nov 2020 16:40:03 -0500 (EST)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 894DE380F0E
+ for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 16:40:03 -0500 (EST)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id 9545A919
+ for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 22:40:02 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id 3docKB0KDrFH for <speakup@linux-speakup.org>;
+ Sun,  1 Nov 2020 22:40:02 +0100 (CET)
+Received: from function (lfbn-bor-1-56-204.w90-50.abo.wanadoo.fr
+ [90.50.148.204])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id E1C5779F
+ for <speakup@linux-speakup.org>; Sun,  1 Nov 2020 22:40:01 +0100 (CET)
+Received: from samy by function with local (Exim 4.94)
+ (envelope-from <samuel.thibault@ens-lyon.org>) id 1kZL4y-009t9X-OJ
+ for speakup@linux-speakup.org; Sun, 01 Nov 2020 22:40:00 +0100
+Date: Sun, 1 Nov 2020 22:40:00 +0100
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: speakup crashes with kernel 5.4.69
-To: speakup@linux-speakup.org
+Message-ID: <20201101214000.u6al47enhggqputs@function>
 References: <m3o8l6sge6.wl-covici@ccs.covici.com>
  <20201101205909.zz2ihrr6zmucrfbq@function>
  <5123cc09-8314-7bb4-82dd-5511b53b3703@slint.fr>
-From: Didier Spaier <didier@slint.fr>
-Autocrypt: addr=didier@slint.fr; prefer-encrypt=mutual; keydata=
- mQENBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
- dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
- TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
- jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
- 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
- AAG0H0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj6JAT8EEwEKACkCGwMHCwkIBwMC
- AQYVCAIJCgsEFgIDAQIeAQIXgAUCXcBjnwUJGlHqEgAKCRDVAgLvYMA+6v/ICAC8Oa2zXOne
- zyuFrPtNsciJWYwWamW+g5TNaY9NPnyMRNKDi7IcP6PoDwHRI8YBgo+Z9w0qFKQ/WVSI/O6s
- gm7LnOX7OEHjnub4sjrr5PHcsPRjm6iJFIgGgD+waz0K5fxcc65ti3lgHLH1tkhORyiT5EFp
- 0VllWDQfPHw5avm9oopJv1FuPfZhSlFT6QhjD2ARmOrxfFBjELQZjDidckOYf/8Stoh+aK5F
- 5q69DpF+bSZzOtCht+S6LT+Im5zqMgq1Dfqb3FpnVO3MyhSLeGI2nB+OFNTBGByRFKHYRsHc
- VaQBjtfsr4HnC0UR2P/bDIk/oxLnIN9nHJuL6btcf9M6
-Message-ID: <3ea9c55d-07af-4e23-42b8-de7ae441af41@slint.fr>
-Date: Sun, 1 Nov 2020 22:35:38 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.12.0
 MIME-Version: 1.0
+Content-Disposition: inline
 In-Reply-To: <5123cc09-8314-7bb4-82dd-5511b53b3703@slint.fr>
-Content-Language: fr
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,17 +58,26 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="windows-1252"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Le 01/11/2020 =E0 22:28, Didier Spaier a =E9crit=A0:
-> ask as Slint currently includes 5.4.62 but I was about to upgrade to 5.5.=
-72
-please read "to 5.4.72"
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+RGlkaWVyIFNwYWllciwgbGUgZGltLiAwMSBub3YuIDIwMjAgMjI6Mjg6NDYgKzAxMDAsIGEgZWNy
+aXQ6Cj4gTGUgMDEvMTEvMjAyMCDDoCAyMTo1OSwgU2FtdWVsIFRoaWJhdWx0IGEgw6ljcml0wqA6
+Cj4gPiBKb2huIENvdmljaSwgbGUgbWFyLiAxMyBvY3QuIDIwMjAgMDQ6MDI6MDkgLTA0MDAsIGEg
+ZWNyaXQ6Cj4gPj4gSGkuICBXaGVuIEkganVzdCB0cmllZCB0byBib290IHdpdGgga2VybmVsIDUu
+NC42OSwgaXQgZGlkIGNvbWUgdXAsIGJ1dAo+ID4+IHNvb24gY3Jhc2hlZCB3aXRoIGEgbG90IG9m
+IGtlcm5lbDogYmFzZCBzY2hlZHVsZSBmcm9tIGlkbGUgdGhyZWFkLgo+ID4gCj4gPiBPaywgSSBz
+ZWUgdGhlIGNvbmNlcm4uIFdvdWxkIHlvdSBiZSBhYmxlIHRvIHRyeSB0aGUgYXR0YWNoZWQgcGF0
+Y2g/Cj4gCj4gRG9lcyB0aGlzIGlzc3VlIGFmZmVjdC9jYW4gdGhpcyBwYXRjaCBiZSBhcHBsaWVk
+IGFnYWluc3QvIDUuNC42Mi81LjQuNzI/CgpZZXMsIG5vdCBtdWNoIGhhcyBjaGFuZ2VkIGluIHRo
+ZSA1LjQgc2VyaWVzLgoKPiBJIGFzayBhcyBTbGludCBjdXJyZW50bHkgaW5jbHVkZXMgNS40LjYy
+IGJ1dCBJIHdhcyBhYm91dCB0byB1cGdyYWRlIHRvIDUuNS43Mgo+IChhbmQgbm8gU2xpbnQgdXNl
+ciBjb21wbGFpbmVkIHNvIGZhci4gTWF5YmUgb25seSBzb21lIHVzZXMgY2FzZXMgb3IKPiBoYXJk
+IHN5bnRocyBhcmUgaW4gY29uY2Vybj8pCgpJdCdzIHNwZWNpZmljIHRvIHRoZSBsdGxrIGFuZCBz
+cGtvdXQgc3ludGhzLgoKU2FtdWVsCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fClNwZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5v
+cmcKaHR0cDovL2xpbnV4LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVh
+a3VwCg==
