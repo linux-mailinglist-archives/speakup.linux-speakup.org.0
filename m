@@ -1,35 +1,35 @@
 Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D84B02A2653
-	for <lists+speakup@lfdr.de>; Mon,  2 Nov 2020 09:43:57 +0100 (CET)
+Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
+	by mail.lfdr.de (Postfix) with ESMTP id 15DC42A265E
+	for <lists+speakup@lfdr.de>; Mon,  2 Nov 2020 09:47:55 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5A0B6380F3F; Mon,  2 Nov 2020 03:43:57 -0500 (EST)
+	id A198B380F37; Mon,  2 Nov 2020 03:47:54 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7F44B380F2F;
-	Mon,  2 Nov 2020 03:43:53 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D7DC6380F33;
+	Mon,  2 Nov 2020 03:47:51 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 4EBB7380F19; Mon,  2 Nov 2020 03:43:52 -0500 (EST)
+ id 3622E380F1A; Mon,  2 Nov 2020 03:47:51 -0500 (EST)
 Received: from covici.com (debian-2.covici.com [166.84.7.93])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 35EEB380F12
- for <speakup@linux-speakup.org>; Mon,  2 Nov 2020 03:43:52 -0500 (EST)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 12D97380F13
+ for <speakup@linux-speakup.org>; Mon,  2 Nov 2020 03:47:51 -0500 (EST)
 Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
  (authenticated bits=0)
- by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 0A28iPlm010084
+ by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 0A28mPhX010182
  (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
- for <speakup@linux-speakup.org>; Mon, 2 Nov 2020 03:44:27 -0500
+ for <speakup@linux-speakup.org>; Mon, 2 Nov 2020 03:48:26 -0500
 Received: from ccs.covici.com (localhost [127.0.0.1])
- by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 0A28hltR012006
+ by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 0A28llnC014205
  (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
- for <speakup@linux-speakup.org>; Mon, 2 Nov 2020 03:43:47 -0500
+ for <speakup@linux-speakup.org>; Mon, 2 Nov 2020 03:47:47 -0500
 Received: (from covici@localhost)
- by ccs.covici.com (8.15.2/8.15.2/Submit) id 0A28hl11012005;
- Mon, 2 Nov 2020 03:43:47 -0500
-Date: Mon, 02 Nov 2020 03:43:47 -0500
-Message-ID: <m3wnz4p2rg.wl-covici@ccs.covici.com>
+ by ccs.covici.com (8.15.2/8.15.2/Submit) id 0A28llIV014204;
+ Mon, 2 Nov 2020 03:47:47 -0500
+Date: Mon, 02 Nov 2020 03:47:47 -0500
+Message-ID: <m3v9eop2ks.wl-covici@ccs.covici.com>
 From: John Covici <covici@ccs.covici.com>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: speakup crashes with kernel 5.4.69
@@ -64,8 +64,8 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Did you use speakup-r in my case that seemed to trigger the problem --
-I am testing the patch now and will let you know soon.
+Looks like the patch is working!!  Thanks Samuel for your great work,
+I would have never figured it out.
 
 On Mon, 02 Nov 2020 02:12:03 -0500,
 Gregory Nowak wrote:
