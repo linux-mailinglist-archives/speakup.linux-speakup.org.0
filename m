@@ -2,79 +2,50 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7E9D82A4D68
-	for <lists+speakup@lfdr.de>; Tue,  3 Nov 2020 18:45:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id A24692A4FFA
+	for <lists+speakup@lfdr.de>; Tue,  3 Nov 2020 20:21:26 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1E811380F33; Tue,  3 Nov 2020 12:45:05 -0500 (EST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=Po0kxcgy;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=bHAiSUEw;
-	dkim-atps=neutral
+	id 26D75380F89; Tue,  3 Nov 2020 14:21:26 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A408A380F4D;
-	Tue,  3 Nov 2020 12:45:01 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E5A19380F3D;
+	Tue,  3 Nov 2020 14:21:25 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id C2288380F17; Tue,  3 Nov 2020 12:45:00 -0500 (EST)
-Received: from wout4-smtp.messagingengine.com (wout4-smtp.messagingengine.com
- [64.147.123.20])
- by befuddled.reisers.ca (Postfix) with ESMTPS id A9110380F0E
- for <speakup@linux-speakup.org>; Tue,  3 Nov 2020 12:45:00 -0500 (EST)
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
- by mailout.west.internal (Postfix) with ESMTP id A46F6EC2
- for <speakup@linux-speakup.org>; Tue,  3 Nov 2020 12:44:59 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute2.internal (MEProxy); Tue, 03 Nov 2020 12:44:59 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- hubert-humphrey.com; h=date:from:to:subject:in-reply-to
- :message-id:references:mime-version:content-type; s=fm2; bh=bMsB
- ssJDJr4FUHu3T+g+jsP8QQPEU7Qo4+D8aEk6CcQ=; b=Po0kxcgy3fqUD5DK0/Qr
- DfVFHqSMfZvRpKKaTJehNFiCuFmd3kkKN9dpIjGwhRFiAahvqh3VPMOYyQhBKJ5u
- Swjb+1NM2NbVt15MojS7kOP0p0l+QXyJxUsCPvJI1uSORl0/jPUgox3V/Mn49jgS
- lZJl5eE53w6B/x5rFWnXFbVQVoPhTlAix8jlaleb0GRYMq0w1bP8PvPX/lAvYxpP
- z9QeA2unMSfUrarnkMr8UoQEnJI+h14CMuSL2ZOugGPeh9VAkIuXbV1RF/57sP48
- UPMllvUgZsuqmKNxcB9CU+HK8oMhIWpQjlhJTmUdBjAYVfkMn2H2iy/sN34TEwfv
- 0A==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; bh=bMsBss
- JDJr4FUHu3T+g+jsP8QQPEU7Qo4+D8aEk6CcQ=; b=bHAiSUEwxbcnqlo5xnPpaz
- mcKbfrMppfvqRELE8PqEQllZ4McLNKSNHOCv+jxtKWPtjeWfbdeboC0Fp+EfF+Jp
- C8am73wMU1fFBj1aWuSrZkhK9SShslXltrh3b/6khTMoL/KmEIcIFHzl4/eNgght
- x9KClyjttWv5NX6dmj/JRXX1mGx05CG6oqOcNnvczQmK7k6hauvAFo7I955jaDWG
- gsCOKnM1OP3uNDLlqFo8a4gz2G1uvi/fZaMFBqBwm00hqXwG8Fm7zF49nZPhN08p
- Nvme8PLXwJ6mlFEXVE23AffSKcut44yEKTt/MOG3OH4Y3ohHiV2tH4K5U0BOUXBg
- ==
-X-ME-Sender: <xms:G5ehXy52BTHu-ZnWdNE7O2TCywJ8BVRF4cj-3_GnoaLhGnN_SBNX8w>
- <xme:G5ehX77B3uWnJhmeDqpT9zrHQSzEfbhq-S9zEjXcmbU_fJS6o55SRBFG9NZJJjN_f
- gB-EFdANyBdJI2syvs>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedujedruddtfedguddtvdcutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enucfjughrpeffhffvufgjkfhfgggtsehttdertddttddvnecuhfhrohhmpeevhhhimhgv
- ucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenuc
- ggtffrrghtthgvrhhnpeffhedthfdvvdeuueeihedvfeffuedtgeeuudfhgfelteelvddu
- udfgleekvedtveenucfkphepuddtgedrudejvddrfedrieefnecuvehluhhsthgvrhfuih
- iivgeptdenucfrrghrrghmpehmrghilhhfrhhomheptghhihhmvgeshhhusggvrhhtqdhh
- uhhmphhhrhgvhidrtghomh
-X-ME-Proxy: <xmx:G5ehXxeKcVjXTX-ZbTxRw5cGR2NYsuNHVJq72oaLB1EKclhNOw5pFw>
- <xmx:G5ehX_Lhfy6wo_UOQlKC3Fw7lWI5oi-Ioh_VJAzIC6mA2YKCIuOCeQ>
- <xmx:G5ehX2JkzhSIc5QFdNFrnF-IUp5xp_SKo4g_Zu35jPLv4k1TgcUVpw>
- <xmx:G5ehX7U4Eem8wUzU4uvECl7nsSCacAJ-_itz-vJAkv4Wk5ovQXM_sw>
-Received: from dance.lan (cpe-104-172-3-63.socal.res.rr.com [104.172.3.63])
- by mail.messagingengine.com (Postfix) with ESMTPA id A79873064682
- for <speakup@linux-speakup.org>; Tue,  3 Nov 2020 12:44:58 -0500 (EST)
-Date: Tue, 3 Nov 2020 09:44:57 -0800 (PST)
-From: Chime Hart <chime@hubert-humphrey.com>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Cut-and-Paste is Working Again
-In-Reply-To: <20201103173759.ikx4uxpsf72v47oq@function>
-Message-ID: <b4f057f0-9eae-3ed8-7ca9-14ab9d446d9@hubert-humphrey.com>
-References: <0bf28e-3c70-7e4a-e543-daadd91e28d6@hubert-humphrey.com>
- <20201103173759.ikx4uxpsf72v47oq@function>
-MIME-Version: 1.0
+ id 4BB1C380F19; Tue,  3 Nov 2020 14:21:25 -0500 (EST)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 3D02E380F12
+ for <speakup@linux-speakup.org>; Tue,  3 Nov 2020 14:21:25 -0500 (EST)
+Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
+ (authenticated bits=0)
+ by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 0A3JLuBe005397
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+ Tue, 3 Nov 2020 14:21:58 -0500
+Received: from ccs.covici.com (localhost [127.0.0.1])
+ by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 0A3JLAhk1718938
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+ Tue, 3 Nov 2020 14:21:10 -0500
+Received: (from covici@localhost)
+ by ccs.covici.com (8.15.2/8.15.2/Submit) id 0A3JLAoT1718937;
+ Tue, 3 Nov 2020 14:21:10 -0500
+Date: Tue, 03 Nov 2020 14:21:10 -0500
+Message-ID: <m3pn4up7q1.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
+To: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Subject: Re: speakup crashes with kernel 5.4.69
+In-Reply-To: <20201102091016.kasjjmcc3yjpvu4d@function>
+References: <m3o8l6sge6.wl-covici@ccs.covici.com>
+ <20201101205909.zz2ihrr6zmucrfbq@function>
+ <5123cc09-8314-7bb4-82dd-5511b53b3703@slint.fr>
+ <20201101214000.u6al47enhggqputs@function>
+ <20201102071203.GC8027@gregn.net>
+ <m3v9eop2ks.wl-covici@ccs.covici.com>
+ <20201102091016.kasjjmcc3yjpvu4d@function>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: Covici Computer Systems
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,18 +58,60 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: "Speakup is a screen review system for Linux."
+Reply-To: covici@ccs.covici.com, "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Thanks Samuel. Can you please provide an exact command to install that 
-patch?
-Chime
+I am sorry to  report that your patch does not work, probably because
+it references drivers/accessibility rather than staging.  If that is
+the case, I could change it and try again, or let me know.
 
+Thanks.
+
+On Mon, 02 Nov 2020 04:10:16 -0500,
+Samuel Thibault wrote:
+> 
+> [1  <text/plain; us-ascii (7bit)>]
+> John Covici, le lun. 02 nov. 2020 03:47:47 -0500, a ecrit:
+> > Looks like the patch is working!
+> 
+> Ok, good. Could you try the (much simpler) attached patch instead?
+> 
+> Samuel
+> [2 patch <text/plain; us-ascii (7bit)>]
+> --- a/drivers/accessibility/speakup/spk_ttyio.c
+> +++ b/drivers/accessibility/speakup/spk_ttyio.c
+> @@ -298,11 +298,13 @@ static unsigned char ttyio_in(int timeou
+>  	struct spk_ldisc_data *ldisc_data = speakup_tty->disc_data;
+>  	char rv;
+>  
+> -	if (wait_for_completion_timeout(&ldisc_data->completion,
+> +	if (!timeout) {
+> +		if (!try_wait_for_completion(&ldisc_data->completion))
+> +			return 0xff;
+> +	} else if (wait_for_completion_timeout(&ldisc_data->completion,
+>  					usecs_to_jiffies(timeout)) == 0) {
+> -		if (timeout)
+> -			pr_warn("spk_ttyio: timeout (%d)  while waiting for input\n",
+> -				timeout);
+> +		pr_warn("spk_ttyio: timeout (%d)  while waiting for input\n",
+> +			timeout);
+>  		return 0xff;
+>  	}
+>  
+
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
+
+         John Covici wb2una
+         covici@ccs.covici.com
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
