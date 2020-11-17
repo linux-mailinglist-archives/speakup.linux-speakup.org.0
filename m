@@ -2,62 +2,49 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (tunnel25281-pt.tunnel.tserv21.tor1.ipv6.he.net [IPv6:2001:470:1c:288::2])
-	by mail.lfdr.de (Postfix) with ESMTP id 13C462B1C14
-	for <lists+speakup@lfdr.de>; Fri, 13 Nov 2020 14:47:48 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 0B42A2B59F1
+	for <lists+speakup@lfdr.de>; Tue, 17 Nov 2020 07:59:50 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 834E0380F1E; Fri, 13 Nov 2020 08:47:45 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1605275265;
-	bh=V4yuvpiuatqkGjpHStOk+tEJ39gykfg1eirkzdDslUU=;
-	h=Date:From:To:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Archive:List-Post:List-Help:List-Subscribe:
-	 Reply-To:From;
-	b=IO4JppdFlAuGA6tWpOcDooBLrDKG9TRgyg4/tExgyxzH1HFGtgGF5F77MNPcFTFw4
-	 006TKqutbqNqvqaSqcv6ZeK9YRVIQemYZ+IaxcnNcy+E27OJXM0ySsPktLIvYFTP/t
-	 Q2RqLMp4onQhEJbIoUmgp/d+anDJxJ7S7bknOQPY=
+	id 5C184380EEB; Tue, 17 Nov 2020 01:59:47 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E8083380ED3;
-	Fri, 13 Nov 2020 08:47:44 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1605275264;
-	bh=V4yuvpiuatqkGjpHStOk+tEJ39gykfg1eirkzdDslUU=;
-	h=Date:From:To:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Archive:List-Post:List-Help:List-Subscribe:
-	 Reply-To:From;
-	b=ug/UYd/7cKgiOi/UFRv9zmlSkIYy3lH8YldOsl5Q4lKUuY/4D0kMbpqbAkM6/ZU4z
-	 jliPK2Fv1x9psKG0NAwAWKxsmr800SohHwIv/aGb753qwo0c+j76wVPrPbznsnyx5L
-	 bY49uz9OPT/7SqYUJJoyP/PjwMG72/k0EYSfwf6k=
+	by befuddled.reisers.ca (Postfix) with ESMTP id A052A380EE4;
+	Tue, 17 Nov 2020 01:59:46 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id B856A380B9F; Fri, 13 Nov 2020 08:47:43 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1605275263;
- bh=/lzlr3NllpZnH8qoKoWW4AP7KBTOVeOURcEoapQiC3g=;
- h=Date:From:To:Subject:In-Reply-To:References:From;
- b=P/zvX4FS9vKIGB7lD/YpH6cT5Q+rS69g4TBn/kjQuvbIq4sgwMB/Pb8XME5kPredX
- Q5x8Y/Bt1lSbF1RQ5ebBAwCElE4H5lLCopaEzEfpXiCjXyctw2j0i2U2pN6U2zuEYn
- shW+tW3PN5i7pyijjCJUd1S6q26dRdaRZnXaSa+g=
-Received: from localhost (localhost [IPv6:::1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 9B055380962
- for <speakup@linux-speakup.org>; Fri, 13 Nov 2020 08:47:43 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
- s=befuddled; t=1605275263;
- bh=/lzlr3NllpZnH8qoKoWW4AP7KBTOVeOURcEoapQiC3g=;
- h=Date:From:To:Subject:In-Reply-To:References:From;
- b=P/zvX4FS9vKIGB7lD/YpH6cT5Q+rS69g4TBn/kjQuvbIq4sgwMB/Pb8XME5kPredX
- Q5x8Y/Bt1lSbF1RQ5ebBAwCElE4H5lLCopaEzEfpXiCjXyctw2j0i2U2pN6U2zuEYn
- shW+tW3PN5i7pyijjCJUd1S6q26dRdaRZnXaSa+g=
-Date: Fri, 13 Nov 2020 08:47:43 -0500 (EST)
-From: Kirk Reiser <kirk@reisers.ca>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Another speakup cut and paste bug and park
-In-Reply-To: <20201109202033.d7e4c46662wdvj65@function>
-Message-ID: <alpine.DEB.2.23.453.2011130844340.190051@befuddled.reisers.ca>
-References: <alpine.DEB.2.23.453.2010312053480.568552@befuddled.reisers.ca>
- <20201109202033.d7e4c46662wdvj65@function>
-User-Agent: Alpine 2.23 (DEB 453 2020-06-18)
+ id 3EF7D380BFA; Tue, 17 Nov 2020 01:59:46 -0500 (EST)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 1310F380984
+ for <speakup@linux-speakup.org>; Tue, 17 Nov 2020 01:59:46 -0500 (EST)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id 3669ECE6;
+ Tue, 17 Nov 2020 07:59:43 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id kIirWhfqeZay; Tue, 17 Nov 2020 07:59:42 +0100 (CET)
+Received: from function.youpi.perso.aquilenet.fr
+ (lfbn-bor-1-56-204.w90-50.abo.wanadoo.fr [90.50.148.204])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 02F1788F;
+ Tue, 17 Nov 2020 07:59:41 +0100 (CET)
+Received: from samy by function.youpi.perso.aquilenet.fr with local (Exim 4.94)
+ (envelope-from <samuel.thibault@ens-lyon.org>)
+ id 1keuxo-00GZtO-Nh; Tue, 17 Nov 2020 07:59:40 +0100
+Date: Tue, 17 Nov 2020 07:59:40 +0100
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: Yang Yingliang <yangyingliang@huawei.com>
+Subject: Re: [PATCH] speakup: fix uninitialized flush_lock
+Message-ID: <20201117065940.pcfjrbyrg4h5ona4@function>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+ Yang Yingliang <yangyingliang@huawei.com>,
+ speakup@linux-speakup.org, linux-kernel@vger.kernel.org,
+ w.d.hubbs@gmail.com, gregkh@linuxfoundation.org
+References: <20201117012229.3395186-1-yangyingliang@huawei.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20201117012229.3395186-1-yangyingliang@huawei.com>
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,41 +59,44 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: gregkh@linuxfoundation.org, speakup@linux-speakup.org,
+ linux-kernel@vger.kernel.org, w.d.hubbs@gmail.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hey Samuel and folks: Well, I am reluctant to admit that I have not
-been able to reproduce the bug since I reported it either. I have
-given it a good shot but it's been working fine. When I encounter it
-again I'll try to do a better job of nailing it's conditions and
-causes down.
+Yang Yingliang, le mar. 17 nov. 2020 09:22:29 +0800, a ecrit:
+> The flush_lock is uninitialized, use DEFINE_SPINLOCK
+> to define and initialize flush_lock.
+> 
+> Fixes: c6e3fd22cd53 ("Staging: add speakup to the staging directory")
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: Yang Yingliang <yangyingliang@huawei.com>
 
-Meanwhile, sorry for the false alarm.
+Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
-   Kirk
-
-On Mon, 9 Nov 2020, Samuel Thibault wrote:
-
-> Hello,
->
-> Kirk Reiser, le sam. 31 oct. 2020 21:02:27 -0400, a ecrit:
->> If you have the park function and cut and paste it selects the wrong
->> text. In fact the text it pastes isn't even on the screen but the
->> "mark text" spoken and an address of some sort. This should be easily
->> reproduced.
->
-> And yet I didn't figure out how to reproduce it. Would you have an exact
-> reproduction scenario?
->
-> Samuel
-> _______________________________________________
-> Speakup mailing list
-> Speakup@linux-speakup.org
-> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
->
+> ---
+>  drivers/accessibility/speakup/speakup_dectlk.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/accessibility/speakup/speakup_dectlk.c b/drivers/accessibility/speakup/speakup_dectlk.c
+> index 780214b5ca16..ab6d61e80b1c 100644
+> --- a/drivers/accessibility/speakup/speakup_dectlk.c
+> +++ b/drivers/accessibility/speakup/speakup_dectlk.c
+> @@ -37,7 +37,7 @@ static unsigned char get_index(struct spk_synth *synth);
+>  static int in_escape;
+>  static int is_flushing;
+>  
+> -static spinlock_t flush_lock;
+> +static DEFINE_SPINLOCK(flush_lock);
+>  static DECLARE_WAIT_QUEUE_HEAD(flush);
+>  
+>  static struct var_t vars[] = {
+> -- 
+> 2.25.1
+> 
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
