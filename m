@@ -2,73 +2,46 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 70E0F2C143A
-	for <lists+speakup@lfdr.de>; Mon, 23 Nov 2020 20:11:58 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 0649C2C7AEE
+	for <lists+speakup@lfdr.de>; Sun, 29 Nov 2020 20:36:03 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 87A21380F38; Mon, 23 Nov 2020 14:03:45 -0500 (EST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=PcI/hnPZ;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=WvoKOmaN;
-	dkim-atps=neutral
+	id 4AC79380F60; Sun, 29 Nov 2020 14:36:01 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 20B07380F22;
-	Mon, 23 Nov 2020 14:03:43 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1889D380F1D;
+	Sun, 29 Nov 2020 14:36:01 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 2BA8D380EB9; Mon, 23 Nov 2020 14:03:41 -0500 (EST)
-Received: from wout4-smtp.messagingengine.com (wout4-smtp.messagingengine.com
- [64.147.123.20])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 2204B380BE3
- for <speakup@linux-speakup.org>; Mon, 23 Nov 2020 14:03:35 -0500 (EST)
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
- by mailout.west.internal (Postfix) with ESMTP id BA3031D97
- for <speakup@linux-speakup.org>; Mon, 23 Nov 2020 14:03:22 -0500 (EST)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute2.internal (MEProxy); Mon, 23 Nov 2020 14:03:22 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- hubert-humphrey.com; h=date:from:to:subject:message-id
- :mime-version:content-type; s=fm2; bh=IU3sfjmOnUHvgR0luz7XvJnMvG
- UpC1ruV6qzHav6ZCI=; b=PcI/hnPZjzQA8tHrR2i1kSshvkLPlLvBCE72JF7vMe
- 8iV+QTggQFHbQkIHI6hiakJ5SZ3Oo0b+W0ctfIb49UUWqgqJeX37ecpn3mOxpcCs
- jGlJiZCcT3S2roM8BElxVnlPJ1b8pzN83JaLEF/qzD+OuRFjSg7L8ptloYSs0djH
- fPHNm0dMEL5k8wJjrH1ldV/0owEmXIfWqhHxVrrvHQ3Bo4Wqdz+qQzNEeQsE2Svg
- xIE1I1i/Tvl4p6GzxSk0rDJKe1C/ks5erPrhyrBz8HcuLoMUVUu1/DVgC9DdoX3m
- 9VpYJx5hf1Ffv4M3MoJUv6LSn4tacho6uZhvg2xX51cw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:message-id
- :mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
- :x-me-sender:x-sasl-enc; s=fm1; bh=IU3sfjmOnUHvgR0luz7XvJnMvGUpC
- 1ruV6qzHav6ZCI=; b=WvoKOmaNwsCa8SFPg20BMRPYbZI5RB9lpMGtETDt4IPME
- wWxiCf6HZxm9aIzX5n8fRWqoGXYyl3T5SWhhiCy7tjaaJvbf8hs4fGtM5rFnxANH
- 9f2P72QyB5OW1EIjL7iveOHPStZcJogJUBUPp+gYjjlDNjymSZzv4gH2hfGqU1N3
- SMloQjTVfqdiDf3sTQiIMI/79TMswfO8dMgjG/ou5KTG4pD753+A9BsefA3sPRNR
- 7tfAPPFjDyR19kCinbE92EUFf5mgLAD8H5PduOXr/aQaerVWcHNm/Go8Rx8Rm1vK
- 2ab0NzR0B2LQfhAnF6C9MKHSw3sxqzi27CkjpS4+g==
-X-ME-Sender: <xms:ege8X05Tr3MNWNcgCd5nFpLRb4QysxY7RBJrQBOQo2wJ1MKq0nKM5g>
- <xme:ege8X16oXH6Bp8HecmAMNI5OfNCL7jlPJ_qMrGn9XMzS2Y2VnJSaglbGjx7tWHgZG
- bLJqfJGyGHLRD3UaA0>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedujedrudegiedguddvvdcutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfggtgesthdtredttd
- dtvdenucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhh
- uhhmphhhrhgvhidrtghomheqnecuggftrfgrthhtvghrnhepjeffffdujeelueffieevtd
- eiteettdekgffgkedvueejteektdehfefhhfdvteeknecukfhppedutdegrddujedvrdef
- rdeifeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
- gthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
-X-ME-Proxy: <xmx:ege8Xzd8wL68j5AJfsGHO9d_krJB-blhLLQaon3xuG4hFQBFP_VMGg>
- <xmx:ege8X5K5JaFah7uw3VpaE1VKU9lC75RRlxBhmppLCowJcLRYylqUqQ>
- <xmx:ege8X4LzpGzVsGdh7gLL8Du2INjiSHJ-jn6dChLK78TsVt5o1aSPDA>
- <xmx:ege8X9WZ7dbk5GWV6ZId8_JA5zhmfdCwcEZAgK7t9IYL5FL2gUf4ZA>
-Received: from dance.lan (cpe-104-172-3-63.socal.res.rr.com [104.172.3.63])
- by mail.messagingengine.com (Postfix) with ESMTPA id B29363064AB3
- for <speakup@linux-speakup.org>; Mon, 23 Nov 2020 14:03:21 -0500 (EST)
-Date: Mon, 23 Nov 2020 11:03:17 -0800 (PST)
-From: Chime Hart <chime@hubert-humphrey.com>
-To: speakup@linux-speakup.org
-Subject: Speakup Config Not Saving-and-Loading
-Message-ID: <374fac7-d9eb-c7c7-1764-bc7ddcbba0b@hubert-humphrey.com>
+ id 67F07380BC0; Sun, 29 Nov 2020 14:35:59 -0500 (EST)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 442D8380AC6
+ for <speakup@linux-speakup.org>; Sun, 29 Nov 2020 14:35:59 -0500 (EST)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id 0075E879;
+ Sun, 29 Nov 2020 20:35:26 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id HwLvKjkuloXh; Sun, 29 Nov 2020 20:35:25 +0100 (CET)
+Received: from function.youpi.perso.aquilenet.fr
+ (lfbn-bor-1-56-204.w90-50.abo.wanadoo.fr [90.50.148.204])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 3EDEA485;
+ Sun, 29 Nov 2020 20:35:25 +0100 (CET)
+Received: from samy by function.youpi.perso.aquilenet.fr with local (Exim 4.94)
+ (envelope-from <samuel.thibault@ens-lyon.org>)
+ id 1kjSTj-00Ay8P-NE; Sun, 29 Nov 2020 20:35:23 +0100
+Date: Sun, 29 Nov 2020 20:35:23 +0100
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH] speakup: Reject setting the speakup line discipline outside
+ of speakup
+Message-ID: <20201129193523.hm3f6n5xrn6fiyyc@function>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ speakup@linux-speakup.org
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,23 +56,92 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: speakup@linux-speakup.org, linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi All: Well, now that I went from 5.9.01 to 5.9.03 the volume settings 
-are back, but pitch is still gone. If I manually change values in 
-inflection as well as pitch, after typing
-sudo speakupconf save/load
-Inflection goes up while it says
-"cp no space left on device"
-then its kind of a flat DecTalk. And yes, after rebooting the 4second 
-delay is back. I wrote to TV Ramon to ask if or how I can connect to his 
-Emacsspeak DecTalk server with Speakup? He said he couldn't help me.
-Thanks so much in advance
-Chime
+Speakup exposing a line discipline allows userland to try to use it,
+while it is deemed to be useless, and thus uselessly exposes potential
+bugs. One of them is simply that in such a case if the line sends data,
+spk_ttyio_receive_buf2 is called and crashes since spk_ttyio_synth
+is NULL.
+
+This change restricts the use of the speakup line discipline to
+speakup drivers, thus avoiding such kind of issues altogether.
+
+Cc: stable@vger.kernel.org
+Reported-by: Shisong Qin <qinshisong1205@gmail.com>
+Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Tested-by: Shisong Qin <qinshisong1205@gmail.com>
+
+Index: linux-5.9/drivers/accessibility/speakup/spk_ttyio.c
+===================================================================
+--- linux-5.9.orig/drivers/accessibility/speakup/spk_ttyio.c
++++ linux-5.9/drivers/accessibility/speakup/spk_ttyio.c
+@@ -47,27 +47,20 @@ static int spk_ttyio_ldisc_open(struct t
+ {
+ 	struct spk_ldisc_data *ldisc_data;
+ 
++	if (tty != speakup_tty)
++		/* Somebody tried to use this line discipline outside speakup */
++		return -ENODEV;
++
+ 	if (!tty->ops->write)
+ 		return -EOPNOTSUPP;
+ 
+-	mutex_lock(&speakup_tty_mutex);
+-	if (speakup_tty) {
+-		mutex_unlock(&speakup_tty_mutex);
+-		return -EBUSY;
+-	}
+-	speakup_tty = tty;
+-
+ 	ldisc_data = kmalloc(sizeof(*ldisc_data), GFP_KERNEL);
+-	if (!ldisc_data) {
+-		speakup_tty = NULL;
+-		mutex_unlock(&speakup_tty_mutex);
++	if (!ldisc_data)
+ 		return -ENOMEM;
+-	}
+ 
+ 	init_completion(&ldisc_data->completion);
+ 	ldisc_data->buf_free = true;
+-	speakup_tty->disc_data = ldisc_data;
+-	mutex_unlock(&speakup_tty_mutex);
++	tty->disc_data = ldisc_data;
+ 
+ 	return 0;
+ }
+@@ -191,9 +184,25 @@ static int spk_ttyio_initialise_ldisc(st
+ 
+ 	tty_unlock(tty);
+ 
++	mutex_lock(&speakup_tty_mutex);
++	speakup_tty = tty;
+ 	ret = tty_set_ldisc(tty, N_SPEAKUP);
+ 	if (ret)
+-		pr_err("speakup: Failed to set N_SPEAKUP on tty\n");
++		speakup_tty = NULL;
++	mutex_unlock(&speakup_tty_mutex);
++
++	if (!ret)
++		/* Success */
++		return 0;
++
++	pr_err("speakup: Failed to set N_SPEAKUP on tty\n");
++
++	tty_lock(tty);
++	if (tty->ops->close)
++		tty->ops->close(tty, NULL);
++	tty_unlock(tty);
++
++	tty_kclose(tty);
+ 
+ 	return ret;
+ }
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
