@@ -2,47 +2,40 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B57192C90FD
-	for <lists+speakup@lfdr.de>; Mon, 30 Nov 2020 23:27:01 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id BA5C32D4C8C
+	for <lists+speakup@lfdr.de>; Wed,  9 Dec 2020 22:13:17 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 551CA380F25; Mon, 30 Nov 2020 17:27:01 -0500 (EST)
+	id 58C8C380FB3; Wed,  9 Dec 2020 16:13:15 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 062EE380F4C;
-	Mon, 30 Nov 2020 17:27:01 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 26AC5380F1A;
+	Wed,  9 Dec 2020 16:13:15 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 4133B380BC7; Mon, 30 Nov 2020 17:27:00 -0500 (EST)
+ id EE376380EBE; Wed,  9 Dec 2020 16:13:13 -0500 (EST)
 Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 1E8AC380BAD
- for <speakup@linux-speakup.org>; Mon, 30 Nov 2020 17:27:00 -0500 (EST)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id B9C15380BC8
+ for <speakup@linux-speakup.org>; Wed,  9 Dec 2020 16:13:13 -0500 (EST)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id 94F93121C;
- Mon, 30 Nov 2020 23:26:58 +0100 (CET)
+ by hera.aquilenet.fr (Postfix) with ESMTP id D768DB42;
+ Wed,  9 Dec 2020 22:13:08 +0100 (CET)
 X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
 Received: from hera.aquilenet.fr ([127.0.0.1])
  by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 4FMPf0BgI5ce; Mon, 30 Nov 2020 23:26:58 +0100 (CET)
+ with ESMTP id x9zYbiQswOq1; Wed,  9 Dec 2020 22:13:08 +0100 (CET)
 Received: from function.youpi.perso.aquilenet.fr (unknown
  [IPv6:2a01:cb19:956:1b00:9eb6:d0ff:fe88:c3c7])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 0175F1218;
- Mon, 30 Nov 2020 23:26:58 +0100 (CET)
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 57437ABE;
+ Wed,  9 Dec 2020 22:13:08 +0100 (CET)
 Received: from samy by function.youpi.perso.aquilenet.fr with local (Exim 4.94)
  (envelope-from <samuel.thibault@ens-lyon.org>)
- id 1kjrdJ-00FmXv-Cw; Mon, 30 Nov 2020 23:26:57 +0100
-Date: Mon, 30 Nov 2020 23:26:57 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: gregkh@linuxfoundation.org
-Subject: [patch 3/3] speakup: Simplify spk_ttyio_out error handling.
-Message-ID: <20201130220719.298054871@ens-lyon.org>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- speakup@linux-speakup.org
-References: <20201130220626.854574234@ens-lyon.org>
-MIME-Version: 1.0
-Content-Disposition: inline; filename=spk_ttyio_clean
+ id 1kn6ln-006kOC-Jz; Wed, 09 Dec 2020 22:13:07 +0100
+Message-Id: <20201209205829.693745475@ens-lyon.org>
 User-Agent: quilt/0.65
-Organization: I am not organized
+Date: Wed, 09 Dec 2020 21:58:29 +0100
+From: samuel.thibault@ens-lyon.org
+To: gregkh@linuxfoundation.org
+Subject: [patch 0/3] speakup: simplify relation between line disc and synth
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,69 +51,16 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
 Cc: speakup@linux-speakup.org, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-This avoids most code indentation
-
-Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
-
-Index: linux-5.9/drivers/accessibility/speakup/spk_ttyio.c
-===================================================================
---- linux-5.9.orig/drivers/accessibility/speakup/spk_ttyio.c
-+++ linux-5.9/drivers/accessibility/speakup/spk_ttyio.c
-@@ -225,27 +225,29 @@ void spk_ttyio_unregister_ldisc(void)
- static int spk_ttyio_out(struct spk_synth *in_synth, const char ch)
- {
- 	struct tty_struct *tty = in_synth->dev;
-+	int ret;
- 
--	if (in_synth->alive && tty->ops->write) {
--		int ret = tty->ops->write(tty, &ch, 1);
-+	if (!in_synth->alive || !tty->ops->write)
-+		return 0;
- 
--		if (ret == 0)
--			/* No room */
--			return 0;
--		if (ret < 0) {
--			pr_warn("%s: I/O error, deactivating speakup\n",
--				in_synth->long_name);
--			/* No synth any more, so nobody will restart TTYs,
--			 * and we thus need to do it ourselves.  Now that there
--			 * is no synth we can let application flood anyway
--			 */
--			in_synth->alive = 0;
--			speakup_start_ttys();
--			return 0;
--		}
-+	ret = tty->ops->write(tty, &ch, 1);
-+
-+	if (ret == 0)
-+		/* No room */
-+		return 0;
-+
-+	if (ret > 0)
-+		/* Success */
- 		return 1;
--	}
- 
-+	pr_warn("%s: I/O error, deactivating speakup\n",
-+		in_synth->long_name);
-+	/* No synth any more, so nobody will restart TTYs,
-+	 * and we thus need to do it ourselves.  Now that there
-+	 * is no synth we can let application flood anyway
-+	 */
-+	in_synth->alive = 0;
-+	speakup_start_ttys();
- 	return 0;
- }
- 
-
-
+This series reworks the relation between the speakup line discipline and the
+speakup synthesizers. This is probably fixing a few minor issues, but since it
+is invasive it'll better wait for 5.11.
 
 _______________________________________________
 Speakup mailing list
