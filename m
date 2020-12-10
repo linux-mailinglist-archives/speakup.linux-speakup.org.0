@@ -2,48 +2,48 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 0DA282D4C93
-	for <lists+speakup@lfdr.de>; Wed,  9 Dec 2020 22:14:54 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id B56302D5F85
+	for <lists+speakup@lfdr.de>; Thu, 10 Dec 2020 16:24:16 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9FA5B380F97; Wed,  9 Dec 2020 16:14:53 -0500 (EST)
+	id 33684380F33; Thu, 10 Dec 2020 10:24:16 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7551C380FA5;
-	Wed,  9 Dec 2020 16:14:52 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8F08C380F11;
+	Thu, 10 Dec 2020 10:24:14 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id F1001380F1A; Wed,  9 Dec 2020 16:14:51 -0500 (EST)
+ id EE583380E96; Thu, 10 Dec 2020 10:24:13 -0500 (EST)
 Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id C6EB9380EDC
- for <speakup@linux-speakup.org>; Wed,  9 Dec 2020 16:14:51 -0500 (EST)
+ by befuddled.reisers.ca (Postfix) with ESMTPS id CCA44380B10
+ for <speakup@linux-speakup.org>; Thu, 10 Dec 2020 10:24:13 -0500 (EST)
 Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id B7CBCB42;
- Wed,  9 Dec 2020 22:14:20 +0100 (CET)
+ by hera.aquilenet.fr (Postfix) with ESMTP id 8D7ECCF7;
+ Thu, 10 Dec 2020 16:24:12 +0100 (CET)
 X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
 Received: from hera.aquilenet.fr ([127.0.0.1])
  by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id IyGpdNaeq0Nx; Wed,  9 Dec 2020 22:14:20 +0100 (CET)
-Received: from function.youpi.perso.aquilenet.fr (unknown
- [IPv6:2a01:cb19:956:1b00:9eb6:d0ff:fe88:c3c7])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 0D2E0ABE;
- Wed,  9 Dec 2020 22:14:20 +0100 (CET)
+ with ESMTP id duy2vdE50n8e; Thu, 10 Dec 2020 16:24:11 +0100 (CET)
+Received: from function.youpi.perso.aquilenet.fr
+ (lfbn-bor-1-56-204.w90-50.abo.wanadoo.fr [90.50.148.204])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id D0E95CF6;
+ Thu, 10 Dec 2020 16:24:11 +0100 (CET)
 Received: from samy by function.youpi.perso.aquilenet.fr with local (Exim 4.94)
  (envelope-from <samuel.thibault@ens-lyon.org>)
- id 1kn6mx-006kS2-1r; Wed, 09 Dec 2020 22:14:19 +0100
-Date: Wed, 9 Dec 2020 22:14:19 +0100
+ id 1knNne-009ptZ-DX; Thu, 10 Dec 2020 16:24:10 +0100
+Date: Thu, 10 Dec 2020 16:24:10 +0100
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
 To: Greg KH <gregkh@linuxfoundation.org>
 Subject: Re: [patch 1/3] speakup: Add synth parameter to io functions
-Message-ID: <20201209211419.5waw2q6o35s67ncw@function>
+Message-ID: <20201210152410.xwmpludozj2vklio@function>
 Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
  Greg KH <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
  speakup@linux-speakup.org
-References: <20201130220626.854574234@ens-lyon.org>
- <20201130220719.168900798@ens-lyon.org>
- <X9Dh3exc0rN1YitF@kroah.com>
+References: <20201209205829.693745475@ens-lyon.org>
+ <20201209205838.531299374@ens-lyon.org>
+ <X9I9Xwh+Q3tHXh88@kroah.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <X9Dh3exc0rN1YitF@kroah.com>
+In-Reply-To: <X9I9Xwh+Q3tHXh88@kroah.com>
 Organization: I am not organized
 User-Agent: NeoMutt/20170609 (1.8.3)
 X-BeenThere: speakup@linux-speakup.org
@@ -67,14 +67,15 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-R3JlZyBLSCwgbGUgbWVyLiAwOSBkw6ljLiAyMDIwIDE1OjQwOjI5ICswMTAwLCBhIGVjcml0Ogo+
-IE9uIE1vbiwgTm92IDMwLCAyMDIwIGF0IDExOjI2OjQxUE0gKzAxMDAsIFNhbXVlbCBUaGliYXVs
-dCB3cm90ZToKPiA+IFRoaXMgbWVyZWx5IGFkZHMgdGhlIG1pc3Npbmcgc3ludGggcGFyYW1ldGVy
-IHRvIGFsbCBpbyBmdW5jdGlvbnMuCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IFNhbXVlbCBUaGli
-YXVsdCA8c2FtdWVsLnRoaWJhdWx0QGVucy1seW9uLm9yZz4KPiAKPiBUaGlzIHBhdGNoIGJyZWFr
-cyB0aGUgYnVpbGQgOigKPiAKPiBDYW4geW91IHJlYmFzZSBhbmQgcmVzZW5kIHRoaXMgd2hvbGUg
-c2VyaWVzLCBhcyB0aGUgb3RoZXIgcGF0Y2hlcyBkbyBub3QKPiBhcHBseSBhbnltb3JlIGR1ZSB0
-byB0aGUgcmVjZW50IGZpeGVzIGluIHRoZSBzcGVha3VwIGNvZGUuCgpPaywgSSByZWJhc2VkIGFu
-ZCByZXNlbnQuCgpTYW11ZWwKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KU3BlYWt1cCBtYWlsaW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpo
-dHRwOi8vbGludXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
+R3JlZyBLSCwgbGUgamV1LiAxMCBkw6ljLiAyMDIwIDE2OjIzOjExICswMTAwLCBhIGVjcml0Ogo+
+IE9uIFdlZCwgRGVjIDA5LCAyMDIwIGF0IDA5OjU4OjMwUE0gKzAxMDAsIHNhbXVlbC50aGliYXVs
+dEBlbnMtbHlvbi5vcmcgd3JvdGU6Cj4gPiBUaGlzIG1lcmVseSBhZGRzIHRoZSBtaXNzaW5nIHN5
+bnRoIHBhcmFtZXRlciB0byBhbGwgaW8gZnVuY3Rpb25zLgo+ID4gCj4gPiBTaWduZWQtb2ZmLWJ5
+OiBTYW11ZWwgVGhpYmF1bHQgPHNhbXVlbC50aGliYXVsdEBlbnMtbHlvbi5vcmc+Cj4gPiAKPiAK
+PiBUaGUgYnVpbGQgc3RpbGwgYnJlYWtzIHdoZW4gdGhpcyBwYXRjaCBpcyBhcHBsaWVkOgoKPz8g
+SSdsbCBoYXZlIHRvIGNoZWNrCgo+IFlvdSBjYW4ndCBicmVhayB0aGUgYnVpbGQgb24gYW55IHBh
+dGNoZXMgaW4gYSBzZXJpZXMgOigKClN1cmXCoCEgSW4gbXkgdGVzdHMgdGhlIGJ1aWxkIHBhc3Nl
+cyBmaW5lIHdpdGhvdXQgYW55IHdhcm5pbmcgYXQgZWFjaApwYXRjaC4uLgoKU2FtdWVsCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fClNwZWFrdXAgbWFpbGlu
+ZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xpbnV4LXNwZWFrdXAub3Jn
+L2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCg==
