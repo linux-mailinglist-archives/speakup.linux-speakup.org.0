@@ -2,46 +2,37 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B6B8C2DA24F
-	for <lists+speakup@lfdr.de>; Mon, 14 Dec 2020 22:09:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 4EE3E2DA290
+	for <lists+speakup@lfdr.de>; Mon, 14 Dec 2020 22:29:27 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5E5F9380FAB; Mon, 14 Dec 2020 16:09:32 -0500 (EST)
+	id 2BE7D380F32; Mon, 14 Dec 2020 16:29:26 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CDD18380F20;
-	Mon, 14 Dec 2020 16:09:31 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3F7AF380F27;
+	Mon, 14 Dec 2020 16:29:25 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 43A49380EDA; Mon, 14 Dec 2020 16:09:30 -0500 (EST)
-Received: from wmauth4.doit.wisc.edu (wmauth4.doit.wisc.edu [144.92.197.145])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 1986B38097A
- for <speakup@linux-speakup.org>; Mon, 14 Dec 2020 16:09:30 -0500 (EST)
-Received: from [192.168.0.14]
- (108-85-191-186.lightspeed.mdsnwi.sbcglobal.net [108.85.191.186])
- by smtpauth4.wiscmail.wisc.edu
- (Oracle Communications Messaging Server 8.0.2.4.20190812 64bit (built Aug 12
- 2019)) with ESMTPSA id <0QLC02IWLLFRA340@smtpauth4.wiscmail.wisc.edu> for
- speakup@linux-speakup.org; Mon, 14 Dec 2020 15:09:28 -0600 (CST)
-X-Spam-Report: AuthenticatedSender=yes, SenderIP=[108.85.191.186]
-X-Wisc-Env-From-B64: amhlaW1AbWF0aC53aXNjLmVkdQ==
-X-Spam-PmxInfo: Server=avs-4, Version=6.4.7.2805085,
- Antispam-Engine: 2.7.2.2107409, Antispam-Data: 2020.12.14.210018,
- AntiVirus-Engine: 5.79.0, AntiVirus-Data: 2020.11.19.5790001,
- SenderIP=[108.85.191.186]
+ id 9BEA3380C18; Mon, 14 Dec 2020 16:29:23 -0500 (EST)
+Received: from smtp2-g21.free.fr (smtp2-g21.free.fr [212.27.42.2])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 71B98380967
+ for <speakup@linux-speakup.org>; Mon, 14 Dec 2020 16:29:23 -0500 (EST)
+Received: from darkstar.example.slint (unknown
+ [IPv6:2a01:e34:ed09:d470:ad84:e490:f8f1:b361])
+ by smtp2-g21.free.fr (Postfix) with ESMTP id A42E72003C6
+ for <speakup@linux-speakup.org>; Mon, 14 Dec 2020 22:28:48 +0100 (CET)
 Subject: Re: Efficiently using terminal with screenreader
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>, 
- Reece O'Bryan <reece.obryan@icloud.com>
+To: speakup@linux-speakup.org
 References: <9EB3CEB9-C251-43F0-8780-E8CBDC759EAC@icloud.com>
  <36759A23-2591-4A2C-BCF1-C868167EAFA0@speedpost.net>
  <8326BC97-9410-4773-A453-222573C17E33@icloud.com>
-From: John G Heim <jheim@math.wisc.edu>
-Message-id: <f99b5965-3058-cbb2-ece8-b19ff5e2ef6f@math.wisc.edu>
-Date: Mon, 14 Dec 2020 15:09:27 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.5.0
-MIME-version: 1.0
-In-reply-to: <8326BC97-9410-4773-A453-222573C17E33@icloud.com>
-Content-language: en-US
+From: Didier Spaier <didier@slint.fr>
+Message-ID: <e88d9fbb-5d3c-b3da-7f2d-3e6080ea9ecb@slint.fr>
+Date: Mon, 14 Dec 2020 22:28:48 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.12.0
+MIME-Version: 1.0
+In-Reply-To: <8326BC97-9410-4773-A453-222573C17E33@icloud.com>
+Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -54,7 +45,7 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: jheim@math.wisc.edu, "Speakup is a screen review system for Linux."
+Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
 Content-Transfer-Encoding: base64
 Content-Type: text/plain; charset="utf-8"; Format="flowed"
@@ -62,33 +53,38 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Ck15IG9waW5pb24gaXMgdGhhdCB5b3Ugc2hvdWxkIGp1c3QgdXNlIG9uZSBvZiB0aGUgbWFueSB0
-ZXJtaW5hbCAKZW11bGF0b3JzIGluIHRoZSBncmFwaGljYWwgdXNlciBpbnRlcmZhY2UuIFBlcnNv
-bmFsbHksIEkgdXNlIApnbm9tZS10ZXJtaW5hbC4KT24gMTIvMTQvMjAgMjo1NiBQTSwgUmVlY2Ug
-TydCcnlhbiB3cm90ZToKPiBUaGlzIGlzIGdyZWF0IHRvIGhlYXIuIFNvIGNhbiBJIHJ1biBib3Ro
-IEVzcGVhayBhbmQgT3JjYSBhdCB0aGUgc2FtZSB0aW1lIG9yIHdpbGwgSSBuZWVkIHRvIGNsb3Nl
-IG9yY2Egd2hlbiBJIHdhbnQgdG8gb3BlbiB0aGUgdGVybWluYWwgYW5kIHVzZSBlc3BlYWt1cD8K
-PiAKPiAKPiBUaGFuayB5b3UsCj4gCj4gLVJlZWNlCj4gCj4+IE9uIERlYyAxNCwgMjAyMCwgYXQg
-MjowNCBQTSwgWmFjaGFyeSBLbGluZSA8emtsaW5lQHNwZWVkcG9zdC5uZXQ+IHdyb3RlOgo+Pgo+
-PiBIaSwKPj4KPj4gVG8gYmUgcGVyZmVjdGx5IGhvbmVzdCwgSSByZWNvbW1lbmQgdXNpbmcgU3Bl
-YWt1cCBmb3IgZ29vZCB0ZXJtaW5hbCBzdXBwb3J0LiBPcmNhIGlzIHJhdGhlciBzdWItcGFyIGlu
-IHRoaXMgcmVnYXJkLCBhbmQgU3BlYWt1cCB3YXMgZGVzaWduZWQgdG8gZnVsbHkgc3VwcG9ydCBj
-b21tYW5kLWxpbmUgb3V0cHV0IGZyb20gdGhlIHN0YXJ0Lgo+PiBCZXN0LAo+PiBaYWNrLgo+Pgo+
-Pj4gT24gRGVjIDE0LCAyMDIwLCBhdCAxMDo1MiBBTSwgUmVlY2UgTydCcnlhbiA8cmVlY2Uub2Jy
-eWFuQGljbG91ZC5jb20+IHdyb3RlOgo+Pj4KPj4+IEhlbGxvLAo+Pj4KPj4+IEnigJltIGhhdmlu
-ZyB0cm91YmxlIGVmZmljaWVudGx5IGFjY2Vzc2luZyBvdXRwdXRzIGZyb20gdGVybWluYWwgaW4g
-T3JjYS4gSSBuZWVkIGEgZnVsbHkgZnVuY3Rpb25pbmcgc2NyZWVuIHJlYWRlciwgaXMgdGhlcmUg
-YW4gZWFzeSB3YXkgdG8gbmF2aWdhdGUgbGluZSBieSBsaW5lIG9mIG91dHB1dCBmcm9tIHRlcm1p
-bmFsIGluIGVzcGVha3VwIG9yIG9yY2E/Cj4+Pgo+Pj4gVGhhbmsgeW91LAo+Pj4KPj4+IC1SZWVj
-ZQo+Pj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPj4+
-IFNwZWFrdXAgbWFpbGluZyBsaXN0Cj4+PiBTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCj4+PiBo
-dHRwOi8vbGludXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
-Pj4KPj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPj4g
-U3BlYWt1cCBtYWlsaW5nIGxpc3QKPj4gU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwo+PiBodHRw
-Oi8vbGludXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAKPiBf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IFNwZWFrdXAg
-bWFpbGluZyBsaXN0Cj4gU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwo+IGh0dHA6Ly9saW51eC1z
-cGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo+IApfX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpTcGVha3VwIG1haWxpbmcgbGlz
-dApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2kt
-YmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
+WW91IGNhbid0IHVzZSBTcGVha3VwIChub3QgdG8gYmUgY29uZnVzZWQgd2l0aCBFc3BlYWspIGlu
+IGEgZ3JhcGhpY2FsIAplbnZpcm9ubWVudCBhdCBhbGwsIG9ubHkgaW4gYSBjb25zb2xlLgpTcGVh
+a3VwIGlzIGEgY29uc29sZSBzY3JlZW4gcmVhZGVyLCBFc3BlYWsgaXMgb25lIG9mIHRoZSBUVFMg
+ZW5naW5lcyAKKHdpdGggYXNzb2NpYXRlZCB2b2ljZXMpIHRoYXQgY2FuIGJlIHVzZWQgd2l0aCBP
+cmNhLgoKRnVydGhlciBhcyB5b3VyIHF1ZXN0aW9uIGlzIGFjdHVhbGx5IGFib3V0IE9yY2EsIHlv
+dSBjb3VsZCBnZXQgbW9yZSAKYW5zd2VycyBwb3N0aW5nIGluIHRoZSBPcmNhIG1haWxpbmcgbGlz
+dC4KSW4gY2FzZSB5b3UgZGlkbid0IGNvbWUgYWNyb3NzIGl0LCBoZXJlIGlzIGEgbGluazoKaHR0
+cHM6Ly9tYWlsLmdub21lLm9yZy9tYWlsbWFuL2xpc3RpbmZvL29yY2EtbGlzdAoKRGlkaWVyCgpP
+biAxNC8xMi8yMDIwIDIxOjU2LCBSZWVjZSBPJ0JyeWFuIHdyb3RlOgo+IFRoaXMgaXMgZ3JlYXQg
+dG8gaGVhci4gU28gY2FuIEkgcnVuIGJvdGggRXNwZWFrIGFuZCBPcmNhIGF0IHRoZSBzYW1lIHRp
+bWUgb3Igd2lsbCBJIG5lZWQgdG8gY2xvc2Ugb3JjYSB3aGVuIEkgd2FudCB0byBvcGVuIHRoZSB0
+ZXJtaW5hbCBhbmQgdXNlIGVzcGVha3VwPwo+IAo+IAo+IFRoYW5rIHlvdSwKPiAKPiAtUmVlY2UK
+PiAKPj4gT24gRGVjIDE0LCAyMDIwLCBhdCAyOjA0IFBNLCBaYWNoYXJ5IEtsaW5lIDx6a2xpbmVA
+c3BlZWRwb3N0Lm5ldD4gd3JvdGU6Cj4+Cj4+IEhpLAo+Pgo+PiBUbyBiZSBwZXJmZWN0bHkgaG9u
+ZXN0LCBJIHJlY29tbWVuZCB1c2luZyBTcGVha3VwIGZvciBnb29kIHRlcm1pbmFsIHN1cHBvcnQu
+IE9yY2EgaXMgcmF0aGVyIHN1Yi1wYXIgaW4gdGhpcyByZWdhcmQsIGFuZCBTcGVha3VwIHdhcyBk
+ZXNpZ25lZCB0byBmdWxseSBzdXBwb3J0IGNvbW1hbmQtbGluZSBvdXRwdXQgZnJvbSB0aGUgc3Rh
+cnQuCj4+IEJlc3QsCj4+IFphY2suCj4+Cj4+PiBPbiBEZWMgMTQsIDIwMjAsIGF0IDEwOjUyIEFN
+LCBSZWVjZSBPJ0JyeWFuIDxyZWVjZS5vYnJ5YW5AaWNsb3VkLmNvbT4gd3JvdGU6Cj4+Pgo+Pj4g
+SGVsbG8sCj4+Pgo+Pj4gSeKAmW0gaGF2aW5nIHRyb3VibGUgZWZmaWNpZW50bHkgYWNjZXNzaW5n
+IG91dHB1dHMgZnJvbSB0ZXJtaW5hbCBpbiBPcmNhLiBJIG5lZWQgYSBmdWxseSBmdW5jdGlvbmlu
+ZyBzY3JlZW4gcmVhZGVyLCBpcyB0aGVyZSBhbiBlYXN5IHdheSB0byBuYXZpZ2F0ZSBsaW5lIGJ5
+IGxpbmUgb2Ygb3V0cHV0IGZyb20gdGVybWluYWwgaW4gZXNwZWFrdXAgb3Igb3JjYT8KPj4+Cj4+
+PiBUaGFuayB5b3UsCj4+Pgo+Pj4gLVJlZWNlCj4+PiBfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwo+Pj4gU3BlYWt1cCBtYWlsaW5nIGxpc3QKPj4+IFNwZWFr
+dXBAbGludXgtc3BlYWt1cC5vcmcKPj4+IGh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmlu
+L21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo+Pgo+PiBfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwo+PiBTcGVha3VwIG1haWxpbmcgbGlzdAo+PiBTcGVha3Vw
+QGxpbnV4LXNwZWFrdXAub3JnCj4+IGh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21h
+aWxtYW4vbGlzdGluZm8vc3BlYWt1cAo+IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fCj4gU3BlYWt1cCBtYWlsaW5nIGxpc3QKPiBTcGVha3VwQGxpbnV4LXNw
+ZWFrdXAub3JnCj4gaHR0cDovL2xpbnV4LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0
+aW5mby9zcGVha3VwCj4gCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fClNwZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKaHR0
+cDovL2xpbnV4LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1hbi9saXN0aW5mby9zcGVha3VwCg==
