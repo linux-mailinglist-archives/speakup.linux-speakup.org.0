@@ -2,45 +2,47 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 707672DD9B0
-	for <lists+speakup@lfdr.de>; Thu, 17 Dec 2020 21:13:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 353DE2DD9E0
+	for <lists+speakup@lfdr.de>; Thu, 17 Dec 2020 21:27:45 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 34E40380FAC; Thu, 17 Dec 2020 15:13:03 -0500 (EST)
+	id 7C7DC380FA6; Thu, 17 Dec 2020 15:27:44 -0500 (EST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=icloud.com header.i=@icloud.com header.a=rsa-sha256 header.s=1a1hai header.b=HfNLo2fk;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=zusCnLiy;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 5F9EE380F2A;
-	Thu, 17 Dec 2020 15:13:00 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 7A37B380F29;
+	Thu, 17 Dec 2020 15:27:43 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 42950380C19; Thu, 17 Dec 2020 15:12:59 -0500 (EST)
-Received: from st43p00im-zteg10073501.me.com (st43p00im-zteg10073501.me.com
- [17.58.63.180])
- by befuddled.reisers.ca (Postfix) with ESMTPS id CFFE9380BF2
- for <speakup@linux-speakup.org>; Thu, 17 Dec 2020 15:12:58 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
- s=1a1hai; t=1608235975;
- bh=ZzsTU+jUgn88VNQP+MlKJeRH9Py4rcv8O+J7k6g6bFM=;
- h=From:Content-Type:Mime-Version:Date:Subject:Message-Id:To;
- b=HfNLo2fkdlViF8lQq8AST76gJYJS3ArOTmUGGFtWbVSSBNf9D6ujM6T6l2qriOAEF
- nH0+ok4bQkaA6k5Hv4tDXAeN4dml6b/VZZPWJ1h0N7UQuvMJQRThhR5pxGmuKFWO8N
- WGCGCYG767C25SzZizGyj5B3YgMfeZ2XP9MzhsoojgjH4UNcih6z1Z+TobT1RnFRhf
- sw88B8YFzvB6wNQXa+YZSr+kJ6kBLUB0llLieod5LhFUlCkh1r85B0ddSXB/otnWdl
- FExUfUoVIPsDJToec3LcHEGZCU3sHt3Rny2N0njoW5Qgkxi6IICcXMVMOl2KoERcez
- 2OuSVswGTr7fQ==
-Received: from [192.168.1.77] (cpe-69-23-57-146.natcky.res.rr.com
- [69.23.57.146])
- by st43p00im-zteg10073501.me.com (Postfix) with ESMTPSA id C9D65AE0566
- for <speakup@linux-speakup.org>; Thu, 17 Dec 2020 20:12:55 +0000 (UTC)
-From: Reece O'Bryan <reece.obryan@icloud.com>
-Mime-Version: 1.0 (1.0)
-Date: Thu, 17 Dec 2020 15:12:54 -0500
+ id 8F39F380C19; Thu, 17 Dec 2020 15:27:41 -0500 (EST)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id D2CFB380BF2
+ for <speakup@linux-speakup.org>; Thu, 17 Dec 2020 15:27:40 -0500 (EST)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2607:fb90:4a37:aca3:549d:881f:6939:cd68])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id 8D4EC929
+ for <speakup@linux-speakup.org>; Thu, 17 Dec 2020 12:27:40 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1608236860; bh=pnGqW2DTt4L+4w++HFL/PKcRv73Ya6doMmfJ94JmCj0=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=zusCnLiyj8e9mmf4H0SxlEL/JUtzTTvlZ3rDZshnG/vuREfCoAPX+SuX8Zy6DVttN
+ WPYYi6mp17oQGU4WgpWQ3M/JSACr4JO/cUU1cnK+UqItv7KKJqUMZpvnwu/smRzfkp
+ igzLkQefzx4MFF8A9Jun2c3MkcMt2ksINMvknmACLYFFhdWXYnO/W3bk7rSkYluaUc
+ XUBiZXRKgXEHCupaizD6dM6ZwP/OuS4bfUSbgCcnorG+dZi71Azze/+awQ5pMYOgou
+ s6P6EEgkATdOUR4RCpFbAaFTObr3Yia5KtlksSzbOHFHa9w2jmQo1CqP8IOZ4AL8NW
+ BGd9QwxkKWfig==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>) id 1kpzs5-0001Te-Pj
+ for speakup@linux-speakup.org; Thu, 17 Dec 2020 13:27:33 -0700
+Date: Thu, 17 Dec 2020 13:27:33 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: Efficiently using terminal with screenreader
-Message-Id: <12561F5D-AFC7-4753-B2C4-1ED017E1C020@icloud.com>
-References: <9EB3CEB9-C251-43F0-8780-E8CBDC759EAC@icloud.com>
- <36759A23-2591-4A2C-BCF1-C868167EAFA0@speedpost.net>
+Message-ID: <20201217202733.GA5439@gregn.net>
+References: <36759A23-2591-4A2C-BCF1-C868167EAFA0@speedpost.net>
  <20201216130002.GA5313@rednote.net>
  <Pine.LNX.4.64.2012161636510.3602815@server2.shellworld.net>
  <53240DEC-4237-4D6C-9820-30DE24C3904E@icloud.com>
@@ -49,17 +51,14 @@ References: <9EB3CEB9-C251-43F0-8780-E8CBDC759EAC@icloud.com>
  <B7379CEB-D226-42D2-B99A-46558F5B7D4D@speedpost.net>
  <20201217185942.ilfu5kbg2lmcwidi@function>
  <C0260469-C483-4C7D-A5CC-0CDBA6B3D6BD@speedpost.net>
-In-Reply-To: <C0260469-C483-4C7D-A5CC-0CDBA6B3D6BD@speedpost.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-X-Mailer: iPhone Mail (16C101)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.343, 18.0.737
- definitions=2020-12-17_14:2020-12-17,
- 2020-12-17 signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 clxscore=1015 mlxscore=0
- mlxlogscore=999 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-2006250000 definitions=main-2012170134
+ <12561F5D-AFC7-4753-B2C4-1ED017E1C020@icloud.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <12561F5D-AFC7-4753-B2C4-1ED017E1C020@icloud.com>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.102.4 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,31 +79,30 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SnVzdCB0byBjb25maXJtLCBJ4oCZbSBnb2luZyB0byBuZWVkIGEgc2VyaWFsIGFkYXB0ZXIgdG8g
-cGx1ZyBpbiB0byBteSBVU0IgaHViIGNvbm5lY3RlZCB0byBteSBNYWNCb29rLCB0aGVuIGNvbm5l
-Y3QgYSBoYXJkd2FyZSBzeW50aGVzaXplciB0byB0aGUgY2VyZWFsLiBEb2luZyBpdCB0aGlzIHdh
-eSB3b3VsZCBJIGJlIGFibGUgdG8gdXNlIHRoZSBoYXJkd2FyZSBzeW50aGVzaXplciBpbnNpZGUg
-b2YgdmlydHVhbEJveCBydW5uaW5nIERlYmlhbiBhbmQgU3BlYWt1cD8gSSBhc3N1bWUgdGhhdCBp
-dCBzaG91bGQgaW4gdGhlb3J5LCBidXQgaWYgbm90IGJlY2F1c2Ugb2YgdGhlIHZpcnR1YWxpemF0
-aW9uLCB0aGVuIHBsYW4gQiBpcyBkb2luZyB0aGUgZXhhY3Qgc2FtZSB0aGluZyB3aGlsZSBib290
-aW5nIGZyb20gc29tZXRoaW5nIGxpa2UgVWJ1bnR1IG9uIHRoZSBVU0IuCgpUaGFuayB5b3UsCgot
-UmVlY2UgCgo+IE9uIERlYyAxNywgMjAyMCwgYXQgMjowNCBQTSwgWmFjaGFyeSBLbGluZSA8emts
-aW5lQHNwZWVkcG9zdC5uZXQ+IHdyb3RlOgo+IAo+IFNhbXVlbCwKPiAKPiBObywgdGhleSBkZWZp
-bml0ZWx5IGRvbuKAmXQuIEFzIGZhciBhcyBJ4oCZbSBhd2FyZSB0aGV5IHVzZSBhbiBlbnRpcmVs
-eSBkaWZmZXJlbnQgaW50ZXJmYWNlLiBUaGUgYWRhcHRvciBleHBvc2VzIC9kZXYvdHR5VVNCMCBi
-dXQgdGhlIHN5bnRoZXNpemVyIGlzIHN0aWxsIGluIHNlcmlhbC9yczIzMiBtb2RlLiBUaGVyZeKA
-mXMgYSBoYXJkd2FyZSB0b2dnbGUgc3dpdGNoIHRvIHNlbGVjdCBvbmUgbW9kZSBvciB0aGUgb3Ro
-ZXIuCj4gQmVzdCwKPiBaYWNrLgo+IAo+PiBPbiBEZWMgMTcsIDIwMjAsIGF0IDEwOjU5IEFNLCBT
-YW11ZWwgVGhpYmF1bHQgPHNhbXVlbC50aGliYXVsdEBlbnMtbHlvbi5vcmc+IHdyb3RlOgo+PiAK
-Pj4gWmFjaGFyeSBLbGluZSwgbGUgamV1LiAxNyBkw6ljLiAyMDIwIDEwOjU1OjEzIC0wODAwLCBh
-IGVjcml0Ogo+Pj4gYnV0IGRvZXNu4oCZdCBzdXBwb3J0IHVzaW5nIHN5bnRocyBpbiBuYXRpdmUg
-VVNCIG1vZGUuCj4+IAo+PiBEb24ndCB0aGVzZSBzaW1wbHkgZXhwb3NlIGEgL2Rldi90dHlVU0Iw
-IHBvcnQ/Cj4+IAo+PiBTYW11ZWwKPj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX18KPj4gU3BlYWt1cCBtYWlsaW5nIGxpc3QKPj4gU3BlYWt1cEBsaW51eC1z
-cGVha3VwLm9yZwo+PiBodHRwOi8vbGludXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xp
-c3RpbmZvL3NwZWFrdXAKPiAKPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwo+IFNwZWFrdXAgbWFpbGluZyBsaXN0Cj4gU3BlYWt1cEBsaW51eC1zcGVha3Vw
-Lm9yZwo+IGh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8v
-c3BlYWt1cApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpT
-cGVha3VwIG1haWxpbmcgbGlzdApTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCmh0dHA6Ly9saW51
-eC1zcGVha3VwLm9yZy9jZ2ktYmluL21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAo=
+T24gVGh1LCBEZWMgMTcsIDIwMjAgYXQgMDM6MDA6NTJQTSAtMDUwMCwgUmVlY2UgTydCcnlhbiB3
+cm90ZToKPiBJcyBpdCBwb3NzaWJsZSB0byBjb21waWxlIHNwZWFrIHVwIG9uIG15IE1hY0Jvb2s/
+CgpOby4KCk9uIFRodSwgRGVjIDE3LCAyMDIwIGF0IDAzOjEyOjU0UE0gLTA1MDAsIFJlZWNlIE8n
+QnJ5YW4gd3JvdGU6Cj4gSnVzdCB0byBjb25maXJtLCBJ4oCZbSBnb2luZyB0byBuZWVkIGEgc2Vy
+aWFsIGFkYXB0ZXIgdG8gcGx1ZyBpbiB0byBteQpVU0IgaHViIGNvbm5lY3RlZCB0byBteSBNYWNC
+b29rLCB0aGVuIGNvbm5lY3QgYSBoYXJkd2FyZSBzeW50aGVzaXplcgp0byB0aGUgY2VyZWFsLgoK
+Q29ycmVjdC4KCj4gRG9pbmcgaXQgdGhpcyB3YXkgd291bGQgSSBiZSBhYmxlIHRvIHVzZSB0aGUg
+aGFyZHdhcmUgc3ludGhlc2l6ZXIgaW5zaWRlIG9mIHZpcnR1YWxCb3ggcnVubmluZyBEZWJpYW4g
+YW5kIFNwZWFrdXA/IEkgYXNzdW1lIHRoYXQgaXQgc2hvdWxkIGluIHRoZW9yeSwgYnV0IGlmIG5v
+dCBiZWNhdXNlIG9mIHRoZSB2aXJ0dWFsaXphdGlvbiwgdGhlbiBwbGFuIEIgaXMgZG9pbmcgdGhl
+IGV4YWN0IHNhbWUgdGhpbmcgd2hpbGUgYm9vdGluZyBmcm9tIHNvbWV0aGluZyBsaWtlIFVidW50
+dSBvbiB0aGUgVVNCLgoKWWVzLCB0aGF0IHNob3VsZCB3b3JrLCB0aG91Z2ggSSBoYXZlbid0IGRv
+bmUgdGhhdCBpbiBhIHdoaWxlLiBZb3UgaGF2ZQp0byBvcHRpb25zIGhlcmUuIEZpcnN0IG9wdGlv
+biBpcyB0byBkZWZpbmUgYSBzZXJpYWwgcG9ydCB3aGljaCB3b3VsZAphcHBlYXIgaW4geW91ciBn
+dWVzdCBhcyBhIHBoeXNpY2FsIHNlcmlhbCBwb3J0LCBhbmQgeW91IHdvdWxkIHNldCB0aGF0CnVw
+IHRvIGludGVyZmFjZSB0byB5b3VyIFVTQiBzZXJpYWwgcG9ydCBvbiB0aGUgaG9zdC4gVGhlIHNl
+Y29uZCBvcHRpb24KaXMgdG8gZGlycmVjdGx5IHBhc3MgdGhlIFVTQiBzZXJpYWwgYWRhcHRlciB0
+aHJvdWdoIHRvIHRoZSBndWVzdC4gVGhlCnZpcnR1YWxib3ggdXNlcidzIG1hbnVhbCBoYXMgbW9y
+ZSBkZXRhaWxzLgoKR3JlZwoKCi0tIAp3ZWIgc2l0ZTogaHR0cDovL3d3dy5ncmVnbi5uZXQKZ3Bn
+IHB1YmxpYyBrZXk6IGh0dHA6Ly93d3cuZ3JlZ24ubmV0L3B1YmtleS5hc2MKc2t5cGU6IGdyZWdu
+MQooYXV0aG9yaXphdGlvbiByZXF1aXJlZCwgYWRkIG1lIHRvIHlvdXIgY29udGFjdHMgbGlzdCBm
+aXJzdCkKSWYgd2UgaGF2ZW4ndCBiZWVuIGluIHRvdWNoIGJlZm9yZSwgZS1tYWlsIG1lIGJlZm9y
+ZSBhZGRpbmcgbWUgdG8geW91ciBjb250YWN0cy4KCi0tCkZyZWUgZG9tYWluczogaHR0cDovL3d3
+dy5ldS5vcmcvIG9yIG1haWwgZG5zLW1hbmFnZXJARVUub3JnCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fClNwZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBA
+bGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xpbnV4LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1h
+bi9saXN0aW5mby9zcGVha3VwCg==
