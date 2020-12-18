@@ -2,50 +2,45 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 919FA2DDC2B
-	for <lists+speakup@lfdr.de>; Fri, 18 Dec 2020 00:52:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 9EDBC2DE18B
+	for <lists+speakup@lfdr.de>; Fri, 18 Dec 2020 11:55:04 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2B9BE380F3F; Thu, 17 Dec 2020 18:52:44 -0500 (EST)
+	id 1075D380F38; Fri, 18 Dec 2020 05:55:04 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 76C60380F2A;
-	Thu, 17 Dec 2020 18:52:42 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 94BD6380F2D;
+	Fri, 18 Dec 2020 05:55:01 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 47F5D380C16; Thu, 17 Dec 2020 18:52:41 -0500 (EST)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 25DF2380BE3
- for <speakup@linux-speakup.org>; Thu, 17 Dec 2020 18:52:41 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id 270E8BD1
- for <speakup@linux-speakup.org>; Fri, 18 Dec 2020 00:52:08 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id BY7SNY6P2CAd for <speakup@linux-speakup.org>;
- Fri, 18 Dec 2020 00:52:07 +0100 (CET)
-Received: from function.youpi.perso.aquilenet.fr (unknown
- [IPv6:2a01:cb19:956:1b00:9eb6:d0ff:fe88:c3c7])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id 4778A6E9
- for <speakup@linux-speakup.org>; Fri, 18 Dec 2020 00:52:07 +0100 (CET)
-Received: from samy by function.youpi.perso.aquilenet.fr with local (Exim 4.94)
- (envelope-from <samuel.thibault@ens-lyon.org>) id 1kq342-008VkW-0s
- for speakup@linux-speakup.org; Fri, 18 Dec 2020 00:52:06 +0100
-Date: Fri, 18 Dec 2020 00:52:06 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+ id A6CEF380BE2; Fri, 18 Dec 2020 05:54:59 -0500 (EST)
+Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 7DBAE38096A
+ for <speakup@linux-speakup.org>; Fri, 18 Dec 2020 05:54:59 -0500 (EST)
+Received: from rednote.net (localhost [IPv6:::1])
+ by mail.rednote.net (Postfix) with ESMTPS id 2EFFDFA329
+ for <speakup@linux-speakup.org>; Fri, 18 Dec 2020 05:54:27 -0500 (EST)
+Received: (from janina@localhost)
+ by rednote.net (8.16.1/8.16.1/Submit) id 0BIAsRgn138997
+ for speakup@linux-speakup.org; Fri, 18 Dec 2020 05:54:27 -0500
+Date: Fri, 18 Dec 2020 05:54:27 -0500
+From: Janina Sajka <janina@rednote.net>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: 8-bit characters in output
-Message-ID: <20201217235206.5vpekwt2uloyiesc@function>
-References: <E1kosWy-0005Aq-Ua@wb5agz>
- <20201214234815.ovab4h362z2swvdv@function>
- <E1kpfoC-0007Pr-Tr@wb5agz>
- <20201216230430.cog65dc5ay6d65zo@function>
- <E1kpjRQ-0000yT-Fi@wb5agz>
+Subject: Re: Efficiently using terminal with screenreader
+Message-ID: <20201218105427.GD5313@rednote.net>
+References: <36759A23-2591-4A2C-BCF1-C868167EAFA0@speedpost.net>
+ <20201216130002.GA5313@rednote.net>
+ <Pine.LNX.4.64.2012161636510.3602815@server2.shellworld.net>
+ <53240DEC-4237-4D6C-9820-30DE24C3904E@icloud.com>
+ <f1d6bafe-2326-cd8f-5889-191a2cd7b2e6@math.wisc.edu>
+ <20201217184038.h7b764gsfxtjag4i@function>
+ <B7379CEB-D226-42D2-B99A-46558F5B7D4D@speedpost.net>
+ <20201217185942.ilfu5kbg2lmcwidi@function>
+ <C0260469-C483-4C7D-A5CC-0CDBA6B3D6BD@speedpost.net>
+ <FD9C8E4B-57AC-4F83-A529-B0B5B3087B8E@icloud.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <E1kpjRQ-0000yT-Fi@wb5agz>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+In-Reply-To: <FD9C8E4B-57AC-4F83-A529-B0B5B3087B8E@icloud.com>
+X-Operating-System: Linux opera.rednote.net 5.9.13-200.fc33.x86_64
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,14 +61,76 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-TWFydGluIE1jQ29ybWljaywgbGUgbWVyLiAxNiBkw6ljLiAyMDIwIDIwOjU0OjU2IC0wNjAwLCBh
-IGVjcml0Ogo+IGFsbCBjaGFyYWN0ZXJzIHdpdGggYml0IDcgc2V0IHRyaWdnZXIgdGhlIHNhbWUg
-c291bmRzLgoKT2ssIHNvIHdoYXQgaGFwcGVucyBpcyB0aGF0IHRoaXMgaXMgaW52YWxpZCB1dGYt
-OCwgd2hpY2ggdGhlIGtlcm5lbAp0dXJucyBpbnRvIFUrRkZGRCBjaGFyYWN0ZXJzLCB3aGljaCBz
-cGVha3VwIHByb3Blcmx5IHBhc3NlcyBvbiB0bwplc3BlYWt1cCwgd2hpY2ggZ2l2ZXMgaXQgdG8g
-ZXNwZWFrLW5nLCB3aGVyZSBpdCBnZXRzIGNvbXBsZXRlbHkKbWlzaW50ZXJwcmV0ZWQsIEkgaGF2
-ZSBzdWJtaXR0ZWQKCmh0dHBzOi8vZ2l0aHViLmNvbS9lc3BlYWstbmcvZXNwZWFrLW5nL2lzc3Vl
-cy84NTkKClRoYW5rcyBmb3IgdGhlIHJlcG9ydCwKU2FtdWVsCl9fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fClNwZWFrdXAgbWFpbGluZyBsaXN0ClNwZWFrdXBA
-bGludXgtc3BlYWt1cC5vcmcKaHR0cDovL2xpbnV4LXNwZWFrdXAub3JnL2NnaS1iaW4vbWFpbG1h
-bi9saXN0aW5mby9zcGVha3VwCg==
+UmVlY2U6CgpUbyBydW4gU3BlYWt1cCBvbiB5b3VyIE1hYywgeW91J2xsIG5lZWQgYSB2bSBlbnZp
+cm9ubWVudCBsaWtlIHRob3NlCm9mZmVyZWQgYnkgVk13YXJlIG9yIFZpcnR1YWwgQm94LiBUaGUg
+dm0gZnVuY3Rpb25zIGFzIHRoZSB0cmFuc2xhdGlvbgpsYXllciBiZXR3ZWVuIExpbnV4IHNvZnR3
+YXJlIGNvZGUgZXhlY3V0aW9uIGFuZCBuYXRpdmUgTWFjaW50b3NoIGNvZGUKZXhlY3V0aW9uLCBp
+LmUuIE9TIFggb24geW91ciBNYWMgaXMgYSB2YXJpYW50IG9mIEJlcmtlbGV5IFN5c3RlbSBVbml4
+CihCU0QpLCB3aGljaCBpcyB2ZXJ5IGRpZmZlcmVudCBmcm9tIExpbnV4IGF0IHRoZSB2ZXJ5IGxv
+dyBsZXZlbHMgd2hlcmUgc29mdHdhcmUgbWFrZXMgaGFyZHdhcmUgZG8gaXRzCnRoaW5nLiBFdmVu
+IHRob3VnaCBtYW55IG9mIHRoZSBjb21tYW5kcyB5b3UgY2FuIGZpbmQgaW4gL3Vzci9iaW4gYXJl
+IHRoZQpzYW1lIGFuZCBmdW5jdGlvbiBpbiB2ZXJ5IHNpbWlsYXIgd2F5cywgdGhlIHR3byBlbnZp
+cm9ubWVudHMgYXJlIHF1aXRlCmRpZmZlcmVudCB1bmRlciB0aGUgaG9vZC4KCk5vdGUgdGhhdCB0
+aGUgZW5kIHJlc3VsdCBjYW4gb3V0IHRvIGJlIHZlcnkgc2ltaWxhciB0byB3aGF0IHlvdSdyZQpj
+b250ZW1wbGF0aW5nIHNob3VsZCB5b3UgYWxzbyBpbnN0YWxsIHNhbWJhIGluIHlvdXIgTGludXgg
+dm0gYW5kIG1vdW50CnRoZSAicmVtb3RlIiBNYWMgZmlsZXN5c3RlbS4gQnV0LCB5b3UgY2Fubm90
+IHNpbXBseSBjb250cml2ZSB0aGUgTWFjClRlcm1pbmFsIHRvIHJ1biBTcGVha3VwIHJhdGhlciB0
+aGFuIHZvaWNlIG92ZXIuCgpBbHNvLCB5b3UgaGF2ZSB0aGUgZHVhbCBib290IG9wdGlvbiBvbiB5
+b3VyIE1hYyB3aGVyZSB5b3UgY291bGQgcnVuCkxpbnV4IHdpdGggU3BlYWt1cCByYXRoZXIgdGhh
+biBXaW5kb3dzIGFzIHlvdXIgYm9vdGNhbXAgbWFuYWdlZCBndWVzdApPUy4KCkltcG9ydGFudCBh
+Ym91dCB0aGUgdm0gYXBwcm9hY2ggLS0gV2hpbGUgUGFyYWxsZWxzIGlzIGFub3RoZXIKYXBwbGlj
+YXRpb24gZm9yIHByb3ZpZGluZyB2bSBmdW5jdGlvbmFsaXR5IG9uIHRoZSBNYWMsIGxhc3QgSSBo
+ZWFyZCBpdCdzCm5vdCBhdCBhbGwgYWNjZXNzaWJsZSB0byBWb2ljZSBPdmVyLCB1bmxpa2UgVk13
+YXJlIG9yIFZpcnR1YWwgQm94LgoKVHdvIG1vcmUgcXVpY2sgY29tbWVudHMgYWJvdXQgdGhpcyAu
+Li4KCllvdSBjYW4gaW4gZmFjdCByZWFkIGxpbmUgYnkgbGluZSB3aXRoIFZvaWNlIE92ZXIgaW4g
+YSBNYWMgVGVybWluYWwKc2Vzc2lvbiwgYnV0IHRoZXJlIGFyZSBtb3JlIHN0ZXBzIGludm9sdmVk
+LiBNeSBtZW1vcnkgb24gaG93IHRvIGRvIHRoaXMKaXMgYSBiaXQgaGF6eS4gSSBiZWxpZXZlIHlv
+dSBpbnRlcmFjdCB3aXRoIHRoZSB0ZXJtaW5hbCBvYmplY3QgYnkgZmlyc3QKcHJlc3NpbmcgVk8r
+RG93bi1hcnJvdy4gQXQgdGhpcyBwb2ludCB5b3UncmUgImluIiB0aGUgdGV4dCBvYmplY3QgYW5k
+CmNhbiByZWFkIGxpbmUgYnkgbGluZSwgd29yZCBieSB3b3JkLCBldGMuCgpTZWNvbmQsIHNvbWUg
+Zm9sa3MgYXNzb2NpYXRlZCB3aXRoIHRoZSBTYW4gRnJhbmNpc2NvIExpZ2h0aG91c2UgY2FtZSB1
+cAp3aXRoIGEgc2NyZWVuIHJlYWRlciBmb3IgdGhlIE1hYyBUZXJtaW5hbCBjYWxsZWQgVERTUiBp
+bnRlbmRlZCB0bwpzaW1wbGlmeSB0aGlzIGludGVyYWN0aW9uLiBJIGRpZG4ndCBsb29rIHRvIHNl
+ZSB3aGV0aGVyIHRoaXMgaXMgc3RpbGwKYWN0aXZlbHkgZGV2ZWxvcGVkLCBidXQgdGhlIGxpbmsg
+SSBoYXZlIGZvciB0aGlzIHByb2plY3QgaXM6CgpodHRwczovL2dpdGh1Yi5jb20vdHNwaXZleS90
+ZHNyCgpCZXN0LAoKSmFuaW5hCgpSZWVjZSBPJ0JyeWFuIHdyaXRlczoKPiBPSywgSSB1bmRlcnN0
+YW5kIHdoYXQgeW914oCZcmUgc2F5aW5nIG5vdyEgSeKAmW0gZGVmaW5pdGVseSBnb2luZyB0byBn
+ZXQgb25lIG9mIHRoZXNlIHRvIHBsYXkgYXJvdW5kIHdpdGguCj4gCj4gSSB2ZXJ5IG11Y2ggYXBw
+cmVjaWF0ZSB5b3VyIGV4Y2xhbWF0aW9uIG9mIHRoZSBoaXN0b3J5IG9mIHRoaXMuIEnigJltIHNv
+cnJ5IGlmIG15IHF1ZXN0aW9ucyBhcmUgb2J2aW91cywgYnV0IEkgaGF2ZSBvbmx5IGJlZW4gYmxp
+bmQgYSBmZXcgeWVhcnMgYW5kIHRoaXMgcGFydCBvZiBjb21wdXRlcnMgaXMgcXVpdGUgZGlmZmVy
+ZW50IHdpdGhvdXQgYSBHVUkuIAo+ICAKPiAKPiBUaGFuayB5b3UsCj4gCj4gSXMgaXQgcG9zc2li
+bGUgdG8gY29tcGlsZSBzcGVhayB1cCBvbiBteSBNYWNCb29rPyBJ4oCZbSBzdGlsbCBoYXZpbmcg
+dHJvdWJsZSBuYXZpZ2F0aW5nIGEgdGVybWluYWwgYW5kIGlmIEkgY291bGQgcnVuIHNwZWFrIHVw
+LCBJIGNvdWxkIHNldCB1cCBhbiBhdXRvbWF0ZWQgd29ya2Zsb3cgdG8gdHVybiBvZmYgdm9pY2Vv
+dmVyLCBydW4gc3BlYWsgdXAgYW5kIHJ1biB0ZXJtaW5hbD8gSSBkb27igJl0IHVuZGVyc3RhbmQg
+d2h5IHRoZXJlIGFyZSBub3QgY29tbWFuZHMgdG8gbmF2aWdhdGUgbGluZSBieSBsaW5lIGluIHRo
+ZSBuYXRpdmUgdGVybWluYWwgb24gT1MgWC4KPiAKPiAtUmVlY2UgCj4gCj4gPiBPbiBEZWMgMTcs
+IDIwMjAsIGF0IDI6MDQgUE0sIFphY2hhcnkgS2xpbmUgPHprbGluZUBzcGVlZHBvc3QubmV0PiB3
+cm90ZToKPiA+IAo+ID4gU2FtdWVsLAo+ID4gCj4gPiBObywgdGhleSBkZWZpbml0ZWx5IGRvbuKA
+mXQuIEFzIGZhciBhcyBJ4oCZbSBhd2FyZSB0aGV5IHVzZSBhbiBlbnRpcmVseSBkaWZmZXJlbnQg
+aW50ZXJmYWNlLiBUaGUgYWRhcHRvciBleHBvc2VzIC9kZXYvdHR5VVNCMCBidXQgdGhlIHN5bnRo
+ZXNpemVyIGlzIHN0aWxsIGluIHNlcmlhbC9yczIzMiBtb2RlLiBUaGVyZeKAmXMgYSBoYXJkd2Fy
+ZSB0b2dnbGUgc3dpdGNoIHRvIHNlbGVjdCBvbmUgbW9kZSBvciB0aGUgb3RoZXIuCj4gPiBCZXN0
+LAo+ID4gWmFjay4KPiA+IAo+ID4+IE9uIERlYyAxNywgMjAyMCwgYXQgMTA6NTkgQU0sIFNhbXVl
+bCBUaGliYXVsdCA8c2FtdWVsLnRoaWJhdWx0QGVucy1seW9uLm9yZz4gd3JvdGU6Cj4gPj4gCj4g
+Pj4gWmFjaGFyeSBLbGluZSwgbGUgamV1LiAxNyBkw6ljLiAyMDIwIDEwOjU1OjEzIC0wODAwLCBh
+IGVjcml0Ogo+ID4+PiBidXQgZG9lc27igJl0IHN1cHBvcnQgdXNpbmcgc3ludGhzIGluIG5hdGl2
+ZSBVU0IgbW9kZS4KPiA+PiAKPiA+PiBEb24ndCB0aGVzZSBzaW1wbHkgZXhwb3NlIGEgL2Rldi90
+dHlVU0IwIHBvcnQ/Cj4gPj4gCj4gPj4gU2FtdWVsCj4gPj4gX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX18KPiA+PiBTcGVha3VwIG1haWxpbmcgbGlzdAo+ID4+
+IFNwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcKPiA+PiBodHRwOi8vbGludXgtc3BlYWt1cC5vcmcv
+Y2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAKPiA+IAo+ID4gX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiA+IFNwZWFrdXAgbWFpbGluZyBsaXN0
+Cj4gPiBTcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnCj4gPiBodHRwOi8vbGludXgtc3BlYWt1cC5v
+cmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAKPiBfX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IFNwZWFrdXAgbWFpbGluZyBsaXN0Cj4gU3Bl
+YWt1cEBsaW51eC1zcGVha3VwLm9yZwo+IGh0dHA6Ly9saW51eC1zcGVha3VwLm9yZy9jZ2ktYmlu
+L21haWxtYW4vbGlzdGluZm8vc3BlYWt1cAoKLS0gCgpKYW5pbmEgU2Fqa2EKaHR0cHM6Ly9saW5r
+ZWRpbi5jb20vaW4vanNhamthCgpMaW51eCBGb3VuZGF0aW9uIEZlbGxvdwpFeGVjdXRpdmUgQ2hh
+aXIsIEFjY2Vzc2liaWxpdHkgV29ya2dyb3VwOglodHRwOi8vYTExeS5vcmcKClRoZSBXb3JsZCBX
+aWRlIFdlYiBDb25zb3J0aXVtIChXM0MpLCBXZWIgQWNjZXNzaWJpbGl0eSBJbml0aWF0aXZlIChX
+QUkpCkNvLUNoYWlyLCBBY2Nlc3NpYmxlIFBsYXRmb3JtIEFyY2hpdGVjdHVyZXMJaHR0cDovL3d3
+dy53My5vcmcvd2FpL2FwYQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KU3BlYWt1cCBtYWlsaW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpo
+dHRwOi8vbGludXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
