@@ -2,53 +2,54 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C98242E1189
-	for <lists+speakup@lfdr.de>; Wed, 23 Dec 2020 03:02:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 2C3AF2E1831
+	for <lists+speakup@lfdr.de>; Wed, 23 Dec 2020 05:57:22 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6C74C380F46; Tue, 22 Dec 2020 21:02:06 -0500 (EST)
+	id A0207380F98; Tue, 22 Dec 2020 23:57:21 -0500 (EST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=icloud.com header.i=@icloud.com header.a=rsa-sha256 header.s=1a1hai header.b=F9WDpY7C;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=xPa0tJxH;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 79DBE380F7B;
-	Tue, 22 Dec 2020 21:02:04 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E51FB380F43;
+	Tue, 22 Dec 2020 23:57:19 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 633D1380EB2; Tue, 22 Dec 2020 21:02:02 -0500 (EST)
-Received: from st43p00im-ztbu10073701.me.com (st43p00im-ztbu10073701.me.com
- [17.58.63.183])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 266B538096C
- for <speakup@linux-speakup.org>; Tue, 22 Dec 2020 21:02:02 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
- s=1a1hai; t=1608688919;
- bh=lB11q22a6UDw1srIinsuMJL3r+XiFkCUnl4zPNeNK/U=;
- h=From:Content-Type:Mime-Version:Date:Subject:Message-Id:To;
- b=F9WDpY7CXRPvqc7DwZGuBtHLhVLa3BoVusViSHsl1YmGfMe3mVo21CHUe5cH1U078
- mx/LLyXEcPnHG/9wjLkQCfJLyaKS+f6EQzVkt9CEJh4TKubMSXNqRy4of2FG0P/jfH
- l8tU72ATMz6udLcexQqCradH4ScwM1YjckeOgOIorc5hJdNM+RshrH2eaQmxjMwoCa
- jerTdI0x2yG2qPY4ODp3lwt7ukBnZSVMdYqlQobwMlAxBY/YgPs34F0zPIRgePN7ep
- i7a1wYC2xrpQRGZ1z/HWaq5DYzfXTMVLxDsyP1kpXGseRBOi9KYL9kHXA3/TdwI4LC
- 3QgqDh/xU7WEA==
-Received: from [192.168.1.77] (cpe-69-23-57-146.natcky.res.rr.com
- [69.23.57.146])
- by st43p00im-ztbu10073701.me.com (Postfix) with ESMTPSA id 9DE084C0656
- for <speakup@linux-speakup.org>; Wed, 23 Dec 2020 02:01:59 +0000 (UTC)
-From: Reece O'Bryan <reece.obryan@icloud.com>
-Mime-Version: 1.0 (1.0)
-Date: Tue, 22 Dec 2020 21:01:58 -0500
-Subject: Dual Boot Questions / VirtualBox 
-Message-Id: <CA5BEE26-38AC-4030-A0AA-706B0AAE6378@icloud.com>
-To: speakup@linux-speakup.org
-X-Mailer: iPhone Mail (16C101)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.343, 18.0.737
- definitions=2020-12-22_13:2020-12-21,
- 2020-12-22 signatures=0
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 clxscore=1015 mlxscore=0
- mlxlogscore=937 adultscore=0 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.0.1-2006250000 definitions=main-2012230014
+ id F385D380EB2; Tue, 22 Dec 2020 23:57:17 -0500 (EST)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id B48F138096C
+ for <speakup@linux-speakup.org>; Tue, 22 Dec 2020 23:57:17 -0500 (EST)
+Received: from vbox.gregn.net (unknown
+ [IPv6:2607:fb90:4a37:aca3:a00:27ff:fe38:8df7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by vserver.gregn.net (Postfix) with ESMTPSA id 18329BA2
+ for <speakup@linux-speakup.org>; Tue, 22 Dec 2020 20:56:48 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+ t=1608699408; bh=46biI3kTdZnrtxmuNOzvE5Qh/mWwsqw6uVa5CwEf3HI=;
+ h=Date:From:To:Subject:References:In-Reply-To:From;
+ b=xPa0tJxH4YC9sJwa22K8/goIyeWMS7L/ojhkLMK90oDfmjjXN1gODhMGVjew7eWPQ
+ jpQBzj3RlZAyrNvbOOocN1oUgb2ItO04U2Xsk9BUrhlluFoO4f9E+Sjzpm23viHrkN
+ vjgQExB4xTtCVyGvVCeNnRI9D5PRPmJE1tmHF47brvA2FazhDNyUHfIxhbRmYrzxaR
+ QOoIRnHYGj65GPTYDu0s77sMvPw+WzDBL9EI08oEeOZ57cPE9JXuSSX2GWluVa8MMl
+ nza3QVvowbA4uRpmj1LK6Wf1VDY2X+v+CsYMPLk6I6YxMNkwSO4sL8cn4/3iXY8PE+
+ 0d9DiJvEXs7nw==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+ (envelope-from <greg@gregn.net>) id 1krwCa-00039d-Nw
+ for speakup@linux-speakup.org; Tue, 22 Dec 2020 21:56:44 -0700
+Date: Tue, 22 Dec 2020 21:56:44 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: Dual Boot Questions / VirtualBox
+Message-ID: <20201223045644.GA11497@gregn.net>
+References: <CA5BEE26-38AC-4030-A0AA-706B0AAE6378@icloud.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CA5BEE26-38AC-4030-A0AA-706B0AAE6378@icloud.com>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.102.4 at vserver
+X-Virus-Status: Clean
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,40 +64,56 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-SSBoYXZlIGEgMjAyMCBNYWNCb29rIFBybyB3aXRoIGEgMiBHSHogcHJvY2Vzc29yLCAxNmdiIG9m
-IHJhbSBhbmQgSSBhbSBkZWJhdGluZyBkdWFsIGJvb3RpbmcgaXQuIEkgSWRlYWxseSB3b3VsZCBs
-aWtlIHRvIGhhdmUgc29tZXRoaW5nIHNpbWlsYXIgdG8gdGhlIHNldHVwIEkgdXNlZCB0byBoYXZl
-IHdoZW4gSSBzdGlsbCBoYWQgdmlzaW9uIHJ1bm5pbmcgd2luZG93cyB2aXN0YSBhbmQgVWJ1bnR1
-LiBJ4oCZZCBsaWtlIHRvIGVuY3J5cHQgdGhlIGVudGlyZSBoYXJkIGRyaXZlIHdpdGggVmVyYWNy
-eXB0IGFuZCBsb2FkIGF0IGxlYXN0IG9uZSBkaXN0cm8sIG1vc3QgbGlrZWx5IFdob25peCBvbiBE
-ZWJpYW4gKChvciBUYWlscykpIGFuZCBvcmNhLCBhdGhlbiBwb3NzaWJseSBXaW5kb3dzIHdpdGgg
-TlZEQTsgc28gTWFjIGFuZCBMaW51eCwgV2luZG93cyBhIG1heWJlIG9uIGEgNTAwR0IgU1NELiBT
-Y3JlZW4gcmVhZGluZyBvciBvcmNhIHdpc2UsIHdoYXQgcG90ZW50aWFsIGlzc3VlcyBhbSBJIGxv
-b2tpbmcgb3V0IGZvcj8gSSBVbmRlcnN0YW5kIHRoYXQgSSB3b3VsZCBuZWVkIHRvIGVudGVyIHRo
-ZSBwYXNzd29yZCB0byBkZWNyeXB0IHRoZSBoYXJkIGRyaXZlIHdpdGhvdXQgYSBzY3JlZW5yZWFk
-ZXIuIElzIHRoZXJlIGFueSB3YXkgdG8gbWFrZSB0aGUgYm9vdCBsb2FkZXIgc3BlYWs/CgpBbHNv
-LCBoYXMgYW55b25lIGVsc2Ugb3V0IHRoZXJlIGR1YWwtYm9vdGVkIG9uIHRoZWlyIE1hY0Jvb2sg
-d2l0aCB3aW5kb3dzIG9yIExpbnV4LDsgY2FuIHlvdSB0ZWxsIG1lIGhvdyBtdWNoIGZhc3RlciB0
-aGUgc2Vjb25kYXJ5IG9wZXJhdGluZyBzeXN0ZW0gaXMgcmF0aGVyIHRoYW4gcnVubmluZyBpdCBp
-bnNpZGUgb2YgYSB2aXJ0dWFsaXplZCBlbnZpcm9ubWVudCBvbiBPUyBYIGluIHNvbWV0aGluZyBs
-aWtlIFZpcnR1YWxCb3g/IEkgYW0gZGViYXRpbmcgdGhpcyBoYXZpbmcgbm90IGJlZW4gYWJsZSB0
-byBydW4gbXkgcHJlbGltaW5hcnkgdGVzdHMgdGhhdCBJIHdhbnQgdG8gd2l0aCB0aGVzZSBvcGVy
-YXRpbmcgc3lzdGVtcyBpbnNpZGUgb2YgdmlydHVhbCBib3guIEnigJltIG5vdCByZWFsbHkgd2Fu
-dGluZyB3aW5kb3dzIHRoYXQgYmFkbHkgYW5kIHRoZSBMaW51eCBvcGVyYXRpbmcgc3lzdGVtIEkg
-d2FudCBkb2VzIG5vdCBoYXZlIGFuIGFjY2Vzc2libGUsIHRhbGtpbmcgaW5zdGFsbGVyIGFuZCBJ
-IGFtIHN0aWxsIHdhaXRpbmcgb24gY2l0ZWQgYXNzaXN0YW5jZSB0byBnZXQgdGhlc2UgcnVubmlu
-ZyBpbnNpZGUgb2YgVmlydHVhbEJveC4gQ2FuIGFueW9uZSBhdHRlc3QgdG8gb3JjYSBydW5uaW5n
-IGluc2lkZSBvZiB2aXJ0dWFsYm94IG9uIGEgTWFjQm9vaz8gVGhlIG9ubHkgdGhpbmcgSSBjdXJy
-ZW50bHkgaGF2ZSBydW5uaW5nIG9yY2EgaXMgbXkgUlBJNCBhbmQgaXQgaXMgZmFyIHRvbyBzbG93
-IGZvciBtZS4gSWYgSSB3ZXJlIHRvIGp1c3QgcnVuIGEgY29tbWFuZCBsaW5lIHZlcnNpb24gb2Yg
-TGludXggd2hhdCBpcyB0aGUgbWluaW11bSBJIHdvdWxkIG5lZWQgdG8gbWFrZSBpdCBhY3R1YWxs
-eSB0YWxrIGFuZCBzdGlsbCBiZSBmdW5jdGlvbmFsPyAKCgpUaGFuayB5b3UsCgotUmVlY2UKX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KU3BlYWt1cCBtYWls
-aW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgtc3BlYWt1cC5v
-cmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
+On Tue, Dec 22, 2020 at 09:01:58PM -0500, Reece O'Bryan wrote:
+> Screen reading or orca wise, what potential issues am I looking out
+for? I Understand that I would need to enter the password to decrypt
+the hard drive without a screenreader. Is there any way to make the
+boot loader speak?
+
+Not that I'm aware of. Orca works well for me without major
+issues. There are some sites where I need to resort to firefox and
+NVDA, but orca meets most of my daily needs. The only other issue with
+orca is not really with orca, and that is that it doesn't play nice
+with espeakup. This is because speech-dispatcher is setup to use
+pulseaudio by default, leaving speech-dispatcher and espeakup to fight
+over controlling the sound hardware. The solution I use here is to
+configure speech-dispatcher to use libao, and to dump
+pulseaudio. There are those who choose to work with pulseaudio rather
+than dumping it, and maybe those individuals will chime in here.
+
+> If I were to just run a command line version of Linux what is the minimum I would need to make it actually talk and still be functional? 
+
+As far as making it talk, all you would need are speakup, espeak-ng,
+and espeakup. As far as making it functional, that depends on what you
+want to do with it. I use mutt to read mail in the command line, and
+either vi or emacs for editing text files. The lynx and elinks
+browsers still work with a web site here and there, but relying on
+them for daily web browsing isn't an option in my opinion. I'm not
+aware of any text browsers out there that can do javascript, which
+most sites seem to rely on these days.
+
+Also, can you please wrap your lines? That would make it easier to
+reply to you inline.
+
+Greg
+
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+_______________________________________________
+Speakup mailing list
+Speakup@linux-speakup.org
+http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
