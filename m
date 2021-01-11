@@ -2,64 +2,52 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 880DB2EB19F
-	for <lists+speakup@lfdr.de>; Tue,  5 Jan 2021 18:42:30 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id A2F762F22E5
+	for <lists+speakup@lfdr.de>; Mon, 11 Jan 2021 23:38:22 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 72013380FB6; Tue,  5 Jan 2021 12:42:29 -0500 (EST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=cableone.net header.i=@cableone.net header.a=rsa-sha1 header.s=20180516 header.b=PBEVAoht;
-	dkim-atps=neutral
+	id C1B5B380FA6; Mon, 11 Jan 2021 17:38:21 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CF413380FB9;
-	Tue,  5 Jan 2021 12:42:28 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D853D381031;
+	Mon, 11 Jan 2021 17:38:18 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 656E6380ED3; Tue,  5 Jan 2021 12:42:27 -0500 (EST)
-Received: from mail.cableone.net (mail2.cableone.syn-alias.com [69.168.106.66])
- by befuddled.reisers.ca (Postfix) with ESMTPS id E2CEC380EC6
- for <speakup@linux-speakup.org>; Tue,  5 Jan 2021 12:42:26 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha1; d=cableone.net; s=20180516; c=relaxed/simple; 
- q=dns/txt; i=@cableone.net; t=1609868545;
- h=From:Subject:Date:To:MIME-Version:Content-Type;
- bh=XqB8ToGMJAEUzeQM03/ZWnrQNdY=;
- b=PBEVAohtUrv6Z+fUiwAYvio2Sjrwzb4rWT5KFImnHpqSa0MFRt+Zh1tQZwJ0ScE0
- VirNznOnqdGfAdEQImlVidWfcUxuhwVQKQwN+EFVhZR8aZ5GZyEWzD80myhNub3O
- TxVlEwXmPhYYDSrx0jDpvIuWlH2r8ddjwt340JUuFFzyThBE89Paa0PkoZI00DB5
- QwqEZdGS/cuExdMAx3cKYBCfASKqm5iWCdaIeYCufRhI93CJL/dNLsvWD6nOYnsY
- pqG+1tS5SEmK55mpPH6CdPXYb1LKCrXek8qg0g1IWOETGIMrAavit121EJdPpbBT
- whe98X2Hz+hmIIRnDG5Egg==;
-X_CMAE_Category: , ,
-X-CNFS-Analysis: v=2.3 cv=aOOOVo1m c=1 sm=1 tr=0 cx=a_idp_x
- a=FAD7pjsVrG12rOFlsKXSTg==:117 a=FAD7pjsVrG12rOFlsKXSTg==:17
- a=KGjhK52YXX0A:10 a=8nJEP1OIZ-IA:10 a=EmqxpYm9HcoA:10 a=P7xTaY_ng_sA:10
- a=VUfPOBp7AAAA:8 a=qPKtzgQbAAAA:8 a=0YVu8vZ6AAAA:8 a=JqEG_dyiAAAA:8
- a=SjLH3k100XhA9wH0EtQA:9 a=wPNLvfGTeEIA:10 a=Rmk-ijrnzYgA:10
- a=h9p_k6br8ecoN9AbG9pA:22 a=OTAqJWGB1laLS8RTg9aS:22 a=Tdz0OL8ML7qDmmUgjKNf:22
-X-CM-Score: 0
-X-Scanned-by: Cloudmark Authority Engine
-X-Authed-Username: Z2xlbm5lcnZpbkBjYWJsZW9uZS5uZXQ=
-Authentication-Results: smtp03.lapis.bos.sync.lan
- smtp.user=glennervin@cableone.net; auth=pass (LOGIN)
-Received: from [24.119.24.147] ([24.119.24.147:8536] helo=NUCPPYH)
- by mail.cableone.net (envelope-from <glennervin@cableone.net>)
- (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
- (cipher=DHE-RSA-AES256-SHA) 
- id 5D/BC-26814-005A4FF5; Tue, 05 Jan 2021 12:42:25 -0500
-Message-ID: <0a7701d6e38a$20ce20a0$7001a8c0@NUCPPYH>
-From: "Glenn K0LNY" <glennervin@cableone.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <20210105173502.GA17449@panix.com>
-Subject: Re: spelling words with military letter pronunciation
-Date: Tue, 5 Jan 2021 11:41:22 -0600
-Organization: Home
+ id 7AB9F380EEC; Mon, 11 Jan 2021 17:38:18 -0500 (EST)
+Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 592FD380964
+ for <speakup@linux-speakup.org>; Mon, 11 Jan 2021 17:38:18 -0500 (EST)
+Received: from localhost (localhost [127.0.0.1])
+ by hera.aquilenet.fr (Postfix) with ESMTP id 40E21673;
+ Mon, 11 Jan 2021 23:37:47 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
+Received: from hera.aquilenet.fr ([127.0.0.1])
+ by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id rDE6WH3vxgl1; Mon, 11 Jan 2021 23:37:46 +0100 (CET)
+Received: from begin (unknown [IPv6:2a01:cb19:956:1b00:de41:a9ff:fe47:ec49])
+ by hera.aquilenet.fr (Postfix) with ESMTPSA id 58E3C666;
+ Mon, 11 Jan 2021 23:37:41 +0100 (CET)
+Received: from samy by begin with local (Exim 4.94)
+ (envelope-from <samuel.thibault@ens-lyon.org>)
+ id 1kz5og-002vQ5-KC; Mon, 11 Jan 2021 23:37:38 +0100
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: gregkh@linuxfoundation.org
+Subject: [PATCH 0/4] speakup update
+Date: Mon, 11 Jan 2021 23:37:33 +0100
+Message-Id: <20210111223737.697336-1-samuel.thibault@ens-lyon.org>
+X-Mailer: git-send-email 2.29.2
 MIME-Version: 1.0
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.3790.1830
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Vade-Verditct: clean
-X-Vade-Analysis: gggruggvucftvghtrhhoucdtuddrgedujedrvdefjedgieejucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecuufgjpfetvefqtffnvggrrhhnihhnghdpuffrmfdpqfgfvfenuceurghilhhouhhtmecufedtudenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujfgurhepkfhrhffvfhfuffhogggtgffrigfoqfesthejpedtuddtudenucfhrhhomhepfdfilhgvnhhnucfmtdfnpfgjfdcuoehglhgvnhhnvghrvhhinhestggrsghlvghonhgvrdhnvghtqeenucggtffrrghtthgvrhhnpeekfeffgfejieevieethfelgfffgeevieeuudehvdekuefgteegheelvedtkedukeenucffohhmrghinheprhhuugihvhgvnhgvrhdrtghomhdpthifihhtthgvrhdrtghomhdplhhinhhugidqshhpvggrkhhuphdrohhrghenucfkphepvdegrdduudelrddvgedrudegjeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepihhnvghtpedvgedrudduledrvdegrddugeejnedpmhgrihhlfhhrohhmpehglhgvnhhnvghrvhhinhestggrsghlvghonhgvrdhnvghtnedprhgtphhtthhopehsphgvrghkuhhpsehlihhnuhigqdhsphgvrghkuhhprdhorhhgne
+X-Spamd-Bar: +++++
+X-Spam-Level: *****
+X-Rspamd-Server: hera
+Authentication-Results: hera.aquilenet.fr
+X-Rspamd-Queue-Id: 40E21673
+X-Spamd-Result: default: False [5.00 / 15.00]; ARC_NA(0.00)[];
+ RCVD_VIA_SMTP_AUTH(0.00)[]; FROM_HAS_DN(0.00)[];
+ RCPT_COUNT_THREE(0.00)[4]; TO_DN_SOME(0.00)[];
+ TO_MATCH_ENVRCPT_ALL(0.00)[]; MIME_GOOD(-0.10)[text/plain];
+ R_MISSING_CHARSET(2.50)[]; BROKEN_CONTENT_TYPE(1.50)[];
+ RCVD_COUNT_THREE(0.00)[3]; MID_CONTAINS_FROM(1.00)[];
+ RCVD_NO_TLS_LAST(0.10)[]; FROM_EQ_ENVFROM(0.00)[]
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,52 +60,42 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: Glenn K0LNY <GlennErvin@cableone.net>,
- "Speakup is a screen review system for Linux."
+Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Cc: speakup@linux-speakup.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-I would also recommend that SpeakUP and other screenreaders do like JFW is 
-now doing it, when you arrow letter by letter, after a second or two, if you 
-stop arrowing, it gives the Ham call name of the letter.
-Glenn
+Samuel Thibault (4):
+  This merely adds the missing synth parameter to all io functions.
+  speakup: Reference synth from tty and tty from synth
+  speakup: Simplify spk_ttyio_out error handling.
+  speakup: Add documentation on changing the speakup messages language
 
------ Original Message ----- 
-From: "Rudy Vener" <salt@panix.com>
-To: <speakup@linux-speakup.org>
-Sent: Tuesday, January 05, 2021 11:35 AM
-Subject: spelling words with military letter pronunciation
-
-
-
-I recall a Vocal Eyes feature I used very often. When I hit the speak word 
-key once, it would
-speak the word, hit it twice it would spell the word, hit it thrice
-it would spell the word with military alphabet pronunciation (alpha, bravo, 
-charlie, etc).
-
-Speakup only allows me military letter pronunciation when I hit the
-speak letter key twice, and only speaks the letter where the cursor
-rests. This makes it a kluge to hear the entire word spelled in military 
-pronunciation.
-
-A feature to tap the speak word key thrice to get military spelling
-would be a great boon to those of us who are deaf as well as blind.
-
-Thanks.
+ Documentation/admin-guide/spkguide.txt        |  48 ++++-
+ drivers/accessibility/speakup/serialio.c      |  22 +--
+ .../accessibility/speakup/speakup_acntpc.c    |   4 +-
+ .../accessibility/speakup/speakup_apollo.c    |   4 +-
+ .../accessibility/speakup/speakup_audptr.c    |   8 +-
+ .../accessibility/speakup/speakup_decext.c    |   2 +-
+ drivers/accessibility/speakup/speakup_decpc.c |   4 +-
+ .../accessibility/speakup/speakup_dectlk.c    |   2 +-
+ drivers/accessibility/speakup/speakup_dtlk.c  |   4 +-
+ drivers/accessibility/speakup/speakup_keypc.c |   4 +-
+ drivers/accessibility/speakup/speakup_ltlk.c  |   2 +-
+ drivers/accessibility/speakup/speakup_soft.c  |   4 +-
+ .../accessibility/speakup/speakup_spkout.c    |   4 +-
+ drivers/accessibility/speakup/spk_priv.h      |   4 +-
+ drivers/accessibility/speakup/spk_ttyio.c     | 185 ++++++++----------
+ drivers/accessibility/speakup/spk_types.h     |  14 +-
+ drivers/accessibility/speakup/synth.c         |   6 +-
+ 17 files changed, 170 insertions(+), 151 deletions(-)
 
 -- 
-Rudy Vener
-Website: http://www.rudyvener.com
-Twitter: https://twitter.com/RudySalt
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup 
+2.20.1
 
 _______________________________________________
 Speakup mailing list
