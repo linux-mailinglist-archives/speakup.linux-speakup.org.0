@@ -2,63 +2,50 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C5C7E2F3C29
-	for <lists+speakup@lfdr.de>; Tue, 12 Jan 2021 23:13:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 9AAD32F3C28
+	for <lists+speakup@lfdr.de>; Tue, 12 Jan 2021 23:13:39 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2BF81380FC4; Tue, 12 Jan 2021 17:13:57 -0500 (EST)
+	id 37366380F28; Tue, 12 Jan 2021 17:13:39 -0500 (EST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=L1H4gEdT;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1C6EB380F98;
-	Tue, 12 Jan 2021 17:13:57 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 03D1D380ED2;
+	Tue, 12 Jan 2021 17:13:38 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 360B1380BB8; Tue, 12 Jan 2021 17:13:56 -0500 (EST)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 1126C380B1E
- for <speakup@linux-speakup.org>; Tue, 12 Jan 2021 17:13:56 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
- by hera.aquilenet.fr (Postfix) with ESMTP id D32DC5B2
- for <speakup@linux-speakup.org>; Tue, 12 Jan 2021 23:13:24 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
- by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 5jIblC6dtpEw for <speakup@linux-speakup.org>;
- Tue, 12 Jan 2021 23:13:24 +0100 (CET)
-Received: from begin.home (unknown
- [IPv6:2a01:cb19:956:1b00:de41:a9ff:fe47:ec49])
- by hera.aquilenet.fr (Postfix) with ESMTPSA id CF1A1B1
- for <speakup@linux-speakup.org>; Tue, 12 Jan 2021 23:13:23 +0100 (CET)
-Received: from samy by begin.home with local (Exim 4.94)
- (envelope-from <samuel.thibault@ens-lyon.org>) id 1kzRuk-004aa3-QD
- for speakup@linux-speakup.org; Tue, 12 Jan 2021 23:13:22 +0100
-Date: Tue, 12 Jan 2021 23:13:22 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: talkwith vs speak-with messages language
-Message-ID: <20210112221322.ls3hxgx64ff55ceb@function>
+ id 1F928380BAD; Tue, 12 Jan 2021 17:13:37 -0500 (EST)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+ by befuddled.reisers.ca (Postfix) with ESMTP id F03AC380B19
+ for <speakup@linux-speakup.org>; Tue, 12 Jan 2021 17:13:36 -0500 (EST)
+Received: from darkstar.example.slint
+ (men75-h08-176-172-247-100.dsl.sta.abo.bbox.fr [176.172.247.100])
+ by darkstar.slint.fr (Postfix) with ESMTPSA id 0C3F1BE2FB
+ for <speakup@linux-speakup.org>; Tue, 12 Jan 2021 22:12:33 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+ t=1610485953; bh=Wjzw0EXomsvfIgJUcHVHJjXbpExsuOmIxtuFx6+CI+Y=;
+ h=Subject:To:References:From:Date:In-Reply-To:From;
+ b=L1H4gEdT/ykGc7TGHdWzgvTRfi0TwZRsFvbFNIMyQZiFRC2gp5Vd3b8phrXsMtPBD
+ WXZ9l+Tn++DOWbgXcTy8DQPOGmwM9Lo7Y0Rb4QO5bD/CGpUrmn+KU0qXlVFjy16tqX
+ UQJHfdAEPgUYICp/evBbeVjhwfx4nVQ8tLni1BEQqZe6IOLjGGpjSieJ7N6ZdCZu8I
+ w5M6HTIuhjW1ujzdD4+Jcf6rB4jFFGUN8JdZ/4jYDGPpQ97R5PQr++LuarrRJDfJzu
+ sXRXQvjOJWDCZWUNFTtWyotZFdDVTC/+4F5joMzXzqEGPqRIGtmpGyESwYDDMZ/DVW
+ 0y1Nbqeuvzv+Q==
+Subject: Re: speakupconf vs speakup-save/speakup-restore
+To: speakup@linux-speakup.org
 References: <20210111223737.697336-1-samuel.thibault@ens-lyon.org>
  <20210111223737.697336-5-samuel.thibault@ens-lyon.org>
  <3101bb04-38f3-9bc2-453d-3da37a50b7d9@slint.fr>
- <ce1ac3fb-16e8-93c5-6271-a8c232f89c8a@slint.fr>
- <20210112001036.o4eq4rrl35m576in@function>
- <78604202-a5a9-93cd-361c-c4dfd9e083dc@slint.fr>
+ <20210112001255.bwv7ac3c66xnst6o@function>
+From: Didier Spaier <didier@slint.fr>
+Message-ID: <3f03eb75-6903-519b-1495-801425cf6263@slint.fr>
+Date: Tue, 12 Jan 2021 23:13:35 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.12.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <78604202-a5a9-93cd-361c-c4dfd9e083dc@slint.fr>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
-X-Spamd-Bar: --
-Authentication-Results: hera.aquilenet.fr
-X-Rspamd-Server: hera
-X-Rspamd-Queue-Id: D32DC5B2
-X-Spamd-Result: default: False [-2.43 / 15.00]; ARC_NA(0.00)[];
- RCVD_VIA_SMTP_AUTH(0.00)[]; FROM_HAS_DN(0.00)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; MIME_GOOD(-0.10)[text/plain];
- PREVIOUSLY_DELIVERED(0.00)[speakup@linux-speakup.org];
- RCPT_COUNT_ONE(0.00)[1]; HAS_ORG_HEADER(0.00)[];
- RCVD_COUNT_THREE(0.00)[3]; TO_DN_ALL(0.00)[];
- RCVD_NO_TLS_LAST(0.10)[]; FROM_EQ_ENVFROM(0.00)[];
- MID_RHS_NOT_FQDN(0.50)[]; BAYES_HAM(-2.93)[99.71%]
+In-Reply-To: <20210112001255.bwv7ac3c66xnst6o@function>
+Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,23 +60,18 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
-Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-RGlkaWVyIFNwYWllciwgbGUgbWFyLiAxMiBqYW52LiAyMDIxIDIzOjExOjMwICswMTAwLCBhIGVj
-cml0Ogo+IExlIDEyLzAxLzIwMjEgw6AgMDE6MTAsIFNhbXVlbCBUaGliYXVsdCBhIMOpY3JpdMKg
-Ogo+ID4gSXMgdGhpcyBzdXBwb3NlZCB0byBjb21wbGV0ZWx5IHJlcGxhY2UgdGFsa3dpdGg/Cj4g
-Cj4gWWVzLiBDYXZlYXQgbm90IGV4YWN0bHkgYSBkcm9wLWluIHJlcGxhY2VtZW50IGFzIGl0IGhh
-cwo+IGEgd2lkZXIgc2NvcGUuCgpUaGV5IGFyZSBvbiB0aGlzIHZlcnkgbGlzdCAoc3BlYWt1cEBs
-aW51eC1zcGVha3VwLm9yZykKCj4gPiA+IAkJCWNobW9kIDc1NSAvZXRjL3JjLmQvcmMuZXNwZWFr
-dXAKPiA+ID4gCQkJY2htb2QgNjQ0IC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwCj4gPiAKPiA+IFRo
-aXMgc2VlbXMgc2xpbnQtc3BlY2lmaWMuCj4gCj4gSXQgaXMuIHRoZXNlIGNvbW1hbmRzIHNob3Vs
-ZCBiZSByZXBsYWNlZCBpZiBhbm90aGVyIGluaXQgc3lzdGVtLgo+IAo+IFRoaXMgc2hvdWxkbid0
-IGJlIGRpZmZpY3VsdCwgYnV0IEkgaGF2ZSB6ZXJvIGV4cGVyaWVuY2Ugd2l0aCBvdGhlciBpbml0
-Cj4gc3lzdGVtcwoKRXhwZXJpZW5jZSBpcyBzb21ldGhpbmcgdGhhdCBjYW4gYmUgYWNxdWlyZWQu
-CgpTYW11ZWwKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-U3BlYWt1cCBtYWlsaW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGlu
-dXgtc3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
+TGUgMTIvMDEvMjAyMSDDoCAwMToxMiwgU2FtdWVsIFRoaWJhdWx0IGEgw6ljcml0wqA6Cgo+IFNp
+bWlsYXJseSwgYXJlIHRoZXNlIHN1cHBvc2VkIHRvIGNvbXBsZXRlbHkgcmVwbGFjZSBzcGVha3Vw
+Y29uZj8KCj4gQW5kIGFzIHdlbGwsIHBsZWFzZSBzZWUgd2l0aCBzcGVha3VwY29uZiB1c2VycyB3
+aGV0aGVyIHRoZWlyIG5lZWRzIGFyZQo+IGZ1bGZpbGxlZCBieSB0aGVzZSBzcGVha3VwLXNhdmUv
+c3BlYWt1cC1yZXN0b3JlLCBJIGRvbid0IHRoaW5rIHdlIHdhbnQKPiB0byBtYWludGFpbiBib3Ro
+LgoKU2FtZSBhbnN3ZXJzIGFzIGZvciBzcGVhay13aXRoIHZzIHRhbGt3aXRoLgoKQ2hlZXJzLCBE
+aWRpZXIKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KU3Bl
+YWt1cCBtYWlsaW5nIGxpc3QKU3BlYWt1cEBsaW51eC1zcGVha3VwLm9yZwpodHRwOi8vbGludXgt
+c3BlYWt1cC5vcmcvY2dpLWJpbi9tYWlsbWFuL2xpc3RpbmZvL3NwZWFrdXAK
