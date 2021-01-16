@@ -2,54 +2,72 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D17E12F3C81
-	for <lists+speakup@lfdr.de>; Wed, 13 Jan 2021 00:06:36 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 14B0C2F8E3E
+	for <lists+speakup@lfdr.de>; Sat, 16 Jan 2021 18:21:35 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6223A380BD7; Tue, 12 Jan 2021 18:06:32 -0500 (EST)
+	id 437FB380FAA; Sat, 16 Jan 2021 12:21:26 -0500 (EST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=eGYRoQbb;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=dVTWEFlw;
+	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=lRTgJAA3;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 88753380F25;
-	Tue, 12 Jan 2021 18:06:27 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id F001C380EEA;
+	Sat, 16 Jan 2021 12:21:25 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id C4B3C380BA8; Tue, 12 Jan 2021 18:06:26 -0500 (EST)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
- by befuddled.reisers.ca (Postfix) with ESMTP id 03F03380AC5
- for <speakup@linux-speakup.org>; Tue, 12 Jan 2021 18:06:26 -0500 (EST)
-Received: from darkstar.example.slint
- (men75-h08-176-172-247-100.dsl.sta.abo.bbox.fr [176.172.247.100])
- by darkstar.slint.fr (Postfix) with ESMTPSA id 2DB7CBE2FB
- for <speakup@linux-speakup.org>; Tue, 12 Jan 2021 23:05:21 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
- t=1610489121; bh=FPiJtkMg5oXEI2X/hGA9Y/veat0f8hcq0oeeUsKc5L4=;
- h=Subject:To:References:From:Date:In-Reply-To:From;
- b=eGYRoQbb1QRloKuPw15af+/Oirto1yaltNgj5Fp1EkSDLNw6Oic/eZFVduu7hGLFP
- lLyCHWrreQnXMcdfmioRw6UW3cEDUs/lo2/vkjBDAwoZxHB28K5hngQreR8ERcOL2e
- dz6GrD/PwxOJbCQcoBqnf7PIVzoYpeIH12q4HktdWA/B+1F4a5VAgjqwXR7srI1eI+
- Trj/X8Kx71doQUNtfelsEAESrwAje1/UJ4qDsIF0geS2rGfi2ufC+9OASCFcjJHIiW
- /48NE3Zb/6wXIReuj0sCZlYjVYPyiUJ0fspnOVjHgSYHkgtVpsxOXQnG80xascGxOr
- Tats1VZx/tocQ==
-Subject: Re: talkwith vs speak-with messages language
+ id 1C619380BD8; Sat, 16 Jan 2021 12:21:25 -0500 (EST)
+Received: from wout1-smtp.messagingengine.com (unknown [64.147.123.24])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 66F57380999
+ for <speakup@linux-speakup.org>; Sat, 16 Jan 2021 12:21:22 -0500 (EST)
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
+ by mailout.west.internal (Postfix) with ESMTP id 5AF63166A
+ for <speakup@linux-speakup.org>; Sat, 16 Jan 2021 12:21:07 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute2.internal (MEProxy); Sat, 16 Jan 2021 12:21:07 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ hubert-humphrey.com; h=date:from:to:subject:message-id
+ :mime-version:content-type; s=fm2; bh=v70v9lTfRVGabSwd3fv8t8r3O9
+ aCOnpId+x81eml75Y=; b=dVTWEFlwIIKcDKn7/cYQrcyvmYMiWh2UVlBOf/zCaL
+ 4T8WQeVGiER/WWPWzfaaneagIWsW4drUfZcZC/lr/8djdaH8LEdLl4F2lXw9G/Ty
+ 7QiDXGKTaBfw7NVGQQ36DIlvoI6q7APkw3NaGYYG+R2XvyY9KIDrffS3RJbQ8KUn
+ A+yUiDFdr0Om1YVBHhjaGvkRfFD8QZJlDYsRWj4jI/8qeThWVPTOp1pROcLEFYh1
+ Gko1pb1Kwlt130ncMUf+cC0XDK0PM80/q2xzFurr972932s8hGWAdydSgsYl9FB3
+ m4Y8PYgNBd7KEvjk/6SNALVAvuA6z/yRUsgNgJlb5nGg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=content-type:date:from:message-id
+ :mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
+ :x-me-sender:x-sasl-enc; s=fm1; bh=v70v9lTfRVGabSwd3fv8t8r3O9aCO
+ npId+x81eml75Y=; b=lRTgJAA321PMdbd0N85dDAqI+yfyo6yFo/leIqLBfUw7R
+ hBOL3afmr4subDgg/JWOJz6Ayry6Jw5dG+Fcqqlu8hzQrdywpFTXZBjYXR0dWFsF
+ Ha99dMK3BOV+y1riWcmxdtorWBq2tWp4CJrKw4ukqRIrIIYECwH0VafIZQBsdXeb
+ q8QbFx0aUB4fN0doLLEWl0e9laueIO3CroDEB+Riv1EytembJ4Fw/WqzuS1viC8S
+ JNR6sbjTWlhUAKieu/sj7FmDYsu0VgUYI2DgVvpGeRRWhz0gcM7RPmcEUXoRgqYu
+ v0yLH+yHo7If2WU6NKvikkwZcelRMBm+pNPGXqgow==
+X-ME-Sender: <xms:giADYIy_-iMY_U8ASOpNTh4G6mFmiDMY92uQRQHhRyiyPWIDH9Fgvg>
+ <xme:giADYFPUsYDTIuA1fXN2rbeygDFWpyj9ztL0Upu_loLE2RHh9F6bFEGK8VhZ0rsp6
+ TZ4Q0wABPBR1fpt8UI>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduledrtdeggddutddvucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttd
+ dvnecuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhu
+ mhhphhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtie
+ ettedtkefggfekvdeujeetkedtheefhffhvdetkeenucfkphepuddtgedrudejvddrfedr
+ ieefnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheptg
+ hhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
+X-ME-Proxy: <xmx:giADYMTkleQNqe8CLyjg4jikRZWhGMJ9NBp5QvB9u2b_izgOVxnvlg>
+ <xmx:giADYDYyn7dmSRll7H6b61I4pBp78NJMtf5JuC6uVlB--97WmyNyNQ>
+ <xmx:giADYJ3cfgUzCLsDzfotFvTh_EY4t_8zUwXpRLHyVaAGkn_T384WaA>
+ <xmx:gyADYMWMeTHbh9Jf0IvvIyXythd6ihod5k1o6DFo8W76hzYwEuhZ4g>
+Received: from chime.lan (cpe-104-172-3-63.socal.res.rr.com [104.172.3.63])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 7985624005B
+ for <speakup@linux-speakup.org>; Sat, 16 Jan 2021 12:21:06 -0500 (EST)
+Date: Sat, 16 Jan 2021 09:21:05 -0800 (PST)
+From: Chime Hart <chime@hubert-humphrey.com>
 To: speakup@linux-speakup.org
-References: <20210111223737.697336-1-samuel.thibault@ens-lyon.org>
- <20210111223737.697336-5-samuel.thibault@ens-lyon.org>
- <3101bb04-38f3-9bc2-453d-3da37a50b7d9@slint.fr>
- <ce1ac3fb-16e8-93c5-6271-a8c232f89c8a@slint.fr>
- <20210112001036.o4eq4rrl35m576in@function>
- <78604202-a5a9-93cd-361c-c4dfd9e083dc@slint.fr>
- <20210112221322.ls3hxgx64ff55ceb@function>
-From: Didier Spaier <didier@slint.fr>
-Message-ID: <504009df-5b7c-9d59-20b8-e11641676ee9@slint.fr>
-Date: Wed, 13 Jan 2021 00:06:23 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.12.0
+Subject: Cut-and-Paste, Are their Size Limits?
+Message-ID: <7a466694-8463-b45e-2fef-20f58fdf47d3@hubert-humphrey.com>
 MIME-Version: 1.0
-In-Reply-To: <20210112221322.ls3hxgx64ff55ceb@function>
-Content-Type: multipart/mixed; boundary="------------D7430D747C67CD2B328C6584"
-Content-Language: en-US
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,278 +82,28 @@ List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
 Reply-To: "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-This is a multi-part message in MIME format.
---------------D7430D747C67CD2B328C6584
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
-
-Le 12/01/2021 à 23:13, Samuel Thibault a écrit :
- > They are on this very list (speakup@linux-speakup.org)
-
-So please, readers of this thread having users of talkwith and
-speakupconf, try these scripts and let us know what you think.
-
- >> It is. these commands should be replaced if another init system.
- >>
- >> This shouldn't be difficult, but I have zero experience with other init
- >> systems
- >
- > Experience is something that can be acquired.
-Maybe by young folks. I'm nearly 72y old...
-
-This being said, assuming hat most readers are using systemd,
-maybe they just can replace for instance in speak-with:
-chmod 644 /etc/rc.d/rc.espeakup
-by
-systemctl disable espeakup.service
-
-chmod 755 /etc/rc.d/rc.espeakup
-by
-systemctl disable espeakup.service
-
-sh /etc/rc.d/rc.espeakup start
-by
-systemctl start espeakup.service
-
-sh /etc/rc.d/rc.espeakup stop
-by
-systemctl stop espeakup.service
-
-PS I just realized that the syntax in this line of speakup-save and
-speakup-restore:
-SYNTH=$(</sys/accessibility/speakup/synth)
-is not specified by POSIX
-I should have written instead:
-SYNTH=$(cat /sys/accessibility/speakup/synth)
-
-I reattach the (corrected) scripts to this email with for convenience.
-
-Didier
-
-
-
---------------D7430D747C67CD2B328C6584
-Content-Type: text/plain; charset=UTF-8;
- name="speakup-save"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment;
- filename="speakup-save"
-
-IyEvYmluL3NoCmlmIFsgISAkKGlkIC11KSAtZXEgMCBdOyB0aGVuCglnZXR0ZXh0IC1zICJQ
-bGVhc2UgcnVuIHRoaXMgc2NyaXB0IGFzIHJvb3QuIgoJZXhpdApmaQppZiBbICEgLWYgL3N5
-cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAvc3ludGggXTsgdGhlbgoJIGdldHRleHQgLXMgInNw
-ZWFrdXAgYmVpbmcgbm90IGluIHVzZSwgdGhlcmUgaXMgbm8gc2V0dGluZyB0byBzYXZlLiIK
-CWV4aXQKZmkKU1lOVEg9JChjYXQgL3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAvc3ludGgp
-CgppZiBbICIkU1lOVEgiID0gIm5vbmUiIF07IHRoZW4KCWdldHRleHQgLXMgInNwZWFrdXAg
-YmVpbmcgbm90IGluIHVzZSwgdGhlcmUgaXMgbm8gc2V0dGluZyB0byBzYXZlLiIKCWV4aXQK
-ZmkKRVNQRUFLVVA9JChwcyAtQyBlc3BlYWt1cCAtLW5vaGVhZGVyc3x3YyAtbCkKU1BFRUNI
-RF9VUD0kKHBzIC1DIHNwZWVjaGQtdXAgLS1ub2hlYWRlcnN8d2MgLWwpCiMgV2Ugc2F2ZSBz
-ZXR0aW5ncyBzZXBhcmF0ZWx5IGZvcjoKIyBlc3BlYWt1cAojIGVhY2ggaGFyZCBzeW50aGVz
-aXplcgojIHNwZWVjaGQtdXAKIyBzbyB0aGF0IHdlIHJlc3RvcmUgdGhlIHJlbGV2YW50IHNl
-dHRpbmdzIGZvciB0aGUgc3ludGhlc2l6ZXIgYW5kCiMgY2FzZSBvY2N1cnJpbmcgdGhlIHNj
-cmVlbiByZWFkZXIgaW4gdXNlLgppZiBbICIkU1lOVEgiID0gInNvZnQiIF0gJiYgWyAkRVNQ
-RUFLVVAgLW5lIDAgXSAmJiBbICRTUEVFQ0hEX1VQIC1uZSAwIF07IHRoZW4KCWdldHRleHQg
-LXMgImVzcGVha3VwIGFuZCBzcGVlY2hkLXVwIGFyZSBib3RoIHJ1bm5pbmcsIG5vdCBzYXZp
-bmcgc2V0dGluZ3MuIgoJZXhpdApmaQppZiBbICIkU1lOVEgiID0gInNvZnQiIF0gJiYgWyAk
-RVNQRUFLVVAgLWVxIDAgXSAmJiBbICRTUEVFQ0hEX1VQIC1lcSAwIF07IHRoZW4KCWdldHRl
-eHQgLXMgIm5laXRoZXIgZXNwZWFrdXAgbm9yIHNwZWVjaGQtdXAgaXMgcnVubmluZywgbm90
-IHNhdmluZyBzZXR0aW5ncy4iCglleGl0CmZpCmlmIFsgIiRTWU5USCIgPSAic29mdCIgXSAm
-JiBbICRFU1BFQUtVUCAtbmUgMCBdOyB0aGVuCglTWU5USD0iZXNwZWFrdXAiCmZpCmlmIFsg
-IiRTWU5USCIgPSAic29mdCIgXSAmJiBbICRTUEVFQ0hEX1VQIC1uZSAwIF07IHRoZW4KCVNZ
-TlRIPSJzcGVlY2hkLXVwIgpmaQojIElmIFNZTlRIIGhhcyBub3QgYmVlbiBzZXQgdG8gc3Bl
-ZWNoZC11cCBvciBzcGVha3VwIGl0IGlzIHRoZSBoYXJkIHN5bnRoCiMgaW4gdXNlLgpta2Rp
-ciAtcCAvdmFyL2xpYi9zcGVha3VwLyRTWU5USAkKY2QgL3N5cy9hY2Nlc3NpYmlsaXR5L3Nw
-ZWFrdXAKZm9yIGkgaW4gJChmaW5kIC4gLXR5cGUgZHxzZWQgIi9eLiQvZDtzLy4uLy8iKTsg
-ZG8KCW1rZGlyIC1wIC92YXIvbGliL3NwZWFrdXAvJFNZTlRILyRpCmRvbmUKZm9yIGkgaW4g
-JChmaW5kIC4gLXR5cGUgZnxzZWQgInMvLi4vLyJ8Z3JlcCAtdiAtZSBzaWxlbnQgLWUgdmVy
-c2lvbiAtZSAic3ludGguKiIpOyBkbwoJaWYgWyAtZiAkaSBdICYmIFsgLXcgJGkgXTsgdGhl
-bgoJCWNwICRpIC92YXIvbGliL3NwZWFrdXAvJFNZTlRILyRpCglmaQpkb25lCmdldHRleHQg
-IkN1cnJlbnQgc3BlYWt1cCBzZXR0aW5ncyBoYXZlIGJlZW4gc2F2ZWQgaW4gIgplY2hvICIv
-dmFyL2xpYi9zcGVha3VwLyRTWU5USC4iCg==
---------------D7430D747C67CD2B328C6584
-Content-Type: text/plain; charset=UTF-8;
- name="speakup-restore"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment;
- filename="speakup-restore"
-
-IyEvYmluL3NoCmlmIFsgISAkKGlkIC11KSAtZXEgMCBdOyB0aGVuCglnZXR0ZXh0IC1zICJQ
-bGVhc2UgcnVuIHRoaXMgc2NyaXB0IGFzIHJvb3QuIgoJZXhpdApmaQoKaWYgWyAhIC1mIC9z
-eXMvYWNjZXNzaWJpbGl0eS9zcGVha3VwL3N5bnRoIF07IHRoZW4KCWdldHRleHQgLXMgICJz
-cGVha3VwIGJlaW5nIG5vdCBpbiB1c2UsIHRoZXJlIGlzIG5vIHNldHRpbmcgdG8gcmVzdG9y
-ZS4iCglleGl0CmVsaWYgWyAiJCg8L3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAvc3ludGgp
-IiA9ICJub25lIiBdOyB0aGVuCglnZXR0ZXh0IC1zICJzcGVha3VwIGJlaW5nIG5vdCBpbiB1
-c2UsIHRoZXJlIGlzIG5vIHNldHRpbmcgdG8gcmVzdG9yZS4iCglleGl0CmZpCgpTWU5USD0k
-KGNhdCAvc3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9zeW50aCkKRVNQRUFLVVA9JChwcyAt
-QyBlc3BlYWt1cCAtLW5vaGVhZGVyc3x3YyAtbCkKU1BFRUNIRF9VUD0kKHBzIC1DIHNwZWVj
-aGQtdXAgLS1ub2hlYWRlcnN8d2MgLWwpCiMgV2Ugc2F2ZWQgc2V0dGluZ3Mgc2VwYXJhdGVs
-eSBmb3I6CiMgZXNwZWFrdXAKIyBlYWNoIGhhcmQgc3ludGhlc2l6ZXIKIyBzcGVlY2hkLXVw
-CiMgc28gdGhhdCB3ZSByZXN0b3JlIHRoZSByZWxldmFudCBzZXR0aW5ncyBmb3IgdGhlIHN5
-bnRoZXNpemVyIGFuZAojIHNjcmVlbiByZWFkZXIgaW4gdXNlLgoKU0FWRURTWU5USD0iJFNZ
-TlRIIgppZiBbICIkU1lOVEgiID0gInNvZnQiIF0gJiYgWyAkRVNQRUFLVVAgLW5lIDAgXTsg
-dGhlbgoJU0FWRURTWU5USD0iZXNwZWFrdXAiCmZpCmlmIFsgIiRTWU5USCIgPSAic29mdCIg
-XSAmJiBbICRTUEVFQ0hEX1VQIC1uZSAwIF07IHRoZW4KCVNBVkVEU1lOVEg9InNwZWVjaGQt
-dXAiCmZpCiMgSWYgU1lOVEggaGFzIG5vdCBiZWVuIHNldCB0byBzcGVlY2hkLXVwIG9yIHNw
-ZWFrdXAgYSBoYXJkIHN5bnRoIGlzCiMgaW4gdXNlLCBsaWtlIGUuZy4gU0FWRURTWU5USD1h
-cG9sbG8KaWYgWyAhIC1kIC92YXIvbGliL3NwZWFrdXAvJFNBVkVEU1lOVEggXTsgdGhlbgoJ
-Z2V0dGV4dCAtcyAiTm8gc3BlYWt1cCBzZXR0aW5ncyBzYXZlZCBmb3IgJFNBVkVEU1lOVEgs
-IHNvIG5vdGhpbmcgdG8gcmVzdG9yZS4iCglleGl0CmZpCmNkIC92YXIvbGliL3NwZWFrdXAv
-JFNBVkVEU1lOVEgKbHN8d2hpbGUgcmVhZCBpOyBkbwoJaWYgWyAtdyAvc3lzL2FjY2Vzc2li
-aWxpdHkvc3BlYWt1cC8kaSBdICYmIFsgLWYgL3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAv
-JGkgXTsgdGhlbgoJCWNwICRpIC9zeXMvYWNjZXNzaWJpbGl0eS9zcGVha3VwLwoJZmkKZG9u
-ZQppZiBbIC1kIGkxOG4gXSAmJiBbIC1kIC9zeXMvYWNjZXNzaWJpbGl0eS9zcGVha3VwL2kx
-OG4gXTsgdGhlbgoJKCBjZCBpMThuCglsc3x3aGlsZSByZWFkIGk7IGRvCgkJaWYgWyAtdyAv
-c3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9pMThuLyRpIF07IHRoZW4KCQkJY3AgJGkgL3N5
-cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAvaTE4bi8KCQlmaQoJZG9uZQoJKQpmaQooIGNkICRT
-WU5USApsc3x3aGlsZSByZWFkIGk7IGRvCglpZiBbIC13IC9zeXMvYWNjZXNzaWJpbGl0eS9z
-cGVha3VwLyRTWU5USC8kaSBdOyB0aGVuCgkJCWNwICRpIC9zeXMvYWNjZXNzaWJpbGl0eS9z
-cGVha3VwLyRTWU5USC8KCQlmaQoJZG9uZQoJKQpnZXR0ZXh0IC1zICJzcGVha3VwIHNldHRp
-bmdzIGhhdmUgYmVlbiByZXN0b3JlZCBmb3IgJFNBVkVEU1lOVEguIgoJCgo=
---------------D7430D747C67CD2B328C6584
-Content-Type: text/plain; charset=UTF-8;
- name="speak-with"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment;
- filename="speak-with"
-
-IyEvYmluL3NoCiMgRGlkaWVyIFNwYWllciA8ZGlkaWVyfmF0fnNsaW50LmZyPiAyMDE5CiMg
-SSB3cm90ZSB0aGlzIHNjcmlwdCBmcm9tIHNjcmF0Y2ggYW5kIHB1dCBpdCBpbiB0aGUgcHVi
-bGljIGRvbWFpbi4KIyBJIGFzc3VtZSB0aGF0IHRoZSBwYWNrYWdlcyBlc3BlYWt1cCBhbmQg
-c3BlZWNoZC11cCBhcmUgaW5zdGFsbGVkLgojIElmIGZlbnJpciBpcyBpbnN0YWxsZWQsIGl0
-IGNhbiBhbHNvIGJlIHVzZWQuCmlmIFsgISAkKGlkIC11KSAtZXEgMCBdOyB0aGVuCgllY2hv
-ICJQbGVhc2UgcnVuIHRoaXMgc2NyaXB0IGFzIHJvb3QuIgoJZXhpdApmaQpzcGVha3VwPSIg
-IGEgaGFyZCBzeW50aGVzaXplciAodHlwZSBpdHMgbmFtZSwgbGlrZSBcImFwb2xsb1wiIG9y
-IFwiYWNudHNhXCIpIgppZiBbIC14IC91c3IvYmluL2VzcGVha3VwIF07IHRoZW4KCWVzcGVh
-a3VwPSIgIGVzcGVha3VwIChDb25zb2xlIHNjcmVlbiByZWFkZXIgY29ubmVjdGluZyBlc3Bl
-YWstbmcgYW5kIHNwZWFrdXApXG4iCgluMT0iZXNwZWFrdXAiCmZpCmlmIFsgLXggL3Vzci9i
-aW4vc3BlZWNoZC11cCBdOyB0aGVuCglzcGVlY2hkX3VwPSIgIHNwZWVjaGQtdXAgKENvbnNv
-bGUgc2NyZWVuIHJlYWRlciBjb25uZWN0aW5nIFNwZWVjaCBEaXNwYXRjaGVyIGFuZCBzcGVh
-a3VwKSIKCW4yPSJzcGVlY2hkLXVwIgpmaQppZiBbIC14IC91c3IvYmluL2ZlbnJpciBdOyB0
-aGVuCglmZW5yaXI9IiAgZmVucmlyIChNb2R1bGFyLCBmbGV4aWJsZSBhbmQgZmFzdCBjb25z
-b2xlIHNjcmVlbiByZWFkZXIpXG4iCgluMz0iZmVucmlyIgpmaQpyZWFkZXJzPSIkZXNwZWFr
-dXAkZmVucmlyJHNwZWVjaGRfdXAiCmhhcmRsaXN0PSIkKHpncmVwIFNQRUFLVVBfUyAvcHJv
-Yy9jb25maWcuZ3p8Z3JlcCBbeW1dfGdyZXAgLXYgRFVNTVl8IFwKc2VkICdzL0NPTkZJR19T
-UEVBS1VQX1NZTlRIXy8vO3MvLi4kLy8nfHRyICdbOnVwcGVyOl0nICdbOmxvd2VyOl0nKSIK
-dXNhZ2UoKSB7CiAgZWNobyAiVXNhZ2U6ICQwIDxzY3JlZW4gcmVhZGVyPiBvciA8aGFyZCBz
-eW50aGVzaXplcj4gb3Igbm9uZSIKICBlY2hvICJDaG9vc2UgYSBjb25zb2xlIHNjcmVlbiBy
-ZWFkZXIgdG8gdGFsayB3aXRoIGFtb25nOiIgCiAgZWNobyAtZSAiJHJlYWRlcnMiCiAgZWNo
-byAib3IgdXNlIG9uZSBvZiB0aGUgc3VwcG9ydGVkIGhhcmQgc3ludGhlc2l6ZXJzOiIKICBl
-Y2hvICIgICIkaGFyZGxpc3QKICBlY2hvICJvciB0eXBlICBcIiQwIG5vbmVcIiB0byBtdXRl
-IGFsbCBzY3JlZW4gcmVhZGVycy4iIAogIGV4aXQKfQp0b19sb3dlcigpIHsKZWNobyAiJDEi
-fHRyICdbOnVwcGVyOl0nICdbOmxvd2VyOl0nCn0KQVJHVU1FTlQ9JCh0b19sb3dlciAkMSkK
-aWYgWyAkIyAtbmUgMSBdOyB0aGVuIHVzYWdlOyBmaQppZiBbICEgIiRBUkdVTUVOVCIgPSAi
-JG4xIiBdICYmIFwKICAgWyAhICIkQVJHVU1FTlQiID0gIiRuMiIgXSAmJiBcCiAgIFsgISAi
-JEFSR1VNRU5UIiA9ICIkbjMiIF0gJiYgXAogICAhIGVjaG8gJGhhcmRsaXN0fCBncmVwIC1x
-dyAkQVJHVU1FTlQgJiYgXAogICBbICEgIiRBUkdVTUVOVCIgPSAibm9uZSIgXTsgdGhlbgoJ
-ZWNobyAiJDEgaXMgbm90IGEgdmFsaWQgYXJndW1lbnQgb2YgdGhpcyBjb21tYW5kLiIKCXVz
-YWdlCglleGl0CmZpCiMgV2UgZmlyc3QgY2hlY2sgd2hpY2ggY29uc29sZSBzY3JlZW4gcmVh
-ZGVyIGlzIGFscmVhZHkgcnVubmluZywgaWYgYW55LgppZiBbICEgIiQocHMgLUMgZmVucmly
-IC0tbm9oZWFkZXJzfHdjIC1sKSIgPSAiMCIgXTsgdGhlbgoJRkVOUklSPXkKZmkKaWYgWyAt
-ZiAvc3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9zeW50aCBdOyB0aGVuCglTUEtTWU5USD0k
-KGNhdCAvc3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9zeW50aCkKCWlmIFsgIiRTUEtTWU5U
-SCIgPSAic29mdCIgXTsgdGhlbiAKCQlpZiBbICEgIiQocHMgLUMgc3BlZWNoZC11cCAtLW5v
-aGVhZGVyc3x3YyAtbCkiID0gIjAiIF07IHRoZW4KCQkJU1BFRUNIRFVQPSJ5IgoJCWZpCgkJ
-aWYgWyAhICIkKHBzIC1DIGVzcGVha3VwIC0tbm9oZWFkZXJzfHdjIC1sKSIgPSAiMCIgXTsg
-dGhlbgoJCQlFU1BFQUtVUD0ieSIKCQlmaQoJZWxzZQoJSEFSRD0kU1BLU1lOVEgKCWZpCmZp
-CiMgSWYgYSBoYXJkIHN5bnRoIGlzIGluIHVzZSBzdG9yZSBpdHMgbmFtZSBhcyB3ZSBuZWVk
-IHRvIG92ZXJyaWRlIGl0IHRvCiMgdXNlIGEgc29mdCBzeW50aCBpbnN0ZWFkIGlmIHdpc2hl
-ZCwgYnV0IHdlIG5lZWQgdG8gcmVzdG9yZSBpdCBpZiB0aGUKIyB1c2VyIGRvZXMgbm90IHdh
-bnQgYSBwZXJtYW5lbnQgY2hhbmdlLgppZiBbIC1mIC9ldGMvc3BlYWt1cC5jb25mIF07IHRo
-ZW4KCS4gL2V0Yy9zcGVha3VwLmNvbmYKZmkKY2FzZSAkQVJHVU1FTlQgaW4KCWVzcGVha3Vw
-KQoJCWlmIFsgISAteCAvdXNyL2Jpbi9lc3BlYWt1cCBdOyB0aGVuIAoJCQllY2hvICJlc3Bl
-YWt1cCBpcyBub3QgaW5zdGFsbGVkLiIKCQkJZXhpdAoJCWZpCgkJaWYgWyAiJEVTUEVBS1VQ
-IiA9ICJ5IiBdOyB0aGVuCgkJCWVjaG8gIiQxIGlzIGFscmVhZHkgc3RhcnRlZC4iCgkJCWV4
-aXQKCQlmaQoJCWlmIFsgIiRGRU5SSVIiID0gInkiIF07IHRoZW4KCQkJWyAtZiAvZXRjL3Jj
-LmQvcmMuZmVucmlyIF0gJiYgc2ggL2V0Yy9yYy5kL3JjLmZlbnJpciBzdG9wCgkJZmkKCQlp
-ZiBbICIkU1BFRUNIRFVQIiA9ICJ5IiBdOyB0aGVuCgkJCXNoIC9ldGMvcmMuZC9yYy5zcGVl
-Y2hkLXVwIHN0b3AKCQlmaQoJCWVjaG8gIiMgRmlsZSB3cml0dGVuIGJ5IHNwZWFrLXdpdGgu
-IERvIG5vdCBlZGl0LiIgPiAvZXRjL3NwZWFrdXAuY29uZgoJCWVjaG8gImhhcmQ9bm9uZSIg
-Pj4gL2V0Yy9zcGVha3VwLmNvbmYKCQlzaCAvZXRjL3JjLmQvcmMuZXNwZWFrdXAgc3RhcnQK
-CQlzbGVlcCAxCgkJcHJpbnRmICJTaG91bGQgZXNwZWFrdXAgYmUgYWxzbyBzdGFydGVkIGF0
-IG5leHQgYm9vdD8gW1kvbl0gIgoJCXJlYWQgQU5TV0VSCgkJaWYgWyAhICIkKHRvX2xvd2Vy
-ICRBTlNXRVIpIiA9ICJuIiBdOyB0aGVuCgkJCWNobW9kIDc1NSAvZXRjL3JjLmQvcmMuZXNw
-ZWFrdXAKCQkJY2htb2QgNjQ0IC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwCgkJCVsgLWYgL2V0
-Yy9yYy5kL3JjLmZlbnJpciBdICYmIGNobW9kIDY0NCAvZXRjL3JjLmQvcmMuZmVucmlyCgkJ
-CWVjaG8gIkRvbmUuIgoJCWVsaWYgWyAhICIkaGFyZCIgPSAiIiBdOyB0aGVuCgkJCWVjaG8g
-IiMgRmlsZSB3cml0dGVuIGJ5IHNwZWFrLXdpdGguIERvIG5vdCBlZGl0LiIgPiAvZXRjL3Nw
-ZWFrdXAuY29uZgoJCQllY2hvIGhhcmQ9JGhhcmQgPj4gL2V0Yy9zcGVha3VwLmNvbmYKCQlm
-aQoJOzsKCXNwZWVjaGQtdXApCgkJaWYgWyAhIC14IC91c3IvYmluL3NwZWVjaGQtdXAgXTsg
-dGhlbgoJCQllY2hvICJzcGVlY2hkLXVwIGlzIG5vdCBpbnN0YWxsZWQuIgoJCQlleGl0CgkJ
-ZmkKCQlpZiBbICIkU1BFRUNIRFVQIiA9ICJ5IiBdOyB0aGVuCgkJCWVjaG8gInNwZWVjaGQt
-dXAgaXMgYWxyZWFkeSBzdGFydGVkLiIKCQkJZXhpdAoJCWZpCgkJaWYgWyAiJEZFTlJJUiIg
-PSAieSIgXTsgdGhlbgoJCQlzaCAvZXRjL3JjLmQvcmMuZmVucmlyIHN0b3AKCQlmaQoJCWlm
-IFsgIiRFU1BFQUtVUCIgPSAieSIgXTsgdGhlbgoJCQlzaCAvZXRjL3JjLmQvcmMuZXNwZWFr
-dXAgc3RvcAoJCWZpCgkJZWNobyAiIyBGaWxlIHdyaXR0ZW4gYnkgc3BlYWstd2l0aC4gRG8g
-bm90IGVkaXQuIiA+IC9ldGMvc3BlYWt1cC5jb25mCgkJZWNobyAiaGFyZD1ub25lIiA+PiAv
-ZXRjL3NwZWFrdXAuY29uZgoJCXNoIC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwIHN0YXJ0CgkJ
-c2xlZXAgMQoJCXByaW50ZiAiU2hvdWxkIHNwZWVjaGQtdXAgYmUgYWxzbyBzdGFydGVkIGF0
-IG5leHQgYm9vdD8gW1kvbl0gIgoJCXJlYWQgQU5TV0VSCgkJaWYgWyAhICIkKHRvX2xvd2Vy
-ICRBTlNXRVIpIiA9ICJuIiBdOyB0aGVuCgkJCWNobW9kIDY0NCAvZXRjL3JjLmQvcmMuZXNw
-ZWFrdXAKCQkJWyAtZiAvZXRjL3JjLmQvcmMuZmVucmlyIF0gJiYgY2htb2QgNjQ0IC9ldGMv
-cmMuZC9yYy5mZW5yaXIKCQkJY2htb2QgNzU1IC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwCgkJ
-CWVjaG8gIkRvbmUuIgoJCWVsaWYgWyAhICIkaGFyZCIgPSAiIiBdOyB0aGVuCgkJCWVjaG8g
-IiMgRmlsZSB3cml0dGVuIGJ5IHNwZWFrLXdpdGguIERvIG5vdCBlZGl0LiIgPiAvZXRjL3Nw
-ZWFrdXAuY29uZgoJCQllY2hvIGhhcmQ9JGhhcmQgPj4gL2V0Yy9zcGVha3VwLmNvbmYKCQlm
-aQoJOzsKCWZlbnJpcikKCQlpZiBbICEgLXggL3Vzci9iaW4vZmVucmlyIF07IHRoZW4KCQkJ
-ZWNobyAiZmVucmlyIGlzIG5vdCBpbnN0YWxsZWQuIgoJCQlleGl0CgkJZmkKCQlpZiBbICIk
-RkVOUklSIiA9ICJ5IiBdOyB0aGVuCgkJCWVjaG8gImZlbnJpciBpcyBhbHJlYWR5IHN0YXJ0
-ZWQuIgoJCQlleGl0CgkJZmkKCQlpZiBbICIkU1BFRUNIRFVQIiA9ICJ5IiBdOyB0aGVuCgkJ
-CXNoIC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwIHN0b3AKCQlmaQoJCWlmIFsgIiRFU1BFQUtV
-UCIgPSAieSIgXTsgdGhlbgoJCQlzaCAvZXRjL3JjLmQvcmMuZXNwZWFrdXAgc3RvcAoJCWZp
-CgkJaWYgWyAhICIkU1BLU1lOVEgiID0gIiIgXTsgdGhlbgoJCQllY2hvIG5vbmUgPiAvc3lz
-L2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9zeW50aAoJCWZpCgkJZWNobyAiIyBGaWxlIHdyaXR0
-ZW4gYnkgc3BlYWstd2l0aC4gRG8gbm90IGVkaXQuIiA+IC9ldGMvc3BlYWt1cC5jb25mCgkJ
-ZWNobyAiaGFyZD1ub25lIiA+PiAvZXRjL3NwZWFrdXAuY29uZgoJCXNoIC9ldGMvcmMuZC9y
-Yy5mZW5yaXIgc3RhcnQKCQlzbGVlcCAxCgkJY2xlYXIKCQlwcmludGYgIlNob3VsZCBmZW5y
-aXIgYmUgYWxzbyBzdGFydGVkIGF0IGJvb3QgdGltZT8gW1kvbl0gIgoJCXJlYWQgQU5TV0VS
-CgkJaWYgWyAhICIkKHRvX2xvd2VyICRBTlNXRVIpIiA9ICJuIiBdOyB0aGVuIAoJCQljaG1v
-ZCA2NDQgL2V0Yy9yYy5kL3JjLmVzcGVha3VwCgkJCWNobW9kIDY0NCAvZXRjL3JjLmQvcmMu
-c3BlZWNoZC11cAoJCQljaG1vZCA3NTUgL2V0Yy9yYy5kL3JjLmZlbnJpcgoJCQllY2hvICJE
-b25lLiIKCQllbGlmIFsgISAiJGhhcmQiID0gIiIgXTsgdGhlbgoJCQllY2hvICIjIEZpbGUg
-d3JpdHRlbiBieSBzcGVhay13aXRoLiBEbyBub3QgZWRpdC4iID4gL2V0Yy9zcGVha3VwLmNv
-bmYKCQkJZWNobyBoYXJkPSRoYXJkID4+IC9ldGMvc3BlYWt1cC5jb25mCgkJZmkKCTs7Cglu
-b25lKQoJCWlmIFsgIiRGRU5SSVIiID0gInkiIF07IHRoZW4KCQkJc2ggL2V0Yy9yYy5kL3Jj
-LmZlbnJpciBzdG9wCgkJZmkKCQlpZiBbICIkRVNQRUFLVVAiID0gInkiIF07IHRoZW4KCQkJ
-c2ggL2V0Yy9yYy5kL3JjLmVzcGVha3VwIHN0b3AKCQlmaQoJCWlmIFsgIiRTUEVFQ0hEVVAi
-ID0gInkiIF07IHRoZW4KCQkJc2ggL2V0Yy9yYy5kL3JjLnNwZWVjaGQtdXAgc3RvcAoJCWZp
-CgkJaWYgWyAhICIkU1BLU1lOVEgiID0gIiIgXTsgdGhlbgoJCQllY2hvIG5vbmUgPiAvc3lz
-L2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9zeW50aAoJCWZpCgkJcHJpbnRmICJEbyB5b3UgYWxz
-byB3YW50IGEgbXV0ZSBjb25zb2xlIGF0IG5leHQgYm9vdD8gW1kvbl0gIgoJCXJlYWQgQU5T
-V0VSCgkJaWYgWyAhICIkKHRvX2xvd2VyICRBTlNXRVIpIiA9ICJuIiBdOyB0aGVuCgkJCWNo
-bW9kIDY0NCAvZXRjL3JjLmQvcmMuZXNwZWFrdXAKCQkJY2htb2QgNjQ0IC9ldGMvcmMuZC9y
-Yy5zcGVlY2hkLXVwCgkJCVsgLWYgL2V0Yy9yYy5kL3JjLmZlbnJpciBdICYmIGNobW9kIDY0
-NCAvZXRjL3JjLmQvcmMuZmVucmlyCgkJCWVjaG8gIiMgRmlsZSB3cml0dGVuIGJ5IHNwZWFr
-LXdpdGguIERvIG5vdCBlZGl0LiIgPiAvZXRjL3NwZWFrdXAuY29uZgoJCQllY2hvICJoYXJk
-PW5vbmUiID4+IC9ldGMvc3BlYWt1cC5jb25mCgkJCWVjaG8gIk9LIgoJCWZpCgk7OwoJKikK
-CQlpZiBbICIkRkVOUklSIiA9ICJ5IiBdOyB0aGVuCgkJCXNoIC9ldGMvcmMuZC9yYy5mZW5y
-aXIgc3RvcAoJCWZpCgkJaWYgWyAiJEVTUEVBS1VQIiA9ICJ5IiBdOyB0aGVuCgkJCXNoIC9l
-dGMvcmMuZC9yYy5lc3BlYWt1cCBzdG9wCgkJZmkKCQlpZiBbICIkU1BFRUNIRFVQIiA9ICJ5
-IiBdOyB0aGVuCgkJCXNoIC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwIHN0b3AKCQlmaQoJCW1v
-ZHByb2JlIHNwZWFrdXBfJEFSR1VNRU5UIDI+L2Rldi9udWxsCgkJZWNobyAkQVJHVU1FTlQg
-ID4gL3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAvc3ludGgKCQlpZiBbICQ/ICE9IDAgXTsg
-dGhlbgoJCQllY2hvICJVbmFibGUgdG8gc3dpdGNoIHRvIHRoZSAkQVJHVU1FTlQgc3ludGhl
-c2l6ZXIuIgoJCQllY2hvICJTb21ldGhpbmcgc2hvdWxkIGJlIHdyb25nLiIKCQkJZXhpdCAx
-CgkJZmkKCQlwcmludGYgIlNob3VsZCAkQVJHVU1FTlQgYmUgYWxzbyB1c2VkIGF0IG5leHQg
-Ym9vdD8gW1kvbl0gIgoJCXJlYWQgQU5TV0VSCgkJaWYgWyAhICIkKHRvX2xvd2VyICRBTlNX
-RVIpIiA9ICJuIiBdOyB0aGVuCgkJCWNobW9kIDY0NCAvZXRjL3JjLmQvcmMuc3BlZWNoZC11
-cAoJCQlbIC1mIC9ldGMvcmMuZC9yYy5mZW5yaXIgXSAmJiBjaG1vZCA2NDQgL2V0Yy9yYy5k
-L3JjLmZlbnJpcgoJCQljaG1vZCA3NTUgL2V0Yy9yYy5kL3JjLmVzcGVha3VwCgkJCWVjaG8g
-IiMgRmlsZSB3cml0dGVuIGJ5IHNwZWFrLXdpdGguIERvIG5vdCBlZGl0LiIgPiAvZXRjL3Nw
-ZWFrdXAuY29uZgoJCQllY2hvICJoYXJkPSRBUkdVTUVOVCIgPj4gL2V0Yy9zcGVha3VwLmNv
-bmYKCQkJZWNobyAiRG9uZS4iCgkJZmkKZXNhYwo=
---------------D7430D747C67CD2B328C6584
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
+Hi All: On this laptop, running Voxin-and-Speakup, this has happened 
+several times. I was ssh in to my desktop machine, opened nano and tried 
+pasting in a buffer of probably 100 lines. Not only did it not display nor 
+paste in, but it seemed to lockup my console. No keystrokes echo, but I 
+can use flat-review to examin my screen. Even after killing processes for 
+an ssh session, tty23 is still stuck. Also, while the cut-and-paste will 
+say mark or cut, it will not paste in anything now, no matter which 
+console I am on. I looked in systemdjournal, kern.log, and 
+/var/log/messages but saw nothing matching the time period involved. I 
+know eventually I can or will reboot-and-all will be well, but ultimately 
+wondering if there is a suggested limit in how many lines we can safely 
+paste in? On this laptop I cannot increase number of lines with stty past 
+112, no matter which fonts I try. The cut-and-paste buffer saves me from 
+saving extra files to import. Thanks so much in advance for any guidance
+Chime
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
 http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
-
---------------D7430D747C67CD2B328C6584--
