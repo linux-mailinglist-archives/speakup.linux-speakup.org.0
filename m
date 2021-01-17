@@ -2,71 +2,56 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 14B0C2F8E3E
-	for <lists+speakup@lfdr.de>; Sat, 16 Jan 2021 18:21:35 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 635C92F94B4
+	for <lists+speakup@lfdr.de>; Sun, 17 Jan 2021 19:45:29 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 437FB380FAA; Sat, 16 Jan 2021 12:21:26 -0500 (EST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=dVTWEFlw;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=lRTgJAA3;
-	dkim-atps=neutral
+	id 40611380EEC; Sun, 17 Jan 2021 13:45:24 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1610909124;
+	bh=EbeFI580MCBSWFJcWtTYVvu96tkm/TqCrSkmxjHkOBw=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
+	 List-Post:List-Help:List-Subscribe:Reply-To:From;
+	b=yEGqC9v40rjP6thLxSvqXxre2yPGOUMldDkDOVgPpQ+GsG+RfDOae6Vmy4txIap/A
+	 3qAZGkueRnOewKRRlteBsrBYYrG2vNKq+q61Im0EOTFQrUUhZwMTWFnRYAWOqyf8Vi
+	 FCPbR0Zv+fVVzMjLlpEO1iFr6twVkejqx/YKYQQI=
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id F001C380EEA;
-	Sat, 16 Jan 2021 12:21:25 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D12C7380F24;
+	Sun, 17 Jan 2021 13:45:21 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1610909121;
+	bh=EbeFI580MCBSWFJcWtTYVvu96tkm/TqCrSkmxjHkOBw=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Archive:
+	 List-Post:List-Help:List-Subscribe:Reply-To:From;
+	b=H48Cr6VIGNTFYghriXXf6DCNHAVfBXwJva+m8dvab0Lpm6bzcPCUg+wvxnvk85Wil
+	 BJ0RameCZ8j6WaTkKqlUZrU/mjey2v1h2+c4qFKlJ47my5iWIRjqEAYw5ikxQDXAI0
+	 5jyIOJvdjIunSjPUy7IKL7Z9cRHkPX0xtaauMmjc=
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 1C619380BD8; Sat, 16 Jan 2021 12:21:25 -0500 (EST)
-Received: from wout1-smtp.messagingengine.com (unknown [64.147.123.24])
- by befuddled.reisers.ca (Postfix) with ESMTPS id 66F57380999
- for <speakup@linux-speakup.org>; Sat, 16 Jan 2021 12:21:22 -0500 (EST)
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.42])
- by mailout.west.internal (Postfix) with ESMTP id 5AF63166A
- for <speakup@linux-speakup.org>; Sat, 16 Jan 2021 12:21:07 -0500 (EST)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute2.internal (MEProxy); Sat, 16 Jan 2021 12:21:07 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- hubert-humphrey.com; h=date:from:to:subject:message-id
- :mime-version:content-type; s=fm2; bh=v70v9lTfRVGabSwd3fv8t8r3O9
- aCOnpId+x81eml75Y=; b=dVTWEFlwIIKcDKn7/cYQrcyvmYMiWh2UVlBOf/zCaL
- 4T8WQeVGiER/WWPWzfaaneagIWsW4drUfZcZC/lr/8djdaH8LEdLl4F2lXw9G/Ty
- 7QiDXGKTaBfw7NVGQQ36DIlvoI6q7APkw3NaGYYG+R2XvyY9KIDrffS3RJbQ8KUn
- A+yUiDFdr0Om1YVBHhjaGvkRfFD8QZJlDYsRWj4jI/8qeThWVPTOp1pROcLEFYh1
- Gko1pb1Kwlt130ncMUf+cC0XDK0PM80/q2xzFurr972932s8hGWAdydSgsYl9FB3
- m4Y8PYgNBd7KEvjk/6SNALVAvuA6z/yRUsgNgJlb5nGg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=content-type:date:from:message-id
- :mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
- :x-me-sender:x-sasl-enc; s=fm1; bh=v70v9lTfRVGabSwd3fv8t8r3O9aCO
- npId+x81eml75Y=; b=lRTgJAA321PMdbd0N85dDAqI+yfyo6yFo/leIqLBfUw7R
- hBOL3afmr4subDgg/JWOJz6Ayry6Jw5dG+Fcqqlu8hzQrdywpFTXZBjYXR0dWFsF
- Ha99dMK3BOV+y1riWcmxdtorWBq2tWp4CJrKw4ukqRIrIIYECwH0VafIZQBsdXeb
- q8QbFx0aUB4fN0doLLEWl0e9laueIO3CroDEB+Riv1EytembJ4Fw/WqzuS1viC8S
- JNR6sbjTWlhUAKieu/sj7FmDYsu0VgUYI2DgVvpGeRRWhz0gcM7RPmcEUXoRgqYu
- v0yLH+yHo7If2WU6NKvikkwZcelRMBm+pNPGXqgow==
-X-ME-Sender: <xms:giADYIy_-iMY_U8ASOpNTh4G6mFmiDMY92uQRQHhRyiyPWIDH9Fgvg>
- <xme:giADYFPUsYDTIuA1fXN2rbeygDFWpyj9ztL0Upu_loLE2RHh9F6bFEGK8VhZ0rsp6
- TZ4Q0wABPBR1fpt8UI>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduledrtdeggddutddvucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttd
- dvnecuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhu
- mhhphhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtie
- ettedtkefggfekvdeujeetkedtheefhffhvdetkeenucfkphepuddtgedrudejvddrfedr
- ieefnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomheptg
- hhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
-X-ME-Proxy: <xmx:giADYMTkleQNqe8CLyjg4jikRZWhGMJ9NBp5QvB9u2b_izgOVxnvlg>
- <xmx:giADYDYyn7dmSRll7H6b61I4pBp78NJMtf5JuC6uVlB--97WmyNyNQ>
- <xmx:giADYJ3cfgUzCLsDzfotFvTh_EY4t_8zUwXpRLHyVaAGkn_T384WaA>
- <xmx:gyADYMWMeTHbh9Jf0IvvIyXythd6ihod5k1o6DFo8W76hzYwEuhZ4g>
-Received: from chime.lan (cpe-104-172-3-63.socal.res.rr.com [104.172.3.63])
- by mail.messagingengine.com (Postfix) with ESMTPA id 7985624005B
- for <speakup@linux-speakup.org>; Sat, 16 Jan 2021 12:21:06 -0500 (EST)
-Date: Sat, 16 Jan 2021 09:21:05 -0800 (PST)
-From: Chime Hart <chime@hubert-humphrey.com>
+ id 3F8E4380C00; Sun, 17 Jan 2021 13:45:21 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+ s=befuddled; t=1610909121;
+ bh=yxxDid+K9tW8B0pL7piHFbax0j0BS9qjuKyspXG1RWc=;
+ h=Date:From:To:Subject:From;
+ b=bB1TST4w800J3gGzSlsalKtUiKpENaxT1wUdH6ftt6+fZANSBzaPp/trBsxl9aL/R
+ /wwgwwmeQMKGeOhBj9eZyYe6OY6ZAyrFc4rmokVeKa6Vl9Ktuqefh7A5ddI0P/wonI
+ S8xU4wtPFrEgo4CsIAI2hNtpUwmkUDekq4zo/qVI=
+Received: from localhost (localhost [IPv6:::1])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 2853E380BC0
+ for <speakup@linux-speakup.org>; Sun, 17 Jan 2021 13:45:21 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+ s=befuddled; t=1610909121;
+ bh=yxxDid+K9tW8B0pL7piHFbax0j0BS9qjuKyspXG1RWc=;
+ h=Date:From:To:Subject:From;
+ b=bB1TST4w800J3gGzSlsalKtUiKpENaxT1wUdH6ftt6+fZANSBzaPp/trBsxl9aL/R
+ /wwgwwmeQMKGeOhBj9eZyYe6OY6ZAyrFc4rmokVeKa6Vl9Ktuqefh7A5ddI0P/wonI
+ S8xU4wtPFrEgo4CsIAI2hNtpUwmkUDekq4zo/qVI=
+Date: Sun, 17 Jan 2021 13:45:21 -0500 (EST)
+From: Kirk Reiser <kirk@reisers.ca>
 To: speakup@linux-speakup.org
-Subject: Cut-and-Paste, Are their Size Limits?
-Message-ID: <7a466694-8463-b45e-2fef-20f58fdf47d3@hubert-humphrey.com>
+Subject: The mailing list
+Message-ID: <alpine.DEB.2.23.453.2101171338580.106951@befuddled.reisers.ca>
+User-Agent: Alpine 2.23 (DEB 453 2020-06-18)
 MIME-Version: 1.0
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
@@ -88,21 +73,19 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hi All: On this laptop, running Voxin-and-Speakup, this has happened 
-several times. I was ssh in to my desktop machine, opened nano and tried 
-pasting in a buffer of probably 100 lines. Not only did it not display nor 
-paste in, but it seemed to lockup my console. No keystrokes echo, but I 
-can use flat-review to examin my screen. Even after killing processes for 
-an ssh session, tty23 is still stuck. Also, while the cut-and-paste will 
-say mark or cut, it will not paste in anything now, no matter which 
-console I am on. I looked in systemdjournal, kern.log, and 
-/var/log/messages but saw nothing matching the time period involved. I 
-know eventually I can or will reboot-and-all will be well, but ultimately 
-wondering if there is a suggested limit in how many lines we can safely 
-paste in? On this laptop I cannot increase number of lines with stty past 
-112, no matter which fonts I try. The cut-and-paste buffer saves me from 
-saving extra files to import. Thanks so much in advance for any guidance
-Chime
+Hi folks: I believe we are in for a few days of intermittent mailing
+list reliability. Our current package mailman runs through python 2.7
+but python2 has been depricated and the software has been removed
+twice by my upgrading packages. I guess it's time to move the list to
+some other package. It does not appear there is a smooth upgrade path
+to mailman3 so I need to figure out what other system to move toward.
+
+Hopefully I won't break it to badly but at this stage I'm not quite
+sure what to do with it but it's currently breaking my entire
+dist-upgrade ability.
+
+   Kirk
+
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
