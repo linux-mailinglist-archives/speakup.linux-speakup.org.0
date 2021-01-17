@@ -2,63 +2,46 @@ Return-Path: <speakup-bounces@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9CC832F962E
-	for <lists+speakup@lfdr.de>; Mon, 18 Jan 2021 00:17:22 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 652192F9645
+	for <lists+speakup@lfdr.de>; Mon, 18 Jan 2021 00:39:30 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1BC2C380F11; Sun, 17 Jan 2021 18:17:22 -0500 (EST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=cableone.net header.i=@cableone.net header.a=rsa-sha1 header.s=20180516 header.b=BSMJahb6;
-	dkim-atps=neutral
+	id 258B9380F31; Sun, 17 Jan 2021 18:39:29 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 31A7A380F3C;
-	Sun, 17 Jan 2021 18:17:20 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B798A380F17;
+	Sun, 17 Jan 2021 18:39:25 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
- id 8B977380C00; Sun, 17 Jan 2021 18:17:18 -0500 (EST)
-Received: from mail.cableone.net (mail2.cableone.syn-alias.com [69.168.106.66])
- by befuddled.reisers.ca (Postfix) with ESMTPS id CD2DD380BC0
- for <speakup@linux-speakup.org>; Sun, 17 Jan 2021 18:17:17 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha1; d=cableone.net; s=20180516; c=relaxed/simple; 
- q=dns/txt; i=@cableone.net; t=1610925436;
- h=From:Subject:Date:To:MIME-Version:Content-Type;
- bh=qysgvx+K4ob2ATiUwjVZ9OTvDAg=;
- b=BSMJahb6cnyukp/ZZYdaoYIW081Uu7cnDD2CYJgU6AgnDv+GYPb5lsXClfkE4cKG
- PtBccuLxRo674hdJDxIBGtF1Y3M8oQdnVAUcnkazvkZvos6H6zoxK4Q8gE4sg2Xn
- d8I2XTfPaN3B7rMFEln+YUKV+7WMOF/4i7vX2l35iDqQpvi6hfcLthCkYdbJ6pRv
- r2f6UDlQPMx10A/HlYgqcMRr1T7ytVovDpiYoOC0IdM/TFqHjO6Eghp7rjxWVlIz
- fF+dHyP+wP5vlSTJfSdkvdNvL/q8YCHNgqwwNK0sz31qd80+eVuLnx3Pg1Zz8EH9
- TXQvmesXg74iDMiAawQueg==;
-X_CMAE_Category: , ,
-X-CNFS-Analysis: v=2.3 cv=AL51m+f7 c=1 sm=1 tr=0 cx=a_idp_x
- a=FAD7pjsVrG12rOFlsKXSTg==:117 a=FAD7pjsVrG12rOFlsKXSTg==:17
- a=KGjhK52YXX0A:10 a=8nJEP1OIZ-IA:10 a=EmqxpYm9HcoA:10 a=P7xTaY_ng_sA:10
- a=tqsjwdiwAAAA:8 a=qPKtzgQbAAAA:8 a=DQOLBC3v2A__O0pn4woA:9 a=wPNLvfGTeEIA:10
- a=lQnGwxWodiTalr3WyRk7:22 a=OTAqJWGB1laLS8RTg9aS:22
-X-CM-Score: 0
-X-Scanned-by: Cloudmark Authority Engine
-X-Authed-Username: Z2xlbm5lcnZpbkBjYWJsZW9uZS5uZXQ=
-Authentication-Results: smtp01.lapis.bos.sync.lan
- smtp.user=glennervin@cableone.net; auth=pass (LOGIN)
-Received: from [24.119.24.147] ([24.119.24.147:62046] helo=NUCPPYH)
- by mail.cableone.net (envelope-from <glennervin@cableone.net>)
- (ecelerity 3.6.25.56547 r(Core:3.6.25.0)) with ESMTPSA
- (cipher=DHE-RSA-AES256-SHA) 
- id 27/B6-19147-C75C4006; Sun, 17 Jan 2021 18:17:16 -0500
-Message-ID: <17a401d6ed26$e55f0c40$7001a8c0@NUCPPYH>
-From: "Glenn K0LNY" <glennervin@cableone.net>
+ id 8A744380C00; Sun, 17 Jan 2021 18:39:25 -0500 (EST)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+ by befuddled.reisers.ca (Postfix) with ESMTPS id 74CA3380BC0
+ for <speakup@linux-speakup.org>; Sun, 17 Jan 2021 18:39:25 -0500 (EST)
+Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
+ (authenticated bits=0)
+ by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 10HNdCVv025440
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+ for <speakup@linux-speakup.org>; Sun, 17 Jan 2021 18:39:13 -0500
+Received: from ccs.covici.com (localhost [127.0.0.1])
+ by ccs.covici.com (8.15.2/8.15.2) with ESMTPS id 10HNdKFu4087652
+ (version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+ for <speakup@linux-speakup.org>; Sun, 17 Jan 2021 18:39:21 -0500
+Received: (from covici@localhost)
+ by ccs.covici.com (8.15.2/8.15.2/Submit) id 10HNdK1b4087651;
+ Sun, 17 Jan 2021 18:39:20 -0500
+Date: Sun, 17 Jan 2021 18:39:20 -0500
+Message-ID: <m3h7nfrv4n.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
 To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <007401d6ed1c$bbc0cbd0$33426370$@blinksoft.com>
-Subject: Re: Raspberry question
-Date: Sun, 17 Jan 2021 17:17:15 -0600
-Organization: Home
-MIME-Version: 1.0
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.3790.1830
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Vade-Verditct: clean
-X-Vade-Analysis: gggruggvucftvghtrhhoucdtuddrgeduledrtdejgddtkecutefuodetggdotefrodftvfcurfhrohhfihhlvgemucfujgfpteevqfftnfgvrghrnhhinhhgpdfurffmpdfqfgfvnecuuegrihhlohhuthemuceftddunecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjughrpefkrhfhvfhfufffohggtgfgrfgioffqsehtjeeptddutddunecuhfhrohhmpedfifhlvghnnhcumfdtnffpjgdfuceoghhlvghnnhgvrhhvihhnsegtrggslhgvohhnvgdrnhgvtheqnecuggftrfgrthhtvghrnhepheejveeileeggfeliedutefgfedvhfeljeektedvuefhuddugfeuvdeutdfhteejnecuffhomhgrihhnpehlihhnuhigqdhsphgvrghkuhhprdhorhhgnecukfhppedvgedrudduledrvdegrddugeejnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehinhgvthepvdegrdduudelrddvgedrudegjeenpdhmrghilhhfrhhomhepghhlvghnnhgvrhhvihhnsegtrggslhgvohhnvgdrnhgvthenpdhrtghpthhtohepshhpvggrkhhupheslhhinhhugidqshhpvggrkhhuphdrohhrghen
+Subject: Re: The mailing list
+In-Reply-To: <alpine.DEB.2.23.453.2101171538310.109267@befuddled.reisers.ca>
+References: <alpine.DEB.2.23.453.2101171338580.106951@befuddled.reisers.ca>
+ <m3im7vs5vd.wl-covici@ccs.covici.com>
+ <alpine.DEB.2.23.453.2101171538310.109267@befuddled.reisers.ca>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: Covici Computer Systems
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-BeenThere: speakup@linux-speakup.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,8 +54,7 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup-request@linux-speakup.org?subject=help>
 List-Subscribe: <http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup>,
  <mailto:speakup-request@linux-speakup.org?subject=subscribe>
-Reply-To: Glenn K0LNY <GlennErvin@cableone.net>,
- "Speakup is a screen review system for Linux."
+Reply-To: covici@ccs.covici.com, "Speakup is a screen review system for Linux."
  <speakup@linux-speakup.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -80,65 +62,59 @@ Errors-To: speakup-bounces@linux-speakup.org
 Sender: "Speakup" <speakup-bounces@linux-speakup.org>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.4
 
-Hey Ken,
-Is speech dispatcher running?
-Can you get something from:
-spd-say hello
+The claim in their readme is  that you can do that -- if it does not
+work, see if there is a bug.
 
-HTH
-Glenn
------ Original Message ----- 
-From: <kperry@blinksoft.com>
-To: <speakup@linux-speakup.org>
-Sent: Sunday, January 17, 2021 4:04 PM
-Subject: Raspberry question
+On Sun, 17 Jan 2021 15:41:26 -0500,
+Kirk Reiser wrote:
+> 
+> I'm thinking about it but mailman3 looks really clunky and it requires
+> a database like sqlite or mysql or something. I feel that's kind of
+> stupid for mail messages but I am looking at it. If it would just take
+> the old archives and integrate them into the new system then I'd
+> definitely do that but the last time I tried it didn't work.
+> 
+> 
+> On Sun, 17 Jan 2021, John Covici wrote:
+> 
+> > Why not go to mailman 3 -- it sounds like a bit of a pain, but doable.
+> > 
+> > On Sun, 17 Jan 2021 13:45:21 -0500,
+> > Kirk Reiser wrote:
+> >> 
+> >> Hi folks: I believe we are in for a few days of intermittent mailing
+> >> list reliability. Our current package mailman runs through python 2.7
+> >> but python2 has been depricated and the software has been removed
+> >> twice by my upgrading packages. I guess it's time to move the list to
+> >> some other package. It does not appear there is a smooth upgrade path
+> >> to mailman3 so I need to figure out what other system to move toward.
+> >> 
+> >> Hopefully I won't break it to badly but at this stage I'm not quite
+> >> sure what to do with it but it's currently breaking my entire
+> >> dist-upgrade ability.
+> >> 
+> >>   Kirk
+> >> 
+> >> _______________________________________________
+> >> Speakup mailing list
+> >> Speakup@linux-speakup.org
+> >> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+> >> 
+> > 
+> > 
+> _______________________________________________
+> Speakup mailing list
+> Speakup@linux-speakup.org
+> http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup
+> 
 
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
 
-
-
-Well, it has been a long time since I have been on this list.   Over the
-years I have been using Orca, but I have been missing speakup.  I have used
-my raspberry PI's up to this time on ssh.  I was hoping that the new release
-in December of the rasbion which has access built in would just work out of
-the box.   I am able to get Orca going and Emacspeak, and even espeak at the
-command line.
-
-
-
-The problem is speakup seems to be working but does not work.    When I am
-at the tty terminal using the keyboard and with Xwin shut down.   I can make
-espeak say thins but I am not able to get speakup to work.  When I do PS I
-can see that both speak up and espeakup -V are running.  I have tried doing
-
-
-
-Sudo Systemctl enable espeakup.service
-
-Sudo Systemctl start espeakup.service
-
-
-
-I have even tried without the .service on the previous lines.  So far
-nothing I have tried has got speakup talking.
-
-
-
-Does anyone know how to get speakup to talk on the new Rasbion build?  I
-would much rather be using speakup than Ora or emacspeak.
-
-
-
-I have asked this on the Raspberry PI list already and no one has answered.
-
-Ken
-
-
-
-_______________________________________________
-Speakup mailing list
-Speakup@linux-speakup.org
-http://linux-speakup.org/cgi-bin/mailman/listinfo/speakup 
-
+         John Covici wb2una
+         covici@ccs.covici.com
 _______________________________________________
 Speakup mailing list
 Speakup@linux-speakup.org
