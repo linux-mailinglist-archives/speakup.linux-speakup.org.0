@@ -1,72 +1,63 @@
-Return-Path: <speakup+bounces-222-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-223-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 03D773AF64F
-	for <lists+speakup@lfdr.de>; Mon, 21 Jun 2021 21:42:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C8F7E3B86F2
+	for <lists+speakup@lfdr.de>; Wed, 30 Jun 2021 18:17:51 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 91D82380EAA; Mon, 21 Jun 2021 15:42:22 -0400 (EDT)
+	id CB4D9381764; Wed, 30 Jun 2021 12:17:49 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=uBW//4He;
+	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=U3IefBt7;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1F408380EA1
-	for <lists+speakup@lfdr.de>; Mon, 21 Jun 2021 15:42:21 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B88323809A8
+	for <lists+speakup@lfdr.de>; Wed, 30 Jun 2021 12:17:49 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 88DC1380E17; Mon, 21 Jun 2021 15:42:15 -0400 (EDT)
-Received: from mail-lf1-f47.google.com (mail-lf1-f47.google.com [209.85.167.47])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 32AAE380B0C
-	for <speakup@linux-speakup.org>; Mon, 21 Jun 2021 15:42:15 -0400 (EDT)
-Received: by mail-lf1-f47.google.com with SMTP id h15so13508712lfv.12
-        for <speakup@linux-speakup.org>; Mon, 21 Jun 2021 12:42:15 -0700 (PDT)
+	id D6D99380BC2; Wed, 30 Jun 2021 12:17:46 -0400 (EDT)
+Received: from mail-wm1-f44.google.com (mail-wm1-f44.google.com [209.85.128.44])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id C75293809A8
+	for <speakup@linux-speakup.org>; Wed, 30 Jun 2021 12:17:46 -0400 (EDT)
+Received: by mail-wm1-f44.google.com with SMTP id p10-20020a05600c430ab02901df57d735f7so4835807wme.3
+        for <speakup@linux-speakup.org>; Wed, 30 Jun 2021 09:17:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20161025;
-        h=subject:to:cc:references:from:message-id:date:user-agent
-         :mime-version:in-reply-to:content-transfer-encoding:content-language;
-        bh=ce1M0Nq3dwcUfhwMts9BmyBOnGQavzVyGqBb4iQzF5g=;
-        b=uBW//4HekhlUTNDuTp4e6uGKw3Hv/jPZs7T9jWutFDVln/YqPxV0i0G+nueg9KYXAN
-         /yQEaYEWlDKTtklMNLD0Tv6wlcJrOlyxz0fExifepL2bae9B86VysPDD2nkMYUNS3fvL
-         COPhfnfeEZiowT/GwBHzYYJ6oSCkk+TeqWk84iSu6o6cgsPGCjECF8JSAMWUzPTDTDtT
-         KKblnbRsh48DpxjOzU0Fq5a3Pu7zCGXTqhIbOh5EN5zBY+Sh0d43BlsW6nNDUbQjUv6i
-         PC/DZXPiqVWeVesj9RKVDixg33v7FnrX+boPcZRpJ0qGV3l/jqiMMzcvb5nNVxmKu6QM
-         woig==
+        h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+        bh=BUv0yg57ef61uAd/0ajBzpy34ELNJdotc5hyKgvt49c=;
+        b=U3IefBt7GA3LMU4Y1mUuapjH2TpToWEDY7woabV09nV2iWQMehQzP1RfMWdETOfbyG
+         ECi3sCj1G3ew1QhEXmvkyAJQBgH+V49mLQeMwg6quzGLjbwZfYoJWX/tEMfCWDJ5V5W4
+         ijV3f7eWmLCPd8W5Tb9jhNt9tWFwWNmzDZSu/35vTzOEXWFloeFt96xlXDuAw3PG7WvT
+         z3ZTL/mCydWgpzfQDguZpdBrYey/dPwFXvXEWzWrjyvmy0kapt0PYcyYtNGdpm0ZEtST
+         gXWZRrYxCkxWgKEDgh47nTAbuqzAD4Rz2cT4ZSAEvfPhoyoTcRmfDNxSWJTK8ZZ34kAw
+         P+qA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20161025;
-        h=x-gm-message-state:subject:to:cc:references:from:message-id:date
-         :user-agent:mime-version:in-reply-to:content-transfer-encoding
-         :content-language;
-        bh=ce1M0Nq3dwcUfhwMts9BmyBOnGQavzVyGqBb4iQzF5g=;
-        b=aIAA0TUeHhZ1Hbq+bvRvuDX26iX9lDbYclfxyDKXQGX+KV4c2ApejgQorJC4bZxfPw
-         TO7gqZslsdf+TmLR+IYRQmLPSjBwvSvo/0cdIagbVx0kBYSNQl8T3CtZKUN60fMR2+fQ
-         dso0mU93WLz1+984ZGhJp/UzyhqenIcOoqu4Z478ZvigMTz89pCsFWGT482DtK773wA7
-         Q5EkA+GcrdxNMs8ivfVjtGjJCcNfgujsgctkGV4dNHKYIDLBj+UVFC8FXKjYPsf70jah
-         WzqGvEffPdnVxIAkuRh513tIrKL9zqmUF0/tWf/vfMKzeZquX8RbbjttlTCGJkd1pQa+
-         hsnw==
-X-Gm-Message-State: AOAM5309mY59+AjgQXy0Q7WCP9G5lJYp9v+510XfPVnkTcZcN5H/QZmg
-	lOH10dtlRW4xsYjI/EQysGoUcHKAbsgOAiPU
-X-Google-Smtp-Source: ABdhPJwrA97fDISK9/tTP4+KdunOcftr8WVJ5I0ihNT0OB6QofpKy9i3gE11DE8vvWtj2QecIy6WwA==
-X-Received: by 2002:a19:e20d:: with SMTP id z13mr6191220lfg.538.1624304471532;
-        Mon, 21 Jun 2021 12:41:11 -0700 (PDT)
-Received: from [192.168.1.73] ([91.77.167.245])
-        by smtp.gmail.com with ESMTPSA id x1sm1962626lfa.21.2021.06.21.12.41.10
-        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
-        Mon, 21 Jun 2021 12:41:11 -0700 (PDT)
-Subject: Re: Archlinux Speakup problems after alsa package upgrade
-To: Janina Sajka <janina@rednote.net>, Kelly Prescott <kprescott@coolip.net>
-Cc: Samuel Thibault <samuel.thibault@aquilenet.fr>, speakup@linux-speakup.org
-References: <alpine.LNX.2.22.411.2106082204570.1927@io.coolip.net>
- <20210609072927.3igbp7jvopq3c6f7@begin>
- <alpine.LNX.2.22.411.2106090608590.13304@io.coolip.net>
- <20210609110828.kpo76f2zmbixjran@begin>
- <alpine.LNX.2.22.411.2106091332550.28397@whatsup.nkparts.com>
- <YMdZA0DL4BgCAShe@rednote.net>
-From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
-Message-ID: <6b4b229d-5e00-22e4-8cf2-33ed7bbd6b93@gmail.com>
-Date: Mon, 21 Jun 2021 22:41:09 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
- Thunderbird/78.11.0
+        h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+         :content-disposition;
+        bh=BUv0yg57ef61uAd/0ajBzpy34ELNJdotc5hyKgvt49c=;
+        b=uPcNOp8oP2t77f2vgYWOPjhhlavMuJCoD7oQCV8UhubnQN06amLoShO0yV8EduARUu
+         ssGrrbOvaAPiIRigbBAPSFV3mSAxSKMD26kZLTrnPlZAIAYJSv9zaSSWghFtkOeGMVJp
+         oihNp4H0AxQM7MNQBH+cYsnx3NINxVaV4gkHspQftkDO/covuyYWed1j4LlQ+bB5xAuS
+         9M8ymmBTyFwwgVPDlofoGIoseWWk1p0C3Lwq/n3k4gX3q3f7F2RNNLjkoyHsnywv+m/Q
+         8GOjo2RqcD0pHSzOTx20PHHInDgGPZBkRec9KwfcRNmErZ0KKkSCxQ0SPrqEj/zGu782
+         uqNA==
+X-Gm-Message-State: AOAM533QTw4DX0UKiBkNADRgDEvYUpOAwWay9N+d+H+jpOjS3FEwoNgS
+	JHZbyRlMYx3TyrpmAQM6UqD5UOQUrSiVJQ==
+X-Google-Smtp-Source: ABdhPJwnVujqiWK2//REodG8dEo+GLf9clVS57vUcpS8Mv5n4tHICNbYeSE3++ATVZP/hglpVHhsZw==
+X-Received: by 2002:a1c:7410:: with SMTP id p16mr25098631wmc.24.1625069802139;
+        Wed, 30 Jun 2021 09:16:42 -0700 (PDT)
+Received: from pc ([196.235.73.129])
+        by smtp.gmail.com with ESMTPSA id b9sm26333153wrh.81.2021.06.30.09.16.41
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 30 Jun 2021 09:16:41 -0700 (PDT)
+Date: Wed, 30 Jun 2021 17:16:40 +0100
+From: Salah Triki <salah.triki@gmail.com>
+To: w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
+	samuel.thibault@ens-lyon.org
+Cc: speakup@linux-speakup.org
+Subject: [PATCH] speakup: replace sprintf() by scnprintf()
+Message-ID: <20210630161640.GA132791@pc>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -76,46 +67,52 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-In-Reply-To: <YMdZA0DL4BgCAShe@rednote.net>
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
-Content-Language: en-US
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-14.06.2021 16:26, Janina Sajka пишет:
-> Hi, All:
->
-> Just returning to this topic to add my own experience on updating my
-> Arch Linux installation on two machines over the weekend.
->
-> I also ran into problems that rendered Speakup unusable with espeakup.
-> Reverting alsa-lib fixed the Speakup issue. As we don't know how long
-> the problem may persist, I've added the following to my
-> /etc/pacman.conf:
->
-> IgnorePkg   =alsa-lib
->
->
-> I also discovered problems with alsa-util packages. A command as
-> straight forward as:
->
-> amixer controls
->
-> returned meaningless results. Further, several of my audio devices were
-> silent with volumes set to 0, and the switch set to "false." So, I also
-> added a line like the above for alsa-utils.
->
-> Not sure how to be helpful to anyone interested in debugging, but I do
-> have two machines and am willing to try. Please advise.
->
-> Best,
->
-> Janina
->
-Hello everyone. please test espeakup 0.90 with laytest alsa-lib on Arch Linux.
-I will be happy to hear the results.
+Replace sprintf() by scnprintf() in order to avoid buffer overflows.
 
+Signed-off-by: Salah Triki <salah.triki@gmail.com>
+---
+ drivers/accessibility/speakup/speakup_soft.c | 15 +++++++++++----
+ 1 file changed, 11 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/accessibility/speakup/speakup_soft.c b/drivers/accessibility/speakup/speakup_soft.c
+index c3f97c572fb6..19824e7006fe 100644
+--- a/drivers/accessibility/speakup/speakup_soft.c
++++ b/drivers/accessibility/speakup/speakup_soft.c
+@@ -153,18 +153,25 @@ static char *get_initstring(void)
+ 	static char buf[40];
+ 	char *cp;
+ 	struct var_t *var;
++	size_t len;
++	size_t n;
+ 
+ 	memset(buf, 0, sizeof(buf));
+ 	cp = buf;
++	len = sizeof(buf);
++
+ 	var = synth_soft.vars;
+ 	while (var->var_id != MAXVARS) {
+ 		if (var->var_id != CAPS_START && var->var_id != CAPS_STOP &&
+-		    var->var_id != PAUSE && var->var_id != DIRECT)
+-			cp = cp + sprintf(cp, var->u.n.synth_fmt,
+-					  var->u.n.value);
++		    var->var_id != PAUSE && var->var_id != DIRECT) {
++			n = scnprintf(cp, len, var->u.n.synth_fmt,
++				      var->u.n.value);
++			cp = cp + n;
++			len = len - n;
++		}
+ 		var++;
+ 	}
+-	cp = cp + sprintf(cp, "\n");
++	cp = cp + scnprintf(cp, len, "\n");
+ 	return buf;
+ }
+ 
 -- 
-Sincerely, Alexander.
+2.25.1
 
 
