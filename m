@@ -1,57 +1,53 @@
-Return-Path: <speakup+bounces-229-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-230-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 2661C3C3B71
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 12:03:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 22A783C3BA2
+	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 12:49:38 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7F2C3380F59; Sun, 11 Jul 2021 06:03:31 -0400 (EDT)
+	id CFF1A380F88; Sun, 11 Jul 2021 06:49:36 -0400 (EDT)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=opopanax.net header.i=@opopanax.net header.a=rsa-sha256 header.s=dkim header.b=hIkC/TnF;
+	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6CFDD380BB2
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 06:03:31 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id BDEEF380BB2
+	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 06:49:36 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C9611380BB2; Sun, 11 Jul 2021 06:03:26 -0400 (EDT)
-Received: from pta-smg1.csir.co.za (pta-smg1.csir.co.za [146.64.81.180])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 69A6E380A84
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 06:03:26 -0400 (EDT)
-Received: from pta-smg1.csir.co.za (localhost.localdomain [127.0.0.1])
-	by localhost (Email Security Appliance) with SMTP id E88152978D57_EAC1E8B
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 10:03:20 +0000 (GMT)
-Received: from pta-gwia2.csir.co.za (pta-gwia2.csir.co.za [146.64.54.239])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(Client did not present a certificate)
-	by pta-smg1.csir.co.za (Sophos Email Appliance) with ESMTPS id AAF6D2976359_EAC1E8F
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 10:03:20 +0000 (GMT)
-Received: from marge.meraka.csir.co.za ([146.64.28.1])
-	by pta-gwia2.csir.co.za with ESMTP (NOT encrypted); Sun, 11 Jul 2021 12:03:13 +0200
-Received: from marge.meraka.csir.co.za (localhost [127.0.0.1])
-	by marge.meraka.csir.co.za (Postfix) with ESMTP id 2B182471B9;
-	Sun, 11 Jul 2021 12:03:13 +0200 (SAST)
-X-Virus-Scanned: amavisd-new at meraka.org.za
-Received: from marge.meraka.csir.co.za ([127.0.0.1])
-	by marge.meraka.csir.co.za (marge.meraka.csir.co.za [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id dfs2ojWOkaKt; Sun, 11 Jul 2021 12:03:13 +0200 (SAST)
-Received: from willempc.meraka.csir.co.za (unknown [IPv6:2001:4200:7000:3:7a2b:cbff:fe9d:7520])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by marge.meraka.csir.co.za (Postfix) with ESMTPS;
-	Sun, 11 Jul 2021 12:03:12 +0200 (SAST)
-Received: from [127.0.0.1] (helo=localhost)
-	by willempc.meraka.csir.co.za with esmtp (Exim 4.90_1)
-	(envelope-from <wvdwalt@csir.co.za>)
-	id 1m2WIq-0008UP-4p; Sun, 11 Jul 2021 12:03:12 +0200
-Date: Sun, 11 Jul 2021 12:03:12 +0200 (SAST)
-From: Willem van der Walt <wvdwalt@csir.co.za>
-X-X-Sender: wvdwalt@willempc.meraka.csir.co.za
-To: Chime Hart <chime@hubert-humphrey.com>
-cc: speakup@linux-speakup.org
-Subject: Re: No Interrupt in Voxin Embedded Voices?
-In-Reply-To: <a983ac4d-a9aa-a592-8612-275a1d729bfe@hubert-humphrey.com>
-Message-ID: <alpine.DEB.2.21.1.2107111202180.32429@willempc.meraka.csir.co.za>
-References: <a983ac4d-a9aa-a592-8612-275a1d729bfe@hubert-humphrey.com>
-User-Agent: Alpine 2.21.1 (DEB 211 2017-05-04)
+	id A5746380BD8; Sun, 11 Jul 2021 06:49:31 -0400 (EDT)
+Received: from mail.opopanax.net (mail.opopanax.net [66.172.33.24])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 27B6E380BA0
+	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 06:49:31 -0400 (EDT)
+Received: from mail.opopanax.net (localhost [127.0.0.1])
+	by mail.opopanax.net (Postfix) with ESMTP id 4GN3Yj1s5wz8tX9
+	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 10:49:29 +0000 (UTC)
+Authentication-Results: mail.opopanax.net (amavisd-new);
+	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
+	header.d=opopanax.net
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=opopanax.net; h=
+	user-agent:x-mailer:content-transfer-encoding:content-type
+	:mime-version:date:subject:to:from:message-id; s=dkim; t=
+	1626000568; x=1628592569; bh=PEoVmCGYotHCkhhO2n+Lc5XRJEpcpMwf1NY
+	t8XumR5Y=; b=hIkC/TnF8ctXGyzPa5MLCz864kXxb5RGeKY6KKvdK8CoqT9BHB2
+	lb9CoM6rRmQ+X0Upxcz3BqCcZI1T8N3pFWWMl3ywK5PN6mVyg1cltQFfiCkWDCD0
+	oDAxvyDwW0OQJDAZgcQaxgHxWTxPidOXZuq1t17KINAC43JeL5CGZ8NuNLY1g67d
+	fTj/UllUvl7uOsJ9gSjCtMX80xwdwy2KL31f70u0yDmKrZnr3jV/VsYNtfbyfNGU
+	3XXwOHNp3Enliy/HbFY7AAsrBVIZR+HkRD4MIdNeDN9PM/8JBXD9k/5WHuEVKeIP
+	PwNBntQatlr3/VrVmD07/thZaDn/umkD4Nw==
+X-Virus-Scanned: Debian amavisd-new at mail
+Received: from mail.opopanax.net ([127.0.0.1])
+	by mail.opopanax.net (mail.opopanax.net [127.0.0.1]) (amavisd-new, port 10026)
+	with ESMTP id tVhJA_bti6BL for <speakup@linux-speakup.org>;
+	Sun, 11 Jul 2021 10:49:28 +0000 (UTC)
+Received: from [192.168.1.100] (208-107-97-40-dynamic.midco.net [208.107.97.40])
+	by mail.opopanax.net (Postfix) with ESMTPSA id 4GN3Yh1GSHz8tQW
+	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 10:49:28 +0000 (UTC)
+Message-ID: <20210711.104927.121.1@[192.168.1.100]>
+From: "Rob Hudson" <rob_hudson3182@opopanax.net>
+To: "speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Installing OS on rackmount server
+Date: Sun, 11 Jul 2021 05:49:27 -0500
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -61,24 +57,17 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII; format=flowed
-X-SASI-RCODE: 200
+Content-Type: text/plain
+Content-Transfer-Encoding: quoted-printable
+X-Mailer: POP Peeper Pro (5.1.2.0)
+User-Agent: POP Peeper Pro (5.1.2.0)
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-By the sound of it, the problem most likely lies with voxinup.
-
-On Sat, 10 Jul 2021, Chime Hart wrote:
-
-> [The e-mail server of the sender could not be verified (SPF Record)]
->
-> Wow, after practicly an entire afternoon, we got Alicin-and-Samantha 
-> installed in Debian on my laptop. We needed to run "voxinup" instead of 
-> speechd-up. Voice sounds quite good, was about to explore dictionary 
-> settings, when I realized no keys, controll or anything else will interrupt 
-> speech. I must wait til it stops reading or catches up if you type while its 
-> reading. I have no idea if there are any places in Speakup where I can fix 
-> this, or would I report this through Oralux? Thanks so much in advance
-> Chime
->
->
+Tried this on another list, got no answer, so trying here. I've got a Cisco =
+rackmount that needs an OS. It's only got 2 usb ports, so I can't hook up =
+a keyboard, a braille display and a linux flash drive. I'm given to =
+understand the CIMC interface is inaccessible, and I have no idea how to =
+set up a PXE server. Is my only option for installing an OS to connect a =
+hard drive to another computer, install linux on there and then put it in =
+the server?
 
