@@ -1,53 +1,46 @@
-Return-Path: <speakup+bounces-230-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-231-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 22A783C3BA2
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 12:49:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 7D0663C3BA4
+	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 12:55:08 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CFF1A380F88; Sun, 11 Jul 2021 06:49:36 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=opopanax.net header.i=@opopanax.net header.a=rsa-sha256 header.s=dkim header.b=hIkC/TnF;
-	dkim-atps=neutral
+	id 84452380F78; Sun, 11 Jul 2021 06:55:07 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id BDEEF380BB2
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 06:49:36 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 71DEA380BE5
+	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 06:55:07 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A5746380BD8; Sun, 11 Jul 2021 06:49:31 -0400 (EDT)
-Received: from mail.opopanax.net (mail.opopanax.net [66.172.33.24])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 27B6E380BA0
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 06:49:31 -0400 (EDT)
-Received: from mail.opopanax.net (localhost [127.0.0.1])
-	by mail.opopanax.net (Postfix) with ESMTP id 4GN3Yj1s5wz8tX9
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 10:49:29 +0000 (UTC)
-Authentication-Results: mail.opopanax.net (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=opopanax.net
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=opopanax.net; h=
-	user-agent:x-mailer:content-transfer-encoding:content-type
-	:mime-version:date:subject:to:from:message-id; s=dkim; t=
-	1626000568; x=1628592569; bh=PEoVmCGYotHCkhhO2n+Lc5XRJEpcpMwf1NY
-	t8XumR5Y=; b=hIkC/TnF8ctXGyzPa5MLCz864kXxb5RGeKY6KKvdK8CoqT9BHB2
-	lb9CoM6rRmQ+X0Upxcz3BqCcZI1T8N3pFWWMl3ywK5PN6mVyg1cltQFfiCkWDCD0
-	oDAxvyDwW0OQJDAZgcQaxgHxWTxPidOXZuq1t17KINAC43JeL5CGZ8NuNLY1g67d
-	fTj/UllUvl7uOsJ9gSjCtMX80xwdwy2KL31f70u0yDmKrZnr3jV/VsYNtfbyfNGU
-	3XXwOHNp3Enliy/HbFY7AAsrBVIZR+HkRD4MIdNeDN9PM/8JBXD9k/5WHuEVKeIP
-	PwNBntQatlr3/VrVmD07/thZaDn/umkD4Nw==
-X-Virus-Scanned: Debian amavisd-new at mail
-Received: from mail.opopanax.net ([127.0.0.1])
-	by mail.opopanax.net (mail.opopanax.net [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id tVhJA_bti6BL for <speakup@linux-speakup.org>;
-	Sun, 11 Jul 2021 10:49:28 +0000 (UTC)
-Received: from [192.168.1.100] (208-107-97-40-dynamic.midco.net [208.107.97.40])
-	by mail.opopanax.net (Postfix) with ESMTPSA id 4GN3Yh1GSHz8tQW
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 10:49:28 +0000 (UTC)
-Message-ID: <20210711.104927.121.1@[192.168.1.100]>
-From: "Rob Hudson" <rob_hudson3182@opopanax.net>
-To: "speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Installing OS on rackmount server
-Date: Sun, 11 Jul 2021 05:49:27 -0500
+	id D19F6380C0A; Sun, 11 Jul 2021 06:55:02 -0400 (EDT)
+Received: from sa-prd-fep-043.btinternet.com (mailomta11-sa.btinternet.com [213.120.69.17])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 176EC380BD7
+	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 06:55:01 -0400 (EDT)
+Received: from sa-prd-rgout-003.btmx-prd.synchronoss.net ([10.2.38.6])
+          by sa-prd-fep-043.btinternet.com with ESMTP
+          id <20210711105458.QIDA19470.sa-prd-fep-043.btinternet.com@sa-prd-rgout-003.btmx-prd.synchronoss.net>
+          for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 11:54:58 +0100
+Authentication-Results: btinternet.com;
+    auth=pass (PLAIN) smtp.auth=mike.ray@btinternet.com
+X-SNCR-Rigid: 60D1590803A28A03
+X-Originating-IP: [86.146.66.95]
+X-OWM-Source-IP: 86.146.66.95 (GB)
+X-OWM-Env-Sender: mike.ray@btinternet.com
+X-VadeSecure-score: verdict=clean score=0/300, class=clean
+X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgedvtddruddtgdeffecutefuodetggdotefrodftvfcurfhrohhfihhlvgemuceutffkvffkuffjvffgnffgvefqofdpqfgfvfenuceurghilhhouhhtmecufedtudenucenucfjughrpehruffvfhfhkffffgggjggtgfesthejredttdefjeenucfhrhhomhepofhikhgvucftrgihuceomhhikhgvsehrrghsphgsvghrrhihvhhirdhorhhgqeenucggtffrrghtthgvrhhnpeeiveffieevieehjefhvdekiedtudeikedvheehteeggffguefhteekleehueegveenucfkphepkeeirddugeeirdeiiedrleehnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehhvghloheplgduledvrdduieekrddtrdefngdpihhnvghtpeekiedrudegiedrieeirdelhedpmhgrihhlfhhrohhmpeeomhhikhgvsehrrghsphgsvghrrhihvhhirdhorhhgqecuuefqffgjpeekuefkvffokffogfdprhgtphhtthhopeeoshhpvggrkhhupheslhhinhhugidqshhpvggrkhhuphdrohhrgheq
+X-RazorGate-Vade-Verdict: clean 0
+X-RazorGate-Vade-Classification: clean
+Received: from [192.168.0.3] (86.146.66.95) by sa-prd-rgout-003.btmx-prd.synchronoss.net (5.8.340) (authenticated as mike.ray@btinternet.com)
+        id 60D1590803A28A03 for speakup@linux-speakup.org; Sun, 11 Jul 2021 11:54:58 +0100
+Reply-To: mike@raspberryvi.org
+Subject: Re: Installing OS on rackmount server
+To: speakup@linux-speakup.org
+References: <20210711.104927.121.1@[192.168.1.100]>
+From: Mike Ray <mike@raspberryvi.org>
+Message-ID: <5ff69fe5-fb5b-5233-0c71-1165b9111eed@raspberryvi.org>
+Date: Sun, 11 Jul 2021 11:54:56 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
+ Thunderbird/78.11.0
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -57,17 +50,44 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
-X-Mailer: POP Peeper Pro (5.1.2.0)
-User-Agent: POP Peeper Pro (5.1.2.0)
+In-Reply-To: <20210711.104927.121.1@[192.168.1.100]>
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: 7bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Tried this on another list, got no answer, so trying here. I've got a Cisco =
-rackmount that needs an OS. It's only got 2 usb ports, so I can't hook up =
-a keyboard, a braille display and a linux flash drive. I'm given to =
-understand the CIMC interface is inaccessible, and I have no idea how to =
-set up a PXE server. Is my only option for installing an OS to connect a =
-hard drive to another computer, install linux on there and then put it in =
-the server?
+
+
+Passive USB hub?
+
+Does the rack server have sound? If so you could install Debian from the
+net install CD image written to a flash drive.
+
+Or, even if the server does not have sound, you could insert a USB sound
+dongle. Again, by using a USB hub to expand the number of USB ports.
+
+You could install something else as well, such as Ubuntu. But if it is a
+server only, there is no reason to install a desktop. The Debian net
+install allows you to install only the cli, and no GUI.
+
+I would not try installing Linux on another machine and then moving it
+across, unless it's an identical machine. I assume lots of drivers will
+be selected during the install which would not be appropriate for the
+eventual host.
+
+
+
+
+On 11/07/2021 11:49, Rob Hudson wrote:
+> Tried this on another list, got no answer, so trying here. I've got a Cisco rackmount that needs an OS. It's only got 2 usb ports, so I can't hook up a keyboard, a braille display and a linux flash drive. I'm given to understand the CIMC interface is inaccessible, and I have no idea how to set up a PXE server. Is my only option for installing an OS to connect a hard drive to another computer, install linux on there and then put it in the server?
+> 
+
+
+-- 
+Michael A. Ray
+Analyst/Programmer
+Witley, Surrey, South-east UK
+
+"Perfection is achieved, not when there is nothing more to add, but when
+there is nothing left to take away." -- A. de Saint-Exupery
 
