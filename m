@@ -1,55 +1,49 @@
-Return-Path: <speakup+bounces-235-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-236-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id DD2A63C3BE4
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 13:31:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 8A7B23C3C0F
+	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 13:57:31 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2DB68380F56; Sun, 11 Jul 2021 07:31:54 -0400 (EDT)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=opopanax.net header.i=@opopanax.net header.a=rsa-sha256 header.s=dkim header.b=nTC7yATD;
-	dkim-atps=neutral
+	id 27F1F380F66; Sun, 11 Jul 2021 07:57:31 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 185A4380EB7
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 07:31:54 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 14419380F05
+	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 07:57:31 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 39C30380EB9; Sun, 11 Jul 2021 07:31:48 -0400 (EDT)
-Received: from mail.opopanax.net (mail.opopanax.net [66.172.33.24])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id CA145380EB5
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 07:31:47 -0400 (EDT)
-Received: from mail.opopanax.net (localhost [127.0.0.1])
-	by mail.opopanax.net (Postfix) with ESMTP id 4GN4Ts4Qdwz8tX9
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 11:31:13 +0000 (UTC)
-Authentication-Results: mail.opopanax.net (amavisd-new);
-	dkim=pass (2048-bit key) reason="pass (just generated, assumed good)"
-	header.d=opopanax.net
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=opopanax.net; h=
-	user-agent:x-mailer:references:in-reply-to
-	:content-transfer-encoding:content-type:mime-version:date
-	:subject:to:from:message-id; s=dkim; t=1626003072; x=1628595073;
-	 bh=xTeRvFLpxcyrU3NCNScBhZcgdvoRhqKrBY3MzY1XMcw=; b=nTC7yATDhC8/
-	xKdeS9d4u4rTFZQaf3MtxAT+bOrju3jh8wbCHVR40mg/R5Cp1oTs4Kgc/HyxkUpy
-	OEV6ox3jNMJMHE9QyHJkjjhotjJx3DjyOg6IIGxI8FlU10GVH2JiZBkBhh3W+Ywg
-	+5829D/DDXOIrCNe0S+3WNQie6t7WWfytbwym65tWxjURDNNvTXTWT5fP6Qon6+I
-	ok7/GAqieaONLoTGB+ePSa0+jAoDgpPX9V8UxeLUXgp7WYSZ17tArEysfT87fY7M
-	n9bEi3mstNcM+WFvBPVah0qAosCXL41m6zZ6rgr1h4TFEHzim8H5igd+ngdequsf
-	ObRXj53aJg==
-X-Virus-Scanned: Debian amavisd-new at mail
-Received: from mail.opopanax.net ([127.0.0.1])
-	by mail.opopanax.net (mail.opopanax.net [127.0.0.1]) (amavisd-new, port 10026)
-	with ESMTP id pb9tC8MN5Ors for <speakup@linux-speakup.org>;
-	Sun, 11 Jul 2021 11:31:12 +0000 (UTC)
-Received: from [192.168.1.100] (208-107-97-40-dynamic.midco.net [208.107.97.40])
-	by mail.opopanax.net (Postfix) with ESMTPSA id 4GN4Tr1DN4z8tQW;
-	Sun, 11 Jul 2021 11:31:12 +0000 (UTC)
-Message-ID: <20210711.113111.244.3@[192.168.1.100]>
-From: "Rob Hudson" <rob_hudson3182@opopanax.net>
-To: "Chris Brannon" <chris@the-brannons.com>,
-  speakup@linux-speakup.org
+	id 48329380F30; Sun, 11 Jul 2021 07:57:26 -0400 (EDT)
+Received: from re-prd-fep-046.btinternet.com (mailomta21-re.btinternet.com [213.120.69.114])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id E93CF380F05
+	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 07:57:25 -0400 (EDT)
+Received: from re-prd-rgout-005.btmx-prd.synchronoss.net ([10.2.54.8])
+          by re-prd-fep-046.btinternet.com with ESMTP
+          id <20210711115724.VHPC24326.re-prd-fep-046.btinternet.com@re-prd-rgout-005.btmx-prd.synchronoss.net>
+          for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 12:57:24 +0100
+Authentication-Results: btinternet.com;
+    auth=pass (PLAIN) smtp.auth=mike.ray@btinternet.com
+X-SNCR-Rigid: 60DCD71101AE443B
+X-Originating-IP: [86.146.66.95]
+X-OWM-Source-IP: 86.146.66.95 (GB)
+X-OWM-Env-Sender: mike.ray@btinternet.com
+X-VadeSecure-score: verdict=clean score=0/300, class=clean
+X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgedvtddruddtgdegiecutefuodetggdotefrodftvfcurfhrohhfihhlvgemuceutffkvffkuffjvffgnffgvefqofdpqfgfvfenuceurghilhhouhhtmecufedtudenucenucfjughrpehruffvfhfhkffffgggjggtgfesthekredttdefjeenucfhrhhomhepofhikhgvucftrgihuceomhhikhgvsehrrghsphgsvghrrhihvhhirdhorhhgqeenucggtffrrghtthgvrhhnpeejteetkeehhfdvveehvdfggfektdetgefggeeuleehtefhhfetfeektdeuledvueenucfkphepkeeirddugeeirdeiiedrleehnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehhvghloheplgduledvrdduieekrddtrdefngdpihhnvghtpeekiedrudegiedrieeirdelhedpmhgrihhlfhhrohhmpeeomhhikhgvsehrrghsphgsvghrrhihvhhirdhorhhgqecuuefqffgjpeekuefkvffokffogfdprhgtphhtthhopeeoshhpvggrkhhupheslhhinhhugidqshhpvggrkhhuphdrohhrgheq
+X-RazorGate-Vade-Verdict: clean 0
+X-RazorGate-Vade-Classification: clean
+Received: from [192.168.0.3] (86.146.66.95) by re-prd-rgout-005.btmx-prd.synchronoss.net (5.8.340) (authenticated as mike.ray@btinternet.com)
+        id 60DCD71101AE443B for speakup@linux-speakup.org; Sun, 11 Jul 2021 12:57:23 +0100
+Reply-To: mike@raspberryvi.org
 Subject: Re: Installing OS on rackmount server
-Date: Sun, 11 Jul 2021 06:31:11 -0500
+To: speakup@linux-speakup.org
+References: <20210711.104927.121.1@[192.168.1.100]>
+ <5ff69fe5-fb5b-5233-0c71-1165b9111eed@raspberryvi.org>
+ <dc6281a5-97c3-b90f-3d28-bb1066d05259@poczta.onet.pl>
+ <87y2ad14ol.fsf@the-brannons.com>
+From: Mike Ray <mike@raspberryvi.org>
+Message-ID: <36dd5c85-c450-f17f-0ae7-de5395323d14@raspberryvi.org>
+Date: Sun, 11 Jul 2021 12:57:22 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
+ Thunderbird/78.11.0
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -59,32 +53,26 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain
-Content-Transfer-Encoding: quoted-printable
 In-Reply-To: <87y2ad14ol.fsf@the-brannons.com>
-References: <20210711.104927.121.1@[192.168.1.100]>
-	<5ff69fe5-fb5b-5233-0c71-1165b9111eed@raspberryvi.org>
-	<dc6281a5-97c3-b90f-3d28-bb1066d05259@poczta.onet.pl>
-	<87y2ad14ol.fsf@the-brannons.com>
-X-Mailer: POP Peeper Pro (5.1.2.0)
-User-Agent: POP Peeper Pro (5.1.2.0)
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: 8bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Is that the port which looks like an ethernet jack?
 
------ Original Message -----
-From: Chris Brannon <chris@the-brannons.com>
-To: speakup@linux-speakup.org
-Date: Sun, 11 Jul 2021 04:16:26 -0700
-Subject: Re: Installing OS on rackmount server
+Chris,
 
-> Michal Zegan <webczat_200@poczta.onet.pl> writes:
+I didn't know any of this. Going to file it away. Thanks.
+
+Mike
+
+On 11/07/2021 12:16, Chris Brannon wrote:
+> Michał Zegan <webczat_200@poczta.onet.pl> writes:
 > 
-> > serial console >>> any screenreader for anything text mode IMO. do you
-> > have a serial console and any way to make it usable?
+>> serial console >>> any screenreader for anything text mode IMO. do you
+>> have a serial console and any way to make it usable?
 > 
-> Any rackmount server worth owning is going to have IPMI with SOL (serial =
-over
+> Any rackmount server worth owning is going to have IPMI with SOL (serial over
 > LAN).  When I set up our rackmount server late last year, we put a DHCP
 > server and ipmitool on a Raspberry Pi and plugged that puppy into the
 > IPMI network interface on the server.  The Pi handed out an IP address
@@ -102,5 +90,14 @@ over
 > 
 > -- Chris
 > 
-> 
+
+
+-- 
+Michael A. Ray
+Analyst/Programmer
+Witley, Surrey, South-east UK
+cismale het
+
+"Perfection is achieved, not when there is nothing more to add, but when
+there is nothing left to take away." -- A. de Saint-Exupery
 
