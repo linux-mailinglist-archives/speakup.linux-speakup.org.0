@@ -1,35 +1,40 @@
-Return-Path: <speakup+bounces-239-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-240-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 400F13C3EB3
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 20:11:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 77C853C4127
+	for <lists+speakup@lfdr.de>; Mon, 12 Jul 2021 04:07:09 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6AD3A380F62; Sun, 11 Jul 2021 14:11:24 -0400 (EDT)
+	id EBB8A38100D; Sun, 11 Jul 2021 21:57:14 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 57303380F62
-	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 14:11:24 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D7CF4380F61
+	for <lists+speakup@lfdr.de>; Sun, 11 Jul 2021 21:57:14 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 891A4380F62; Sun, 11 Jul 2021 14:11:19 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0153.b.hostedemail.com [64.98.42.153])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 783A7380F56
-	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 14:11:19 -0400 (EDT)
-Received: from omf01.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id 0BB568023776;
-	Sun, 11 Jul 2021 18:11:18 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf01.b.hostedemail.com (Postfix) with ESMTPA id 85045100F0E95;
-	Sun, 11 Jul 2021 18:11:17 +0000 (UTC)
-Message-ID: <07c901d77680$3ecca750$7001a8c0@NUCPPYH>
-Reply-To: "K0LNY" <glenn@ervin.email>
-From: "K0LNY" <glenn@ervin.email>
+	id 4C002380F61; Sun, 11 Jul 2021 21:57:10 -0400 (EDT)
+Received: from nfbcal.org (ns.NFBCAL.ORG [157.22.230.125])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id EDBD9380F2F
+	for <speakup@linux-speakup.org>; Sun, 11 Jul 2021 21:57:09 -0400 (EDT)
+Received: from nfbcal.org (localhost [127.0.0.1])
+	by nfbcal.org (8.15.2/8.14.1-NFBNETBSD) with ESMTPS id 16C1v1LU000840
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Sun, 11 Jul 2021 18:57:01 -0700 (PDT)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.102.2 at lothlorien.nfbcal.org
+Received: (from buhrow@localhost)
+	by nfbcal.org (8.15.2/8.12.11) id 16C1v0xd029712;
+	Sun, 11 Jul 2021 18:57:00 -0700 (PDT)
+Message-Id: <202107120157.16C1v0xd029712@nfbcal.org>
+From: Brian Buhrow <buhrow@nfbcal.org>
+Date: Sun, 11 Jul 2021 18:57:00 -0700
+In-Reply-To: <20210711.104927.121.1@[192.168.1.100]>
+X-Mailer: Mail User's Shell (7.2.6 beta(4.pl1)+dynamic 20000103)
 To: "Rob Hudson" <rob_hudson3182@opopanax.net>,
-	"speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <20210711.104927.121.1@[192.168.1.100]>
+        "speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: Installing OS on rackmount server
-Date: Sun, 11 Jul 2021 13:11:58 -0500
-Organization: Home
+Cc: buhrow@nfbcal.org
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.4.3 (nfbcal.org [127.0.0.1]); Sun, 11 Jul 2021 18:57:01 -0700 (PDT)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -38,41 +43,28 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
-Content-Type: text/plain;
-	format=flowed;
-	charset="iso-8859-1";
-	reply-type=original
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.3790.1830
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Queue-Id: 85045100F0E95
-X-Spam-Status: No, score=0.40
-X-Stat-Signature: sdk1zn5bmc9xmbek7dr3a8ch3ehhstue
-X-Rspamd-Server: rspamout01
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX193UKyj1XerIfqMzBKRd+XVqOdgSK5LBz0=
-X-HE-Tag: 1626027077-392831
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Rob,
-Can you plug in a USB hub to one of the ports?
-Glenn
------ Original Message ----- 
-From: "Rob Hudson" <rob_hudson3182@opopanax.net>
-To: "speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Sunday, July 11, 2021 5:49 AM
-Subject: Installing OS on rackmount server
+	hello Rob.  It seems to me you have several options for getting this machine installed.  While
+I can't give details for all of them, I'll try to give you enough so you can  pursue them on
+your own.
 
+1.  If you know how to set up a tftp server and configure a dhcp server, then you have all you
+need to set up a PXE server to boot an image from that server.  If you learn this technique for
+bootstrapping a new server, I think you'll find this gives you the most flexibility for
+switching images in the future, as well as bringing up new machines down the road.
 
-Tried this on another list, got no answer, so trying here. I've got a Cisco 
-rackmount that needs an OS. It's only got 2 usb ports, so I can't hook up a 
-keyboard, a braille display and a linux flash drive. I'm given to understand 
-the CIMC interface is inaccessible, and I have no idea how to set up a PXE 
-server. Is my only option for installing an OS to connect a hard drive to 
-another computer, install linux on there and then put it in the server?
+2.  Install a USB hub, allowing you to  attach an external drive, braille display and a
+keyboard at the same time.  Attach the braille display and the keyboard to the hub, plug it
+into one of the USB ports on the machine you're installing to, then plug the external hard
+drive, the one you're imaging from, into the remaining port.
+
+3.  If you have a second machine with a serial port, and if the first machine has a serial
+port, perform a serial port based installation.  That is, use the serial port as your console,
+and run your braille display and keyboard from the second machine.
+
+Hope these ideas help.
+
+-Brian
 
 
