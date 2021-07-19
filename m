@@ -1,44 +1,65 @@
-Return-Path: <speakup+bounces-246-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-247-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id F41BF3CE8E0
-	for <lists+speakup@lfdr.de>; Mon, 19 Jul 2021 19:37:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1F9593CE8FC
+	for <lists+speakup@lfdr.de>; Mon, 19 Jul 2021 19:49:17 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CFDE7380FB6; Mon, 19 Jul 2021 13:37:50 -0400 (EDT)
+	id A6F0D380B57; Mon, 19 Jul 2021 13:49:16 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=poczta.onet.pl header.i=@poczta.onet.pl header.a=rsa-sha256 header.s=2011 header.b=b8SvAx4b;
+	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20161025 header.b=qM4j/V+w;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id BC6A6380995
-	for <lists+speakup@lfdr.de>; Mon, 19 Jul 2021 13:37:50 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 94665380995
+	for <lists+speakup@lfdr.de>; Mon, 19 Jul 2021 13:49:16 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3D7A6380A1F; Mon, 19 Jul 2021 13:37:46 -0400 (EDT)
-Received: from smtpo86.poczta.onet.pl (smtpo86.poczta.onet.pl [213.180.149.139])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id E128B380376
-	for <speakup@linux-speakup.org>; Mon, 19 Jul 2021 13:37:42 -0400 (EDT)
-Received: from [192.168.0.110] (unknown [193.200.46.1])
-	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits))
-	(No client certificate requested)
-	(Authenticated sender: webczat_200@poczta.onet.pl)
-	by smtp.poczta.onet.pl (Onet) with ESMTPSA id 4GT8Dk1HQMzlj0vb
-	for <speakup@linux-speakup.org>; Mon, 19 Jul 2021 19:37:24 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=poczta.onet.pl;
-	s=2011; t=1626716246;
-	bh=SNWt3NWZq27cK6TpKQKkN0B3la6aJoD9LQnUadtNmHM=;
-	h=To:From:Subject:Date:From;
-	b=b8SvAx4b01mw6Bj5bWUwKSrXk4uq9K5196NieN0HndxJYA77otOOly06D6bYYDklb
-	 QkQFFLsfDpaHntYx9dwpL+Trb1D/xrxcUjjic1SSWz8hsJU6V/VJkvfG5tLuWngn2Y
-	 dWZc5FifueiT+ym45bXLFvTbrn69aJGpLnmEj+Uk=
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-From: =?UTF-8?Q?Micha=c5=82_Zegan?= <webczat_200@poczta.onet.pl>
-Subject: changing subscription
-Message-ID: <7f0bd106-57a2-1719-576a-29a0ecd8e926@poczta.onet.pl>
-Date: Mon, 19 Jul 2021 19:37:24 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
- Thunderbird/78.11.0
+	id C6845380B1B; Mon, 19 Jul 2021 13:49:10 -0400 (EDT)
+Received: from mail-lj1-f174.google.com (mail-lj1-f174.google.com [209.85.208.174])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A2DAB38098B
+	for <speakup@linux-speakup.org>; Mon, 19 Jul 2021 13:49:10 -0400 (EDT)
+Received: by mail-lj1-f174.google.com with SMTP id d17so7398805ljq.12
+        for <speakup@linux-speakup.org>; Mon, 19 Jul 2021 10:49:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=date:from:to:cc:subject:message-id:references:mime-version
+         :content-disposition:content-transfer-encoding:in-reply-to;
+        bh=DKM8GpgL2bCKd1NOU/Iwq5YZM8ytccRS0z7/Uq3cZmg=;
+        b=qM4j/V+wBBv7j+sXg01cILbUQrNxtMmbIZ2w5n4Hk6Wg5K/pu7cWdvBY5T0/YjTGfI
+         G2180uvQrb/09FjQOVlbU3o8E3o8tdOIAtM80ZnIYuy1D8VvhbUdMKwbHGpc7XktjysF
+         WKLFrPWa3/d5qPETEmLW17Xo5yp2J0TkEH6lz02GrB/IoOZBsW+4Lhy6LsSFaA2fFJnY
+         Rk+HHKH+vilao3l2j25cCZ7xuRX6o34lo5SQmJInC8vhzk2fNsxdG70AbKiABCO64Vv7
+         vIdYJTHrLJHNPMZyjp305jgZUPn+kKMSEqOkCwaQcUOMJlGxtxQyT9nvzjd9Av2xtCle
+         zbBQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+         :mime-version:content-disposition:content-transfer-encoding
+         :in-reply-to;
+        bh=DKM8GpgL2bCKd1NOU/Iwq5YZM8ytccRS0z7/Uq3cZmg=;
+        b=U/BouYSp3yGyYK8mjDlAoSD3TGuomfuXqpGDXT7MScCgyj4qyVnL2HqERhWV6UqCxZ
+         /ZYHzaOXlIiuAnGogihen+fSL+29Ql3d8VECrP5yX5rd2z0qENQOT9ofnd1prlLhua4p
+         kDt1B0i2dARpYm5osAJaYLIzr/EwXE8dkKfYsHQzD+/WfZAVdM3Xl9rtgko85ovjJ3NB
+         X0HCE+CPwrMiu+X+eA76oBgT8JbeZbCW3qJJZAPRTPYHuzYBVIae3z9lFBIDDBzsMpym
+         WyAvYTnrgCN9hRtPbWGxhQE0hXNgc9hC5l+MkDfGljyQXJyA3fsSC2Tajo4nLeAKYa9/
+         5b8Q==
+X-Gm-Message-State: AOAM532PmP2vx1J7XzFXIHADrJWLpwxSaKPOf7TlITM+CcUW4fF4QLTi
+	jOxECCocazb+S//cQD0GJDtxI+csfPeItg==
+X-Google-Smtp-Source: ABdhPJzMa7a1EFEfgG6tNRy05rGdTM9zyxfyCt4xkrICAlwzeomRRWeCM8NufcMenWb3i/wFDd634w==
+X-Received: by 2002:a2e:9ed4:: with SMTP id h20mr4178349ljk.469.1626716887436;
+        Mon, 19 Jul 2021 10:48:07 -0700 (PDT)
+Received: from localhost ([91.77.167.245])
+        by smtp.gmail.com with ESMTPSA id a21sm1335044lfm.136.2021.07.19.10.48.06
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 19 Jul 2021 10:48:06 -0700 (PDT)
+Date: Mon, 19 Jul 2021 20:48:06 +0300
+From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
+To: speakup@linux-speakup.org
+Cc: =?utf-8?Q?Micha=C5=82?= Zegan <webczat_200@poczta.onet.pl>
+Subject: Re: changing subscription
+Message-ID: <20210719174806.2vvhegreuwml2kfr@alex-pc>
+References: <7f0bd106-57a2-1719-576a-29a0ecd8e926@poczta.onet.pl>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -48,50 +69,20 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/signed; micalg=pgp-sha256;
- protocol="application/pgp-signature";
- boundary="zpStZdlZtrzDSVrMfX7WdnGsccPz1wZF5"
-X-ONET_PL-MDA-SEGREGATION: 0
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <7f0bd106-57a2-1719-576a-29a0ecd8e926@poczta.onet.pl>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---zpStZdlZtrzDSVrMfX7WdnGsccPz1wZF5
-Content-Type: multipart/mixed; boundary="VQ5bvl2tm30k0fIE6WXDnK1ks15vS71te";
- protected-headers="v1"
-From: =?UTF-8?Q?Micha=c5=82_Zegan?= <webczat_200@poczta.onet.pl>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Message-ID: <7f0bd106-57a2-1719-576a-29a0ecd8e926@poczta.onet.pl>
-Subject: changing subscription
+On Mon, Jul 19, 2021 at 07:37:24PM +0200, Michał Zegan wrote:
+> Hi,
+> seems like something is very very broken because when I go to the
+> mailman info page of the list and try to remind my password, the whole
+> thing crashes.
+> My intention was to change subscription to my new email address.
+>
 
---VQ5bvl2tm30k0fIE6WXDnK1ks15vS71te
-Content-Type: text/plain; charset=utf-8
-Content-Language: pl-PL
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-seems like something is very very broken because when I go to the
-mailman info page of the list and try to remind my password, the whole
-thing crashes.
-My intention was to change subscription to my new email address.
-
-
---VQ5bvl2tm30k0fIE6WXDnK1ks15vS71te--
-
---zpStZdlZtrzDSVrMfX7WdnGsccPz1wZF5
-Content-Type: application/pgp-signature; name="OpenPGP_signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="OpenPGP_signature"
-
------BEGIN PGP SIGNATURE-----
-
-wsB5BAABCAAjFiEE8PeJXyv9t1Bfiq63mRxoPZnIFPkFAmD1uFQFAwAAAAAACgkQmRxoPZnIFPkm
-HQf/ZZlUA8vjLrOl6ZOvL8AGJHl9dbbDCmq048qzS4vR14gprHOMcRvXbmWSNH+l+uZfKJg2iWvO
-zLVkwsgdzUjbrUNUX2SB3WBDHV/1nRmpWNFQtZnTeWzaYsC1zWEcZHmlXa0goKKMcqogl8mJiH7w
-GMbhpe6p1eU04ESazXs/NFpn9DavbEmjqwB6n+DEFMCacPQ4MQq4S1tYwX8FZuJUrvMmgHL2CvTf
-63OO7q8heU0IA2AXRkKxuHjxef5QvvMEx6eoDQLO+6I/Ol3wAIS+BtmkaqIPOlhQsCiAbtwbUwGu
-Y5SMkltsZ/xoN809R4xVT31r/mf5isVmTmp/9I6shA==
-=guFp
------END PGP SIGNATURE-----
-
---zpStZdlZtrzDSVrMfX7WdnGsccPz1wZF5--
+As far as I know, at the moment, neither the mailman nor the archives
+are working.
 
