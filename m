@@ -1,54 +1,55 @@
-Return-Path: <speakup+bounces-268-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-269-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3B7923F3ABA
-	for <lists+speakup@lfdr.de>; Sat, 21 Aug 2021 15:13:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 2BFB23F3AC5
+	for <lists+speakup@lfdr.de>; Sat, 21 Aug 2021 15:34:14 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8F17C380F9A; Sat, 21 Aug 2021 09:13:39 -0400 (EDT)
+	id B9D2A380F8E; Sat, 21 Aug 2021 09:34:13 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=oyhh/h5+;
+	dkim=fail reason="key not found in DNS" header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=j5TjZYtK;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7B0F5380B2E
-	for <lists+speakup@lfdr.de>; Sat, 21 Aug 2021 09:13:39 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 95A94380A1C
+	for <lists+speakup@lfdr.de>; Sat, 21 Aug 2021 09:34:13 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B879E380BCA; Sat, 21 Aug 2021 09:13:33 -0400 (EDT)
+	id D87B8380BCA; Sat, 21 Aug 2021 09:34:07 -0400 (EDT)
 Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 93430380A1C
-	for <speakup@linux-speakup.org>; Sat, 21 Aug 2021 09:13:33 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id C66E9380A1C
+	for <speakup@linux-speakup.org>; Sat, 21 Aug 2021 09:34:07 -0400 (EDT)
 Received: from opera.rednote.net (localhost [IPv6:::1])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mail.rednote.net (Postfix) with ESMTPS id E266CFA268;
-	Sat, 21 Aug 2021 09:13:32 -0400 (EDT)
+	by mail.rednote.net (Postfix) with ESMTPS id 40294FA268;
+	Sat, 21 Aug 2021 09:34:07 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
-	t=1629551612;
+	t=1629552847;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 content-transfer-encoding:content-transfer-encoding:
 	 in-reply-to:in-reply-to:references:references;
-	bh=ZDhSOO2GQtbGN8dRhyocA5VVE3MszhDRjQONiLBOTUg=;
-	b=oyhh/h5+KnjeGRHLN6Y2YvBa6jXYpWEVM++QGMVBAOCudLpNQvnMPIuK3+IWdymPZE5Juq
-	Q3h+Qe8VKfsaSCP2n2veyTjv+AY4d7YBa9zbUdb9pY4kdHaDoeP/2L2iPZnspXxyUadDiZ
-	npgK1jJfNtfixV0lRmM5OfalwY0xBIg=
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.rednote.net E266CFA268
+	bh=5EQ5OdcifPeaWPikV5Tat3p1vKCdnEhQ7AyzHsP5YCo=;
+	b=j5TjZYtK7W+DFdt8qs3AnnPtC3j0f42fxTCl3pgV9ZcdjVxxV8l2oomg+T4ZXyHEI50LqY
+	8oc5unb5dto23kmTGmWuRaEIBqkxNguV4lujjhCA+F6X9Pcje70boUUEd99F6H3BEUVhm+
+	g2gAT69PBqE5Ju5xf2lraTN8uo9d9EE=
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.rednote.net 40294FA268
 Authentication-Results: mail.rednote.net; dmarc=pass (p=reject dis=none) header.from=rednote.net
 Authentication-Results: mail.rednote.net; spf=pass smtp.mailfrom=rednote.net
 Received: (from janina@localhost)
-	by opera.rednote.net (8.16.1/8.16.1/Submit) id 17LDDWnP038159;
-	Sat, 21 Aug 2021 09:13:32 -0400
-Date: Sat, 21 Aug 2021 09:13:32 -0400
+	by opera.rednote.net (8.16.1/8.16.1/Submit) id 17LDY7bZ039629;
+	Sat, 21 Aug 2021 09:34:07 -0400
+Date: Sat, 21 Aug 2021 09:34:07 -0400
 From: Janina Sajka <janina@rednote.net>
-To: Samuel Thibault <samuel.thibault@aquilenet.fr>
-Cc: Alexander Epaneshnikov <aarnaarn2@gmail.com>,
+To: Didier Spaier <didier@slint.fr>
+Cc: Samuel Thibault <samuel.thibault@aquilenet.fr>,
+        Alexander Epaneshnikov <aarnaarn2@gmail.com>,
         Kelly Prescott <kprescott@coolip.net>, speakup@linux-speakup.org,
         Alexander Epaneshnikov <alex19ep@archlinux.org>
 Subject: Re: Archlinux Speakup problems after alsa package upgrade
-Message-ID: <YSD7/HB3nUVdYUVq@rednote.net>
+Message-ID: <YSEAz0j7+gy2WNk9@rednote.net>
 References: <YMdZA0DL4BgCAShe@rednote.net>
  <6b4b229d-5e00-22e4-8cf2-33ed7bbd6b93@gmail.com>
  <YNMr0Pathc/mqx1L@rednote.net>
@@ -58,7 +59,7 @@ References: <YMdZA0DL4BgCAShe@rednote.net>
  <YSDtfiv5yYy/FfQq@rednote.net>
  <20210821121814.vbyw4vxysowqf7as@begin>
  <YSD2SHLJ+hWMEj7Z@rednote.net>
- <20210821125234.onaxd4ccrrh5oiyq@begin>
+ <1a2514f9-d6cc-7aa2-2e6f-890a1ef76e1b@slint.fr>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -71,41 +72,50 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=iso-8859-1
 Content-Disposition: inline
 Content-Transfer-Encoding: 8bit
-In-Reply-To: <20210821125234.onaxd4ccrrh5oiyq@begin>
+In-Reply-To: <1a2514f9-d6cc-7aa2-2e6f-890a1ef76e1b@slint.fr>
 X-Operating-System: Linux opera.rednote.net 5.13.12-200.fc34.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Running as root outputs nothing, but the permissions on /dev/softsynth
-are the same as with older versions of espeakup, alsa-lib, etc:
+Hmmm, now it's working. I never did reboot. I switched to the minuet
+machine with my kvm and found espeakup working. I still see no error
+neither on the root console, which has not returned after the by hand
+start with -d, nor via the ssh from the concerto machine.
 
-crw------- 1 root root 10, 122 Aug 21 08:29 /dev/softsynth
-
-
-That's the same as on my other Linux box where the following works just
-fine:
-
-janina@concerto 09:11:08 ~$yay -Q alsa-lib pcaudiolib espeak-ng espeakup
-alsa-lib 1.2.4-3
-pcaudiolib 1.2-2
-espeak-ng 1.50-4
-espeakup 0.80-3
+So, it seems it will work after some amount of time?
 
 
-I believe I have the same permissions:
-
-root@concerto 09:12:26 dev#ls -l /dev/softsynth
-crw------- 1 root root 10, 122 Aug 21 08:29 /dev/softsynth
-
-Samuel Thibault writes:
-> Janina Sajka, le sam. 21 août 2021 08:49:12 -0400, a ecrit:
+Didier Spaier writes:
+> Hi Janina,
+> 
+> You are not running this command as regular user, are you?
+> 
+> Best,
+> 
+> Didier
+> 
+> [fist sent privately my mistake, sorry]
+> 
+> Le 21/08/2021 à 14:49, Janina Sajka a écrit :
+> > Hi, Samuel:
+> > 
 > > espeakup -d gives me:
 > > 
 > > Unable to open the softsynth device: Permission denied
-> 
-> It needs to be run as root, or change the permissions on /dev/softsynth
-> to be able to run it as non-root.
-> 
-> Samuel
+> > 
+> > Best,
+> > 
+> > Janina
+> > 
+> > Samuel Thibault writes:
+> > > Janina Sajka, le sam. 21 août 2021 08:11:42 -0400, a ecrit:
+> > > > I have confirmed my audio devices can aplay without problems, but no joy
+> > > > from espeakup.
+> > > 
+> > > Would you be able to run espeakup by hand with the -d flag? That'll dump
+> > > the alsa errors and whatnot.
+> > > 
+> > > Samuel
+> > 
 
 -- 
 
