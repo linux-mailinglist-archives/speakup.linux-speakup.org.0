@@ -1,68 +1,45 @@
-Return-Path: <speakup+bounces-276-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-277-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id E48104032A9
-	for <lists+speakup@lfdr.de>; Wed,  8 Sep 2021 04:30:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 959804053D0
+	for <lists+speakup@lfdr.de>; Thu,  9 Sep 2021 15:17:54 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 88441380F64; Tue,  7 Sep 2021 22:30:21 -0400 (EDT)
+	id 89385381015; Thu,  9 Sep 2021 09:17:53 -0400 (EDT)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20210112 header.b=ExIxCwpW;
+	dkim=pass (1024-bit key; unprotected) header.d=bluegrasspals.com header.i=@bluegrasspals.com header.a=rsa-sha256 header.s=default header.b=HsmoJ6O+;
 	dkim-atps=neutral
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 5D6C9380B5D
-	for <lists+speakup@lfdr.de>; Tue,  7 Sep 2021 22:30:21 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 73EBE380E81
+	for <lists+speakup@lfdr.de>; Thu,  9 Sep 2021 09:17:53 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 71336380F4B; Tue,  7 Sep 2021 22:30:15 -0400 (EDT)
-Received: from mail-oi1-f179.google.com (mail-oi1-f179.google.com [209.85.167.179])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 44FDE380B5D
-	for <speakup@linux-speakup.org>; Tue,  7 Sep 2021 22:30:15 -0400 (EDT)
-Received: by mail-oi1-f179.google.com with SMTP id q39so1130931oiw.12
-        for <speakup@linux-speakup.org>; Tue, 07 Sep 2021 19:30:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=sender:from:to:references:in-reply-to:subject:date:message-id
-         :mime-version:content-transfer-encoding:thread-index
-         :content-language;
-        bh=MpdEMcskgGq/TSP/htH4wPpcfe7JMGtWl2jyDl8lQO8=;
-        b=ExIxCwpWwIGVd5dNu8DDRjkziK9bxu+fZsOlRYwu0fMHVRzyomHpFwgW2HOK9+IO1+
-         vh77cYcGiuIlprCq6WCb7alT+jNb+Cn3JTucjhG4qsoI93BhKv0uW7Q3powFSTeT4h4T
-         ea7Kb2DnjvoeUCJRenp899J5eKsItA28joAiI7dHP4vTtxRJMN8hkP6XAFFsu0ND73qj
-         KvEaVjKsgTd/Untv5pA3xwhAFwDdFXxqLBIDBw/eEGleQb4VhjIgumzW6NZQZIoeFabC
-         MzpJacUYfFA6cXkY9rReMuyw5gbKuScbo3qSbj1Sx3t0eDjtSJbMvXefOFhAkkuWLQVN
-         Szug==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20161025;
-        h=x-gm-message-state:sender:from:to:references:in-reply-to:subject
-         :date:message-id:mime-version:content-transfer-encoding:thread-index
-         :content-language;
-        bh=MpdEMcskgGq/TSP/htH4wPpcfe7JMGtWl2jyDl8lQO8=;
-        b=KJlshkBM45CGWkEaldr12wI/Z7UMINVQ/8A1wjgsLC7lW+xLc7ON/pnGslmdmNStIA
-         dH4Yel68E5W38Me1CClRvh3YM1X1C9OaoQV6AhuaHMpKBQhFbAwC6KNtdr89Wuw5fcdM
-         sg5ajhWbmcr4YvXymj5Xg1fVPTpcEyU7pM2pFaWhyClSg5+kb9QM3t4pgcL4p0yX5TVP
-         cQB/6j/ZY2uaBvru4E5H4Fx03KKmvafuau5LR0fCxoN8DzRSs/3jYfpSpEDzzTlme2NJ
-         flcvM4rlElhZh3LVveEmuTV9rWTWl35ldD0KBMsFlLKmJ1DqkvWzQverbNx4lPriHkH/
-         AEZw==
-X-Gm-Message-State: AOAM532plyoUsmSid2X8m4Sljmf2yx1ZSqU82D8ab8/c6KdlJI0NtwuS
-	1ceDIn7B7IdP1+dhG1RIaYhdS6XpYN8Paw==
-X-Google-Smtp-Source: ABdhPJx732mIB9/C+M2oljooXvEnb80OMd5b3hZGmpk0VC2QdLEgpD84qnJs8RWYcl274TqgsOixyw==
-X-Received: by 2002:aca:4b85:: with SMTP id y127mr854006oia.169.1631068150383;
-        Tue, 07 Sep 2021 19:29:10 -0700 (PDT)
-Received: from TECHP10R95915 (99-74-22-187.lightspeed.brhmal.sbcglobal.net. [99.74.22.187])
-        by smtp.gmail.com with ESMTPSA id q10sm182979otn.47.2021.09.07.19.29.09
-        for <speakup@linux-speakup.org>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Tue, 07 Sep 2021 19:29:09 -0700 (PDT)
-Sender: Keith Wessel <kwessel76@gmail.com>
-From: "Keith Wessel" <keith@wessel.com>
-To: <speakup@linux-speakup.org>
-References: <038801d7a424$ef8e3050$ceaa90f0$@wessel.com> <0fd74a30-ef75-a8b4-2245-45bbbfd8827c@raspberryvi.org> <001301d7a455$2a956c10$7fc04430$@blinksoft.com>
-In-Reply-To: <001301d7a455$2a956c10$7fc04430$@blinksoft.com>
-Subject: RE: Looking for a home for a couple of serial synths
-Date: Tue, 7 Sep 2021 21:29:08 -0500
-Message-ID: <007601d7a459$4e259750$ea70c5f0$@wessel.com>
+	id 393D4380B12; Thu,  9 Sep 2021 09:17:51 -0400 (EDT)
+Received: from bluegrasspals.com (bluegrasspals.com [96.126.127.231])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id EA0543805C2
+	for <speakup@linux-speakup.org>; Thu,  9 Sep 2021 09:17:50 -0400 (EDT)
+Received: from [10.10.220.117] (70-233-189-56.lightspeed.lsvlky.sbcglobal.net [70.233.189.56])
+	(authenticated bits=0)
+	by bluegrasspals.com (8.15.2/8.15.2/Debian-8+deb9u1) with ESMTPSA id 189DHkb2023862
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO)
+	for <speakup@linux-speakup.org>; Thu, 9 Sep 2021 09:17:47 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bluegrasspals.com;
+	s=default; t=1631193467;
+	bh=eIxxxveBGa0pafMLOpmYWHN+/Ore/7wx/UNv2HaL30E=;
+	h=Subject:References:To:From:Date:In-Reply-To:From;
+	b=HsmoJ6O+eZ7SFTDKT9HDekLyjiOVpUv6rdNTsAwjav6t2JX3aW/OQMEu4Q0zGAuaF
+	 pDfeuTj6GSe7OcdJDb5vYhDqSEkIn2d398N2Y+iVU5Qt0C7s3LS49uSYvTnwihbVtm
+	 XCbPvOuUeh136edoSj/phYFEEcQxMaksPw6GRGt0=
+Subject: Fwd: [DECtalk] Fw: Looking for a home for a couple of serial synths
+References: <d32931d2-c683-fdcc-b38b-75a7139eb0fc@comcast.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: Jayson Smith <jaybird@bluegrasspals.com>
+X-Forwarded-Message-Id: <d32931d2-c683-fdcc-b38b-75a7139eb0fc@comcast.net>
+Message-ID: <a877f914-9885-48e9-0b2c-ce71303d18f9@bluegrasspals.com>
+Date: Thu, 9 Sep 2021 09:17:46 -0400
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101
+ Thunderbird/78.14.0
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -72,113 +49,235 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: quoted-printable
-X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQEzVGoANlLYQ+UrG1dTpcO8PwfmJAIeebqjAJqngu2szD1bcA==
-Content-Language: en-us
+In-Reply-To: <d32931d2-c683-fdcc-b38b-75a7139eb0fc@comcast.net>
+Content-Type: multipart/alternative;
+ boundary="------------1E214301B1C7A4162586760D"
+Content-Language: en-US
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Yes, that's true. Any Linux box with built-in serial ports, a serial =
-add-on PCI card, or USB serial ports will work. Didn't use to, but =
-awesome that it does now.
+This is a multi-part message in MIME format.
+--------------1E214301B1C7A4162586760D
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 7bit
 
-My only Linux system left is my Raspberry Pi which is in my networking =
-closet acting as a server. So, I have no need to connect a synth to it. =
-My desktop these days runs Windows, and I prefer just using a software =
-synth there. But these synths can be used with a USB to serial adapter, =
-at least to some extent, with Jaws or NVDA.
-
-I've heard back from several of you with interest about these synths. I =
-never expected this much interest. I'll respond in order until I find a =
-taker for each of these two.
-
-Thanks,
-Keith
+Forwarding this response from the DECtalk list.
 
 
------Original Message-----
-From: Ken Perry <kperry@blinksoft.com>=20
-Sent: Tuesday, September 7, 2021 9:00 PM
-To: mike@raspberryvi.org; speakup@linux-speakup.org
-Subject: RE: Looking for a home for a couple of serial synths
 
 
-Sorry I sent this just to Mike a few minutes ago.  I mint to send it to =
-the list.  It is important to point out you can still use these serial =
-synths if you have a USB to serial adapter.  I used my LT till I blew =
-out the chip on it.   I still use my express though.
-
-Ken
-
------Original Message-----
-From: Mike Ray <mike@raspberryvi.org>
-Sent: Tuesday, September 7, 2021 5:08 PM
-To: speakup@linux-speakup.org
-Subject: Re: Looking for a home for a couple of serial synths
-
-Keith,
-
-I have a collection of hardware synths. I have a Dolphin Apollo, a =
-Dolphin Juno, and a couple of DECTalks.
-
-I would happily take the DoubleTalk off you hands.
-
-I am in the UK. So if you're on the other side of the water, it may be =
-outrageously expensive to ship it.
-
-Mike
+-------- Forwarded Message --------
+Subject: 	Re: [DECtalk] Fw: Looking for a home for a couple of serial 
+synths
+Date: 	Thu, 9 Sep 2021 06:08:26 -0400
+From: 	Tom Kopec <w1pf@comcast.net>
+Reply-To: 	DECtalk <dectalk@bluegrasspals.com>
+To: 	dectalk@bluegrasspals.com
 
 
-On 07/09/2021 21:14, Keith Wessel wrote:
+
+A DECTalk Express should power-up OK on external power with a 
+dead/missing battery.
+
+The battery uses 600mAh prismatic ni-cad cells, which are very difficult 
+to find.. I don't think they are in current production.
+I have seen some Chinese NiMH cells that might sort-of work, but the 
+charger circuitry is not compatible with NiMH cells.
+
+There isn't a lot of room in there to hack in another solution. With 
+significant hacking it is might be possible to convert to a lithium 
+battery, but that's not plug-and-play.
+
+> ----------------------------------------------------------------------
+>
+> Message: 1
+> Date: Tue, 07 Sep 2021 16:18:07 -0400
+> From: "Jayson Smith" <jaybird@bluegrasspals.com>
+> To: dectalk@bluegrasspals.com
+> Subject: [DECtalk] Fw: Looking for a home for a couple of serial
+> synths
+> Message-ID: <20210907.201807.235.1@TRENT>
+>
+>
+>
+> ----- Original Message -----
+> From: "Keith Wessel" <keith@wessel.com>
+> To: <speakup@linux-speakup.org>
+> Date: Tue, 7 Sep 2021 15:14:16 -0500
+> Subject: Looking for a home for a couple of serial synths
+>
 > Hi, all,
->=20
-> I hope this isn't off-topic, but I know there are a lot of hardware=20
-> synth enthusiasts on this list, and I've got two that I'd rather find=20
-> homes for than send to electronics recycling.
->=20
-> Those of you on the brltty list saw my post a couple weeks ago about=20
-> looking for a new home for a serial braille display. My cleaning has=20
-> now lead me to two serial synths, both of which I'd be happy to let=20
-> anyone have for the cost of shipping.
->=20
-> One is a Doubletalk LT (speakup_synth=3Dltlk). This was the Doubletalk =
-
-> that could either be run off of a 9-volt battery or an AC adapter. It=20
-> has a hard-wired cable that goes to a DB9 serial plug. It's in perfect =
-
-> working condition, and I have the AC adapter that I'll include.
->=20
-> The other needs a little work. It's a DECTalk express, complete with=20
-> case, AC adapter, serial cable, and headphones. However, it won't=20
-> power up presumably because the internal battery needs to be replaced.
-> Anyone handy with a soldering iron should be able to tackle this, and=20
-> last I checked the battery was a type that's available from Batteries=20
-> Plus and various on-line sources.
->=20
-> I have no need for either of these any more since I no longer have a=20
-> desktop with a serial port. If you're interested in either of these,=20
-> email me off-list at keith@wessel.com.
->=20
+>
+> I hope this isn't off-topic, but I know there are a lot of hardware synth
+> enthusiasts on this list, and I've got two that I'd rather find homes for
+> than send to electronics recycling.
+>
+> Those of you on the brltty list saw my post a couple weeks ago about 
+> looking
+> for a new home for a serial braille display. My cleaning has now lead 
+> me to
+> two serial synths, both of which I'd be happy to let anyone have for the
+> cost of shipping.
+>
+> One is a Doubletalk LT (speakup_synth=ltlk). This was the Doubletalk that
+> could either be run off of a 9-volt battery or an AC adapter. It has a
+> hard-wired cable that goes to a DB9 serial plug. It's in perfect working
+> condition, and I have the AC adapter that I'll include.
+>
+> The other needs a little work. It's a DECTalk express, complete with case,
+> AC adapter, serial cable, and headphones. However, it won't power up
+> presumably because the internal battery needs to be replaced. Anyone handy
+> with a soldering iron should be able to tackle this, and last I 
+> checked the
+> battery was a type that's available from Batteries Plus and various 
+> on-line
+> sources.
+>
+> I have no need for either of these any more since I no longer have a 
+> desktop
+> with a serial port. If you're interested in either of these, email me
+> off-list at keith@wessel.com.
+>
 > Thanks,
 > Keith
->=20
->=20
->=20
+>
+
+_______________________________________________
+Dectalk mailing list
+Dectalk@bluegrasspals.com
+https://bluegrasspals.com/mailman/listinfo/dectalk
 
 
---
-Michael A. Ray
-Analyst/Programmer
-Witley, Surrey, South-east UK
+--------------1E214301B1C7A4162586760D
+Content-Type: text/html; charset=windows-1252
+Content-Transfer-Encoding: 7bit
 
-He/him
+<html>
+  <head>
 
-"Perfection is achieved, not when there is nothing more to add, but when =
-there is nothing left to take away." -- A. de Saint-Exupery
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  </head>
+  <body>
+    <p>Forwarding this response from the DECtalk list.</p>
+    <p><br>
+    </p>
+    <div class="moz-forward-container"><br>
+      <br>
+      -------- Forwarded Message --------
+      <table class="moz-email-headers-table" cellspacing="0"
+        cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Subject:
+            </th>
+            <td>Re: [DECtalk] Fw: Looking for a home for a couple of
+              serial synths</td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Date: </th>
+            <td>Thu, 9 Sep 2021 06:08:26 -0400</td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" nowrap="nowrap" align="RIGHT">From: </th>
+            <td>Tom Kopec <a class="moz-txt-link-rfc2396E" href="mailto:w1pf@comcast.net">&lt;w1pf@comcast.net&gt;</a></td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" nowrap="nowrap" align="RIGHT">Reply-To:
+            </th>
+            <td>DECtalk <a class="moz-txt-link-rfc2396E" href="mailto:dectalk@bluegrasspals.com">&lt;dectalk@bluegrasspals.com&gt;</a></td>
+          </tr>
+          <tr>
+            <th valign="BASELINE" nowrap="nowrap" align="RIGHT">To: </th>
+            <td><a class="moz-txt-link-abbreviated" href="mailto:dectalk@bluegrasspals.com">dectalk@bluegrasspals.com</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      A DECTalk Express should power-up OK on external power with a
+      dead/missing battery.<br>
+      <br>
+      The battery uses 600mAh prismatic ni-cad cells, which are very
+      difficult to find.. I don't think they are in current production.<br>
+      I have seen some Chinese NiMH cells that might sort-of work, but
+      the charger circuitry is not compatible with NiMH cells.<br>
+      <br>
+      There isn't a lot of room in there to hack in another solution.
+      With significant hacking it is might be possible to convert to a
+      lithium battery, but that's not plug-and-play.<br>
+      <br>
+      <blockquote type="cite">----------------------------------------------------------------------<br>
+        <br>
+        Message: 1<br>
+        Date: Tue, 07 Sep 2021 16:18:07 -0400<br>
+        From: "Jayson Smith" <a class="moz-txt-link-rfc2396E" href="mailto:jaybird@bluegrasspals.com">&lt;jaybird@bluegrasspals.com&gt;</a><br>
+        To: <a class="moz-txt-link-abbreviated" href="mailto:dectalk@bluegrasspals.com">dectalk@bluegrasspals.com</a><br>
+        Subject: [DECtalk] Fw: Looking for a home for a couple of serial<br>
+        synths<br>
+        Message-ID: &lt;20210907.201807.235.1@TRENT&gt;<br>
+        <br>
+        <br>
+        <br>
+        ----- Original Message -----<br>
+        From: "Keith Wessel" <a class="moz-txt-link-rfc2396E" href="mailto:keith@wessel.com">&lt;keith@wessel.com&gt;</a><br>
+        To: <a class="moz-txt-link-rfc2396E" href="mailto:speakup@linux-speakup.org">&lt;speakup@linux-speakup.org&gt;</a><br>
+        Date: Tue, 7 Sep 2021 15:14:16 -0500<br>
+        Subject: Looking for a home for a couple of serial synths<br>
+        <br>
+        Hi, all,<br>
+        <br>
+        I hope this isn't off-topic, but I know there are a lot of
+        hardware synth<br>
+        enthusiasts on this list, and I've got two that I'd rather find
+        homes for<br>
+        than send to electronics recycling.<br>
+        <br>
+        Those of you on the brltty list saw my post a couple weeks ago
+        about looking<br>
+        for a new home for a serial braille display. My cleaning has now
+        lead me to<br>
+        two serial synths, both of which I'd be happy to let anyone have
+        for the<br>
+        cost of shipping.<br>
+        <br>
+        One is a Doubletalk LT (speakup_synth=ltlk). This was the
+        Doubletalk that<br>
+        could either be run off of a 9-volt battery or an AC adapter. It
+        has a<br>
+        hard-wired cable that goes to a DB9 serial plug. It's in perfect
+        working<br>
+        condition, and I have the AC adapter that I'll include.<br>
+        <br>
+        The other needs a little work. It's a DECTalk express, complete
+        with case,<br>
+        AC adapter, serial cable, and headphones. However, it won't
+        power up<br>
+        presumably because the internal battery needs to be replaced.
+        Anyone handy<br>
+        with a soldering iron should be able to tackle this, and last I
+        checked the<br>
+        battery was a type that's available from Batteries Plus and
+        various on-line<br>
+        sources.<br>
+        <br>
+        I have no need for either of these any more since I no longer
+        have a desktop<br>
+        with a serial port. If you're interested in either of these,
+        email me<br>
+        off-list at <a class="moz-txt-link-abbreviated" href="mailto:keith@wessel.com">keith@wessel.com</a>.<br>
+        <br>
+        Thanks,<br>
+        Keith<br>
+        <br>
+      </blockquote>
+      <br>
+      _______________________________________________<br>
+      Dectalk mailing list<br>
+      <a class="moz-txt-link-abbreviated" href="mailto:Dectalk@bluegrasspals.com">Dectalk@bluegrasspals.com</a><br>
+      <a class="moz-txt-link-freetext" href="https://bluegrasspals.com/mailman/listinfo/dectalk">https://bluegrasspals.com/mailman/listinfo/dectalk</a><br>
+      <br>
+    </div>
+  </body>
+</html>
 
-
-
-
+--------------1E214301B1C7A4162586760D--
 
