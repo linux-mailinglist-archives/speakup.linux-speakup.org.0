@@ -1,56 +1,43 @@
-Return-Path: <speakup+bounces-282-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-283-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 6970840DF08
-	for <lists+speakup@lfdr.de>; Thu, 16 Sep 2021 18:05:05 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1631808303;
-	bh=MTFIRDOxgFonxfURNXKRvERwT0Ne28d/77R3gWAp8q0=;
-	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Post:List-Help:
-	 List-Subscribe:From;
-	b=blQ6V6kK7NCXh/IXy8pxoX5UojfD4LdD28azY1XC+ju931ZAt8uzoWiJEtwJN//Dg
-	 clvJOK4YqmAbwNTUMC4Th7XGBRJOjCdSJeGoX5gtzMqUcAPiZYZar/2ObQGbK+330c
-	 T9UWZLkF9vjLrGsM7txvtWjFaLnMptAGi/jMQcic=
+	by mail.lfdr.de (Postfix) with ESMTP id 8AAED40EE38
+	for <lists+speakup@lfdr.de>; Fri, 17 Sep 2021 01:45:54 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 24DD63811E4; Thu, 16 Sep 2021 12:05:03 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1631808303;
-	bh=MTFIRDOxgFonxfURNXKRvERwT0Ne28d/77R3gWAp8q0=;
-	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Post:List-Help:
-	 List-Subscribe:From;
-	b=blQ6V6kK7NCXh/IXy8pxoX5UojfD4LdD28azY1XC+ju931ZAt8uzoWiJEtwJN//Dg
-	 clvJOK4YqmAbwNTUMC4Th7XGBRJOjCdSJeGoX5gtzMqUcAPiZYZar/2ObQGbK+330c
-	 T9UWZLkF9vjLrGsM7txvtWjFaLnMptAGi/jMQcic=
+	id 3E92C381221; Thu, 16 Sep 2021 19:45:53 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 12F5438091D
-	for <lists+speakup@lfdr.de>; Thu, 16 Sep 2021 12:05:03 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 2C440380E54
+	for <lists+speakup@lfdr.de>; Thu, 16 Sep 2021 19:45:53 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1631808298;
-	bh=MTFIRDOxgFonxfURNXKRvERwT0Ne28d/77R3gWAp8q0=;
-	h=Date:From:To:Subject:From;
-	b=FWckp4/G4S+2P55Wre+q0AxlXcl381kVpE1LGUynQ/RiV1tFOFEbS02ujZz4C4t6z
-	 ukSvqNvpcwnVdKxhawILhbG99teOi8XkL1XKLXCH36dM6jOAcMwKyRbwOpv71T+VvJ
-	 1q/BByyzxWEuLHjY4omu39tF1TE+O3LVpKnNUInY=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A19CE380E55; Thu, 16 Sep 2021 12:04:58 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1631808298;
-	bh=MTFIRDOxgFonxfURNXKRvERwT0Ne28d/77R3gWAp8q0=;
-	h=Date:From:To:Subject:From;
-	b=FWckp4/G4S+2P55Wre+q0AxlXcl381kVpE1LGUynQ/RiV1tFOFEbS02ujZz4C4t6z
-	 ukSvqNvpcwnVdKxhawILhbG99teOi8XkL1XKLXCH36dM6jOAcMwKyRbwOpv71T+VvJ
-	 1q/BByyzxWEuLHjY4omu39tF1TE+O3LVpKnNUInY=
-Received: from localhost (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 98ECC38091D
-	for <speakup@linux-speakup.org>; Thu, 16 Sep 2021 12:04:58 -0400 (EDT)
-Date: Thu, 16 Sep 2021 12:04:58 -0400 (EDT)
-From: Kirk Reiser <kirk@reisers.ca>
+	id C63E0380E55; Thu, 16 Sep 2021 19:45:48 -0400 (EDT)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1586C38091D
+	for <speakup@linux-speakup.org>; Thu, 16 Sep 2021 19:45:47 -0400 (EDT)
+Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
+	(authenticated bits=0)
+	by covici.com (8.15.2/8.15.2/Debian-14~deb10u1) with ESMTPSA id 18GNjRf9022388
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <speakup@linux-speakup.org>; Thu, 16 Sep 2021 19:45:29 -0400
+Received: from ccs.covici.com (localhost [127.0.0.1])
+	by ccs.covici.com (8.17.1/8.15.2) with ESMTPS id 18GNjcWH2704941
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <speakup@linux-speakup.org>; Thu, 16 Sep 2021 19:45:38 -0400
+Received: (from covici@localhost)
+	by ccs.covici.com (8.17.1/8.15.2/Submit) id 18GNjc9s2704940;
+	Thu, 16 Sep 2021 19:45:38 -0400
+Date: Thu, 16 Sep 2021 19:45:38 -0400
+Message-ID: <m3zgscyti5.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
 To: speakup@linux-speakup.org
-Subject: Broken espeakup on debian sid
-Message-ID: <74614290-2cb8-c5a7-91e9-e639a673464a@reisers.ca>
+Subject: problem with read all doc in kernel 5.10.60
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL/10.8 EasyPG/1.0.0 Emacs/27
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Reply-To: covici@ccs.covici.com
+Organization: Covici Computer Systems
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -59,17 +46,23 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi folks: Does anyone have espeakup running on debian sid with
-libasound2 1.2.5? After I upgraded a few days ago I lost my speech
-output. I have built espeakup and espeak-ng from the current repo on
-them with no joy either.
+Hi.  I am having a problem where if I use read all doc, speakup loses
+some text after maybe 30 or 40 lines, it then resumes and the cursor
+still follows.
 
-Curious minds and all that type thing.
+Anyone seen this before, or is there a workaround?
 
-   Kirk
+Thanks.
 
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
+
+         John Covici wb2una
+         covici@ccs.covici.com
 
