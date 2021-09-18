@@ -1,51 +1,51 @@
-Return-Path: <speakup+bounces-290-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-291-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D7990410798
-	for <lists+speakup@lfdr.de>; Sat, 18 Sep 2021 18:27:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id A6B3D4107A0
+	for <lists+speakup@lfdr.de>; Sat, 18 Sep 2021 18:43:34 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=iKzGnrQW;
+	dkim=fail reason="key not found in DNS" header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=IrfRWxLX;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5B6123811DC; Sat, 18 Sep 2021 12:27:26 -0400 (EDT)
+	id BEC71380BA1; Sat, 18 Sep 2021 12:43:33 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6BE6D3811E5
-	for <lists+speakup@lfdr.de>; Sat, 18 Sep 2021 12:27:23 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 4C842381213
+	for <lists+speakup@lfdr.de>; Sat, 18 Sep 2021 12:43:30 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 033D8380BF0; Sat, 18 Sep 2021 12:27:21 -0400 (EDT)
+	id 791793809B9; Sat, 18 Sep 2021 12:43:27 -0400 (EDT)
 Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 6993538098B
-	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 12:27:19 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id E42A0380994
+	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 12:43:26 -0400 (EDT)
 Received: from opera.rednote.net (localhost [IPv6:::1])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by mail.rednote.net (Postfix) with ESMTPS id 50873FA657;
-	Sat, 18 Sep 2021 12:27:18 -0400 (EDT)
+	by mail.rednote.net (Postfix) with ESMTPS id C99A3FA657;
+	Sat, 18 Sep 2021 12:43:24 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
-	t=1631982438;
+	t=1631983404;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
 	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
 	 in-reply-to:in-reply-to:references:references;
-	bh=jFD7O0gAFzRnxxw3s71DW4YwmZjYTU/1D+qWaAB3cI0=;
-	b=iKzGnrQWOFbMvmQ1b57BkqF8sZ6myodZKw2kHCVcXyweqHSUQRFm44bXU3YLhgv+FGAmi9
-	bL9xys39fZUGxlXcHD26bbmfWNJJc01i251vKT+xmE93fqzfRc+hBY+qA1K3anpSyzteBi
-	FAy1eJf856eHEVWGHCGpp9p6eDJH89g=
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.rednote.net 50873FA657
+	bh=WFH8zP6+DdZZ6FQlE46uNce3ysZSx/xxcS9ZcGSz8H0=;
+	b=IrfRWxLXOtVTm1pR+CsgunrNWs8f6lvO772NtJen7n2G8ekYtyWjhItRulnGQ8HjeI3qsK
+	PkkPz3Hnr307eyK7NIJ8A/HCtvfcU3pQG5AynomW8lLTIzVP4owf+ccJxm8NYHmL2jSnnk
+	MkArkf3RKSHuK57DXgln6BEBSnLduJg=
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.rednote.net C99A3FA657
 Authentication-Results: mail.rednote.net; dmarc=pass (p=reject dis=none) header.from=rednote.net
 Authentication-Results: mail.rednote.net; spf=pass smtp.mailfrom=rednote.net
 Received: (from janina@localhost)
-	by opera.rednote.net (8.16.1/8.16.1/Submit) id 18IGRIlI018714;
-	Sat, 18 Sep 2021 12:27:18 -0400
-Date: Sat, 18 Sep 2021 12:27:18 -0400
+	by opera.rednote.net (8.16.1/8.16.1/Submit) id 18IGhOKu019851;
+	Sat, 18 Sep 2021 12:43:24 -0400
+Date: Sat, 18 Sep 2021 12:43:24 -0400
 From: Janina Sajka <janina@rednote.net>
 To: Kirk Reiser <kirk@reisers.ca>
 Cc: speakup@linux-speakup.org
 Subject: Re: Broken espeakup on debian sid
-Message-ID: <YUYTZq7DoDKEJKQb@rednote.net>
+Message-ID: <YUYXLHoSvcMnUYzW@rednote.net>
 References: <74614290-2cb8-c5a7-91e9-e639a673464a@reisers.ca>
  <YUXlLephhiYuV4UA@rednote.net>
  <50b02165-17e9-2561-ec8-6c35cba66944@reisers.ca>
@@ -64,21 +64,32 @@ In-Reply-To: <50b02165-17e9-2561-ec8-6c35cba66944@reisers.ca>
 X-Operating-System: Linux opera.rednote.net 5.13.16-200.fc34.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Thanks, Kirk!
+Well, maybe here's a clue of something ...
 
-I will try your suggestions this afternoon and see if I can find some
-joy on my System76 2020 era mini machine.
+Going to my System76 box, which is fully updated as of this morning,
+including alsa-lib 1.2.5.1-3
+espeakup 0.90-1
+There is no /dev/softsynth* of any kind.
 
-I will report. Meanwhile, it does indeed seem pipewire is the path of
-the future, and that's probably a good thing, though once again I wish
-some of us had been involved in specifying its requirements. I never did
-get happy with pulse, so have generally stayed with alsa until now. I do
-have the pipewirealsa package loaded, though not sure the older alsa-lib
-does anything with that.
+root@minuet 12:40:10 dev#ls -l soft*
+ls: cannot access 'soft*': No such file or directory
 
-Thanks for the specific suggestions.
+Weirder still, there's no /sys/accessibility.
 
-More soon.
+My older machine, also updated this morning, but with the newer alsa-lib
+and espeakup held out of the upgrade, there is indeed a
+/sys/accessibility/speakup, where there is indeed a soft directory owned
+by janina:janina, as are all the files inside.
+
+And this older box also has:
+
+crw------- 1 root root 10, 122 Sep 18 12:08 softsynth
+crw------- 1 root root 10, 121 Sep 18 12:08 softsynthu
+
+But this is the working box, so I don't want to mess with upgrading
+alsa-lib here. One broken machine is all I can handle for the moment.
+
+Does that tell us anything useful? It's beyond my paygrade! <grin>
 
 Janina
 
