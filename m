@@ -1,65 +1,39 @@
-Return-Path: <speakup+bounces-303-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-304-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 78E4F410C80
-	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 19:03:02 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20210112 header.b=qIlUAIBt;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 7E675410CF1
+	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 20:43:18 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DFFE5380EC9; Sun, 19 Sep 2021 13:03:01 -0400 (EDT)
+	id E66DA3811D3; Sun, 19 Sep 2021 14:43:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id BB6A3380982
-	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 13:03:01 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id C658E38122D
+	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 14:43:15 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E4568380C5A; Sun, 19 Sep 2021 13:02:55 -0400 (EDT)
-Received: from mail-lf1-f48.google.com (mail-lf1-f48.google.com [209.85.167.48])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id BCCC3380982
-	for <speakup@linux-speakup.org>; Sun, 19 Sep 2021 13:02:55 -0400 (EDT)
-Received: by mail-lf1-f48.google.com with SMTP id e15so18359738lfr.10
-        for <speakup@linux-speakup.org>; Sun, 19 Sep 2021 10:02:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=gmail.com; s=20210112;
-        h=date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:user-agent;
-        bh=6D99qqcdcoLeKr2cd2Wzp2DvNfjm16yhw13HQYbeKoI=;
-        b=qIlUAIBt0FN/jPPoqVZSNHoovt4nVTmJmmxLs98P2nOTeZG2lpGbeWkeTteLg2NWVb
-         zFn3uTvCH6CDoZJbI04Fpe8qbBWLPJXpLVlgcJBgUbVCtpORheQbXJsYgkGEW1RD5Ay2
-         RuWJKhIKElUOpWsRv3SNQ7bKDgIRWnBb4PgHyMPKtKsL3HzbzWqQf9/yj46jjHDdC2dt
-         5QPajcM4d7hrKPFkV3oUC+3qdQnDZxBI963Q14zObraGiP6zYNuTQq8PR24EAxOlYxuB
-         JUxRqVh4h81GXkzpEGaEc1hXe4ezTDm76F7RfOIQ6utB79JEuKnJ2Fa6yM89Okoxsti+
-         2kKg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-        d=1e100.net; s=20210112;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to:user-agent;
-        bh=6D99qqcdcoLeKr2cd2Wzp2DvNfjm16yhw13HQYbeKoI=;
-        b=wtOWZdA2wnbt+RfurIh5lpldeyG4JNedlbUE/OjhajKIJQS94QdG8DgV9J+SrU2b8H
-         X/44r0JNuP3RPwqOXLcZxR3prvBIaDcsnUN3eirO9Zaixg+Ol2idn0XP+sVLKe6JJzOz
-         KP2XPqmi5jn7q26+y9oY2C5sF/l5FiSmLwWntwNTu30sb3bWLsz5Wylcrlu53hWpnirM
-         Ur71qQZL4jSSP98GogTOpm44691D387Fg6liBMVykFf51bQX5IbW+M4Fkrbz8WWSx14O
-         HGwRi21UqspCjw5haIoSOSks23a2t/S41tJlLR1E8c2sGC7Nd4QbzEVwi4Z+sskegzKv
-         geaw==
-X-Gm-Message-State: AOAM531V5bpVX1yVRHOEL6bA8dsfm/vLaVEIcaoTO0m610qKuhLFNUXY
-	EATtvdH7WWZ53lp+EpKnVLNuBrcmsyg=
-X-Google-Smtp-Source: ABdhPJxZAWH94k5Jx7kKd9VSdzdeFjVfCPwDiDRLZ4rWYnbT5WY/3Qo5zZSixklrCXjXAzs1J+YDog==
-X-Received: by 2002:a05:6512:3d0a:: with SMTP id d10mr15995690lfv.481.1632070912154;
-        Sun, 19 Sep 2021 10:01:52 -0700 (PDT)
-Received: from localhost ([91.77.167.245])
-        by smtp.gmail.com with ESMTPSA id x20sm1051201lfu.242.2021.09.19.10.01.51
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sun, 19 Sep 2021 10:01:51 -0700 (PDT)
-Date: Sun, 19 Sep 2021 20:01:50 +0300
-From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
-To: Gregory Nowak <greg@gregn.net>
-Cc: speakup@linux-speakup.org
-Subject: Re: loading speakup_soft, was: Re: Broken espeakup on debian sid
-Message-ID: <20210919170150.pp3u54hbqfjidy7y@alex-pc>
-References: <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
- <20210919035755.GA11947@gregn.net>
+	id E03A3380C5A; Sun, 19 Sep 2021 14:43:14 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B1E073809A9
+	for <speakup@linux-speakup.org>; Sun, 19 Sep 2021 14:43:14 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1005)
+	id DDE45621D90; Sun, 19 Sep 2021 18:42:41 +0000 (UTC)
+Received: from localhost (localhost [127.0.0.1])
+	by server2.shellworld.net (Postfix) with ESMTP id DCA94620237;
+	Sun, 19 Sep 2021 14:42:41 -0400 (EDT)
+Date: Sun, 19 Sep 2021 14:42:41 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: "John G. Heim" <jheim@math.wisc.edu>
+cc: Kirk Reiser <kirk@reisers.ca>, Didier Spaier <didier@slint.fr>, 
+    speakup@linux-speakup.org
+Subject: Re: Philosophical questions (was: Broken espeakup)
+In-Reply-To: <3e2a47a6-4d88-d8ff-765a-857292997e06@math.wisc.edu>
+Message-ID: <Pine.LNX.4.64.2109191435250.2662108@server2.shellworld.net>
+References: <74614290-2cb8-c5a7-91e9-e639a673464a@reisers.ca>
+ <YUXlLephhiYuV4UA@rednote.net> <50b02165-17e9-2561-ec8-6c35cba66944@reisers.ca>
+ <YUYXLHoSvcMnUYzW@rednote.net> <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
+ <14c0aaef-dea9-7b7c-77e3-a1a4edba4c31@slint.fr> <6b1e6e66-d12a-3d9e-a3e5-e8d0499177d9@reisers.ca>
+ <3e2a47a6-4d88-d8ff-765a-857292997e06@math.wisc.edu>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -69,61 +43,154 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-In-Reply-To: <20210919035755.GA11947@gregn.net>
-User-Agent: NeoMutt/20210205
+Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-1679863079-1632076961=:2662108"
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-On Sat, Sep 18, 2021 at 08:57:56PM -0700, Gregory Nowak wrote:
-> On Sat, Sep 18, 2021 at 03:26:02PM -0400, Kirk Reiser wrote:
-> > I noticed in the espeakup build systemd
-> > services that it loads speakup_soft when the systemd service is
-> > started.
-> >
-> > I'm not crazy about that being the way to load speakup particularly
-> > but I'm not that familiar with various distros way of doing things but
-> > it appears the espeakup maintainers figure everyone is running
-> > systemd.
->
-> No, not everyone is running systemd. I wonder where the espeakup
-> maintainers got such a notion from?
->
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
 
-answering as an espeakup maintainer. I understand that not everyone
-uses systemd and respect their choice.
+---1404930036-1679863079-1632076961=:2662108
+Content-Type: TEXT/PLAIN; charset=utf-8; format=flowed
+Content-Transfer-Encoding: QUOTED-PRINTABLE
 
-unlike other init systems, systemd encourages upstreams to provide systemd
-units on there own, I see no reason why we shouldn't do this, especially
-since it's all optional.
+Adding something important, if slightly different, to this discussion.
+speaking personally, I feel it is absolutely critical to raise the Linux=20
+profile generally among accessibility discussions if you desire anyone=20
+outside of your personal computer use to understand your needs and take=20
+you seriously.
+That means articles with the a11y project, making sure that webaim=20
+includes Linux when doing surveys..something that they did not last time I=
+=20
+checked because they felt the population is too small.
+Personally, that makes me  more than a bit angry, because a disability=20
+experience is  only  one person at a time regardless, and there is a major=
+=20
+difference between compliance, and inclusion of those individual=20
+experiences.
+Preaching to the choir i. e. only to the impacted population, is not going=
+=20
+to  result in broader understanding from those involved with major=20
+distributions, nor those seeking information on inclusion from outside of=
+=20
+the experience.
+Until Linux is considered to be more than just a programmers hobby,=20
+getting elements effortlessly incorporated may be a challenge.
+Kare
 
-I have plans to integrate more closely with systemd, but I will do my best
-to maintain compatibility with other init systems.
 
-testing is encouraged in any case.
 
-> >
-> > That's one of the reasons I mentioned getting folks opinions in my
-> > last message to you. For people that don't run systemd it will
-> > certainly break things.
->
-> Great. Something else to look forward to fixing when devuan 5 is
-> coming out, sigh. Fortunately, that's a couple of years from now.
->
-> Greg
->
->
-> --
-> web site: http://www.gregn.net
-> gpg public key: http://www.gregn.net/pubkey.asc
-> skype: gregn1
-> (authorization required, add me to your contacts list first)
-> If we haven't been in touch before, e-mail me before adding me to your contacts.
->
-> --
-> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
->
+On Sun, 19 Sep 2021, John G. Heim wrote:
 
---
-Sincerely, Alexander
+> I get this thing about speakup belonging in user space practically every =
+time=20
+> I discuss it outside this list. Even with other blind people. I'm like, o=
+kay,=20
+> if you can tell me how I can get speech during poot, I'm willing to liste=
+n.=20
+> Or are you telling me that as a system admin, I don't need access to boot=
+=20
+> messages? Lets disable everybody's video during boot and see how they lik=
+e=20
+> it.
+>
+> I think the question of whether it's better to work on a custom distro fo=
+r=20
+> the blind or on fixing mainstream distros is a tough call. The problem is=
+=20
+> clearly that a lot of custom distros for the blind have disappeared once =
+the=20
+> original developer lost interest. But while they last, they are probably=
+=20
+> doing some good. I do think though that on the balance, it is better to w=
+ork=20
+> on fixing mainstream distros. You can have a greater, longer lasting impa=
+ct=20
+> that way.
+>
+> On 9/19/21 9:09 AM, Kirk Reiser wrote:
+>>  Hello Didier: Thank you for the rc script. That's an impressive shell
+>>  script. 'grin'
+>>
+>>  You are of course correct that there is no mention of systemd in the
+>>  espeakup source code. My comment was in reference to the systemd
+>>  service provided in the espeakup repository. I think I was just
+>>  surprised by it more than anything.
+>>
+>>  Still, as far as I can tell espeakup indebian sid appears to be broken
+>>  with some recent upgrades and it seems so are some of the other
+>>  distros. There is probably a good chance that how to handle the
+>>  stopping and starting of speakup has been dicussed on other mailing
+>>  lists I'm not a member of. I am only on two lists, this one and the
+>>  blvuug list which is fairly new. If there has been discussion on some
+>>  other accessibility lists I would appreciate it if someone would give
+>>  me/us a synopsis of those discussions and their
+>>  recommendations/decisions.
+>>
+>>  It also seems to me that we have two different situations wrt distros,
+>>  general communities like debian, ubuntu, arch etc and those that are
+>>  specially put together for the blind community like debuan, slint and
+>>  others I don't remember there names of anymore. I'd kind of like to
+>>  know what people think of those situations is it better to be separate
+>>  or part of the whole? The inclusion of pulseaudio for example in
+>>  packages could make a difference those theose who want it and those
+>>  who don't. This is of course an issue that doesn't just have merit to
+>>  the accessibility community of speakup. Huh, does anyone use
+>>  pcaudiolib other than espeak, just wondering.
+>>
+>>  The whole question of whether a package should run as root or a
+>>  regular user is another interesting question. I don't think that
+>>  espeakup would have broken if some group hadn't decided that one way
+>>  was better than an other for everybody. Once again personally I like
+>>  the idea of running as an individual user but I also want access to
+>>  devices from boot-up on and not loading accessibility until a user
+>>  logs in is a non-starter there imo.
+>>
+>>  Anyway I seem to be ranting, sorry about that.
+>>
+>>  Didier, does slint have a bootable image for the RaspBerry Pi 4B?
+>>  Espeakup on raspbian and debian is fucked in completely different ways
+>>  on that platform.
+>>
+>>   =C2=A0 Kirk
+>>
+>>
+>>  On Sun, 19 Sep 2021, Didier Spaier wrote:
+>>=20
+>> >  Hi Kirk,
+>> >=20
+>> >  answering inline.
+>> >=20
+>> >  Le 18/09/2021 =C3=A0 21:26, Kirk Reiser a =C3=A9crit=C2=A0:
+>> > >  Huh, are you running arch on that box as well? I am wondering if
+>> > >  speakup is even loaded. I noticed in the espeakup build systemd
+>> > >  services that it loads speakup_soft when the systemd service is
+>> > >  started.
+>> > >=20
+>> > >  I'm not crazy about that being the way to load speakup particularly
+>> > >  but I'm not that familiar with various distros way of doing things =
+but
+>> > >  it appears the espeakup maintainers figure everyone is running
+>> > >  systemd.
+>> >=20
+>> >  To be clear you mean the packagers of most distributions right? there=
+ is=20
+>> >  no
+>> >  mention of systemd in the source code, of course.
+>> >=20
+>> >  As a counter example the daemon manager for Slint is attached.
+>> >=20
+>> > >  That's one of the reasons I mentioned getting folks opinions in my
+>> > >  last message to you. For people that don't run systemd it will
+>> > >  certainly break things.
+>> >=20
+>> >  Cheers,
+>> >  Didier
+>> >=20
+>
+> --=20
+> ###
+> John G. Heim, 608-263-4189, jheim@math.wisc.edu
+>
+>
+---1404930036-1679863079-1632076961=:2662108--
 
