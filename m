@@ -1,72 +1,48 @@
-Return-Path: <speakup+bounces-297-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-298-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 4AB1A41090A
-	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 03:19:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D3CCB410999
+	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 05:58:17 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=Np3rfrKJ;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=ocilA//H;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=RoIRzBta;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9AC6A3811DD; Sat, 18 Sep 2021 21:19:15 -0400 (EDT)
+	id 5E0E73811EE; Sat, 18 Sep 2021 23:58:16 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 87D023809AC
-	for <lists+speakup@lfdr.de>; Sat, 18 Sep 2021 21:19:15 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 49B4C380B11
+	for <lists+speakup@lfdr.de>; Sat, 18 Sep 2021 23:58:16 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B70AA380B15; Sat, 18 Sep 2021 21:19:09 -0400 (EDT)
-Received: from out1-smtp.messagingengine.com (out1-smtp.messagingengine.com [66.111.4.25])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id E734F380907
-	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 21:19:08 -0400 (EDT)
-Received: from compute1.internal (compute1.nyi.internal [10.202.2.41])
-	by mailout.nyi.internal (Postfix) with ESMTP id 984515C00B6
-	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 21:19:07 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute1.internal (MEProxy); Sat, 18 Sep 2021 21:19:07 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=date:from:to:subject:message-id
-	:mime-version:content-type; s=fm2; bh=dPwpbRDK/J4yLsBoGXQ44S3kWO
-	umpF1sH4/3LyPpa1A=; b=Np3rfrKJROctpHZQeJKFIBfX6EnsqvVlJkAHhKU8Pt
-	jTmxE3UkQJfYvnzG/zU77ridHosSLUH2N+udTCaHl74ACXmaRYlzoh7mziFy7iVE
-	uvoB00Z5Ejs4s68tizKGZcMgfmyq/2U0HaCBulYuWc6udmMfRNMjaP+H/90/eZyf
-	zS9GWHzMTOgsFZbsVv7iAHPCDQSkfMf5vWHxuG93Lbnf/FIg2fSkzyt/yBQt21eO
-	AygJ/oDtHAOo5GG1NkA9HMfT/QcybOQ0Iuick33Sk9zu6rd8I8hKf/DNHq6psQY1
-	LrYyXi1omnDVm+0dhi5rWklUrvdVJAu0VS7EXLn0wqlg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=content-type:date:from:message-id
-	:mime-version:subject:to:x-me-proxy:x-me-proxy:x-me-sender
-	:x-me-sender:x-sasl-enc; s=fm3; bh=dPwpbRDK/J4yLsBoGXQ44S3kWOump
-	F1sH4/3LyPpa1A=; b=ocilA//HXa0dkLkHPYOOJFKGymNyQSYICcdHk0yHQ+eSi
-	IRfEm65n0XAxR0rh7hFxvaJ/RjJHAUMfmImtz66H7TsPl5DGU0TjXLFtVS93CVKv
-	lFj+mdjeRBLZ7NTY7mgzmM8JvEsl1pfz+4tiW3oFxh21grTdTrN5KZKe+/nc+zf1
-	LZoLfZWf5E2wd0UydymmABPFdwcxSWguzK8mAjo3s1k96vVZuz0DfhBoAsdKU6nZ
-	zz5UB3VREuyRH+9B00m1uUrxBZDZddNU2aWblnLdsnamxPnFCg2qoDAp8+vFe8t6
-	NDbpfzNfWmKYcn0QgtNj70BZhwHocBqFkOUr2e5Cw==
-X-ME-Sender: <xms:C5BGYRX-7qB21Dw0itc5peDjRlBPBcugALNBdi3Bu16JjVxWp5nYVw>
-    <xme:C5BGYRkpW_fofuh-BiiGX9fTYJtXTKg527rWLimPBS11sM72tpvLkoOQuu9CpzAtW
-    2-8L1OGwOM3IQwuM6Y>
-X-ME-Received: <xmr:C5BGYdZNKcFvkg0pD9I6rRQS42NMhQwtzor75TGI77QH5BV3yxL-VHrCX4jP9YGHGkhzfI9ZqPPd1i4ogxfyymw3eB4Wh_EmUw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvtddrudehledggeegucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttd
-    dvnecuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhu
-    mhhphhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtie
-    ettedtkefggfekvdeujeetkedtheefhffhvdetkeenucevlhhushhtvghrufhiiigvpedt
-    necurfgrrhgrmhepmhgrihhlfhhrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphh
-    hrvgihrdgtohhm
-X-ME-Proxy: <xmx:C5BGYUXUr_SfqLa6k05S88aBG6nJBUEN3JSihOkqojfc3YQOYaXp4w>
-    <xmx:C5BGYbkjc-mP81Yr7vWoZJOShwHKQh-5Lg11sMCrXzXGrBj7YfSeSg>
-    <xmx:C5BGYRcIkbWuL9jccy0tsyki3pHYXCtt6n8EB_7LXbQBNoP4OG5Ovw>
-    <xmx:C5BGYRQGqGhEnN_DakGJoSaHm_slXTsd5eP9HdMAbeDVz3MYRbQlOQ>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA for
- <speakup@linux-speakup.org>; Sat, 18 Sep 2021 21:19:06 -0400 (EDT)
-Date: Sat, 18 Sep 2021 18:19:05 -0700 (PDT)
-From: Chime Hart <chime@hubert-humphrey.com>
+	id 78D02380145; Sat, 18 Sep 2021 23:58:10 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 6EBA8380145
+	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 23:58:09 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [IPv6:2607:fb90:e545:3e1:117e:c01a:1505:f1f3])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id A00432545
+	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 20:58:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+	t=1632023897; bh=3laVp+BZTmKYIFU9lRHoGKZW5PrI6sKm16BzeCshan8=;
+	h=Date:From:To:Subject:References:In-Reply-To:From;
+	b=RoIRzBtasdZrRKpsVkGurSh6FirusSsXBURBCgtIpg2HCBol4YCOoZzDMTLCNvue+
+	 STEjpatgl5DfJZwDbY8EWgKp0gdqDnX/yVFGtOqQRUHn4PBZfL4sqkAQNOkdusa9fk
+	 Q8QlM/NE2NkGUqsNeOXH05EJuKk7TCLazV6Loq3rXhcVE9VOjdZ9krLz8FJHkdwy7V
+	 pBTOHIw6VZYe+vxkdnA1nYD0KUceKkKaVHFozO2ot/JYdvcha0ANqQg2YDhkxfVSFD
+	 umq3BS4VMYg5xWiFj8Tmn53xNFNBSB+nZT187Ae+fCAAiUY4HqtZaGjbeFXE13kDh8
+	 L9FJlyQ0lH7zQ==
+Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
+	(envelope-from <greg@gregn.net>)
+	id 1mRnxk-0003JT-5x
+	for speakup@linux-speakup.org; Sat, 18 Sep 2021 20:57:56 -0700
+Date: Sat, 18 Sep 2021 20:57:56 -0700
+From: Gregory Nowak <greg@gregn.net>
 To: speakup@linux-speakup.org
-Subject: If I am in a ScrollBack Buffer, How do I Get out?
-Message-ID: <5be054a7-8835-17f-caa-7ac78af9c46c@hubert-humphrey.com>
+Subject: loading speakup_soft, was: Re: Broken espeakup on debian sid
+Message-ID: <20210919035755.GA11947@gregn.net>
+References: <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -76,18 +52,46 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+User-Agent: Mutt/1.5.23 (2014-03-12)
+X-Virus-Scanned: clamav-milter 0.102.4 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi All: While I know by rebooting, I can probably solve this, but I would 
-rather fixit in progress.
-I launched vlc-and-it took over a console. In the process many consoles now 
-have an awkward display, certainly not in sync with my current line. Whats even 
-worse the flat-review in Speakup is 1 step behind me. When I was in 
-youtube-viewer, it still thought I was reading a web-site. I've already tried 
-exiting a console, as well as typing "reset" But still at times unless I hear 
-an item live, I have no way of reviewing it. I am in Debian SID with a DecTalk 
-U S B. Can some1 please suggest an easy way of straightening out these 
-displays. My screen is still 180lines-by-240 columns. Thanks so much in advance
-Chime
+On Sat, Sep 18, 2021 at 03:26:02PM -0400, Kirk Reiser wrote:
+> I noticed in the espeakup build systemd
+> services that it loads speakup_soft when the systemd service is
+> started.
+> 
+> I'm not crazy about that being the way to load speakup particularly
+> but I'm not that familiar with various distros way of doing things but
+> it appears the espeakup maintainers figure everyone is running
+> systemd.
+
+No, not everyone is running systemd. I wonder where the espeakup
+maintainers got such a notion from?
+
+> 
+> That's one of the reasons I mentioned getting folks opinions in my
+> last message to you. For people that don't run systemd it will
+> certainly break things.
+
+Great. Something else to look forward to fixing when devuan 5 is
+coming out, sigh. Fortunately, that's a couple of years from now.
+
+Greg
+
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
