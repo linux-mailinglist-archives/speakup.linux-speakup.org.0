@@ -1,48 +1,39 @@
-Return-Path: <speakup+bounces-298-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-299-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D3CCB410999
-	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 05:58:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 4D3B5410A23
+	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 07:40:07 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=RoIRzBta;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=Y03ZCzb5;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5E0E73811EE; Sat, 18 Sep 2021 23:58:16 -0400 (EDT)
+	id BE5D63811E3; Sun, 19 Sep 2021 01:40:06 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 49B4C380B11
-	for <lists+speakup@lfdr.de>; Sat, 18 Sep 2021 23:58:16 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id CA2853812AD
+	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 01:40:05 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 78D02380145; Sat, 18 Sep 2021 23:58:10 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 6EBA8380145
-	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 23:58:09 -0400 (EDT)
-Received: from vbox.gregn.net (unknown [IPv6:2607:fb90:e545:3e1:117e:c01a:1505:f1f3])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id A00432545
-	for <speakup@linux-speakup.org>; Sat, 18 Sep 2021 20:58:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1632023897; bh=3laVp+BZTmKYIFU9lRHoGKZW5PrI6sKm16BzeCshan8=;
-	h=Date:From:To:Subject:References:In-Reply-To:From;
-	b=RoIRzBtasdZrRKpsVkGurSh6FirusSsXBURBCgtIpg2HCBol4YCOoZzDMTLCNvue+
-	 STEjpatgl5DfJZwDbY8EWgKp0gdqDnX/yVFGtOqQRUHn4PBZfL4sqkAQNOkdusa9fk
-	 Q8QlM/NE2NkGUqsNeOXH05EJuKk7TCLazV6Loq3rXhcVE9VOjdZ9krLz8FJHkdwy7V
-	 pBTOHIw6VZYe+vxkdnA1nYD0KUceKkKaVHFozO2ot/JYdvcha0ANqQg2YDhkxfVSFD
-	 umq3BS4VMYg5xWiFj8Tmn53xNFNBSB+nZT187Ae+fCAAiUY4HqtZaGjbeFXE13kDh8
-	 L9FJlyQ0lH7zQ==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
-	(envelope-from <greg@gregn.net>)
-	id 1mRnxk-0003JT-5x
-	for speakup@linux-speakup.org; Sat, 18 Sep 2021 20:57:56 -0700
-Date: Sat, 18 Sep 2021 20:57:56 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: speakup@linux-speakup.org
-Subject: loading speakup_soft, was: Re: Broken espeakup on debian sid
-Message-ID: <20210919035755.GA11947@gregn.net>
-References: <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
+	id AD8F33809AC; Sun, 19 Sep 2021 01:40:03 -0400 (EDT)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5A471380982
+	for <speakup@linux-speakup.org>; Sun, 19 Sep 2021 01:40:03 -0400 (EDT)
+Received: from [192.168.1.37] (men75-h08-176-172-247-100.dsl.sta.abo.bbox.fr [176.172.247.100])
+	by darkstar.slint.fr (Postfix) with ESMTPSA id 30D1FA4226
+	for <speakup@linux-speakup.org>; Sun, 19 Sep 2021 05:39:39 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+	t=1632022779; bh=Zdpq8QH8jgjeKhL1s0PdcUot57XoKvM0cS+ZhirvcT4=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=Y03ZCzb5ITknVuUb/KtF53mPF1e+HDNHCqhjE1D/mLqEKulFOLFpL3+rALI9rJJ8w
+	 FuxHzFDc1thBt9t93EpoCPcmxzy6xqealpEONOUrdgUnEdK1itIKnE+mOj4aGUtf/C
+	 pd5A2kaxkmaM+hO7PzykJ7+QbMo0GAX00A39namsJuA31HuFlGo/WMSJIXAX9hrDL2
+	 fy6GpyGxIqWdxXhBrJZ+2b3pIX/FlUuxpdvf4p3tq550ZlF/sgOO9gcHZGBAMloaxV
+	 tGIuL2nqgNM23FNuFSS651j5heuJ7ys4ueUwe2+5fcC9s4ooDRW1nSy6fqiLEdqWXe
+	 ZDNawiIaipewQ==
+Content-Type: multipart/mixed; boundary="------------0vU4IgpeYp1NCzJkDArGfLYD"
+Message-ID: <14c0aaef-dea9-7b7c-77e3-a1a4edba4c31@slint.fr>
+Date: Sun, 19 Sep 2021 07:39:56 +0200
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -52,17 +43,32 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.1.0
+Subject: Re: Broken espeakup on debian sid
+Content-Language: en-US
+To: speakup@linux-speakup.org
+References: <74614290-2cb8-c5a7-91e9-e639a673464a@reisers.ca>
+ <YUXlLephhiYuV4UA@rednote.net>
+ <50b02165-17e9-2561-ec8-6c35cba66944@reisers.ca>
+ <YUYXLHoSvcMnUYzW@rednote.net>
+ <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
+From: Didier Spaier <didier@slint.fr>
 In-Reply-To: <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.4 at vserver
-X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-On Sat, Sep 18, 2021 at 03:26:02PM -0400, Kirk Reiser wrote:
-> I noticed in the espeakup build systemd
+This is a multi-part message in MIME format.
+--------------0vU4IgpeYp1NCzJkDArGfLYD
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Hi Kirk,
+
+answering inline.
+
+Le 18/09/2021 à 21:26, Kirk Reiser a écrit :
+> Huh, are you running arch on that box as well? I am wondering if
+> speakup is even loaded. I noticed in the espeakup build systemd
 > services that it loads speakup_soft when the systemd service is
 > started.
 > 
@@ -71,27 +77,149 @@ On Sat, Sep 18, 2021 at 03:26:02PM -0400, Kirk Reiser wrote:
 > it appears the espeakup maintainers figure everyone is running
 > systemd.
 
-No, not everyone is running systemd. I wonder where the espeakup
-maintainers got such a notion from?
+To be clear you mean the packagers of most distributions right? there is no
+mention of systemd in the source code, of course.
 
-> 
+As a counter example the daemon manager for Slint is attached.
+
 > That's one of the reasons I mentioned getting folks opinions in my
 > last message to you. For people that don't run systemd it will
 > certainly break things.
 
-Great. Something else to look forward to fixing when devuan 5 is
-coming out, sigh. Fortunately, that's a couple of years from now.
+Cheers,
+Didier
 
-Greg
+--------------0vU4IgpeYp1NCzJkDArGfLYD
+Content-Type: text/plain; charset=UTF-8; name="rc.espeakup"
+Content-Disposition: attachment; filename="rc.espeakup"
+Content-Transfer-Encoding: base64
 
+IyEvYmluL3NoCkVTUEVBS1VQPS91c3IvYmluL2VzcGVha3VwCgojIyMgQ29kZSBzbmlwcGV0
+IGNvbW1vbiB0byByYy5lc3BlYWt1cCBhbmQgcmMtc3BlZWNoZC11cC4gIyMjCmhhcmRsaXN0
+PSQoemdyZXAgU1BFQUtVUF9TIC9wcm9jL2NvbmZpZy5nenxncmVwIFt5bV18Z3JlcCAtdiBE
+VU1NWXwgXApzZWQgJ3MvQ09ORklHX1NQRUFLVVBfU1lOVEhfLy87cy8uLiQvLyd8dHIgJ1s6
+dXBwZXI6XScgJ1s6bG93ZXI6XSd8c2VkIHMvc29mdC8vICkKIyBBIGhhcmR3YXJlIHN5bnRo
+ZXNpemVyIGNhbiBiZSBzZXQgZWl0aGVyIGluIHRoZSBib290IGNvbW1hbmQgbGluZSBvcgoj
+IGluIHRoZSBjb25maWd1cmF0aW9uIGZpbGUgL2V0Yy9zcGVha3VwLmNvbmYuIEluIGJvdGgg
+Y2FzZXMgd2Ugd29uJ3QKIyBzdGFydCBlc3BlYWt1cCBvciBzcGVlY2hkLXVwIHRoYXQgcmVs
+eSBvbiBhIHNvZnQgc3ludGhlc2l6ZXIsIGJ1dCB3ZQojIHJlc3RvcmUgdGhlIHNwZWFrdXAg
+c2V0dGluZ3MuCmlmIGdyZXAgLXEgc3BlYWt1cCAvcHJvYy9jbWRsaW5lOyB0aGVuCglIQVJE
+Q01ETElORT0kKHNlZCAicy8uKnNwZWFrdXAuc3ludGg9XChbWzphbHBoYTpdXVx7MSxcfVwp
+LiovXDEvIiAvcHJvYy9jbWRsaW5lKQpmaQppZiBbIC1mIC9ldGMvc3BlYWt1cC5jb25mIF07
+IHRoZW4KCS4gL2V0Yy9zcGVha3VwLmNvbmYKCUhBUkRDT05GPSRoYXJkCmZpCiMgV2UgZ2l2
+ZSBwcmlvcml0eSB0byB0aGUgc2V0dGluZ3MgaW4gL2V0Yy9lc3BlYWt1cC5jb25mIG92ZXIg
+dGhvc2Ugb24KIyB0aGUgY29tbWFuZCBsaW5lLiAiaGFyZD1ub25lIiBpbiB0aGUgZm9ybWVy
+IGluZGljYXRlcyB0aGF0IHRoZSB1c2VyCiMgY2hvc2Ugbm90IHRvIHVzZSBhIGhhcmQgc3lu
+dGhlc2l6ZXIuIFRoaXMgd2F5IHRoZSB1c2VyIGRvZXMgbm90IG5lZWQgCiMgdG8gZWRpdCB0
+aGUgY29tbWFuZCBsaW5lIHRvIG1vZGlmeSBhIHNldHRpbmcsIGxpa2UgdXNpbmcgYW5vdGhl
+ciBoYXJkCiMgc3ludGhlc2l6ZXIgb3IgdXNlIG9uIGEgc29mdCBzeW50aGVzaXplciBpbnN0
+ZWFkIG9mIGEgaGFyZCBvbmUuCmlmIFsgISAiJEhBUkRDT05GIiA9ICAibm9uZSIgXTsgdGhl
+bgoJaWYgWyAhICIkSEFSRENPTkYiID0gIiIgXTsgdGhlbgoJIyBUaGUgdXNlciByYW4gc3Bl
+YWstd2l0aCBhbmQgY2hvc2UgYSBoYXJkIHN5bnRoCgkJbW9kcHJvYmUgc3BlYWt1cF8kSEFS
+RENPTkYgMj4vZGV2L251bGwKCQllY2hvICRIQVJEQ09ORiA+IC9zeXMvYWNjZXNzaWJpbGl0
+eS9zcGVha3VwL3N5bnRoCgkJWyAteCAvdXNyL3NiaW4vc3BlYWt1cC1yZXN0b3JlIF0gJiYg
+c3BlYWt1cC1yZXN0b3JlCgkJZXhpdAoJZWxpZiBbICEgIiRIQVJEQ01ETElORSIgPSAiIiBd
+ICYmIGdyZXAgLXEgJEhBUkRDTURMSU5FICRoYXJkbGlzdCBdOyB0aGVuCgkJIyBUaGUgdXNl
+ciBoYXMgbm90IHJ1biBzcGVhay13aXRoIHRvIGNob29zZSBhIGhhcmQgc3ludGggYnV0CgkJ
+IyBoYXMgaW5kaWNhdGVkIG9uZSBpbiB0aGUgYm9vdCBjb21tYW5kIGxpbmUKCQltb2Rwcm9i
+ZSBzcGVha3VwXyRIQVJEQ01ETElORSAyPi9kZXYvbnVsbAoJCWVjaG8gJEhBUkRDTURMSU5F
+ID4gL3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAvc3ludGgKCQlbIC14IC91c3Ivc2Jpbi9z
+cGVha3VwLXJlc3RvcmUgXSAmJiBzcGVha3VwLXJlc3RvcmUKCQlleGl0CglmaQpmaQojIFdl
+IGRpZG4ndCBleGl0IHlldCwgc28gd2Ugd2lsbCBtYW5hZ2UgdGhlIGRhZW1vbiBvZiB0aGUg
+c29mdCBzeW50aC4gCiMgbW9kcHJvYmUgd29uJ3QgY29tcGxhaW4gZXZlbiBpZiB0aGUgZHJp
+dmVyIGlzIGJ1aWx0LWluLiBFbHNlIHRoZQojICJlY2hvIiBjb21tYW5kIGlzIG5vdCBuZWNl
+c3NhcnkgYnV0IHdvbid0IGh1cnQuIAptb2Rwcm9iZSBzcGVha3VwX3NvZnQgMj4vZGV2L251
+bGwKZWNobyAic29mdCIgPiAvc3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9zeW50aApzbGVl
+cCAxCgpjaG1vZCA2NjYgL3N5cy9hY2Nlc3NpYmlsaXR5L3NwZWFrdXAvc29mdC8qCmVjaG8g
+MSA+IC9zeXMvYWNjZXNzaWJpbGl0eS9zcGVha3VwL3NvZnQvZGlyZWN0CiMjIyBFbmQgb2Yg
+dGhlIGNvZGUgc25pcHBldCBjb21tb24gdG8gcmMuZXNwZWFrdXAgYW5kIHJjLnNwZWVjaGQt
+dXAgIyMjCgppZiBbICIkTEFORyIgPSAiIiBdOyB0aGVuCi4gL2V0Yy9wcm9maWxlLmQvbGFu
+Zy5zaApmaQoKIyBTdGFydHMvc3RvcHMvcmVzdGFydCBlc3BlYWt1cApzZXRfdm9pY2VfZnJv
+bV9sYW5nICgpIHsKCWxhbmc9YGVjaG8gJExBTkcgfCBzZWQgJ3MvXy4qLy8nYAoJY291bnRy
+eT1gZWNobyAkTEFORyB8IHNlZCAncy8uKl8vLztzL1wuLiovLztzL0AuKi8vJyB8IHRyIEEt
+WiBhLXpgCglpZiBbICIkbGFuZyIgPSBnbCBdOyB0aGVuCgkJIyBOb3Qgc3VwcG9ydGVkIGJ5
+IGVzcGVhay1uZyB5ZXQsIGJ1dCBwdCBzaG91bGQgYmUgZmluZSBlbm91Z2gsIGJldHRlcgoJ
+CSMgdGhhbiBFbmdsaXNoIGFueXdheQoJCSMgQ29tbWVudCBhYm92ZSBmcm9tIERlYmlhbi4g
+V2UgZG9uJ3QgcHJvcG9zZSBndiBpbiBTbGludCB5ZXQsIGJ1dAoJCSMgbWF5YmUgbGF0ZXIg
+PwoJCWxhbmc9cHQKCWZpCgkjIFNldHVwIGEgdGFibGUgbGFuZyA9PiBhc3NvY2lhdGVkIHZv
+aWNlIGZpbGUgbmFtZQoJIyBXZSB3aWxsIHN0YXJ0IGVzcGVha3VwIHdpdGggYSB2b2ljZSBm
+aWxlIG5hbWUgYXMgYXJndW1lbnQgb2YgdGhlCgkjIC1WIG9wdGlvbiwgYXMgaWYgd2UgZ2l2
+ZSBhICAkbGFuZy0kY291bnRyeSBhcmd1bWVudCB0aGF0IGRvZXMKCSMgbm90IG1hdGNoIGEg
+dm9pY2UgZmlsZSBuYW1lIGl0IHNlZ2ZhdWx0IHdoZW4gd2Ugc3dpdGNoIGZyb20gYQoJIyBn
+cmFwaGljYWwgZW52aXJvbm1lbnQgd2l0aCBPcmNhIHJ1bm5pbmcgdG8gYSBjb25zb2xlLgoK
+CVZPSUNFU1RBQkxFPSQoZXNwZWFrLW5nIC0tdm9pY2VzfHNlZCAicztbIF1cezEsXH07LDtn
+InxjdXQgLWQsIC1mMy02fGN1dCAtZCwgLS1jb21wbGVtZW50IC1mMi0zfHNlZCAiczssLiov
+Oyw7IikKCWlmIFsgISAiJChlY2hvICIkVk9JQ0VTVEFCTEUifGdyZXAgIl4kbGFuZy0kY291
+bnRyeSIpIiA9ICIiIF07IHRoZW4KCQlWT0lDRT0kKGVjaG8gIiRWT0lDRVNUQUJMRSJ8Z3Jl
+cCAiXiR7bGFuZ30tJHtjb3VudHJ5fSwifGN1dCAtZCwgLWYyKQoJZWxpZiBbICEgIiQoZWNo
+byAiJFZPSUNFU1RBQkxFInxncmVwICJeJGxhbmcsIikiID0gIiIgXTsgdGhlbgoJCVZPSUNF
+PSIkbGFuZyIKCWVsc2UKCQlWT0lDRT1lbgoJZmkKCWVjaG8gJFZPSUNFID4gL3RtcC92b2lj
+ZV9mcm9tX2xhbmcKfQpzZXRfdm9pY2VfZnJvbV9sYW5nClZPSUNFRlJPTUxBTkc9JChjYXQg
+L3RtcC92b2ljZV9mcm9tX2xhbmcpCnJtIC90bXAvdm9pY2VfZnJvbV9sYW5nCnNldF92b2lj
+ZV9mcm9tX2NvbmZpZyAoKSB7CgkjIFdlIHdpbGwgZmlyc3QgdHJ5IHRvIG1hdGNoIHRoZSB2
+b2ljZSBzZXQgaW4gdGhlIGNvbmZpZyBmaWxlIHdpdGgKCSMgYW4gbWJyb2xhIHZvaWNlLiBJ
+biB0aGF0IGFpbSB3ZSBtYWtlIGEgdGFibGUgb2YgbWJyb2xhIHZvaWNlcyBmaWxlCgkjIG5h
+bWVzIHdpdGggdGhlIGFzc29jaWF0ZWQgbWJyb2xhIHZvaWNlIGluc3RhbGxlZC4gIAoJTUJS
+T0xBVk9JQ0VTPSQoZXNwZWFrLW5nIC0tdm9pY2VzPW1ifHNlZCAicywgLCw7cztbIF1cezEs
+XH07LDtnInxjdXQgLWQsIC1mNXxzZWQgcyxtYi8sLCkKCWZvciBpIGluICQoZWNobyAiJE1C
+Uk9MQVZPSUNFUyJ8c2VkICJzL21iLS8vZztzLy0uKi8vInxzb3J0fHVuaXEpOyBkbwoJCWlm
+IFsgIiQobHMgL3Vzci9zaGFyZS9tYnJvbGF8Z3JlcCAkaSkiID0gIiIgXTsgdGhlbgoJCQlN
+QlJPTEFWT0lDRVM9JChlY2hvICIkTUJST0xBVk9JQ0VTInxncmVwIC12ICRpKQoJCWZpCglk
+b25lCglWT0lDRVNUQUJMRT0kKGVzcGVhay1uZyAtLXZvaWNlc3xzZWQgInM7WyBdXHsxLFx9
+Oyw7ZyJ8Y3V0IC1kLCAtZjMtNnxjdXQgLWQsIC0tY29tcGxlbWVudCAtZjItM3xzZWQgInM7
+LC4qLzssOyIpCglsYW5nPSQoZWNobyAkdm9pY2V8c2VkICJzLy0uKi8vIikKCWlmIFsgISAi
+JChlY2hvICIkTUJST0xBVk9JQ0VTInxncmVwICR2b2ljZSkiID0gIiIgXTsgdGhlbgoJCVZP
+SUNFPSR2b2ljZQoJZWxpZiBbICEgIiQoZWNobyAiJFZPSUNFU1RBQkxFInxncmVwICIke3Zv
+aWNlfSwiKSIgPSAiIiBdOyB0aGVuCgkJVk9JQ0U9JChlY2hvICIkVk9JQ0VTVEFCTEUifGdy
+ZXAgIiR7dm9pY2V9LCJ8Y3V0IC1kLCAtZjIpCgllbGlmIFsgISAiJChlY2hvICIkVk9JQ0VT
+VEFCTEUifGdyZXAgIl4kbGFuZyIpIiA9ICIiIF07IHRoZW4KCQlWT0lDRT0iJGxhbmciCgll
+bHNlCgkJVk9JQ0U9ZW4KCWZpCgllY2hvICRWT0lDRSA+IC90bXAvdm9pY2VfZnJvbV9jb25m
+aWcKfQoKZXNwZWFrdXBfc3RhcnQoKSB7CglbICIkTEFORyIgPSAiIiBdICYmIC4gL2V0Yy9w
+cm9maWxlLmQvbGFuZy5zaAoJaWYgWyAtZiAvZXRjL2VzcGVha3VwLmNvbmYgXTsgdGhlbgoJ
+CS4gL2V0Yy9lc3BlYWt1cC5jb25mCgkJaWYgWyAiJHZvaWNlIiA9ICIiIF07IHRoZW4KCQkJ
+dm9pY2U9JFZPSUNFRlJPTUxBTkcKCQllbHNlCgkJCXNldF92b2ljZV9mcm9tX2NvbmZpZwoJ
+CQlWT0lDRUZST01DT05GSUc9JChjYXQgL3RtcC92b2ljZV9mcm9tX2NvbmZpZykKCQkJcm0g
+L3RtcC92b2ljZV9mcm9tX2NvbmZpZwoJCQl2b2ljZT0kVk9JQ0VGUk9NQ09ORklHCgkJZmkK
+CWZpCglpZiBbICEgImBwcyAtQyBlc3BlYWt1cCAtLW5vaGVhZGVyc3x3YyAtbGAiID0gIjAi
+IF07IHRoZW4KCQllY2hvICJlc3BlYWt1cCBpcyBhbHJlYWR5IHN0YXJ0ZWQuIgoJCWVzcGVh
+a3VwX3N0YXR1cwoJCWV4aXQKCWZpCglpZiBbIC14ICRFU1BFQUtVUCBdOyB0aGVuCgkJQ0FS
+RFM9JChta3RlbXApCgkJZm9yIGkgaW4gL3N5cy9jbGFzcy9zb3VuZC9jYXJkKjsgZG8KCQkJ
+cHJpbnRmICRpfHNlZCAicy8uKmNhcmQvLyI7cHJpbnRmICIgIjtjYXQgJGkvaWQKCQlkb25l
+ID4gJENBUkRTCgkJTlVNQkVST0ZDQVJEUz0kKGZpbmQgL3N5cy9jbGFzcy9zb3VuZCAtbmFt
+ZSAiY2FyZCoifHdjIC1sKQoJCWlmIFsgJE5VTUJFUk9GQ0FSRFMgLWd0IDEgXTsgdGhlbgoJ
+CQllY2hvICIkTlVNQkVST0ZDQVJEUyBzb3VuZCBjYXJkcyBoYXZlIGJlZW4gZm91bmQ6IgoJ
+CQljYXQgJENBUkRTCgkJCWlmIFsgIiRBTFNBX0NBUkQiID0gIiIgXTsgdGhlbgoJCQkJZWNo
+byAiQUxTQV9DQVJEIG5vdCBzZXQgaW4gL2V0Yy9lc3BlYWt1cC5jb25mLCB1c2luZyB0aGUg
+ZGVmYXVsdC4iCgkJCWVsaWYgISBncmVwIC13cSAkQUxTQV9DQVJEICRDQVJEUzsgdGhlbgoJ
+CQkJZWNobyAiQ2FyZCAkQUxTQV9DQVJEIHNldCBpbiAvZXRjL2VzcGVha3VwIG5vdCBmb3Vu
+ZCwgdXNpbmcgdGhlIGRlZmF1bHQuIgoJCQkJQUxTQV9DQVJEPSIiCgkJCWZpCgkJZmkKCQlW
+PSQoZ3JlcCBedm9pY2U9IC9ldGMvZXNwZWFrdXAuY29uZnxzZWQgcy92b2ljZT0vLykKCQlp
+ZiBbICEgIiRWIiA9ICIiIF0gJiYgWyAhICIkViIgPSAiJHZvaWNlIiBdOyB0aGVuCgkJCWVj
+aG8gIlZvaWNlIHNldCB0byAkViBpbiAvZXRjL2VzcGVha3VwLmNvbmYsIHVzaW5nICR2b2lj
+ZSBmb3IgZXNwZWFrdXAuIgoJCWVsaWYgWyAiJFYiID0gIiIgXTsgdGhlbgoJCQllY2hvICJW
+b2ljZSBub3Qgc2V0IGluIC9ldGMvZXNwZWFrdXAuY29uZiwgTEFORz0kTEFORywgdXNpbmcg
+JHZvaWNlIGZvciBlc3BlYWt1cC4iCgkJZmkKCQlpZiBbICIkQUxTQV9DQVJEIiA9ICIiIF07
+IHRoZW4KCQkJZWNobyAiU3RhcnRpbmcgZXNwZWFrdXAgd2l0aCB2b2ljZSAkdm9pY2UiCgkJ
+CSRFU1BFQUtVUCAtViAkdm9pY2UKCQllbHNlCgkJCWVjaG8gIlN0YXJ0aW5nIGVzcGVha3Vw
+IHdpdGggdm9pY2UgJHZvaWNlIHVzaW5nIHNvdW5kIGNhcmQgJEFMU0FfQ0FSRCIKCQkJQUxT
+QV9DQVJEPSRBTFNBX0NBUkQgJEVTUEVBS1VQIC1WICR2b2ljZQoJCWZpCgkgICAgWyAteCAv
+dXNyL3NiaW4vc3BlYWt1cC1yZXN0b3JlIF0gJiYgc3BlYWt1cC1yZXN0b3JlCiAgICAgICAg
+cm0gJENBUkRTCgllbHNlCgkJZWNobyAiJEVTUEVBS1VQIG5vdCBmb3VuZCBvciBub24gZXhl
+Y3V0YWJsZSIKCWZpCn0KCmVzcGVha3VwX3N0b3AoKSB7CiAgTkJQUk9DPSJgcHMgLUMgZXNw
+ZWFrdXAgLS1ub2hlYWRlcnN8d2MgLWxgIgogIGlmIFsgISAiJE5CUFJPQyIgPSAiMCIgXTsg
+dGhlbgogICAgc2xlZXAgMQogICAgUElEPSJgcHMgLUMgZXNwZWFrdXAgLS1ub2hlYWRlcnMg
+LW8gcGlkYCIKICAgIGtpbGwgLXMgOSAkUElECiAgZmkKfQoKZXNwZWFrdXBfcmVzdGFydCgp
+IHsKICAgIGVzcGVha3VwX3N0b3AKICAgIHNsZWVwIDIKICAgIGVzcGVha3VwX3N0YXJ0Cn0K
+CmVzcGVha3VwX3N0YXR1cygpIHsKICBOQlBST0M9ImBwcyAtQyBlc3BlYWt1cCAtLW5vaGVh
+ZGVyc3x3YyAtbGAiCiAgaWYgWyAiJE5CUFJPQyIgPSAiMCIgXTsgdGhlbgogICAgZWNobyAi
+ZXNwZWFrdXAgaXMgbm90IHN0YXJ0ZWQiIAogIGVsaWYgWyAiJE5CUFJPQyIgPSAiMSIgXTsg
+dGhlbgogICAgZWNobyAiQW4gZXNwZWFrdXAgZGFlbW9uIGlzIHJ1bm5pbmcsIFBJRDogYHBz
+IC1DIGVzcGVha3VwIC0tbm8taGVhZGVycyAtbyBwaWRgIgogIGVsc2UKICAgIHBzIC1DIGVz
+cGVha3VwIC1vIHBpZCxhcmdzCiAgZmkKfQoKY2FzZSAiJDEiIGluCiAgICBzdGFydCkKCSAg
+ICBlc3BlYWt1cF9zdGFydDs7CiAgICBzdG9wKQoJCWVzcGVha3VwX3N0b3A7OwogICAgcmVz
+dGFydCkKCQllc3BlYWt1cF9yZXN0YXJ0OzsKICAgIHN0YXR1cykKCQllc3BlYWt1cF9zdGF0
+dXM7OwogICAgKikKICAgICAgICBlY2hvICJVc2FnZTogJDAge3N0YXJ0fHN0b3B8cmVzdGFy
+dHxzdGF0dXN9Ijs7CmVzYWMK
+--------------0vU4IgpeYp1NCzJkDArGfLYD--
 
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
