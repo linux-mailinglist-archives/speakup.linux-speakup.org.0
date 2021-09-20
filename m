@@ -1,54 +1,60 @@
-Return-Path: <speakup+bounces-308-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-309-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id BC257410DC1
-	for <lists+speakup@lfdr.de>; Mon, 20 Sep 2021 01:13:11 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=heomlAqk;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 4FA8F4114E0
+	for <lists+speakup@lfdr.de>; Mon, 20 Sep 2021 14:49:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1632142193;
+	bh=ns/MMM7vPOY+m16QaXOgNFsxCj6O1Oo30L4G6k5TtMo=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=bfLOCI/DfkYSqkkI8Lc/7GP5JBCoDJFrn1RM5jCdfPiLkwI05vG3AM8OTkGgOjog5
+	 yKa6VppNX7yITlMIacDJqNQM8+AsB2dN7gWkbGuquhG6+4Ynan+xe5q5+G9cSReXjd
+	 EjLivgTfXd/3f5UJytshYb0ominDsW85q/IKOfe8=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5BD013811DB; Sun, 19 Sep 2021 19:13:11 -0400 (EDT)
+	id C8ECF3811EF; Mon, 20 Sep 2021 08:49:53 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1632142193;
+	bh=ns/MMM7vPOY+m16QaXOgNFsxCj6O1Oo30L4G6k5TtMo=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=bfLOCI/DfkYSqkkI8Lc/7GP5JBCoDJFrn1RM5jCdfPiLkwI05vG3AM8OTkGgOjog5
+	 yKa6VppNX7yITlMIacDJqNQM8+AsB2dN7gWkbGuquhG6+4Ynan+xe5q5+G9cSReXjd
+	 EjLivgTfXd/3f5UJytshYb0ominDsW85q/IKOfe8=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 48C6138097F
-	for <lists+speakup@lfdr.de>; Sun, 19 Sep 2021 19:13:11 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B6AC7380996
+	for <lists+speakup@lfdr.de>; Mon, 20 Sep 2021 08:49:53 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1632142189;
+	bh=ns/MMM7vPOY+m16QaXOgNFsxCj6O1Oo30L4G6k5TtMo=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=QqdTqTdzyW31OENTnxIwVYm0mCMJb8fQdy78NoQ65yKuIw0E3eaHSJKRgueGkQZjM
+	 xnSltC6GNTYj/7HjlumM7LYEBYgceE7prMWk4n/m0sF73NrjPRZzYPajHRyCaNZqDh
+	 Oq5iQekFp/5P0ZIIjhLoIK3M3ShQlRvSjRyEyls8=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 53711380CF1; Sun, 19 Sep 2021 19:13:05 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 341C938097F
-	for <speakup@linux-speakup.org>; Sun, 19 Sep 2021 19:13:05 -0400 (EDT)
-Received: from vbox.gregn.net (unknown [IPv6:2607:fb90:e545:3e1:90b3:7305:417f:4260])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id C92772617
-	for <speakup@linux-speakup.org>; Sun, 19 Sep 2021 16:13:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1632093196; bh=W01A6bW4A0hFvxULwkRgnQpAJ1gIQ+E1FGi5X7WAhIM=;
-	h=Date:From:To:Subject:References:In-Reply-To:From;
-	b=heomlAqk28sg+OblswO0MY3gXfhE4bKGRZrQ0BgULUbyRqgFqcMCDsCmZt/bUAVvR
-	 7+y5mMwKYycqZLIf6K9VUtk10yPjCSahNJsZy2MSKtqOY4lhcBUw0UuaXpi2JoChVY
-	 RPS25zo4/UabSvUabyzLjjBFfMsN/bXBR6LbwH3gkbj3S7tlcgrNvndlkLSJQNAQbJ
-	 U5qtXUUhgtO5BSNFJ8P/o7uBAk5hbcBq60En0300o9uNotRpq7BRnITZJYVWufmKUj
-	 PjajG2kTqDQ4BIvXoHzDQrXALH5o5YVrBN5hDZk1Taf8p+wJLIO4ygkmOug72sjl9F
-	 GlUpEEZfbB2zw==
-Received: from greg by vbox.gregn.net with local (Exim 4.84_2)
-	(envelope-from <greg@gregn.net>)
-	id 1mS5zT-0001kp-QP
-	for speakup@linux-speakup.org; Sun, 19 Sep 2021 16:12:55 -0700
-Date: Sun, 19 Sep 2021 16:12:55 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: speakup@linux-speakup.org
+	id 32CFA380BD2; Mon, 20 Sep 2021 08:49:49 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1632142187;
+	bh=ns/MMM7vPOY+m16QaXOgNFsxCj6O1Oo30L4G6k5TtMo=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=TPqtILL/zMniCOstmMEnvaThThhiLjOfbY1csGFVnbfGkHWWP90qIYjwhQLP+IFu5
+	 42SFhZ3v1jfQfTPhn96KRU1n9r5gTgp0KR7ucqF4Aq4YbjnWJBwdGqfSDtHhiODkBp
+	 ROIXWAW7KQywtj+OHFT3ywc9YCDMWtf7Tu3jpODk=
+Received: from localhost (localhost [IPv6:::1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 9D0A0380996;
+	Mon, 20 Sep 2021 08:49:47 -0400 (EDT)
+Date: Mon, 20 Sep 2021 08:49:47 -0400 (EDT)
+From: Kirk Reiser <kirk@reisers.ca>
+To: Gregory Nowak <greg@gregn.net>
+cc: speakup@linux-speakup.org
 Subject: Re: Broken espeakup on debian sid
-Message-ID: <20210919231255.GB5961@gregn.net>
-References: <74614290-2cb8-c5a7-91e9-e639a673464a@reisers.ca>
- <YUXlLephhiYuV4UA@rednote.net>
- <50b02165-17e9-2561-ec8-6c35cba66944@reisers.ca>
- <YUYXLHoSvcMnUYzW@rednote.net>
- <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca>
- <14c0aaef-dea9-7b7c-77e3-a1a4edba4c31@slint.fr>
- <6b1e6e66-d12a-3d9e-a3e5-e8d0499177d9@reisers.ca>
+In-Reply-To: <20210919231255.GB5961@gregn.net>
+Message-ID: <852948e5-248d-dbe8-e5cd-602d1bc31827@reisers.ca>
+References: <74614290-2cb8-c5a7-91e9-e639a673464a@reisers.ca> <YUXlLephhiYuV4UA@rednote.net> <50b02165-17e9-2561-ec8-6c35cba66944@reisers.ca> <YUYXLHoSvcMnUYzW@rednote.net> <dd651c4c-1178-8d83-125d-23ad3d2cef88@reisers.ca> <14c0aaef-dea9-7b7c-77e3-a1a4edba4c31@slint.fr>
+ <6b1e6e66-d12a-3d9e-a3e5-e8d0499177d9@reisers.ca> <20210919231255.GB5961@gregn.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -58,36 +64,30 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <6b1e6e66-d12a-3d9e-a3e5-e8d0499177d9@reisers.ca>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-User-Agent: Mutt/1.5.23 (2014-03-12)
-X-Virus-Scanned: clamav-milter 0.102.4 at vserver
-X-Virus-Status: Clean
+Content-Type: text/plain; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-On Sun, Sep 19, 2021 at 10:09:31AM -0400, Kirk Reiser wrote:
-> It also seems to me that we have two different situations wrt distros,
-> general communities like debian, ubuntu, arch etc and those that are
-> specially put together for the blind community like debuan, slint and
-> others I don't remember there names of anymore.
+Yeah, I apologize for getting the spelling wrong and it seems missing
+the names on both projects I mentioned. I still can't remember the
+names of the other specialty blind projects.
 
-I assume you meant devuan instead of debuan. While accessibility is
-one of devuan's goals, devuan isn't especially put together for the
-blind community. The majority of devuan's user base seem to be
-sighted.
+I'll blame it on old-age, yep, that has to be it. 'sheepish grin' On
 
-Greg
+Sun, 19 Sep 2021, Gregory Nowak wrote:
 
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+> On Sun, Sep 19, 2021 at 10:09:31AM -0400, Kirk Reiser wrote:
+>> It also seems to me that we have two different situations wrt distros,
+>> general communities like debian, ubuntu, arch etc and those that are
+>> specially put together for the blind community like debuan, slint and
+>> others I don't remember there names of anymore.
+>
+> I assume you meant devuan instead of debuan. While accessibility is
+> one of devuan's goals, devuan isn't especially put together for the
+> blind community. The majority of devuan's user base seem to be
+> sighted.
+>
+> Greg
+>
+>
+>
 
