@@ -1,78 +1,76 @@
-Return-Path: <speakup+bounces-311-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-312-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D2B90414B26
-	for <lists+speakup@lfdr.de>; Wed, 22 Sep 2021 15:54:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D356441DC57
+	for <lists+speakup@lfdr.de>; Thu, 30 Sep 2021 16:32:14 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=uwprod.onmicrosoft.com header.i=@uwprod.onmicrosoft.com header.a=rsa-sha256 header.s=selector2-uwprod-onmicrosoft-com header.b=DCTIbuUi;
+	dkim=pass (1024-bit key; unprotected) header.d=uwprod.onmicrosoft.com header.i=@uwprod.onmicrosoft.com header.a=rsa-sha256 header.s=selector2-uwprod-onmicrosoft-com header.b=p2S6BVhQ;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D2E433811B7; Wed, 22 Sep 2021 09:54:11 -0400 (EDT)
+	id 7F9E73811F1; Thu, 30 Sep 2021 10:32:13 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B09F43811AA
-	for <lists+speakup@lfdr.de>; Wed, 22 Sep 2021 09:54:11 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5E43B3811D6
+	for <lists+speakup@lfdr.de>; Thu, 30 Sep 2021 10:32:13 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9D2BE38097F; Wed, 22 Sep 2021 09:54:05 -0400 (EDT)
-Received: from wmauth1.doit.wisc.edu (wmauth1.doit.wisc.edu [144.92.197.141])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 885DF380849
-	for <speakup@linux-speakup.org>; Wed, 22 Sep 2021 09:54:04 -0400 (EDT)
-Received: from NAM04-BN8-obe.outbound.protection.outlook.com
- (mail-bn8nam08lp2043.outbound.protection.outlook.com [104.47.74.43])
- by smtpauth1.wiscmail.wisc.edu
+	id F1DFB380C06; Thu, 30 Sep 2021 10:32:06 -0400 (EDT)
+Received: from wmauth3.doit.wisc.edu (wmauth3.doit.wisc.edu [144.92.197.226])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 057D538097B
+	for <speakup@linux-speakup.org>; Thu, 30 Sep 2021 10:32:06 -0400 (EDT)
+Received: from NAM10-DM6-obe.outbound.protection.outlook.com
+ (mail-dm6nam10lp2103.outbound.protection.outlook.com [104.47.58.103])
+ by smtpauth3.wiscmail.wisc.edu
  (Oracle Communications Messaging Server 8.1.0.8.20210105 64bit (built Jan  5
- 2021)) with ESMTPS id <0QZU006779A23H80@smtpauth1.wiscmail.wisc.edu> for
- speakup@linux-speakup.org; Wed, 22 Sep 2021 08:54:02 -0500 (CDT)
-X-Spam-Report: AuthenticatedSender=yes, SenderIP=[104.47.74.43]
+ 2021)) with ESMTPS id <0R090061P4DDEB70@smtpauth3.wiscmail.wisc.edu> for
+ speakup@linux-speakup.org; Thu, 30 Sep 2021 09:32:02 -0500 (CDT)
+X-Spam-Report: AuthenticatedSender=yes, SenderIP=[104.47.58.103]
 X-Wisc-Env-From-B64: amhlaW1AbWF0aC53aXNjLmVkdQ==
-X-Spam-PmxInfo: Server=avs-1, Version=6.4.9.2830568,
- Antispam-Engine: 2.7.2.2107409, Antispam-Data: 2021.9.22.134516,
- AntiVirus-Engine: 5.86.0, AntiVirus-Data: 2021.9.21.5860000,
- SenderIP=[104.47.74.43]
+X-Spam-PmxInfo: Server=avs-3, Version=6.4.9.2830568,
+ Antispam-Engine: 2.7.2.2107409, Antispam-Data: 2021.9.30.142116,
+ AntiVirus-Engine: 5.86.0, AntiVirus-Data: 2021.9.23.5860000,
+ SenderIP=[104.47.58.103]
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GyGSwSmrKJvYMivDhCgPpu6YlQxNAyeQYuhzi4AUrdF4UaCtZcXUnY5PAF0WK+gRjFUHtUxTyuqmeXiDdu4pQBGZQCNYKf0jLr1AjVaDcZc6TLlZH5xsN23DHpNWPu+cvQiovSPjGEzIcF+saV9AJh6nmMj+JujO5spLKPAAwVTYO5y+WcPYKUoPyE8VcE1dg3ZHOTleglEgWo6PD+R3dyKd51MRlc8ONRVDH19IPpFdOZlAyv+GfpGoWILecG6Zv1ZEoO2oXhqvw5SV090f9qHsscuXQXpEozNnHTebgYEaW0GHHl374UlOtcCursQqd+tqAKdM4vTuoi41dpLo2g==
+ b=bnvHjHEIAQPMFvGIfTW59puWYD/m9ScOH21Oep0Dma50l56Pm4/iYyiFGPmeowtEFr5T9HsSe5AokPDwgNsh7j65SFhswtt2RFT4TQtzDH4KMeGuJEw+cTWPwuc8jLbCg0aOUPjAWVpfSGtKxfgulXVgAXAqtDGi3McqaAfH8qf8PfioOLN4unpQwAjb3m3IdM+MFsGC6unjL3Nnkik2GKUI3juQwqMx3/kKfRNbvM2P0eSgiP9bNX7Fv2MhN/OHlPicapdtEKrkdtdgPoN2aNhVixqCeBghFtcA8pkQzrrEwuh3LggpVfwyKRcNQXwRMY7nfKrm4VMaOKqo26ugWw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version;
- bh=W2ums0/A8ymsjyhwSybsbASGINIb+EDC1zqDZZjwNU0=;
- b=f/obhla8ROPVxG0kCn4++V62EbT2+SZJJKJwmhJYOJaayzW9Dj5UBcm6SXlf9vVx4uoLkgsX/neTH2psllpcnu4QNM5ps7PbcQTDZZQBZVH1ciYdGFC+InuKxboWCmDQ7IbhdzB55b8uMYox7u2lNc8sdOkjX5j/BXxfIRCtaTY2oQMb7kL1qmlMB2EdCb6aaJylGt/y9bp+6WZco233OnknCkRKEeEXy9w1DbkAZpPtmwUVv/dbkxY0DgNB0K1jBe4SwX6gyqsvR4crgDMl7rx6W7bjAkjoAm8Py3Xnyg+xeuJ9QzDanTiPB6R7UmKTewXlXD2DiL3u3Qe5nyrnpQ==
+ bh=Z2yM6jeDGtjtVsrNE8iVZ588hEE5LUlWff0ci6GXUVE=;
+ b=ThmhDeu9u7bIx3gA+wRHmZm1+IXk9nta+0mdy4BUURJd4wdhOPDyr2Kubc8iIn1j3kS0JxCAfo6jVVgl/asOYopksTR4/iXAHnOh9vimuzVIVdftr2QXM4ztDzFjJz6hjGtdxVYMIYcMEMoEgJLWaYZMLY/Whdswspv1T1BSoqV1CnNVJAFcxIKoZodWIICq0rY9r4bYpRKc4W+pKDpC6/0ApxtdoHKastCf//MEiK9atk7Il6Myo3KRqbWVxbbiNwoyH8/ae1xY1kGwhsmSNjQt5EBZqpQg5SZgz7wzr2SII9/AuQtpfKWqt+GlKnL2gtceCiiXN8UojKzYcojL4Q==
 ARC-Authentication-results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=math.wisc.edu; dmarc=pass action=none header.from=math.wisc.edu;
  dkim=pass header.d=math.wisc.edu; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=uwprod.onmicrosoft.com;
  s=selector2-uwprod-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=W2ums0/A8ymsjyhwSybsbASGINIb+EDC1zqDZZjwNU0=;
- b=DCTIbuUitmzuE2EQFqy5ZQEmcKqrmCUhscdcyFNEqKN/sVRPaq8xjBvq5YPm8BUjprwd1b7mXImIvuKl5D78TqAFy3tIN7P7AjZKmQCdljqTSqRC2edTRsXE/4iajxsoPSs7zkyHjgvaGuW24lWUqQL7/FknzzC0p2AccpxumR4=
+ bh=Z2yM6jeDGtjtVsrNE8iVZ588hEE5LUlWff0ci6GXUVE=;
+ b=p2S6BVhQd4KVtJtJSmopAj6NJkXP7jSOqscxSQmJOBLVxCmig3OtcNdFW4nueSRKTPgwh8GoI73Zab3WPkaw2WdWpQ4BO+83myJrsoIQXJs4QO+iS1erhgLtfdgmgi85ALGXQCa0mVzR4Fyq+xtspi5PjC7nDWUBLV3P9APj7XE=
 Received: from SN6PR06MB4991.namprd06.prod.outlook.com (2603:10b6:805:c1::12)
- by SN4PR0601MB3741.namprd06.prod.outlook.com (2603:10b6:803:44::29)
+ by SN6PR06MB4110.namprd06.prod.outlook.com (2603:10b6:805:1d::18)
  with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384)
- id 15.20.4523.14; Wed, 22 Sep 2021 13:54:01 +0000
+ id 15.20.4566.14; Thu, 30 Sep 2021 14:32:01 +0000
 Received: from SN6PR06MB4991.namprd06.prod.outlook.com
  ([fe80::4c4d:3ec0:dcd5:d586]) by SN6PR06MB4991.namprd06.prod.outlook.com
- ([fe80::4c4d:3ec0:dcd5:d586%7]) with mapi id 15.20.4523.020; Wed,
- 22 Sep 2021 13:54:02 +0000
+ ([fe80::4c4d:3ec0:dcd5:d586%7]) with mapi id 15.20.4523.020; Thu,
+ 30 Sep 2021 14:32:01 +0000
 Subject: Fwd: [Bug 1942459] Re: Speakup modules not included in Hirsute kernel
-References:
- <163231190197.15715.14276903534961016706.launchpad@gac.canonical.com>
+References: <163275083666.11577.7456276389244995730.malone@gac.canonical.com>
 To: speakup@linux-speakup.org
 From: "John G. Heim" <jheim@math.wisc.edu>
 Organization: University Of Wisconsin-Madison
 X-Forwarded-Message-ID:
- <163231190197.15715.14276903534961016706.launchpad@gac.canonical.com>
-Message-id: <c3f266b0-f27c-2310-1877-7242dcd68830@math.wisc.edu>
-Date: Wed, 22 Sep 2021 08:53:59 -0500
+ <163275083666.11577.7456276389244995730.malone@gac.canonical.com>
+Message-id: <f9621a6a-345a-bc89-662a-d1da1353ff4f@math.wisc.edu>
+Date: Thu, 30 Sep 2021 09:31:58 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101
  Thunderbird/78.13.0
-In-reply-to:
- <163231190197.15715.14276903534961016706.launchpad@gac.canonical.com>
+In-reply-to: <163275083666.11577.7456276389244995730.malone@gac.canonical.com>
 Content-type: text/plain; charset=utf-8; format=flowed
 Content-language: en-US
 Content-transfer-encoding: 8bit
-X-ClientProxiedBy: CH0PR03CA0027.namprd03.prod.outlook.com
- (2603:10b6:610:b0::32) To SN6PR06MB4991.namprd06.prod.outlook.com
+X-ClientProxiedBy: CH0PR03CA0028.namprd03.prod.outlook.com
+ (2603:10b6:610:b0::33) To SN6PR06MB4991.namprd06.prod.outlook.com
  (2603:10b6:805:c1::12)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -84,81 +82,110 @@ List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-version: 1.0
 Received: from [192.168.0.14] (108.85.191.186)
- by CH0PR03CA0027.namprd03.prod.outlook.com (2603:10b6:610:b0::32)
+ by CH0PR03CA0028.namprd03.prod.outlook.com (2603:10b6:610:b0::33)
  with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384)
- id 15.20.4544.15 via Frontend Transport; Wed, 22 Sep 2021 13:54:01 +0000
+ id 15.20.4566.13 via Frontend Transport; Thu, 30 Sep 2021 14:32:00 +0000
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: fbd5c60a-cfff-47c9-9dc2-08d97dd06efd
-X-MS-TrafficTypeDiagnostic: SN4PR0601MB3741:
+X-MS-Office365-Filtering-Correlation-Id: 80bb3ef0-2359-483b-43e1-08d9841f107e
+X-MS-TrafficTypeDiagnostic: SN6PR06MB4110:
 X-Microsoft-Antispam-PRVS:
- <SN4PR0601MB3741C5B9CC061EEA31970F44F3A29@SN4PR0601MB3741.namprd06.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8273;
+ <SN6PR06MB41106DC22C9BCCFB9F9656A5F3AA9@SN6PR06MB4110.namprd06.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
 X-Microsoft-Antispam-Message-Info:
- nT9Nl1R0HQZ1rGNpWkF7ejwDXWtPgjMzmD4DqckDCXHwk+CGSr36SNnJ42DNUSAZ2/d9mMvZpOWfnU7WMmHG71dmGmVyf/gr7B8uziex0Er78/YfWPpURyTRPtiqb0/79PNHGh27ruN7Uz+/Y/6Fp99/Yze1B5JkRGCOt7NB4z5gezS2ImdpcNxcrYlKEOW6BGezOiZqKS42OjDGoGR3kWUHndLsXIqGMhWl3oRJXv7W9lp2lrK5e+iILFpPQcqq32Bn5Azfz60g2IEEfwdOu033eM8akrHcZNKV8p6Lb2oOn9WD7HXzZC0nx1c+L1mSsqzHXZXf2N2VXYyS9u8SZpW9JZjciWRrzhAdMohUi/iQf7h193dZY/gc5pACy7oHO9t3O8oFwx7qH5JQkfX2ZI9PWYWCcOIduI1A44GQ7bMJuvmDQQOhv++XJldUTTi4NuS4nJKHwBul9uAoZOaR9CrwZ09piNxzVDBiwu7zJMUWhsZlGY2HJGH27Mmv/SEduzQAttfr2lyorpYJK8BBcJhe0f2cVkbjPh9PAAJ21O0LK8M+w3IT8xuQ7c4cih9+PWZ/zDD7owuW01Y6YEjgoAquEtHFS2RmI+WPSg5dZ2P/zT70WmQiWXm3LXS0HwRu9ZOvvh84P8/yOkUXdS4UNRwyBFWij9oYDG9nIAPrY0M4A0A02vGQsBVFB4fScQF9pyIj1cOtSG5Vi6koKstj178VEUOuXcuPAYkUikRGI9Oojg2T/D4hKe/X+C1qdlz+jpHmXkRLnt9LmUDmwWvvIRyISiuW7JfTzGqZxgtNrfrlUzK91S4IgYIBqqGMtTrk
+ Y3Nhyku3auSF8lxlG9MIpVZYeSzMqaoqomQldxA7hfGa6kNM3mtn03rzb2a6OoxDTj8RPrgNFkem8U3ylIBxGNmI+tD7Cpot9op9vv3cjevxxXKJBzKUDqbINan4YXYJH/NBF9ljgX1ZKXLPfGQZ0/4wf2HIxGbvbNxvCYG0KxVgixC+EjaQ9LQa449ReOWhP7xQoyfRADePbB5JEKcErOLOamriktuCLXsDKsaK/TLUhDgC+9P/jdLknbc1vUR7JM1zf9oT6NVt+zaUKX2g+Q8WoWeZHv3aJbuRTYLHTe6xhC7XgeGuZmYgxND+8HFQu9j+FKUqjJ+ScE3IVAfeM0SPE1Ya6SSzZ/0E8wT3PdUGM2gCwNUDgHPMrUU2gX/MANoo5TxsTFf487mTIJRuMLYY+wuUXvm4ToLns2CHy+EAg2t77769SQhuSNd8g+RDkMYB4Zke3KySJ+Cj9TftZDbjJQqbwY/IW2i17Aytj0E5L3nO3UXO7E3cdhMrE9hbnIuT4RTxTGVmvnzr+Ig5JDRCf5H1nRSBuhZrxiJpgj5NCBtcimLa4X/eC/NKksqNM1jGoaekVyxPo7cf3QxIZPd7TSCU8dG6UidZlhMFhl2tFy+leOT9Z3Sz7nti85R5RizlRwAMYDomkppXrpgxjnaU6JhQUB2gN0yfwfTOz7lNRtRJeDX9xjzBLmkPcJb/ZE9CQcppl2HL4Ft6eq7ijihFWJtPxDFoUR8GeYiQyDA0L6JsWDIiW73ysWoEOgua1R9MGECKh5VQj/qibhH/8gXncGBkmIn6IKnBuqdslGJfc3sntaI03sur3ce22EtG
 X-Forefront-Antispam-Report:
- CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SN6PR06MB4991.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(366004)(6486002)(16576012)(83380400001)(508600001)(5660300002)(2616005)(31686004)(66556008)(8936002)(6916009)(186003)(26005)(66946007)(66476007)(36916002)(31696002)(966005)(38100700002)(2906002)(8676002)(86362001)(316002)(956004)(75432002)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SN6PR06MB4991.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(366004)(16576012)(83380400001)(966005)(5660300002)(508600001)(31686004)(6916009)(2616005)(2906002)(956004)(66556008)(66476007)(186003)(31696002)(66946007)(26005)(36916002)(8676002)(6486002)(86362001)(8936002)(75432002)(38100700002)(316002)(45980500001)(43740500002);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
 X-MS-Exchange-AntiSpam-MessageData-0:
- =?utf-8?B?V1pNaTN1N2tCSUJQampLaExUSmg2aStIZEowejhJQkdwM0QrbFV4N2Q2M0g2?=
- =?utf-8?B?dFYzUDR2d3NWa21aWlhRTnh0Z1hNbkdQY1dYdVhPWFZsSHBEaGNkb2JUOUUx?=
- =?utf-8?B?UENpSkU3dWZVbE5vWlZJNlR0RG9va1V2aXFzTjYwdUR3NWUyd1ZDMzZpc0dJ?=
- =?utf-8?B?Yk1jR0IxRVhvTVpVUmYxeTFHV3VGRU43Y1I2WXZTQTVsY2JuaXgyVGFuVnND?=
- =?utf-8?B?YXhILzRMRVd6bGNMYmU0eEY2SlFhMG9JM25ycHN6dXhZRjBHenBSK0daOEJ5?=
- =?utf-8?B?VFdaYnJLRDE2RzZYWGc4Vm11eUhwOElQMlZHcEl1d2JCUVZJK3lkZVFxNmdF?=
- =?utf-8?B?RmdtdldPUWhXZmYxMHZNSjFmNHR1UlZSbU05aFVuRmNIeGx3UUNCMlBHYVpI?=
- =?utf-8?B?bzBaY2RmN0JFTXM4bFBIN3VtWlJEWlB3N3RrMlJROWVMSHIvdjFoQjRDR0Ft?=
- =?utf-8?B?WlFEbmRLTEN5Q0tSNjE1NDNMaGZKNVl0bDlOd1Vtb2tKaWJqSzFjQUQ2RmtM?=
- =?utf-8?B?WUNzYXRqSEVUN3M2U1Q1V3dGN1BXY2VqLzF1R3BRZnJ2bVAvQVlldXE2Smps?=
- =?utf-8?B?VDE4Sk9TWFZyKzdMMU5ScEJHR0oyUnRFc2tDSHlQKzNPTUhjUDgxU1B0ZXlt?=
- =?utf-8?B?NGo0NzN3bzVuM3NvclJ3YXNrS0djaE5hYlhZelgwc3ZVTGcvTUVaSlhNT1dz?=
- =?utf-8?B?TndUT0JrbGFDci9vN09iNHVaL0JhMm5sN3JEaXpsMVZybGRjSDVDcHN1WXJN?=
- =?utf-8?B?L3NpcWxVSHl4bUJJb1l6R2s5U0xvMGFSREI5cUk3cDBxSVdybHp2TXhmRGVz?=
- =?utf-8?B?VFgvZUtjcWFpTVl2anhZdjBSUHBmWWp2ejFVVDgrbVRqYkdFdFJLWWlzaEtS?=
- =?utf-8?B?MjV3WnlNcjNXVVA4VHlRamdOdWw4MEJwZjAvSG9uUFhMZG1rWk1QSzlzVXE3?=
- =?utf-8?B?WWhJLzl2enpQQUx6R3U4ekJLL0lETVFiUytJOEJNOHRLaG9Sc09ON0pTU1NF?=
- =?utf-8?B?d05adDV2ZktUR3poMDg1UmxrNVJyMWdoNkN0cFg0dFdkVWZXNDJyalhBakov?=
- =?utf-8?B?aU52Z01NNzRuTkZTNkRvUlk1RFdMTDZhUFhOM2lpZW5LS2lRVWZkM2lGUlVJ?=
- =?utf-8?B?RTFELzFEdWtEUERTd3UxM3BhMzZlOXJOY1g2UFk4OURGSy9ZdU9VVXFRZVE1?=
- =?utf-8?B?SzVMZkRTVGdoUkpRTFp2YnF1NUdEbHFGYXIwRGo1aVJRa0R2VzhxaEx5L3Q5?=
- =?utf-8?B?MHFvanNlYVNFaHZ4cUJ5YlpFQ0xUNTJDN01kWERCa3BSZlFxb1I5TVdHUzhQ?=
- =?utf-8?B?bXp5anpuQXBnR09iN3h4SVJac0ZSaDRINXp2Zk4vY2hmVE5GTGg4NnM1a3Vh?=
- =?utf-8?B?ZzU2V3B6RWJ6VEczR21HaE5acTNVYXhlYUFMN1h0UTVFcXEwU2tnekRoUVRG?=
- =?utf-8?B?TnZaaXRNa2tYVmpkRU9heWtiNStKOFFrZ2ZjeU82d3Q3ZzhFaUVjMm1xT1Mr?=
- =?utf-8?B?bUg1MHRJb3RRMVJHbEZLOE44K2hVSVB5VnFBUHJyQjhqV0U1RUk0akhyS0hP?=
- =?utf-8?B?YmszeTZkQzVycUlEMWIxcmZUVllTZHlvdWhsN0dNc2pVWDZrUFVna0V0WjZR?=
- =?utf-8?B?ZERUVXllSnRuYW1iY0VNLzBaMmkvZWFIKzEyQzgwR2NPczFwSFFiSlJJTXlh?=
- =?utf-8?B?TzVBVHlacVJSR3llOFhxMmhNdUdnQ21qTUUrNjVYNW1JRUFqZ05zUThWK0NK?=
- =?utf-8?Q?dU3Ggdx+qc2/Uh36NDeuYoyLJUsGiqA5krJFwSi?=
+ =?utf-8?B?cDZzSGZSSmlTaThSRU8rMXoxSWlISURxUzNtR1RoU3B3SDlSeHR2SjBoN3pi?=
+ =?utf-8?B?dmdDNzlteFphc1BTS1NienhYUzVPS1kyTTlPMVFXcUpoa3FaSU5uV0JYaldu?=
+ =?utf-8?B?cFF0SlVXamV6R0xJdUlvN3IwYjBoQk9aTnFWRFFvWU4vRG4xdSs0OHR5OG5k?=
+ =?utf-8?B?U3RyZzY4NWFSSXJVM1FNR2lsRUt5dWg5RTd6MlVHVURUOFJJem0yZ0FXZGlW?=
+ =?utf-8?B?V0JzTS9PWVAzeGNCYWpmNUZVaFlsZS9GZWtyeXRzTU5ZRHg0YlZMaExKbkpw?=
+ =?utf-8?B?N0tTUDVVd0Rsd0kzN1hlY3VzK0NOTjZJM0cvcFFGajlDZG5yNHBOa2Uxc3Jr?=
+ =?utf-8?B?QUVwbEdCRnZrSkNxV01FdW5OVnhwZEplSCtxc1huNW1PVVRvZnlDRXpjSExm?=
+ =?utf-8?B?d1VYcjVLc3FaeUFvekZvQTdCMjRtUU5FUFJsVjZMUlEyaWxKQW1BaTZZTXht?=
+ =?utf-8?B?TDlFOUlQOWw5eWFJL0JMd011ZU1tY3kyKzRQWVVsZmd3aXpjOXRSaVpBY2No?=
+ =?utf-8?B?cXpwRzVJWnlBWHNNQUo3YVdPR1YyTEUxN05VbFUybXdERzd4YkJlczhFRWtw?=
+ =?utf-8?B?TjFiRnBqMExWNzhyczV5VnZVWERIR3J6bnQ0TC9MZ2dNdXdKQW14SEhKeFBS?=
+ =?utf-8?B?WDdjOEVrTDB4MDFBSGp6TmJPTXJsMEhNTmtyOFZuR3NEd0xnYm9KZ1U5WlZ4?=
+ =?utf-8?B?dGRUL0VnS0ZGV3F5c05qQUpyY2o0c1o1M2E1ckwyd3RDUWVTSDlaalppQTB3?=
+ =?utf-8?B?ZHB3TUxXSUhBQnlISlZNYXFaRVVYbUhhVVlLVnl0RTNHd05xMnBjL293bFhr?=
+ =?utf-8?B?OS9jYmRLYlJYRnUyUTZ0aG5Tb3R4UE5UYlZ5UEtrZ3Y1YlNyajRVRkljS1Ir?=
+ =?utf-8?B?K254WklzR2Q4SDZWQ1l6QUI4Z1ZaRHlPL1AyRDFVSFp2MUh0cy90WGtqbE5B?=
+ =?utf-8?B?RVNSRzFiT3liSWVZSFM3VElvS0d0cXdFbFNlR1NQaFc2Y1J6QjV5NFJLbHBJ?=
+ =?utf-8?B?RFBQK3RCZjlPeHJUUVdtcXVvbkNJaE9VdWh6M2RyYTVWejluQWUrUXAzazhx?=
+ =?utf-8?B?Q2Z3aHJJWllZbTZGVXhDUGVodHRJa2lNcnBvbkNCd215eExOa2szS05RbWk4?=
+ =?utf-8?B?YXZYYzJHL1RXNGNFR1JIS0FaSW1ZcWRCN0xmbUhVdEZzNytlOEtxckhtTU1T?=
+ =?utf-8?B?Y2p6MENFSldmWFdDWWhVTmpaWURzYXVoUi9LQUJsa2NKeTB6L1VQS2RINStF?=
+ =?utf-8?B?c1hySUEyV0tBajIyRzR2ZlBHQUJBa2lwTjU0M2Y5RnpjZjJPOUZzd0R3QXZ4?=
+ =?utf-8?B?Q2kyQjdzTEE0Z0dHWm9uaXhvd2FzQ3IxRHBwcVpuZnZ4MHpEK0hVb3VIYVJC?=
+ =?utf-8?B?S01kZzczcS96enpBUmFhUFB2OG9qeGIyV1BENkJYM0FLVXpjRThUK2lCYTlF?=
+ =?utf-8?B?Uk02N2J4R0t6ODhEQlRUY1o1L2IxQkdqME1nVWtUdmJUc0NuTHVDS01pTHgz?=
+ =?utf-8?B?WmJidUJPbHJqOXk2K2tFVjI3VVNJNHhCTEphMWVXSk9Yb3oxSGpOd0hKU25h?=
+ =?utf-8?B?YVN0K2w3MXdPVkpwOURDaUcxb053eGpGUmd0aXdjazhqVGNuYjFUS2EvZEdu?=
+ =?utf-8?B?a2gyMHd2a3pUc0xnU1dPbllCU2pLOUdKMitPU3BoMDRXbU1wUVhLWUk2QW9M?=
+ =?utf-8?B?MmpkcGNPaGFOTHVHcEM2S2YrKzB2a29GUndLY1lRMHhLWlNXWGFSaDJ0bWwx?=
+ =?utf-8?Q?v+VGhRo3kDKuOROUOjHuQXsR012jwh01Wa//9AL?=
 X-OriginatorOrg: math.wisc.edu
 X-MS-Exchange-CrossTenant-Network-Message-Id:
- fbd5c60a-cfff-47c9-9dc2-08d97dd06efd
+ 80bb3ef0-2359-483b-43e1-08d9841f107e
 X-MS-Exchange-CrossTenant-AuthSource: SN6PR06MB4991.namprd06.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Sep 2021 13:54:01.9669 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 30 Sep 2021 14:32:00.8956 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 2ca68321-0eda-4908-88b2-424a8cb4b0f9
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
 X-MS-Exchange-CrossTenant-UserPrincipalName:
- 7N6QftWEPFyoCchSo5fPONSTNsQKEFT77NpnxrkKeaFwSH7NIDQYyr5W3WDf98q0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN4PR0601MB3741
+ T97cyCxkDi2Hj8j1g/sXHUxy5hOSNeaqw8L5T7+aKtmVHDmml+/yjcOH/v4bDHTO
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR06MB4110
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Alright! Light at the end of the tunnel!
+Okay, it looks like the speakup modules are back in the Ubuntu kernel. I 
+installed the 5.11.0-38 kernel and got speech via my doubleTalk. I 
+marked this bug as verification-done-hirsute, as directed by ubuntu in 
+the message below. So, most likely, next time you update your kernel in 
+Ubuntu STS, 21.04/hirsute, it will have speakup modules again.
+
+If you can't wayt, you can enable the proposed Ubuntu archive and then 
+do this:
+apt-get -y install linux-image-5.11.0-38-generic 
+linux-modules-extra-5.11.0-38-generic linux-headers-5.11.0-38-generic
+
+PS: There is a link in the message below for instructions on enabling 
+the proposed archive.
+
+
+
+
 
 
 -------- Forwarded Message --------
 Subject: [Bug 1942459] Re: Speakup modules not included in Hirsute kernel
-Date: Wed, 22 Sep 2021 11:58:21 +0000
-From: Stefan Bader <1942459@bugs.launchpad.net>
+Date: Mon, 27 Sep 2021 13:53:56 +0000
+From: Ubuntu Kernel Bot <1942459@bugs.launchpad.net>
 Reply-To: Bug 1942459 <1942459@bugs.launchpad.net>
 To: jheim@math.wisc.edu
 
-** Changed in: linux (Ubuntu Hirsute)
-        Status: In Progress => Fix Committed
+This bug is awaiting verification that the linux/5.11.0-38.42 kernel in
+-proposed solves the problem. Please test the kernel and update this bug
+with the results. If the problem is solved, change the tag
+'verification-needed-hirsute' to 'verification-done-hirsute'. If the
+problem still exists, change the tag 'verification-needed-hirsute' to
+'verification-failed-hirsute'.
+
+If verification is not done by 5 working days from today, this fix will
+be dropped from the source code, and this bug will be closed.
+
+See https://wiki.ubuntu.com/Testing/EnableProposed for documentation how
+to enable and use -proposed. Thank you!
+
+
+** Tags added: verification-needed-hirsute
 
 -- 
 You received this bug notification because you are subscribed to the bug
