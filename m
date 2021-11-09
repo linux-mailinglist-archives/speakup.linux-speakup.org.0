@@ -1,46 +1,47 @@
-Return-Path: <speakup+bounces-322-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-323-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8C0C742FDD1
-	for <lists+speakup@lfdr.de>; Sat, 16 Oct 2021 00:06:58 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=XMJ/P568;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 6871544B660
+	for <lists+speakup@lfdr.de>; Tue,  9 Nov 2021 23:24:07 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 29928380F2E; Fri, 15 Oct 2021 18:06:58 -0400 (EDT)
+	id 32E83381168; Tue,  9 Nov 2021 17:24:06 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0C28D380EC2
-	for <lists+speakup@lfdr.de>; Fri, 15 Oct 2021 18:06:58 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1FF76380B20
+	for <lists+speakup@lfdr.de>; Tue,  9 Nov 2021 17:24:06 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id AD1C5380F18; Fri, 15 Oct 2021 18:06:51 -0400 (EDT)
-Received: from out0.migadu.com (out0.migadu.com [94.23.1.103])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 68B9B38097A
-	for <speakup@linux-speakup.org>; Fri, 15 Oct 2021 18:06:50 -0400 (EDT)
-Date: Sat, 16 Oct 2021 09:05:49 +1100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
-	t=1634335592;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=fxa4boBRC8oeKWD+LHbDzfde3+nXRn8aVdrrtVxfEnM=;
-	b=XMJ/P568ZrRx7Mbg8ljtI1hpe4dBBGg6eh/siVp029PGcMXG0CBgTtVLjYuk6jUZgWW3s+
-	AVjCei8JfUKGx/THkuLsJdU8+NL8nbnRHXRbvxNzIwR539XOpd9VVMBfUB1DGWfXrSReik
-	9W1wqiNWe0gq9PwwlscdgTCoOeCuqti6oB+vUET7lAF5pR2w+ITCB5FaeyiLNi4xIPQMc4
-	fy7xupyhMA8UNZEfDpkvmnI6uXxtny/OY1A93SxLYxja4bsOpno+aLaZw+GczTL2tiM2nD
-	QsmobqmX05yEwuBTFxC7Gd4WBTQDDOJ0ZY6dO5lzwkI/Hkj4qbZOeWxcA34H7A==
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Jookia <contact@jookia.org>
-To: Didier Spaier <didier@slint.fr>
-Cc: Gregory Nowak <greg@gregn.net>, speakup@linux-speakup.org
-Subject: Re: fwd: [DNG] Announcing Devuan 4.0: Chimaera!
-Message-ID: <YWn7PX3hyX2rhHmu@novena-choice-citizen>
-References: <20211015192340.GA3715@gregn.net>
- <26bab3e2-04ce-26ee-efc1-c3a4a8d1a661@slint.fr>
- <20211015194854.GA4367@gregn.net>
- <cbd75a41-111c-020a-89dc-399f6cd1117e@slint.fr>
+	id 67458380C12; Tue,  9 Nov 2021 17:24:01 -0500 (EST)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 4FDF7380333
+	for <speakup@linux-speakup.org>; Tue,  9 Nov 2021 17:24:01 -0500 (EST)
+Received: from ccs.covici.com (ccs.covici.com [70.109.53.110])
+	(authenticated bits=0)
+	by covici.com (8.15.2/8.15.2/Debian-22) with ESMTPSA id 1A9MNwKL027244
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Tue, 9 Nov 2021 17:24:00 -0500
+Received: from ccs.covici.com (localhost [127.0.0.1])
+	by ccs.covici.com (8.17.1/8.15.2) with ESMTPS id 1A9MNqfX3072820
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Tue, 9 Nov 2021 17:23:52 -0500
+Received: (from covici@localhost)
+	by ccs.covici.com (8.17.1/8.15.2/Submit) id 1A9MNqLa3072819;
+	Tue, 9 Nov 2021 17:23:52 -0500
+Date: Tue, 09 Nov 2021 17:23:52 -0500
+Message-ID: <m3sfw5nf2f.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
+To: Samuel Thibault <samuel.thibault@aquilenet.fr>
+Cc: speakup@linux-speakup.org
+Subject: Re: problem with read all doc in kernel 5.10.60
+In-Reply-To: <20211109220911.nc7ajxmezm4ekw2p@begin>
+References: <m3zgscyti5.wl-covici@ccs.covici.com>
+	<20211109220911.nc7ajxmezm4ekw2p@begin>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL/10.8 EasyPG/1.0.0 Emacs/27
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Reply-To: covici@ccs.covici.com
+Organization: Covici Computer Systems
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -49,15 +50,35 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <cbd75a41-111c-020a-89dc-399f6cd1117e@slint.fr>
-X-Migadu-Flow: FLOW_OUT
-X-Migadu-Auth-User: contact@jookia.org
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-FWIW with softsynth on Arch you don't need to mess with ALSA at all,
-just set up udev and logind rules. Maybe Devuan needs to do something
-similiar?
+No, but I also notice that its only happening on a particular document
+-- at least that is where I noticed it.  Its an epub document, so I am
+reading with emacs' epub reader.
+
+
+On Tue, 09 Nov 2021 17:09:11 -0500,
+Samuel Thibault wrote:
+> 
+> Hello,
+> 
+> John Covici, le jeu. 16 sept. 2021 19:45:38 -0400, a ecrit:
+> > Hi.  I am having a problem where if I use read all doc, speakup loses
+> > some text after maybe 30 or 40 lines, it then resumes and the cursor
+> > still follows.
+> 
+> Does it happen also with other whole-screen reading such as
+> say_to_bottom? (speakup-p)
+> 
+> Samuel
+
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
+
+         John Covici wb2una
+         covici@ccs.covici.com
 
