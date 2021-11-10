@@ -1,36 +1,36 @@
-Return-Path: <speakup+bounces-325-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-326-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9C5CF44CDF6
-	for <lists+speakup@lfdr.de>; Thu, 11 Nov 2021 00:38:46 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 27D2344CDF3
+	for <lists+speakup@lfdr.de>; Thu, 11 Nov 2021 00:35:20 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6BF0F38115F; Wed, 10 Nov 2021 18:30:59 -0500 (EST)
+	id C083238115A; Wed, 10 Nov 2021 18:35:18 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 56E07380A17
-	for <lists+speakup@lfdr.de>; Wed, 10 Nov 2021 18:30:59 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id AB952380A17
+	for <lists+speakup@lfdr.de>; Wed, 10 Nov 2021 18:35:18 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 71A94380C02; Wed, 10 Nov 2021 18:30:54 -0500 (EST)
+	id D754F381131; Wed, 10 Nov 2021 18:35:13 -0500 (EST)
 Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 4C5743809FC
-	for <speakup@linux-speakup.org>; Wed, 10 Nov 2021 18:30:54 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B24CC380A17
+	for <speakup@linux-speakup.org>; Wed, 10 Nov 2021 18:35:13 -0500 (EST)
 Received: from localhost (localhost [127.0.0.1])
-	by hera.aquilenet.fr (Postfix) with ESMTP id 4B5E6259;
-	Thu, 11 Nov 2021 00:30:49 +0100 (CET)
+	by hera.aquilenet.fr (Postfix) with ESMTP id CFC2E259;
+	Thu, 11 Nov 2021 00:35:11 +0100 (CET)
 X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
 Received: from hera.aquilenet.fr ([127.0.0.1])
 	by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id lJ3lmmwPk29I; Thu, 11 Nov 2021 00:30:48 +0100 (CET)
+	with ESMTP id 7HerV9EJwxqe; Thu, 11 Nov 2021 00:35:11 +0100 (CET)
 Received: from begin.home (unknown [IPv6:2a01:cb19:956:1b00:de41:a9ff:fe47:ec49])
-	by hera.aquilenet.fr (Postfix) with ESMTPSA id 084A31F3;
-	Thu, 11 Nov 2021 00:30:47 +0100 (CET)
+	by hera.aquilenet.fr (Postfix) with ESMTPSA id CD56A102;
+	Thu, 11 Nov 2021 00:35:10 +0100 (CET)
 Received: from samy by begin.home with local (Exim 4.95)
 	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1mkx3H-005xLf-8g;
-	Thu, 11 Nov 2021 00:30:47 +0100
-Date: Thu, 11 Nov 2021 00:30:47 +0100
+	id 1mkx7V-005xPl-Sl;
+	Thu, 11 Nov 2021 00:35:09 +0100
+Date: Thu, 11 Nov 2021 00:35:09 +0100
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
 To: Colin Ian King <colin.i.king@googlemail.com>
 Cc: William Hubbs <w.d.hubbs@gmail.com>,
@@ -39,8 +39,8 @@ Cc: William Hubbs <w.d.hubbs@gmail.com>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	speakup@linux-speakup.org, kernel-janitors@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] speakup: remove redundant assignment of variable i
-Message-ID: <20211110233047.iuyndyfae4n3xaef@begin>
+Subject: Re: [PATCH][V2] speakup: remove redundant assignment of variable i
+Message-ID: <20211110233509.rt5ioflkym4a6tya@begin>
 Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
 	Colin Ian King <colin.i.king@googlemail.com>,
 	William Hubbs <w.d.hubbs@gmail.com>,
@@ -49,7 +49,7 @@ Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
 	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
 	speakup@linux-speakup.org, kernel-janitors@vger.kernel.org,
 	linux-kernel@vger.kernel.org
-References: <20211110225301.315573-1-colin.i.king@gmail.com>
+References: <20211110233342.1372516-1-colin.i.king@gmail.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -61,7 +61,7 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20211110225301.315573-1-colin.i.king@gmail.com>
+In-Reply-To: <20211110233342.1372516-1-colin.i.king@gmail.com>
 Organization: I am not organized
 User-Agent: NeoMutt/20170609 (1.8.3)
 X-Spamd-Bar: +
@@ -69,7 +69,7 @@ X-Spam-Level: *
 X-Rspamd-Server: hera
 Authentication-Results: hera.aquilenet.fr;
 	none
-X-Rspamd-Queue-Id: 4B5E6259
+X-Rspamd-Queue-Id: CFC2E259
 X-Spamd-Result: default: False [1.90 / 15.00];
 	 ARC_NA(0.00)[];
 	 RCVD_VIA_SMTP_AUTH(0.00)[];
@@ -91,17 +91,17 @@ X-Spamd-Result: default: False [1.90 / 15.00];
 	 SUSPICIOUS_RECIPS(1.50)[]
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Colin Ian King, le mer. 10 nov. 2021 22:53:01 +0000, a ecrit:
-> From: Colin Ian King <colin.king@canonical.com>
-> 
+Colin Ian King, le mer. 10 nov. 2021 23:33:42 +0000, a ecrit:
 > The variable i is being initialized a value that is never read, it is
 > re-assigned later on in a for-loop.  The assignment is redundant and
 > can be removed.
 > 
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+> Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
 
 Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
+> ---
+> V2: Use correct SoB
 > ---
 >  drivers/accessibility/speakup/speakup_acntpc.c | 2 +-
 >  drivers/accessibility/speakup/speakup_dtlk.c   | 2 +-
