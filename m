@@ -1,36 +1,44 @@
-Return-Path: <speakup+bounces-334-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-335-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 0118D45805C
-	for <lists+speakup@lfdr.de>; Sat, 20 Nov 2021 21:40:24 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id E391F458631
+	for <lists+speakup@lfdr.de>; Sun, 21 Nov 2021 20:51:36 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=AfO9p4/c;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 55E2E381166; Sat, 20 Nov 2021 15:40:23 -0500 (EST)
+	id AA9D5381162; Sun, 21 Nov 2021 14:51:35 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 425D33809CA
-	for <lists+speakup@lfdr.de>; Sat, 20 Nov 2021 15:40:23 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 865BB3809FA
+	for <lists+speakup@lfdr.de>; Sun, 21 Nov 2021 14:51:35 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 77AC3380AC8; Sat, 20 Nov 2021 15:40:18 -0500 (EST)
-Received: from smtprelay.b.hostedemail.com (smtprelay0117.b.hostedemail.com [64.98.42.117])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 67267380195
-	for <speakup@linux-speakup.org>; Sat, 20 Nov 2021 15:40:18 -0500 (EST)
-Received: from omf13.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id B0637100496C8;
-	Sat, 20 Nov 2021 20:40:17 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf13.b.hostedemail.com (Postfix) with ESMTPA id 0493D801BEE2;
-	Sat, 20 Nov 2021 20:40:16 +0000 (UTC)
-Message-ID: <095701d7de4e$d34cf390$7101a8c0@NUCPPYH>
-Reply-To: "K0LNY" <Glenn@Ervin.eMail>
-From: "K0LNY" <glenn@ervin.email>
-To: "Mike Keithley" <mlkeithley@comcast.net>,
-	<speakup@linux-speakup.org>,
-	"John G. Heim" <jheim@math.wisc.edu>
-References: <228234727.2.1637378390667@localhost> <092501d7ddc4$929696b0$7101a8c0@NUCPPYH> <f12a316c-f52b-1cc4-6db1-5c1191f4c0c6@math.wisc.edu>
-Subject: Re: speech/braille live rescue?
-Date: Sat, 20 Nov 2021 14:40:12 -0600
-Organization: Home
+	id AC0D8380BBB; Sun, 21 Nov 2021 14:51:29 -0500 (EST)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1D385380195
+	for <speakup@linux-speakup.org>; Sun, 21 Nov 2021 14:51:29 -0500 (EST)
+Received: from [10.0.2.1] (unknown [10.0.2.1])
+	(using TLSv1.3 with cipher TLS_AES_128_GCM_SHA256 (128/128 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(Client did not present a certificate)
+	by svr.jasonjgw.net (Postfix) with ESMTPSA id 2692032052
+	for <speakup@linux-speakup.org>; Sun, 21 Nov 2021 19:51:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+	s=mail; t=1637524287;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=4YdntjsJ24g//irmq6dekn44GN7R5WoHxVJZP6G9oSs=;
+	b=AfO9p4/cQz1Nvnvonp29npy3taYgaM8BAI3ZHS/0OA2XePyydpoxTI04T6vjsvNiCbuxcT
+	fngBf+eP4aahSTbFBn8RqtrEi8duuW2u0bGLfXqfrWQye9xYpRYbtDNapTM9Xcgt8DGHca
+	SaL8ZqCiNn5ENYr0Tad4M0UkFzDVh8cMweVavRlxp14ySxC1sB/LrP7eorUZyU/noPPZBX
+	bw6STzfv08H4W7MQEXbDSbO7/ewkVXFph91J9S6Xw69kDPdQueAkDglM3hRCm4Sm4eH4Mj
+	yU66Tffe6jZVBkl8/YgLXSfv/X4/GzpYXUI+UWl5KkO9JGPB5KRKkL3O4Fp5iA==
+Message-ID: <b2d907ca-5d48-9ec1-84af-062787ec3386@jasonjgw.net>
+Date: Sun, 21 Nov 2021 14:51:26 -0500
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -40,74 +48,33 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	format=flowed;
-	charset="iso-8859-1";
-	reply-type=response
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.3.1
+Subject: Re: speech/braille live rescue?
+Content-Language: en-US
+To: speakup@linux-speakup.org
+References: <228234727.2.1637378390667@localhost>
+ <20211120160717.qwmgazxxvxbuqzfa@alex-pc>
+From: Jason White <jason@jasonjgw.net>
+In-Reply-To: <20211120160717.qwmgazxxvxbuqzfa@alex-pc>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.3790.1830
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Server: rspamout03
-X-Rspamd-Queue-Id: 0493D801BEE2
-X-Spam-Status: No, score=-1.40
-X-Stat-Signature: 1agk6ufgk519iejqqhjs95n8buw9xdjr
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19OBC3C59W7YJWbX1nE+BWfwYKtRvpJ7CA=
-X-HE-Tag: 1637440816-80335
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I'm sure you can put GRML on an USB stick with Universal USB installer.
-Glenn
------ Original Message ----- 
-From: "John G. Heim" <jheim@math.wisc.edu>
-To: "K0LNY" <Glenn@Ervin.eMail>; "Mike Keithley" <mlkeithley@comcast.net>; 
-<speakup@linux-speakup.org>
-Sent: Saturday, November 20, 2021 9:17 AM
-Subject: Re: speech/braille live rescue?
 
+On 20/11/21 11:07, Alexander Epaneshnikov wrote:
+> On Fri, Nov 19, 2021 at 07:20:04PM -0800, Mike Keithley wrote:
+>> Which linux rescue systems have speech/braille as a live bootable image I can put on a USB stick?
+> Arch Linux does[1].
 
-> GRML hasn't had many releases lately. They put out a new release only 
-> every couple of years now a days. I am on the developers email list. I 
-> haven't actually done any development but I test every release for 
-> accessibility. So I am pretty sure the latest release has both speech and 
-> braille.
->
-> I am pretty sure the way you get speech is still the same. Wait for grml 
-> startup tones, press q to quit the menu, type "modprobe speakup_soft", 
-> type "espeakup".
->
-> The last couple of times i needed to boot a machine to rescue it, I used a 
-> Ubuntu disk because I usually have one of those around. That is probably 
-> the big disadvantage of GRML, you have to think to make one of those in 
-> advance. I like using CD-ROMs because you don't usually have to fiddle 
-> with the BIOS. If you have a machine where you can leave the drawer open a 
-> little, you can just keep the CD-ROM in there and simply push it closed to 
-> boot from the CD-ROM. Only problem with that, of course, is that you might 
-> as well go watch an episode of Discovery waiting for it to boot.
->
->
->
-> On 11/19/21 10:10 PM, K0LNY wrote:
->> It used to be that GRML did, but I haven't used it for so long, I can't 
->> say for sure now.
->> Glenn
->> ----- Original Message ----- From: "Mike Keithley" 
->> <mlkeithley@comcast.net>
->> To: <speakup@linux-speakup.org>
->> Sent: Friday, November 19, 2021 9:20 PM
->> Subject: speech/braille live rescue?
->>
->>
->>> Which linux rescue systems have speech/braille as a live bootable image 
->>> I can put on a USB stick?
->>>
->>
->>
->
-> -- 
-> ###
-> John G. Heim, 608-263-4189, jheim@math.wisc.edu 
+I used it when it required a separate "Talking Arch" image to be 
+downloaded. It worked well for installing Arch Linux (I have a braille 
+display and I can use speech also).
+
+I have also used GRML, but this was a number of years ago - at least 7, 
+probably more. Again, the experience was positive.
+
+As the Arch documentation states, braille displays should be 
+automatically detected by BRLTTY if connected via USB.
 
 
