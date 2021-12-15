@@ -1,30 +1,60 @@
-Return-Path: <speakup+bounces-337-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-338-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id BD3E6475BD1
-	for <lists+speakup@lfdr.de>; Wed, 15 Dec 2021 16:28:45 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id C1DE0475F74
+	for <lists+speakup@lfdr.de>; Wed, 15 Dec 2021 18:37:43 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1639589863;
+	bh=sJzZ956WC+qPLKdm/rzNcgQeVv7lo9sdfmHRH3e2AtU=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=cTRKtKe8cgayeLYHQmpllsDsz0OfAabzjXhnFKosHSXOF29wIy51I7wPDHEURDwbg
+	 V5l1lp5Xum6wCRaJGvh5O871LqZG79f3+K697vblJ6/h9DP5MdEUlTlwHw68Obhnkw
+	 9EnnIXONYYC5dpX6Vg3AUUW4ThuatZ8gBNwR5qhc=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7798C380A01; Wed, 15 Dec 2021 10:28:44 -0500 (EST)
+	id 32579381160; Wed, 15 Dec 2021 12:37:43 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1639589863;
+	bh=sJzZ956WC+qPLKdm/rzNcgQeVv7lo9sdfmHRH3e2AtU=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=cTRKtKe8cgayeLYHQmpllsDsz0OfAabzjXhnFKosHSXOF29wIy51I7wPDHEURDwbg
+	 V5l1lp5Xum6wCRaJGvh5O871LqZG79f3+K697vblJ6/h9DP5MdEUlTlwHw68Obhnkw
+	 9EnnIXONYYC5dpX6Vg3AUUW4ThuatZ8gBNwR5qhc=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6426D380A01
-	for <lists+speakup@lfdr.de>; Wed, 15 Dec 2021 10:28:44 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1FCA2380E4E
+	for <lists+speakup@lfdr.de>; Wed, 15 Dec 2021 12:37:43 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1639589857;
+	bh=sJzZ956WC+qPLKdm/rzNcgQeVv7lo9sdfmHRH3e2AtU=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=t4bz+zMcwkOT84JmjbeszkuNrKVG9pJM5mb+/dIrUKgDqyQDHUKKXjQPgkuHKj7wV
+	 qOlWEJH0BDPyOpe/GwcewK+3gwHG+SyP7A9E4D5YKx0OvEfeh5C4Hjei8Mnzlng9Mv
+	 mN8SOA5H/Hm++ZBNwDoXer/hhpzcX0RpxeZCuxAo=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ED8C4380BBF; Wed, 15 Dec 2021 10:28:39 -0500 (EST)
-Received: from bullseyemail.carmickle.com (bullseyemail.carmickle.com [50.116.61.232])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id DEBFA3805F1
-	for <speakup@linux-speakup.org>; Wed, 15 Dec 2021 10:28:39 -0500 (EST)
-Received: from fcmbp14.carmickle.com (fcmbp14.carmickle.com [IPv6:2001:470:1f07:6f1:ee1a:59ff:fe3d:a9f3])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by bullseyemail.carmickle.com (Postfix) with ESMTPSA id 3C47635B578D
-	for <speakup@linux-speakup.org>; Wed, 15 Dec 2021 15:28:37 +0000 (UTC)
-From: Frank Carmickle <frank@carmickle.com>
-Content-Type: text/plain;
-	charset=us-ascii
-Content-Transfer-Encoding: quoted-printable
+	id 5B3E7380E4E; Wed, 15 Dec 2021 12:37:37 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1639589856;
+	bh=sJzZ956WC+qPLKdm/rzNcgQeVv7lo9sdfmHRH3e2AtU=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=x8vG8aT/UcGecx5/tyiVJrMd9+gLbXMXl73K0SwX7cuoNxgfMWmDZYlvOeN7K39kh
+	 fR6JNQ5csgILAd8LJcc5KmXp0aibw9YLofiHv4mHjCblkzulFrtOgQeJPKSNAOjJuw
+	 ihdJP9w6ctXOqyGBhW1vmxvN+vjfSFO8tLzjv8rw=
+Received: from localhost (localhost [IPv6:::1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 0D5923809FD;
+	Wed, 15 Dec 2021 12:37:36 -0500 (EST)
+Date: Wed, 15 Dec 2021 12:37:36 -0500 (EST)
+From: Kirk Reiser <kirk@reisers.ca>
+To: Frank Carmickle <frank@carmickle.com>
+cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: espeakup not speaking screen review from speakup in Debian sid
+ 20211215 while screen refreshing to quickly
+In-Reply-To: <6C488A97-ABC4-42AE-96FF-20B10156191C@carmickle.com>
+Message-ID: <438c249c-e061-150-4e25-877b4dad1b2@reisers.ca>
+References: <6C488A97-ABC4-42AE-96FF-20B10156191C@carmickle.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -33,32 +63,29 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.21\))
-Subject: espeakup not speaking screen review from speakup in Debian sid
- 20211215 while screen refreshing to quickly
-Message-Id: <6C488A97-ABC4-42AE-96FF-20B10156191C@carmickle.com>
-Date: Wed, 15 Dec 2021 10:28:32 -0500
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-X-Mailer: Apple Mail (2.3445.104.21)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi all,
+Hi Frank: Yes, I've noticed the problem. My guess is they've lowered
+the keyboard interrupt priority so it doesn't get recognized until all
+output is complete. That's just a guess however and yes it is
+iritating as hell.
 
-I've been noticing a problem with speakup/espeakup/espeak-ng, across =
-kernels 5.10 5.14 and now 5.15. When I write a lot of output to a =
-screen, say dmesg without a pager, screen review stops working for a few =
-seconds. I know speakup is still responding because the tones are played =
-when navigating by word when moving to a new line. The speech is =
-interrupted appropriately but it will not speak again for a few seconds.
+   Kirk
 
-Has anyone else experienced this? Does anyone have an idea of where to =
-look to help sort this out.
+On Wed, 15 Dec 2021, Frank Carmickle wrote:
 
-I very much liked the former functionality of being able to press a key =
-to momentarily flush the buffer and pick up reading the screen =
-immediately.
-
-Thanks all,
---FC
-
+> Hi all,
+>
+> I've been noticing a problem with speakup/espeakup/espeak-ng, across kernels 5.10 5.14 and now 5.15. When I write a lot of output to a screen, say dmesg without a pager, screen review stops working for a few seconds. I know speakup is still responding because the tones are played when navigating by word when moving to a new line. The speech is interrupted appropriately but it will not speak again for a few seconds.
+>
+> Has anyone else experienced this? Does anyone have an idea of where to look to help sort this out.
+>
+> I very much liked the former functionality of being able to press a key to momentarily flush the buffer and pick up reading the screen immediately.
+>
+> Thanks all,
+> --FC
+>
+>
 
