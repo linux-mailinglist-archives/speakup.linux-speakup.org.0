@@ -1,30 +1,62 @@
-Return-Path: <speakup+bounces-340-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-341-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B3C3C47946B
-	for <lists+speakup@lfdr.de>; Fri, 17 Dec 2021 19:55:13 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id E02E147D52B
+	for <lists+speakup@lfdr.de>; Wed, 22 Dec 2021 17:38:37 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=rZBOKiKY;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9AD38381148; Fri, 17 Dec 2021 13:55:12 -0500 (EST)
+	id AEACB38116D; Wed, 22 Dec 2021 11:38:36 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C5C5D38144C
-	for <lists+speakup@lfdr.de>; Fri, 17 Dec 2021 13:55:10 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 99546380A96
+	for <lists+speakup@lfdr.de>; Wed, 22 Dec 2021 11:38:36 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D6082380E11; Fri, 17 Dec 2021 13:55:09 -0500 (EST)
-Received: from bullseyemail.carmickle.com (bullseyemail.carmickle.com [50.116.61.232])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id C67233809B1
-	for <speakup@linux-speakup.org>; Fri, 17 Dec 2021 13:55:09 -0500 (EST)
-Received: from fcmbp14.carmickle.com (fcmbp14.carmickle.com [IPv6:2001:470:1f07:6f1:ee1a:59ff:fe3d:a9f3])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	id D78F4380C0B; Wed, 22 Dec 2021 11:38:30 -0500 (EST)
+Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 8D977380A67
+	for <speakup@linux-speakup.org>; Wed, 22 Dec 2021 11:38:30 -0500 (EST)
+Received: from opera.rednote.net (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by bullseyemail.carmickle.com (Postfix) with ESMTPSA id 26ADF35D54AA
-	for <speakup@linux-speakup.org>; Fri, 17 Dec 2021 18:55:07 +0000 (UTC)
-From: Frank Carmickle <frank@carmickle.com>
-Content-Type: text/plain;
-	charset=us-ascii
-Content-Transfer-Encoding: quoted-printable
+	by mail.rednote.net (Postfix) with ESMTPS id 8ADC4FA269;
+	Wed, 22 Dec 2021 11:38:28 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
+	t=1640191108;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=RF8WivQjIQZsci0YrKrww/VpwwQaat8k3SqnCGGMGLA=;
+	b=rZBOKiKYWoUzBXhvqx3pgJpDI1k4NDbxkqy6f4Dhb4yH0LeOmiU5bUjlqT9j/6UEJUtdAq
+	8Ot/lMKyU8v47MW0SabuZhwW+2QXcrgy7jKM9eTplRiOnt0dL9iDQTRrazxmFfOCB22IOc
+	oRbavW2aKlaWlKp++Wr56YI4gESzB1k=
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.rednote.net 8ADC4FA269
+Authentication-Results: mail.rednote.net; dmarc=pass (p=reject dis=none) header.from=rednote.net
+Authentication-Results: mail.rednote.net; spf=pass smtp.mailfrom=rednote.net
+Received: (from janina@localhost)
+	by opera.rednote.net (8.17.1/8.16.1/Submit) id 1BMGcRYm383196;
+	Wed, 22 Dec 2021 11:38:27 -0500
+Date: Wed, 22 Dec 2021 11:38:27 -0500
+From: Janina Sajka <janina@rednote.net>
+To: Alexander Epaneshnikov <aarnaarn2@gmail.com>
+Cc: Kelly Prescott <kprescott@coolip.net>,
+        Samuel Thibault <samuel.thibault@aquilenet.fr>,
+        speakup@linux-speakup.org, blinux-list@redhat.com
+Subject: Now Fixed: Archlinux Speakup problems after alsa package upgrade
+Message-ID: <YcNUgwlCFtiAmY3Q@rednote.net>
+References: <alpine.LNX.2.22.411.2106082204570.1927@io.coolip.net>
+ <20210609072927.3igbp7jvopq3c6f7@begin>
+ <alpine.LNX.2.22.411.2106090608590.13304@io.coolip.net>
+ <20210609110828.kpo76f2zmbixjran@begin>
+ <alpine.LNX.2.22.411.2106091332550.28397@whatsup.nkparts.com>
+ <YMdZA0DL4BgCAShe@rednote.net>
+ <6b4b229d-5e00-22e4-8cf2-33ed7bbd6b93@gmail.com>
+ <YNMr0Pathc/mqx1L@rednote.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -33,91 +65,122 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.21\))
-Subject: Re: espeakup not speaking screen review from speakup in Debian sid
- 20211215 while screen refreshing to quickly
-Date: Fri, 17 Dec 2021 13:55:06 -0500
-References: <6C488A97-ABC4-42AE-96FF-20B10156191C@carmickle.com>
- <438c249c-e061-150-4e25-877b4dad1b2@reisers.ca>
- <AA2DDF65-3308-4F92-938E-3B5D424D44D3@carmickle.com>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-In-Reply-To: <AA2DDF65-3308-4F92-938E-3B5D424D44D3@carmickle.com>
-Message-Id: <67E6455D-D271-4C0F-8949-A0DEB5DBD527@carmickle.com>
-X-Mailer: Apple Mail (2.3445.104.21)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <YNMr0Pathc/mqx1L@rednote.net>
+X-Operating-System: Linux opera.rednote.net 5.15.8-200.fc35.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hello again good people,
+Hi,
 
-I updated the kernel of a buster machine to what's found in backports, =
-5.10.0. That did not have any impact on reading while scrolling.
+I have spent sometime today trying to get espeakup working on one of my
+two Linux systems. I now have it working with alsa-lib-1.2.6.1-1 and
+Espeakup-0.90 on Arch, using standard Arch packaging.
 
-I thought maybe the screen was scrolling slower so I stuck a beep =
-command on the same line, as it would follow as soon as the screen had =
-all of the output printed. In both the case of sid and buster the number =
-of lines were around 1600, and the time that it took for the beep to be =
-heard from pressing enter was very very similar.
+What was the fix?
 
-It really seems to me like something has changed in espeakup or =
-espeak-ng.
+I introduced a file:
 
-I'll play with upgrading buster, and downgrading sid until I find =
-something.
+/etc/asound.conf
 
-Best,
---FC
+<begin file contents>
+ctl.!default {
+        type hw
+	        card 0
+		}
 
+		<end file contents>
 
-> On Dec 15, 2021, at 2:05 PM, Frank Carmickle <frank@carmickle.com> =
-wrote:
->=20
-> Hey Kirk,
->=20
-> I hope you and the family are all well.
->=20
-> As I noted, I can use the keyboard, to have speakup play the line =
-change tones while using review by word, so that's not it.
->=20
-> I'm guessing there's some problem in espeakup or speakup_soft.
->=20
-> I'll update a buster system to use a 5.10 kernel and see what happens.
->=20
-> Be well,
-> --FC
->=20
->> On Dec 15, 2021, at 12:37 PM, Kirk Reiser <kirk@reisers.ca> wrote:
->>=20
->> Hi Frank: Yes, I've noticed the problem. My guess is they've lowered
->> the keyboard interrupt priority so it doesn't get recognized until =
-all
->> output is complete. That's just a guess however and yes it is
->> iritating as hell.
->>=20
->> Kirk
->>=20
->> On Wed, 15 Dec 2021, Frank Carmickle wrote:
->>=20
->>> Hi all,
->>>=20
->>> I've been noticing a problem with speakup/espeakup/espeak-ng, across =
-kernels 5.10 5.14 and now 5.15. When I write a lot of output to a =
-screen, say dmesg without a pager, screen review stops working for a few =
-seconds. I know speakup is still responding because the tones are played =
-when navigating by word when moving to a new line. The speech is =
-interrupted appropriately but it will not speak again for a few seconds.
->>>=20
->>> Has anyone else experienced this? Does anyone have an idea of where =
-to look to help sort this out.
->>>=20
->>> I very much liked the former functionality of being able to press a =
-key to momentarily flush the buffer and pick up reading the screen =
-immediately.
->>>=20
->>> Thanks all,
->>> --FC
->>>=20
->>>=20
->>=20
->=20
->=20
+		Why that should matter is beyond me. Seems like this
+		should be the default behavior, no?
+
+		Best,
+
+		Janina
+
+Janina Sajka writes:
+> Hi, Alexander:
+> 
+> I ram an -Syu upgrade on one of my two machines and rebooted. I can
+> confirm espeakup 0.9.0 and also:
+> 
+> alsa-lib 1.2.5.1-3
+> alsa-utils 1.2.5.1-1
+> 
+> Unfortunately, I do not get Speakup speech. Doing "espeak hello" works,
+> as do aplay commands.
+> 
+> I would also note the amixer command environment seems OK now, but
+> that's a separate issue.
+> 
+> I will leave things as they are for now, rather than downversioning
+> alsa-lib, in case I can give you some other
+> debugging output. Let me know, and thanks for your efforts.
+> 
+> Janina
+> 
+> 
+> Alexander Epaneshnikov writes:
+> > 14.06.2021 16:26, Janina Sajka пишет:
+> > > Hi, All:
+> > > 
+> > > Just returning to this topic to add my own experience on updating my
+> > > Arch Linux installation on two machines over the weekend.
+> > > 
+> > > I also ran into problems that rendered Speakup unusable with espeakup.
+> > > Reverting alsa-lib fixed the Speakup issue. As we don't know how long
+> > > the problem may persist, I've added the following to my
+> > > /etc/pacman.conf:
+> > > 
+> > > IgnorePkg   =alsa-lib
+> > > 
+> > > 
+> > > I also discovered problems with alsa-util packages. A command as
+> > > straight forward as:
+> > > 
+> > > amixer controls
+> > > 
+> > > returned meaningless results. Further, several of my audio devices were
+> > > silent with volumes set to 0, and the switch set to "false." So, I also
+> > > added a line like the above for alsa-utils.
+> > > 
+> > > Not sure how to be helpful to anyone interested in debugging, but I do
+> > > have two machines and am willing to try. Please advise.
+> > > 
+> > > Best,
+> > > 
+> > > Janina
+> > > 
+> > Hello everyone. please test espeakup 0.90 with laytest alsa-lib on Arch Linux.
+> > I will be happy to hear the results.
+> > 
+> > -- 
+> > Sincerely, Alexander.
+> 
+> -- 
+> 
+> Janina Sajka
+> https://linkedin.com/in/jsajka
+> 
+> Linux Foundation Fellow
+> Executive Chair, Accessibility Workgroup:	http://a11y.org
+> 
+> The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+> Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+> 
+
+-- 
+
+Janina Sajka
+(she/her/hers)
+https://linkedin.com/in/jsajka
+
+Linux Foundation Fellow
+Executive Chair, Accessibility Workgroup:	http://a11y.org
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
 
 
