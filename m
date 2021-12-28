@@ -1,71 +1,61 @@
-Return-Path: <speakup+bounces-343-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-344-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 395D648030F
-	for <lists+speakup@lfdr.de>; Mon, 27 Dec 2021 18:52:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 79943480B40
+	for <lists+speakup@lfdr.de>; Tue, 28 Dec 2021 17:27:08 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=re3y9SmP;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 86D86381169; Mon, 27 Dec 2021 12:52:27 -0500 (EST)
+	id EA83C381155; Tue, 28 Dec 2021 11:27:07 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 732CB380F5E
-	for <lists+speakup@lfdr.de>; Mon, 27 Dec 2021 12:52:27 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D5E1A380A8D
+	for <lists+speakup@lfdr.de>; Tue, 28 Dec 2021 11:27:07 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0BD4E380F5C; Mon, 27 Dec 2021 12:52:23 -0500 (EST)
-Received: from hera.aquilenet.fr (hera.aquilenet.fr [185.233.100.1])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D5106380A8D
-	for <speakup@linux-speakup.org>; Mon, 27 Dec 2021 12:52:22 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
-	by hera.aquilenet.fr (Postfix) with ESMTP id DB6A22B0;
-	Mon, 27 Dec 2021 18:52:18 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at aquilenet.fr
-Received: from hera.aquilenet.fr ([127.0.0.1])
-	by localhost (hera.aquilenet.fr [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id a87sJkm--fNp; Mon, 27 Dec 2021 18:52:18 +0100 (CET)
-Received: from begin.home (2a01cb0088600700de41a9fffe47ec49.ipv6.abo.wanadoo.fr [IPv6:2a01:cb00:8860:700:de41:a9ff:fe47:ec49])
-	by hera.aquilenet.fr (Postfix) with ESMTPSA id 139E5281;
-	Mon, 27 Dec 2021 18:52:18 +0100 (CET)
-Received: from samy by begin.home with local (Exim 4.95)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1n1uAT-00CRly-7Q;
-	Mon, 27 Dec 2021 18:52:17 +0100
-Date: Mon, 27 Dec 2021 18:52:17 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Niklas Schnelle <schnelle@linux.ibm.com>
-Cc: Arnd Bergmann <arnd@kernel.org>, Bjorn Helgaas <bhelgaas@google.com>,
-	John Garry <john.garry@huawei.com>, Nick Hu <nickhu@andestech.com>,
-	Greentime Hu <green.hu@gmail.com>,
-	Vincent Chen <deanbo422@gmail.com>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Guo Ren <guoren@kernel.org>,
-	William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>, linux-kernel@vger.kernel.org,
-	linux-arch@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-riscv@lists.infradead.org, linux-csky@vger.kernel.org,
-	speakup@linux-speakup.org
-Subject: Re: [RFC 06/32] speakup: Kconfig: add HAS_IOPORT dependencies
-Message-ID: <20211227175217.5bnpoauk2e3ni73s@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Niklas Schnelle <schnelle@linux.ibm.com>,
-	Arnd Bergmann <arnd@kernel.org>,
-	Bjorn Helgaas <bhelgaas@google.com>,
-	John Garry <john.garry@huawei.com>, Nick Hu <nickhu@andestech.com>,
-	Greentime Hu <green.hu@gmail.com>,
-	Vincent Chen <deanbo422@gmail.com>,
-	Paul Walmsley <paul.walmsley@sifive.com>,
-	Palmer Dabbelt <palmer@dabbelt.com>,
-	Albert Ou <aou@eecs.berkeley.edu>, Guo Ren <guoren@kernel.org>,
-	William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>, linux-kernel@vger.kernel.org,
-	linux-arch@vger.kernel.org, linux-pci@vger.kernel.org,
-	linux-riscv@lists.infradead.org, linux-csky@vger.kernel.org,
-	speakup@linux-speakup.org
-References: <20211227164317.4146918-1-schnelle@linux.ibm.com>
- <20211227164317.4146918-7-schnelle@linux.ibm.com>
+	id 050B6380B40; Tue, 28 Dec 2021 11:27:02 -0500 (EST)
+Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 66556380331
+	for <speakup@linux-speakup.org>; Tue, 28 Dec 2021 11:27:00 -0500 (EST)
+Received: from opera.rednote.net (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by mail.rednote.net (Postfix) with ESMTPS id 240D6FA278;
+	Tue, 28 Dec 2021 11:26:56 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
+	t=1640708816;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=8b1djYe/pY732bnG8foDmvYF4wXBrTWz+kdfLannDbo=;
+	b=re3y9SmPYJHQLlaEY11Duc/BwCnpyeXXECW4MKlYEnF26w55q4U/6UNGmLDmIhjDVxYANl
+	lqHHakDrh+9LHJ/U9Spco9tdQnowFLHD78qhEetFo/vgpQ08mjZalL4/23UojkKqaHqh0v
+	VQ7gv1m6ITvVNCDmC+S4cbYUEq8D54I=
+DMARC-Filter: OpenDMARC Filter v1.4.1 mail.rednote.net 240D6FA278
+Authentication-Results: mail.rednote.net; dmarc=pass (p=reject dis=none) header.from=rednote.net
+Authentication-Results: mail.rednote.net; spf=pass smtp.mailfrom=rednote.net
+Received: (from janina@localhost)
+	by opera.rednote.net (8.17.1/8.16.1/Submit) id 1BSGQurB935925;
+	Tue, 28 Dec 2021 11:26:56 -0500
+Date: Tue, 28 Dec 2021 11:26:56 -0500
+From: Janina Sajka <janina@rednote.net>
+To: Jason White <jason@jasonjgw.net>
+Cc: speakup@linux-speakup.org
+Subject: Re: Now Fixed: Archlinux Speakup problems after alsa package upgrade
+Message-ID: <Ycs60ClBq1jcVDuF@rednote.net>
+References: <alpine.LNX.2.22.411.2106082204570.1927@io.coolip.net>
+ <20210609072927.3igbp7jvopq3c6f7@begin>
+ <alpine.LNX.2.22.411.2106090608590.13304@io.coolip.net>
+ <20210609110828.kpo76f2zmbixjran@begin>
+ <alpine.LNX.2.22.411.2106091332550.28397@whatsup.nkparts.com>
+ <YMdZA0DL4BgCAShe@rednote.net>
+ <6b4b229d-5e00-22e4-8cf2-33ed7bbd6b93@gmail.com>
+ <YNMr0Pathc/mqx1L@rednote.net>
+ <YcNUgwlCFtiAmY3Q@rednote.net>
+ <3cefe3e6-f95a-ffe9-5995-543d6e4357db@jasonjgw.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -75,75 +65,58 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20211227164317.4146918-7-schnelle@linux.ibm.com>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
-X-Spamd-Bar: +
-X-Spam-Level: *
-X-Rspamd-Server: hera
-Authentication-Results: hera.aquilenet.fr;
-	none
-X-Rspamd-Queue-Id: DB6A22B0
-X-Spamd-Result: default: False [1.90 / 15.00];
-	 ARC_NA(0.00)[];
-	 RCVD_VIA_SMTP_AUTH(0.00)[];
-	 FROM_HAS_DN(0.00)[];
-	 TO_DN_SOME(0.00)[];
-	 FREEMAIL_ENVRCPT(0.00)[gmail.com];
-	 TO_MATCH_ENVRCPT_ALL(0.00)[];
-	 TAGGED_RCPT(0.00)[];
-	 MIME_GOOD(-0.10)[text/plain];
-	 HAS_ORG_HEADER(0.00)[];
-	 RCVD_COUNT_THREE(0.00)[3];
-	 RCPT_COUNT_TWELVE(0.00)[20];
-	 FROM_EQ_ENVFROM(0.00)[];
-	 MIME_TRACE(0.00)[0:+];
-	 RCVD_TLS_LAST(0.00)[];
-	 FREEMAIL_CC(0.00)[kernel.org,google.com,huawei.com,andestech.com,gmail.com,sifive.com,dabbelt.com,eecs.berkeley.edu,the-brannons.com,reisers.ca,vger.kernel.org,lists.infradead.org,linux-speakup.org];
-	 MID_RHS_NOT_FQDN(0.50)[];
-	 SUSPICIOUS_RECIPS(1.50)[]
+In-Reply-To: <3cefe3e6-f95a-ffe9-5995-543d6e4357db@jasonjgw.net>
+X-Operating-System: Linux opera.rednote.net 5.15.8-200.fc35.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Niklas Schnelle, le lun. 27 déc. 2021 17:42:51 +0100, a ecrit:
-> In a future patch HAS_IOPORT=n will result in inb()/outb() and friends
-> not being declared. SPEAKUP_SERIALIO thus needs to depend on HAS_IOPORT.
-> 
-> Co-developed-by: Arnd Bergmann <arnd@kernel.org>
-> Signed-off-by: Arnd Bergmann <arnd@kernel.org>
-> Signed-off-by: Niklas Schnelle <schnelle@linux.ibm.com>
+Very relevant observation, Jason.
+Indeed, that file I refer to seems to have been deleted by one upgrade
+or another over the past week--I've run several.
 
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+So, not sure what's going on under the hood. All I can say is that
+creating that file, for whatever reason, caused Espeakup to work on the
+System76 Meerkat system.
 
-> ---
->  drivers/accessibility/speakup/Kconfig | 1 +
->  1 file changed, 1 insertion(+)
+On my older, 2012 era custom built Linux board, Espeakup-0.80 is still
+required, but it now works with the latest alsa. No matter what I try,
+Espeakup-0.90 won't work, even though the espeak command speaks using
+espeak-ng. So, I downgraded to the latest Espeak, dated on Arch from mid
+December, and downgraded Espeakup accordingly.
+
+Apparently there must be some kind of reason why Espeakup can't be
+agnostic between espeak and espeak-ng?
+
+Best,
+
+Janina
+
+Jason White writes:
 > 
-> diff --git a/drivers/accessibility/speakup/Kconfig b/drivers/accessibility/speakup/Kconfig
-> index 07ecbbde0384..e84fb617acc4 100644
-> --- a/drivers/accessibility/speakup/Kconfig
-> +++ b/drivers/accessibility/speakup/Kconfig
-> @@ -46,6 +46,7 @@ if SPEAKUP
->  config SPEAKUP_SERIALIO
->  	def_bool y
->  	depends on ISA || COMPILE_TEST
-> +	depends on HAS_IOPORT
->  
->  config SPEAKUP_SYNTH_ACNTSA
->  	tristate "Accent SA synthesizer support"
-> -- 
-> 2.32.0
+> On 22/12/21 11:38, Janina Sajka wrote:
+> > What was the fix?
+> > 
+> > I introduced a file:
+> > 
+> > /etc/asound.conf
+> 
+> Interestingly, I don't have that file on my Arch Linux system, but there are
+> various configuration files under /etc/alsa/conf.d, apparently placed there
+> by Pipewire packages.
+> 
 > 
 
 -- 
-Samuel
-	/* Amuse the user. */
-	printk(
-"              \\|/ ____ \\|/\n"
-"              \"@'/ ,. \\`@\"\n"
-"              /_| \\__/ |_\\\n"
-"                 \\__U_/\n");
-(From linux/arch/sparc/kernel/traps.c:die_if_kernel())
+
+Janina Sajka
+(she/her/hers)
+https://linkedin.com/in/jsajka
+
+Linux Foundation Fellow
+Executive Chair, Accessibility Workgroup:	http://a11y.org
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
 
