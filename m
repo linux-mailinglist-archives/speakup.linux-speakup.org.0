@@ -1,61 +1,74 @@
-Return-Path: <speakup+bounces-353-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-354-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 33AFD480DD6
-	for <lists+speakup@lfdr.de>; Tue, 28 Dec 2021 23:55:06 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id B63784A31E2
+	for <lists+speakup@lfdr.de>; Sat, 29 Jan 2022 21:45:27 +0100 (CET)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=uKYVhrBy;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=WkZsMhCH;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=UvsSLJC2;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A6A4438117C; Tue, 28 Dec 2021 17:55:05 -0500 (EST)
+	id 689F8381412; Sat, 29 Jan 2022 15:45:26 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9155138116B
-	for <lists+speakup@lfdr.de>; Tue, 28 Dec 2021 17:55:05 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 54A6C3807A8
+	for <lists+speakup@lfdr.de>; Sat, 29 Jan 2022 15:45:26 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7E71B381172; Tue, 28 Dec 2021 17:54:59 -0500 (EST)
-Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 6CA0338116B
-	for <speakup@linux-speakup.org>; Tue, 28 Dec 2021 17:54:59 -0500 (EST)
-Received: from opera.rednote.net (localhost [IPv6:::1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by mail.rednote.net (Postfix) with ESMTPS id D83CEFA278;
-	Tue, 28 Dec 2021 17:54:58 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
-	t=1640732098;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=b67U+zIzj9BxxI36Iy4t4xCm+D3Pbfd/2a5JOtXiVSE=;
-	b=uKYVhrBy8gwd3xeX06dRi8ZC+12c7rFCR87Z3nMualuqwoRIhKZ2d3k0zRiqgNy3sLb5JD
-	AxAAuDLyAGnnGuPPdzbhVA9aASHvHLNXFAyFIDdRV2V5liuW0v54+msxX4cEKTXus2JeAI
-	LYnlJKFUjzuZiTLNjDT8Y1BybKM7hD0=
-DMARC-Filter: OpenDMARC Filter v1.4.1 mail.rednote.net D83CEFA278
-Authentication-Results: mail.rednote.net; dmarc=pass (p=reject dis=none) header.from=rednote.net
-Authentication-Results: mail.rednote.net; spf=pass smtp.mailfrom=rednote.net
-Received: (from janina@localhost)
-	by opera.rednote.net (8.17.1/8.16.1/Submit) id 1BSMswlZ960059;
-	Tue, 28 Dec 2021 17:54:58 -0500
-Date: Tue, 28 Dec 2021 17:54:58 -0500
-From: Janina Sajka <janina@rednote.net>
-To: Alexander Epaneshnikov <aarnaarn2@gmail.com>
-Cc: Didier Spaier <didier@slint.fr>, speakup@linux-speakup.org
-Subject: Re: Now Fixed: Archlinux Speakup problems after alsa package upgrade
-Message-ID: <YcuVws8INmB89RpN@rednote.net>
-References: <YNMr0Pathc/mqx1L@rednote.net>
- <YcNUgwlCFtiAmY3Q@rednote.net>
- <3cefe3e6-f95a-ffe9-5995-543d6e4357db@jasonjgw.net>
- <Ycs60ClBq1jcVDuF@rednote.net>
- <055e3d2d-0653-3edc-4879-484816734d00@slint.fr>
- <YctqoKAZIKdSZH9f@rednote.net>
- <86d02e30-71fc-50bd-2408-6c658ec2da29@slint.fr>
- <20211228211323.3f2uhc6hblud4h3a@alex-pc>
- <YcuSVelJCeOX5Vg0@rednote.net>
- <20211228225025.xdkkmkow6io4kcml@alex-pc>
+	id 21184380C1D; Sat, 29 Jan 2022 15:45:20 -0500 (EST)
+Received: from out5-smtp.messagingengine.com (out5-smtp.messagingengine.com [66.111.4.29])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 78E923807A8
+	for <speakup@linux-speakup.org>; Sat, 29 Jan 2022 15:45:18 -0500 (EST)
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailout.nyi.internal (Postfix) with ESMTP id 5865E5C0045
+	for <speakup@linux-speakup.org>; Sat, 29 Jan 2022 15:45:15 -0500 (EST)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute2.internal (MEProxy); Sat, 29 Jan 2022 15:45:15 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:date:date:from:from
+	:in-reply-to:message-id:mime-version:reply-to:sender:subject
+	:subject:to:to; s=fm3; bh=I8U2eF4Re/YCOFnsRFzgKkbPXfl5d+6RMmPa3u
+	6PILU=; b=WkZsMhCHAMtXusaVoBzuwnsXI4DzURH4Gq5+eD83NL1/vg6mEJ6GV8
+	muNUeaqxtOgJhsviIgYG7RfS2aADhjDOBcHlNhr6B+AuibWdfJ7K6XM1ReiauJD/
+	KCFEi3cNE+RBsZOIU8eeb7Des/NXNhFqPfLYnWmSzt+aL8f52rDehCqNQBc8vGZa
+	AeNoMUtKliczI8n1cxjxITEIamML8ocT/bOMdUhjHgtzLPEEuPUo654va43cebXR
+	ieFvLGqP+HLRRucwuuo8A/HACAoOanEm7CFp2uAny4JObTDI8zinI5H8WecpZaL1
+	tDEYCOCcMvBJMXOqewmF1VuwbADPnrcw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:date:date:from:from
+	:in-reply-to:message-id:mime-version:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm1; bh=I8U2eF4Re/YCOFnsRFzgKkbPXfl5d+6RMmPa3u6PI
+	LU=; b=UvsSLJC2li8Q26lkBuYzMh8bwdUZFY202sIqceeA3SmE50P9LbtneM9Bh
+	jJ/PAddlMmKbSO8ws5GnltI++qmGp32n3E7B3jP2ujC5pn5C3QzpseuaJsQ4Z15z
+	393GXaVzhYHxrHmkqUa0cQmfDFphfTBNEouqBO9sShPaTJu5z1ZGuhM3rgZmCsKF
+	q+yNEejYpdylzyX7BOMOeyHjaEsgXm9HjLNQh9VirP9jUoY4ovIufgAtGx7DtocJ
+	9AiA2OOLMLF+NnElD4M64/M3cb1zLrWSKT7HSMjFwEshvPc+Kv39td5TST/vb0BO
+	L6j5qV00mm5bjg7lvE+JXh5nr/5uw==
+X-ME-Sender: <xms:W6f1YSLyFubdy4viBU9kE9tQ50JNuCg5xlTPW6KjVEEqN861rFu0bQ>
+    <xme:W6f1YaLAnZA_YW9qOeJ04qmxduVjpsG6-hEu7UAv0k6BaDx4_W4YVamhzDTHLzEdW
+    1Pl7vdUKP79UNF5ZFM>
+X-ME-Received: <xmr:W6f1YSvp9FZSXQM0XX5VbbybgoqQtEaXzs_kk1lbexeHQuEhkzRrHGMBmhpeUbhf_KL_4kwE9dNNj0zN06dpL9y-F49xc9UPSQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrfeejgddugedvucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttd
+    dvnecuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhu
+    mhhphhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtie
+    ettedtkefggfekvdeujeetkedtheefhffhvdetkeenucevlhhushhtvghrufhiiigvpedt
+    necurfgrrhgrmhepmhgrihhlfhhrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphh
+    hrvgihrdgtohhm
+X-ME-Proxy: <xmx:W6f1YXZVS5J6IGekXRAySxDI_Dp9G7zzeUOnNcQcz2McOlxu1VWhDA>
+    <xmx:W6f1YZYr51Hua-AU0kb_GxR5uI6QI8euqoBckHuU0Mv_XGG-3Py6cQ>
+    <xmx:W6f1YTDvxFOGfJKPCj5exe0QgCoHFzz2aqe5nwPKdypUMcA4MUNhCw>
+    <xmx:W6f1Yb2lKISYeBpMTy8u3ANhE15qEMVNuswZTUh9xSN5b1j4lGRwbQ>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Sat, 29 Jan 2022 15:45:14 -0500 (EST)
+Date: Sat, 29 Jan 2022 12:45:13 -0800 (PST)
+From: Chime Hart <chime@hubert-humphrey.com>
+To: speakup@linux-speakup.org
+Subject: Maybe An Odd DecTalk Sequence?
+Message-ID: <f859deaf-1e72-8a5d-5096-c011fef86544@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -65,80 +78,17 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20211228225025.xdkkmkow6io4kcml@alex-pc>
-X-Operating-System: Linux opera.rednote.net 5.15.8-200.fc35.x86_64
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Alexander Epaneshnikov writes:
-> On Tue, Dec 28, 2021 at 05:40:21PM -0500, Janina Sajka wrote:
-> > Yes, I seem to have a full compliment of pw on the older machine, and
-> > the same set of pw on the newer machine.
-> 
-> strange. I think espeakup will not work if pw is inuse.
-> 
-
-I have 0.90 on the newer machine and 0.80 on the older machine, both
-working perfectly well. Perhaps pipewire is just piping alsa calls?
-
-> > Interestingly, the files in /etc/alsa/conf.d/ are different. The new
-> > machine shows only two files there:
-> >
-> > 50-pipewire.conf
-> > 99-pipewire-default.conf
-> >
-> > On the older machine, earlier today, I tried renumber my alsa devices
-> > via /etc/modprobe.d/alsa.conf. I ended up putting things back the way
-> > they were, because the builtin Intel HDA device doesn't work as card 0
-> > for some reason--very strange, but I adjusted some time ago to start
-> > numbering my three devices as 1, 2 and 3.  So, after I put things back,
-> > a see much more pw in that directory:
-> >
-> > 10-samplerate.conf
-> > 10-speexrate.conf
-> > 50-arcam-av-ctl.conf
-> > 50-jack.conf
-> > 50-oss.conf
-> > 50-pipewire.conf
-> > 50-pulseaudio.conf
-> > 60-speex.conf
-> > 60-upmix.conf
-> > 60-vdownmix.conf
-> > 98-usb-stream.conf
-> > 99-pipewire-default.conf
-> >
-> >
-> > This suggests to me that the conversion to pw is still a work in
-> > progress!
-> >
-> > I've no idea why the above is the situation, though, or what packages
-> > handle what aspect.
-> 
-> you can use pacman -Qo /path/to/file to check which package owns this file.
-oThanks! Just did that and reinstalled alsa-plugins as well as pipewire.
-I now have the full compliment of scripts in that directory.
-
-Janina
-
-> 
-> > Best,
-> >
-> > Janina
-> 
-> --
-> Sincerely, Alexander
-
--- 
-
-Janina Sajka
-(she/her/hers)
-https://linkedin.com/in/jsajka
-
-Linux Foundation Fellow
-Executive Chair, Accessibility Workgroup:	http://a11y.org
-
-The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
-Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
-
+Hi All: After restarting, I advanced from Debian 5.10 to 5.15 03  in SID  I was 
+having issues with flush time which I think could have been set as lo as 10, 
+but now only 100, slight perceptible difference when cursoring line-by-line. 
+Anyway, now after either typing or reading an individual capitalized letter, 
+the next charictor even if a space says p along with whats there. So if it were 
+a capital i followed by space, it would say I p space. Unless this is some 
+weird charictor set issue, I suppose it would be a setting in the DecTalk 
+drivers. I am also figuring its related to DecTalk as my laptop, same kernel, 
+but no issues in Voxin. Thanks so much in advance for any suggestions.
+Chime
 
