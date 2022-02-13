@@ -1,46 +1,28 @@
-Return-Path: <speakup+bounces-366-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-367-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7DA2D4B3945
-	for <lists+speakup@lfdr.de>; Sun, 13 Feb 2022 04:52:24 +0100 (CET)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=xg+RKgIk;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id D65944B3DC1
+	for <lists+speakup@lfdr.de>; Sun, 13 Feb 2022 22:33:28 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DE35F381133; Sat, 12 Feb 2022 22:52:23 -0500 (EST)
+	id 5806638140B; Sun, 13 Feb 2022 16:33:28 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CA129380BEB
-	for <lists+speakup@lfdr.de>; Sat, 12 Feb 2022 22:52:23 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 427493805F1
+	for <lists+speakup@lfdr.de>; Sun, 13 Feb 2022 16:33:28 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C4BFC380C70; Sat, 12 Feb 2022 22:52:17 -0500 (EST)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 79CDD3805F3
-	for <speakup@linux-speakup.org>; Sat, 12 Feb 2022 22:52:17 -0500 (EST)
-Received: from vbox.gregn.net (unknown [172.58.17.242])
+	id 52424380B33; Sun, 13 Feb 2022 16:33:23 -0500 (EST)
+Received: from bullseyemail.carmickle.com (bullseyemail.carmickle.com [50.116.61.232])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 436EA3805F1
+	for <speakup@linux-speakup.org>; Sun, 13 Feb 2022 16:33:23 -0500 (EST)
+Received: from [IPv6:2600:3c03:e000:3c2::91:66] (unknown [IPv6:2600:3c03:e000:3c2::91:66])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id 594087CA
-	for <speakup@linux-speakup.org>; Sat, 12 Feb 2022 19:52:17 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1644724337; bh=HwQiEmbRgH4VcSJX2zGGj8b40QAIgcS5r5yZqkW49wQ=;
-	h=Date:From:To:Subject:References:In-Reply-To:From;
-	b=xg+RKgIkXNWv51NOpX08FRrDo0ZfJ7paxoxQhLgt4sBsncQmoz1kqZ1EU5V1JO6SR
-	 IKWAHqR6Z1fFRSlwigYzT6DGKeaiM5lRQ9N2fulRRbOmzZYJnQU2wyhvC3MQqf8lKz
-	 q18XPfE1oM89r5SRB5NlgSET3k7O+UZEWjY9b5so/9tsiM4IQL4GenbjQDfeqYdGzp
-	 GGxXcCOjn7LInbvVQ2ji4oYAv5tZEls/6LhBADQ5anhKj6KZFkFhd24PNiC4oDIC6R
-	 MpLvH1Vq4HCYER0cVNv96FMp3bHpVPOXgFjtMFrwUm/q9U6ojJBptWXJmHH7d0lAnD
-	 5X+cLd9DUnwLQ==
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 437D9C247; Sat, 12 Feb 2022 20:52:14 -0700 (MST)
-Date: Sat, 12 Feb 2022 20:52:14 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: speakup@linux-speakup.org
-Subject: Re: how to use ltlk with usb to serial converter
-Message-ID: <YgiAbvvPEkj9cKEN@gregn.net>
-References: <3c4a04f0.6f54.4391.8aca.3cbe239fbabf@samobile.net>
+	by bullseyemail.carmickle.com (Postfix) with ESMTPSA id 7C7643971DD8;
+	Sun, 13 Feb 2022 21:33:21 +0000 (UTC)
+Content-Type: text/plain;
+	charset=us-ascii
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -49,43 +31,55 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <3c4a04f0.6f54.4391.8aca.3cbe239fbabf@samobile.net>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 0.103.4 at vserver
-X-Virus-Status: Clean
+Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.21\))
+Subject: Re: espeakup not speaking screen review from speakup in Debian sid
+ 20211215 while screen refreshing to quickly
+From: Frank Carmickle <frank@carmickle.com>
+In-Reply-To: <20220213015252.mo4cilfk3w3etmha@begin>
+Date: Sun, 13 Feb 2022 16:33:20 -0500
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
+ Debian Accessibility Team <debian-accessibility@lists.debian.org>
+Content-Transfer-Encoding: quoted-printable
+Message-Id: <55390181-D882-402F-BF64-5A5DD91C2E44@carmickle.com>
+References: <6C488A97-ABC4-42AE-96FF-20B10156191C@carmickle.com>
+ <20220213015252.mo4cilfk3w3etmha@begin>
+To: Samuel Thibault <samuel.thibault@aquilenet.fr>
+X-Mailer: Apple Mail (2.3445.104.21)
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I assume you mean ttyUSB0. So, what you want is:
 
-modprobe speakup_ltlk dev=ttyUSB0
+> On Feb 12, 2022, at 8:52 PM, Samuel Thibault =
+<samuel.thibault@aquilenet.fr> wrote:
+>=20
+> Hello,
+>=20
+> Digging back this issue, related also to a recent discussion on
+> debian-accessibility
+>=20
+> Frank Carmickle wrote:
+>> 0 5.14 and now 5.15. When I write a lot of output to a screen,
+>> say dmesg without a pager, screen review stops working for a few
+>> seconds. I know speakup is still responding because the tones are
+>> played when navigating by word when moving to a new line. The speech
+>> is interrupted appropriately but it will not speak again for a few
+>> seconds.
+>=20
+> I have been able to reproduce something like this: run dmesg, let it
+> start speak, press a key to stop it, press some other keys, but the
+> speech remains silent until a few seconds. I have tracked this down to
+> espeak having some extra 50ms delays that repeat for each dropped
+> phoneme/word, thus the apparent pause.
+>=20
+> I have just uploaded to sid version 1.50+dfsg-10 of espeak-ng that =
+drops
+> that delay, would you be able to test it?
 
-You want to either do that as root, or prefix it with sudo.
+Fixed!!! Thank you Samuel. I was able to cat 16,500 lines with no =
+dropouts or delays.
 
-Greg
+Your work is so very much appreciated.
 
+Best to you,
+--FC
 
-On Sat, Feb 12, 2022 at 09:42:35PM -0500, tony seth wrote:
-> Well hello there all:
-> The subject says it all. I seem to remember a way to start Speakup with a
-> usb to serial converter but can't remember the syntax.
-> I know it may work because I can get the doubletalk to speak when I pipe
-> text to ttyUBS0.
-> Thanks much for any help.
-> I'm using Speakup 3.16 with Kernel 5.14.14.
-> Thanks much...
-> Cheereo!
-> 
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
