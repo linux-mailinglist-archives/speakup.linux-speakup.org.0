@@ -1,52 +1,74 @@
-Return-Path: <speakup+bounces-379-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-380-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 46BDF4EB46A
-	for <lists+speakup@lfdr.de>; Tue, 29 Mar 2022 22:04:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C0B634F0C4F
+	for <lists+speakup@lfdr.de>; Sun,  3 Apr 2022 21:36:40 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=LdZd/sWU;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=cLvAR7ZN;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 11F6B380D1F; Tue, 29 Mar 2022 16:04:49 -0400 (EDT)
+	id AB4A2380D3D; Sun,  3 Apr 2022 15:36:39 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 043FC3810C3
-	for <lists+speakup@lfdr.de>; Tue, 29 Mar 2022 16:04:47 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 968C1380370
+	for <lists+speakup@lfdr.de>; Sun,  3 Apr 2022 15:36:39 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C381B380B3C; Tue, 29 Mar 2022 16:04:45 -0400 (EDT)
-Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 9A3E9380B0C
-	for <speakup@linux-speakup.org>; Tue, 29 Mar 2022 16:04:45 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 5A23B20148;
-	Tue, 29 Mar 2022 22:04:37 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id BvxpySn1s-lA; Tue, 29 Mar 2022 22:04:37 +0200 (CEST)
-Received: from begin.home (lfbn-bor-1-255-114.w90-50.abo.wanadoo.fr [90.50.98.114])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 2321320147;
-	Tue, 29 Mar 2022 22:04:36 +0200 (CEST)
-Received: from samy by begin.home with local (Exim 4.95)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1nZI4x-007cxL-MZ;
-	Tue, 29 Mar 2022 22:04:35 +0200
-Date: Tue, 29 Mar 2022 22:04:35 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: trix@redhat.com
-Cc: w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
-	colin.i.king@googlemail.com, gregkh@linuxfoundation.org,
-	salah.triki@gmail.com, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] accessiblity: speakup: cleanup comments
-Message-ID: <20220329200435.lxunh3qcz7w2fsmh@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	trix@redhat.com, w.d.hubbs@gmail.com, chris@the-brannons.com,
-	kirk@reisers.ca, colin.i.king@googlemail.com,
-	gregkh@linuxfoundation.org, salah.triki@gmail.com,
-	speakup@linux-speakup.org, linux-kernel@vger.kernel.org
-References: <20220329195401.3220408-1-trix@redhat.com>
+	id B6A4338092D; Sun,  3 Apr 2022 15:36:33 -0400 (EDT)
+Received: from wout1-smtp.messagingengine.com (wout1-smtp.messagingengine.com [64.147.123.24])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id DD9D4380370
+	for <speakup@linux-speakup.org>; Sun,  3 Apr 2022 15:36:32 -0400 (EDT)
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailout.west.internal (Postfix) with ESMTP id C69C73201DD7
+	for <speakup@linux-speakup.org>; Sun,  3 Apr 2022 15:36:27 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute2.internal (MEProxy); Sun, 03 Apr 2022 15:36:27 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:date:date:from:from
+	:in-reply-to:message-id:mime-version:reply-to:sender:subject
+	:subject:to:to; s=fm1; bh=sa8PnEGgl0KAN3iFzgM3+2YROd0EZXcwta7Vnl
+	DJ3M4=; b=LdZd/sWUnWY54xpHf6ffircaQiWDgcWob4XKQN8KOq7ylN4lQdzcoG
+	r2qH9RhyuGHTnl30n8uwwQ9H9GvrJRpvrb3ZazWmLG9UcAgWIfx9Y8WnRO27D1Yq
+	oCiIUPVGlaTN3rMKUES8qE2I+yXWW001YbA45ke2UCWPDjUJoJzO239weu0Wll4e
+	42UKniwfYer3WVYPIXMWOxjtQpsVEAPeXzc1cMr6Lne9xHO/InVNhC5NxeF0hk/C
+	tGc6y5AsgdEZn/5oWb9uxjIjiWEIEKTYgLthdOrDiF1vv+XRJ8vg6gYPefTxhPdU
+	9neJfZ2OBpAlG/KacK8OkIoxzu1GRt+w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:date:date:from:from
+	:in-reply-to:message-id:mime-version:reply-to:sender:subject
+	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+	:x-sasl-enc; s=fm3; bh=sa8PnEGgl0KAN3iFzgM3+2YROd0EZXcwta7VnlDJ3
+	M4=; b=cLvAR7ZNaOZaoCXYbBUb8BOrZt4Ob3wrg7gCCgsNC33WiazR/hiUxGJEg
+	jze6JFfnbvgaE3zDz13gbPdJizB/dhRomhVHVl5a+/RONC8iZJzM5qUWgiwGBVqK
+	BlIBb8+dWyG72vXFd/vKAWWQ9xGQj7RBzogCVNOYVTPEBI/USCcE+15a1QoYKHdY
+	3E/0dSDQohS6HIeX3C+Wso8lpKy4bXvU1db0Z+hEYsf0jIYPNsM9g6BC2McO71HF
+	tyO2B2103S0EhG3/RNocfLxcgMnM3HiI0+/biXuznaKxzoSLsnTuw0Y1N3VtCwE2
+	45d6/q7Zn+qOBNTb2UqQMgH9Zo55Q==
+X-ME-Sender: <xms:O_dJYq16cZBiCKd6POwSig7DMBo0nIksOhAV-tz1-oxGNsOX3-s-eg>
+    <xme:O_dJYtHF-tlyNnXMHqeKvlIWLBb8eHO5tNcuqwCxTiBv05hvZSFRDNiiUUAscDR5c
+    Aq2K8TjIHKt-8jQrnY>
+X-ME-Received: <xmr:O_dJYi5YjK9ZNhnNJsOXp10aFbSV5fg4Hqr8jWXlbyzrNXw27CTdrZ3TICTPkl5z-ZaQhdSTRPko9enAHcTBmhvKY4QpvXFrkw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrudejtddgudegudcutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+    necuuegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfggtgesthdtredttd
+    dtvdenucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhh
+    uhhmphhhrhgvhidrtghomheqnecuggftrfgrthhtvghrnhepjeffffdujeelueffieevtd
+    eiteettdekgffgkedvueejteektdehfefhhfdvteeknecuvehluhhsthgvrhfuihiivgep
+    tdenucfrrghrrghmpehmrghilhhfrhhomheptghhihhmvgeshhhusggvrhhtqdhhuhhmph
+    hhrhgvhidrtghomh
+X-ME-Proxy: <xmx:O_dJYr1LRkl8URyPWM9668jCJqe3mbVKmoXV1rSbkW0Gq3U1FxZXDQ>
+    <xmx:O_dJYtHReU89ckhdDMOEJiuVLRpjgFinj6TCgOujHCBMnbxbrvyIyg>
+    <xmx:O_dJYk-48nTooJbZ5RDntIwhGOblU3nHbymE3o3nxspdryxvP2bbhQ>
+    <xmx:O_dJYsyBKbCVhr9JTPncUC0QkV5-p9yS86E9eDpZcy6RSZLIhxjB1w>
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Sun, 3 Apr 2022 15:36:26 -0400 (EDT)
+Date: Sun, 3 Apr 2022 12:36:25 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+To: speakup@linux-speakup.org
+Subject: How Can I Switch Synthesizers on the Fly?
+Message-ID: <1dc619bf-ba8a-47b3-2c85-7dff6e27086@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -56,261 +78,22 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20220329195401.3220408-1-trix@redhat.com>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-trix@redhat.com, le mar. 29 mars 2022 12:54:01 -0700, a ecrit:
-> From: Tom Rix <trix@redhat.com>
-> 
-> Replace for spelling
-> keypresses to key presses
-> bytesize to byte size
-> specificly to specifically
-> 
-> Signed-off-by: Tom Rix <trix@redhat.com>
-
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
-
-> ---
->  drivers/accessibility/speakup/fakekey.c        | 4 ++--
->  drivers/accessibility/speakup/serialio.c       | 2 +-
->  drivers/accessibility/speakup/speakup_acntpc.c | 2 +-
->  drivers/accessibility/speakup/speakup_acntsa.c | 2 +-
->  drivers/accessibility/speakup/speakup_apollo.c | 2 +-
->  drivers/accessibility/speakup/speakup_audptr.c | 2 +-
->  drivers/accessibility/speakup/speakup_bns.c    | 2 +-
->  drivers/accessibility/speakup/speakup_decext.c | 2 +-
->  drivers/accessibility/speakup/speakup_dectlk.c | 2 +-
->  drivers/accessibility/speakup/speakup_dtlk.c   | 2 +-
->  drivers/accessibility/speakup/speakup_dummy.c  | 2 +-
->  drivers/accessibility/speakup/speakup_keypc.c  | 2 +-
->  drivers/accessibility/speakup/speakup_ltlk.c   | 2 +-
->  drivers/accessibility/speakup/speakup_soft.c   | 2 +-
->  drivers/accessibility/speakup/speakup_spkout.c | 2 +-
->  drivers/accessibility/speakup/speakup_txprt.c  | 2 +-
->  16 files changed, 17 insertions(+), 17 deletions(-)
-> 
-> diff --git a/drivers/accessibility/speakup/fakekey.c b/drivers/accessibility/speakup/fakekey.c
-> index cd029968462f..868c47b2a59b 100644
-> --- a/drivers/accessibility/speakup/fakekey.c
-> +++ b/drivers/accessibility/speakup/fakekey.c
-> @@ -1,6 +1,6 @@
->  // SPDX-License-Identifier: GPL-2.0+
->  /* fakekey.c
-> - * Functions for simulating keypresses.
-> + * Functions for simulating key presses.
->   *
->   * Copyright (C) 2010 the Speakup Team
->   */
-> @@ -78,7 +78,7 @@ void speakup_fake_down_arrow(void)
->  }
->  
->  /*
-> - * Are we handling a simulated keypress on the current CPU?
-> + * Are we handling a simulated key press on the current CPU?
->   * Returns a boolean.
->   */
->  bool speakup_fake_key_pressed(void)
-> diff --git a/drivers/accessibility/speakup/serialio.c b/drivers/accessibility/speakup/serialio.c
-> index 53580bdc5baa..3418ea31d28f 100644
-> --- a/drivers/accessibility/speakup/serialio.c
-> +++ b/drivers/accessibility/speakup/serialio.c
-> @@ -59,7 +59,7 @@ const struct old_serial_port *spk_serial_init(int index)
->  	}
->  	ser = rs_table + index;
->  
-> -	/*	Divisor, bytesize and parity */
-> +	/*	Divisor, byte size and parity */
->  	quot = ser->baud_base / baud;
->  	cval = cflag & (CSIZE | CSTOPB);
->  #if defined(__powerpc__) || defined(__alpha__)
-> diff --git a/drivers/accessibility/speakup/speakup_acntpc.c b/drivers/accessibility/speakup/speakup_acntpc.c
-> index 023172ca22ef..a55b60754eb1 100644
-> --- a/drivers/accessibility/speakup/speakup_acntpc.c
-> +++ b/drivers/accessibility/speakup/speakup_acntpc.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * this code is specificly written as a driver for the speakup screenreview
-> + * this code is specifically written as a driver for the speakup screenreview
->   * package and is not a general device driver.
->   * This driver is for the Aicom Acent PC internal synthesizer.
->   */
-> diff --git a/drivers/accessibility/speakup/speakup_acntsa.c b/drivers/accessibility/speakup/speakup_acntsa.c
-> index 3a863dc61286..2697c51ed6b5 100644
-> --- a/drivers/accessibility/speakup/speakup_acntsa.c
-> +++ b/drivers/accessibility/speakup/speakup_acntsa.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * this code is specificly written as a driver for the speakup screenreview
-> + * this code is specifically written as a driver for the speakup screenreview
->   * package and is not a general device driver.
->   */
->  
-> diff --git a/drivers/accessibility/speakup/speakup_apollo.c b/drivers/accessibility/speakup/speakup_apollo.c
-> index cd63581b2e99..c84a7e0864b7 100644
-> --- a/drivers/accessibility/speakup/speakup_apollo.c
-> +++ b/drivers/accessibility/speakup/speakup_apollo.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * this code is specificly written as a driver for the speakup screenreview
-> + * this code is specifically written as a driver for the speakup screenreview
->   * package and is not a general device driver.
->   */
->  #include <linux/jiffies.h>
-> diff --git a/drivers/accessibility/speakup/speakup_audptr.c b/drivers/accessibility/speakup/speakup_audptr.c
-> index a0c3b8ae17a1..4d16d60db9b2 100644
-> --- a/drivers/accessibility/speakup/speakup_audptr.c
-> +++ b/drivers/accessibility/speakup/speakup_audptr.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * s not a general device driver.
->   */
->  #include "spk_priv.h"
-> diff --git a/drivers/accessibility/speakup/speakup_bns.c b/drivers/accessibility/speakup/speakup_bns.c
-> index 76dfa3f7c058..b8103eb117b8 100644
-> --- a/drivers/accessibility/speakup/speakup_bns.c
-> +++ b/drivers/accessibility/speakup/speakup_bns.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * this code is specificly written as a driver for the speakup screenreview
-> + * this code is specifically written as a driver for the speakup screenreview
->   * package and is not a general device driver.
->   */
->  #include "spk_priv.h"
-> diff --git a/drivers/accessibility/speakup/speakup_decext.c b/drivers/accessibility/speakup/speakup_decext.c
-> index 092cfd08a9e1..eaebf62300a4 100644
-> --- a/drivers/accessibility/speakup/speakup_decext.c
-> +++ b/drivers/accessibility/speakup/speakup_decext.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * s not a general device driver.
->   */
->  #include <linux/jiffies.h>
-> diff --git a/drivers/accessibility/speakup/speakup_dectlk.c b/drivers/accessibility/speakup/speakup_dectlk.c
-> index 78ca4987e619..2a7e8d727904 100644
-> --- a/drivers/accessibility/speakup/speakup_dectlk.c
-> +++ b/drivers/accessibility/speakup/speakup_dectlk.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * s not a general device driver.
->   */
->  #include <linux/unistd.h>
-> diff --git a/drivers/accessibility/speakup/speakup_dtlk.c b/drivers/accessibility/speakup/speakup_dtlk.c
-> index a9dd5c45d237..6f01e010aaf4 100644
-> --- a/drivers/accessibility/speakup/speakup_dtlk.c
-> +++ b/drivers/accessibility/speakup/speakup_dtlk.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * package it's not a general device driver.
->   * This driver is for the RC Systems DoubleTalk PC internal synthesizer.
->   */
-> diff --git a/drivers/accessibility/speakup/speakup_dummy.c b/drivers/accessibility/speakup/speakup_dummy.c
-> index 63c2f2943282..34f11cd47073 100644
-> --- a/drivers/accessibility/speakup/speakup_dummy.c
-> +++ b/drivers/accessibility/speakup/speakup_dummy.c
-> @@ -8,7 +8,7 @@
->   * Copyright (C) 2003 David Borowski.
->   * Copyright (C) 2007, 2022 Samuel Thibault.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * s not a general device driver.
->   */
->  #include "spk_priv.h"
-> diff --git a/drivers/accessibility/speakup/speakup_keypc.c b/drivers/accessibility/speakup/speakup_keypc.c
-> index 1618be87bff1..f61b62f1ea4d 100644
-> --- a/drivers/accessibility/speakup/speakup_keypc.c
-> +++ b/drivers/accessibility/speakup/speakup_keypc.c
-> @@ -4,7 +4,7 @@
->   *
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * package it's not a general device driver.
->   * This driver is for the Keynote Gold internal synthesizer.
->   */
-> diff --git a/drivers/accessibility/speakup/speakup_ltlk.c b/drivers/accessibility/speakup/speakup_ltlk.c
-> index 3e59b387d0c4..f885cfaa27c8 100644
-> --- a/drivers/accessibility/speakup/speakup_ltlk.c
-> +++ b/drivers/accessibility/speakup/speakup_ltlk.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * s not a general device driver.
->   */
->  #include "speakup.h"
-> diff --git a/drivers/accessibility/speakup/speakup_soft.c b/drivers/accessibility/speakup/speakup_soft.c
-> index 19824e7006fe..1ced2721513e 100644
-> --- a/drivers/accessibility/speakup/speakup_soft.c
-> +++ b/drivers/accessibility/speakup/speakup_soft.c
-> @@ -5,7 +5,7 @@
->   *
->   * Copyright (C) 2003  Kirk Reiser.
->   *
-> - * this code is specificly written as a driver for the speakup screenreview
-> + * this code is specifically written as a driver for the speakup screenreview
->   * package and is not a general device driver.
->   */
->  
-> diff --git a/drivers/accessibility/speakup/speakup_spkout.c b/drivers/accessibility/speakup/speakup_spkout.c
-> index bd3d8dc300ff..5e3bb3aa98b6 100644
-> --- a/drivers/accessibility/speakup/speakup_spkout.c
-> +++ b/drivers/accessibility/speakup/speakup_spkout.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * s not a general device driver.
->   */
->  #include "spk_priv.h"
-> diff --git a/drivers/accessibility/speakup/speakup_txprt.c b/drivers/accessibility/speakup/speakup_txprt.c
-> index a7326f226a5e..9e781347f7eb 100644
-> --- a/drivers/accessibility/speakup/speakup_txprt.c
-> +++ b/drivers/accessibility/speakup/speakup_txprt.c
-> @@ -6,7 +6,7 @@
->   * Copyright (C) 1998-99  Kirk Reiser.
->   * Copyright (C) 2003 David Borowski.
->   *
-> - * specificly written as a driver for the speakup screenreview
-> + * specifically written as a driver for the speakup screenreview
->   * s not a general device driver.
->   */
->  #include "spk_priv.h"
-> -- 
-> 2.26.3
-> 
+Hi All: I've asked others in other forums such as Slint-and-Debian 
+Accessibility, but so far I am striking out. I have a DecTalk U S B, but last 
+year I purchased some hi quality voices from Oralux, which are software speech. 
+When I have Allison installed, I can send her text through spd-say. Making 
+matters more complex, speech-dispatcher will not seem to install on this Debian 
+Sid machine. Guidance I've received from 2 sources, says I must install and 
+have espeak talking before I can switch to Allison, which is an embedded voice. 
+When I was running Slint on a laptop, Didier had created a talk-with command to 
+easily switch synths, but his script would need to be re written for Debian. In 
+addition, 
+if I unload the DecTalk module, I won't have speech, or would their be a way of 
+having both DecTalk and software speech at the same time? So, can some1 please 
+provide exact commands I can switch synths on the fly? I ran a locate for 
+softsynth  but nothing found. Thanks so much in advance
+Chime
 
