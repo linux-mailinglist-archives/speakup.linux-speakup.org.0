@@ -1,77 +1,50 @@
-Return-Path: <speakup+bounces-388-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-389-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 5A61B4F19AC
-	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 20:17:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id A480E4F19D7
+	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 20:43:54 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=kuBnY9nk;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=Fds437Dt;
+	dkim=pass (2048-bit key; secure) header.d=pcdesk.net header.i=@pcdesk.net header.a=rsa-sha256 header.s=pcdesk20210713 header.b=o3qC/Y2g;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ECE3A380D33; Mon,  4 Apr 2022 14:17:42 -0400 (EDT)
+	id 45F36380D4C; Mon,  4 Apr 2022 14:43:54 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D8EDE380927
-	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 14:17:42 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3086D3809A3
+	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 14:43:54 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D4620380974; Mon,  4 Apr 2022 14:17:36 -0400 (EDT)
-Received: from out4-smtp.messagingengine.com (out4-smtp.messagingengine.com [66.111.4.28])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 10ECA380927
-	for <speakup@linux-speakup.org>; Mon,  4 Apr 2022 14:17:36 -0400 (EDT)
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
-	by mailout.nyi.internal (Postfix) with ESMTP id 61F085C015E;
-	Mon,  4 Apr 2022 14:17:35 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute2.internal (MEProxy); Mon, 04 Apr 2022 14:17:35 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:cc:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm1; bh=4FK1p9i2ahdCF8
-	21sZvGdMp+FjU+y2C+NgS+cYY/7OQ=; b=kuBnY9nkffOuyrjoNMyhZr/BJ4PtBa
-	fs0fMUX2ev4Sk9B7/BBiMRShFeUK2rw4xOA7GiAIpTK5aV8I/buIpfOr4Q54lNdZ
-	gLmqEy0juAnbPCw75XT1sJPqPhZNSvltd/bVE/Kt+IjmrHuES3lME/ofqnhPMy7r
-	gumswNOVzeBqNf7OrHp8rCGWXvqqEU/VkavSKQxnfyHBQ7Mu6rs+12UqF3L7DRLZ
-	WCPIvn9qf4NURACX81rxX7pmtTF61zQQycZC7cK8u96jFt4FIt4kqPkdhZDw1HVa
-	nmBA2e0wO0gJ4mhipcEeLL/qpMwyvf3Inrzbh50m1iHK2Ae+qenGiTRg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=4FK1p9i2ahdCF821s
-	ZvGdMp+FjU+y2C+NgS+cYY/7OQ=; b=Fds437Dt2OSownr2CfQE7ygIInLz3PW7n
-	X6Li0BxoMobqU8SLY5Fx6HiYy6fR3ddNCJ6Zfs7CQ2TfdSAaKRdnJswxQAS/aGF/
-	LhYoBNnyFWFNR9U98QMzt17kP506LhAR2iP8XmOi2qzL9HTtuvvJBMJ2IC5iDKY4
-	qWdTNDNuKSqvJReG0qgErv9AgMfjJgUVWvvZEWAYSZOz7iSFxdFxKsyTZdEAzDCe
-	TZ7cNYHyeYTP4PNyCHFYfzIUWhDqg7ImTUmjfpnhCe6uDy+7EkjZ6Y12SBw7hPky
-	I010jnfZDibravKJ/WHAg5oGN/ciewT3sE2slwMc5bS/4jk1wru9g==
-X-ME-Sender: <xms:PzZLYkHSIhHCi3rBVZG4Xs3ulyKopgYlQLN1h1W6WzUZ4PMc5QWwSg>
-    <xme:PzZLYtUHnA4xwDYF0DlbhJOi1x-ypebgbImsjmrfHjCAP0TfER3afMfxkSFTFigOF
-    REcB1PWDTmiIsPvthc>
-X-ME-Received: <xmr:PzZLYuILNU1goPmyS6CtmcInlzd7Tcqis0wNaC3ewLMl4ZvXcXz2OOe4_F_-msxblm7G5iV5njDHvrViWfrhy8e8uEJ_8B9EZA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrudejvddguddukecutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
-    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
-    enucfjughrpeffhffvufgjkfhfgggtsehttdertddttddvnecuhfhrohhmpeevhhhimhgv
-    ucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenuc
-    ggtffrrghtthgvrhhnpeffhedthfdvvdeuueeihedvfeffuedtgeeuudfhgfelteelvddu
-    udfgleekvedtveenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
-    hrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
-X-ME-Proxy: <xmx:PzZLYmGHfr1QFKVZQV-bv-Gni2f5qRrPwX7eQQJrOrChMv7bR8ZkPA>
-    <xmx:PzZLYqWOMITjA2Gj9oFOy9m4qpqUF9gCJSZZuXUFGshgvQNdLUCcWg>
-    <xmx:PzZLYpOW1_8ZudcmYQMSpOLL3z8i9rO_ZKz5c5vGLn_-hObg3z0wNQ>
-    <xmx:PzZLYte9wO7VbGtxqJL52bgFfMfEYQqVji8JjUwlDN-ykWL0YJDqhw>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 4 Apr 2022 14:17:34 -0400 (EDT)
-Date: Mon, 4 Apr 2022 11:17:33 -0700 (PDT)
-From: Chime Hart <chime@hubert-humphrey.com>
-To: "Joseph C. Lininger" <joe@pcdesk.net>
-cc: Gregory Nowak <greg@gregn.net>, speakup@linux-speakup.org
+	id 1AF4B3809A3; Mon,  4 Apr 2022 14:43:48 -0400 (EDT)
+Received: from mail.pcdesk.net (mail.pcdesk.net [69.28.94.151])
+	by befuddled.reisers.ca (Postfix) with UTF8SMTPS id 0568E38092A
+	for <speakup@linux-speakup.org>; Mon,  4 Apr 2022 14:43:47 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pcdesk.net;
+	s=pcdesk20210713; t=1649097827;
+	bh=d2No2XOZLtVb5jSsiwzQmV61F9fhF9VNvrJtBhOq2kA=; l=1343;
+	h=Subject:To:Cc:References:From:Date:In-Reply-To;
+	b=o3qC/Y2gPf2nR4NFEFr19Ug5Yggce6VcrSiL1IstvmABSCuWU7lqU4XuBOe41sklr
+	 pQIm2S+pNbWE1J9qd3Ges44AGMajmdu7dCGo4r89yJJtzPFOr4Rr6IwaUVQvZUoP8g
+	 CdN8rGKB9XH+Qy18q4BvkCZOoZ+5BRD33znV83h/xCroReS2tAlrF+HdEWaHCDEp3+
+	 S4RJYpv0l0SEnsQEzTnpL/Q+/yKaCNxNbBpB83+ZTiLM9jKxOogkJWAW48tpTdy5Tr
+	 TvRMFCJ1DVNLFEJw0//4G1vIlyvdqdH/eYIVp6iBNbkRH4pjyWBd6OhnOUjcWXgGXu
+	 sQoYFlHtObTHA==
+Original-Subject: Re: How Can I Switch Synthesizers on the Fly?
+Original-From: "Joseph C. Lininger" <joe@pcdesk.net>
+Original-Cc: Gregory Nowak <greg@gregn.net>, speakup@linux-speakup.org
 Subject: Re: How Can I Switch Synthesizers on the Fly?
-In-Reply-To: <e4b20df5-5211-efaa-5937-ed214d1ae35e@pcdesk.net>
-Message-ID: <7da3e7da-321-40cd-5d66-3761b9143e3@hubert-humphrey.com>
-References: <1dc619bf-ba8a-47b3-2c85-7dff6e27086@hubert-humphrey.com> <Yko9zLikCNY1qcDX@gregn.net> <4ce83a8d-a0a1-3ef8-e8df-c9881198622@hubert-humphrey.com> <e4b20df5-5211-efaa-5937-ed214d1ae35e@pcdesk.net>
+To: Chime Hart <chime@hubert-humphrey.com>
+Cc: Gregory Nowak <greg@gregn.net>, speakup@linux-speakup.org
+References: <1dc619bf-ba8a-47b3-2c85-7dff6e27086@hubert-humphrey.com>
+ <Yko9zLikCNY1qcDX@gregn.net>
+ <4ce83a8d-a0a1-3ef8-e8df-c9881198622@hubert-humphrey.com>
+ <e4b20df5-5211-efaa-5937-ed214d1ae35e@pcdesk.net>
+ <7da3e7da-321-40cd-5d66-3761b9143e3@hubert-humphrey.com>
+From: "Joseph C. Lininger" <joe@pcdesk.net>
+Message-ID: <59e80e78-d905-4e01-3a0f-e85f039fb53a@pcdesk.net>
+Date: Mon, 4 Apr 2022 14:43:46 -0400
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.6.0
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -81,11 +54,49 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+In-Reply-To: <7da3e7da-321-40cd-5d66-3761b9143e3@hubert-humphrey.com>
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Language: en-US
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Thank you Joe for a `wonderful explainer-and-I think you are most likely 
-correct. We had similar results running an inflection script for the DecTalk.
-Chime
+My explanation of how to fix it was slightly incorrect actually. I told 
+you to run sudo under sudo, basically, which is not necessary. I've 
+provided what should be a full working script below. Try this script. It 
+won't matter that you're running this under tcsh, as long as you have a 
+working bash on your system. I've set it up to automatically execute bash.
+
+-- begin script --
+#!/bin/bash
+# Force a couple of environment variables to sane values for security 
+reasons
+PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin
+IFS=" \t\n"
+# Change the synth
+echo "soft" > /sys/accessibility/speakup/synth
+-- end script --
+
+You could also add lines to the script to run whatever support programs 
+you need to make the synthesizer work once you've switched it in 
+Speakup. Don't add "sudo" to any lines in this script since it's already 
+running as root. You'll run the script itself using sudo. For example, 
+if you were to name the script enablesoft, and it were in your path, 
+you'd type this.
+
+sudo enablesoft
+
+Assuming the rest of the parts are working, that should do it for you.
+
+--
+Joe
+
+
+
+On 4/4/2022 2:17 PM, Chime Hart wrote:
+> Thank you Joe for a `wonderful explainer-and-I think you are most 
+> likely correct. We had similar results running an inflection script 
+> for the DecTalk.
+> Chime
+>
 
 
