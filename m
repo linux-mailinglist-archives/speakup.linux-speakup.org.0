@@ -1,77 +1,49 @@
-Return-Path: <speakup+bounces-386-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-387-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id DD0D64F0E69
-	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 06:58:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id BD4834F19A7
+	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 20:06:42 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=t+u+kbYK;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=bNxsGiwF;
+	dkim=pass (2048-bit key; secure) header.d=pcdesk.net header.i=@pcdesk.net header.a=rsa-sha256 header.s=pcdesk20210713 header.b=KJqfTRDG;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7E331380D41; Mon,  4 Apr 2022 00:58:01 -0400 (EDT)
+	id 266E3380FC8; Mon,  4 Apr 2022 14:06:42 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6A8A2380953
-	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 00:58:01 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 172AC380E68
+	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 14:06:42 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4EA58380BB9; Mon,  4 Apr 2022 00:57:55 -0400 (EDT)
-Received: from out4-smtp.messagingengine.com (out4-smtp.messagingengine.com [66.111.4.28])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A6A64380930
-	for <speakup@linux-speakup.org>; Mon,  4 Apr 2022 00:57:54 -0400 (EDT)
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
-	by mailout.nyi.internal (Postfix) with ESMTP id 132515C00DE;
-	Mon,  4 Apr 2022 00:57:48 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute5.internal (MEProxy); Mon, 04 Apr 2022 00:57:48 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:cc:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm1; bh=g0O7TPftA0QxVm
-	4+wYmbROlG/OK94t61aRSb8pRNrBo=; b=t+u+kbYKeUKSyIeUmQAZsGcTsEOGo9
-	+jFfjbKIoLjgjyf6TdDw+cDDviPSYBWOgyYIUDa+/InOQLEULnykjQSdnyvuYVOA
-	6nawX2i11CqBKWxUCmQzzJvyCXGxpsQfUuYV6fQ4SpfGdWvQvm1YD9K6CKCP4uDC
-	XlNNsaiBkeym68u6ZxNDJ1OUUfEd6X43DvRBkQuxjCQ5CmlCAwMSjwQjgqUicq8x
-	Ls/FfOSVDiv0CvwqCO7DHj5ffWLmXiBtiai0M46pGSRqvoVipMNybrhvto3HV+5C
-	6TmJnqhi7caBz6B5wSfrzsU01T4bQKbNRlQNe63GMSttyP/854slQ94g==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=g0O7TPftA0QxVm4+w
-	YmbROlG/OK94t61aRSb8pRNrBo=; b=bNxsGiwF3epctZzk2hLgoD9s7QQxsrF89
-	sKmflj3YuwRqUoMPSaZ832OwV79WYtlrUU9u7ZHGaEt0ZhF3BL2NtGfR0PQeGQgY
-	KVL9I5ZX4HSUc2toSs3tZf3irRavsLcq1CW9+rohsnnKVXLx/WUzR8aq/7CfpHeS
-	MOIkQ6Cx5Bt9cQyWxKdGc8vo2rVRZEV1yW6YW9ilavbiWDwOD5rNYmOxk+HH4m02
-	SglaioxC6UB6a0DBzW5Nox1//++dC05ISkMvxFr/taAD1xYj8YW5aWWD7RDC2WGE
-	jN37G2U0qzDTeaq3cRd9UZW/UMWJMpBei474vGlavZYMcLH6A5MRg==
-X-ME-Sender: <xms:y3pKYtcgui8_OJ1NI4icXyYSDcR20AHXAoRBp7wCKZgakc_PAPBMlw>
-    <xme:y3pKYrNB64uSJGKPjruvkAXbFG31ycVaztR1G3rErNLQunZroDl7KPkcD8HKWTLd-
-    cjpH6uY8eC_JHE0J5Y>
-X-ME-Received: <xmr:y3pKYmgjlrI_xjjmpYGvqS66e7ktq5AAsgzqrw7X0ToxIEjX0r7Fb7beIgawxHGRmLSty_hYlUt0QlCtAFbSKDmINuSxcbzf0w>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvvddrudejuddgledtucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepfffhvffujgfkfhggtgesthdtredttddtvdenucfhrhhomhepvehhihhmvgcu
-    jfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomheqnecugg
-    ftrfgrthhtvghrnhepffehtdfhvddvueeuieehvdefffeutdegueduhffgleetledvuddu
-    gfelkeevtdevnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrh
-    homheptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
-X-ME-Proxy: <xmx:y3pKYm_vfwYUWK0Of--nybPjOTblC1mqR0WLI0QqPwmrOPzLJ7i5sQ>
-    <xmx:y3pKYptwLu7vLZTOEok2j9iXeTZH8BYqnEkxkqcbN4QqoWxfGZlVhg>
-    <xmx:y3pKYlHQu9wFKQkhQCkbMFsnbBrhV0SXamnlhT3wafLRwUGgmHA8oQ>
-    <xmx:zHpKYn1FrSPGZKNkudhALHzqm8rvS5bVtAoJqRKC137f6_P5AAVpCw>
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 4 Apr 2022 00:57:47 -0400 (EDT)
-Date: Sun, 3 Apr 2022 21:57:45 -0700 (PDT)
-From: Chime Hart <chime@hubert-humphrey.com>
-To: Gregory Nowak <greg@gregn.net>
-cc: speakup@linux-speakup.org
+	id EF74C38092D; Mon,  4 Apr 2022 14:06:38 -0400 (EDT)
+Received: from mail.pcdesk.net (mail.pcdesk.net [69.28.94.151])
+	by befuddled.reisers.ca (Postfix) with UTF8SMTPS id BB26E380909
+	for <speakup@linux-speakup.org>; Mon,  4 Apr 2022 14:06:38 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pcdesk.net;
+	s=pcdesk20210713; t=1649095587;
+	bh=RPSXqt1ATJ/5TpW3y++074IhD/hUDnJv+BayeNZ5+zs=; l=3842;
+	h=Subject:To:Cc:References:From:Date:In-Reply-To;
+	b=KJqfTRDGxnYS6J2o+46tBsOfoxyVQENaMkMzy//nGqs7Xgio6WjxsYAUtJfNQsMui
+	 I0tR8L5xFfiUGdxW6waccC6QlWtNeEsUfxzxEZdPWhBLCuklxqFUE13EjOTZcprUP8
+	 WknRGnpGIMujStOl/0d/6kmuNNtDbEQ2XhZxQNOUkaEDib7rCqKqd0kU8jAcUfHyAJ
+	 UO7Oxke/7Lmf5mTlcv1XHI/Lu0E/R9NM97KbX8QA2ky2psPVJPviKfa7IVsFQL65ZT
+	 hFPFoCO3MIXGorRFpFyo3NovVFFKms9u1YY6OqtxKKTw1vP4SQ1YwNKpZUQlhpFi42
+	 G/9R3Y5YqAvPg==
+Original-Subject: Re: How Can I Switch Synthesizers on the Fly?
+Original-From: "Joseph C. Lininger" <joe@pcdesk.net>
+Original-Cc: speakup@linux-speakup.org
 Subject: Re: How Can I Switch Synthesizers on the Fly?
-In-Reply-To: <Ykp44UQ6vUlnyXEY@gregn.net>
-Message-ID: <362f5e7-4cd6-9d6b-36e2-5485e066bb53@hubert-humphrey.com>
-References: <1dc619bf-ba8a-47b3-2c85-7dff6e27086@hubert-humphrey.com> <Yko9zLikCNY1qcDX@gregn.net> <4ce83a8d-a0a1-3ef8-e8df-c9881198622@hubert-humphrey.com> <Ykp44UQ6vUlnyXEY@gregn.net>
+To: Chime Hart <chime@hubert-humphrey.com>,
+  Gregory Nowak <greg@gregn.net>
+Cc: speakup@linux-speakup.org
+References: <1dc619bf-ba8a-47b3-2c85-7dff6e27086@hubert-humphrey.com>
+ <Yko9zLikCNY1qcDX@gregn.net>
+ <4ce83a8d-a0a1-3ef8-e8df-c9881198622@hubert-humphrey.com>
+From: "Joseph C. Lininger" <joe@pcdesk.net>
+Message-ID: <e4b20df5-5211-efaa-5937-ed214d1ae35e@pcdesk.net>
+Date: Mon, 4 Apr 2022 14:06:26 -0400
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.6.0
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -81,22 +53,93 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+In-Reply-To: <4ce83a8d-a0a1-3ef8-e8df-c9881198622@hubert-humphrey.com>
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+Content-Language: en-US
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Greg: I did not run any modprobe commands today. I guess unless I needed to 
-string 2 of them together to switch off the DecTalk-and-enable soft synth, 
-because otherwise I might not have speech. I suppose I could use 2 separate 
-consoles for both commands. Anyway, here are the contents of 
-/var/log/speechd-up.log
-[Sun Apr  3 17:46:06 2022] speechd: Speechd-speakup starts!
-[Sun Apr  3 17:46:06 2022] speechd: Error while openning the device in 
-read/write mode 2,No such file or directory
-[Sun Apr  3 17:46:06 2022] speechd: Trying to open the device in the old way.
-[Sun Apr  3 17:46:06 2022] speechd: Error while openning the device in read 
-mode 2,No such file or directory
-[Sun Apr  3 17:46:06 2022] speechd: ERROR! Unable to open soft synth device 
-(/dev/softsynth)
-Chime
+I think your permission error might actually be a shell thing, not a 
+speakup thing. Allow me to explain. I'm not trying to be condescending 
+if you already understand the mechanics here, but I need to explain for 
+my explanation of the problem to make sense.
+
+When you type:
+
+sudo echo soft >/sys/accessibility/speakup/synth
+
+What you're doing is to run the command "sudo echo soft" as root, then 
+telling your existing shell to redirect its output to the file 
+/sys/accessibility/speakup/synth. Here in lies the problem; your 
+existing (non-root) shell handles that file write operation. Only "echo 
+soft" is actually run as root. The file 
+/sys/accessibility/speakup/synth. can only be written by root, so you 
+get a permission error. I tested this on my own system by creating a 
+root-owned file, then trying "sudo echo test" and redirecting to that 
+file. I got a permission error, as expected.
+
+The only solution I know of is to create a shell script with the line
+
+sudo echo soft >/sys/accessibility/speakup/synth
+
+Then run that using sudo. That causes the write to take place as the 
+root user, which is what you want.
+
+--
+Joe
+
+On 4/3/2022 8:51 PM, Chime Hart wrote:
+> Thank you Greg for your analysis. Yes I am in TCSH. When I run with
+> sudo echo soft >/sys/accessibility/speakup/synth
+> I get a permission error. As far as speechd-up  if I run an apt 
+> install in Debian, it tries installing a 0.5 version from 2011, but 
+> errors out. Here is an output
+> Preparing to unpack .../speechd-up_0.5~20110719-11_amd64.deb ...
+> Unpacking speechd-up (0.5~20110719-11) ...
+> Setting up speechd-up (0.5~20110719-11) ...
+> Job for speechd-up.service failed because the control process exited 
+> with error code.
+> See "systemctl status speechd-up.service" and "journalctl -xeu 
+> speechd-up.service" for details.
+> invoke-rc.d: initscript speechd-up, action "restart" failed.
+> x speechd-up.service - LSB: Interface between speakup and 
+> speech-dispatcher
+>      Loaded: loaded (/etc/init.d/speechd-up; generated)
+>      Active: failed (Result: exit-code) since Sun 2022-04-03 17:46:08 
+> PDT; 82ms ago
+>        Docs: man:systemd-sysv-generator(8)
+>     Process: 1576174 ExecStart=/etc/init.d/speechd-up start 
+> (code=exited, status=1/FAILURE)
+>         CPU: 37ms
+>
+> Apr 03 17:46:06 chime speechd-up[1576174]: Starting Interface between 
+> speakup and speech-dispatcher : speechd-up
+> Apr 03 17:46:06 chime speechd-up[1576190]: [Sun Apr  3 17:46:06 2022] 
+> speechd: Configuration has been read from "/etc/speechd-up.conf"
+> Apr 03 17:46:06 chime speechd-up[1576174]: Starting speechd-up...
+> Apr 03 17:46:06 chime speechd-up[1576174]: To work, speechd-up needs 
+> speakup and speakup_soft modules.
+> Apr 03 17:46:06 chime speechd-up[1576174]: They are loaded 
+> automatically. If you don't want, type
+> Apr 03 17:46:06 chime speechd-up[1576174]: rmmod speakup speakup_soft
+> Apr 03 17:46:08 chime speechd-up[1576300]:  failed!
+> Apr 03 17:46:08 chime systemd[1]: speechd-up.service: Control process 
+> exited, code=exited, status=1/FAILURE
+> Apr 03 17:46:08 chime systemd[1]: speechd-up.service: Failed with 
+> result 'exit-code'.
+> Apr 03 17:46:08 chime systemd[1]: Failed to start LSB: Interface 
+> between speakup and speech-dispatcher.
+> dpkg: error processing package speechd-up (--configure):
+>  installed speechd-up package post-installation script subprocess 
+> returned error exit status 1
+> Processing triggers for man-db (2.10.2-1) ...
+> Processing triggers for install-info (6.8-4+b1) ...
+> Errors were encountered while processing:
+>  speechd-up
+> E: Sub-process /usr/bin/dpkg returned an error code (1)
+> Back again live. If this list thinks 54lines is too long, I can write 
+> you off-list with that output. Thanks in advance.
+> Chime
+>
 
 
