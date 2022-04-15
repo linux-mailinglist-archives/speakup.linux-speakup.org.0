@@ -1,47 +1,45 @@
-Return-Path: <speakup+bounces-397-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-398-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AAF6D502C6D
-	for <lists+speakup@lfdr.de>; Fri, 15 Apr 2022 17:16:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D6407502CEE
+	for <lists+speakup@lfdr.de>; Fri, 15 Apr 2022 17:37:13 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; secure) header.d=disr.it header.i=@disr.it header.a=rsa-sha256 header.s=mail header.b=5j8FxiLx;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=J2lsNYZQ;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3BA5E380BD5; Fri, 15 Apr 2022 11:16:44 -0400 (EDT)
+	id 736DE380D45; Fri, 15 Apr 2022 11:37:13 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 29802380BA3
-	for <lists+speakup@lfdr.de>; Fri, 15 Apr 2022 11:16:44 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 601E7380B2A
+	for <lists+speakup@lfdr.de>; Fri, 15 Apr 2022 11:37:13 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B2B92380BD1; Fri, 15 Apr 2022 11:16:39 -0400 (EDT)
-Received: from knopi.disroot.org (knopi.disroot.org [178.21.23.139])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id AC0C4380604
-	for <speakup@linux-speakup.org>; Fri, 15 Apr 2022 11:16:38 -0400 (EDT)
+	id E0473380BD1; Fri, 15 Apr 2022 11:37:08 -0400 (EDT)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id D22D1380B2A
+	for <speakup@linux-speakup.org>; Fri, 15 Apr 2022 11:37:08 -0400 (EDT)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4Kg0nJ0nNQz149N;
+	Fri, 15 Apr 2022 11:37:08 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1650037028; bh=xfEDfPyAizsDfUj+rnNnBi3kWHLRN1rSv5ogyDUoRso=;
+	h=Date:From:To:Subject:In-Reply-To:References;
+	b=J2lsNYZQjjqbETX12ULNn2CWWHVfIuJQRcxdQ3XAjDNigrhWZLl5pPXgTd9qHIgq4
+	 tfRIROXjh8yUcez/Yzpedtk/0NI1sqhi6z0mQNYT43qCyRmJ4BW79IfPvFNcMNShqX
+	 +N05JxDAKQlAzx/l68zfmvsVylsQzutOxnEeJkCI=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4Kg0nJ0390zcbc; Fri, 15 Apr 2022 11:37:07 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by disroot.org (Postfix) with ESMTP id BA82B40466
-	for <speakup@linux-speakup.org>; Fri, 15 Apr 2022 17:16:36 +0200 (CEST)
-X-Virus-Scanned: SPAM Filter at disroot.org
-Received: from knopi.disroot.org ([127.0.0.1])
-	by localhost (disroot.org [127.0.0.1]) (amavisd-new, port 10024)
-	with UTF8SMTP id J9cEeZrGXTcF for <speakup@linux-speakup.org>;
-	Fri, 15 Apr 2022 17:16:35 +0200 (CEST)
+	by panix1.panix.com (Postfix) with ESMTP id 4Kg0nH6pvrzcbP;
+	Fri, 15 Apr 2022 11:37:07 -0400 (EDT)
+Date: Fri, 15 Apr 2022 11:37:07 -0400
+From: Jude DaShiell <jdashiel@panix.com>
+To: Cleverson <clul@disr.it>, speakup@linux-speakup.org
 Subject: Re: multiple gentoo speakup install failures
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=disr.it; s=mail;
-	t=1650035784; bh=XqmBh0/wF8P2w8lpfsmlhP5+ASb2xJ9LWemU5kH2xRk=;
-	h=Subject:To:References:From:Date:In-Reply-To;
-	b=5j8FxiLxF0kvo2BurAsGuNQIEmw+RYxgpHN+4haaxA6PGlQxGgBiQepxrdrTnm8nh
-	 +vneusaf06fRH8jWVuOZK5aB5CfANbs39chmoP+FZ1L9WmgHza3tZJ9XSUd3pVQAK1
-	 T04H9FOD92CVacig4iBHlP6nVl/F4L3hdBd0Ar+ij+bba9SuM4EldXPAHJ25TTUI7r
-	 hYW2BQGt+Jhgzinc9rp/5H2vFZzrC1JFcN5fsCBRmB1OWtJayvX8wMMAT47AxRtRO9
-	 s0Cc+Ez5PgqTeKKCnMSKdW+V00znT6tp8AzRkyfHQh5FadckTjBxofUOx1PeMCIsYM
-	 XDTKee1jHu2xw==
-To: speakup@linux-speakup.org
-References: <c9b13650-c9da-cf15-68f7-9338fe6831@panix.com>
-From: Cleverson <clul@disr.it>
-Message-ID: <dc6f2489-699c-545d-5b6b-e4d894ab1068@disr.it>
-Date: Fri, 15 Apr 2022 12:16:19 -0300
+In-Reply-To: <dc6f2489-699c-545d-5b6b-e4d894ab1068@disr.it>
+Message-ID: <fdba632-7ee9-da9b-4dc1-5f91aafc2866@panix.com>
+References: <c9b13650-c9da-cf15-68f7-9338fe6831@panix.com> <dc6f2489-699c-545d-5b6b-e4d894ab1068@disr.it>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,16 +48,24 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-Mime-Version: 1.0
-In-Reply-To: <c9b13650-c9da-cf15-68f7-9338fe6831@panix.com>
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Language: pt-BR
-Content-Transfer-Encoding: 7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Do you need systemd? I don't know if it is the cause of the problem, but 
-whenever I install Gentoo, I never use systemd, and the system always works.
+Systemd is the one flavor  I have familiarity using.  I never used the
+other two flavors offered by gentoo before.  I think I'll hold off and
+study each of the systemd alternatives in terms of features and likely
+continuing support.
 
-Cheers,
-Cleverson
+
+On Fri, 15 Apr 2022, Cleverson wrote:
+
+> Do you need systemd? I don't know if it is the cause of the problem, but
+> whenever I install Gentoo, I never use systemd, and the system always works.
+>
+> Cheers,
+> Cleverson
+>
+>
+>
 
