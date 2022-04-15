@@ -1,51 +1,43 @@
-Return-Path: <speakup+bounces-393-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-394-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7FC7A4F200E
-	for <lists+speakup@lfdr.de>; Tue,  5 Apr 2022 01:12:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 21AE1502B7D
+	for <lists+speakup@lfdr.de>; Fri, 15 Apr 2022 16:08:33 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=K1l6nj3k;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=RfTG7K2Z;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 09C92380D2E; Mon,  4 Apr 2022 19:12:58 -0400 (EDT)
+	id 31581380C73; Fri, 15 Apr 2022 10:02:43 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id DF5FA380D28
-	for <lists+speakup@lfdr.de>; Mon,  4 Apr 2022 19:12:57 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1D9663808D6
+	for <lists+speakup@lfdr.de>; Fri, 15 Apr 2022 10:02:43 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BE5A7380D2A; Mon,  4 Apr 2022 19:12:51 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A083D3809A3
-	for <speakup@linux-speakup.org>; Mon,  4 Apr 2022 19:12:51 -0400 (EDT)
-Received: from vbox.gregn.net (unknown [IPv6:2607:fb90:e555:3771:68f6:faae:2fcb:ca2a])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id BE3FD1A96;
-	Mon,  4 Apr 2022 16:12:54 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1649113974; bh=DkbTHs2qh7lzRoZmbZ/Nmt2MdieO+kLlV3eWNu0nw+Y=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=K1l6nj3k1fLoWxERCr6RhMaS+V5ZhyzfUYcco/Pvo6LNWs/9vTP39uJadVkt4pVZx
-	 2jQMba0zUEt01JvfFLt2UQq0pVvpgP+LcxqeIruG5xFk1V2oUWDcFiPr7wlj9Qe74k
-	 k3wNhh6BoGmFL8s3DUT1NZ2FzHYHwjQCTNjn6QJoQ0NQ9BOOKQmXPqROXj7fa2qUAe
-	 7phufq1ryrFWlZOy7i3vEr2XBSQvz3wbiPkUwqVY3pcvkSglBOL9Ak77/muLTdLifa
-	 PgJGdt8UwPPGqBUGGuaZYqDf+Zdr7EAkJ6y1q1djT5r0fQJmWN0wK0gsNFM/WWg3Dj
-	 dJ7HfUsGB4waA==
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id C0D31C075; Mon,  4 Apr 2022 16:12:49 -0700 (MST)
-Date: Mon, 4 Apr 2022 16:12:49 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: Chime Hart <chime@hubert-humphrey.com>
-Cc: speakup@linux-speakup.org
-Subject: Re: How Can I Switch Synthesizers on the Fly?
-Message-ID: <Ykt7cW+kWH/pILc4@gregn.net>
-References: <1dc619bf-ba8a-47b3-2c85-7dff6e27086@hubert-humphrey.com>
- <Yko9zLikCNY1qcDX@gregn.net>
- <4ce83a8d-a0a1-3ef8-e8df-c9881198622@hubert-humphrey.com>
- <Ykp44UQ6vUlnyXEY@gregn.net>
- <362f5e7-4cd6-9d6b-36e2-5485e066bb53@hubert-humphrey.com>
+	id 9C56F380AE8; Fri, 15 Apr 2022 10:02:38 -0400 (EDT)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 65308380813
+	for <speakup@linux-speakup.org>; Fri, 15 Apr 2022 10:02:38 -0400 (EDT)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4Kfyh76h6Sznkt
+	for <speakup@linux-speakup.org>; Fri, 15 Apr 2022 10:02:31 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1650031351; bh=p7/TYGRg370nS9VN3DE2YyQuWVMgjNpAKIqiYt/kOfE=;
+	h=Date:From:To:Subject;
+	b=RfTG7K2Zj6isAP78tnNiEl2J+HsOESl67gIA6ssBfL6au9qlZZZg3f3GHBTdKnqcL
+	 YN7W8HCOgzaBm6FYoh1BXcsofEZtdj1/5eqKeLujm1G9DiUUVOUKVLgRfxzduvNz6h
+	 501NFjraZDSnjWo9PXgE0TtHFaNYEMCWAcn3EynU=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4Kfyh75xr5zcbc; Fri, 15 Apr 2022 10:02:31 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by panix1.panix.com (Postfix) with ESMTP id 4Kfyh75YBrzcbC
+	for <speakup@linux-speakup.org>; Fri, 15 Apr 2022 10:02:31 -0400 (EDT)
+Date: Fri, 15 Apr 2022 10:02:31 -0400
+From: Jude DaShiell <jdashiel@panix.com>
+To: speakup@linux-speakup.org
+Subject: multiple gentoo speakup install failures
+Message-ID: <c9b13650-c9da-cf15-68f7-9338fe6831@panix.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -55,35 +47,27 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <362f5e7-4cd6-9d6b-36e2-5485e066bb53@hubert-humphrey.com>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 0.103.4 at vserver
-X-Virus-Status: Clean
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-On Sun, Apr 03, 2022 at 09:57:45PM -0700, Chime Hart wrote:
-> [Sun Apr  3 17:46:06 2022] speechd: Error while openning the device in
-> read/write mode 2,No such file or directory
-> [Sun Apr  3 17:46:06 2022] speechd: Trying to open the device in the old way.
-> [Sun Apr  3 17:46:06 2022] speechd: Error while openning the device in read
-> mode 2,No such file or directory
-> [Sun Apr  3 17:46:06 2022] speechd: ERROR! Unable to open soft synth device
-> (/dev/softsynth)
 
-It looks like modprobe speakup_soft would solve this.
+Things run until they don't any longer.
+When they don't run any longer speakup dies.  The speakup cannot be
+revived when this happens.
+Also the system likely crashes since a poweroff command as root fails to
+turn the system off.
+Many times in order to start the computer I have to use the reset button
+in addition to the power button on an 8 core 14gb ram amd system.
+I tried restricting gentoo to one core with nosmp but that didn't help at
+all either.
+I tried with latest stage3 systemd file and latest gentoo-minimal disk.
+So far as I'm concerned, gentoo at this time is uninstallable on this
+system.
+When speakup dies happens at random points during system installation too.
+I got no idea what's going on and would like to know if I'm unique and
+need a new computer or if this happens to others installing gentoo with
+speakup.  I've tried gentoo and gentoo-nofb kernels too.
+The farthest I got in recent install attempts was the emerge-webrsync step
+which failed because of a bad /etc/portage/make.conf file.
 
-Greg
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
