@@ -1,64 +1,54 @@
-Return-Path: <speakup+bounces-401-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-402-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 81DD750CB42
-	for <lists+speakup@lfdr.de>; Sat, 23 Apr 2022 16:37:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 7B27D50CB78
+	for <lists+speakup@lfdr.de>; Sat, 23 Apr 2022 16:56:20 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20210112 header.b=cwQcX2+3;
+	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20210112 header.b=cQK6V1z/;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 24AB2380D22; Sat, 23 Apr 2022 10:37:21 -0400 (EDT)
+	id 1729E380D2E; Sat, 23 Apr 2022 10:56:20 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1125438092A
-	for <lists+speakup@lfdr.de>; Sat, 23 Apr 2022 10:37:21 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 04711380957
+	for <lists+speakup@lfdr.de>; Sat, 23 Apr 2022 10:56:20 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8FA50380957; Sat, 23 Apr 2022 10:37:16 -0400 (EDT)
-Received: from mail-lf1-f54.google.com (mail-lf1-f54.google.com [209.85.167.54])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 5F6273808D3
-	for <speakup@linux-speakup.org>; Sat, 23 Apr 2022 10:37:16 -0400 (EDT)
-Received: by mail-lf1-f54.google.com with SMTP id h3so14250719lfu.8
-        for <speakup@linux-speakup.org>; Sat, 23 Apr 2022 07:37:16 -0700 (PDT)
+	id 8E13B380B0C; Sat, 23 Apr 2022 10:56:15 -0400 (EDT)
+Received: from mail-io1-f48.google.com (mail-io1-f48.google.com [209.85.166.48])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 810873808D3
+	for <speakup@linux-speakup.org>; Sat, 23 Apr 2022 10:56:15 -0400 (EDT)
+Received: by mail-io1-f48.google.com with SMTP id h83so11423000iof.8
+        for <speakup@linux-speakup.org>; Sat, 23 Apr 2022 07:56:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=gmail.com; s=20210112;
-        h=date:from:to:cc:subject:message-id:references:mime-version
-         :content-disposition:in-reply-to:user-agent;
-        bh=xcR7lvU6SsX8iPz3YCT9GGUw9UAQMCqfruSiGxGgOwA=;
-        b=cwQcX2+3rtiAS8AcVRE1iKWlPwXpoasXJPXcx8agh0lzm8mD6837JIgizSqJ1XucBz
-         ZJY0gqXf3f9yphNhTX1hwxiXY04SV2HE6thbwMflRl2dRlAQ8jTG9RA+mXZ1mYUBraji
-         tc7RBTmd79P917DkMFMamXsLBc1z21hM1fJCiCKS0iSziLr/PKljDkt+5gC9RlWVay/r
-         gPLnaO4KJWeCJANl2Kk7Jt1HHW74Eh1M7SoEKzxA69zDEDV/D5oUpxyAMxfV8JCDf+GG
-         sDuswwPXn6eY9Gtu66u9OpWcITKsnAo0sH2EYxhWX3Sm8J+Ceyex8lbQN5rWl1uT4AFv
-         fd/g==
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=6Zo71CVtBhyKy/qeez928O4Zj57kOqhKRagsNIKBDGs=;
+        b=cQK6V1z/gk9s1+MSZ7NcEEu2A7KgOuw4oHVJ5GTCPwwDNY6n6+v6Uv7QfkraBJhwq5
+         KYSOOawy8i785qGgPBnKpikV61+PxW5THSeU26W+lxPTBqU4rO7690cyyY8O4vN/h0sj
+         IMYQ3ZEuqkKzBEVevMZ5NI8LagFX5GHwwUGgcB4fOFSRV5F8ZuwZBm+BTnypPxXluRwa
+         VNlFfCLkE2LrmZV72n/oWRsNxmzOOLIDGVTwUhn5CeBeAVs88DRKZw8CptIK6bnE0Xt/
+         Bx4qSAC1++H8+v75ekNwWRntDZ4ZthvpJ364QA5ngp5LwAXoC/QtmX7Mbitf3//CyQcA
+         gmPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
         d=1e100.net; s=20210112;
-        h=x-gm-message-state:date:from:to:cc:subject:message-id:references
-         :mime-version:content-disposition:in-reply-to:user-agent;
-        bh=xcR7lvU6SsX8iPz3YCT9GGUw9UAQMCqfruSiGxGgOwA=;
-        b=j8OhuKKNwJLi/2JOCc5nKRoA1MSt5qlzV+KNyMAKVegSv/bvQO0tw0QLx/rJKwAx49
-         GVoAXZN6CIF0ZjEGPrGaqDo1Nh2apLSZN+CvMQl2zJD0MYf8iuBk7hxHJzqBjXXJS+eV
-         4FO2p1doEbiLQQPtBp5Kmo6my5UtzIysJggMOPP1llD99EYXjLN5Lk7zMmMD0PRdS1Bh
-         pmTEVhfQGNwgGoMGp4IKw7ItwUMC8BZBNwZCldTMQWI5lwUqURR6+dny2x2YQVa1pOnl
-         Aqjw6etPR3LOHXRuyeBKSo9O8pDxzZoHpkAlkuEkxvWC34vctoxR59602hOGtlNPgANb
-         EvBw==
-X-Gm-Message-State: AOAM5338PZehF13eYtx9/aXfbj7Exue7ENXPnqJ6U6kEg/YrX4fA3VX/
-	nrdBX9OmYaOSI2FfgDcvZik=
-X-Google-Smtp-Source: ABdhPJxBgm+SFMZIDSB8Jvqvc6rxli4WMWIdIEHyUDDmOZ0EFy1Pok3H3o1Zwaz2x7ScFFbLZNh9SA==
-X-Received: by 2002:a05:6512:3084:b0:471:a385:c2d3 with SMTP id z4-20020a056512308400b00471a385c2d3mr6871802lfd.289.1650724574303;
-        Sat, 23 Apr 2022 07:36:14 -0700 (PDT)
-Received: from localhost ([91.77.167.245])
-        by smtp.gmail.com with ESMTPSA id e3-20020a196743000000b0044311216c42sm639923lfj.307.2022.04.23.07.36.12
-        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 23 Apr 2022 07:36:13 -0700 (PDT)
-Date: Sat, 23 Apr 2022 17:36:10 +0300
-From: Alexander Epaneshnikov <aarnaarn2@gmail.com>
-To: Adrian Orjales <adriorjalesvidal31@gmail.com>
-Cc: speakup@linux-speakup.org
-Subject: Re: Espeakup, arch and systemd
-Message-ID: <20220423143610.qusgycnzz6kmwkg3@alex-pc>
-References: <CAE600ubv2JZJM477hCMutMX=J4tGUzJfFg5Ata2ymQQiqN=ueQ@mail.gmail.com>
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=6Zo71CVtBhyKy/qeez928O4Zj57kOqhKRagsNIKBDGs=;
+        b=Vf61pVQmTxavWuxlWPq5UGqKlXBBPRo1Tk/XtiFvIS47NV5koxojTG458kUVt6rFfh
+         sAANLN/t3Va7cmfOUBYRmDvuNOHqb/aQ8+szfsVyB10pVup1knXJ7RZYmlR6sdwfPfF8
+         +GfSWXXXJueiFpCabMVWOSitaogAo/IvMLLHHNE5t33z5+1+MG06DIaP/Y1ELrZXAKy0
+         bocwetm0PC6BoU5EwkzwdfOmkFzHc6IL0hSCIgY+Ys10XvAAuyW1vjHz9VYC8d0rR12d
+         3lxM+u642R8R0BIfL5eHLo2SUUk3cgW55x9R3kJ032DPybX8ESXtCZESi0lDpZVszFP3
+         5wlg==
+X-Gm-Message-State: AOAM530VaUbNu0AYPKNhRUURz+BJrINSRUJTdRzNQG4DqCEqI/+d2M95
+	x7UCvm3MT6Rbf5UKQdMecIz56YNpawAjWJRUdd45weFmdWg=
+X-Google-Smtp-Source: ABdhPJybXaGa8ouykMhMqb2lCbOWchJicL2zi+ZKg/Mn0ZujbNrOc4URa5/z/gP6y565qCIhpPW7bUEXV5CzWHNu9NY=
+X-Received: by 2002:a02:cf15:0:b0:328:615c:303d with SMTP id
+ q21-20020a02cf15000000b00328615c303dmr4291924jar.313.1650725715044; Sat, 23
+ Apr 2022 07:55:15 -0700 (PDT)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -68,55 +58,61 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-In-Reply-To: <CAE600ubv2JZJM477hCMutMX=J4tGUzJfFg5Ata2ymQQiqN=ueQ@mail.gmail.com>
-User-Agent: NeoMutt/20220415
+References: <CAE600ubv2JZJM477hCMutMX=J4tGUzJfFg5Ata2ymQQiqN=ueQ@mail.gmail.com>
+ <20220423143610.qusgycnzz6kmwkg3@alex-pc>
+In-Reply-To: <20220423143610.qusgycnzz6kmwkg3@alex-pc>
+From: Adrian Orjales <adriorjalesvidal31@gmail.com>
+Date: Sat, 23 Apr 2022 16:55:03 +0200
+Message-ID: <CAE600ubaA7q99ajYsZO+1JR9TMERSo+kmtp8U6Eg=g_at-Th4g@mail.gmail.com>
+Subject: Re: Espeakup, arch and systemd
+To: Alexander Epaneshnikov <aarnaarn2@gmail.com>
+Cc: speakup@linux-speakup.org
+Content-Type: multipart/alternative; boundary="000000000000ddee5105dd538788"
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-On Sat, Apr 23, 2022 at 04:15:38PM +0200, Adrian Orjales wrote:
-> Hello all
+--000000000000ddee5105dd538788
+Content-Type: text/plain; charset="UTF-8"
 
-hello.
+Thanks for your reply, Alexander
 
-> I am trying to build my own OS based on Arch Linux, but I am having some
-> problems with the screen reader.
-> I have an arch linux fresh installation, with systemd, espeakup and
-> espeak-ng installed with pacman.
-> After installing the espeakup package, I noticed that the system was very
-> slow on boot, and some times espeakup did not wake up after boot.
-> After some research, I've discovered that the cause of the slow boot was
-> that the systemd espeakup service unit uses systemd-udev-settle.service and
-> waits for it to end to start, to ensure all hardware is discovered.
-> But as I've read, this operation is very discouraged because the
-> udev-settle discover process is asynchronous and it slows down the boot
-> process.
 
-to be honest, I'm not sure that the slowdown in booting is due to this.
 
-> Furthermore, when this service ends, espeakup has the same problem,
-> sometimes it talks, sometimes it is not able to talk.
-> The problem of no speech is solved if I run systemctl reload espeakup &&
-> systemctl start espeakup manually from command line.
+> >to be honest, I'm not sure that the slowdown in booting is due to this.
+>
+After I've removed the systemd-udev-settle.service mentions on the
+espeakup.service file, the slowdown was removed, I don't know why.
 
-did you set the default sound card?
 
-> Now, I have tried removing the wants and requires of
-> systemd-udev-settle.service and left only the sound.target. The slow boot
-> is solved, but espeakup does not start properly, and I don't know how can I
-> solve this.
+> > did you set the default sound card?
+>
+I have no idea about alsa settings, but if I run aplay -L, it shows that
+the intel card is set as default. If it was not running with this card,
+when I run systemctl reloadand start, espeakup must not talk, but it does.
 
-I'm afraid it's not possible to get rid of udev-setle.target without changes in espeakup.
+Thanks again.
+>
 
-> One of the info that I've found says that sometimes, systemd sound.target
-> unlocks the awaiting services when the first sound card is detected, but I
-> have a Nvidia gpu that is detected as a soundcard, but alsa's default card
-> is my onboard intel hda.
-> I know that this list is about speakup, not espeakup, but I'm sure that you
-> like me know that we are not much people talking about these topics and is
-> difficult to find help.
-> Thanks in advance
+--000000000000ddee5105dd538788
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
--- 
-Sincerely, Alexander
+<div dir=3D"ltr"><div>Thanks for your reply, Alexander<br></div><br><div cl=
+ass=3D"gmail_quote"><br><blockquote class=3D"gmail_quote" style=3D"margin:0=
+px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex">
+<br>&gt;to be honest, I&#39;m not sure that the slowdown in booting is due =
+to this.<br></blockquote><div>After I&#39;ve removed the systemd-udev-settl=
+e.service mentions on the espeakup.service file, the slowdown was removed, =
+I don&#39;t know why.<br></div><div><br></div><blockquote class=3D"gmail_qu=
+ote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,20=
+4);padding-left:1ex">
+<br>&gt; did you set the default sound card?<br></blockquote><div>I have no=
+ idea about alsa settings, but if I run aplay -L, it shows that the intel c=
+ard is set as default. If it was not running with this card, when I run sys=
+temctl reloadand start, espeakup must not talk, but it does.<br></div><br><=
+blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-l=
+eft:1px solid rgb(204,204,204);padding-left:1ex">
+Thanks again. <br>
+</blockquote></div></div>
+
+--000000000000ddee5105dd538788--
 
