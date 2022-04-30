@@ -1,46 +1,47 @@
-Return-Path: <speakup+bounces-407-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-408-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A7CD1515962
-	for <lists+speakup@lfdr.de>; Sat, 30 Apr 2022 02:39:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B68B5515AFD
+	for <lists+speakup@lfdr.de>; Sat, 30 Apr 2022 09:33:25 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2DD5738111C; Fri, 29 Apr 2022 20:39:39 -0400 (EDT)
+	id 3D18B381127; Sat, 30 Apr 2022 03:33:25 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 20C513810DC
-	for <lists+speakup@lfdr.de>; Fri, 29 Apr 2022 20:39:39 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 2E7F7381114
+	for <lists+speakup@lfdr.de>; Sat, 30 Apr 2022 03:33:25 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4CB8B38096C; Fri, 29 Apr 2022 20:39:38 -0400 (EDT)
+	id 88B0B380A78; Sat, 30 Apr 2022 03:33:24 -0400 (EDT)
 Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 01D313806DC
-	for <speakup@linux-speakup.org>; Fri, 29 Apr 2022 20:39:38 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 3EFDD3806DC
+	for <speakup@linux-speakup.org>; Sat, 30 Apr 2022 03:33:24 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 9E7FE2016C;
-	Sat, 30 Apr 2022 02:39:35 +0200 (CEST)
+	by sonata.ens-lyon.org (Postfix) with ESMTP id AF1B12015D;
+	Sat, 30 Apr 2022 09:33:22 +0200 (CEST)
 Received: from sonata.ens-lyon.org ([127.0.0.1])
 	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id nBAFJqZlZNYr; Sat, 30 Apr 2022 02:39:35 +0200 (CEST)
+	with ESMTP id UoH9IJPBxpXo; Sat, 30 Apr 2022 09:33:21 +0200 (CEST)
 Received: from begin (anantes-655-1-33-15.w83-195.abo.wanadoo.fr [83.195.225.15])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 78F3C2016A;
-	Sat, 30 Apr 2022 02:39:35 +0200 (CEST)
+	by sonata.ens-lyon.org (Postfix) with ESMTPSA id DC34C20155;
+	Sat, 30 Apr 2022 09:33:21 +0200 (CEST)
 Received: from samy by begin with local (Exim 4.95)
 	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1nkb94-00Ci3O-9l;
-	Sat, 30 Apr 2022 02:39:34 +0200
-Date: Sat, 30 Apr 2022 02:39:34 +0200
+	id 1nkhbV-006Rtz-Oj;
+	Sat, 30 Apr 2022 09:33:21 +0200
+Date: Sat, 30 Apr 2022 09:33:21 +0200
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: gregkh@linuxfoundation.org
-Cc: linux-kernel@vger.kernel.org, speakup@linux-speakup.org
-Subject: [PATCH] speakup: Generate speakupmap.h automatically
-Message-ID: <20220430003934.fkua7vwoz6heigrp@begin>
+To: gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+	speakup@linux-speakup.org
+Subject: [PATCHv2] speakup: Generate speakupmap.h automatically
+Message-ID: <20220430073321.6b4lvrrt7buzh7dp@begin>
 Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
 	gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
 	speakup@linux-speakup.org
+References: <20220430003934.fkua7vwoz6heigrp@begin>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -52,6 +53,7 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+In-Reply-To: <20220430003934.fkua7vwoz6heigrp@begin>
 User-Agent: NeoMutt/20170609 (1.8.3)
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
@@ -65,17 +67,20 @@ speakupmap.map keyboard mapping source file.
 Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
 ---
- drivers/accessibility/speakup/Makefile      |   26 ++++
+difference with v1:
+- Add missing dependency between main.c and speakupmap.h
+
+ drivers/accessibility/speakup/Makefile      |   28 ++++
  drivers/accessibility/speakup/genmap.c      |  162 ++++++++++++++++++++++++++++
  drivers/accessibility/speakup/makemapdata.c |  125 +++++++++++++++++++++
  drivers/accessibility/speakup/speakupmap.h  |   66 -----------
  drivers/accessibility/speakup/utils.c       |   92 +++++++++++++++
  drivers/accessibility/speakup/utils.h       |   33 +++++
- 6 files changed, 438 insertions(+), 66 deletions(-)
+ 6 files changed, 440 insertions(+), 66 deletions(-)
 
 --- a/drivers/accessibility/speakup/Makefile
 +++ b/drivers/accessibility/speakup/Makefile
-@@ -30,3 +30,29 @@ speakup-y := \
+@@ -30,3 +30,31 @@ speakup-y := \
  	thread.o \
  	varhandlers.o
  speakup-$(CONFIG_SPEAKUP_SERIALIO) += serialio.o
@@ -105,6 +110,8 @@ Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 +
 +$(obj)/speakupmap.h: $(obj)/speakupmap.map $(obj)/genmap
 +	$(call cmd,genmap)
++
++$(obj)/main.o: $(obj)/speakupmap.h
 --- /dev/null
 +++ b/drivers/accessibility/speakup/genmap.c
 @@ -0,0 +1,162 @@
