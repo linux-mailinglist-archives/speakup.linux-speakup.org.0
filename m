@@ -1,40 +1,63 @@
-Return-Path: <speakup+bounces-427-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-428-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7CE1A5264B6
-	for <lists+speakup@lfdr.de>; Fri, 13 May 2022 16:38:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E1A695264F8
+	for <lists+speakup@lfdr.de>; Fri, 13 May 2022 16:43:54 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=canonical.com header.i=@canonical.com header.a=rsa-sha256 header.s=20210705 header.b=qLOcIG5y;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id F2967381641; Fri, 13 May 2022 10:38:41 -0400 (EDT)
+	id 7FB1F380DFE; Fri, 13 May 2022 10:43:54 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E4B2F381638
-	for <lists+speakup@lfdr.de>; Fri, 13 May 2022 10:38:41 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6003E380ACB
+	for <lists+speakup@lfdr.de>; Fri, 13 May 2022 10:43:54 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0EE4838097E; Fri, 13 May 2022 10:38:40 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D610C380940
-	for <speakup@linux-speakup.org>; Fri, 13 May 2022 10:38:39 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 93FD56209AB; Fri, 13 May 2022 14:38:08 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 90F6C6201AE;
-	Fri, 13 May 2022 10:38:08 -0400 (EDT)
-Date: Fri, 13 May 2022 10:38:08 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: "John G. Heim" <jheim@wisc.edu>
-cc: Linux A11y <chrys@linux-a11y.org>, jdashiel@panix.com, 
-    Monica Ayhens-Madon <monica.ayhens.madon@canonical.com>, 
-    Adrian Orjales <adriorjalesvidal31@gmail.com>, 
-    "John G. Heim" <jheim@math.wisc.edu>, speakup@linux-speakup.org
-Subject: Re: Speakup Left Out of Ubuntu kernel (again)
-In-Reply-To: <22a52297-436e-2e55-2382-ca018d242347@wisc.edu>
-Message-ID: <Pine.LNX.4.64.2205131036540.426085@server2.shellworld.net>
-References: <180ba1d15f0.2923.7f5f0e00eb39c74e480406aa7dcc21f8@panix.com>
- <3AE1FA2A-DDF1-4038-B78A-B154DDBD08FB@linux-a11y.org>
- <Pine.LNX.4.64.2205122115430.256688@server2.shellworld.net>
- <22a52297-436e-2e55-2382-ca018d242347@wisc.edu>
+	id 7F1B33809C3; Fri, 13 May 2022 10:43:46 -0400 (EDT)
+Received: from smtp-relay-internal-0.canonical.com (smtp-relay-internal-0.canonical.com [185.125.188.122])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 2A33C38094D
+	for <speakup@linux-speakup.org>; Fri, 13 May 2022 10:43:46 -0400 (EDT)
+Received: from mail-lf1-f72.google.com (mail-lf1-f72.google.com [209.85.167.72])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	by smtp-relay-internal-0.canonical.com (Postfix) with ESMTPS id B6A2A3F336
+	for <speakup@linux-speakup.org>; Fri, 13 May 2022 14:43:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=canonical.com;
+	s=20210705; t=1652453024;
+	bh=DjSRLqQptmBSo8iExLZVeUc8tvQ0H3igBBRHBDjdIco=;
+	h=MIME-Version:References:In-Reply-To:From:Date:Message-ID:Subject:
+	 To:Cc:Content-Type;
+	b=qLOcIG5y92oX3fBbS3ra3/StQULlG6GWoQDBWJsM6KcScyVPdZ4ponTJ44aZCj06u
+	 AlzxB/zHC6t+oFxqAoOHQ+8hvYoc78DoVWQapduPVgBaMN3cD0lrHMjK9997M+HoEt
+	 xBwx1kPDc8LBWxOSwAsPtbfUsnxVVZWYKcN8RCxOeo8DXFHozGBmkqhZE+2xlKsJ7X
+	 WrHWit2xJWZK4lQSu2fFNI8h7AzbrvFMpZkBcvaU+vHL5trS1V8AKDZ5d1t2if2/AX
+	 C8FgHQ5fjSVzWn03NJJaGP3KTn/57Il7oF6rH8uio7UBHpNU0ffwl4X9PPLC24S7SA
+	 SIR5Q6rrtz2WA==
+Received: by mail-lf1-f72.google.com with SMTP id w34-20020a0565120b2200b0044adfdd1570so3634659lfu.23
+        for <speakup@linux-speakup.org>; Fri, 13 May 2022 07:43:44 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=DjSRLqQptmBSo8iExLZVeUc8tvQ0H3igBBRHBDjdIco=;
+        b=1GjOwq6KYUb9zFenEAPs05813bjiR6CfykcLaYYM6cnM1nE3t6lwzKiHKMQy6nPfLP
+         X+GCVgvNLadKPB/ttJ6/l05st8+Aren5WH1Mcpy6pIjyS+I7ORc5uz892HoN07E2q5i9
+         GGPw/Zf5poXeU+7y73vztEit8VqQIF69wg7Ud35gjlu7iUAQ6ueoQobcs6Ymek5QUoeo
+         dfYwN5lIDjkMKtN4/ttSs4tmCl4yMldPU2N5Kgt4JkKygIY7Bv+4Fk4GoJbaeV5znqDM
+         SowwLt8rZXFZ7/1zcKEMtrHGRhDMi966IydzJ0CYlEhc+L9RwN93gxLjLwFrhUt+nZT+
+         yO1g==
+X-Gm-Message-State: AOAM532afiHqJBcnoTyILX/8/dn6QRIoWXq/M4PVFkOWGuoAa9TV3GfX
+	AL9SZoDsItW3eBsxGcOEwC2U9UpSPE7NiHKInhpCSpyLJzhfQyc5QWWixxGVCdIruFgmOW4lhFk
+	90LD/YMMzuYiKH0WZLOEKDjX5GxtP1YMuBUpIZX+EgJadGEVWww8nbw==
+X-Received: by 2002:a05:6512:12cc:b0:473:b2a7:661d with SMTP id p12-20020a05651212cc00b00473b2a7661dmr3661726lfg.407.1652453020623;
+        Fri, 13 May 2022 07:43:40 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJwitlgV8V0+j+AkOgJj85l7twUDXbeOOEnRszaOqBtI3QNaW3fg8HhGgM7M3aLGUIHGC37e7PI9avJc9iXZBDU=
+X-Received: by 2002:a05:6512:12cc:b0:473:b2a7:661d with SMTP id
+ p12-20020a05651212cc00b00473b2a7661dmr3661663lfg.407.1652453019195; Fri, 13
+ May 2022 07:43:39 -0700 (PDT)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -44,218 +67,110 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-713724598-1652452688=:426085"
+References: <81afd3ae-b377-800f-dc94-0dfe301011fe@math.wisc.edu>
+ <CA+8tiZWEfEd_mFh_Eaj0v52m=VxdE2esLwC9zDzD3aE=DJ-z9Q@mail.gmail.com>
+ <CAE600uaFd06wnf8EGwBbhBg+y_-dEtKV9SqyvOx1GzRq0T97xw@mail.gmail.com>
+ <CA+8tiZWWScjAXUZSdYRzTO5bRoxrZNXHAvZ5ovE1nW5EkqKTnA@mail.gmail.com> <20220511165940.wnuzgcsvjcksdpl2@begin>
+In-Reply-To: <20220511165940.wnuzgcsvjcksdpl2@begin>
+From: Monica Ayhens-Madon <monica.ayhens.madon@canonical.com>
+Date: Fri, 13 May 2022 16:43:28 +0200
+Message-ID: <CA+8tiZVwdQeTVyp3Rbpbkf_02_-nO+Gr=ktmKb-KYuR6ZXCOHQ@mail.gmail.com>
+Subject: Re: Speakup Left Out of Ubuntu kernel (again)
+To: Samuel Thibault <samuel.thibault@aquilenet.fr>
+Cc: Adrian Orjales <adriorjalesvidal31@gmail.com>, "John G. Heim" <jheim@math.wisc.edu>, 
+	speakup@linux-speakup.org
+Content-Type: multipart/alternative; boundary="00000000000037b46c05dee5b378"
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+--00000000000037b46c05dee5b378
+Content-Type: text/plain; charset="UTF-8"
 
----1404930036-713724598-1652452688=:426085
-Content-Type: TEXT/PLAIN; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: QUOTED-PRINTABLE
+Samuel,
 
-I agree, was surprised that someone recommended an entirely different=20
-program  as a substitute for speakup on a speakup list.
+I'm having our support department research who is the owner of the list,
+because I have a feeling it may be someone who is either no longer with the
+company or active on the project. I did reach out to Milton about the issue
+regarding opening files with the super key in Libre Office. By next week, I
+hope we have ownership of the list fix so more of the guild members can
+join and make the list more responsive and more of a central hub for
+organizing.
 
+Cheers,
 
+Monica
 
-On Fri, 13 May 2022, John G. Heim wrote:
+On Wed, May 11, 2022 at 6:59 PM Samuel Thibault <
+samuel.thibault@aquilenet.fr> wrote:
 
-> This thread, in fact this list, is supposed to be about speakup. The spea=
-kup=20
-> modules were left out of the Ubuntu kernel for 22.04. There is nothing to=
-=20
-> keep you from installing fenrir after you've installed Ubuntu. But that h=
-as=20
-> nothing to do with speakup.
+> Hello,
 >
+> Monica Ayhens-Madon, le mer. 11 mai 2022 17:14:33 +0200, a ecrit:
+> > And I'm only one of a group of people at Canonical working on
+> accessibility. My
+> > main job is to be a bridge between them and the community. Can I give the
+> > Accessibility Guild your address (and anyone else's e-mail address, if
+> you'd
+> > like to talk to us about how we can improve accessibility), we would
+> like to
+> > know your feedback and suggestions!
 >
-> On 5/12/22 20:17, Karen Lewellen wrote:
->>  And if one prefers the command line?
->>  Should not all aspects of Linux be equally accessible so end users have
->>  choices?
->>  command line and graphical?
->>  Kare
->>=20
->>
->>  On Fri, 13 May 2022, Linux A11y wrote:
->>=20
->> >  Howdy,
->> >=20
->> >  Not sure if this helps, but you can also use fenrir, what does not=20
->> >  require any kind of kernel involved. In fact there is no need for=20
->> >  installing at all (as it could used from git tree).
->> >=20
->> >  https://github.com/chrys87/fenrir
->> >=20
->> >  Cheers chrys
->> > >  Am 12.05.2022 um 23:11 schrieb jdashiel@panix.com:
->> > >=20
->> > >  =EF=BB=BF
->> > >  On the ubuntu-accessibility list I asked if a sound message at=20
->> > >  substantial volume could be played to let installers know speakup=
-=20
->> > >  can't yet work with an existing kernel bug.=C2=A0 Now that brings m=
-e to a=20
->> > >  couple other questions that may be useful.=C2=A0 For the current ca=
-se if=20
->> > >  fenrir were installed, could it run as a stop gap until speakup can=
- be=20
->> > >  made to run?=C2=A0 Also, if fenrir can run, could a script run afte=
-r a=20
->> > >  sound message got played to install and activate fenrir for the=20
->> > >  console?=C2=A0 Once speakup became available the workaround code to=
- handle=20
->> > >  this bug could be removed.=C2=A0 It would be helpful to installers =
-if a=20
->> > >  notification about speakup and the kernel having been fixed would c=
-ome=20
->> > >  up on their machines.=C2=A0 I realize this is a big ask, and in my =
-case I=20
->> > >  have no linux support local to me blind or sighted that could sort=
-=20
->> > >  things out with the possible exception of be my eyes and their supp=
-ort=20
->> > >  while useful can at best be partial.
->> > >=20
->> > >  On May 12, 2022 2:37:44 PM Monica Ayhens-Madon=20
->> > >  <monica.ayhens.madon@canonical.com> wrote:
->> > >=20
->> > > >  One of the things the Accessibility Guild is working on is to mak=
-e=20
->> > > >  our processes around accessibility stronger. When we had a devote=
-d=20
->> > > >  person for this, we just took the process for granted, and when t=
-hey=20
->> > > >  left, the process did too. And obviously, this has to be frustrat=
-ing=20
->> > > >  and disheartening for Speakup users. So, long answer short - I ho=
-pe=20
->> > > >  this is the last time we have to go through this, and I'll do wha=
-t I=20
->> > > >  can to help make that happen.
->> > > >=20
->> > > >  On Thu, May 12, 2022 at 5:18 PM John G. Heim <jheim@wisc.edu> wro=
-te:
->> > > > >  Well, that's great but are we going to have to go through this=
-=20
->> > > > >  again for Kinetic Kudu, 22.10? The same thing happened now for=
-=20
->> > > > >  Hirsute, Impish, and Jammy.
->> > > > >=20
->> > > > >=20
->> > > > >=20
->> > > > >  On 5/11/22 11:50, Monica Ayhens-Madon wrote:
->> > > > > >  Adrian,
->> > > > > >=20
->> > > > > >  According to my colleague, if the output of uname -r ends wit=
-h=20
->> > > > > >  'generic' on the ubuntu server 22.04 LTS you're running, it w=
-ill=20
->> > > > > >  be fixed soon.
->> > > > > >=20
->> > > > > >  (Sorry I can't test it myself - I am stuck abroad with a real=
-ly=20
->> > > > > >  minimal setup and this is my first day back at work after bei=
-ng=20
->> > > > > >  ill. It's almost 7 PM here so I'll be winding down soon.)
->> > > > > >=20
->> > > > > >  Thank you for offering to share your insight and feedback - i=
-t's=20
->> > > > > >  very appreciated!
->> > > > > >=20
->> > > > > >  Monica
->> > > > > >=20
->> > > > > >  On Wed, May 11, 2022 at 6:05 PM Adrian Orjales=20
->> > > > > >  <adriorjalesvidal31@gmail.com> wrote:
->> > > > > > >  Sure, I'd be happy to help. Feel free to share my email=20
->> > > > > > >  address with your colleagues.
->> > > > > > >  The version was ubuntu server 22.04 lts. I will install it=
-=20
->> > > > > > >  again and test it more, and also the desktop version to try=
- to=20
->> > > > > > >  give my best feedback possible.
->> > > > > > >  Thanks
->> > > > > > >=20
->> > > > > > >  El El mi=C3=A9, 11 may 2022 a las 17:15, Monica Ayhens-Mado=
-n=20
->> > > > > > >  <monica.ayhens.madon@canonical.com> escribi=C3=B3:
->> > > > > > > >  Adrian, could you let me know more about which specific=
-=20
->> > > > > > > >  version of server? I'm talking to one of my colleagues on=
-=20
->> > > > > > > >  the kernel team and he needs more information.
->> > > > > > > >=20
->> > > > > > > >  And I'm only one of a group of people at Canonical workin=
-g=20
->> > > > > > > >  on accessibility. My main job is to be a bridge between t=
-hem=20
->> > > > > > > >  and the community. Can I give the Accessibility Guild you=
-r=20
->> > > > > > > >  address (and anyone else's e-mail address, if you'd like =
-to=20
->> > > > > > > >  talk to us about how we can improve accessibility), we wo=
-uld=20
->> > > > > > > >  like to know your feedback and suggestions!
->> > > > > > > >=20
->> > > > > > > >  On Wed, May 11, 2022 at 3:59 PM Adrian Orjales=20
->> > > > > > > >  <adriorjalesvidal31@gmail.com> wrote:
->> > > > > > > > >  Hello=C2=A0 Monica
->> > > > > > > > >  Does this affect also ubuntu server? I've installed Ubu=
-ntu=20
->> > > > > > > > >  server=C2=A0 and no speakup module was found when i tri=
-ed to=20
->> > > > > > > > >  load it.
->> > > > > > > > >=20
->> > > > > > > > >  I'm very happy to know about you, because i think there=
-=20
->> > > > > > > > >  are a lot of things in ubuntu to talk about accessibili=
-ty.=20
->> > > > > > > > >  If you are open to listen, i will be happy to help with=
-=20
->> > > > > > > > >  feedback.
->> > > > > > > > >  Thanks
->> > > > > > > > >=20
->> > > > > > > > >  El El mi=C3=A9, 11 may 2022 a las 15:38, Monica Ayhens-=
-Madon=20
->> > > > > > > > >  <monica.ayhens.madon@canonical.com> escribi=C3=B3:
->> > > > > > > > > >  Hello!
->> > > > > > > > > >=20
->> > > > > > > > > >  I'm Monica Ayhens-Madon from the Community Team at=20
->> > > > > > > > > >  Canonical, and I'm part of our Accessibility Guild. I=
-'ve=20
->> > > > > > > > > >  had a chat with people on our kernel team and there i=
-s=20
->> > > > > > > > > >  an existing bug being fixed, and Speakup should be=20
->> > > > > > > > > >  available in updates soon. Please feel free to reach =
-out=20
->> > > > > > > > > >  to me with any questions or any other accessibility=
-=20
->> > > > > > > > > >  issues I can raise internally.
->> > > > > > > > > >=20
->> > > > > > > > > >  Cheers,
->> > > > > > > > > >=20
->> > > > > > > > > >  Monica
->> > > > > > > > > >=20
->> > > > > > > > > >  On Tue, May 10, 2022 at 3:19 AM John G. Heim=20
->> > > > > > > > > >  <jheim@math.wisc.edu> wrote:
->> > > > > > > > > > >  Arrgh! Speakup seems not to have been compiled into=
-=20
->> > > > > > > > > > >  the Ubuntu
->> > > > > > > > > > >  Jammy/22.04 kernel. Same thing as in 21.04 and 21.1=
-0.=20
->> > > > > > > > > > >  Man! Well, I guess
->> > > > > > > > > > >  I'll have to file a bug report ... again.
->> > > > > > > > > > >=20
->> > > > > > > > > > >  --=20
->> > > > > > > > > > >  ###
->> > > > > > > > > > >  John G. Heim, 608-263-4189, jheim@math.wisc.edu
->> > > > > > > > > > >=20
->> > > > > > > > >=20
->> > >=20
->> > >=20
->> >=20
+> Are they subscribed to the
+> ubuntu-accessibility@lists.ubuntu.com
+> mailing list? Now and then there are requests there which don't seem to
+> be getting answered. For instance
 >
+> https://lists.ubuntu.com/archives/ubuntu-accessibility/2022-May/007752.html
 >
----1404930036-713724598-1652452688=:426085--
+> https://lists.ubuntu.com/archives/ubuntu-accessibility/2021-October/007738.html
+>
+> Samuel
+>
+
+--00000000000037b46c05dee5b378
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Samuel,<div><br></div><div>I&#39;m having our support depa=
+rtment research who is the owner of the list, because I have a feeling it m=
+ay be someone who is either no longer with the company or active on the pro=
+ject. I did reach out to Milton about the issue regarding opening files wit=
+h the super key in Libre Office. By next week, I hope we have ownership of =
+the list fix so more of the guild members can join and make the list more r=
+esponsive and more of a central hub for organizing.</div><div><br></div><di=
+v>Cheers,</div><div><br></div><div>Monica</div></div><br><div class=3D"gmai=
+l_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Wed, May 11, 2022 at 6:59=
+ PM Samuel Thibault &lt;<a href=3D"mailto:samuel.thibault@aquilenet.fr">sam=
+uel.thibault@aquilenet.fr</a>&gt; wrote:<br></div><blockquote class=3D"gmai=
+l_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,20=
+4,204);padding-left:1ex">Hello,<br>
+<br>
+Monica Ayhens-Madon, le mer. 11 mai 2022 17:14:33 +0200, a ecrit:<br>
+&gt; And I&#39;m only one of a group of people at Canonical working on acce=
+ssibility. My<br>
+&gt; main job is to be a bridge between them and the community. Can I give =
+the<br>
+&gt; Accessibility Guild your address (and anyone else&#39;s e-mail address=
+, if you&#39;d<br>
+&gt; like to talk to us about how we can improve accessibility), we would l=
+ike to<br>
+&gt; know your feedback and suggestions!<br>
+<br>
+Are they subscribed to the<br>
+<a href=3D"mailto:ubuntu-accessibility@lists.ubuntu.com" target=3D"_blank">=
+ubuntu-accessibility@lists.ubuntu.com</a><br>
+mailing list? Now and then there are requests there which don&#39;t seem to=
+<br>
+be getting answered. For instance<br>
+<br>
+<a href=3D"https://lists.ubuntu.com/archives/ubuntu-accessibility/2022-May/=
+007752.html" rel=3D"noreferrer" target=3D"_blank">https://lists.ubuntu.com/=
+archives/ubuntu-accessibility/2022-May/007752.html</a><br>
+<a href=3D"https://lists.ubuntu.com/archives/ubuntu-accessibility/2021-Octo=
+ber/007738.html" rel=3D"noreferrer" target=3D"_blank">https://lists.ubuntu.=
+com/archives/ubuntu-accessibility/2021-October/007738.html</a><br>
+<br>
+Samuel<br>
+</blockquote></div>
+
+--00000000000037b46c05dee5b378--
 
