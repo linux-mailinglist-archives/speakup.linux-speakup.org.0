@@ -1,34 +1,34 @@
-Return-Path: <speakup+bounces-433-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-434-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 59EAB52BFA4
-	for <lists+speakup@lfdr.de>; Wed, 18 May 2022 18:14:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 4D1F552BFC8
+	for <lists+speakup@lfdr.de>; Wed, 18 May 2022 18:34:40 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E974C3810C6; Wed, 18 May 2022 12:14:13 -0400 (EDT)
+	id C7331380E08; Wed, 18 May 2022 12:34:39 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8F40238162F
-	for <lists+speakup@lfdr.de>; Wed, 18 May 2022 12:14:13 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 19CA3380DF1
+	for <lists+speakup@lfdr.de>; Wed, 18 May 2022 12:34:37 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 088C4380B0C; Wed, 18 May 2022 12:14:12 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0007.b.hostedemail.com [64.98.42.7])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id E3F2338092D
-	for <speakup@linux-speakup.org>; Wed, 18 May 2022 12:14:11 -0400 (EDT)
-Received: from omf02.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay06.b.hostedemail.com (Postfix) with ESMTP id 2241F185AB846;
-	Wed, 18 May 2022 16:14:11 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf02.b.hostedemail.com (Postfix) with ESMTPA id 80C5286D2439;
-	Wed, 18 May 2022 16:14:06 +0000 (UTC)
-Message-ID: <064701d86ad1$e210f1a0$82ffa8c0@WIN40RPKAT965G>
+	id 6C06E380B2D; Wed, 18 May 2022 12:34:35 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0178.b.hostedemail.com [64.98.42.178])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 5A63D380994
+	for <speakup@linux-speakup.org>; Wed, 18 May 2022 12:34:35 -0400 (EDT)
+Received: from omf11.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id C4605841B333;
+	Wed, 18 May 2022 16:34:34 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf11.b.hostedemail.com (Postfix) with ESMTPA id F31D517902;
+	Wed, 18 May 2022 16:34:31 +0000 (UTC)
+Message-ID: <064e01d86ad4$bc7efec0$82ffa8c0@WIN40RPKAT965G>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
 To: <jdashiel@panix.com>,
 	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 References: <061e01d86acb$37cbd440$82ffa8c0@WIN40RPKAT965G> <180d7d62bb8.2923.7f5f0e00eb39c74e480406aa7dcc21f8@panix.com>
 Subject: Re: Getting Speech-Dispatcher To Work
-Date: Wed, 18 May 2022 11:11:06 -0500
+Date: Wed, 18 May 2022 11:31:32 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -40,35 +40,35 @@ List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_0644_01D86AA7.F85607E0"
+	boundary="----=_NextPart_000_064B_01D86AAA.D2C6D420"
 X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Stat-Signature: ar4wp4yoi7zm9wwgoedf6a386zwnnnah
-X-Rspamd-Server: rspamout02
-X-Rspamd-Queue-Id: 80C5286D2439
-X-Spam-Status: No, score=-2.58
+X-Rspamd-Queue-Id: F31D517902
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: 6zj8hp9nuxxakyrbddcfxaecm7isy6t8
+X-Rspamd-Server: rspamout01
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1+os+jBDm+m+AGUq/PPLo5NVk5ff1lcz+c=
-X-HE-Tag: 1652890446-680837
+X-Session-ID: U2FsdGVkX1/l2BpYyG3GEK2sjzrUAdXLBMR+u5zB6A0=
+X-HE-Tag: 1652891671-747
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
 This is a multi-part message in MIME format.
 
-------=_NextPart_000_0644_01D86AA7.F85607E0
+------=_NextPart_000_064B_01D86AAA.D2C6D420
 Content-Type: text/plain;
 	charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
 
-Hi again,
-Well I tried it in both system and user, since that is the first choice =
-in spd-conf.
-I also selected to have it auto start and I let it write a debug file =
-because it still doesn't work.
-spd-conf states that it might be pulseaudio, but I installed that.
+One of the errors I get when running sudo spd-conf is=20
+error, home directory inaccessible, permission denied.
+Why would I get this error when running this?
+Yesterday I tried to look into the .cache/speech-dispatcher directory =
+and it stated that I did not have permission.
+Should I try to use chmod or chown to change the home directory to =
+something like 755?
 Glenn
-
 ----- Original Message -----=20
 From: jdashiel@panix.com=20
 To: K0LNY_Glenn ; Speakup is a screen review system for Linux.=20
@@ -136,7 +136,7 @@ README.translators
 TODO
 
 
-------=_NextPart_000_0644_01D86AA7.F85607E0
+------=_NextPart_000_064B_01D86AAA.D2C6D420
 Content-Type: text/html;
 	charset="iso-8859-1"
 Content-Transfer-Encoding: quoted-printable
@@ -149,18 +149,22 @@ http-equiv=3DContent-Type>
 <STYLE></STYLE>
 </HEAD>
 <BODY bgColor=3D#ffffff>
-<DIV><FONT size=3D2 face=3DArial>Hi again,</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Well I tried it in both system and =
-user, since that=20
-is the first choice in spd-conf.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I also selected to have it auto start =
-and I let it=20
-write a debug file because it still doesn't work.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>spd-conf states that it might be =
-pulseaudio, but I=20
-installed that.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>One of the errors I get when running =
+sudo spd-conf=20
+is </FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>error, home directory inaccessible, =
+permission=20
+denied.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Why would I get this error when running =
+
+this?</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Yesterday I tried to look into the=20
+.cache/speech-dispatcher directory and it stated that I did not have=20
+permission.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Should I try to use chmod or chown to =
+change the=20
+home directory to something like 755?</FONT></DIV>
 <DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV>
-<DIV>&nbsp;</DIV>
 <DIV style=3D"FONT: 10pt arial">----- Original Message -----=20
 <DIV style=3D"BACKGROUND: #e4e4e4; font-color: black"><B>From:</B> <A=20
 title=3Djdashiel@panix.com =
@@ -254,6 +258,6 @@ files?</DIV>
 TODO</DIV></BLOCKQUOTE></DIV>
 <DIV><BR></DIV></DIV></BODY></HTML>
 
-------=_NextPart_000_0644_01D86AA7.F85607E0--
+------=_NextPart_000_064B_01D86AAA.D2C6D420--
 
 
