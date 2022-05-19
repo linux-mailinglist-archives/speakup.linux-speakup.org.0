@@ -1,47 +1,47 @@
-Return-Path: <speakup+bounces-435-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-436-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id CA17052C7F5
-	for <lists+speakup@lfdr.de>; Thu, 19 May 2022 01:53:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 7B02C52C857
+	for <lists+speakup@lfdr.de>; Thu, 19 May 2022 02:06:58 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=YZzLhU4X;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=ha7Bbke6;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 41E8D380D0B; Wed, 18 May 2022 19:53:24 -0400 (EDT)
+	id 1000D380D0B; Wed, 18 May 2022 20:06:58 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2CAB5380B0C
-	for <lists+speakup@lfdr.de>; Wed, 18 May 2022 19:53:24 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E370B380C70
+	for <lists+speakup@lfdr.de>; Wed, 18 May 2022 20:06:57 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7976F380C66; Wed, 18 May 2022 19:53:17 -0400 (EDT)
+	id 3B506380C70; Wed, 18 May 2022 20:06:51 -0400 (EDT)
 Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 2434A38092D
-	for <speakup@linux-speakup.org>; Wed, 18 May 2022 19:53:17 -0400 (EDT)
-Received: from vbox.gregn.net (unknown [IPv6:2607:fb90:2d9f:c030:1614:ab0f:ea5b:f799])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1D03B38092D
+	for <speakup@linux-speakup.org>; Wed, 18 May 2022 20:06:51 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [172.58.23.245])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id AD427DE0;
-	Wed, 18 May 2022 16:53:03 -0700 (PDT)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 19A75DE0;
+	Wed, 18 May 2022 17:06:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1652917983; bh=FgwmW9Rr91MlcWaFNriTo34gq6CVRayU7wxB3W6M/ds=;
+	t=1652918798; bh=nmDfCjz/gBJ/75GtbcrTD5SwDbhbXY8SKG3uX7Ig0O4=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=YZzLhU4XiMH2ybkKku1p9M6Q8E40XwmpZXtL+ykOvwPeV/6yJZPEQ9VzGlX7ZEMA6
-	 xPPhd1l3yGBpIEWvgc0R3th8euFf//LDhN4dWiv/Bf7uT7BHQd0HFEsd+sRU+/MO+G
-	 49FgWR7gm1bqOqYe6oTq/dHTu9jwyBPWeeTZ8o2DnW4IiCxgARlieVx/CagPY/2Pxx
-	 Jh/gK44vo1EroC2f5LtxF4ztDgHtsDwwAIRJFEr65IEYSNkGkQbvz1plFdJGFo1pGB
-	 qarGaREX+pLd5NEw3z0EqwF2TAehYnoM4OVGOnD9NgX6W0/YsajULDBt0zABCkl2Fl
-	 Tw7FLa9MEzJFw==
+	b=ha7Bbke64I+lpxJH6Z3oavdqlc55PHpN5WNYi5rWqzDCalDIXcg0DhWi0HWec0tbn
+	 h2UogxrVMylyrqvTQx8cXlN1iwnD6WZnXNNu5o0Cbccl/5jRdOzOtanWLXCEo1bVrq
+	 PmcLgX4tMLYlKsbStRxi5zlnCJAd4WHKFQA5RbrVAzm39znQfMW7LVyXda3dGcKCPa
+	 GKVommXoo30HILKuUVhDe9O7KLOMeWAJqc85K0eoOY8GsGa8a9mJp2CmP4UCDOJbwS
+	 QeLvRnXv1tmVQBS/2McqWZL+UGPs3nxN7DHjZXt91gEYXlkhweK6U7zpelWZB0QWiw
+	 Q6dTUyGR1Hmlg==
 Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 79CB6C1CF; Wed, 18 May 2022 16:47:42 -0700 (MST)
-Date: Wed, 18 May 2022 16:47:42 -0700
+	id 76C86C1CF; Wed, 18 May 2022 17:01:16 -0700 (MST)
+Date: Wed, 18 May 2022 17:01:16 -0700
 From: Gregory Nowak <greg@gregn.net>
 To: K0LNY_Glenn <glenn@ervin.email>
 Cc: jdashiel@panix.com,
 	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: Getting Speech-Dispatcher To Work
-Message-ID: <YoWFnkPR+veXpoo/@gregn.net>
+Message-ID: <YoWIzG7UOUffMgLz@gregn.net>
 References: <061e01d86acb$37cbd440$82ffa8c0@WIN40RPKAT965G>
  <180d7d62bb8.2923.7f5f0e00eb39c74e480406aa7dcc21f8@panix.com>
  <064e01d86ad4$bc7efec0$82ffa8c0@WIN40RPKAT965G>
@@ -62,24 +62,11 @@ X-Virus-Scanned: clamav-milter 0.103.4 at vserver
 X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-When I did a search for
-ubuntu system wide home permissions
-
-I got this as the first result:
-
-<https://ubuntu.com/blog/private-home-directories-for-ubuntu-21-04>
-
-Did you find this as well, and if yes, did you read it?
-
-As far as your speech-dispatcher error, when you run spd-conf, one of
-the questions it asks you is do you want clients to communicate
-through a tcp port or unix socket. You need to pick the unix socket
-choice. Alternatively edit /etc/speech-dispatcher/speechd.conf to set
-that option. You need to do a
-
-killall speech-dispatcher;speech-dispatcher
-
-or reboot for it to take effect.
+Oops, I noticed you installed armbian, not ubuntu. I should read more
+carefully. While replacing ubuntu with armbian in the search phrase I
+used doesn't give the page I posted right away, the advice given there
+still applies to armbian systems as far as I know. This is a change in
+adduser(8), and in login.defs(5) as far as I know.
 
 Greg
 
@@ -91,6 +78,7 @@ On Wed, May 18, 2022 at 11:31:32AM -0500, K0LNY_Glenn wrote:
 > Yesterday I tried to look into the .cache/speech-dispatcher directory and it stated that I did not have permission.
 > Should I try to use chmod or chown to change the home directory to something like 755?
 > Glenn
+
 
 -- 
 web site: http://www.gregn.net
