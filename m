@@ -1,33 +1,47 @@
-Return-Path: <speakup+bounces-437-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-438-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7C692536F0E
-	for <lists+speakup@lfdr.de>; Sun, 29 May 2022 03:56:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 9CEEF536F26
+	for <lists+speakup@lfdr.de>; Sun, 29 May 2022 04:59:13 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=dT/XrUvq;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1BC68380DF1; Sat, 28 May 2022 21:56:08 -0400 (EDT)
+	id 7A32F380E01; Sat, 28 May 2022 22:59:12 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 07BA1380584
-	for <lists+speakup@lfdr.de>; Sat, 28 May 2022 21:56:08 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6342B380584
+	for <lists+speakup@lfdr.de>; Sat, 28 May 2022 22:59:12 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EC1DF380830; Sat, 28 May 2022 21:56:02 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0196.b.hostedemail.com [64.98.42.196])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id DBDD0380143
-	for <speakup@linux-speakup.org>; Sat, 28 May 2022 21:56:02 -0400 (EDT)
-Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id 01D46100332BF
-	for <speakup@linux-speakup.org>; Sun, 29 May 2022 01:56:02 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id 8AF1D65939C
-	for <speakup@linux-speakup.org>; Sun, 29 May 2022 01:56:00 +0000 (UTC)
-Message-ID: <092001d872ff$3f8027e0$82ffa8c0@WIN40RPKAT965G>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: OT, Resizing Partition
-Date: Sat, 28 May 2022 20:56:00 -0500
-Organization: Home
+	id 24553380830; Sat, 28 May 2022 22:59:05 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id D85013800BA
+	for <speakup@linux-speakup.org>; Sat, 28 May 2022 22:59:04 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [172.58.23.146])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 0D4A119F9;
+	Sat, 28 May 2022 19:58:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+	t=1653793111; bh=ahXWVkOKx9uCTMbBl5CGzs2hyd8hA/RbcCJ4jshCvp0=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=dT/XrUvqAqIiuAqUu7vflx07LT6YOAIZiE0Hf6aD1ywxJmrFuMggWzv6QntJgqyBt
+	 p+jV2CbUt7rGJAZVbvGXgdtGf55k2F9074KMFaAkeYhcOAYNfMSqTzlbzOJGmLXAdo
+	 n3NqSSIj401Rp6dmreAKkF+NHwqX/4hk0723vR9sAlXyD0NWy8Mf2UxwGmB3Bu2f1l
+	 V2mIbHtQmIKfkFMTI7WVTRi1akDzluppokgsUR3/jilXiNH5n3yQb6n7JpI6uqmWm9
+	 pmOsty9HSuBEfv23sak3VT8U0js3cyBu0/C/IyVdcD47PxWQG+v+FD8K6PWt3kw0aD
+	 9CnurajInXUmg==
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 9064CC1A0; Sat, 28 May 2022 19:58:31 -0700 (MST)
+Date: Sat, 28 May 2022 19:58:31 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: K0LNY_Glenn <glenn@ervin.email>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: OT, Resizing Partition
+Message-ID: <YpLhV3YMOmkWvXEC@gregn.net>
+References: <092001d872ff$3f8027e0$82ffa8c0@WIN40RPKAT965G>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -37,29 +51,41 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Spam-Status: No, score=2.30
-X-Stat-Signature: d6copy5uettt5o8jt53ngdnmkm9qtk6u
-X-Rspamd-Server: rspamout03
-X-Rspamd-Queue-Id: 8AF1D65939C
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1+cDYd+qN3rYXneHeWdAAn+kAUcTXtol7U=
-X-HE-Tag: 1653789360-760846
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <092001d872ff$3f8027e0$82ffa8c0@WIN40RPKAT965G>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 0.103.4 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi,
-Using CLI only via SSH, how do I shrink the partition of a running Ubuntu 
-without losing data?
-I want to unallocated any free space so I can install another system.
+Are you able to boot something like grml on the system in question,
+and enter needed boot parameters to get the ssh server going? Down
+sizing the partition on a running system can't be done as far as I
+know.
 
-Thanks
+Greg
 
-Glenn 
 
+On Sat, May 28, 2022 at 08:56:00PM -0500, K0LNY_Glenn wrote:
+> Hi,
+> Using CLI only via SSH, how do I shrink the partition of a running Ubuntu 
+> without losing data?
+> I want to unallocated any free space so I can install another system.
+> 
+> Thanks
+> 
+> Glenn 
+> 
+> 
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
