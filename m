@@ -1,38 +1,36 @@
-Return-Path: <speakup+bounces-447-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-448-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 6BCAA543E7E
-	for <lists+speakup@lfdr.de>; Wed,  8 Jun 2022 23:22:58 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=nsKp2e+p;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 4E4A1543E7F
+	for <lists+speakup@lfdr.de>; Wed,  8 Jun 2022 23:23:50 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 06CC2380E0C; Wed,  8 Jun 2022 17:22:58 -0400 (EDT)
+	id DCD6D380DF3; Wed,  8 Jun 2022 17:23:49 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E6118380CF0
-	for <lists+speakup@lfdr.de>; Wed,  8 Jun 2022 17:22:57 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id C8B88380CF0
+	for <lists+speakup@lfdr.de>; Wed,  8 Jun 2022 17:23:49 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A835A380D12; Wed,  8 Jun 2022 17:22:51 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 3B2C3380AE3
-	for <speakup@linux-speakup.org>; Wed,  8 Jun 2022 17:22:51 -0400 (EDT)
-Received: from [192.168.0.10] (sfa89-1-78-208-157-71.fbx.proxad.net [78.208.157.71])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id B812121D25
-	for <speakup@linux-speakup.org>; Wed,  8 Jun 2022 22:21:15 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1654719675; bh=zUWrQAYq32KtojqA8hOO2Q/h/XzNMIKAd3/h2SzX7AY=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=nsKp2e+pYYKEKfwzVkc1Mh1VB1a9VIW1hOLv/O+UXNFwj0LLMr88yI5nN6ygoJ5oE
-	 ODu4dK/XTu/7EF2fxH9wcBvcAm/i8OixGmCOPNe9CVQyoLz+fed5RfgL98gx+X1Ov0
-	 6f707wV2LoJwMqGwVw9M+uy76PsS8Lri2PM1g30ax30YxEYi/RPly0qVxTa2+Q2iJF
-	 mKZvo3TAJ9FweHrDlybLGWil4loUASXiY8rGNJxwjZVMhGyewmqaMxLowM9gd5amEy
-	 KffQK2f2JO7oKo9Gy04bHmN4ntb6IVk2JIx1DaWDdU0t9OO9Ksqi+UHOvsgqIJZ+f1
-	 mJIBqeemv47Xw==
-Message-ID: <4c654321-7926-586a-5d8a-2c16f5b66236@slint.fr>
-Date: Wed, 8 Jun 2022 23:22:33 +0200
+	id C1F42380D18; Wed,  8 Jun 2022 17:23:44 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0030.b.hostedemail.com [64.98.42.30])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B3511380BDD
+	for <speakup@linux-speakup.org>; Wed,  8 Jun 2022 17:23:44 -0400 (EDT)
+Received: from omf08.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id 1CDEF8020598;
+	Wed,  8 Jun 2022 21:23:44 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf08.b.hostedemail.com (Postfix) with ESMTPA id 621C018586B7E;
+	Wed,  8 Jun 2022 21:23:43 +0000 (UTC)
+Message-ID: <011101d87b7e$08b16990$81ffa8c0@WIN40RPKAT965G>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Brian Buhrow" <buhrow@nfbcal.org>,
+	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Cc: <buhrow@nfbcal.org>
+References: <202206082120.258LKnbn014088@nfbcal.org>
+Subject: Re: eMail Links
+Date: Wed, 8 Jun 2022 16:23:43 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,37 +40,38 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.9.1
-Subject: Re: eMail Links
-Content-Language: en-US
-To: speakup@linux-speakup.org
-References: <010701d87b7b$9b5cbe50$81ffa8c0@WIN40RPKAT965G>
-From: Didier Spaier <didier@slint.fr>
-In-Reply-To: <010701d87b7b$9b5cbe50$81ffa8c0@WIN40RPKAT965G>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout03
+X-Rspamd-Queue-Id: 621C018586B7E
+X-Spam-Status: No, score=2.40
+X-Stat-Signature: fuo5r7euuzzupyy9fk9moczq7dts4cd3
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX18OO335//8VgTfpDcIk+WR5iwEdocH9BMs=
+X-HE-Tag: 1654723423-232146
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi,
+Maybe I'm mixed up, I thought links was a CLI based eMail client, but it's 
+been years and perhaps I got it confused with the browser.
+Glenn
+----- Original Message ----- 
+From: "Brian Buhrow" <buhrow@nfbcal.org>
+To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review system 
+for Linux." <speakup@linux-speakup.org>
+Cc: <buhrow@nfbcal.org>
+Sent: Wednesday, June 08, 2022 4:20 PM
+Subject: Re: eMail Links
 
-links and lynx are web browsers, not email clients.
 
-As CLI email client you can use mutt (more features) alpine (easier to
-configure)  or aerc (new, maybe not fully accessible), at least.
+hello.  Can you provide some more context?  You're naming text based web 
+browsers, but
+discussing e-mail clients.  I'm a bit confused about the question.
+-thanks
+-Brian
 
-Cheers,
-
-Didier
-
-Le 08/06/2022 à 23:06, K0LNY_Glenn a écrit :
-> Hi,
-> I can't remember if the CLI eMail is called Links or Lynx or whatever, but 
-> does anyone still use that client?
-> I used it once before, and I don't recall how well it works, like for 
-> attachments, and following links and such.
-> Can anyone comment?
-> Thanks.
-> 
-> Glenn 
 
