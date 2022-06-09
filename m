@@ -1,37 +1,39 @@
-Return-Path: <speakup+bounces-452-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-453-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8C4BE54408B
-	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 02:25:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id CA6A05440AA
+	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 02:50:28 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9D4AA380C62; Wed,  8 Jun 2022 20:25:49 -0400 (EDT)
+	id 5C49938041F; Wed,  8 Jun 2022 20:50:28 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8771D380950
-	for <lists+speakup@lfdr.de>; Wed,  8 Jun 2022 20:25:49 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 46770380148
+	for <lists+speakup@lfdr.de>; Wed,  8 Jun 2022 20:50:28 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9473D380A48; Wed,  8 Jun 2022 20:25:44 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0133.b.hostedemail.com [64.98.42.133])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 842DA380921
-	for <speakup@linux-speakup.org>; Wed,  8 Jun 2022 20:25:44 -0400 (EDT)
-Received: from omf05.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id DAC25184FF951;
-	Thu,  9 Jun 2022 00:25:43 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf05.b.hostedemail.com (Postfix) with ESMTPA id 2B1AA18067986;
-	Thu,  9 Jun 2022 00:25:41 +0000 (UTC)
-Message-ID: <014801d87b97$743f4010$81ffa8c0@WIN40RPKAT965G>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Chime Hart" <chime@hubert-humphrey.com>,
-	"Karen Lewellen" <klewellen@shellworld.net>
-Cc: "Brian Buhrow" <buhrow@nfbcal.org>,
-	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <202206082120.258LKnbn014088@nfbcal.org> <011101d87b7e$08b16990$81ffa8c0@WIN40RPKAT965G> <Pine.LNX.4.64.2206081730500.1048540@server2.shellworld.net> <e38d2910-f8b-f737-7962-a8591ea01a88@hubert-humphrey.com>
+	id 6879D3800C4; Wed,  8 Jun 2022 20:50:23 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 4DA6538002A
+	for <speakup@linux-speakup.org>; Wed,  8 Jun 2022 20:50:23 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1005)
+	id 6C27E621C43; Thu,  9 Jun 2022 00:49:50 +0000 (UTC)
+Received: from localhost (localhost [127.0.0.1])
+	by server2.shellworld.net (Postfix) with ESMTP id 6B3E26201B0;
+	Wed,  8 Jun 2022 20:49:50 -0400 (EDT)
+Date: Wed, 8 Jun 2022 20:49:50 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: K0LNY_Glenn <glenn@ervin.email>
+cc: Chime Hart <chime@hubert-humphrey.com>, Brian Buhrow <buhrow@nfbcal.org>, 
+    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: eMail Links
-Date: Wed, 8 Jun 2022 19:25:41 -0500
-Organization: Home
+In-Reply-To: <014801d87b97$743f4010$81ffa8c0@WIN40RPKAT965G>
+Message-ID: <Pine.LNX.4.64.2206082047320.1052031@server2.shellworld.net>
+References: <202206082120.258LKnbn014088@nfbcal.org>
+ <011101d87b7e$08b16990$81ffa8c0@WIN40RPKAT965G>
+ <Pine.LNX.4.64.2206081730500.1048540@server2.shellworld.net>
+ <e38d2910-f8b-f737-7962-a8591ea01a88@hubert-humphrey.com>
+ <014801d87b97$743f4010$81ffa8c0@WIN40RPKAT965G>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -41,42 +43,41 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Stat-Signature: dzon1jyo836jht1j7toyh3qstrms4tew
-X-Rspamd-Server: rspamout01
-X-Rspamd-Queue-Id: 2B1AA18067986
-X-Spam-Status: No, score=1.11
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1+sSTFWzNiMtGE4xObteFSD2bmMErBGirU=
-X-HE-Tag: 1654734341-472721
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Anyone here use gMail with Alpine and experience any issues with the new 
-gMail two step verification and gMail blocking apps they consider unsecure?
-Google just started blocking some clients, and it isn't fixable through 
-gMail settings any more.
-
-Glenn
------ Original Message ----- 
-From: "Chime Hart" <chime@hubert-humphrey.com>
-To: "Karen Lewellen" <klewellen@shellworld.net>
-Cc: "K0LNY_Glenn" <glenn@ervin.email>; "Brian Buhrow" <buhrow@nfbcal.org>; 
-"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Sent: Wednesday, June 08, 2022 6:27 PM
-Subject: Re: eMail Links
+Glenn,
+While I do not use Alpine outside of a work e-mail, the developers claim? 
+to have created a solution for the problem.
+Others might have flagged the process as I  recently intentionally started 
+a thread on the Alpine development list for the answer to be circulated.
+best,
 
 
-Hi All: The nice thing in Alpine, you can configure it to click on urls in 
-an
-e-mail. As far as any atatchments which you would receive, you would hit a v
-and look over any which you can save.
-Chime
 
+On Wed, 8 Jun 2022, K0LNY_Glenn wrote:
 
+> Anyone here use gMail with Alpine and experience any issues with the new
+> gMail two step verification and gMail blocking apps they consider unsecure?
+> Google just started blocking some clients, and it isn't fixable through
+> gMail settings any more.
+>
+> Glenn
+> ----- Original Message -----
+> From: "Chime Hart" <chime@hubert-humphrey.com>
+> To: "Karen Lewellen" <klewellen@shellworld.net>
+> Cc: "K0LNY_Glenn" <glenn@ervin.email>; "Brian Buhrow" <buhrow@nfbcal.org>;
+> "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+> Sent: Wednesday, June 08, 2022 6:27 PM
+> Subject: Re: eMail Links
+>
+>
+> Hi All: The nice thing in Alpine, you can configure it to click on urls in
+> an
+> e-mail. As far as any atatchments which you would receive, you would hit a v
+> and look over any which you can save.
+> Chime
+>
+>
+>
 
