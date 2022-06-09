@@ -1,56 +1,32 @@
-Return-Path: <speakup+bounces-454-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-455-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 272EE544BFA
-	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 14:28:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 12667544FFC
+	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 16:57:18 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3675E380807; Thu,  9 Jun 2022 08:28:53 -0400 (EDT)
+	id 02B163812DA; Thu,  9 Jun 2022 10:57:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2078D3807A8
-	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 08:28:53 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E235F3812CF
+	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 10:57:16 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3F54B3807B3; Thu,  9 Jun 2022 08:28:48 -0400 (EDT)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 17A04380148
-	for <speakup@linux-speakup.org>; Thu,  9 Jun 2022 08:28:48 -0400 (EDT)
+	id ACCFE3807B3; Thu,  9 Jun 2022 10:57:15 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 8F9D73807A8
+	for <speakup@linux-speakup.org>; Thu,  9 Jun 2022 10:57:15 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1005)
+	id 8CC40621D8B; Thu,  9 Jun 2022 14:57:14 +0000 (UTC)
 Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 61E4B2015C;
-	Thu,  9 Jun 2022 14:28:45 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id K-HSDGkridoK; Thu,  9 Jun 2022 14:28:45 +0200 (CEST)
-Received: from begin (ip-185-104-137-33.ptr.icomera.net [185.104.137.33])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 948A620157;
-	Thu,  9 Jun 2022 14:28:44 +0200 (CEST)
-Received: from samy by begin with local (Exim 4.95)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1nzHHD-00DgPa-Cr;
-	Thu, 09 Jun 2022 14:28:39 +0200
-Date: Thu, 9 Jun 2022 14:28:39 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Sasha Levin <sashal@kernel.org>
-Cc: linux-kernel@vger.kernel.org, stable@vger.kernel.org,
-	Zheng Bin <zhengbin13@huawei.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
-	trix@redhat.com, salah.triki@gmail.com, speakup@linux-speakup.org
-Subject: Re: [PATCH AUTOSEL 5.18 31/68] accessiblity: speakup: Add missing
- misc_deregister in softsynth_probe
-Message-ID: <20220609122839.35vn5vtukmuuxch3@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Sasha Levin <sashal@kernel.org>, linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org, Zheng Bin <zhengbin13@huawei.com>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
-	trix@redhat.com, salah.triki@gmail.com, speakup@linux-speakup.org
-References: <20220607174846.477972-1-sashal@kernel.org>
- <20220607174846.477972-31-sashal@kernel.org>
+	by server2.shellworld.net (Postfix) with ESMTP id 89ED56201B0
+	for <speakup@linux-speakup.org>; Thu,  9 Jun 2022 10:57:14 -0400 (EDT)
+Date: Thu, 9 Jun 2022 10:57:14 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: [Alpine-info] Gmail IMAP with username+password (was: Instructions
+ to configure XOAUTH2 in Gmail have changed) (fwd)
+Message-ID: <Pine.LNX.4.64.2206091054130.1223878@server2.shellworld.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -60,52 +36,64 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20220607174846.477972-31-sashal@kernel.org>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Sasha Levin, le mar. 07 juin 2022 13:47:57 -0400, a ecrit:
-> From: Zheng Bin <zhengbin13@huawei.com>
-> 
-> [ Upstream commit 106101303eda8f93c65158e5d72b2cc6088ed034 ]
-> 
-> softsynth_probe misses a call misc_deregister() in an error path, this
-> patch fixes that.
-> 
-> Signed-off-by: Zheng Bin <zhengbin13@huawei.com>
-> Link: https://lore.kernel.org/r/20220511032937.2736738-1-zhengbin13@huawei.com
-> Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-> Signed-off-by: Sasha Levin <sashal@kernel.org>
+given Glenn's question, sharing the below in case these steps help 
+someone.
+kare
 
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
-> ---
->  drivers/accessibility/speakup/speakup_soft.c | 1 +
->  1 file changed, 1 insertion(+)
-> 
-> diff --git a/drivers/accessibility/speakup/speakup_soft.c b/drivers/accessibility/speakup/speakup_soft.c
-> index 19824e7006fe..786dc5d080f3 100644
-> --- a/drivers/accessibility/speakup/speakup_soft.c
-> +++ b/drivers/accessibility/speakup/speakup_soft.c
-> @@ -397,6 +397,7 @@ static int softsynth_probe(struct spk_synth *synth)
->  	synthu_device.name = "softsynthu";
->  	synthu_device.fops = &softsynthu_fops;
->  	if (misc_register(&synthu_device)) {
-> +		misc_deregister(&synth_device);
->  		pr_warn("Couldn't initialize miscdevice /dev/softsynthu.\n");
->  		return -ENODEV;
->  	}
-> -- 
-> 2.35.1
-> 
+---------- Forwarded message ----------
+Date: Thu, 9 Jun 2022 09:52:58 +0200 (CEST)
+To: Alpine-info List <alpine-info@u.washington.edu>
+Subject: Re: [Alpine-info] Gmail IMAP with username+password (was: Instructions
+     to configure XOAUTH2 in Gmail have changed)
 
--- 
-Samuel
----
-Pour une évaluation indépendante, transparente et rigoureuse !
-Je soutiens la Commission d'Évaluation de l'Inria.
+
+Hello all,
+
+I answer to this thread to keep the context.
+
+First - Eduardo, thank you very much for keeping alpine alive and adding new
+features!
+
+>   with the upcoming change in gmail whereas username/passwords combination
+> will stop working many users are attempting to configure Alpine woth XOAUTH2.
+
+This change affected me yesterday - I have found that offlineimap cannot sync
+the emails from gmail to my dovecot server (I don't know why, but my dovecot
+IMAP is faster than Gmail IMAP in alpine, therefore I sync extern IMAPs to my
+IMAP). I have logged in to my gmail and I have found, the "use less secure
+apps" option is really deactivated and disabled forever.
+
+A few months ago, when this change has been announced, I have found in the
+google account the possibility to generate special application password. So I
+have tested it on one low-prio account. I had to activate 2-step verification
+and then I could generate special password for Mail. With this password and my
+email I was able to login to IMAP using simple username+password
+authentication.
+
+And yesterday, I have activated 2-step verification (with smartphone "Yes"
+click, SMS/voice call, time based OTP [google auth, andotp] and backup codes)
+for all my gmail accounts and then I could generate special random password
+for IMAP login. So now my offlineimap works again.
+
+Yes, I have to login with 2-step verification to google from webclient, but the
+most important is that IMAP works with simple username+password again. It works
+in alpine too, if you save the password to password file, then you don't need
+to remeber or copy it everytime you start alpine. Great is that you can still
+use gmail IMAP in other apps without XOAUTH2 support (as my old offlineimap
+version) without any changes except password.
+
+I hope this information helps you.
+
+Regards,
+
+Robert Wolf.
+_______________________________________________
+Alpine-info mailing list
+Alpine-info@u.washington.edu
+http://mailman12.u.washington.edu/mailman/listinfo/alpine-info
+
 
