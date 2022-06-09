@@ -1,32 +1,64 @@
-Return-Path: <speakup+bounces-455-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-456-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 12667544FFC
-	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 16:57:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1BBC854501B
+	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 17:05:28 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=gmail.com header.i=@gmail.com header.a=rsa-sha256 header.s=20210112 header.b=iba28vhU;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 02B163812DA; Thu,  9 Jun 2022 10:57:17 -0400 (EDT)
+	id A75843807F2; Thu,  9 Jun 2022 11:05:27 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E235F3812CF
-	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 10:57:16 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 921D73807B3
+	for <lists+speakup@lfdr.de>; Thu,  9 Jun 2022 11:05:27 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ACCFE3807B3; Thu,  9 Jun 2022 10:57:15 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 8F9D73807A8
-	for <speakup@linux-speakup.org>; Thu,  9 Jun 2022 10:57:15 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 8CC40621D8B; Thu,  9 Jun 2022 14:57:14 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 89ED56201B0
-	for <speakup@linux-speakup.org>; Thu,  9 Jun 2022 10:57:14 -0400 (EDT)
-Date: Thu, 9 Jun 2022 10:57:14 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: [Alpine-info] Gmail IMAP with username+password (was: Instructions
- to configure XOAUTH2 in Gmail have changed) (fwd)
-Message-ID: <Pine.LNX.4.64.2206091054130.1223878@server2.shellworld.net>
+	id 66FAC3807B8; Thu,  9 Jun 2022 11:05:21 -0400 (EDT)
+Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com [209.85.160.182])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 45D3C3807B3
+	for <speakup@linux-speakup.org>; Thu,  9 Jun 2022 11:05:21 -0400 (EDT)
+Received: by mail-qt1-f182.google.com with SMTP id y15so17338214qtx.4
+        for <speakup@linux-speakup.org>; Thu, 09 Jun 2022 08:05:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=date:from:to:cc:subject:message-id:mime-version;
+        bh=EdZaRnlrAyrws0Tcer87cvEyFDibYetRj5RGYyVqgeo=;
+        b=iba28vhUYFYp4P2FC0/KTTsEa8QHJSB98vxL93IxbKgeGuqwgDpJ/eywCAh3uXnVtX
+         eRDo5o7KfWcgbf0UEzY/KdmJGEtd/+C2B8CzNss770BmBe7/kThFu7VaIObpWeqn6P/R
+         j3JXweGgN3kDhqzoyRCYud5BwS4V5dQ6w3QGbMuosGziQcqToWuwTo/7bNfypMgaqriC
+         LEay01Z4ha7EFWB8Jiverh6wsnImRpuseYxTefFlBeDFBEC4tQPeVm00y2+W3//x2KU+
+         TRRaJN6WW3fHnxQXFItLmKajNvUBWFMWv7wDwKpIHH8E+0+TzNZHpFuJeUenelHYHA85
+         atHw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version;
+        bh=EdZaRnlrAyrws0Tcer87cvEyFDibYetRj5RGYyVqgeo=;
+        b=vYbknqv6N2qK6S4Pf8kHpb5jdkWCxJa6FyGtQ1vQUmxmIwYgE/oACXgbi8jgThYT0y
+         +SUbPGAk8mkRuH9kfNFY1uEfSwFlMjCIO/Lvt4kUVbuY7IR5yWMbwhDvbZDhq5n6jSv+
+         lbzAyTU5ggLqki+890vyf9lgvHcDeOgTblaX/h4kSPAz1FM7d+t9ej23ZR6cI5IOMrSL
+         GVGVqlCZ6X3W0ZJUfqH0EB/Km9b78TjaG2OwnpkUJQW3Ucq+d5ZzW5/Jo932kT4OCZDH
+         bW6ZodZ3BM/K696Byo+1eV+pGorU9tqhtNTp/4Kc/4a3OrYty4m1PYGbUsp3o/0ej/i6
+         bs1g==
+X-Gm-Message-State: AOAM531UYbON9/d+3tmi4hjRyZJ871YsKn7Zu8TVAu2YrioC9jJ7f1cO
+	Kn3jN2SiWFOYzq/CZ/SDZkQ=
+X-Google-Smtp-Source: ABdhPJy5bWs1KQEKTFALWAlEzbpKoTPwkGDsGb2zUfpJpQaZ5+uJP35QUQjoREKv9vWWMuQMshScGQ==
+X-Received: by 2002:ac8:5c96:0:b0:2f9:3077:5cda with SMTP id r22-20020ac85c96000000b002f930775cdamr32892379qta.625.1654787059918;
+        Thu, 09 Jun 2022 08:04:19 -0700 (PDT)
+Received: from dans-mac-mini-2.home (pool-74-98-213-46.pitbpa.fios.verizon.net. [74.98.213.46])
+        by smtp.gmail.com with ESMTPSA id q19-20020a05620a0d9300b006a68fdc2d18sm16636478qkl.130.2022.06.09.08.04.18
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 09 Jun 2022 08:04:19 -0700 (PDT)
+Date: Thu, 9 Jun 2022 11:04:18 -0400 (EDT)
+From: "dan d." <dandunfee@gmail.com>
+To: K0LNY_Glenn <glenn@ervin.email>
+cc: Chime Hart <chime@hubert-humphrey.com>, 
+    Karen Lewellen <klewellen@shellworld.net>, 
+    Brian Buhrow <buhrow@nfbcal.org>, 
+    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Gmail with alpine - was eMail Links
+Message-ID: <d3184f19-3aee-e168-fd57-789779a8427@gmail.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -36,64 +68,44 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-given Glenn's question, sharing the below in case these steps help 
-someone.
-kare
 
 
----------- Forwarded message ----------
-Date: Thu, 9 Jun 2022 09:52:58 +0200 (CEST)
-To: Alpine-info List <alpine-info@u.washington.edu>
-Subject: Re: [Alpine-info] Gmail IMAP with username+password (was: Instructions
-     to configure XOAUTH2 in Gmail have changed)
+Alpine can continue to use gmail and other email sourceswith the stepss given here:
+
+https://alpine.x10host.com/alpine/alpine-info/misc/xoauth2.html#SettingUpGmail
+On Wed, 8 Jun 2022, K0LNY_Glenn wrote:
 
 
-Hello all,
 
-I answer to this thread to keep the context.
+> Anyone here use gMail with Alpine and experience any issues with the new
+> gMail two step verification and gMail blocking apps they consider unsecure?
+> Google just started blocking some clients, and it isn't fixable through
+> gMail settings any more.
+>
+> Glenn
+> ----- Original Message -----
+> From: "Chime Hart" <chime@hubert-humphrey.com>
+> To: "Karen Lewellen" <klewellen@shellworld.net>
+> Cc: "K0LNY_Glenn" <glenn@ervin.email>; "Brian Buhrow" <buhrow@nfbcal.org>;
+> "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+> Sent: Wednesday, June 08, 2022 6:27 PM
+> Subject: Re: eMail Links
+>
+>
+> Hi All: The nice thing in Alpine, you can configure it to click on urls in
+> an
+> e-mail. As far as any atatchments which you would receive, you would hit a v
+> and look over any which you can save.
+> Chime
+>
+>
+>
+>
 
-First - Eduardo, thank you very much for keeping alpine alive and adding new
-features!
-
->   with the upcoming change in gmail whereas username/passwords combination
-> will stop working many users are attempting to configure Alpine woth XOAUTH2.
-
-This change affected me yesterday - I have found that offlineimap cannot sync
-the emails from gmail to my dovecot server (I don't know why, but my dovecot
-IMAP is faster than Gmail IMAP in alpine, therefore I sync extern IMAPs to my
-IMAP). I have logged in to my gmail and I have found, the "use less secure
-apps" option is really deactivated and disabled forever.
-
-A few months ago, when this change has been announced, I have found in the
-google account the possibility to generate special application password. So I
-have tested it on one low-prio account. I had to activate 2-step verification
-and then I could generate special password for Mail. With this password and my
-email I was able to login to IMAP using simple username+password
-authentication.
-
-And yesterday, I have activated 2-step verification (with smartphone "Yes"
-click, SMS/voice call, time based OTP [google auth, andotp] and backup codes)
-for all my gmail accounts and then I could generate special random password
-for IMAP login. So now my offlineimap works again.
-
-Yes, I have to login with 2-step verification to google from webclient, but the
-most important is that IMAP works with simple username+password again. It works
-in alpine too, if you save the password to password file, then you don't need
-to remeber or copy it everytime you start alpine. Great is that you can still
-use gmail IMAP in other apps without XOAUTH2 support (as my old offlineimap
-version) without any changes except password.
-
-I hope this information helps you.
-
-Regards,
-
-Robert Wolf.
-_______________________________________________
-Alpine-info mailing list
-Alpine-info@u.washington.edu
-http://mailman12.u.washington.edu/mailman/listinfo/alpine-info
-
+-- 
+ent-
+XR
 
