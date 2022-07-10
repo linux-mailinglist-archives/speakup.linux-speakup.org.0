@@ -1,67 +1,76 @@
-Return-Path: <speakup+bounces-461-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-462-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 59E2856CFBD
-	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 17:24:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 6D4D456D006
+	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 18:21:50 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=yahoo.com header.i=@yahoo.com header.a=rsa-sha256 header.s=s2048 header.b=tjjOhYN9;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=donbiJCd;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=leYE2x0o;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 15385380B8E; Sun, 10 Jul 2022 11:24:02 -0400 (EDT)
+	id 9C972380BB5; Sun, 10 Jul 2022 12:21:49 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E9AAC3807ED
-	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 11:24:01 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 7CC4438091D
+	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 12:21:49 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 77D97380A39; Sun, 10 Jul 2022 11:23:54 -0400 (EDT)
-Received: from sonic314-20.consmr.mail.ne1.yahoo.com (sonic314-20.consmr.mail.ne1.yahoo.com [66.163.189.146])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id EFF973807ED
-	for <speakup@linux-speakup.org>; Sun, 10 Jul 2022 11:23:53 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1657466632; bh=/zCqFbbA0kL8Co6BGPSVnd2ikV17QJamypJIK1rsLjY=; h=From:To:Subject:Date:References:From:Subject:Reply-To; b=tjjOhYN9w8prhAjMyJKB6TqdOFb8WoT7iSTwMp+40CpM2oNKfOBBewGv7KneOwvOV3Go2OaCwSBqTzd3q2uW4DgLoxf9a0RbIuUNcsry+ptULZGfWmB6Wgzupy08zbfD2lB0xGsB2gPa3eyDGJ1waNO7yAvi9Ntwsh00rTwHkpssVFpsFxIzH24C4T78wgi3YjL0V51PT53Q9F872nubcT+u7OChzYoLYuMOKR5IYTDmyrzS47AhyJ79GB6lFWtZE4Mm9Vxx9CmllUdbCz1R6Mn3yQjM3dlVqF+umGC2o8z+wsWEdvcBLgEJZUPBdlsFI+s65wKBn1hQKxTbYe00fQ==
-X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1657466632; bh=RuK2QcWpglBqn6ss8Ft98A+dceRiMJy74HhylKu8cSF=; h=X-Sonic-MF:From:To:Subject:Date:From:Subject; b=mB8V4zXfJDzvby1ti1fEfda0aZJhklhzEeVBGtLlc2rWAfefH9dKfLCpNGwY3nV6MawqD5TUKWgKQANZMujgkWf+EYEiTNasDFxwsvF2jP91xgWVSfRY1Nz3ga0WCufAgJIFwx0hU6FhmpG2ODd2GesZmTwf6y05eYwHaMSHxxL+KK4rYCrY1JEj3TyB81kV1MQNvn4UxLNADzLgcqm8iIpd/2QfyoaY/BI+kA8l0ypCeNwfspTOdZ1nxAQ2Q5GXNBLYfSjX9cU0UCjgyJhvwLaqk7QV9DsD1KGjIXhvCHb2dMncYBik/trHO5dm9i3pWKF2KAtr1d1tMTMEzVlobg==
-X-YMail-OSG: 48XT7h8VM1ljg6MZ364lVisq1YlSaxpBimMngYl11AUU_s.pM9dW3wpLhiLoKNp
- X3qcU3lBch_jH5F7jyCYtahrJ3FYQV4qLJRte6l_jpFviVtNr98Ba3crx74end1zkbciIZ1r_TwS
- e8UbJ2_ElaOfZIP4gqBNYgo3VQBGbxx8N9x1k85bC06FBRdHQKuCcd0hJDj1QJAEDyya0sDsMg5F
- 8Xt4o5Q_QjQtzYrDwiTF2nYQ1NfcR5xSDip_4yJ5GDuNkjR.1hFTgefp9DIb2JLyJHuTd8v88kM.
- Oh4QORzMobrW6ByTZRdyv_tsMYBvWElIuPt7_w3ouSJw9u0iT_i2EQ_haYV7.HaT_h1MYfHaYVYg
- E7fZC4GshPizq.mxIjPypee7dBGJDdH9LumvIELy1eKM0aQfRxQzlIobu2pw6oG7OkdBCKoz3dqk
- 1SFobP6uo3UhD.618.1KpYkDKOIBhIlrq6jTzv.nNJqaheJf.UK9hDRdZQtlmFVfaaWPM3Plrfso
- MqCAz30bMCtbOshNS56dhMjSI_NTYnTgDlBcQ2XSBWZxTzmc1i2fmPu3fgpmz9to3qjzRzl6h5N3
- q1hqKlNPPXUBkR3ARiY9uy3JaiN6MuVj7BRABg_trAlZEgeJEVhlvg5drp0QidOcvpuGYXJn6gdw
- ._r2UFFaziWrjMjdPPrmd8lvaRN995Pe2R6V26f6ftnmt7SXllQw.jGvBZKoH03CEFY5Af8vxM.2
- LZtp2x7D1.09Aa8uz4BKVUqEjC71aqorAfGFS8wrZlDVoefaPisamfPmqfRQAoBu48Fl636tm6r6
- DOvY5u2loJ266T1MvwJaxZlfuEw4hWIvZtKBS62iBy0nR1Micv852Gp031BaArZe5MO6zQ7u_3mb
- zy67h9UPX4RbJsC8r40A7FvYRutclcFJpBi3LQbg2ztmRABalZjPHjKNNC.yO0bpGbTn0JiLhsnz
- wX9sHRLRXKeCdByuHjEUZGEY000tbXZNg.h8JqbRShi98pBjsx6x_wNqAaedDd890s3EnuE_s6Ca
- vFZ_Ncd0ByypdfjheWddnh2c0PtoGxgaQ8p_lbtq0J2mz4evNZPgwioMh8JhneueFKdFyxIti651
- 4bg5Axtz5qoAaCe.WhlfDwFfsoDCv3x_9U97HEbcZyYqVGNGP1oSRek2uUzZU7GPAGNDH9A8ibUS
- FPhkGesTNXjU8ANeMLhhkmL.j.q.xIrhtu6LHNmiS4_J9szjiWJp9f24M2v0x72I.zQM1Rt_AHMP
- ZE7304TzZ8f22d9Rf5DdRNzSVJ8T5ZOZv4aFM96EDK27hG6JzVl6wvlYIgvrzfEOB9HbGVDoyZPP
- mcsuiuS1WV8oTC17L9CcNONyzoJStXGyhOirjKKjS7ghj40tGrwRN4J5hwVLFpf0zU23s5qVpC9g
- LoZ0V7QdmerhHwiqDHqd5ZKU3zdg5wmjdhuS13Dre5frEPy5MS4ZPwL_XfHseO5.OXUnyOybm87J
- 0hqHmMWhN266A9Zf3tOGNJdZgM7Ro6CuubvMxkL3deh5bcmbUr6wHNssH9FJF7R2Pl6D9qDn61RP
- 39V58c1NFO4ajfYbHUfBK_xB0bhL35SgMeS.UT0rwv9iK7WFqtzyt2.0XnG.iTGXE9b8TZA5a5Qw
- mdTmS3RvlZDbyzO83vMNSO4VWbjaUs45SnbEIiWVArUf6_DI9B65qrwDTFs22HAalxjy9PxJxk7W
- uPO7fLgPlbQ0xsG_2YEDE_GlP63adyEJ_f7iamCSMeo46T6kz9xH69EcvnBbKIzZ0BpXJBfWCnfF
- yGzynlaeDuo4IbbQebxxIEc_fjWFEC2ag5e1yELk820cZ_G.SSyyBrx3OcBdAyVvLjJlcGSMX5RQ
- 6GHzIspSj4vxvI97nHVr6YlFLYWXaXvxYTxZoqdQLkaH1DZ925DowpL0YpBeIzqwheK0khu88cHY
- QO9oCNbLrKNgpiXZXG8BT1VSwAof1xFSOD1oLefc1bYnrMsnxxvCS8VFtm3oottSccHMcauWqo1z
- jUTQkqb_FXVLqV87r8ogiuRFjBxue7keKAozl.q3rfKGdtN5ZtQ.1E5uoLG_09jsiut0w5kIfS9z
- CmJDS4_uT0SyzJxMvBdiZPQSYWY03AMTvwo6R7VKo.dgJGFQo5853YsaLCMLUedcCZ_er0qyaq_W
- Nc8yfbS2__xOe1nds8urVM2LwSQ2Um7RyNU.rNNwrkUZX_n9zCnZN.fkl82nBipRzSMCU5Dgf9cT
- Foq1Cgu6lom349urobmJ0EaWm_Teq
-X-Sonic-MF: <bearsfo@yahoo.com>
-Received: from sonic.gate.mail.ne1.yahoo.com by sonic314.consmr.mail.ne1.yahoo.com with HTTP; Sun, 10 Jul 2022 15:23:52 +0000
-Received: by hermes--production-gq1-56bb98dbc7-5q5vp (Yahoo Inc. Hermes SMTP Server) with ESMTPA ID d0f3c04085cd87f0d4e49c52b86c2b4e;
-          Sun, 10 Jul 2022 15:23:51 +0000 (UTC)
-From: "David" <bearsfo@yahoo.com>
-To: <ubuntu-accessibility@lists.ubuntu.com>,
-	<speakup@linux-speakup.org>
-Subject: getting speakup to work in ubuntu
-Date: Sun, 10 Jul 2022 08:23:49 -0700
-Message-ID: <008101d89471$0ea72540$2bf56fc0$@yahoo.com>
+	id C5970380A9E; Sun, 10 Jul 2022 12:21:41 -0400 (EDT)
+Received: from out1-smtp.messagingengine.com (out1-smtp.messagingengine.com [66.111.4.25])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 087CA380584
+	for <speakup@linux-speakup.org>; Sun, 10 Jul 2022 12:21:41 -0400 (EDT)
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+	by mailout.nyi.internal (Postfix) with ESMTP id 627835C008E
+	for <speakup@linux-speakup.org>; Sun, 10 Jul 2022 12:21:40 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute5.internal (MEProxy); Sun, 10 Jul 2022 12:21:40 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:date:date:from:from
+	:in-reply-to:message-id:mime-version:reply-to:sender:subject
+	:subject:to:to; s=fm3; t=1657470100; x=1657556500; bh=7vPQ/v71Xz
+	rCG8kSyYUYeZkvE94TmzVHt52puPuPNfM=; b=donbiJCd0HLWPGt8dxCe70c+n9
+	7nWMmopNMe1cTuDMjMqI2e1v6+rPzsViOx1Y6fh236ToBOsfFsYLNR96zJuyR4LY
+	G60G5Yb42u3V5JeRKlsrjBlJ0tZ0dPMq22uZ0TzWIna72zrA0qzXbbGdKMATrVWx
+	JKI2tTDRthgCzEsEQXwQEgyQGZ/LDX7QI8xRsF1r9nOP/xTSqbJDbCPkGVaNLPbI
+	T7ovF2cr3saLepelh0ZRz37Gab1Hy3TN4Tk2YV/vtYMY5m4TaO6wgPpx7xa6Eqt3
+	3JQE3VzZsv8ZBW8662Vb29/eZTdr6nS2jRy8GnrYHVAMfo13h6drO7ZY4Mwg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:date:date:feedback-id
+	:feedback-id:from:from:in-reply-to:message-id:mime-version
+	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=1657470100; x=
+	1657556500; bh=7vPQ/v71XzrCG8kSyYUYeZkvE94TmzVHt52puPuPNfM=; b=l
+	eYE2x0ov8gErRPzKFR+idPdrZi4V9G1ydNFvA6sbttrETPb7HOLNc3WhSeRb6kew
+	plFzXfewCelN+zALCPbZ+Lce+vHunUTmGwCsyWNbrKJ9ozI2rtJFTbgVxcnV+rLC
+	cd81dc3njk5263BJJDvSKJWPLzTyGCClyc/TJ8n7N3xzDLgo1gtW7/56byoroAQj
+	P4ir6183u1eUeIgsEk5P6XlcrfCaHHim7P1UpA3rKT4ZqtdTK1XCL8VxYtOZyemy
+	IjVsu7us+hzk6nI4aG9PgCMuhnUCypE9vHR+AzvlYM/vlCUeJW2vpso54h+A/bx7
+	D1BhHxBYpzTUgoATI5DGg==
+X-ME-Sender: <xms:lPzKYg81BKEKGPiubzsZR-a9kxU4kA7S5qAeG-hG_1h64-bE2sWefQ>
+    <xme:lPzKYostQIpNghliNJbCmaFOZ8rrXXbqiGi-ZKFTLpT8E7lzMAakhhl80XhQKQiL2
+    YKvtLnhp7fEpNIdMbU>
+X-ME-Received: <xmr:lPzKYmCewgO65Ft99GHgHbVi40IsdfZd1KfcMeWkq-AQo5GNewIEw9XT3UQYuNQmnwS1I4h_LcNi1C0FQJXJbnH0y8AupjtvPQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrudejuddguddtvdcutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+    necuuegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfggtgesthdtredttd
+    dtvdenucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhh
+    uhhmphhhrhgvhidrtghomheqnecuggftrfgrthhtvghrnhepleehhfeukeduteefheekff
+    dtjeffheeludevkeekffetiefgvdfgleejteehgfdunecuffhomhgrihhnpeefqdhrtgeh
+    rdgrthenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpe
+    gthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
+X-ME-Proxy: <xmx:lPzKYgcbi_n_FOU3hE8-_QJScUlqGzLQL_bEjdMsdwlrA9HyEWBg6w>
+    <xmx:lPzKYlOQOnN9iPlFZ9l6EvmEBZBWTmMTUffCg5fbF-pf5Aw6xrN1BA>
+    <xmx:lPzKYqmhBDVRM8DNdjemjpjAlT5dOGVnR_LKFgZZ8hWJEN3cR59mZA>
+    <xmx:lPzKYsZmaghhA79CVCWZ_zfIaCKGWWcRbGqIjasDaUCaLkno3DEf_A>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Sun, 10 Jul 2022 12:21:39 -0400 (EDT)
+Date: Sun, 10 Jul 2022 09:21:38 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+To: speakup@linux-speakup.org
+Subject: About no_interrupt?
+Message-ID: <e12ad8db-3330-1eb3-bd02-65800c170ea9@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -71,138 +80,21 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_0082_01D89436.62484D40"
-X-Mailer: Microsoft Outlook 16.0
-Content-Language: en-us
-Thread-Index: AdiUb8GVLzQQZjIGSxOu72cflRUQHA==
-References: <008101d89471$0ea72540$2bf56fc0$.ref@yahoo.com>
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-This is a multipart message in MIME format.
-
-------=_NextPart_000_0082_01D89436.62484D40
-Content-Type: text/plain;
-	charset="US-ASCII"
-Content-Transfer-Encoding: 7bit
-
- 
-
-Hi there - new to ubuntu, but not with linux or speakup
-
- 
-
-With sighted help, I was able to install ubuntu server 22.04 LTS
-
- 
-
-Question 1: is it possible to install with speech, without sighted help?
-
- 
-
-After the machine booted up, I ran this and got no message [no news is good
-news?]
-
- 
-
-# modprobe speakup_soft
-
- 
-
-So I installed 'espeakup' which brought in a bunch of other packages:
-
- 
-
-# apt-get install espeakup
-
- 
-
-And I get no speech,rebooted and that did not change anything
-
- 
-
-Question 2: did I missed something?
-
- 
-
-Any comments/help/direction/instruction appreciated, thank you very much in
-advance
-
- 
-
---David
-
- 
-
-
-------=_NextPart_000_0082_01D89436.62484D40
-Content-Type: text/html;
-	charset="US-ASCII"
-Content-Transfer-Encoding: quoted-printable
-
-<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
-xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
-xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
-xmlns:m=3D"http://schemas.microsoft.com/office/2004/12/omml" =
-xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta =
-http-equiv=3DContent-Type content=3D"text/html; =
-charset=3Dus-ascii"><meta name=3DGenerator content=3D"Microsoft Word 15 =
-(filtered medium)"><style><!--
-/* Font Definitions */
-@font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
-@font-face
-	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
-/* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin:0in;
-	font-size:11.0pt;
-	font-family:"Calibri",sans-serif;}
-span.EmailStyle17
-	{mso-style-type:personal-compose;
-	font-family:"Calibri",sans-serif;
-	color:windowtext;}
-.MsoChpDefault
-	{mso-style-type:export-only;
-	font-family:"Calibri",sans-serif;}
-@page WordSection1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
-div.WordSection1
-	{page:WordSection1;}
---></style><!--[if gte mso 9]><xml>
-<o:shapedefaults v:ext=3D"edit" spidmax=3D"1026" />
-</xml><![endif]--><!--[if gte mso 9]><xml>
-<o:shapelayout v:ext=3D"edit">
-<o:idmap v:ext=3D"edit" data=3D"1" />
-</o:shapelayout></xml><![endif]--></head><body lang=3DEN-US =
-link=3D"#0563C1" vlink=3D"#954F72" style=3D'word-wrap:break-word'><div =
-class=3DWordSection1><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Hi there &#8211; new to ubuntu, but not with linux or =
-speakup<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>With sighted help, I was able to install ubuntu server =
-22.04 LTS<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>Question 1: is it possible to install with speech, =
-without sighted help?<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>After the =
-machine booted up, I ran this and got no message [no news is good =
-news?]<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal># modprobe speakup_soft<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>So I =
-installed &#8216;espeakup&#8217; which brought in a bunch of other =
-packages:<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal># apt-get install espeakup<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>And I get no =
-speech,rebooted and that did not change anything<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Question 2: =
-did I missed something?<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p><p class=3DMsoNormal>Any =
-comments/help/direction/instruction appreciated, thank you very much in =
-advance<o:p></o:p></p><p class=3DMsoNormal><o:p>&nbsp;</o:p></p><p =
-class=3DMsoNormal>--David<o:p></o:p></p><p =
-class=3DMsoNormal><o:p>&nbsp;</o:p></p></div></body></html>
-------=_NextPart_000_0082_01D89436.62484D40--
-
+Hi All: Now, this is seemingly really strange. We installed Debian Stable on a 
+laptop, eventually switched from horrible espeak to Allison, an embedded Voxin 
+voice. Even on rate1 she sounds like normal conversational speech. Only 1 major 
+thing wrong. Once she reads, she won't stop until she's done. On my Debian SID 
+desktop machine there is a file, "no_interrupt" set to 0. However, on the 
+laptop there seem to be no speakup config files such as bleeps. Also, on my 
+console desktop machine, speakup settings are in /load as well as dot speakup. 
+What would be an easy way of getting these type of files so they are 
+around-and-available on the laptop, especially "no_interrupt"? Side note, I was 
+surprised getting Allison working with a much older version of voxinup1.5 
+instead of the current rc3.3-rc5. At times I wouldn't mind running Allison 
+instead of a DecTalk on my main machine. Thanks so much in advance of any 
+guidance.
+Chime
 
