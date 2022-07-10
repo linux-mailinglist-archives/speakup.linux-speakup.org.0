@@ -1,41 +1,38 @@
-Return-Path: <speakup+bounces-472-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-473-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 349FB56D1C5
-	for <lists+speakup@lfdr.de>; Mon, 11 Jul 2022 00:15:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 7502856D1C8
+	for <lists+speakup@lfdr.de>; Mon, 11 Jul 2022 00:22:04 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=rHlQ+WzT;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C37C8380B8D; Sun, 10 Jul 2022 18:15:04 -0400 (EDT)
+	id 0F86A380C15; Sun, 10 Jul 2022 18:22:04 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id AF413380B64
-	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 18:15:04 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E15E0380BB5
+	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 18:22:03 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BC126380B88; Sun, 10 Jul 2022 18:14:59 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A1ED4380B5C
-	for <speakup@linux-speakup.org>; Sun, 10 Jul 2022 18:14:59 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id DB62C121EE5; Sun, 10 Jul 2022 22:14:26 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id D7AA71203C2;
-	Sun, 10 Jul 2022 18:14:26 -0400 (EDT)
-Date: Sun, 10 Jul 2022 18:14:26 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Chime Hart <chime@hubert-humphrey.com>
-cc: Samuel Thibault <samuel.thibault@aquilenet.fr>, speakup@linux-speakup.org
-Subject: Re: About no_interrupt?
-In-Reply-To: <03473d41-4ce4-860a-2bbd-88e16f748aa1@hubert-humphrey.com>
-Message-ID: <Pine.LNX.4.64.2207101811090.442232@server2.shellworld.net>
-References: <e12ad8db-3330-1eb3-bd02-65800c170ea9@hubert-humphrey.com>
- <20220710191638.ifp4speglszs3hm4@begin> <221ddb78-9ec2-6f00-b249-50dcbb7e57ef@hubert-humphrey.com>
- <a029ad61-468a-0daf-e245-fc679f1a8dab@hubert-humphrey.com>
- <Pine.LNX.4.64.2207101628140.440089@server2.shellworld.net>
- <20220710203826.3wasqo5hnxf3zdep@begin> <Pine.LNX.4.64.2207101659370.441118@server2.shellworld.net>
- <b9ac0798-5749-12be-6dbb-9d05f7e48078@hubert-humphrey.com>
- <Pine.LNX.4.64.2207101720510.441523@server2.shellworld.net>
- <20220710212952.oopexzb26c2kobuy@begin> <03473d41-4ce4-860a-2bbd-88e16f748aa1@hubert-humphrey.com>
+	id 28604380B88; Sun, 10 Jul 2022 18:21:57 -0400 (EDT)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+	by befuddled.reisers.ca (Postfix) with ESMTP id A2C44380B61
+	for <speakup@linux-speakup.org>; Sun, 10 Jul 2022 18:21:56 -0400 (EDT)
+Received: from [192.168.1.37] (men75-h08-176-172-247-100.dsl.sta.abo.bbox.fr [176.172.247.100])
+	by darkstar.slint.fr (Postfix) with ESMTPSA id 4426E20440;
+	Sun, 10 Jul 2022 23:19:54 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+	t=1657487994; bh=ZnMrHydYlmyU/7dO42ZQQraedNAfRUBEFY3srdst3Ug=;
+	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
+	b=rHlQ+WzT7vWo+TuzR7bPp4eo43TIZT3TPz2HB4jnlcu1SJRZ83jSFBgMJleyqnJAb
+	 N39uop3ZwVjW3ZHOCNYAIzeR593XOT5JCWWRZsfzQ22JWrcRSl1QaRUvNhVRKMP5fY
+	 lPh45Q/XnVOzTsp4jE1DDeeqnBvX+fZEQb74aBlcHQJcETQR+E4QfadJa4YKnsBZYv
+	 BRQuEuqntvPd1n742pO9yiC94WvyeYSqThzNU0i5w0Vb9ldfH10Q7vdAloVW79voC6
+	 Rt/Y6pLpHGYzAelPaJp4bFuTypjzpxtYQtpRdt8mi/D1vLkKh2DkJjxODuSs5xx4FH
+	 tB1Hyj5AHFOnQ==
+Message-ID: <01ad6914-5266-6d87-240f-072aa572a7e9@slint.fr>
+Date: Mon, 11 Jul 2022 00:21:49 +0200
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -45,31 +42,55 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
+ Thunderbird/91.11.0
+Subject: Re: About no_interrupt?
+Content-Language: en-US
+To: Karen Lewellen <klewellen@shellworld.net>,
+ Chime Hart <chime@hubert-humphrey.com>
+Cc: Samuel Thibault <samuel.thibault@aquilenet.fr>, speakup@linux-speakup.org
+References: <e12ad8db-3330-1eb3-bd02-65800c170ea9@hubert-humphrey.com>
+ <20220710191638.ifp4speglszs3hm4@begin>
+ <221ddb78-9ec2-6f00-b249-50dcbb7e57ef@hubert-humphrey.com>
+ <a029ad61-468a-0daf-e245-fc679f1a8dab@hubert-humphrey.com>
+ <Pine.LNX.4.64.2207101628140.440089@server2.shellworld.net>
+ <20220710203826.3wasqo5hnxf3zdep@begin>
+ <Pine.LNX.4.64.2207101659370.441118@server2.shellworld.net>
+ <b9ac0798-5749-12be-6dbb-9d05f7e48078@hubert-humphrey.com>
+ <Pine.LNX.4.64.2207101720510.441523@server2.shellworld.net>
+From: Didier Spaier <didier@slint.fr>
+In-Reply-To: <Pine.LNX.4.64.2207101720510.441523@server2.shellworld.net>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Chime,
-voiceover for the mac has this keystroke.
-Business vision has this keystroke.
+Not sure I understand this discussion but if I do the PrintScreen key interrupts
+Speakup saying "You killed speakup" and pressing it again resumes speech saying
+"I'm aLive!" and this has been the case since ages.
 
-and  yes, for the short time I played with vocal eyes during the pandemic, 
-it has it too.
-Sometimes the control key is used, sometimes the alt key is used, and 
-sometimes you can set a hot key for it.
-The ability to pause speech can be as important as the ability to start 
-it, if that makes sense.
+Maybe I miss something, then what?
 
+Didier
 
-On Sun, 10 Jul 2022, Chime Hart wrote:
-
-> I think some of the older DOS screen-readers had a setup the way Karen was 
-> inquiring? I think ASAP may have had it, but while I used Vocal-Eyes for 
-> maybe 12years, I don't remember such as keystroke, but certainly, it would be 
-> a nice addition in Speakup.
-> And lastly, I just dabbled in the Fenrir settings file, will 
-> try-and-experiment.
-> Chime
->
->
->
+Le 10/07/2022 à 23:22, Karen Lewellen a écrit :
+> ...Which given how long you have been using speakup, and how much hardware you  
+> have invested is rather disturbing, no?
+> what is this keystroke Samuel, perhaps the problem chime is having already has  
+> a solution?
+> 
+> 
+> 
+> On Sun, 10 Jul 2022, Chime Hart wrote:
+> 
+>> Well, I suppose if I understood much more, I could try-and-run Fenrir with
+>> Allison. I did install fenrir, sure alot of packages. While Fenrir has some
+>> options which Speakup does not, what I would really want would be a Speakup
+>> keymap for Fenrir. Chris was opened to that if it were supplied. From running
+>> a search, Fenrir works with these embedded voices, but again like a speakup
+>> situation, we would need real life experiences, "can you interrupt speech"?
+>> And as to Karen's question, I have never heard of a pause keystroke in Speakup.
+>> Chime
+>>
+>>
+> 
 
