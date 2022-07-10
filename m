@@ -1,46 +1,80 @@
-Return-Path: <speakup+bounces-463-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-464-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1970656D084
-	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 19:31:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id BD6D356D112
+	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 21:38:37 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=M3pzjWsv;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=QM32oaeI;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=CIB1JHfV;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 459F7380B8A; Sun, 10 Jul 2022 13:31:40 -0400 (EDT)
+	id 9BED7380BB2; Sun, 10 Jul 2022 15:38:36 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 26B34380B5F
-	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 13:31:40 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 77D26380ABF
+	for <lists+speakup@lfdr.de>; Sun, 10 Jul 2022 15:38:36 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1A1C8380AA7; Sun, 10 Jul 2022 13:31:33 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D816C38091D
-	for <speakup@linux-speakup.org>; Sun, 10 Jul 2022 13:31:32 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4LgvFb6XHGz3pjC;
-	Sun, 10 Jul 2022 13:31:31 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1657474291; bh=iQ+x9aKdLd2/w7xCQ6F4ua1CjWYDcN3pGECthVyCDQA=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=M3pzjWsvYjcf/+D1CjNnN5bJignVvX3IzC0e7WjCvRaLxsS7mhmQVOQ4No5l+upMp
-	 iOS7XTlxW/A1Wja3BDTsxuGrM1nWKCbzr0Gj1+JQm6s8iEiQYgFRZM6Ppk/jao8cQ7
-	 LFKBFtMyQyKl3xzHvvTikPV9ExsGfAOKLTO+BOEU=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4LgvFb647wzcbc; Sun, 10 Jul 2022 13:31:31 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4LgvFb5pXNzcbC;
-	Sun, 10 Jul 2022 13:31:31 -0400 (EDT)
-Date: Sun, 10 Jul 2022 13:31:31 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: David <bearsfo@yahoo.com>, ubuntu-accessibility@lists.ubuntu.com, 
-    speakup@linux-speakup.org
-Subject: Re: getting speakup to work in ubuntu
-In-Reply-To: <008101d89471$0ea72540$2bf56fc0$@yahoo.com>
-Message-ID: <e662a51d-bb27-ea1d-1b58-3446a13d652f@panix.com>
-References: <008101d89471$0ea72540$2bf56fc0$.ref@yahoo.com> <008101d89471$0ea72540$2bf56fc0$@yahoo.com>
+	id CCF14380AB4; Sun, 10 Jul 2022 15:38:28 -0400 (EDT)
+Received: from wout2-smtp.messagingengine.com (wout2-smtp.messagingengine.com [64.147.123.25])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 272583807B5
+	for <speakup@linux-speakup.org>; Sun, 10 Jul 2022 15:38:28 -0400 (EDT)
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+	by mailout.west.internal (Postfix) with ESMTP id A225732004AE;
+	Sun, 10 Jul 2022 15:38:26 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute3.internal (MEProxy); Sun, 10 Jul 2022 15:38:26 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:date:date:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to; s=fm3; t=1657481906; x=
+	1657568306; bh=Nz+UqBQgA9OYlmhgIrMIc1pNcTYyj6uMde3Gv5AS4Bw=; b=Q
+	M32oaeI0Ilf4Ur5TVZVpbLe+cKquUy0/CHg+9n9tFAyI7/DxyqikAPR9GKaz/ZOA
+	FTZiiazA55nv12Z331pCaTYr1KXuwRTN93dOHpvMVDmUYXN+LEKsibvkumOkmO/8
+	w4N6pfoaBOQh8ZmWILBRLELffTKMAyBNVm5E4Nf5VecUtQl6bDEiQ/HsBrfKeV99
+	AIMhSfzty8/UW0P91A0/EubPKgGr/LwMKdAw3IQBK3bqtphg8yGYsFWpjEQZOx57
+	OecYjdNoSaDw5VumOjilI+TivUm9hlY/BnklLzj+kF2B3ik3LV9SNOflOdeQAcgC
+	nploRnOSpFbR3W3wYw99A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
+	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
+	:mime-version:references:reply-to:sender:subject:subject:to:to
+	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1657481906; x=1657568306; bh=Nz+UqBQgA9OYlmhgIrMIc1pNcTYy
+	j6uMde3Gv5AS4Bw=; b=CIB1JHfV5MQfOjlHKGSo41FT6PeA2XuiwwvVI+gyfmDc
+	jErCTACPCuRzZqLazg6AKkai5TW/sW9qIcg2gIMsMZzhqYQBWVDKesCaR5XZJEw2
+	Mru+HMoBzVT8DfTZa+DmmDdqb+MCFmqv+WJXUv1Y1iCka7f41RCu3vkDXsKHF510
+	MnwEUZ21zlodU5bezsBHVRDcPOGy+LxfiJA/Yv8+o8WVjWg6G+HaQS5ggQHcpNUY
+	UhWvBZYerWWzG+DpCgIvRc5EqfpQc50wc6Dp4zYF/PV1E1DZ1AAkD/pgaadZZ0Bx
+	AyocNi7fEunmaAfc5lvsxjOEvxqEwMYtvwvpXyhPpg==
+X-ME-Sender: <xms:sSrLYq7q_J7WY67u93x5sZ-Zeqzragj9k6uOM4IA-WJJa0A6dzylvA>
+    <xme:sSrLYj5c5nCR1bcXVD1uEJNwXqNZeiWSaG5umQ0OSsUW9jwGMxXCPXAzydG8T4utt
+    nBfl5HkYEFb28FaTNc>
+X-ME-Received: <xmr:sSrLYpdSfc2174UGzkKctZwq9YH_Z3N9pDwf1VDRxY8DaKv9oQhOSegZd1kL8PbdnViQR82VwFBXmgvS2xLNdZD07RTH24lK2A>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrudejuddgudegvdcutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+    enucfjughrpeffhffvvefujgfkfhggtgesthdtredttddtvdenucfhrhhomhepvehhihhm
+    vgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomheqne
+    cuggftrfgrthhtvghrnhepvdehgeeljeekgeeugfefleekjeeivdekkedvteeuveeufeef
+    fffffeffledufedtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilh
+    hfrhhomheptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
+X-ME-Proxy: <xmx:sSrLYnJAp3CBr-FKeQNeksM8qUQZcmWuhf3QfmPwhowe6ObfbB1zEQ>
+    <xmx:sSrLYuKgeLyjx47k6uHlTAVE1vSSB9E14kuYhR4nF1wRVg8LvI9Wxg>
+    <xmx:sSrLYowoJm2Y_Vk20d6QRT0BDwv0UHfGFc6_0TwT7H1e_-c6IUeHvw>
+    <xmx:sirLYoyLkzTaGp668SHER-5Ii7XO1CMl9ugGNPlS_aekSmw36JN-lg>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
+ 10 Jul 2022 15:38:25 -0400 (EDT)
+Date: Sun, 10 Jul 2022 12:38:23 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+To: Samuel Thibault <samuel.thibault@aquilenet.fr>
+cc: speakup@linux-speakup.org
+Subject: Re: About no_interrupt?
+In-Reply-To: <20220710191638.ifp4speglszs3hm4@begin>
+Message-ID: <221ddb78-9ec2-6f00-b249-50dcbb7e57ef@hubert-humphrey.com>
+References: <e12ad8db-3330-1eb3-bd02-65800c170ea9@hubert-humphrey.com> <20220710191638.ifp4speglszs3hm4@begin>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,62 +84,16 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-sysctl enable espeakup && sysctl start espeakup
-may help.
+Thank you Samuel for your analysis: Since I posted, I tried putting those 
+speakup files in .speakup /load and /etc/speakup. None of which made any 
+difference. As to your question, I wish I knew, especially not knowing where 
+Gilles-and-Oralux got them from? I notice there are times where speakup will 
+not read until I highlight my current line, this is after typing some commands 
+such as after I get a Debian login prompt. I am thinking, maybe have it read 
+something long-and-look-and-see what processes are running? Thanks in advance
+Chime
 
-
-On Sun, 10 Jul 2022, David wrote:
-
->
->
-> Hi there - new to ubuntu, but not with linux or speakup
->
->
->
-> With sighted help, I was able to install ubuntu server 22.04 LTS
->
->
->
-> Question 1: is it possible to install with speech, without sighted help?
->
->
->
-> After the machine booted up, I ran this and got no message [no news is good
-> news?]
->
->
->
-> # modprobe speakup_soft
->
->
->
-> So I installed 'espeakup' which brought in a bunch of other packages:
->
->
->
-> # apt-get install espeakup
->
->
->
-> And I get no speech,rebooted and that did not change anything
->
->
->
-> Question 2: did I missed something?
->
->
->
-> Any comments/help/direction/instruction appreciated, thank you very much in
-> advance
->
->
->
-> --David
->
->
->
->
 
