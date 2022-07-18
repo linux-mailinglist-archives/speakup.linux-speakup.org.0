@@ -1,81 +1,61 @@
-Return-Path: <speakup+bounces-488-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-489-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 170C157858E
-	for <lists+speakup@lfdr.de>; Mon, 18 Jul 2022 16:36:18 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=YAZQHfCK;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=jr2lMbQl;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 7B371578685
+	for <lists+speakup@lfdr.de>; Mon, 18 Jul 2022 17:41:19 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1658158877;
+	bh=42CBt7ZOxT0iFemd3gMZ+I2Jk5EqPKgIN3wJ9Tld698=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=yPpj7pz623YIvb9AVVPzUg4KEPIHM/wWPKkNGYy42IJ2YLXa8ok49Br4B8QzJXVN/
+	 pA12Sr1B5w8ywxF6WLDJJ8VfSdeO5fD1J1LlKPwLWXswlH8zVTk53pqG2oMjl80R2N
+	 DghKtLnlz0x0jcOMYc7mMqFiu94byoAhVM5lWuLE=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 94A07380A90; Mon, 18 Jul 2022 10:36:17 -0400 (EDT)
+	id A2485380A7F; Mon, 18 Jul 2022 11:41:17 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1658158877;
+	bh=42CBt7ZOxT0iFemd3gMZ+I2Jk5EqPKgIN3wJ9Tld698=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=yPpj7pz623YIvb9AVVPzUg4KEPIHM/wWPKkNGYy42IJ2YLXa8ok49Br4B8QzJXVN/
+	 pA12Sr1B5w8ywxF6WLDJJ8VfSdeO5fD1J1LlKPwLWXswlH8zVTk53pqG2oMjl80R2N
+	 DghKtLnlz0x0jcOMYc7mMqFiu94byoAhVM5lWuLE=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 75C0B380916
-	for <lists+speakup@lfdr.de>; Mon, 18 Jul 2022 10:36:17 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8C774380A3B
+	for <lists+speakup@lfdr.de>; Mon, 18 Jul 2022 11:41:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1658158870;
+	bh=42CBt7ZOxT0iFemd3gMZ+I2Jk5EqPKgIN3wJ9Tld698=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=UanrsyYwcqet4og8u7Ktp+ay5Tr2bFww92hfRvMILsaTt/ncAPZbq9aM+BunHyQMi
+	 k5qzV7wWvnDrdIaZ8b+HPAOyPtEurChbhUOgTCZqpNxWurV8dQuU2lEPqVF8J10TMM
+	 LsRhCIpqyTIGOLneRnjXuAvNy+fjzqD1//gcenpo=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E5CDE380A13; Mon, 18 Jul 2022 10:36:09 -0400 (EDT)
-Received: from out2-smtp.messagingengine.com (out2-smtp.messagingengine.com [66.111.4.26])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D9FF03808D7
-	for <speakup@linux-speakup.org>; Mon, 18 Jul 2022 10:36:08 -0400 (EDT)
-Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
-	by mailout.nyi.internal (Postfix) with ESMTP id 80D2C5C00D7;
-	Mon, 18 Jul 2022 10:36:08 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute2.internal (MEProxy); Mon, 18 Jul 2022 10:36:08 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:cc:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm3; t=1658154968; x=
-	1658241368; bh=LqcNVkPOKpecB/1D8CGPzCbQZGsc/vi9AdzMfQAZO5I=; b=Y
-	AZQHfCKO1PlKrN6JENje1RA9HgYvUd96+8wN0K8DLQeDCVcY7hnqsJPTbbTjJEi8
-	7QSyCrIpqK1HBqyomq0KrgVnb276/4IYk0w9jTtj9L7bguB7sTL6iVdlq9DNNHqL
-	zeBdcgJT3/2yFjPdwSozmIXEy8mVyBJRLjqOH8aPR7+GOJQABtsoHilrSVohIw59
-	tqUU5f+/jot1YWD1DzI0QImyJGOay4+k6md2eZUjbuLqZ2qu5yNgSAhDVFgsc+Yy
-	JC8CZKzsyrJyHY4kg6H2s2rO6SttTyA9SvY/yKxkZJOBTcj2Z8mMwZCV2BaYP6/Z
-	bD7NXhcC/MPaArlwgMcMw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
-	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
-	:mime-version:references:reply-to:sender:subject:subject:to:to
-	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm3; t=1658154968; x=1658241368; bh=LqcNVkPOKpecB/1D8CGPzCbQZGsc
-	/vi9AdzMfQAZO5I=; b=jr2lMbQlLRJpqKs6i8Oh2V3yYfpImtVxLzqQ/vGuUHkY
-	8GkhQ8lfhuBKFQj/midqLNyQmLYCLCTXX+vNf1AlS+Lz8JBdh+c7NOHsY0kf9tD5
-	VTKgC3YAwWmHxNeV/pa3POOWcncXpEoawm6SHPGXVeRw+uJNGNj/0aqXi0P3Qjo6
-	6eEMFhe9zFJasC02h2TwAxRkOhOFA7917XCpoRj4qxmg8A7xRC2sBuVQBT4GKg9S
-	S4X33DLq1izkaYcK11WyonKGbpuAkM9PQaaTFv3Mj7/T0fiOLMaR+Be/HKmxVC/S
-	xJvKOuYqs1DLh1adgP73Yhq0kbaxGt91JpFMgzvtsA==
-X-ME-Sender: <xms:2G_VYlEKhhV8Zu4LNLQmVyXyhJrYSVFjqF75z_LxiImhMlD72T8AgQ>
-    <xme:2G_VYqVG-Z_AffzMoJIlkxQqaWkucUl13UD6cFSLSE3ksL7K9rmcr7zD5kRuSWDLn
-    nXbNUAMxfGAzRJbGlg>
-X-ME-Received: <xmr:2G_VYnKqF0CCiTJRKO8iLdMZa1esEciSTdnQIzohW3YEaKqhlHey7NrNnddiZ_oZgH1TcQyyxh-0zltbV1t5L1BUk1UNPXW1wQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrudekkedgjeeiucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepfffhvfevufgjkfhfgggtsehttdertddttddvnecuhfhrohhmpeevhhhimhgv
-    ucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenuc
-    ggtffrrghtthgvrhhnpedvheegleejkeeguefgfeelkeejiedvkeekvdetueevueeffeff
-    ffefffeludeftdenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
-    hrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
-X-ME-Proxy: <xmx:2G_VYrFqMc-TREyBzf-lsgvnhsUWlKNCNO5dWWj4DxoHqj7f7yr68w>
-    <xmx:2G_VYrU3VbNrCXDanSxT2AYYrxcA-a2IZ6cGILDv1P1RaG7IqRsSnw>
-    <xmx:2G_VYmPyF72ZVw0xoCdJv_BeYV0RP7b7_4MN5qaO8sxQ62Vm-H9EvQ>
-    <xmx:2G_VYie7jtx2wiEebAVWNK1T3JUYTMtSwS80MgOJFSMXlANYZTOGbQ>
-Feedback-ID: ia9b947fb:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 18 Jul 2022 10:36:07 -0400 (EDT)
-Date: Mon, 18 Jul 2022 07:36:06 -0700 (PDT)
-From: Chime Hart <chime@hubert-humphrey.com>
-To: Karen Lewellen <klewellen@shellworld.net>
-cc: Samuel Thibault <samuel.thibault@aquilenet.fr>, speakup@linux-speakup.org
+	id 89CA9380A13; Mon, 18 Jul 2022 11:41:10 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1658158868;
+	bh=42CBt7ZOxT0iFemd3gMZ+I2Jk5EqPKgIN3wJ9Tld698=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=l4eSLSH+d+ZpYWDqtsWSjr4f8L0ypkGjMn9SOhl7UpwihQ2PsdUWbAJFcIGL9/jHM
+	 b2Rvz4hRh37fQEAg1Rf8/AbbkBR+n4YfhNVs05wNKH/ezSgjySX/+vhPb7TVY4m/lT
+	 GViAykblhYzYdTT01MQQWpzkkcX/hJcvJVG0JXiA=
+Received: from localhost (localhost [IPv6:::1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A5952380916;
+	Mon, 18 Jul 2022 11:41:08 -0400 (EDT)
+Date: Mon, 18 Jul 2022 11:41:08 -0400 (EDT)
+From: Kirk Reiser <kirk@reisers.ca>
+To: Chime Hart <chime@hubert-humphrey.com>
+cc: Karen Lewellen <klewellen@shellworld.net>, 
+    Samuel Thibault <samuel.thibault@aquilenet.fr>, speakup@linux-speakup.org
 Subject: Re: About no_interrupt?
-In-Reply-To: <Pine.LNX.4.64.2207181022550.632244@server2.shellworld.net>
-Message-ID: <25e2d627-0639-8b2d-fc70-5936bf68f468@hubert-humphrey.com>
+In-Reply-To: <25e2d627-0639-8b2d-fc70-5936bf68f468@hubert-humphrey.com>
+Message-ID: <95b61a49-83e3-69bb-7448-0f4d528fbadb@reisers.ca>
 References: <20220717225255.oeguk3xrrurqjorq@begin> <70af5c96-4980-8fc1-1b41-021ece0a8341@hubert-humphrey.com> <Pine.LNX.4.64.2207172215550.620269@server2.shellworld.net> <20220718062510.rd7cwpemm4slpyd4@begin> <023d5fce-6ae9-3104-9b0f-ca4103009c85@hubert-humphrey.com>
- <Pine.LNX.4.64.2207181022550.632244@server2.shellworld.net>
+ <Pine.LNX.4.64.2207181022550.632244@server2.shellworld.net> <25e2d627-0639-8b2d-fc70-5936bf68f468@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -85,15 +65,27 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+Content-Type: text/plain; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Well, Karen, I've written a direct contact for Oralux, but its probably been 12 
-days or more since he's written. My Linux expert says we need a step-by-step 
-guide to install. Another words, which components? So, I figured if it were a 
-Speakup issue, some1 who's an expert would experiement. Meanwhile, eventually I 
-may get to find out if Fenrir has similar issues? So at this point I've 
-contacted every1 I can.
-Chime
+It has nothing to do with speakup. I don't know anything about the
+synth driver you are trying to use but to interface with speakup you
+need to use either espeakup which isn't what you want or speechd-up
+which is the connector between speakup and speech-dispatcher. There is
+no other way I know of to link speakup to other synths. So if you are
+using speech-dispatcher then it is speechd-up you need.
 
+   Kirk
+
+On Mon, 18 Jul 2022, Chime Hart wrote:
+
+> Well, Karen, I've written a direct contact for Oralux, but its probably been 
+> 12 days or more since he's written. My Linux expert says we need a 
+> step-by-step guide to install. Another words, which components? So, I figured 
+> if it were a Speakup issue, some1 who's an expert would experiement. 
+> Meanwhile, eventually I may get to find out if Fenrir has similar issues? So 
+> at this point I've contacted every1 I can.
+> Chime
+>
+>
 
