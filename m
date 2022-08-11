@@ -1,80 +1,76 @@
-Return-Path: <speakup+bounces-493-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-494-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9317A58496E
-	for <lists+speakup@lfdr.de>; Fri, 29 Jul 2022 03:50:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id BC15C590705
+	for <lists+speakup@lfdr.de>; Thu, 11 Aug 2022 21:36:34 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=aDEReWxk;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=UKiGRakY;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=OZx0okR0;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=XqYUEGLM;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id AA061380AC3; Thu, 28 Jul 2022 21:50:42 -0400 (EDT)
+	id 7B3C2381904; Thu, 11 Aug 2022 15:36:33 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9507038078B
-	for <lists+speakup@lfdr.de>; Thu, 28 Jul 2022 21:50:42 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 651793808D3
+	for <lists+speakup@lfdr.de>; Thu, 11 Aug 2022 15:36:33 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 20B47380A9E; Thu, 28 Jul 2022 21:50:35 -0400 (EDT)
-Received: from out2-smtp.messagingengine.com (out2-smtp.messagingengine.com [66.111.4.26])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 2D10638078B
-	for <speakup@linux-speakup.org>; Thu, 28 Jul 2022 21:50:34 -0400 (EDT)
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
-	by mailout.nyi.internal (Postfix) with ESMTP id 36FE45C006E;
-	Thu, 28 Jul 2022 21:50:33 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute5.internal (MEProxy); Thu, 28 Jul 2022 21:50:33 -0400
+	id B1DFB380937; Thu, 11 Aug 2022 15:36:25 -0400 (EDT)
+Received: from out5-smtp.messagingengine.com (out5-smtp.messagingengine.com [66.111.4.29])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1836E3805E2
+	for <speakup@linux-speakup.org>; Thu, 11 Aug 2022 15:36:24 -0400 (EDT)
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailout.nyi.internal (Postfix) with ESMTP id D5EDC5C00F8
+	for <speakup@linux-speakup.org>; Thu, 11 Aug 2022 15:36:22 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute2.internal (MEProxy); Thu, 11 Aug 2022 15:36:22 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:cc:content-type:date:date:from:from
-	:in-reply-to:in-reply-to:message-id:mime-version:references
-	:reply-to:sender:subject:subject:to:to; s=fm3; t=1659059433; x=
-	1659145833; bh=J6PC8KkYJ064cuqgL7CAGtB+7q14MbKYhDYHgHx9DtU=; b=a
-	DEReWxkgE5f4sy6fUAY7s2FGQ4sdqsoLpmPCOF2FN4HjvuM5aXeGLXw95EMM8lfC
-	DBvYl2hG/53h7wxMuRy+Hg2RM4UmgY8tBpcoLXcEnP7Jm3JpbR7MFdMgPY85fRhT
-	JFZ1fNyTt9PqpBoYbSGWOwKv1C0FFO1oYuJeAmNMFBb0LRBX52qK1tCxxMy0sFdM
-	2No+Gy/6biA+V1dk0cFocpGgzuh+QQpWhxT7VYLZ34XGv1tJRK+NznqaAkyAm0Gs
-	gu6IL8nNwWEiWiF50vRwSl+3xJL25VYu5MopW0iOIOMgCe9Ahws5kEkfjfjGfXFO
-	qwmG5piLpJjUtA9Da6M8g==
+	hubert-humphrey.com; h=cc:content-type:date:date:from:from
+	:in-reply-to:message-id:mime-version:reply-to:sender:subject
+	:subject:to:to; s=fm1; t=1660246582; x=1660332982; bh=9m0VLan79N
+	F44aiQaST2gY5crRsW53uIoos6onXROec=; b=OZx0okR0eTyar4tlMsIiZnv3uS
+	beUYcCt5DCTd88+zJkwDJRWLJFE0Bja5iOjxXpIiFKJwlpNzbem3B8ifniD+4tDv
+	W5V6WKLewqcVPo6VFzbGwBEQZ+fpPxA1ebCw+LqGXVRdVdKElFbCRmUF3tBvMucu
+	redFsvy9uQ+rjurPm1Lle4dlQLT16HO2TJK1mhv0IPCFEUYB9j3oZOFxTr/KJVFS
+	Nm2mzPdXF/cBQajc2DcAijvSQIe+zm2dP5cOAgrMPFXe4TEQ+uZHItzxw56JyVbJ
+	F1QwQWumH81gTulhRgr5eGIS9n+H0bAw8Hrxu+H/FqzqfDSdoBDyGfI6/Qzg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
-	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
-	:mime-version:references:reply-to:sender:subject:subject:to:to
-	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm3; t=1659059433; x=1659145833; bh=J6PC8KkYJ064cuqgL7CAGtB+7q14
-	MbKYhDYHgHx9DtU=; b=UKiGRakYf/KGHdyKm7lA7CefI0PBnbSWS38dq8bvw7gL
-	j7RYJWu7/fdRNkFKQ2u1KCZnwiyr+/1AFNg1npEhp854VKI4eZrql93vufkqXFvE
-	SqK1VFc5nXRvAjWMgrNkArXcKHFLEf4Ephqq/hiXziB+1+fTzt7+S/R1bjCb9GI2
-	+n+8LdF0TgTc6VbIf/mMTeaAtpXTAzi7dQ+aOPADNTJdDwRkanH+jevchtAt6a9u
-	SSObGf7EL87IOSmXQ1llY0F4XD/P0O0yhHeRK9/2eOpi1WCtrOSAkaFhnmF+hTLy
-	8o1HUDiRyK1Mzsgrmx7O6COV6ERKT7NMZI+cpW6Yqg==
-X-ME-Sender: <xms:6TzjYoAlwy7MTe9FV4jTkawkKt13egsZ0Kctd06j6RPbPXhWSVRXGQ>
-    <xme:6TzjYqgTvhYdXehH5CrX23rHkpGYdGU7JxhWd4tde0CjVx-HBA1jWC7Z-wTI7sxb8
-    XsCj1zx-K8spdt257M>
-X-ME-Received: <xmr:6TzjYrmm1zq1lmfppKNeSpoFw6encL_049fNj853_VIT7mbd-33z0n401eU8b4bkzJxAB8yCRa7AnrdPRIwRCOxQd90yidmnNw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdduhedgudehgecutefuodetggdotefrod
+	messagingengine.com; h=cc:content-type:date:date:feedback-id
+	:feedback-id:from:from:in-reply-to:message-id:mime-version
+	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1660246582; x=
+	1660332982; bh=9m0VLan79NF44aiQaST2gY5crRsW53uIoos6onXROec=; b=X
+	qYUEGLMpj5aU9N3mmdJ6e8jAIRNyMpte188ltIIrjSRxOllj5vL1d2mpsOm+2R/c
+	yuxnpHgkGUmS1ICA6MZRGPdBdUj8JmadeswuNSxi1SLpLxysqXglot6LN6LIitAJ
+	RTeGsaWZFO/TC2K47W67fZsElt0LNFh6eqwy/w/A4gct7ca+t01+d1HXb0l1dn0k
+	2mYaqvq8Geh1GRx1B+4FptUUOTJ+qhiE6rF2AjK5fgQju8pz9pzwA1pYF8xHQaaC
+	RQ0ZbIcvuyD2oW8+PLKnKXFLExEFLnUXp7J57PY7tCoL6qRLU5mpcXHl4v+J4nCX
+	LhzD4BSIyS3TKGmVtTEXA==
+X-ME-Sender: <xms:Nlr1YvlYNM2g-d8jVcHVpqyukIIQJx6jV4a061Kk1E5ZV8jNTystyw>
+    <xme:Nlr1Yi20u6IvYY5S1kHy4KVe6rLDf7vyantTyvR-yOxNmiT2ENH0rBhOz-ylR6uCZ
+    n1hMu1OkcclW-gDuYU>
+X-ME-Received: <xmr:Nlr1Ylp9qATQg8CfL6NHZMfcMkMxJkggMAx4mksmnT-UC9ojKCd45yOmYu3HdwQgYFbgOCTwefRHbuPhJBUP7hxXTlHtfq83eg>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdeggedgudegtdcutefuodetggdotefrod
     ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
-    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
-    enucfjughrpeffhffvvefujgfkfhggtgesthdtredttddtvdenucfhrhhomhepvehhihhm
-    vgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomheqne
-    cuggftrfgrthhtvghrnhepvdehgeeljeekgeeugfefleekjeeivdekkedvteeuveeufeef
-    fffffeffledufedtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilh
-    hfrhhomheptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
-X-ME-Proxy: <xmx:6TzjYuyeCzP8BC0yr2pPcP3RhJBoZzto0mvsD2CdfRcen77YhevCcA>
-    <xmx:6TzjYtR2jpLbqqcsM2hnx9DKoKd57NawL8eKr6KxMIyTlg4D1Rl2NA>
-    <xmx:6TzjYpaswUneay1h5sSIKS3ab6pd7fMUnf92DsVdjdzGSA-hx6eXfw>
-    <xmx:6TzjYu6BY67l-9iOUe1RIxEpPydaowD44rPvgKn7JptNGIcf0USC-g>
+    necuuegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfggtgesthdtredttd
+    dtvdenucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhh
+    uhhmphhhrhgvhidrtghomheqnecuggftrfgrthhtvghrnhepjeffffdujeelueffieevtd
+    eiteettdekgffgkedvueejteektdehfefhhfdvteeknecuvehluhhsthgvrhfuihiivgep
+    tdenucfrrghrrghmpehmrghilhhfrhhomheptghhihhmvgeshhhusggvrhhtqdhhuhhmph
+    hhrhgvhidrtghomh
+X-ME-Proxy: <xmx:Nlr1YnmnNzzbamQ_b-rwXuSE2UAQPu128k6kR2nFvb9nxTU7Sth7MA>
+    <xmx:Nlr1Yt3I-DF5S4zFM-U_8m7pmasuxAaPTCBFe2MGOXVGFSPs78K7BA>
+    <xmx:Nlr1YmuwBh7FJoU-wPDw0eAaMpfeaM-OzwgpayGAqRMi877mxHjpKg>
+    <xmx:Nlr1YqhfX_zEsZmT9M9d2riGFUBvp29USsrTW1O4ru1uWrFEQjGMAA>
 Feedback-ID: ia9b947fb:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
- 28 Jul 2022 21:50:32 -0400 (EDT)
-Date: Thu, 28 Jul 2022 18:50:31 -0700 (PDT)
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Thu, 11 Aug 2022 15:36:22 -0400 (EDT)
+Date: Thu, 11 Aug 2022 12:36:20 -0700 (PDT)
 From: Chime Hart <chime@hubert-humphrey.com>
-To: Gregory Nowak <greg@gregn.net>
-cc: speakup@linux-speakup.org
-Subject: Re: Speakup Punctuation Settings Within An Embedded Voxin Voice?
-In-Reply-To: <YuMpteM2zBvNc7Dn@gregn.net>
-Message-ID: <616dc61e-c3cb-e1d4-1eb7-fa5a904df10e@hubert-humphrey.com>
-References: <669c9e7e-ab0b-dedd-cd51-a37aaa733ec8@hubert-humphrey.com> <YuMpteM2zBvNc7Dn@gregn.net>
+To: speakup@linux-speakup.org
+Subject: Punctuation Settings Within Voxin?
+Message-ID: <b75b3007-6ad7-0787-5b62-a1b22bbd7b77@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -87,9 +83,27 @@ MIME-Version: 1.0
 Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Well, Greg, I can change pitch-and-rate. In the older IBM voxin voice, 
-everything works. Eventually I may experiment with Fenrir, as I asked Chris for 
-a Speakup style key map.
+Hi All: This is rather puzzling? In all the years I've enjoyed listening to 
+Voxin on a laptop, I never had many punctuation symbols to waste my time. My 
+prompt-and-the host name is "dance" Eventually I purchased 2 embedded voices 
+from Oralux, preferring Allison. But listening, I would hear every single 
+colon, tick, question-mark, and dash. Gilles says dictionaries are only 
+available for regular IBM TTS. So, I switched back to this older voice, but 
+still punctuation is still wailing along. We modified dictionaries, but they 
+had `no affect. Here could be a telling clue? In the Speakup pannel, while 
+volume announce numbers as you alter them, an only way of changing levels are 
+in alsa mixer. Obviously I have both reading punc-and-punc level on 0. When 
+punc level is on 3, my prompt says "dance tilda colon grater than" Belo that 
+setting, its "dance colon" I looked at files in /etc/speakup as well as i18n 
+many are on 0. I did ask Samuel, also wrote Gilles from Oralux, like others 
+advised me to read the documentation. I did. While, sure it would be nice to 
+enjoy dictionaries in Voxin, as Speakup doesn't have these. I would just be 
+happy enough to not hear any punctuation. I even tried running "fenrir" which 
+does have a pronunciation dictionary. I couldn't get any speech in Fenrir, as I 
+don't have an adequate way of switching among Speakup-and-Fenrir, as I've heard 
+they don't play well together. Any tips, guidance, and suggestions would be 
+most appreciated as in 1week we are going away with this laptop. Thanks in 
+advance
+By the way espeakup does not have extra punctuation.
 Chime
-
 
