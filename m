@@ -1,35 +1,47 @@
-Return-Path: <speakup+bounces-508-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-509-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A28C6591667
-	for <lists+speakup@lfdr.de>; Fri, 12 Aug 2022 22:43:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id AD63D59166B
+	for <lists+speakup@lfdr.de>; Fri, 12 Aug 2022 22:46:17 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=pobox.com header.i=@pobox.com header.a=rsa-sha256 header.s=sasl header.b=tp9aL94A;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DC6D0384789; Fri, 12 Aug 2022 16:43:54 -0400 (EDT)
+	id 51BF838376A; Fri, 12 Aug 2022 16:46:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C70A8381902
-	for <lists+speakup@lfdr.de>; Fri, 12 Aug 2022 16:43:54 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 316513819B4
+	for <lists+speakup@lfdr.de>; Fri, 12 Aug 2022 16:46:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6C8F8381903; Fri, 12 Aug 2022 16:43:49 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0167.b.hostedemail.com [64.98.42.167])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 5728A381900
-	for <speakup@linux-speakup.org>; Fri, 12 Aug 2022 16:43:49 -0400 (EDT)
-Received: from omf05.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id 86A6989A30BC;
-	Fri, 12 Aug 2022 20:43:48 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf05.b.hostedemail.com (Postfix) with ESMTPA id 21FC81801EA9C;
-	Fri, 12 Aug 2022 20:43:48 +0000 (UTC)
-Message-ID: <021d01d8ae8c$39e82800$80ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Chime Hart" <chime@hubert-humphrey.com>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <021801d8ae89$220560c0$80ffa8c0@Win7VM> <eb84963a-90e0-c24c-4215-4d0dde3390d0@hubert-humphrey.com>
-Subject: Re: getting audio for Orca and Speakup or Fenrir
-Date: Fri, 12 Aug 2022 15:43:48 -0500
-Organization: Home
+	id 29EAF38190A; Fri, 12 Aug 2022 16:46:09 -0400 (EDT)
+Received: from pb-smtp2.pobox.com (pb-smtp2.pobox.com [64.147.108.71])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 06C44381906
+	for <speakup@linux-speakup.org>; Fri, 12 Aug 2022 16:46:09 -0400 (EDT)
+Received: from pb-smtp2.pobox.com (unknown [127.0.0.1])
+	by pb-smtp2.pobox.com (Postfix) with ESMTP id 5C67813DA02;
+	Fri, 12 Aug 2022 16:46:08 -0400 (EDT)
+	(envelope-from mattcampbell@pobox.com)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=pobox.com; h=message-id
+	:date:mime-version:subject:to:cc:references:from:in-reply-to
+	:content-type:content-transfer-encoding; s=sasl; bh=wFCcwIkO28a1
+	Me60XwVnyx5bupVr7URM9yZR1zNHPNo=; b=tp9aL94ArqxQ3GdNf1gkw+xKxLYs
+	5mpvUaS8cuycvQprDSRPLZHuvPqpFxo4chpef8w3/6Yi3oJYRUsFDf25kkgeKlt7
+	nMKmMqVri6/QXg8Cw37BJr17y1UWNRn+71SDHA3ov8/C7H1rdjgXw0n3WUpeYOG8
+	fTHzEKBleM9h788=
+Received: from pb-smtp2.nyi.icgroup.com (unknown [127.0.0.1])
+	by pb-smtp2.pobox.com (Postfix) with ESMTP id 39FAB13DA01;
+	Fri, 12 Aug 2022 16:46:08 -0400 (EDT)
+	(envelope-from mattcampbell@pobox.com)
+Received: from [192.168.0.161] (unknown [68.102.201.97])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by pb-smtp2.pobox.com (Postfix) with ESMTPSA id 0689A13D9FF;
+	Fri, 12 Aug 2022 16:46:05 -0400 (EDT)
+	(envelope-from mattcampbell@pobox.com)
+Message-ID: <8295e54b-fd16-c53f-f3f7-e9a09c7a62c6@pobox.com>
+Date: Fri, 12 Aug 2022 15:46:04 -0500
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -39,45 +51,29 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.12.0
+Subject: Re: getting audio for Orca and Speakup or Fenrir
+Content-Language: en-US
+To: K0LNY_Glenn <glenn@ervin.email>, Chime Hart <chime@hubert-humphrey.com>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <021801d8ae89$220560c0$80ffa8c0@Win7VM>
+ <eb84963a-90e0-c24c-4215-4d0dde3390d0@hubert-humphrey.com>
+ <021d01d8ae8c$39e82800$80ffa8c0@Win7VM>
+From: Matt Campbell <mattcampbell@pobox.com>
+In-Reply-To: <021d01d8ae8c$39e82800$80ffa8c0@Win7VM>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Server: rspamout02
-X-Rspamd-Queue-Id: 21FC81801EA9C
-X-Spam-Status: No, score=-1.52
-X-Stat-Signature: zewkb3t6s8tzb7bwdg9wbo5at5am69e8
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19A3T5e25a6Kvvp459y8/1Sw6Wq42v4W5M=
-X-HE-Tag: 1660337028-422060
+X-Pobox-Relay-ID:
+ C9A473FE-1A7F-11ED-A90B-CB998F0A682E-07281746!pb-smtp2.pobox.com
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I don't know about the other players you mention, but I transferred an audio 
-file there that I usually play on my raspberrypis and played it with aplay 
-over SSH, and according to the terminal feedback, it played with no errors, 
-but I didn't hear anything from the speaker.
-Glenn
------ Original Message ----- 
-From: "Chime Hart" <chime@hubert-humphrey.com>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Friday, August 12, 2022 3:30 PM
-Subject: Re: getting audio for Orca and Speakup or Fenrir
+Hi Glenn,
 
+Sounds to me like the audio output on that board is muted. The amixer 
+command should let you fix that easily. Then you might need to run 
+"alsactl save" to make the new settings permanent.
 
-Well Glen, I would try-and-install speechd-up and or speech-dispatcher. 
-Also,
-can you copy an mp3 to that drive-and-try-and-play it with mpv or mpg321. 
-There
-is a chance you may need sudo to play an mp3, especially if you have 
-software
-speech. You might need to enable deb multimedia in your sources list. Best 
-of
-luck.
-Chime
+Matt
 
 
