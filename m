@@ -1,48 +1,38 @@
-Return-Path: <speakup+bounces-530-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-531-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 4F263591C67
-	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 21:27:40 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=R4lT4thz;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 04627591C6E
+	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 21:54:12 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CB8BD3847CA; Sat, 13 Aug 2022 15:27:39 -0400 (EDT)
+	id 37C12384779; Sat, 13 Aug 2022 15:54:11 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2FDED3847C1
-	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 15:27:39 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 65DF838481D
+	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 15:54:08 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id F2B5A38376D; Sat, 13 Aug 2022 15:27:34 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id AC548381901
-	for <speakup@linux-speakup.org>; Sat, 13 Aug 2022 15:27:34 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4M4rCk54Nwz4KkZ;
-	Sat, 13 Aug 2022 15:27:30 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1660418850; bh=uKCc6fWo74kPXFvNtkNQXzQY1TGs1zhMtgRyhYSg5LU=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References;
-	b=R4lT4thzXB5GbbkS2BM2PVVTNXxC0Oa5zBgWUNAMY8zw5/dgNDLDkvX4Eeikcw+mF
-	 qM8UBZx+v4ZuKTlbezN27g/PlN6ZOIHMeCMqOSZ0XKJmPhRxEcAFCehBjSuhIlQDF5
-	 ATwUiN/JZKha2+GjdM+JumebimznFWOtwai2iwG4=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4M4rCk4ymLzcbc; Sat, 13 Aug 2022 15:27:30 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4M4rCk4r4mzcbP;
-	Sat, 13 Aug 2022 15:27:30 -0400 (EDT)
-Date: Sat, 13 Aug 2022 15:27:30 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: K0LNY_Glenn <glenn@ervin.email>, Karen Lewellen <klewellen@shellworld.net>
-cc: speakup@linux-speakup.org, Milan Zamazal <pdm@zamazal.org>, 
-    Blinux-list@redhat.com
+	id B3C38383770; Sat, 13 Aug 2022 15:54:06 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0065.b.hostedemail.com [64.98.42.65])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A111E381907
+	for <speakup@linux-speakup.org>; Sat, 13 Aug 2022 15:54:06 -0400 (EDT)
+Received: from omf06.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay06.b.hostedemail.com (Postfix) with ESMTP id 00F7318946821;
+	Sat, 13 Aug 2022 19:54:04 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf06.b.hostedemail.com (Postfix) with ESMTPA id 428AB8AB3396;
+	Sat, 13 Aug 2022 19:54:04 +0000 (UTC)
+Message-ID: <030601d8af4e$72099490$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Jude DaShiell" <jdashiel@panix.com>,
+	"Karen Lewellen" <klewellen@shellworld.net>
+Cc: <speakup@linux-speakup.org>,
+	"Milan Zamazal" <pdm@zamazal.org>,
+	<Blinux-list@redhat.com>
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net><1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com><Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net> <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net> <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <ed4e8bd5-95ae-929f-ef64-fb7fed9d7c80@panix.com>
 Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-In-Reply-To: <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM>
-Message-ID: <ed4e8bd5-95ae-929f-ef64-fb7fed9d7c80@panix.com>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net><1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com><Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net> <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM>
- <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net> <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM>
+Date: Sat, 13 Aug 2022 14:54:04 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -52,8 +42,36 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout04
+X-Rspamd-Queue-Id: 428AB8AB3396
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: zmw78pmq9omhxs4ded4w87j57kemm4cz
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1+iZ3KAcpGSiI0eYubMs1p/b1jzWHsfwSU=
+X-HE-Tag: 1660420444-575668
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+They did a long time back.
+But they still use freedomscientific.com, so I will still refer to them as 
+FS.
+I don't know how to spell their name, it sounds like the name of a bird.
+Glenn
+----- Original Message ----- 
+From: "Jude DaShiell" <jdashiel@panix.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>; "Karen Lewellen" 
+<klewellen@shellworld.net>
+Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>; 
+<Blinux-list@redhat.com>
+Sent: Saturday, August 13, 2022 2:27 PM
+Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+
 
 Jude DaShiell here, the Wufrug Group I think from Kuwait bought out FS.
 By now, Wufrug Group may have sold FS to another corporation for all I
@@ -62,9 +80,11 @@ know.
 
 On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 
-> Well since Orca seems to work on so many distros, I don't know why FS would
+> Well since Orca seems to work on so many distros, I don't know why FS 
+> would
 > not be able to do the same.
-> If Jaws users could switch into Linux, it would be a real game changer, and
+> If Jaws users could switch into Linux, it would be a real game changer, 
+> and
 > I think with lots more Blind Linux users, we would start seeing
 > accessibility in Linux not being a second thought.
 > Glenn
@@ -77,7 +97,8 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 > Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 >
 >
-> Well technically freedom scientific does not exist any longer, being bought
+> Well technically freedom scientific does not exist any longer, being 
+> bought
 > by another company.
 > Still, I can respect why they, or nvda have not created their tools for
 > Linux.
@@ -88,10 +109,12 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 > however adaptive tools are often extensions of physical characteristics,
 > hands, eyes, ears, brains, combinations of these.
 > To build solid assistive tools one must have a solid  foundation as it
-> were.  that is part of why there have needed to be so few Apple  efforts at
+> were.  that is part of why there have needed to be so few Apple  efforts 
+> at
 > inclusion, they  created  with, and then created in-house adaptive tools
 > for various  populations that were built into the system.
-> Although Microsoft did not bother until much later, in theory at least, the
+> Although Microsoft did not bother until much later, in theory at least, 
+> the
 > consistency of windows is what makes it possible for freedom or the former
 > gw  micro or nvda to create something that can in theory  work.
 > Floor for the furniture is somewhat solid.
@@ -156,5 +179,6 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 > >
 >
 >
->
+> 
+
 
