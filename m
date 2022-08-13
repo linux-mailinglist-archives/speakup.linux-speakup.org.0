@@ -1,37 +1,36 @@
-Return-Path: <speakup+bounces-527-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-528-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D7329591C4D
-	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 20:36:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 39F26591C55
+	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 20:48:22 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7D4EE384816; Sat, 13 Aug 2022 14:36:38 -0400 (EDT)
+	id BC3B33847B7; Sat, 13 Aug 2022 14:48:21 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 710853847C2
-	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 14:36:38 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id DA8A738481C
+	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 14:48:19 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 11E8138376B; Sat, 13 Aug 2022 14:36:37 -0400 (EDT)
+	id 55BAD38376B; Sat, 13 Aug 2022 14:48:18 -0400 (EDT)
 Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id EB17E381907
-	for <speakup@linux-speakup.org>; Sat, 13 Aug 2022 14:36:36 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 18D12381908
+	for <speakup@linux-speakup.org>; Sat, 13 Aug 2022 14:48:18 -0400 (EDT)
 Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 34B88121DF8; Sat, 13 Aug 2022 18:36:36 +0000 (UTC)
+	id 18241121DF8; Sat, 13 Aug 2022 18:47:43 +0000 (UTC)
 Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 33E14121DD5;
-	Sat, 13 Aug 2022 14:36:36 -0400 (EDT)
-Date: Sat, 13 Aug 2022 14:36:36 -0400 (EDT)
+	by server2.shellworld.net (Postfix) with ESMTP id 14EFC121DD5;
+	Sat, 13 Aug 2022 14:47:43 -0400 (EDT)
+Date: Sat, 13 Aug 2022 14:47:43 -0400 (EDT)
 From: Karen Lewellen <klewellen@shellworld.net>
-To: Milan Zamazal <pdm@zamazal.org>
-cc: speakup@linux-speakup.org, Blinux-list@redhat.com
+To: K0LNY_Glenn <glenn@ervin.email>
+cc: speakup@linux-speakup.org, Milan Zamazal <pdm@zamazal.org>, 
+    Blinux-list@redhat.com
 Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-In-Reply-To: <871qtkrs03.fsf@zamazal.org>
-Message-ID: <Pine.LNX.4.64.2208131430230.1254020@server2.shellworld.net>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net>
- <1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com>
- <Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net>
- <871qtkrs03.fsf@zamazal.org>
+In-Reply-To: <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM>
+Message-ID: <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net>
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net><1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com><Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net>
+ <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -41,32 +40,61 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-1034535790-1660415796=:1254020"
+Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-340664518-1660416463=:1254020"
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
   This message is in MIME format.  The first part should be readable text,
   while the remaining parts are likely unreadable without MIME-aware tools.
 
----1404930036-1034535790-1660415796=:1254020
+---1404930036-340664518-1660416463=:1254020
 Content-Type: TEXT/PLAIN; charset=utf-8; format=flowed
 Content-Transfer-Encoding: QUOTED-PRINTABLE
 
-may I ask from where he obtained his software engineering degree?
-Studied computer science?  Perhaps disability studies?
-there are certainly scores of  disabled individuals with these various=20
-levels of=20
-qualification..even who are Linux users.
-The interview did not document a single one, outside of his experiencing=20
-blindness..which is not going to insure he creates an accessible platform=
+Well technically freedom scientific does not exist any longer, being bought=
 =20
-for fedora since access  refers to several populations.  and he states he=
+by another company.
+Still, I can respect why they, or nvda have not created their tools for=20
+Linux.
+That is because as I understand it, Linux is  quite like clay. You can=20
+mold a distribution into almost anything. there are various=20
+personifications of the system, all sorts of ways and changes and options=
 =20
-knows  nothing about those.
+for creativity.
+however adaptive tools are often extensions of physical characteristics,=20
+hands, eyes, ears, brains, combinations of these.
+To build solid assistive tools one must have a solid  foundation as it=20
+were.  that is part of why there have needed to be so few Apple  efforts at=
+=20
+inclusion, they  created  with, and then created in-house adaptive tools=20
+for various  populations that were built into the system.
+Although Microsoft did not bother until much later, in theory at least, the=
+=20
+consistency of windows is what makes it possible for freedom or the former=
+=20
+gw  micro or nvda to create something that can in theory  work.
+Floor for the furniture is somewhat solid.
+Just my thoughts,
 
 
 
-On Sat, 13 Aug 2022, Milan Zamazal wrote:
+On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 
+> I would like to see Freedom Scientific make a Jaws For Linux.
+> JFL
+> I'd certainly pay the yearly rental fee for it, and it would bring many m=
+ore
+> users into Linux.
+> FS could, with its resources, possibly make it more robust than Orca.
+>
+> Glenn
+> ----- Original Message -----
+> From: "Milan Zamazal" <pdm@zamazal.org>
+> To: <speakup@linux-speakup.org>
+> Cc: <Blinux-list@redhat.com>
+> Sent: Saturday, August 13, 2022 12:08 PM
+> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+>
+>
 >>>>>> "KL" =3D=3D Karen Lewellen <klewellen@shellworld.net> writes:
 >
 >    KL> What bothers me most are his lack of actual qualifications, and
@@ -106,5 +134,6 @@ d to
 >
 >
 >
----1404930036-1034535790-1660415796=:1254020--
+>
+---1404930036-340664518-1660416463=:1254020--
 
