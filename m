@@ -1,48 +1,37 @@
-Return-Path: <speakup+bounces-519-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-520-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1797A5917AB
-	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 01:54:10 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=q6aPcEey;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id C2CA75917DF
+	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 02:49:28 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 13C8D38376A; Fri, 12 Aug 2022 19:54:08 -0400 (EDT)
+	id 6509B384800; Fri, 12 Aug 2022 20:49:27 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id F2D393819B4
-	for <lists+speakup@lfdr.de>; Fri, 12 Aug 2022 19:54:07 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 59D003847F9
+	for <lists+speakup@lfdr.de>; Fri, 12 Aug 2022 20:49:27 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DBD7B3819AB; Fri, 12 Aug 2022 19:54:00 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id B888C3809FF
-	for <speakup@linux-speakup.org>; Fri, 12 Aug 2022 19:54:00 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4M4L9f5F2pz2vWr;
-	Fri, 12 Aug 2022 19:53:58 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1660348438; bh=x3k+8uEy+5CLbxFL2TxidGcA2f/lg1jFyWJ3LswQTfI=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References;
-	b=q6aPcEeyuFiPx0xXTMiHQGdsyPMWqGgeZtEU0gGesWELBK0m8YdHWIscXCGbt3X7j
-	 DlXZWJC4V2zPoKTOPgDmZpo2CmT2Pwzw0MSXmxCzFUtNqWmY9dExqYLd+xax5L7VIs
-	 XsKKd/5QV9INmvmxDAzkbvw4Bc/6MrOIYbcqZyTg=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4M4L9f4ndCzcbc; Fri, 12 Aug 2022 19:53:58 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4M4L9f4VH1zcbP;
-	Fri, 12 Aug 2022 19:53:58 -0400 (EDT)
-Date: Fri, 12 Aug 2022 19:53:58 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: K0LNY_Glenn <glenn@ervin.email>, Chime Hart <chime@hubert-humphrey.com>, 
-    Matt Campbell <mattcampbell@pobox.com>
-cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+	id A64BC381912; Fri, 12 Aug 2022 20:49:25 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0189.b.hostedemail.com [64.98.42.189])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 9380D38190A
+	for <speakup@linux-speakup.org>; Fri, 12 Aug 2022 20:49:25 -0400 (EDT)
+Received: from omf03.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id C97E2100352F8;
+	Sat, 13 Aug 2022 00:49:24 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf03.b.hostedemail.com (Postfix) with ESMTPA id 21681801E693;
+	Sat, 13 Aug 2022 00:49:24 +0000 (UTC)
+Message-ID: <023c01d8aeae$89677170$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Jude DaShiell" <jdashiel@panix.com>,
+	"Chime Hart" <chime@hubert-humphrey.com>,
+	"Matt Campbell" <mattcampbell@pobox.com>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <021801d8ae89$220560c0$80ffa8c0@Win7VM> <eb84963a-90e0-c24c-4215-4d0dde3390d0@hubert-humphrey.com> <021d01d8ae8c$39e82800$80ffa8c0@Win7VM> <8295e54b-fd16-c53f-f3f7-e9a09c7a62c6@pobox.com> <022101d8ae8d$31446fa0$80ffa8c0@Win7VM> <a5912728-3489-97f3-a956-af918d5b5e2f@panix.com> <022801d8ae8e$34e65910$80ffa8c0@Win7VM> <7fdaf18d-8345-8dab-79fc-a045d2cf8d7@panix.com>
 Subject: Re: getting audio for Orca and Speakup or Fenrir
-In-Reply-To: <022801d8ae8e$34e65910$80ffa8c0@Win7VM>
-Message-ID: <7fdaf18d-8345-8dab-79fc-a045d2cf8d7@panix.com>
-References: <021801d8ae89$220560c0$80ffa8c0@Win7VM> <eb84963a-90e0-c24c-4215-4d0dde3390d0@hubert-humphrey.com> <021d01d8ae8c$39e82800$80ffa8c0@Win7VM> <8295e54b-fd16-c53f-f3f7-e9a09c7a62c6@pobox.com> <022101d8ae8d$31446fa0$80ffa8c0@Win7VM>
- <a5912728-3489-97f3-a956-af918d5b5e2f@panix.com> <022801d8ae8e$34e65910$80ffa8c0@Win7VM>
+Date: Fri, 12 Aug 2022 19:49:24 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -52,8 +41,36 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Stat-Signature: 6jbxfyicgjkooue1duaaoxyyif6i71h3
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: 21681801E693
+X-Spam-Status: No, score=-2.60
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/fTPdSDSF8Rr7HT+epfoJ7WFCErOj/9/A=
+X-HE-Tag: 1660351764-590195
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+Hi Jude,
+I thought X or something was the only way to unmute.
+So if I up arrow on a muted item, it will unmute it?
+This would be great.
+Thanks
+----- Original Message ----- 
+From: "Jude DaShiell" <jdashiel@panix.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>; "Chime Hart" 
+<chime@hubert-humphrey.com>; "Matt Campbell" <mattcampbell@pobox.com>
+Cc: "Speakup is a screen review system for Linux." 
+<speakup@linux-speakup.org>
+Sent: Friday, August 12, 2022 6:53 PM
+Subject: Re: getting audio for Orca and Speakup or Fenrir
+
 
 What does aplay -l return?
 You might try alsamixer then hit f6 and use up and down arrow keys to find
@@ -89,7 +106,8 @@ On Fri, 12 Aug 2022, K0LNY_Glenn wrote:
 > On Fri, 12 Aug 2022, K0LNY_Glenn wrote:
 >
 > > Hi Matt,
-> > I have learned that the alsamixer doesn't feedback well over SSH, can you
+> > I have learned that the alsamixer doesn't feedback well over SSH, can 
+> > you
 > > give me the proper command for alsa to unmute and adjust the volume?
 > > I always get that wrong, I try stuff like:
 > > amixer -c 0 set Master 100% unmute
@@ -119,5 +137,6 @@ On Fri, 12 Aug 2022, K0LNY_Glenn wrote:
 > >
 >
 >
->
+> 
+
 
