@@ -1,40 +1,48 @@
-Return-Path: <speakup+bounces-549-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-550-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C9C7E591E1C
-	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 06:35:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 90A35591FD3
+	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 15:03:13 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=pobox.com header.i=@pobox.com header.a=rsa-sha256 header.s=sasl header.b=BKfFKxP7;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E04CB3847D9; Sun, 14 Aug 2022 00:34:59 -0400 (EDT)
+	id CCB203847B2; Sun, 14 Aug 2022 09:03:12 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 621CA38484A
-	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 00:34:57 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6CB89383772
+	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 09:03:11 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D7798381908; Sun, 14 Aug 2022 00:34:55 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A6D533818F4
-	for <speakup@linux-speakup.org>; Sun, 14 Aug 2022 00:34:55 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 791B1121DA6; Sun, 14 Aug 2022 04:34:24 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 77D2612048B;
-	Sun, 14 Aug 2022 00:34:24 -0400 (EDT)
-Date: Sun, 14 Aug 2022 00:34:24 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: K0LNY_Glenn <glenn@ervin.email>
-cc: speakup@linux-speakup.org, Milan Zamazal <pdm@zamazal.org>, 
-    Blinux-list@redhat.com
-Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-In-Reply-To: <033301d8af87$4227f3f0$80ffa8c0@Win7VM>
-Message-ID: <Pine.LNX.4.64.2208140031380.1264046@server2.shellworld.net>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net><1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com><Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net>
- <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM>
- <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net>
- <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net>
- <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131909070.1258388@server2.shellworld.net>
- <033301d8af87$4227f3f0$80ffa8c0@Win7VM>
+	id 0008438376C; Sun, 14 Aug 2022 09:03:06 -0400 (EDT)
+Received: from pb-smtp20.pobox.com (pb-smtp20.pobox.com [173.228.157.52])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 287B33819AC
+	for <speakup@linux-speakup.org>; Sun, 14 Aug 2022 09:03:06 -0400 (EDT)
+Received: from pb-smtp20.pobox.com (unknown [127.0.0.1])
+	by pb-smtp20.pobox.com (Postfix) with ESMTP id 22B7B1AAE8C;
+	Sun, 14 Aug 2022 09:03:04 -0400 (EDT)
+	(envelope-from mattcampbell@pobox.com)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=pobox.com; h=
+	content-type:message-id:date:mime-version:subject:to:references
+	:from:in-reply-to; s=sasl; bh=HgUdlysDnDuwsa/V7BPxGOcWKVOCC9rjLr
+	kbbLst7MQ=; b=BKfFKxP7NIV6R4Axp/tEEQK3aBOQlGHGCcIY41R4y/St/GskFl
+	Z6+R0KKOogJM6i3uMehcrdVLEYlV9+a17UO2X4q2uYaA5w8HE2nc71hqnZiebjO8
+	YjsckLP5Q+bDZ9b5qv9xb9pTpLYOv+I2mGzNJ5XASVOdRbNvfJggZl43k=
+Received: from pb-smtp20.sea.icgroup.com (unknown [127.0.0.1])
+	by pb-smtp20.pobox.com (Postfix) with ESMTP id 1B67D1AAE8B;
+	Sun, 14 Aug 2022 09:03:04 -0400 (EDT)
+	(envelope-from mattcampbell@pobox.com)
+Received: from [192.168.0.161] (unknown [68.102.201.97])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+	(No client certificate requested)
+	by pb-smtp20.pobox.com (Postfix) with ESMTPSA id A30921AAE89;
+	Sun, 14 Aug 2022 09:03:00 -0400 (EDT)
+	(envelope-from mattcampbell@pobox.com)
+Content-Type: multipart/alternative;
+ boundary="------------KS07C6YkftxTDrv4yDRuXU9Z"
+Message-ID: <8d72d3ff-01d5-9f5e-c2b1-fb10a024e047@pobox.com>
+Date: Sun, 14 Aug 2022 08:02:57 -0500
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -44,237 +52,398 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-1388150293-1660451664=:1264046"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101
+ Thunderbird/91.12.0
+Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+Content-Language: en-US
+To: speakup@linux-speakup.org, blinux-list@redhat.com, discuss@blvuug.org
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net>
+ <YvhV4TWzuP2O1JAZ@novena-choice-citizen>
+ <Pine.LNX.4.64.2208132205110.1261053@server2.shellworld.net>
+From: Matt Campbell <mattcampbell@pobox.com>
+In-Reply-To: <Pine.LNX.4.64.2208132205110.1261053@server2.shellworld.net>
+X-Pobox-Relay-ID:
+ 6D06AB1E-1BD1-11ED-9554-C85A9F429DF0-07281746!pb-smtp20.pobox.com
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+This is a multi-part message in MIME format.
+--------------KS07C6YkftxTDrv4yDRuXU9Z
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: quoted-printable
 
----1404930036-1388150293-1660451664=:1264046
-Content-Type: TEXT/PLAIN; charset=utf-8; format=flowed
-Content-Transfer-Encoding: QUOTED-PRINTABLE
+I'm going to address points from several of Karen's messages:.
 
-And where do these employers learn about jaws?
-In fact, provide if you do not mind an example of how  this works exactly.=
-=20
-after all, unless I am incorrect, these employers are not personal=20
-Jaws users, meaning someone they trust continues to sell them on an=20
-expensive program instead of a largely free one.
+> he is, according to those writing the article bringing accessibility=20
+> to Fedora workstation.
+> i respect that for those in the know, in the choir so to speak what he=20
+> is doing is clean up.
+> but that is not how the general Linux community is taking this=20
+> information.
+Let's look at what the article actually says, particularly the intro=20
+before the interview:
 
+    The first concerted effort to support accessibility under Linux was
+    undertaken by Sun Microsystems when they decided to use GNOME for
+    Solaris. Sun put together a team focused on building the pieces to
+    make GNOME 2 fully accessible and worked with hardware makers to
+    make sure things like Braille devices worked well. I even heard
+    claims that GNOME and Linux had the best accessibility of any
+    operating system for a while due to this effort. As Sun started
+    struggling and got acquired by Oracle this accessibility effort
+    eventually trailed off with the community trying to pick up the
+    slack afterwards. Especially engineers from Igalia were quite active
+    for a while trying to keep the accessibility support working well.
 
-
-On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
-
-> Karen,
-> Most employers don't want NVDA, and will only allow Jaws.
-> In Nebraska, if an employer said put on whatever works, the counselors wi=
-ll
-> use NVDA, because of the cost of Jaws.
-> If some of the clients in a call center already use Jaws, but don't know
-> NVDA, the counselor will use Jaws, because the other clients will need to
-> learn one of the two.
-> So it's all choice, but in the workplace, it depends on what the employer
-> will allow.
-> Also, sometimes scripts need to be made, and there are more Jaws scripter=
-s
-> available than there are NVDA add-on writers.
-> So this perception that Jaws is forced by rehab, from my 31 years in the
-> business I can say is rubbish.
-> Now, if a counselor did not know how to use NVDA, and either may be chose=
-n,
-> the rehab counselor is able to select the one that the counselor feels is
-> best for the student and for the counselor's teaching.
-> When it comes to part B moneys, which is used for non-vocational purchase=
-s,
-> where a lot of Jaws purchases come from, it is in the agency's best inter=
-est
-> to spend as little as possible, because that doesn't come back like VR
-> expenditures do.
-> Glenn
->
-> ----- Original Message -----
-> From: "Karen Lewellen" <klewellen@shellworld.net>
-> To: "K0LNY_Glenn" <glenn@ervin.email>
-> Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>;
-> <Blinux-list@redhat.com>
-> Sent: Saturday, August 13, 2022 6:15 PM
-> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
->
->
-> The challenge with that example is that, as one often gets reminded,  the
-> rehab systems track record for facilitating  employment for their clients
-> is quite poor.
-> With a high percentage of unemployment among our clients.  Making,
-> speaking personally, your buying Jaws for personal use not really
-> reflecting how the system would respond to an alternative request.
-> Now if someone from organized rehab said, okay freedom scientific, we are
-> creating an employment program where our clients will train in Linux,
-> needing a solid screen reader solution for the system.  We will give you =
-an
-> exclusive development contract for s millions to create the tool.
-> Fs would likely say where do we sign?
->
->
->
-> On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
->
->> True enough, but largely, rehab people typically use Windows at work, an=
-d
->> probably at home, but they need to cater to the needs of the client.
->> If a client used Linux, I doubt that any rehab counselor would advocate
->> that
->> the client switch to Windows, unless that was needed for a specific job.
->> In Nebraska, we purchased Jaws much more for personal use than we did fo=
-r
->> work related situations.
->> So if FS made a JFL, and people were using Linux, rehab would indeed
->> purchase a JFL product.
->> Glenn
->> ----- Original Message -----
->> From: "Karen Lewellen" <klewellen@shellworld.net>
->> To: "K0LNY_Glenn" <glenn@ervin.email>
->> Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>;
->> <Blinux-list@redhat.com>
->> Sent: Saturday, August 13, 2022 3:01 PM
->> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
->>
->>
->> there was an interesting discussion a month or so back on the blinux lis=
+    But over the years we definitely lost a bit of focus on this and we
+    know that various parts of GNOME 3 for instance aren=E2=80=99t great =
+in
+    terms of accessibility. So at Red Hat we have had a lot of focus
+    over the last few years trying to ensure we are mindful about
+    diversity and inclusion when hiring, trying to ensure that we don=E2=80=
+=99t
+    accidentally pre-select against underrepresented groups based on for
+    instance gender or ethnicity. But one area we realized we hadn=E2=80=99=
 t
->> about how long it took completing tasks in the gui as apposed to say
->> command line,  the comments were quite informative.
->> Still, fs has never marketed largely to the end user. Instead they marke=
-t
->> to the American rehab community.
->> how much market research has  the rehab community done to support the ne=
-ed
->> for choices?
->> How many rehab counselors support  training in Linux?
->> one comment made by the subject of this thread about poor quality speech
->> is a fine one...out of the box Linux has few speech choices.  everyone
->> brings their needs to the table there.
->>
->> if you want to get fs to care about Linux, you  need to prove there is
->> money for  them there, from their main source of income.
->>
->>
->>
->> On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
->>
->>> Well since Orca seems to work on so many distros, I don't know why FS
->>> would
->>> not be able to do the same.
->>> If Jaws users could switch into Linux, it would be a real game changer,
->>> and
->>> I think with lots more Blind Linux users, we would start seeing
->>> accessibility in Linux not being a second thought.
->>> Glenn
->>> ----- Original Message -----
->>> From: "Karen Lewellen" <klewellen@shellworld.net>
->>> To: "K0LNY_Glenn" <glenn@ervin.email>
->>> Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>;
->>> <Blinux-list@redhat.com>
->>> Sent: Saturday, August 13, 2022 1:47 PM
->>> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
->>>
->>>
->>> Well technically freedom scientific does not exist any longer, being
->>> bought
->>> by another company.
->>> Still, I can respect why they, or nvda have not created their tools for
->>> Linux.
->>> That is because as I understand it, Linux is  quite like clay. You can
->>> mold a distribution into almost anything. there are various
->>> personifications of the system, all sorts of ways and changes and optio=
-ns
->>> for creativity.
->>> however adaptive tools are often extensions of physical characteristics=
-,
->>> hands, eyes, ears, brains, combinations of these.
->>> To build solid assistive tools one must have a solid  foundation as it
->>> were.  that is part of why there have needed to be so few Apple  effort=
-s
->>> at
->>> inclusion, they  created  with, and then created in-house adaptive tool=
-s
->>> for various  populations that were built into the system.
->>> Although Microsoft did not bother until much later, in theory at least,
->>> the
->>> consistency of windows is what makes it possible for freedom or the
->>> former
->>> gw  micro or nvda to create something that can in theory  work.
->>> Floor for the furniture is somewhat solid.
->>> Just my thoughts,
->>>
->>>
->>>
->>> On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
->>>
->>>> I would like to see Freedom Scientific make a Jaws For Linux.
->>>> JFL
->>>> I'd certainly pay the yearly rental fee for it, and it would bring man=
-y
->>>> more
->>>> users into Linux.
->>>> FS could, with its resources, possibly make it more robust than Orca.
->>>>
->>>> Glenn
->>>> ----- Original Message -----
->>>> From: "Milan Zamazal" <pdm@zamazal.org>
->>>> To: <speakup@linux-speakup.org>
->>>> Cc: <Blinux-list@redhat.com>
->>>> Sent: Saturday, August 13, 2022 12:08 PM
->>>> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
->>>>
->>>>
->>>>>>>>> "KL" =3D=3D Karen Lewellen <klewellen@shellworld.net> writes:
->>>>
->>>>    KL> What bothers me most are his lack of actual qualifications, and
->>>>    KL> absolute dismissal of what he has not experienced..as if he
->>>>    KL> defines Linux usage for everyone.  That attitude is dangerous,
->>>>    KL> because he is educating those outside of the accessibility
->>>>    KL> experiences, who will believe his ignorance is factual.  he has
->>>>    KL> to be expert, it is his job.
->>>>
->>>> Hi Karen,
->>>>
->>>> I know Lukas personally and I admire his skills and qualifications.  I
->>>> also know first hand that he is open to constructive feedback and I
->>>> believe he=E2=80=99d be happy to be corrected about possible technical
->>>> inaccuracies in the interview.  It may be also a good opportunity to
->>>> find out what=E2=80=99s possibly missing in making anybody better info=
-rmed.
->>>>
->>>> As for =E2=80=9Cabsolute dismissal of what he has not experienced=E2=
-=80=9D, what
->>>> reasonable free software alternatives to a less or more standard deskt=
-op
->>>> with Orca and a software synthesizer can you see for a common blind us=
-er
->>>> who needs to use a fully working web browser, to read and process text
->>>> documents, to be compatible with other computer users, etc.?
->>>>
->>>> And let=E2=80=99s be realistic.  We celebrate every single developer h=
-ired to
->>>> improve accessibility.  This tells something about the state of the
->>>> matters.  We cannot expect that a single person will fix all the kinds
->>>> of accessibility problems in all the environments.  Lukas works at his
->>>> job focusing on certain areas currently seen there as urgent ones and =
-I
->>>> appreciate this opportunity.  Anybody else seeing a need to work on
->>>> other areas is welcome to contribute to whatever sees fit, as I do.
->>>>
->>>> Regards,
->>>> Milan
->>>>
->>>>
->>>>
->>>>
->>>
->>>
->>
->>
->
->
----1404930036-1388150293-1660451664=:1264046--
+    given so much focus recently was around technologies that allowed
+    people with various disabilities to make use of our software. Thus I
+    am very happy to announce that Red Hat has just hired Lukas
+    Tyrychtr, who is a blind software engineer, to lead our effort in
+    making sure Red Hat Enterprise Linux and Fedora Workstation has
+    excellent accessibility support!
+
+That's somewhat long-winded, but it's clear to any careful reader that=20
+the foundation for accessibility was already laid, and that what most=20
+urgently needs to be done is to fix what has been broken in the years=20
+since Sun's accessibility team was disbanded. If things get=20
+misrepresented by others who have shared the article, that's surely not=20
+the fault of the authors. That happens all the time when people share=20
+things online; it's nothing new, and not worth belaboring.
+
+> there are people using Linux in the console daily who deserve equal=20
+> access.=20
+I took this position in 2000, but for the last decade or more, access to=20
+a GUI has been widely available to blind people at no extra cost. (If=20
+there are blind people today who are truly stuck on old hardware with no=20
+accessible GUI, that's unfortunate, but I think this is one case where=20
+the best solution is charity, not expecting the rest of the world to=20
+accommodate this situation forever. That's no different than for sighted=20
+people stuck on very old hardware.) Blindness itself is a circumstance=20
+beyond one's control that deserves reasonable accommodation. But today,=20
+using the text console is a choice, a very conscious choice to swim=20
+upstream, against the current. Anyone who makes that choice should be=20
+prepared for difficulty. And in fact, the few people I know who choose=20
+to use the console today are prepared to use a GUI of one form or=20
+another when there's no other way to accomplish a task. A platform=20
+company like Red Hat is under no obligation to cater to the preference=20
+of the dwindling minority of a minority who choose to use the text=20
+console. To be clear, I have nothing against people who find=20
+console-based tools most productive; do whatever works for you. But we=20
+need to be careful about what we demand from the mainstream world, and I=20
+think that expecting to be able to do everything using only the console=20
+is too much.
+> Second, this individual's job is to make this platform=20
+> accessible...which has never meant blindness exclusively.
+His job, according to the article, is, "to lead our effort in making=20
+sure Red Hat Enterprise Linux and Fedora Workstation has excellent=20
+accessibility support." To me, the word "lead" suggests that he's not=20
+doing this alone. Also, as I said above, the foundation of accessibility=20
+for all disabilities was already laid, by the team at Sun, starting=20
+roughly 20 years ago. They deliberately chose to start with a generic=20
+accessibility API, not a specific solution for a particular disability,=20
+because they understood that a well-designed accessibility API would=20
+enable independent developers to provide assistive technologies for=20
+multiple disabilities. And while I have my objections to a specific=20
+layer of their accessibility architecture, I believe they were on the=20
+mark here. Finally, I think it's safe to say that blindness is the most=20
+difficult disability to accommodate for GUI application and toolkit=20
+developers, as it requires them to provide a complete alternative=20
+representation of their default, high-bandwidth mode of visual output.=20
+Once that need has been met by implementing a sufficiently rich=20
+accessibility API, independent developers can handle other disabilities=20
+by implementing alternate input methods; indeed, the more comprehensive=20
+the accessibility API implementation is, the more these other input=20
+methods have to work with. So I think it's entirely reasonable for Red=20
+Hat and Lukas to focus for now on making their GUI accessible to blind=20
+people with a screen reader.
+> Further this individual is no volunteer, he is being paid to have up=20
+> to date information, not just about fedora, but for screen readers he=20
+> did not even reference like Fenial <spelling>
+> He is a single individual, That he has not seen a hardware=20
+> synthesizer,=C2=A0 due to age does not mean they do not exist.
+As I wrote elsewhere, what he is actually paid for is between him and=20
+Red Hat. If they are paying him exclusively to focus on improving GUI=20
+accessibility with Orca, I think that's entirely reasonable, as I=20
+explained above. The fact that his statements on Speakup were slightly=20
+incomplete, or that he didn't say anything about Fenrir, is annoying to=20
+those in the know, but not worth getting outraged over. Also note that=20
+Lukas's primary job is not advocacy or education, but software=20
+development. Along the way, he will need to educate other developers=20
+about accessibility, but he's not obligated to comprehensively educate=20
+the world at large about how blind people use Linux. The details of how=20
+blind people can access the text console are of little or no interest to=20
+most platform and application developers, who are the people that Lukas=20
+would actually need to educate as part of his job. What we really need=20
+them to understand is how they can make their GUIs accessible, and the=20
+easier we make that for them, the more accessibility we will get. In=20
+light of that, dwelling too much on console options could even be=20
+considered an unnecessary and confusing distraction.
+> That attitude is dangerous, because he is educating those outside of=20
+> the accessibility experiences, who will believe his ignorance is factua=
+l.
+
+If people outside the blind community, including platform and=20
+application developers, believe that speech synthesis hardware is=20
+vanishingly rare, or that one can't use Speakup with Fedora (but can use=20
+BRLTTY or Orca), that's of no practical consequence. We just need them=20
+to know how they can make their GUIs and web applications accessible,=20
+and to be convinced that it's worth doing. On other disabilities, he said=
+:
+
+    Of course, utilities for other accessibility needs exist as well,
+    but I don=E2=80=99t know much about these.
+
+It's good that he's honest about what he doesn't know. I don't believe=20
+that current gap in knowledge should disqualify him from the job that=20
+Red Hat actually hired him to do, as opposed to the job that you seem to=20
+think Red Hat should have hired someone to do. He's going to have his=20
+hands full just making Fedora Workstation fully accessible to blind=20
+people. I trust that he'll be willing to learn about other assistive=20
+technologies when that knowledge is actually necessary.
+
+> may I ask from where he obtained his software engineering degree?
+> Studied computer science?=C2=A0 Perhaps disability studies?
+Neither Lukas nor Red Hat are obligated to provide this information to=20
+random bystanders. But here's what I found in my quick research. Lukas=20
+posted his university thesis on GitHub=20
+<https://github.com/tyrylu/thesis>, and from that I deduced that he=20
+earned his bachelor's degree (and perhaps a master's as well) in Applied=20
+Informatics from Masaryk University in the Czech Republic.
+> there are certainly scores of=C2=A0 disabled individuals with these var=
+ious=20
+> levels of qualification..even who are Linux users.
+
+Sure. But the question is not whether the job went to the person who=20
+seems most qualified to an outside observer, or is known in that=20
+observer's community, but whether the job went to a person who was=20
+available and interested in the job, is qualified enough (as judged by=20
+the people doing the hiring), and will get the work done. Red Hat have=20
+been hiring developers to work on open source for decades, and I trust=20
+that they are competent to choose a qualified candidate. Beyond that, as=20
+I stated in my first reply, we can see for ourselves what Lukas has=20
+previously done online. There's even more of that than I realized when I=20
+wrote that message. For example, he successfully submitted a few patches=20
+to the GTK repository, before Red Hat hired him, and he has been=20
+reporting bugs in GNOME accessibility, particularly on Red Hat's bug=20
+tracker, for years. And as I said on Friday, his feel-the-streets=20
+project demonstrates an aptitude for taking on real-world programming=20
+projects. So I believe Red Hat's decision to hire him was sound. Not=20
+that they need my approval, or that of anyone on these lists.
+
+Now, I suggest that we let the nit-picking go and just be happy that,=20
+with financial backing from the leading company in this space, GUI=20
+accessibility on Linux is moving forward.
+
+Matt
+
+--------------KS07C6YkftxTDrv4yDRuXU9Z
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+  <head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF=
+-8">
+  </head>
+  <body>
+    <p>I'm going to address points from several of Karen's messages:.<br>
+      <blockquote type=3D"cite">he is, according to those writing the
+        article bringing accessibility to Fedora workstation.
+        <br>
+        i respect that for those in the know, in the choir so to speak
+        what he is doing is clean up.
+        <br>
+        but that is not how the general Linux community is taking this
+        information.
+        <br>
+      </blockquote>
+      Let's look at what the article actually says, particularly the
+      intro before the interview:</p>
+    <blockquote>The first concerted effort to support accessibility
+      under Linux was undertaken by Sun Microsystems when they decided
+      to use GNOME for Solaris. Sun put together a team focused on
+      building the pieces to make GNOME 2 fully accessible and worked
+      with hardware makers to make sure things like Braille devices
+      worked well. I even heard claims that GNOME and Linux had the best
+      accessibility of any operating system for a while due to this
+      effort. As Sun started struggling and got acquired by Oracle this
+      accessibility effort eventually trailed off with the community
+      trying to pick up the slack afterwards. Especially engineers from
+      Igalia were quite active for a while trying to keep the
+      accessibility support working well.<br>
+      <br>
+      But over the years we definitely lost a bit of focus on this and
+      we know that various parts of GNOME 3 for instance aren=E2=80=99t g=
+reat in
+      terms of accessibility. So at Red Hat we have had a lot of focus
+      over the last few years trying to ensure we are mindful about
+      diversity and inclusion when hiring, trying to ensure that we
+      don=E2=80=99t accidentally pre-select against underrepresented grou=
+ps
+      based on for instance gender or ethnicity. But one area we
+      realized we hadn=E2=80=99t given so much focus recently was around
+      technologies that allowed people with various disabilities to make
+      use of our software. Thus I am very happy to announce that Red Hat
+      has just hired Lukas Tyrychtr, who is a blind software engineer,
+      to lead our effort in making sure Red Hat Enterprise Linux and
+      Fedora Workstation has excellent accessibility support!<br>
+    </blockquote>
+    <p>That's somewhat long-winded, but it's clear to any careful reader
+      that the foundation for accessibility was already laid, and that
+      what most urgently needs to be done is to fix what has been broken
+      in the years since Sun's accessibility team was disbanded. If
+      things get misrepresented by others who have shared the article,
+      that's surely not the fault of the authors. That happens all the
+      time when people share things online; it's nothing new, and not
+      worth belaboring.</p>
+    <blockquote type=3D"cite">there are people using Linux in the console
+      daily who deserve equal access. </blockquote>
+    I took this position in 2000, but for the last decade or more,
+    access to a GUI has been widely available to blind people at no
+    extra cost. (If there are blind people today who are truly stuck on
+    old hardware with no accessible GUI, that's unfortunate, but I think
+    this is one case where the best solution is charity, not expecting
+    the rest of the world to accommodate this situation forever. That's
+    no different than for sighted people stuck on very old hardware.)
+    Blindness itself is a circumstance beyond one's control that
+    deserves reasonable accommodation. But today, using the text console
+    is a choice, a very conscious choice to swim upstream, against the
+    current. Anyone who makes that choice should be prepared for
+    difficulty. And in fact, the few people I know who choose to use the
+    console today are prepared to use a GUI of one form or another when
+    there's no other way to accomplish a task. A platform company like
+    Red Hat is under no obligation to cater to the preference of the
+    dwindling minority of a minority who choose to use the text console.
+    To be clear, I have nothing against people who find console-based
+    tools most productive; do whatever works for you. But we need to be
+    careful about what we demand from the mainstream world, and I think
+    that expecting to be able to do everything using only the console is
+    too much.<br>
+    <blockquote type=3D"cite">
+      Second, this individual's job is to make this platform
+      accessible...which has never meant blindness exclusively.</blockquo=
+te>
+    His job, according to the article, is, "to lead our effort in making
+    sure Red Hat Enterprise Linux and Fedora Workstation has excellent
+    accessibility support." To me, the word "lead" suggests that he's
+    not doing this alone. Also, as I said above, the foundation of
+    accessibility for all disabilities was already laid, by the team at
+    Sun, starting roughly 20 years ago. They deliberately chose to start
+    with a generic accessibility API, not a specific solution for a
+    particular disability, because they understood that a well-designed
+    accessibility API would enable independent developers to provide
+    assistive technologies for multiple disabilities. And while I have
+    my objections to a specific layer of their accessibility
+    architecture, I believe they were on the mark here. Finally, I think
+    it's safe to say that blindness is the most difficult disability to
+    accommodate for GUI application and toolkit developers, as it
+    requires them to provide a complete alternative representation of
+    their default, high-bandwidth mode of visual output. Once that need
+    has been met by implementing a sufficiently rich accessibility API,
+    independent developers can handle other disabilities by implementing
+    alternate input methods; indeed, the more comprehensive the
+    accessibility API implementation is, the more these other input
+    methods have to work with. So I think it's entirely reasonable for
+    Red Hat and Lukas to focus for now on making their GUI accessible to
+    blind people with a screen reader.<br>
+    <blockquote type=3D"cite"> Further this individual is no volunteer, h=
+e
+      is being paid to have up to date information, not just about
+      fedora, but for screen readers he did not even reference like
+      Fenial &lt;spelling&gt; <br>
+      He is a single individual, That he has not seen a hardware
+      synthesizer,=C2=A0 due to age does not mean they do not exist.</blo=
+ckquote>
+    As I wrote elsewhere, what he is actually paid for is between him
+    and Red Hat. If they are paying him exclusively to focus on
+    improving GUI accessibility with Orca, I think that's entirely
+    reasonable, as I explained above. The fact that his statements on
+    Speakup were slightly incomplete, or that he didn't say anything
+    about Fenrir, is annoying to those in the know, but not worth
+    getting outraged over. Also note that Lukas's primary job is not
+    advocacy or education, but software development. Along the way, he
+    will need to educate other developers about accessibility, but he's
+    not obligated to comprehensively educate the world at large about
+    how blind people use Linux. The details of how blind people can
+    access the text console are of little or no interest to most
+    platform and application developers, who are the people that Lukas
+    would actually need to educate as part of his job. What we really
+    need them to understand is how they can make their GUIs accessible,
+    and the easier we make that for them, the more accessibility we will
+    get. In light of that, dwelling too much on console options could
+    even be considered an unnecessary and confusing distraction.<br>
+    <blockquote type=3D"cite">That attitude is dangerous, because he is
+      educating those outside of the accessibility experiences, who will
+      believe his ignorance is factual.</blockquote>
+    <p>If people outside the blind community, including platform and
+      application developers, believe that speech synthesis hardware is
+      vanishingly rare, or that one can't use Speakup with Fedora (but
+      can use BRLTTY or Orca), that's of no practical consequence. We
+      just need them to know how they can make their GUIs and web
+      applications accessible, and to be convinced that it's worth
+      doing. On other disabilities, he said:</p>
+    <blockquote>
+      <p>Of course, utilities for other accessibility needs exist as
+        well, but I don=E2=80=99t know much about these.</p>
+    </blockquote>
+    <p>It's good that he's honest about what he doesn't know. I don't
+      believe that current gap in knowledge should disqualify him from
+      the job that Red Hat actually hired him to do, as opposed to the
+      job that you seem to think Red Hat should have hired someone to
+      do. He's going to have his hands full just making Fedora
+      Workstation fully accessible to blind people. I trust that he'll
+      be willing to learn about other assistive technologies when that
+      knowledge is actually necessary.</p>
+    <blockquote type=3D"cite">may I ask from where he obtained his
+      software engineering degree? <br>
+      Studied computer science?=C2=A0 Perhaps disability studies? <br>
+    </blockquote>
+    Neither Lukas nor Red Hat are obligated to provide this information
+    to random bystanders. But here's what I found in my quick research.
+    Lukas posted his <a moz-do-not-send=3D"true"
+      href=3D"https://github.com/tyrylu/thesis">university thesis on
+      GitHub</a>, and from that I deduced that he earned his bachelor's
+    degree (and perhaps a master's as well) in Applied Informatics from
+    Masaryk University in the Czech Republic.<br>
+    <blockquote type=3D"cite">
+      there are certainly scores of=C2=A0 disabled individuals with these
+      various levels of qualification..even who are Linux users.</blockqu=
+ote>
+    <p>Sure. But the question is not whether the job went to the person
+      who seems most qualified to an outside observer, or is known in
+      that observer's community, but whether the job went to a person
+      who was available and interested in the job, is qualified enough
+      (as judged by the people doing the hiring), and will get the work
+      done. Red Hat have been hiring developers to work on open source
+      for decades, and I trust that they are competent to choose a
+      qualified candidate. Beyond that, as I stated in my first reply,
+      we can see for ourselves what Lukas has previously done online.
+      There's even more of that than I realized when I wrote that
+      message. For example, he successfully submitted a few patches to
+      the GTK repository, before Red Hat hired him, and he has been
+      reporting bugs in GNOME accessibility, particularly on Red Hat's
+      bug tracker, for years. And as I said on Friday, his
+      feel-the-streets project demonstrates an aptitude for taking on
+      real-world programming projects. So I believe Red Hat's decision
+      to hire him was sound. Not that they need my approval, or that of
+      anyone on these lists.<br>
+    </p>
+    <p>Now, I suggest that we let the nit-picking go and just be happy
+      that, with financial backing from the leading company in this
+      space, GUI accessibility on Linux is moving forward.</p>
+    <p>Matt<br>
+    </p>
+  </body>
+</html>
+
+--------------KS07C6YkftxTDrv4yDRuXU9Z--
 
