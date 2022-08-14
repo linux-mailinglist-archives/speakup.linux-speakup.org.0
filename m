@@ -1,37 +1,40 @@
-Return-Path: <speakup+bounces-548-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-549-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A4C28591DA2
-	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 04:50:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C9C7E591E1C
+	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 06:35:00 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 40D083847CD; Sat, 13 Aug 2022 22:50:43 -0400 (EDT)
+	id E04CB3847D9; Sun, 14 Aug 2022 00:34:59 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 63FE5384805
-	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 22:50:40 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 621CA38484A
+	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 00:34:57 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BE4FF383775; Sat, 13 Aug 2022 22:50:38 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0044.b.hostedemail.com [64.98.42.44])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A9D79383770
-	for <speakup@linux-speakup.org>; Sat, 13 Aug 2022 22:50:38 -0400 (EDT)
-Received: from omf06.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id E72118ACC5CF;
-	Sun, 14 Aug 2022 02:50:37 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf06.b.hostedemail.com (Postfix) with ESMTPA id 426168ACA432;
-	Sun, 14 Aug 2022 02:50:37 +0000 (UTC)
-Message-ID: <035001d8af88$a2ff19f0$80ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Karen Lewellen" <klewellen@shellworld.net>
-Cc: <speakup@linux-speakup.org>,
-	"Milan Zamazal" <pdm@zamazal.org>,
-	<Blinux-list@redhat.com>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net><1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com><Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net> <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net> <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net> <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131618030.1255408@server2.shellworld.net> <031e01d8af78$d1313930$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208132146510.1261053@server2.shellworld.net>
+	id D7798381908; Sun, 14 Aug 2022 00:34:55 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A6D533818F4
+	for <speakup@linux-speakup.org>; Sun, 14 Aug 2022 00:34:55 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1005)
+	id 791B1121DA6; Sun, 14 Aug 2022 04:34:24 +0000 (UTC)
+Received: from localhost (localhost [127.0.0.1])
+	by server2.shellworld.net (Postfix) with ESMTP id 77D2612048B;
+	Sun, 14 Aug 2022 00:34:24 -0400 (EDT)
+Date: Sun, 14 Aug 2022 00:34:24 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: K0LNY_Glenn <glenn@ervin.email>
+cc: speakup@linux-speakup.org, Milan Zamazal <pdm@zamazal.org>, 
+    Blinux-list@redhat.com
 Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-Date: Sat, 13 Aug 2022 21:50:38 -0500
-Organization: Home
+In-Reply-To: <033301d8af87$4227f3f0$80ffa8c0@Win7VM>
+Message-ID: <Pine.LNX.4.64.2208140031380.1264046@server2.shellworld.net>
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net><1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com><Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net>
+ <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM>
+ <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net>
+ <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net>
+ <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131909070.1258388@server2.shellworld.net>
+ <033301d8af87$4227f3f0$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -41,81 +44,88 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="utf-8"
-Content-Transfer-Encoding: 8bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: 426168ACA432
-X-Spam-Status: No, score=-2.60
-X-Stat-Signature: 94suhfzedo6i4yshwtnn5r3mthe6cwjb
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX18eFoaljxT7VKReaTaHeZ68hbxlXedy/Gg=
-X-HE-Tag: 1660445437-392437
+Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-1388150293-1660451664=:1264046"
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-We employed the majority of the people looking for work in my district.
-Nebraska nation-wide, is one of the best in job placement.
-In fact, we often got moneys from other states that did not do as well as 
-us.
-When an agency does not spend all their moneys from the Federal government, 
-they have to give it back, and it would then go to the states that do well 
-in job placement.
-Glenn
------ Original Message ----- 
-From: "Karen Lewellen" <klewellen@shellworld.net>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>; 
-<Blinux-list@redhat.com>
-Sent: Saturday, August 13, 2022 8:47 PM
-Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
 
+---1404930036-1388150293-1660451664=:1264046
+Content-Type: TEXT/PLAIN; charset=utf-8; format=flowed
+Content-Transfer-Encoding: QUOTED-PRINTABLE
 
-And your employment track record?
+And where do these employers learn about jaws?
+In fact, provide if you do not mind an example of how  this works exactly.=
+=20
+after all, unless I am incorrect, these employers are not personal=20
+Jaws users, meaning someone they trust continues to sell them on an=20
+expensive program instead of a largely free one.
 
 
 
 On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 
-> In my work, the client got what ever they needed.
-> We never forced Windows or Jaws on them.
->
+> Karen,
+> Most employers don't want NVDA, and will only allow Jaws.
+> In Nebraska, if an employer said put on whatever works, the counselors wi=
+ll
+> use NVDA, because of the cost of Jaws.
+> If some of the clients in a call center already use Jaws, but don't know
+> NVDA, the counselor will use Jaws, because the other clients will need to
+> learn one of the two.
+> So it's all choice, but in the workplace, it depends on what the employer
+> will allow.
+> Also, sometimes scripts need to be made, and there are more Jaws scripter=
+s
+> available than there are NVDA add-on writers.
+> So this perception that Jaws is forced by rehab, from my 31 years in the
+> business I can say is rubbish.
+> Now, if a counselor did not know how to use NVDA, and either may be chose=
+n,
+> the rehab counselor is able to select the one that the counselor feels is
+> best for the student and for the counselor's teaching.
+> When it comes to part B moneys, which is used for non-vocational purchase=
+s,
+> where a lot of Jaws purchases come from, it is in the agency's best inter=
+est
+> to spend as little as possible, because that doesn't come back like VR
+> expenditures do.
 > Glenn
+>
 > ----- Original Message -----
 > From: "Karen Lewellen" <klewellen@shellworld.net>
 > To: "K0LNY_Glenn" <glenn@ervin.email>
 > Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>;
 > <Blinux-list@redhat.com>
-> Sent: Saturday, August 13, 2022 3:26 PM
+> Sent: Saturday, August 13, 2022 6:15 PM
 > Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 >
 >
-> And how often do clients get a choice about their tools?
-> Support this with objective documentation, as this is your professional
-> industry, if memory serves.
-> I recall on more than one occasion being provided with documentation where
-> jaws was the only screen reader choice a client was given.
-> Know of at least one professional who turned to Linux because they never
-> wanted to use Jaws or windows again.
-> since rehab holds the money strings for fs, it is up to the counselors to
-> prove, with numbers, that it is worth  the financial investment  for
-> freedom scientific.
-> My understanding is that nvda came into being because clients wanted more
-> choices  than Jaws, and counselors were resistant.
+> The challenge with that example is that, as one often gets reminded,  the
+> rehab systems track record for facilitating  employment for their clients
+> is quite poor.
+> With a high percentage of unemployment among our clients.  Making,
+> speaking personally, your buying Jaws for personal use not really
+> reflecting how the system would respond to an alternative request.
+> Now if someone from organized rehab said, okay freedom scientific, we are
+> creating an employment program where our clients will train in Linux,
+> needing a solid screen reader solution for the system.  We will give you =
+an
+> exclusive development contract for s millions to create the tool.
+> Fs would likely say where do we sign?
 >
 >
 >
 > On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 >
->> True enough, but largely, rehab people typically use Windows at work, and
+>> True enough, but largely, rehab people typically use Windows at work, an=
+d
 >> probably at home, but they need to cater to the needs of the client.
 >> If a client used Linux, I doubt that any rehab counselor would advocate
 >> that
 >> the client switch to Windows, unless that was needed for a specific job.
->> In Nebraska, we purchased Jaws much more for personal use than we did for
+>> In Nebraska, we purchased Jaws much more for personal use than we did fo=
+r
 >> work related situations.
 >> So if FS made a JFL, and people were using Linux, rehab would indeed
 >> purchase a JFL product.
@@ -129,13 +139,15 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 >> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 >>
 >>
->> there was an interesting discussion a month or so back on the blinux list
+>> there was an interesting discussion a month or so back on the blinux lis=
+t
 >> about how long it took completing tasks in the gui as apposed to say
 >> command line,  the comments were quite informative.
->> Still, fs has never marketed largely to the end user. Instead they market
+>> Still, fs has never marketed largely to the end user. Instead they marke=
+t
 >> to the American rehab community.
->> how much market research has  the rehab community done to support the 
->> need
+>> how much market research has  the rehab community done to support the ne=
+ed
 >> for choices?
 >> How many rehab counselors support  training in Linux?
 >> one comment made by the subject of this thread about poor quality speech
@@ -173,15 +185,18 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 >>> Linux.
 >>> That is because as I understand it, Linux is  quite like clay. You can
 >>> mold a distribution into almost anything. there are various
->>> personifications of the system, all sorts of ways and changes and 
->>> options
+>>> personifications of the system, all sorts of ways and changes and optio=
+ns
 >>> for creativity.
->>> however adaptive tools are often extensions of physical characteristics,
+>>> however adaptive tools are often extensions of physical characteristics=
+,
 >>> hands, eyes, ears, brains, combinations of these.
 >>> To build solid assistive tools one must have a solid  foundation as it
->>> were.  that is part of why there have needed to be so few Apple  efforts
+>>> were.  that is part of why there have needed to be so few Apple  effort=
+s
 >>> at
->>> inclusion, they  created  with, and then created in-house adaptive tools
+>>> inclusion, they  created  with, and then created in-house adaptive tool=
+s
 >>> for various  populations that were built into the system.
 >>> Although Microsoft did not bother until much later, in theory at least,
 >>> the
@@ -197,7 +212,8 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 >>>
 >>>> I would like to see Freedom Scientific make a Jaws For Linux.
 >>>> JFL
->>>> I'd certainly pay the yearly rental fee for it, and it would bring many
+>>>> I'd certainly pay the yearly rental fee for it, and it would bring man=
+y
 >>>> more
 >>>> users into Linux.
 >>>> FS could, with its resources, possibly make it more robust than Orca.
@@ -211,7 +227,7 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 >>>> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 >>>>
 >>>>
->>>>>>>>> "KL" == Karen Lewellen <klewellen@shellworld.net> writes:
+>>>>>>>>> "KL" =3D=3D Karen Lewellen <klewellen@shellworld.net> writes:
 >>>>
 >>>>    KL> What bothers me most are his lack of actual qualifications, and
 >>>>    KL> absolute dismissal of what he has not experienced..as if he
@@ -224,23 +240,27 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 >>>>
 >>>> I know Lukas personally and I admire his skills and qualifications.  I
 >>>> also know first hand that he is open to constructive feedback and I
->>>> believe he’d be happy to be corrected about possible technical
+>>>> believe he=E2=80=99d be happy to be corrected about possible technical
 >>>> inaccuracies in the interview.  It may be also a good opportunity to
->>>> find out what’s possibly missing in making anybody better informed.
+>>>> find out what=E2=80=99s possibly missing in making anybody better info=
+rmed.
 >>>>
->>>> As for “absolute dismissal of what he has not experienced”, what
->>>> reasonable free software alternatives to a less or more standard 
->>>> desktop
->>>> with Orca and a software synthesizer can you see for a common blind 
->>>> user
+>>>> As for =E2=80=9Cabsolute dismissal of what he has not experienced=E2=
+=80=9D, what
+>>>> reasonable free software alternatives to a less or more standard deskt=
+op
+>>>> with Orca and a software synthesizer can you see for a common blind us=
+er
 >>>> who needs to use a fully working web browser, to read and process text
 >>>> documents, to be compatible with other computer users, etc.?
 >>>>
->>>> And let’s be realistic.  We celebrate every single developer hired to
+>>>> And let=E2=80=99s be realistic.  We celebrate every single developer h=
+ired to
 >>>> improve accessibility.  This tells something about the state of the
 >>>> matters.  We cannot expect that a single person will fix all the kinds
 >>>> of accessibility problems in all the environments.  Lukas works at his
->>>> job focusing on certain areas currently seen there as urgent ones and I
+>>>> job focusing on certain areas currently seen there as urgent ones and =
+I
 >>>> appreciate this opportunity.  Anybody else seeing a need to work on
 >>>> other areas is welcome to contribute to whatever sees fit, as I do.
 >>>>
@@ -254,8 +274,7 @@ On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
 >>>
 >>
 >>
->>
 >
-> 
-
+>
+---1404930036-1388150293-1660451664=:1264046--
 
