@@ -1,38 +1,37 @@
-Return-Path: <speakup+bounces-540-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-541-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 02262591D2B
-	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 01:42:28 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=B9BpPBH5;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 2C39D591D64
+	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 02:57:27 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 95A193847B6; Sat, 13 Aug 2022 19:42:27 -0400 (EDT)
+	id 55C2238480B; Sat, 13 Aug 2022 20:57:26 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E00EE3847E8
-	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 19:42:25 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 42FB3384836
+	for <lists+speakup@lfdr.de>; Sat, 13 Aug 2022 20:57:26 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B1DA8384781; Sat, 13 Aug 2022 19:42:21 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9B0D438476D
-	for <speakup@linux-speakup.org>; Sat, 13 Aug 2022 19:42:20 -0400 (EDT)
-Received: from [192.168.0.11] (sfa89-1-78-208-157-71.fbx.proxad.net [78.208.157.71])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id AFB9124894;
-	Sun, 14 Aug 2022 00:39:50 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1660430390; bh=o8Nzb1V879Ua8jLWf8iQRs8g10eDr6KcWBBdyRbdKQY=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=B9BpPBH5RBKep3aVSAWfPyNbf3vN4c/ptZk4/Ln4uN2OKgEpjbLRIqC9LB4TbB3or
-	 c2kLyXeOPp94L5Z0r21ofMeE3i4lxApBf5SmBBUi+0W52HvlywLfN3FaeCObkMZymF
-	 y3yaVT+Kwu+aFYyaUL7fcVVQv1NgSZoogPHY5orkF8RL+1d3Fa3UPovusMl0ScyOOL
-	 Xi57vpeRq7Q7Rsj0XFDNNNOYaCm/grvCsUZgMAmr3g3qt0S8AHrXEWCgMqIOSVNc6F
-	 Df1BNmQEtDmP2vV/VelZ2015lLx5QedoV5U4l7ocDVFaBLhVGEqfN7DVY7j4vCj2/G
-	 JaHKQ8Rj4SAbg==
-Message-ID: <fa2b05c2-3556-b6e2-c125-045ef5e5724e@slint.fr>
-Date: Sun, 14 Aug 2022 01:42:12 +0200
+	id 804A638478B; Sat, 13 Aug 2022 20:57:24 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0053.b.hostedemail.com [64.98.42.53])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 323B738476D
+	for <speakup@linux-speakup.org>; Sat, 13 Aug 2022 20:57:24 -0400 (EDT)
+Received: from omf02.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 823F6189F5D8E;
+	Sun, 14 Aug 2022 00:57:23 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf02.b.hostedemail.com (Postfix) with ESMTPA id CF679882E41D;
+	Sun, 14 Aug 2022 00:57:22 +0000 (UTC)
+Message-ID: <031e01d8af78$d1313930$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Karen Lewellen" <klewellen@shellworld.net>
+Cc: <speakup@linux-speakup.org>,
+	"Milan Zamazal" <pdm@zamazal.org>,
+	<Blinux-list@redhat.com>
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net><1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com><Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net> <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net> <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net> <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131618030.1255408@server2.shellworld.net>
+Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+Date: Sat, 13 Aug 2022 19:57:22 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,128 +41,192 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.12.0
-Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-Content-Language: en-US
-To: Karen Lewellen <klewellen@shellworld.net>
-Cc: speakup@linux-speakup.org, Blinux-list@redhat.com,
- Milan Zamazal <pdm@zamazal.org>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net>
- <1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com>
- <Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net>
- <871qtkrs03.fsf@zamazal.org>
- <Pine.LNX.4.64.2208131430230.1254020@server2.shellworld.net>
- <87o7wnq59r.fsf@zamazal.org>
- <Pine.LNX.4.64.2208131900060.1258388@server2.shellworld.net>
-From: Didier Spaier <didier@slint.fr>
-In-Reply-To: <Pine.LNX.4.64.2208131900060.1258388@server2.shellworld.net>
-Content-Type: text/plain; charset=UTF-8
+Content-Type: text/plain;
+	charset="utf-8"
 Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout02
+X-Rspamd-Queue-Id: CF679882E41D
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: cft3gtrkeya5yppbs9ab1cbss195q5qo
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/qtaZ/82DJdzCpIoHFIpRIJAaagcgQmWQ=
+X-HE-Tag: 1660438642-739334
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Karen, I concur to all Milan said.
+In my work, the client got what ever they needed.
+We never forced Windows or Jaws on them.
 
-Can't you just stop bashing someone who you don't know (and can't answer you
-unless he is subscribed to one of the mailing list where you posted this rant,
-which seems unfair to me), and a distribution that at least devotes resources to
-accessibility, even if they do not focus specifically on what you would like
-them to? You should just be grateful for all Fedora as provided and continue to
-provide at no cost wrt accessibility. I am, even though I do not personally need
- it.
-
-That there be inaccuracies in the article is not that important and I don't care
-that  Luks doesn't know everything in the matter (who does?). I am sure that he
-will quickly complete his knowledge, anyway most probably already sufficient for
-what he is asked to work on.
-
-Best regards,
-Didier
+Glenn
+----- Original Message ----- 
+From: "Karen Lewellen" <klewellen@shellworld.net>
+To: "K0LNY_Glenn" <glenn@ervin.email>
+Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>; 
+<Blinux-list@redhat.com>
+Sent: Saturday, August 13, 2022 3:26 PM
+Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 
 
-Le 14/08/2022 à 01:07, Karen Lewellen a écrit :
-> And as I said from the outset, I am far more concerned with how this article  
-> makes accessibility, and Red Hat commitment to accessibility appear  to the public.
-> A claim to having authority, when stating one knows nothing about how access can
-> be provided to various populations equally deserving is concerning.
-> even in the article comments an individual outlined a need, that they did not
-> anticipate being met because Fedora was creating a "blindness" program.
-> If your associate  leads with stated limits,  yet does not  indicate he plans to
-> address them, inclusion on this platform for all who seek it seems  far from
-> likely.
-> I do agree on the forum though. Had comment snot been closed by the time I got 
-> the article, and I been  in a position to do so, I might have  raised them  on
-> the spot.
+And how often do clients get a choice about their tools?
+Support this with objective documentation, as this is your professional
+industry, if memory serves.
+I recall on more than one occasion being provided with documentation where
+jaws was the only screen reader choice a client was given.
+Know of at least one professional who turned to Linux because they never
+wanted to use Jaws or windows again.
+since rehab holds the money strings for fs, it is up to the counselors to
+prove, with numbers, that it is worth  the financial investment  for
+freedom scientific.
+My understanding is that nvda came into being because clients wanted more
+choices  than Jaws, and counselors were resistant.
+
+
+
+On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
+
+> True enough, but largely, rehab people typically use Windows at work, and
+> probably at home, but they need to cater to the needs of the client.
+> If a client used Linux, I doubt that any rehab counselor would advocate 
+> that
+> the client switch to Windows, unless that was needed for a specific job.
+> In Nebraska, we purchased Jaws much more for personal use than we did for
+> work related situations.
+> So if FS made a JFL, and people were using Linux, rehab would indeed
+> purchase a JFL product.
+> Glenn
+> ----- Original Message -----
+> From: "Karen Lewellen" <klewellen@shellworld.net>
+> To: "K0LNY_Glenn" <glenn@ervin.email>
+> Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>;
+> <Blinux-list@redhat.com>
+> Sent: Saturday, August 13, 2022 3:01 PM
+> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+>
+>
+> there was an interesting discussion a month or so back on the blinux list
+> about how long it took completing tasks in the gui as apposed to say
+> command line,  the comments were quite informative.
+> Still, fs has never marketed largely to the end user. Instead they market
+> to the American rehab community.
+> how much market research has  the rehab community done to support the need
+> for choices?
+> How many rehab counselors support  training in Linux?
+> one comment made by the subject of this thread about poor quality speech
+> is a fine one...out of the box Linux has few speech choices.  everyone
+> brings their needs to the table there.
+>
+> if you want to get fs to care about Linux, you  need to prove there is
+> money for  them there, from their main source of income.
+>
+>
+>
+> On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
+>
+>> Well since Orca seems to work on so many distros, I don't know why FS
+>> would
+>> not be able to do the same.
+>> If Jaws users could switch into Linux, it would be a real game changer,
+>> and
+>> I think with lots more Blind Linux users, we would start seeing
+>> accessibility in Linux not being a second thought.
+>> Glenn
+>> ----- Original Message -----
+>> From: "Karen Lewellen" <klewellen@shellworld.net>
+>> To: "K0LNY_Glenn" <glenn@ervin.email>
+>> Cc: <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>;
+>> <Blinux-list@redhat.com>
+>> Sent: Saturday, August 13, 2022 1:47 PM
+>> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+>>
+>>
+>> Well technically freedom scientific does not exist any longer, being
+>> bought
+>> by another company.
+>> Still, I can respect why they, or nvda have not created their tools for
+>> Linux.
+>> That is because as I understand it, Linux is  quite like clay. You can
+>> mold a distribution into almost anything. there are various
+>> personifications of the system, all sorts of ways and changes and options
+>> for creativity.
+>> however adaptive tools are often extensions of physical characteristics,
+>> hands, eyes, ears, brains, combinations of these.
+>> To build solid assistive tools one must have a solid  foundation as it
+>> were.  that is part of why there have needed to be so few Apple  efforts
+>> at
+>> inclusion, they  created  with, and then created in-house adaptive tools
+>> for various  populations that were built into the system.
+>> Although Microsoft did not bother until much later, in theory at least,
+>> the
+>> consistency of windows is what makes it possible for freedom or the 
+>> former
+>> gw  micro or nvda to create something that can in theory  work.
+>> Floor for the furniture is somewhat solid.
+>> Just my thoughts,
+>>
+>>
+>>
+>> On Sat, 13 Aug 2022, K0LNY_Glenn wrote:
+>>
+>>> I would like to see Freedom Scientific make a Jaws For Linux.
+>>> JFL
+>>> I'd certainly pay the yearly rental fee for it, and it would bring many
+>>> more
+>>> users into Linux.
+>>> FS could, with its resources, possibly make it more robust than Orca.
+>>>
+>>> Glenn
+>>> ----- Original Message -----
+>>> From: "Milan Zamazal" <pdm@zamazal.org>
+>>> To: <speakup@linux-speakup.org>
+>>> Cc: <Blinux-list@redhat.com>
+>>> Sent: Saturday, August 13, 2022 12:08 PM
+>>> Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+>>>
+>>>
+>>>>>>>> "KL" == Karen Lewellen <klewellen@shellworld.net> writes:
+>>>
+>>>    KL> What bothers me most are his lack of actual qualifications, and
+>>>    KL> absolute dismissal of what he has not experienced..as if he
+>>>    KL> defines Linux usage for everyone.  That attitude is dangerous,
+>>>    KL> because he is educating those outside of the accessibility
+>>>    KL> experiences, who will believe his ignorance is factual.  he has
+>>>    KL> to be expert, it is his job.
+>>>
+>>> Hi Karen,
+>>>
+>>> I know Lukas personally and I admire his skills and qualifications.  I
+>>> also know first hand that he is open to constructive feedback and I
+>>> believe he’d be happy to be corrected about possible technical
+>>> inaccuracies in the interview.  It may be also a good opportunity to
+>>> find out what’s possibly missing in making anybody better informed.
+>>>
+>>> As for “absolute dismissal of what he has not experienced”, what
+>>> reasonable free software alternatives to a less or more standard desktop
+>>> with Orca and a software synthesizer can you see for a common blind user
+>>> who needs to use a fully working web browser, to read and process text
+>>> documents, to be compatible with other computer users, etc.?
+>>>
+>>> And let’s be realistic.  We celebrate every single developer hired to
+>>> improve accessibility.  This tells something about the state of the
+>>> matters.  We cannot expect that a single person will fix all the kinds
+>>> of accessibility problems in all the environments.  Lukas works at his
+>>> job focusing on certain areas currently seen there as urgent ones and I
+>>> appreciate this opportunity.  Anybody else seeing a need to work on
+>>> other areas is welcome to contribute to whatever sees fit, as I do.
+>>>
+>>> Regards,
+>>> Milan
+>>>
+>>>
+>>>
+>>>
+>>
+>>
+>
+>
 > 
-> 
-> 
-> On Sat, 13 Aug 2022, Milan Zamazal wrote:
-> 
->>>>>>> "KL" == Karen Lewellen <klewellen@shellworld.net> writes:
->>
->>    KL> may I ask from where he obtained his software engineering
->>    KL> degree?  Studied computer science?  Perhaps disability studies?
->>    KL> there are certainly scores of disabled individuals with these
->>    KL> various levels of qualification..even who are Linux users.  The
->>    KL> interview did not document a single one, outside of his
->>    KL> experiencing blindness..which is not going to insure he creates
->>    KL> an accessible platform for fedora since access refers to several
->>    KL> populations.  and he states he knows nothing about those.
->>
->> I have already said regarding this what I felt was needed and I don’t
->> find appropriate continuing that discussion here.  I’d suggest focusing
->> on how to improve free software accessibility instead.
->>
->> If anybody cares about Fedora accessibility, there is always opportunity
->> to help by providing fixes to reported bugs, giving technical advice or
->> filing bugs on not yet reported issues.  All of these is needed, it’s
->> sometimes difficult to move on with some issues and to get any help.
->> OTOH trying to demotivate people who work on accessibility is certainly
->> not helpful.
->>
->> Regards,
->> Milan
->>
->>    KL> On Sat, 13 Aug 2022, Milan Zamazal wrote:
->>
->>    >>>>>>> "KL" == Karen Lewellen <klewellen@shellworld.net> writes:
->>    >>
->>    KL> What bothers me most are his lack of actual qualifications, and
->>    KL> absolute dismissal of what he has not experienced..as if he
->>    KL> defines Linux usage for everyone.  That attitude is dangerous,
->>    KL> because he is educating those outside of the accessibility
->>    KL> experiences, who will believe his ignorance is factual.  he has
->>    KL> to be expert, it is his job.
->>    >>
->>    >> Hi Karen,
->>    >>
->>    >> I know Lukas personally and I admire his skills and
->>    >> qualifications.  I also know first hand that he is open to
->>    >> constructive feedback and I believe he’d be happy to be corrected
->>    >> about possible technical inaccuracies in the interview.  It may
->>    >> be also a good opportunity to find out what’s possibly missing in
->>    >> making anybody better informed.
->>    >>
->>    >> As for “absolute dismissal of what he has not experienced”, what
->>    >> reasonable free software alternatives to a less or more standard
->>    >> desktop with Orca and a software synthesizer can you see for a
->>    >> common blind user who needs to use a fully working web browser,
->>    >> to read and process text documents, to be compatible with other
->>    >> computer users, etc.?
->>    >>
->>    >> And let’s be realistic.  We celebrate every single developer
->>    >> hired to improve accessibility.  This tells something about the
->>    >> state of the matters.  We cannot expect that a single person will
->>    >> fix all the kinds of accessibility problems in all the
->>    >> environments.  Lukas works at his job focusing on certain areas
->>    >> currently seen there as urgent ones and I appreciate this
->>    >> opportunity.  Anybody else seeing a need to work on other areas
->>    >> is welcome to contribute to whatever sees fit, as I do.
->>    >>
->>    >> Regards, Milan
->>    >>
->>    >>
->>    >>
->>
->>
+
 
