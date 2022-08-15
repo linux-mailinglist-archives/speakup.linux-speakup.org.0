@@ -1,37 +1,52 @@
-Return-Path: <speakup+bounces-552-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-553-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 4ACC45926EF
-	for <lists+speakup@lfdr.de>; Mon, 15 Aug 2022 01:21:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 0D9A4592DF8
+	for <lists+speakup@lfdr.de>; Mon, 15 Aug 2022 13:15:21 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EDF6538484D; Sun, 14 Aug 2022 19:21:11 -0400 (EDT)
+	id 2253F3847F6; Mon, 15 Aug 2022 07:15:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E09CE3847EF
-	for <lists+speakup@lfdr.de>; Sun, 14 Aug 2022 19:21:11 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0F08B380AAD
+	for <lists+speakup@lfdr.de>; Mon, 15 Aug 2022 07:15:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 67DFF383771; Sun, 14 Aug 2022 19:21:10 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 189B73819AC
-	for <speakup@linux-speakup.org>; Sun, 14 Aug 2022 19:21:10 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 2B70B121DD0; Sun, 14 Aug 2022 23:21:06 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 2894112044D;
-	Sun, 14 Aug 2022 19:21:06 -0400 (EDT)
-Date: Sun, 14 Aug 2022 19:21:06 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Chris Brannon <chris@the-brannons.com>
-cc: Matt Campbell <mattcampbell@pobox.com>, speakup@linux-speakup.org, 
-    blinux-list@redhat.com, discuss@blvuug.org
-Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-In-Reply-To: <87k07ak5a8.fsf@the-brannons.com>
-Message-ID: <Pine.LNX.4.64.2208141900180.1291685@server2.shellworld.net>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net>
- <YvhV4TWzuP2O1JAZ@novena-choice-citizen> <Pine.LNX.4.64.2208132205110.1261053@server2.shellworld.net>
- <8d72d3ff-01d5-9f5e-c2b1-fb10a024e047@pobox.com> <87k07ak5a8.fsf@the-brannons.com>
+	id 06A6D381903; Mon, 15 Aug 2022 07:15:12 -0400 (EDT)
+Received: from pta-smg1.csir.co.za (pta-smg1.csir.co.za [146.64.81.180])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B8468380A82
+	for <speakup@linux-speakup.org>; Mon, 15 Aug 2022 07:15:11 -0400 (EDT)
+Received: from pta-smg1.csir.co.za (localhost.localdomain [127.0.0.1])
+	by localhost (Email Security Appliance) with SMTP id 265242978CC6_2FA2ABAB
+	for <speakup@linux-speakup.org>; Mon, 15 Aug 2022 11:15:06 +0000 (GMT)
+Received: from marge.meraka.csir.co.za (marge.meraka.csir.co.za [146.64.28.1])
+	by pta-smg1.csir.co.za (Sophos Email Appliance) with ESMTP id D993829761E6_2FA2AB9F
+	for <speakup@linux-speakup.org>; Mon, 15 Aug 2022 11:15:05 +0000 (GMT)
+Received: from marge.meraka.csir.co.za (localhost [127.0.0.1])
+	by marge.meraka.csir.co.za (Postfix) with ESMTP id D21914FF2B
+	for <speakup@linux-speakup.org>; Mon, 15 Aug 2022 13:15:05 +0200 (SAST)
+X-Virus-Scanned: amavisd-new at meraka.org.za
+Received: from marge.meraka.csir.co.za ([127.0.0.1])
+	by marge.meraka.csir.co.za (marge.meraka.csir.co.za [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id i31FbIrCHaqA for <speakup@linux-speakup.org>;
+	Mon, 15 Aug 2022 13:15:05 +0200 (SAST)
+Received: from willempc.meraka.csir.co.za (unknown [IPv6:2001:4200:7000:3:7a2b:cbff:fe9d:7520])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by marge.meraka.csir.co.za (Postfix) with ESMTPS
+	for <speakup@linux-speakup.org>; Mon, 15 Aug 2022 13:15:04 +0200 (SAST)
+Received: from [127.0.0.1] (helo=localhost)
+	by willempc.meraka.csir.co.za with esmtp (Exim 4.90_1)
+	(envelope-from <wvdwalt@csir.co.za>)
+	id 1oNY3k-0000UC-7Z
+	for speakup@linux-speakup.org; Mon, 15 Aug 2022 13:15:04 +0200
+Date: Mon, 15 Aug 2022 13:15:04 +0200 (SAST)
+From: Willem van der Walt <wvdwalt@csir.co.za>
+X-X-Sender: wvdwalt@willempc.meraka.csir.co.za
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: tty keeps jumping to tty7 ubuntu 22.04 after upgrade
+Message-ID: <alpine.DEB.2.21.1.2208151305110.1705@willempc.meraka.csir.co.za>
+User-Agent: Alpine 2.21.1 (DEB 211 2017-05-04)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -41,70 +56,23 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: text/plain; format=flowed; charset=US-ASCII
+X-SASI-RCODE: 200
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I echo this attitude concern, but for a different reason.
-who gets to decide what bodies  deserve a place at the table?
-because of a vascular accident in an eye surgery, I experience a brain 
-anomaly where certain frequencies stimulate the dizzy centres of my brain.
-allot of those frequencies happen in poorly designed software  speech 
-configurations for Linux.
-Meaning, because little effort has been made to give choices for Linux 
-speech in the gui, if I wanted to use this, I would have to choose between 
-a Linux computer and hospitalization.
-compare this with apple hardware.
-I recently aquired a  mid 2012 macbook pro which, because of how the 
-voiceover   sound is produced is perfectly safe for my use..and I can 
-still run  only one  Mac os off  from the last pre m.1 systems.
-i have an associate in my office running their business on a 2011 macbook 
-pro.
-Indeed climate change, landfill issues, available resources in terms of 
-training and access all over the world.
-And, for many how their body works mandates choices.
-There was a time when one of the great things about Linux was that it 
-could be used to breathe  new life into older hardware.  especially 
-helpful in  non-western countries where getting the fastest car on the 
-road was costly.
-If your attitude was the rule though, those folks regardless of abilities 
-might never get computers at all.
-  take your attitude and say substitute braille.
-  Statistically less than 10% of the blindness community are braille users, 
-meaning the majority do not  use it, or even learn it if newly blinded.
-so, its unfortunate some blind people are still stuck needing volumes and 
-volumes of braille, but  to expect the world to confirm to such a limited 
-use language etc.
-Speaking personally, especially given how flexible Linux is  supposed to 
-be?
-deciding some have no place at your gui table is little different than 
-deciding those who are visible minorities, no matter the location, have no 
-place at the table either.
-  Karen
+Good day,
+After upgrading from ubuntu 20.04 to 22.04, I have this funny problem.
+I first had some issues getting sound/alsa/espeakup to talk, but that is 
+kind of sorted now.
+What is happening now, is that, if I go to tty1 through tty6, I get a 
+login prompt as expected, but a second or so later, I am on tty7 with 
+speakup speaking, but it is a blank screen.
+I currently do not know if the machine comes up in  graphical mode after 
+boot, as I had no speech at that point anyway.
+I can ssh into the machine, which is mostly what I do, but I got to get 
+speakup and later orca working here.
+I never had this behaviour before, any ideas?
+Regards, Willem
 
 
-
-On Sun, 14 Aug 2022, Chris Brannon wrote:
-
-> Matt Campbell <mattcampbell@pobox.com> writes:
->
->> I took this position in 2000, but for the last decade or more, access to a
->> GUI has been widely available to blind people at no extra cost. (If there
->> are blind people today who are truly stuck on old hardware with no
->> accessible GUI, that's unfortunate, but I think this is one case where the
->> best solution is charity, not expecting the rest of the world to accommodate
->> this situation forever. That's no different than for sighted people stuck on
->> very old hardware.)
->
-> I'm sorry, but this is a very irresponsible attitude, given the impact
-> of climate change.  And now on top of that, the world is coping with
-> supply chain issues.  "Chuck it in a landfill because it won't run the
-> latest Electron app" is deeply unacceptable.
->
-> I do agree with you about the importance of GUI accessibility, even
-> though I only use one when circumstances force me to it.  I'm somewhat
-> optimistic about the recent news.
->
-> -- Chris
->
->
 
