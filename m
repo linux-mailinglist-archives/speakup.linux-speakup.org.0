@@ -1,81 +1,40 @@
-Return-Path: <speakup+bounces-567-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-568-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9B43059628F
-	for <lists+speakup@lfdr.de>; Tue, 16 Aug 2022 20:37:29 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=uwprod.onmicrosoft.com header.i=@uwprod.onmicrosoft.com header.a=rsa-sha256 header.s=selector2-uwprod-onmicrosoft-com header.b=nOjCNM5B;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id C719E59629B
+	for <lists+speakup@lfdr.de>; Tue, 16 Aug 2022 20:43:55 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D2A6D3847E1; Tue, 16 Aug 2022 14:37:28 -0400 (EDT)
+	id 65A883847FE; Tue, 16 Aug 2022 14:43:55 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id AC0043847E1
-	for <lists+speakup@lfdr.de>; Tue, 16 Aug 2022 14:37:28 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E63FA384893
+	for <lists+speakup@lfdr.de>; Tue, 16 Aug 2022 14:43:51 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C336F3847E6; Tue, 16 Aug 2022 14:37:19 -0400 (EDT)
-Received: from wmauth3.doit.wisc.edu (wmauth3.doit.wisc.edu [144.92.197.226])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A67EE3847DF
-	for <speakup@linux-speakup.org>; Tue, 16 Aug 2022 14:37:19 -0400 (EDT)
-Received: from NAM04-DM6-obe.outbound.protection.outlook.com
- (mail-dm6nam04lp2041.outbound.protection.outlook.com [104.47.73.41])
- by smtpauth3.wiscmail.wisc.edu
- (Oracle Communications Messaging Server 8.1.0.16.20220118 64bit (built Jan 18
- 2022)) with ESMTPS id <0RGQ00KH6124TW30@smtpauth3.wiscmail.wisc.edu> for
- speakup@linux-speakup.org; Tue, 16 Aug 2022 13:37:17 -0500 (CDT)
-X-Spam-Report: AuthenticatedSender=yes, SenderIP=[104.47.73.41]
-X-Wisc-Env-From-B64: amhlaW1AbWF0aC53aXNjLmVkdQ==
-X-Spam-PmxInfo: Server=avs-3, Version=6.4.9.2830568,
- Antispam-Engine: 2.7.2.2107409, Antispam-Data: 2022.8.16.182718,
- AntiVirus-Engine: 5.92.0, AntiVirus-Data: 2022.7.21.5920001,
- SenderIP=[104.47.73.41]
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=YoH3aCaDBnnqxj+6b+spVtF1uh3TJpER2EYl46i6r2X3Q2cyeg4VCzJ2wE1H2iWAB2ETHCLeE4uYnmiQ7YSSjLPSESyjTByUGJ8yY+euR8vYwXcFZNybLKPZsPpctr1Q96biPHOhJxFGGEQRO4Hhp0HSP91EUeRNQBXBLjUZgassU6XP7n+wBShFvqfOlfvWyeveOtWRAPNuKOqkAuiwtNsEwAp3QGuR7tJATD3s5X+bRljSkpepLK3N3rPxv9kIIoEipjwY58ACdi35Pz4EkTUcwIAZagXZll/kd/qAIW1oedVfFiDXzF0G5gunwmnJ+NwC0pasynDQtMaAVZP85g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=HtXhYI02oaTr/ADi1oReASadH0jb5r9NK+yQuykAnI8=;
- b=X4DqXI8/tZYjzXkIxt+Al0O4/VdV47AHEZznRjdBWlD7dbirUSJHTMub8pPZnGaf5EUBDnRBJzEZdNWX7CF5Njy58upPdoSa4ARXP7x9YDCZddR+/qm2KOBRImcCkUHygWnEKuUP7+/DsG2m/I64ao6XxJVJGKnPbgeqcY0I6MBIjngP0eoMYFaQrydZqzue19VVGyut535Qte+YFdBG6bZX6yKnspTFRQBD9M6K9oc7ihSMA7eNzFlZvjRBub/ibEKtzNGlrgq0xUjxE8mYDJvCYyUL9RiUqsB1l4rZIZrMYs7LzyMhkf0Ufh/nPLnSGyKb2V6VJ3msmRFfRUZ2UA==
-ARC-Authentication-results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=math.wisc.edu; dmarc=pass action=none header.from=math.wisc.edu;
- dkim=pass header.d=math.wisc.edu; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=uwprod.onmicrosoft.com;
- s=selector2-uwprod-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HtXhYI02oaTr/ADi1oReASadH0jb5r9NK+yQuykAnI8=;
- b=nOjCNM5B0bZWoBNJWIuPnadiPID/jGSBV0wRP7UJqz7bN02vq23z8mkem4toDDNGQ9lP3f3MH2Ez3oGl9WBCL6IqCUKZPDsFzH16dhjhTHNSH7oPYdQf9jZe3Y/c2GA7tEkG96NrSy5C3IGCQjB5x2uPwOVC58XHMeYQ3H/m/kE=
-Authentication-results: dkim=none (message not signed) header.d=none;dmarc=none
- action=none header.from=math.wisc.edu;
-Received: from SJ0PR06MB8325.namprd06.prod.outlook.com (2603:10b6:a03:393::17)
- by PH0PR06MB8570.namprd06.prod.outlook.com (2603:10b6:510:121::18)
- with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384)
- id 15.20.5525.11; Tue, 16 Aug 2022 18:37:16 +0000
-Received: from SJ0PR06MB8325.namprd06.prod.outlook.com
- ([fe80::da3:ad93:7ee6:7c17]) by SJ0PR06MB8325.namprd06.prod.outlook.com
- ([fe80::da3:ad93:7ee6:7c17%6]) with mapi id 15.20.5504.028; Tue,
- 16 Aug 2022 18:37:16 +0000
-Message-id: <947d670d-b6e5-960b-5a5e-90af25a6ec4c@math.wisc.edu>
-Date: Tue, 16 Aug 2022 13:37:11 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.10.0
+	id 830B33847E8; Tue, 16 Aug 2022 14:43:50 -0400 (EDT)
+Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 40A433847E0
+	for <speakup@linux-speakup.org>; Tue, 16 Aug 2022 14:43:50 -0400 (EDT)
+Received: by server2.shellworld.net (Postfix, from userid 1005)
+	id 70D4A121EFA; Tue, 16 Aug 2022 18:43:45 +0000 (UTC)
+Received: from localhost (localhost [127.0.0.1])
+	by server2.shellworld.net (Postfix) with ESMTP id 70050121B7C;
+	Tue, 16 Aug 2022 14:43:45 -0400 (EDT)
+Date: Tue, 16 Aug 2022 14:43:45 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: "John G. Heim" <jheim@wisc.edu>
+cc: Chris Brannon <chris@the-brannons.com>, 
+    Matt Campbell <mattcampbell@pobox.com>, speakup@linux-speakup.org, 
+    blinux-list@redhat.com, discuss@blvuug.org
 Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-Content-language: en-US
-To: Brian Buhrow <buhrow@nfbcal.org>, K0LNY_Glenn <glenn@ervin.email>,
- Karen Lewellen <klewellen@shellworld.net>
-Cc: Butch Bussen <butchb@shellworld.net>, "John G. Heim" <jheim@wisc.edu>,
- speakup@linux-speakup.org, Milan Zamazal <pdm@zamazal.org>,
- Blinux-list@redhat.com
-References: <202208161814.27GIEKUm029606@nfbcal.org>
-From: "John G. Heim" <jheim@math.wisc.edu>
-In-reply-to: <202208161814.27GIEKUm029606@nfbcal.org>
-Content-type: text/plain; charset=UTF-8; format=flowed
-Content-transfer-encoding: 7bit
-X-ClientProxiedBy: BN0PR03CA0050.namprd03.prod.outlook.com
- (2603:10b6:408:e7::25) To SJ0PR06MB8325.namprd06.prod.outlook.com
- (2603:10b6:a03:393::17)
+In-Reply-To: <69e2d652-3f37-d6b0-1b86-69749b96616b@wisc.edu>
+Message-ID: <Pine.LNX.4.64.2208161440250.1333324@server2.shellworld.net>
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net>
+ <YvhV4TWzuP2O1JAZ@novena-choice-citizen> <Pine.LNX.4.64.2208132205110.1261053@server2.shellworld.net>
+ <8d72d3ff-01d5-9f5e-c2b1-fb10a024e047@pobox.com> <87k07ak5a8.fsf@the-brannons.com>
+ <Pine.LNX.4.64.2208141900180.1291685@server2.shellworld.net>
+ <69e2d652-3f37-d6b0-1b86-69749b96616b@wisc.edu>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -84,118 +43,209 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: c1f2d612-d5b7-4d11-d035-08da7fb65774
-X-MS-TrafficTypeDiagnostic: PH0PR06MB8570:EE_
-X-MS-Exchange-SenderADCheck: 1
-X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info:
- l4FYdllQr7SNAI4BBudUYDmqiJ8jmD/WOPpjI5a7BgI2OLHlVx2Swxq+0ceYB7UDv7ErjIqZ1dHMFDMGVAICORS276bFs5aiLiJTwZlhTIDLmj0G5ZEyJDkeNayhzrfumzUsbLh2nUySxzt+oQnu2W8dyJvU7V7AHPSgNrQ50aOQXOBXhJ1Fhih+Uj7ISyNQ1VglIqWwF+5CJzKo5ztbSSj6aEpFU7ak9J2NEN6JZZkrUHImOhY9q58yE6NCdwfMN7a1sPRGf60YFwbtmzv+yRIaMZSPnNcmB0QqHM0StjRRj61MJA6DgKcrni120UgUTyCvzSLfeO5nIx1usEqqOsd+yG8TJ1VAIB0nZhRJUly3+1nshFjMt+yXOUUJvHIL7K3IvJyxFkT8ljy5B2S21t/WkqQqYyex32VucxkQgPr1jcefN23bNwLBFNEULiOFnuzyOuKdO0TfeRRqg0QWDmCoTFXxc355ELW/BFQ0weFpebcCwOf7IUf4/J5WjL5rbRcrlk+RtvKY0AMGp7eKd84Q6SCTUhz7da3a3LDimi1+JHDeIdMPWATT/CoIYeE1TKZlPHPEGUDAB2CdIlbPT97axfN82favTHDwhpFYlRMtwgv5wRAZZJ+DhSlhAqpuh9xO+6GqWUKzQ8wgRfATYZh/27fv+FCdtSBe1TCxnbn5MhTm4HxH/ljkDdzF2d2eGJN6s5yCNLLChD0JqpfVfL6KIy6tf6/R6jnHRr6z5qenrUijyB8+AVToxXo5oaN0xTXPmbnzZ51G55FwyVnwIsvWjRPk+M9jiEqeN8COJHCtHHCm6NvFOYECRtgAa+KjvkV5OBQGS61LZoNNy+xRhQ==
-X-Forefront-Antispam-Report:
- CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ0PR06MB8325.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(136003)(376002)(346002)(366004)(39860400002)(396003)(66476007)(2906002)(86362001)(8676002)(31696002)(66946007)(4326008)(38100700002)(75432002)(66556008)(8936002)(83380400001)(53546011)(45080400002)(316002)(54906003)(786003)(6506007)(2616005)(186003)(110136005)(41320700001)(6666004)(5660300002)(26005)(6486002)(6512007)(41300700001)(478600001)(31686004)(43740500002)(45980500001);DIR:OUT;SFP:1101;
-X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
-X-MS-Exchange-AntiSpam-MessageData-0:
- =?utf-8?B?WG4rWTdTV05VMHZ3M3JqWnR4S1VjZEFjNW1QdmdaVjVzVFoxNEUyNXJSQmlj?=
- =?utf-8?B?YzNCeE1PVTM4NmhkYithak5hREFsaHYyQlNabjFJT0NqalVLWTRTOFdFVHA5?=
- =?utf-8?B?ajg0RzRFVk4wemtJOVlSbElQeDFJaEgrWVBQMFA5aFNXaUJtTVA2dEkwRmxw?=
- =?utf-8?B?WjJJdzg4LzVkMVYwR2RZM2dpY0N6TUpvQWtFcjU0L2RSYjdhV1pZTDBQMXEx?=
- =?utf-8?B?ZWEycU9McWNxamtqbU9sSXpPYTh1OTcvRVJNbEF0SW5HVjQ0WlBtakZSR2Z1?=
- =?utf-8?B?RVZneitDVFVla2F5dUVCT1M2OXpCZWNFL2swN3hKRVg4TEVoS0hvSXo0THpM?=
- =?utf-8?B?OGpibmRvSUVaTjkwR2FQSGhLL3QzT095NlZUdXBwQXdqTkdSQkFMeWN5NktZ?=
- =?utf-8?B?QjdvVTRzWnBwRnlyOGdBR09pRmFhYVE3ZjR3NzE4NWRhR0lZbXdDak1LMzhk?=
- =?utf-8?B?cFoySHhETm9LZytUTHRET2pXWDlPSTNacVRIMEZyVFdhbXdtYmo0WWkvSjJ1?=
- =?utf-8?B?c3dDYk50MFA5S2dUeW0wa2wyQ254QXB3MnAxMndhR3NvbnNabEF6RnhOa0F4?=
- =?utf-8?B?QTFoNGJkRWs5TXZJOEZZTGJ2cDYwYm1iQm4yY3BTa2swVk9qcENOeE51b1g2?=
- =?utf-8?B?aDR6Z2gxTmN1V1d0QmVTKzE3SGtQMmd2alNwOEdKUmQwUklFL2Z5VHJjZnZO?=
- =?utf-8?B?aUZKcllkVVRPK0J4MVZpTjcwNHhJNnZYUlVPOTJKRnF4QjZHeXhVbXdUdzVq?=
- =?utf-8?B?SGlhU2N6cFBMWk9kVnhKNkJqcVVHQkkzcWtLeHNlSHIwUVZwQ2FCYUlxWW9Y?=
- =?utf-8?B?Q2szU0tud0xQWEJnVE1ZZWUrZ3pSaVFrQjZxeENaQ2tIaFZrTGxCZ0lQWEth?=
- =?utf-8?B?OU9BNGxBaFgvbktMcjZBTVhvWGRWSFFMSmxCZlkzS05RcVBiK1RzU0xMQ3ZE?=
- =?utf-8?B?MDhIdFg5SjV2MTVXZ0lhc1QxT0xxNm9jZnBVd1BQREs3NXJVN1JHRWhnT2dy?=
- =?utf-8?B?WmhWZmFpRDd1cEM5RW9HblpLRVNBd3VoYWo0aHlQNUE2a0RzZkhTc0tPUUNM?=
- =?utf-8?B?N1VlRElGOTJJeTErLzdhcVA4MllzcTV4NzlFVWMrck1XbFBaVkRlbXRTZjZG?=
- =?utf-8?B?YXB5UDkyKzMvVnJ6REVjRWdoT3d5bE1uZVNzczlCSUNhTUpNLzcrTTNNdlgv?=
- =?utf-8?B?QnZlZUxnRHFDajFFLzB5RHhydjdvOGtqU2ZIQkN5dWFYWG9VRXcxSXRPdzlD?=
- =?utf-8?B?WVFzWEhxQnRGNWtVTkZUdXQ1YUI0RDFZQ2VRcWk3U1c1MEZXeWF3T3VpSVZ3?=
- =?utf-8?B?dGRlNnBiT1hmTkM1bU02b3dHVm5QS2ZtNnZ3eWloTDRSNjAzYmV1ZmhHK1N5?=
- =?utf-8?B?Ry9GdkQyZTArK0tPTkVUQURDT0JBUmNYR1JJOFlBSU9MYmJIMDJ4T2thczB6?=
- =?utf-8?B?QXBTK1BYZ1lUWFJmbUU4WnhJbVo0NVNFbGNBZ3pUSWpmbnFpOUlTenNvdUxD?=
- =?utf-8?B?SVRuWWd3Q2hMV2xXaDQ2aGNlSVFXOEV6NCtPQ1hWN2hqVW1pZ25VNlJnQnE1?=
- =?utf-8?B?Y2JDczZwaXBjWW1RRFZTeThmd1NWWjBoMFVpdFRlUVdkTTcvRkI0NTVYYlpQ?=
- =?utf-8?B?ZVVHb3lNQzAvdTIwdVJPOUw2c2tnYVlCN3hwN2tIaFltbWxiR2NtNkxzYUdv?=
- =?utf-8?B?MG01d1M1UmtnazZFTWJtUERYYW9QWHNNd2RhS2xVbUx5TU9qN1NiV05PRWxO?=
- =?utf-8?B?dW1IZ3BmNzZHNVlqaDhCcTBwaGp2L0J6akYrbEo1cStEQ0hXalpLT2tYM20v?=
- =?utf-8?B?U2ZNTm9JZ0hEVGh2ZS9YMGhWbGJjUWhKVDgxNzZBT0U0VXdNeWVYSEgxUS9t?=
- =?utf-8?B?MXZ6ZDlTSWg3QmptK3I3RFlvRFIzWWVEV0hpUmRhbkN3cGNveFBGbDQ4eHlG?=
- =?utf-8?B?c2R1KzgzenAvMlhjVDVxZmNRamlTdXY2V0FVTDd4dXI3TkVpeVFVaDEyY1kr?=
- =?utf-8?B?aVdHR3hxTWVIL2IrUnIyeUdrZ3VJUTFMYXFCbTllWG81QUw5bE93VWUyWjRF?=
- =?utf-8?B?T0FKSEZBOHFNSXhXTVlWc0k4RUkvWEtsRmErZ1YvdC9PTFhFUmttM21GN0tR?=
- =?utf-8?Q?LxVOW/eVKAMfQmNEQWFUafxXf?=
-X-OriginatorOrg: math.wisc.edu
-X-MS-Exchange-CrossTenant-Network-Message-Id:
- c1f2d612-d5b7-4d11-d035-08da7fb65774
-X-MS-Exchange-CrossTenant-AuthSource: SJ0PR06MB8325.namprd06.prod.outlook.com
-X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Aug 2022 18:37:16.0175 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 2ca68321-0eda-4908-88b2-424a8cb4b0f9
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName:
- PMlxJ54NucXUBqKJ24T+sQgBQvU1ImDu9zXd0gzauVoH3CelIRwBPzOVjbEgT+j0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH0PR06MB8570
+MIME-Version: 1.0
+Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-1136304136-1660675425=:1333324"
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Brian, you're not actually still defending the NFB's reasoning, are you? 
-It could hardly have been more clearly wrong.
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
 
-You are posting this to an email list for a free, open source screen 
-reader. I made my living as the manager of high performance computing at 
-the University Of Wisconsin with Speakup and Orca. And Jaws still 
-exists. The price has dropped to $99 though.
+---1404930036-1136304136-1660675425=:1333324
+Content-Type: TEXT/PLAIN; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: QUOTED-PRINTABLE
 
-Look, the NFB made a mistake. A *HUGE* mistake. That's about as obvious 
-as it could possibly be.
+John,
 
 
-On 8/16/22 13:14, Brian Buhrow wrote:
-> 	hello.  Having participated in the debate with Microsoft about narrator, let me see if I
-> can provide a bit of context.  When Microsoft began putting a real effort into Narrator, there
-> wer  those of us who were concerned that it would put Freedom scientific out of business and,
-> thus, potentially, remove accessibility choices for blind users, especially for folks who were
-> currently employed using JAWS or, at the time, GW Micro.  Exhibit A was, and is, Apple with
-> VoiceOver.  If you want to use Apple products with access technology your choice is, well,
-> VoiceOver.  If it doesn't work for you, well then, tough on you.  That's also true of Android
-> with Talkback and Brailleback.  Yes, Brltty works on Android, but it relies on the access
-> provided by Talkback and Brailleback to get its data, so if Talkback and Brailleback can't see
-> it, it isn't visible nonvisually.
-> 	It takes a lot of effort to make a good screen reader and it takes even more effort to
-> keep it running well.  The argument ran like this: if Microsoft put a huge amount of effort
-> into getting Narrator working well, would they continue to provide the hooks and data Freedom
-> Scientific and NVDA needed to make their products work?  And, what if Narrator was deemed good
-> enough by Microsoft, but didn't work for folks who were trying to hold down jobs, but JAWS and,
-> at the time GW Micro, couldn't  continue making their products function because they weren't
-> getting what they needed from Microsoft?  what we said was we didn't want Microsoft to work on
-> Narrator at the expense of continuing to develop and share their access API's with third party
-> screen reader providers.
-> 	While it's true the accessibility scene hasn't played out exactly as we described it in
-> terms of the time frame we laid out, it is true that, over time, accessibility options for
-> Windows users are dwindling.  Case and point, if you purchase the tablet version of Windows, or
-> the stock home edition of Windows, by default, you cannot use any screen reader other than
-> Narrator on that installation unless you flip a magic switch in that installation to enable the
-> full Windows experience.  In addition to allowing third party screen readers, that switch also
-> allows the installation of unsigned software outside of the Microsoft store.  Microsoft claims
-> they will never disable the ability to flip that switch, but the fact that we are one switch
-> away from not being able to use the screen reader of our choice on Windows, is, in my view, an
-> erosion of access.  Remember, there was a time when Microsoft said it would never release a
-> Windows version 11.
+
+On Mon, 15 Aug 2022, John G. Heim wrote:
+
+> Linux is free, open source software. Much of it is written by volunteers.=
+ The=20
+> Linux community simply isn't comperable to Apple or Microsoft. Apple and=
+=20
+> Microsoft have ethical obligations that do not apply to the Linux communi=
+ty.=20
+I am sorry, but this is simply not correct.
+
+Linus began developing Linux, marketed as a free edition of
+UNIX in 1991.
+Since then the system is frankly used in countless ways,
+including products that carry legal obligations to be inclusive.
+
+Here is an article listing but a few.   Searching uses for Linux?
+In your preferred tool will lead to many more such articles.
+
+
+    From your kitchen to the reaches of outer space, Linux gets
+    everywhere...
+
+25 Awesome Things Powered By Linux
+By Joey Sneddon =B7 Updated 5 January 2021
+
+https://www.omgubuntu.co.uk/2016/08/25-awesome-unexpected-things-powered-li=
+nux
+
+A few from this list alone.
+
+1. Super Computers
+    Yep, every single one of the world's top 500 supercomputers
+use Linux.
+
+2. NASA
+    From storing data sent down from satellites and telescopes, to
+    crunching that data for research institutions and the greater
+public to use, NASA relies heavily on Linux.
+
+6. Roku
+    All Roku hardware runs a custom, heavily modified version of
+Linux called `Roku OS'.
+
+8. Smart TVs
+    Linux doesn't just power a plethora of set-top boxes. A number
+of leading TV manufacturers offer a built-in `smart TV'
+experience Using Linux.
+    From LG (who use WebOS) to Samsung (who use Tizen) to Sharp,
+HiSense, Philips and Panasonic... The list of gogglebox giants
+making use of Linux goes on!
+
+10. The Amazon Kindle
+    The Kindle is almost a byword for digital e-readers, but few
+give much thought to the embedded operating system it runs, but
+it is Linux. Some hackers even managed to install Ubuntu on the
+early-gen Kindles.
+    The very first version of the Kindle OS used Linux kernel
+v2.6.26,
+    while the most recent, the Kindle Oasis, uses v3.0.35.
+
+15. Self Driving Cars
+
+    Google's autonomous car computers run Linux, as do prototype
+    self-driving vehicles from General Motors (GM) and Volkswagen.
+
+19. Advanced Air Traffic Control
+
+    The Federal Aviation Administration of the United States
+switched to Linux back in 2006. It runs custom-built software to
+manage and display air traffic flow - software that runs on
+Linux.
+
+20. Chromebooks
+    You'd be surprised how many people think Chromebooks run
+Android -- they don't. Chromebooks run Chrome OS, a Linux
+distribution based on but heavily modified from) Gentoo.
+
+23. U.S. Department of Defense
+
+    The United States Department of Defense is the single biggest
+customer of Red Hat Linux.
+
+Honestly I have no idea where you get the sense that Linux is run
+by volunteers.  When IBM bought Red Hat, the company behind
+Fedora in 2019, they paid 34 billion dollars for the company.=20
+Meaning this individual is likely drawing an amazing wage to
+define Accessibility in Linux by  their very small and limited
+dictionary.
+
+
+Karen
+
+
+
+
+> On 8/14/22 18:21, Karen Lewellen wrote:
+>>  I echo this attitude concern, but for a different reason.
+>>  who gets to decide what bodies=C2=A0 deserve a place at the table?
+>>  because of a vascular accident in an eye surgery, I experience a brain
+>>  anomaly where certain frequencies stimulate the dizzy centres of my bra=
+in.
+>>  allot of those frequencies happen in poorly designed software speech
+>>  configurations for Linux.
+>>  Meaning, because little effort has been made to give choices for Linux
+>>  speech in the gui, if I wanted to use this, I would have to choose betw=
+een
+>>  a Linux computer and hospitalization.
+>>  compare this with apple hardware.
+>>  I recently aquired a=C2=A0 mid 2012 macbook pro which, because of how t=
+he
+>>  voiceover=C2=A0=C2=A0 sound is produced is perfectly safe for my use..a=
+nd I can
+>>  still run=C2=A0 only one=C2=A0 Mac os off=C2=A0 from the last pre m.1 s=
+ystems.
+>>  i have an associate in my office running their business on a 2011 macbo=
+ok
+>>  pro.
+>>  Indeed climate change, landfill issues, available resources in terms of
+>>  training and access all over the world.
+>>  And, for many how their body works mandates choices.
+>>  There was a time when one of the great things about Linux was that it
+>>  could be used to breathe=C2=A0 new life into older hardware. especially
+>>  helpful in=C2=A0 non-western countries where getting the fastest car on=
+ the
+>>  road was costly.
+>>  If your attitude was the rule though, those folks regardless of abiliti=
+es
+>>  might never get computers at all.
+>>  =C2=A0take your attitude and say substitute braille.
+>>  =C2=A0Statistically less than 10% of the blindness community are braill=
+e
+>>  users, meaning the majority do not=C2=A0 use it, or even learn it if ne=
+wly
+>>  blinded.
+>>  so, its unfortunate some blind people are still stuck needing volumes a=
+nd
+>>  volumes of braille, but=C2=A0 to expect the world to confirm to such a =
+limited
+>>  use language etc.
+>>  Speaking personally, especially given how flexible Linux is supposed to
+>>  be?
+>>  deciding some have no place at your gui table is little different than
+>>  deciding those who are visible minorities, no matter the location, have=
+ no
+>>  place at the table either.
+>>  =C2=A0Karen
+>>=20
+>>=20
+>>
+>>  On Sun, 14 Aug 2022, Chris Brannon wrote:
+>>=20
+>> >  Matt Campbell <mattcampbell@pobox.com> writes:
+>> >=20
+>> > >  I took this position in 2000, but for the last decade or more, acce=
+ss=20
+>> > >  to a
+>> > >  GUI has been widely available to blind people at no extra cost. (If=
+=20
+>> > >  there
+>> > >  are blind people today who are truly stuck on old hardware with no
+>> > >  accessible GUI, that's unfortunate, but I think this is one case wh=
+ere=20
+>> > >  the
+>> > >  best solution is charity, not expecting the rest of the world to=20
+>> > >  accommodate
+>> > >  this situation forever. That's no different than for sighted people=
+=20
+>> > >  stuck on
+>> > >  very old hardware.)
+>> >=20
+>> >  I'm sorry, but this is a very irresponsible attitude, given the impac=
+t
+>> >  of climate change.=C2=A0 And now on top of that, the world is coping =
+with
+>> >  supply chain issues.=C2=A0 "Chuck it in a landfill because it won't r=
+un the
+>> >  latest Electron app" is deeply unacceptable.
+>> >=20
+>> >  I do agree with you about the importance of GUI accessibility, even
+>> >  though I only use one when circumstances force me to it.=C2=A0 I'm so=
+mewhat
+>> >  optimistic about the recent news.
+>> >=20
+>> >  -- Chris
+>> >=20
+>> >=20
+>>=20
 >
-> 	So, while it may be that our message was mis-interpreted, and we may have not stated it as
-> well as we should have, the goal of the message was, in fact, to expand accessibility choices,
-> not to diminish them.
 >
-> -Brian
->
->
+---1404930036-1136304136-1660675425=:1333324--
 
