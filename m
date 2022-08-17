@@ -1,47 +1,40 @@
-Return-Path: <speakup+bounces-596-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-597-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 5D727597839
-	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 22:46:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id DE1225978D7
+	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 23:19:37 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E5FD5381909; Wed, 17 Aug 2022 16:46:49 -0400 (EDT)
+	id 26E1C3819A8; Wed, 17 Aug 2022 17:19:37 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0FB16384812
-	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 16:46:48 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id C4E0D38486F
+	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 17:19:35 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CD9EC38376C; Wed, 17 Aug 2022 16:46:45 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 96882381909
-	for <speakup@linux-speakup.org>; Wed, 17 Aug 2022 16:46:45 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 8C190121DA7; Wed, 17 Aug 2022 20:46:14 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 8AA9B12132F;
-	Wed, 17 Aug 2022 16:46:14 -0400 (EDT)
-Date: Wed, 17 Aug 2022 16:46:14 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: K0LNY_Glenn <glenn@ervin.email>
-cc: Butch Bussen <butchb@shellworld.net>, "John G. Heim" <jheim@wisc.edu>, 
-    speakup@linux-speakup.org, Milan Zamazal <pdm@zamazal.org>, 
-    Blinux-list@redhat.com
+	id 278B3380A78; Wed, 17 Aug 2022 17:19:33 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0086.b.hostedemail.com [64.98.42.86])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 0731F3805DF
+	for <speakup@linux-speakup.org>; Wed, 17 Aug 2022 17:19:33 -0400 (EDT)
+Received: from omf06.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id 3D4D7100339AE;
+	Wed, 17 Aug 2022 21:19:32 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf06.b.hostedemail.com (Postfix) with ESMTPA id 580848A80DEE;
+	Wed, 17 Aug 2022 21:19:31 +0000 (UTC)
+Message-ID: <002f01d8b27f$0b75a640$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Karen Lewellen" <klewellen@shellworld.net>
+Cc: "Butch Bussen" <butchb@shellworld.net>,
+	"John G. Heim" <jheim@wisc.edu>,
+	<speakup@linux-speakup.org>,
+	"Milan Zamazal" <pdm@zamazal.org>,
+	<Blinux-list@redhat.com>
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net> <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net> <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net> <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131909070.1258388@server2.shellworld.net> <033301d8af87$4227f3f0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208140031380.1264046@server2.shellworld.net> <Pine.LNX.4.64.2208160617250.1327201@server2.shellworld.net> <049901d8b17d$8869e7e0$80ffa8c0@Win7VM> <e3c7521b-cd73-38d7-0e9a-0e7a956e0f47@wisc.edu> <Pine.LNX.4.64.2208170740540.1352313@server2.shellworld.net> <Pine.LNX.4.64.2208171215290.1353159@server2.shellworld.net> <003101d8b255$9973b150$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208171234210.1354666@server2.shellworld.net> <003c01d8b258$0bc5acc0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208171501270.1356841@server2.shellworld.net> <002201d8b278$f82e4070$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208171638110.1359061@server2.she
+ llworld.net>
 Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-In-Reply-To: <002201d8b278$f82e4070$80ffa8c0@Win7VM>
-Message-ID: <Pine.LNX.4.64.2208171638110.1359061@server2.shellworld.net>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net>
- <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net>
- <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net>
- <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131909070.1258388@server2.shellworld.net>
- <033301d8af87$4227f3f0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208140031380.1264046@server2.shellworld.net>
- <Pine.LNX.4.64.2208160617250.1327201@server2.shellworld.net>
- <049901d8b17d$8869e7e0$80ffa8c0@Win7VM> <e3c7521b-cd73-38d7-0e9a-0e7a956e0f47@wisc.edu>
- <Pine.LNX.4.64.2208170740540.1352313@server2.shellworld.net>
- <Pine.LNX.4.64.2208171215290.1353159@server2.shellworld.net>
- <003101d8b255$9973b150$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208171234210.1354666@server2.shellworld.net>
- <003c01d8b258$0bc5acc0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208171501270.1356841@server2.shellworld.net>
- <002201d8b278$f82e4070$80ffa8c0@Win7VM>
+Date: Wed, 17 Aug 2022 16:19:31 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,32 +44,48 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-324655437-1660769174=:1359061"
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Stat-Signature: brdj6y5hjwksxock3i3d5xt8pbycb89m
+X-Rspamd-Server: rspamout03
+X-Rspamd-Queue-Id: 580848A80DEE
+X-Spam-Status: No, score=-2.60
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/g3jAyBcMquyGcp393sF2qdx3FJ9Si3UI=
+X-HE-Tag: 1660771171-837834
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+Please do.
 
----1404930036-324655437-1660769174=:1359061
-Content-Type: TEXT/PLAIN; charset=iso-8859-1; format=flowed
-Content-Transfer-Encoding: QUOTED-PRINTABLE
+----- Original Message ----- 
+From: "Karen Lewellen" <klewellen@shellworld.net>
+To: "K0LNY_Glenn" <glenn@ervin.email>
+Cc: "Butch Bussen" <butchb@shellworld.net>; "John G. Heim" <jheim@wisc.edu>; 
+<speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>; 
+<Blinux-list@redhat.com>
+Sent: Wednesday, August 17, 2022 3:46 PM
+Subject: Re: "Accessibility in Fedora Workstation" (fwd)
+
 
 Glen,
 you are missing the point.
-A commission board, at least if constructed  with integrity serves as a=20
+A commission board, at least if constructed  with integrity serves as a
 watchdog for your organization's activities.
-Making sure that you act, objectively, and above influence with government=
-=20
+Making sure that you act, objectively, and above influence with government
 funding.
 That role differs from a public servant, like yourself.
-In fact that the commission  has members from both organizations is=20
+In fact that the commission  has members from both organizations is
 exactly why you should not be a member.
-if, as you said, the state has an Nfb philosophy, I wonder  just how above=
-=20
-influence  that commission actually is, lip service attendance does not=20
+if, as you said, the state has an Nfb philosophy, I wonder  just how above
+influence  that commission actually is, lip service attendance does not
 translate  to the statement you freely made.
-Honestly, i wish I knew someone with Nebraska public radio.  there is a=20
-investigative, data journalism piece right here, exploring how objective=20
+Honestly, i wish I knew someone with Nebraska public radio.  there is a
+investigative, data journalism piece right here, exploring how objective
 your  office is in fact.
 
 
@@ -93,8 +102,8 @@ On Wed, 17 Aug 2022, K0LNY_Glenn wrote:
 > ----- Original Message -----
 > From: "Karen Lewellen" <klewellen@shellworld.net>
 > To: "K0LNY_Glenn" <glenn@ervin.email>
-> Cc: "Butch Bussen" <butchb@shellworld.net>; "John G. Heim" <jheim@wisc.ed=
-u>;
+> Cc: "Butch Bussen" <butchb@shellworld.net>; "John G. Heim" 
+> <jheim@wisc.edu>;
 > <speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>;
 > <Blinux-list@redhat.com>
 > Sent: Wednesday, August 17, 2022 2:06 PM
@@ -102,16 +111,15 @@ u>;
 >
 >
 > wrong.
-> Your first duty is to those clients  You serve.  as illustrated here the =
-Nfb
+> Your first duty is to those clients  You serve.  as illustrated here the 
+> Nfb
 > used their ability to reach insiders to influence policy to the detriment
 > of the broader community...same can clearly be said for freedom
 > scientific.
 > That you stated clearly that your  rehab system runs on an nfb philosophy
 > illustrates my point perfectly.
 > There are countless legal terms for  such conflicts of interest, I dare
-> say if you were serving any other clientele your government watchdog woul=
-d
+> say if you were serving any other clientele your government watchdog would
 > put  a stop  to the practice.
 > allows the organization to have undue almost antitrust influence on
 > people's lives.
@@ -148,12 +156,10 @@ d
 >>
 >>> Yeah, I had been to a state NFBN convention that year and did the PAC
 >>> thing.
->>> Then when the NFB did that, I called up the state treasurer for the NFB=
-N
+>>> Then when the NFB did that, I called up the state treasurer for the NFBN
 >>> and
 >>> cancelled my PAC plan.
->>> I told them that they don't care if I can read my money, then they don'=
-t
+>>> I told them that they don't care if I can read my money, then they don't
 >>> need any from me.
 >>> Glenn
 >>> ----- Original Message -----
@@ -207,8 +213,7 @@ t
 >>>>>>   problems,
 >>>>>>   but it is the core philosophy that formed the NFB that knows that
 >>>>>>   society
->>>>>>   has low expectations of the Blind, and this is why the NFB believe=
-s
+>>>>>>   has low expectations of the Blind, and this is why the NFB believes
 >>>>>> in
 >>>>>>   skills and high expectations.
 >>>>>>   And with that, comes giving respect to the Blind, like the respect
@@ -237,16 +242,15 @@ s
 >>>>>>   In states where the NFB philosophy is embraced, if a client said I
 >>>>>> want
 >>>>>>   to
->>>>>>   use a Mac, or I want Window Eyes, then that is what they would get=
-,
+>>>>>>   use a Mac, or I want Window Eyes, then that is what they would get,
 >>>>>> no
 >>>>>>   questions asked.
 >>>>>>   They would not have to fight to get it.
 >>>>>>   I simply cannot imagine a counselor saying that someone has to use
 >>>>>> the
 >>>>>>   software that the counselor wants them to have.
->>>>>>   When I hear that stuff, I almost cannot believe it, but I know But=
-ch
+>>>>>>   When I hear that stuff, I almost cannot believe it, but I know 
+>>>>>> Butch
 >>>>>>   well
 >>>>>>   enough to know he wouldn't make that up.
 >>>>>>
@@ -254,8 +258,7 @@ ch
 >>>>>>   ----- Original Message -----
 >>>>>>   From: "Butch Bussen" <butchb@shellworld.net>
 >>>>>>   To: "Karen Lewellen" <klewellen@shellworld.net>
->>>>>>   Cc: "K0LNY_Glenn" <glenn@ervin.email>; <speakup@linux-speakup.org>=
-;
+>>>>>>   Cc: "K0LNY_Glenn" <glenn@ervin.email>; <speakup@linux-speakup.org>;
 >>>>>>   "Milan
 >>>>>>   Zamazal" <pdm@zamazal.org>; <Blinux-list@redhat.com>
 >>>>>>   Sent: Tuesday, August 16, 2022 8:18 AM
@@ -264,8 +267,7 @@ ch
 >>>>>>
 >>>>>>   You are right.  In Nevada, freedom pushed jaws to the rehab people
 >>>>>> and
->>>>>>   took them out for steak diners and so forth.  I fought like hell t=
-o
+>>>>>>   took them out for steak diners and so forth.  I fought like hell to
 >>>>>> get
 >>>>>>   them to buy window-eyes.
 >>>>>>   73
@@ -280,8 +282,7 @@ o
 >>>>>>>   And where do these employers learn about jaws?
 >>>>>>>   In fact, provide if you do not mind an example of how  this works
 >>>>>>>   exactly.
->>>>>>>   after all, unless I am incorrect, these employers are not persona=
-l
+>>>>>>>   after all, unless I am incorrect, these employers are not personal
 >>>>>>>   Jaws
 >>>>>>>   users, meaning someone they trust continues to sell them on an
 >>>>>>>   expensive
@@ -364,8 +365,7 @@ l
 >>>>>>>>   are
 >>>>>>>>     creating an employment program where our clients will train in
 >>>>>>>>     Linux,
->>>>>>>>     needing a solid screen reader solution for the system.  We wil=
-l
+>>>>>>>>     needing a solid screen reader solution for the system.  We will
 >>>>>>>>     give you
 >>>>>>>>     an
 >>>>>>>>     exclusive development contract for s millions to create the
@@ -533,7 +533,7 @@ l
 >>>>>>>>>>>     Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 >>>>>>>>>>>
 >>>>>>>>>>>
->>>>>>>>>>>>>>>>     "KL" =3D=3D Karen Lewellen
+>>>>>>>>>>>>>>>>     "KL" == Karen Lewellen
 >>>>>>>>>>>>>>>> <klewellen@shellworld.net>
 >>>>>>>>>>>>>>>>   writes:
 >>>>>>>>>>>   KL>  What bothers me most are his lack of actual
@@ -560,17 +560,17 @@ l
 >>>>>>>>>>>     also know first hand that he is open to constructive
 >>>>>>>>>>>     feedback and
 >>>>>>>>>>>   I
->>>>>>>>>>>     believe he=C3=A2?Td be happy to be corrected about possible
+>>>>>>>>>>>     believe heâ?Td be happy to be corrected about possible
 >>>>>>>>>>>     technical
 >>>>>>>>>>>     inaccuracies in the interview.  It may be also a good
 >>>>>>>>>>>     opportunity
 >>>>>>>>>>>   to
->>>>>>>>>>>     find out what=C3=A2?Ts possibly missing in making anybody
+>>>>>>>>>>>     find out whatâ?Ts possibly missing in making anybody
 >>>>>>>>>>>     better
 >>>>>>>>>>>     informed.
 >>>>>>>>>>>
->>>>>>>>>>>     As for =C3=A2?oabsolute dismissal of what he has not
->>>>>>>>>>>   experienced=C3=A2?=C2=9D,
+>>>>>>>>>>>     As for â?oabsolute dismissal of what he has not
+>>>>>>>>>>>   experiencedâ?,
 >>>>>>>>>>>   what
 >>>>>>>>>>>     reasonable free software alternatives to a less or more
 >>>>>>>>>>>     standard
@@ -585,7 +585,7 @@ l
 >>>>>>>>>>>     documents, to be compatible with other computer users,
 >>>>>>>>>>>     etc.?
 >>>>>>>>>>>
->>>>>>>>>>>     And let=C3=A2?Ts be realistic.  We celebrate every single
+>>>>>>>>>>>     And letâ?Ts be realistic.  We celebrate every single
 >>>>>>>>>>>   developer
 >>>>>>>>>>>   hired
 >>>>>>>>>>>     to
@@ -630,6 +630,6 @@ l
 >>
 >>
 >
->
----1404930036-324655437-1660769174=:1359061--
+> 
+
 
