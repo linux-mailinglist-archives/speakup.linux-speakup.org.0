@@ -1,36 +1,48 @@
-Return-Path: <speakup+bounces-577-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-578-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AA341596697
-	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 03:16:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id BFA80596709
+	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 03:52:59 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=OemISLOG;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 30A15384831; Tue, 16 Aug 2022 21:16:25 -0400 (EDT)
+	id 84FDD38480A; Tue, 16 Aug 2022 21:52:58 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 26ABF3848A9
-	for <lists+speakup@lfdr.de>; Tue, 16 Aug 2022 21:16:24 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6D88F38480A
+	for <lists+speakup@lfdr.de>; Tue, 16 Aug 2022 21:52:58 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B333238480B; Tue, 16 Aug 2022 21:16:22 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 84C9E3847F5
-	for <speakup@linux-speakup.org>; Tue, 16 Aug 2022 21:16:22 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 36B3C121B7C; Wed, 17 Aug 2022 01:15:48 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 354501204C2;
-	Tue, 16 Aug 2022 21:15:48 -0400 (EDT)
-Date: Tue, 16 Aug 2022 21:15:48 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: "John G. Heim" <jheim@math.wisc.edu>
-cc: Chevelle <cstrobel@crosslink.net>, speakup@linux-speakup.org
-Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-In-Reply-To: <5d7172a3-21b8-72ca-7e85-b7ea04b4b37c@math.wisc.edu>
-Message-ID: <Pine.LNX.4.64.2208162114230.1339726@server2.shellworld.net>
-References: <202208162107.27GL7BUC025757@nfbcal.org>
- <3a0ff36e-6988-477e-6f91-9ec4fd5618ec@crosslink.net>
- <5d7172a3-21b8-72ca-7e85-b7ea04b4b37c@math.wisc.edu>
+	id 26E40384802; Tue, 16 Aug 2022 21:52:51 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id DD2E33847FF
+	for <speakup@linux-speakup.org>; Tue, 16 Aug 2022 21:52:50 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [172.58.23.176])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 4FB28769
+	for <speakup@linux-speakup.org>; Tue, 16 Aug 2022 18:52:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+	t=1660701169; bh=T5kGXCmd9O1xiQcmrgVM4mbqSTSindTb35dzq9Rl8L0=;
+	h=Date:From:To:Subject:References:In-Reply-To:From;
+	b=OemISLOGbvSBPp/iug7bf7g6t0IJqjXbffJ05wAsv9KmwNlvTYsxlvdLw+QRw08vF
+	 BQb/cpEqKjOdzlkrq/QxfUMtukvHvouB0aGwHAHyxD6j6XJzk756XRi3EKiYhl/Rse
+	 q4/QZiYosKVJnFUlaht54PXJDDOTSO6W6zlW6Mv/unwyqEVAC4gaNRy1zR16/9yDcT
+	 Ygm+mr+KXewx3/LNjvJLMQ4UEJxzZJbIl+CMVz2MlWZBfCm4pASEX44QjTQxjimDRF
+	 5xBzmCaKnBgbZqACD9HW8QaVzypWnj0D1xMDhFEfKirUxMP6+NaduupRbKZaQal5ns
+	 jWUrV8472N6Cw==
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 6AFA1C300; Tue, 16 Aug 2022 18:52:46 -0700 (MST)
+Date: Tue, 16 Aug 2022 18:52:46 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: speakup@linux-speakup.org
+Subject: other screen readers, was: Re: "Accessibility in Fedora Workstation"
+ (fwd)
+Message-ID: <YvxJ7vIpvuDP2KK+@gregn.net>
+References: <62c8f9a5-aeec-58a5-8c5b-59734dab334e@math.wisc.edu>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -40,137 +52,59 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-1067510066-1660698948=:1339726"
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <62c8f9a5-aeec-58a5-8c5b-59734dab334e@math.wisc.edu>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 0.103.6 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+On Tue, Aug 16, 2022 at 01:26:48PM -0500, John G. Heim wrote:
+> I believe I was using Speakup and something
+> called Nupernicus on Linux at the time.
 
----1404930036-1067510066-1660698948=:1339726
-Content-Type: TEXT/PLAIN; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: QUOTED-PRINTABLE
+It was actually called Gnopernicus. I recall building it from source
+when Marc first released it. I remember it crashed a lot, and wasn't very
+usable, but I was thrilled that I was able to use Gnome at least a
+little bit, and get a feel for what it was like.
 
-and there is a difference between asking Microsoft to work with=20
-independent product developers, and telling them to drop their efforts.
+<https://en.wikipedia.org/wiki/Gnopernicus>
+
+Since android came up in this discussion, I will point out that
+talkback isn't the only screen reader option on android.
+
+<https://blindhelp.net/software/csr>
+
+Since google is introducing restrictions on side loaded apps in
+android 13, I don't know what this means for CSR down the road.
+
+<https://www.androidauthority.com/android-13-sideloading-apps-restrictions-3161162/>
+
+Speaking of JAWS, there's a screen reader user tester training course
+out there. The first prerequisite for that course is ... experience
+with JAWS for at least three years:
+
+<https://carroll.org/screen-reader-user-tester-training-program/>
+
+I guess that means the cheapskates using NVDA, Narrator,
+or those who don't use
+windows/JAWS as their daily driver aren't worth certifying. Makes me
+wonder if the VFO group had anything to do with setting up this course.
+
+In the spirit of staying on topic, we remember android runs on the
+linux kernel, yes?
+
+Greg
 
 
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
 
-On Tue, 16 Aug 2022, John G. Heim wrote:
-
-> But again, Microsoft was going to improve Narrator. The NFB asked them no=
-t=20
-> to. Pointing out that narrator doesn't have the functionality of Jaws onl=
-y=20
-> shows that the NFB was successful in getting Microsoft to drop their plan=
- to=20
-> improve Narrator.
->
->
-> On 8/16/22 16:36, Chevelle wrote:
->>  No matter if you like NFB or not, they were correct in the need to have
->>  independent screenreader options.=C2=A0 Hundreds if not thousands of bl=
-ind
->>  people forced to use Windows by their employer would be out of a job if
->>  JAWS did not exist.=C2=A0 Narrator still doesn't have anything close to=
- the
->>  functionality or scripting capabilities of JAWS or NVDA.
->>=20
->>
->>  On 8/16/2022 5:07 PM, Brian Buhrow wrote:
->> >  =C2=A0=C2=A0=C2=A0=C2=A0hello John.=C2=A0 While we'll probably have t=
-o agree to disagree, I=20
->> >  believe we're talking past
->> >  each other.=C2=A0 Our argument was, and is, to encourage Microsoft to=
- follow=20
->> >  a path which would lead
->> >  to the most choices for the blind Windows user.=C2=A0 If they had pur=
-sued=20
->> >  the development of
->> >  Narrator to the exclusion of other screen reader developers, somethin=
-g=20
->> >  they talked about and
->> >  which was absolutely within their control, that would not have been g=
-ood=20
->> >  for the blind
->> >  population in any way.=C2=A0 The fact that Freedom Scientific benefit=
-ed from=20
->> >  that argument, both
->> >  because it was the dominant player in the screen reader space and=20
->> >  because they were used as an
->> >  example in the argument, was orthogonal to the argument itself.
->> >=20
->> >  =C2=A0=C2=A0=C2=A0=C2=A0With respect to VoiceOver, I agree.=C2=A0 For=
- those who use=20
->> >  VoiceOver and like it, that's
->> >  great.=C2=A0 but I know a number of folks who switched to a Mac and f=
-ound=20
->> >  they had to switch back to
->> >  Windows because they couldn't work as efficiently or do as much as th=
-ey=20
->> >  had been doing under
->> >  Windows.=C2=A0 And there's the rub; if VoiceOver doesn't work for you=
- on the=20
->> >  Mac, your stuck if you
->> >  want to use the Mac, unless you're willing to hire a reader to do you=
-r=20
->> >  work.=C2=A0 Under Windows,
->> >  you can use Narrator, Jaws or NVDA; all of them have their issues, bu=
-t,=20
->> >  between them, you can
->> >  probably find a way to get what you need done; that's not an option f=
-or=20
->> >  a Mac user.
->> >=20
->> >  =C2=A0=C2=A0=C2=A0=C2=A0And,while I appreciate that I get VoiceOver i=
-ncluded with my=20
->> >  iPhone without having to pay
->> >  extra for it, I don't think of VoiceOver as a free screen reader.=C2=
-=A0=20
->> >  Apple products are very
->> >  expensive, relative to the Android or Windows alternatives, even with=
-=20
->> >  the cost of Jaws added to
->> >  the Windows side, but, of course, there's NVDA now, so I don't have t=
-o=20
->> >  include Jaws in my cost
->> >  comparison.=C2=A0 But really, the problem I have with Apple and Googl=
-e is=20
->> >  that I am potentially one
->> >  update away from having an unusable phone or Mac.=C2=A0 That is a ver=
-y scary=20
->> >  place to be=C2=A0 if you're
->> >  using their technology to hold a job.=C2=A0 And that is why we argued=
-=20
->> >  against having Narrator become
->> >  the exclusive screen reader for Windows users.=C2=A0 You have the lux=
-ury, as=20
->> >  do I, of having the
->> >  knowledge and skill to make open source access technology work for yo=
-u,=20
->> >  allowing you to pursue
->> >  a successful career.=C2=A0 Not everyone has that option, but we who c=
-an=20
->> >  influence such things,
->> >  should do all we can to pursuade technologists to give non-computer=
-=20
->> >  blind folks as many choices
->> >  as possible=C2=A0 in their use of access technology.=C2=A0 In my view=
-, and the=20
->> >  view of the NFB, which is
->> >  where you and I disagree, encouraging Microsoft to develop Narrator w=
-ith=20
->> >  the possibility of
->> >  shutting out the third party screen readaers, is not the way to do th=
-at.
->> >  thankfully, they have not done that and we still have choice on the=
-=20
->> >  Windows platform.
->> >=20
->> >  -Brian
->> >=20
->> >=20
->>=20
->
->
----1404930036-1067510066-1660698948=:1339726--
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
