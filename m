@@ -1,48 +1,39 @@
-Return-Path: <speakup+bounces-589-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-590-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A6CB2597440
-	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 18:36:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B9D3A597447
+	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 18:40:30 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 36BA7384884; Wed, 17 Aug 2022 12:36:56 -0400 (EDT)
+	id 4E5A5384863; Wed, 17 Aug 2022 12:40:30 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 50B463848CC
-	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 12:36:54 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 051D0384848
+	for <lists+speakup@lfdr.de>; Wed, 17 Aug 2022 12:40:26 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 27ACB384834; Wed, 17 Aug 2022 12:36:52 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id E97BB38482C
-	for <speakup@linux-speakup.org>; Wed, 17 Aug 2022 12:36:51 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 15715121DA6; Wed, 17 Aug 2022 16:36:50 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 14731120B1F;
-	Wed, 17 Aug 2022 12:36:50 -0400 (EDT)
-Date: Wed, 17 Aug 2022 12:36:50 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: K0LNY_Glenn <glenn@ervin.email>
-cc: Butch Bussen <butchb@shellworld.net>, "John G. Heim" <jheim@wisc.edu>, 
-    speakup@linux-speakup.org, Milan Zamazal <pdm@zamazal.org>, 
-    Blinux-list@redhat.com
+	id 8759A38481F; Wed, 17 Aug 2022 12:40:23 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0190.b.hostedemail.com [64.98.42.190])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 5FE893818FF
+	for <speakup@linux-speakup.org>; Wed, 17 Aug 2022 12:40:23 -0400 (EDT)
+Received: from omf03.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 7E90318B7A25A;
+	Wed, 17 Aug 2022 16:40:22 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf03.b.hostedemail.com (Postfix) with ESMTPA id 985DC8017DD3;
+	Wed, 17 Aug 2022 16:40:21 +0000 (UTC)
+Message-ID: <003c01d8b258$0bc5acc0$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Karen Lewellen" <klewellen@shellworld.net>
+Cc: "Butch Bussen" <butchb@shellworld.net>,
+	"John G. Heim" <jheim@wisc.edu>,
+	<speakup@linux-speakup.org>,
+	"Milan Zamazal" <pdm@zamazal.org>,
+	<Blinux-list@redhat.com>
+References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net> <1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com> <Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net> <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net> <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net> <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131909070.1258388@server2.shellworld.net> <033301d8af87$4227f3f0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208140031380.1264046@server2.shellworld.net> <Pine.LNX.4.64.2208160617250.1327201@server2.shellworld.net> <049901d8b17d$8869e7e0$80ffa8c0@Win7VM> <e3c7521b-cd73-38d7-0e9a-0e7a956e0f47@wisc.edu> <Pine.LNX.4.64.2208170740540.1352313@server2.shellworld.net> <Pine.LNX.4.64.2208171215290.1353159@server2.shellworld.net> <003101d8b255$9973b150$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208171234210.1354666@server2.shellworld.net>
 Subject: Re: "Accessibility in Fedora Workstation" (fwd)
-In-Reply-To: <003101d8b255$9973b150$80ffa8c0@Win7VM>
-Message-ID: <Pine.LNX.4.64.2208171234210.1354666@server2.shellworld.net>
-References: <Pine.LNX.4.64.2208112229350.1215855@server2.shellworld.net>
- <1e623296-a020-b22d-52cc-77e3a01c2f61@pobox.com>
- <Pine.LNX.4.64.2208121226001.1229118@server2.shellworld.net>
- <871qtkrs03.fsf@zamazal.org> <02e001d8af3c$0d4cdfb0$80ffa8c0@Win7VM>
- <Pine.LNX.4.64.2208131437260.1254020@server2.shellworld.net>
- <02fe01d8af46$46cde5e0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131554070.1255408@server2.shellworld.net>
- <031101d8af50$8f3d3fb0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208131909070.1258388@server2.shellworld.net>
- <033301d8af87$4227f3f0$80ffa8c0@Win7VM> <Pine.LNX.4.64.2208140031380.1264046@server2.shellworld.net>
- <Pine.LNX.4.64.2208160617250.1327201@server2.shellworld.net>
- <049901d8b17d$8869e7e0$80ffa8c0@Win7VM> <e3c7521b-cd73-38d7-0e9a-0e7a956e0f47@wisc.edu>
- <Pine.LNX.4.64.2208170740540.1352313@server2.shellworld.net>
- <Pine.LNX.4.64.2208171215290.1353159@server2.shellworld.net>
- <003101d8b255$9973b150$80ffa8c0@Win7VM>
+Date: Wed, 17 Aug 2022 11:40:21 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -52,18 +43,39 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: MULTIPART/MIXED; BOUNDARY="-1404930036-2125122209-1660754210=:1354666"
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout04
+X-Rspamd-Queue-Id: 985DC8017DD3
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: h1fbbcg9eimn9rgt8ibub4pigkiq3igq
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/tnrW//r3mFL9gICDOE3EQE5Jwn1D87jU=
+X-HE-Tag: 1660754421-799167
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+I don't think so, we are people first, and being a government employee 
+should not preclude personal rights.
+Besides, I attended the conventions for CEU credits, but I never joined with 
+dues.
+Glenn
+----- Original Message ----- 
+From: "Karen Lewellen" <klewellen@shellworld.net>
+To: "K0LNY_Glenn" <glenn@ervin.email>
+Cc: "Butch Bussen" <butchb@shellworld.net>; "John G. Heim" <jheim@wisc.edu>; 
+<speakup@linux-speakup.org>; "Milan Zamazal" <pdm@zamazal.org>; 
+<Blinux-list@redhat.com>
+Sent: Wednesday, August 17, 2022 11:36 AM
+Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 
----1404930036-2125122209-1660754210=:1354666
-Content-Type: TEXT/PLAIN; charset=iso-8859-1; format=flowed
-Content-Transfer-Encoding: QUOTED-PRINTABLE
 
 speaking personally?
-No government employee should be a member of the NfB.   ethical conflict=20
+No government employee should be a member of the NfB.   ethical conflict
 of interest personified.
 
 Karen
@@ -71,10 +83,10 @@ Karen
 
 On Wed, 17 Aug 2022, K0LNY_Glenn wrote:
 
-> Yeah, I had been to a state NFBN convention that year and did the PAC thi=
-ng.
-> Then when the NFB did that, I called up the state treasurer for the NFBN =
-and
+> Yeah, I had been to a state NFBN convention that year and did the PAC 
+> thing.
+> Then when the NFB did that, I called up the state treasurer for the NFBN 
+> and
 > cancelled my PAC plan.
 > I told them that they don't care if I can read my money, then they don't
 > need any from me.
@@ -90,10 +102,10 @@ and
 >
 >
 > My personal favorite is the rejection of money that could be identified
-> by touch.  never mind that for honestly thousands of years the practice h=
-as
-> been common so those with limited education could still engage in commerc=
-e.
+> by touch.  never mind that for honestly thousands of years the practice 
+> has
+> been common so those with limited education could still engage in 
+> commerce.
 >
 >
 >
@@ -114,16 +126,15 @@ e.
 >>
 >>>  Holy cow! Are you aware that the NFB once asked Microsoft to *NOT*
 >>> improve
->>>  Narrator to the point where it would compete with Jaws? If you think t=
-he
+>>>  Narrator to the point where it would compete with Jaws? If you think 
+>>> the
 >>>  NFB is incapable of forcing choices on people, you are very sadly
 >>>  mistaken.
 >>>
 >>>
 >>>
 >>>  On 8/16/22 09:36, K0LNY_Glenn wrote:
->>>>   This sort of thing would never happen in Nebraska, or any state wher=
-e
+>>>>   This sort of thing would never happen in Nebraska, or any state where
 >>>>   the
 >>>>   agency staff is of the NFB philosophy.
 >>>>   Say what you want about the NFB, no organization is without its
@@ -133,11 +144,9 @@ e
 >>>>   has low expectations of the Blind, and this is why the NFB believes
 >>>> in
 >>>>   skills and high expectations.
->>>>   And with that, comes giving respect to the Blind, like the respect o=
-f
+>>>>   And with that, comes giving respect to the Blind, like the respect of
 >>>>   choice.
->>>>   Yeah I know about the information of recent about NFB abuse, but thi=
-s
+>>>>   Yeah I know about the information of recent about NFB abuse, but this
 >>>>   is
 >>>>   organizational issues, unrelated to the philosophy.  In fact, the
 >>>> fact
@@ -449,7 +458,7 @@ s
 >>>>>>>>>     Subject: Re: "Accessibility in Fedora Workstation" (fwd)
 >>>>>>>>>
 >>>>>>>>>
->>>>>>>>>>>>>>     "KL" =3D=3D Karen Lewellen
+>>>>>>>>>>>>>>     "KL" == Karen Lewellen
 >>>>>>>>>>>>>> <klewellen@shellworld.net>
 >>>>>>>>>>>>>>   writes:
 >>>>>>>>>   KL>  What bothers me most are his lack of actual
@@ -476,17 +485,17 @@ s
 >>>>>>>>>     also know first hand that he is open to constructive
 >>>>>>>>>     feedback and
 >>>>>>>>>   I
->>>>>>>>>     believe he=C3=A2?Td be happy to be corrected about possible
+>>>>>>>>>     believe heâ?Td be happy to be corrected about possible
 >>>>>>>>>     technical
 >>>>>>>>>     inaccuracies in the interview.  It may be also a good
 >>>>>>>>>     opportunity
 >>>>>>>>>   to
->>>>>>>>>     find out what=C3=A2?Ts possibly missing in making anybody
+>>>>>>>>>     find out whatâ?Ts possibly missing in making anybody
 >>>>>>>>>     better
 >>>>>>>>>     informed.
 >>>>>>>>>
->>>>>>>>>     As for =C3=A2?oabsolute dismissal of what he has not
->>>>>>>>>   experienced=C3=A2?=C2=9D,
+>>>>>>>>>     As for â?oabsolute dismissal of what he has not
+>>>>>>>>>   experiencedâ?,
 >>>>>>>>>   what
 >>>>>>>>>     reasonable free software alternatives to a less or more
 >>>>>>>>>     standard
@@ -501,7 +510,7 @@ s
 >>>>>>>>>     documents, to be compatible with other computer users,
 >>>>>>>>>     etc.?
 >>>>>>>>>
->>>>>>>>>     And let=C3=A2?Ts be realistic.  We celebrate every single
+>>>>>>>>>     And letâ?Ts be realistic.  We celebrate every single
 >>>>>>>>>   developer
 >>>>>>>>>   hired
 >>>>>>>>>     to
@@ -541,6 +550,6 @@ s
 >>>
 >>
 >
->
----1404930036-2125122209-1660754210=:1354666--
+> 
+
 
