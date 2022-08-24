@@ -1,46 +1,35 @@
-Return-Path: <speakup+bounces-617-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-618-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 918B359FD8C
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 16:48:40 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=WGmVGXVA;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id E38D059FD90
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 16:52:54 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D23BD3847B3; Wed, 24 Aug 2022 10:48:39 -0400 (EDT)
+	id 8D726384801; Wed, 24 Aug 2022 10:52:54 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B1F5338376B
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 10:48:39 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 76B6D3847FC
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 10:52:54 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7B62B380984; Wed, 24 Aug 2022 10:48:36 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 692A238084F
-	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 10:48:36 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4MCTVq3HgCz41CH;
-	Wed, 24 Aug 2022 10:48:35 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1661352515; bh=RnJ6eVn//z/fHoxqSNDuF+GpuRxxiDFALM8g8ePJO2g=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=WGmVGXVAfhHTMfndyJ6aSx1010g1H9FMvqr6zejK8qCg9Y5/VSZbVGnfuQv3XSqSw
-	 gyf3TvSLUU1QMVCFIIYwY5dZJb0LReN9T1fI3PZx8vgY6Nd6PyTj6+NDzDok5Jlv5l
-	 JV/uWWArQUP4BAu/kNb5I+XJs7tva+SSOawZdcjE=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4MCTVq2p63zcbc; Wed, 24 Aug 2022 10:48:35 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4MCTVq2Ln3zcbP;
-	Wed, 24 Aug 2022 10:48:35 -0400 (EDT)
-Date: Wed, 24 Aug 2022 10:48:35 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: K0LNY_Glenn <glenn@ervin.email>, 
-    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+	id 1D267380986; Wed, 24 Aug 2022 10:52:53 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0237.b.hostedemail.com [64.98.42.237])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 09CB13808C5
+	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 10:52:53 -0400 (EDT)
+Received: from omf12.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id 7A48D801B9BE;
+	Wed, 24 Aug 2022 14:52:52 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf12.b.hostedemail.com (Postfix) with ESMTPA id 002C31807016F;
+	Wed, 24 Aug 2022 14:52:51 +0000 (UTC)
+Message-ID: <00d801d8b7c9$0ba8c8f0$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Jude DaShiell" <jdashiel@panix.com>,
+	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <007001d8b776$2a7193a0$80ffa8c0@Win7VM> <c46d641e-b54c-311f-ce9b-cf49d4c987@panix.com> <00c601d8b7c7$e3e6fa90$80ffa8c0@Win7VM> <778c2a99-1411-70e4-a844-52ab3fad8c7@panix.com>
 Subject: Re: hopefully some help with AntiX
-In-Reply-To: <00c601d8b7c7$e3e6fa90$80ffa8c0@Win7VM>
-Message-ID: <778c2a99-1411-70e4-a844-52ab3fad8c7@panix.com>
-References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <007001d8b776$2a7193a0$80ffa8c0@Win7VM> <c46d641e-b54c-311f-ce9b-cf49d4c987@panix.com> <00c601d8b7c7$e3e6fa90$80ffa8c0@Win7VM>
+Date: Wed, 24 Aug 2022 09:51:50 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,8 +39,39 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout02
+X-Rspamd-Queue-Id: 002C31807016F
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: tc5k5drtukhuj4wbzw58nafrqo8k3k97
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/dVwV61ovE9XaDpDa0YynyRCgju+VGTwg=
+X-HE-Tag: 1661352771-631025
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+I've never had a problem, I didn't mean it that way.
+You can tell in a person's lack of enthusiasm sometimes.
+Like if I get a gal to read my Ham radio display, where usually a guy thinks 
+it's awesome.
+Not to be sexist, just generalizing here.
+I've never had a rude person, they do it I think because they want to help 
+others.
+
+Glenn
+
+----- Original Message ----- 
+From: "Jude DaShiell" <jdashiel@panix.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review system 
+for Linux." <speakup@linux-speakup.org>
+Sent: Wednesday, August 24, 2022 9:48 AM
+Subject: Re: hopefully some help with AntiX
+
 
 It's best to tell the volunteer you need screen reading and what they tell
 you has a near certainty to help even though they may not understand what
@@ -75,7 +95,8 @@ On Wed, 24 Aug 2022, K0LNY_Glenn wrote:
 > like grub or something.
 > So yeah, I make that my last screenreader option.
 > Once in a while you get a techie sort who doesn't mind though.
-> One lady said she was a tech, so she was able to decipher the hieroglyphs on
+> One lady said she was a tech, so she was able to decipher the hieroglyphs 
+> on
 > the F-keys so I could make sure the volume was up on a laptop.
 > Glenn
 > ----- Original Message -----
@@ -115,7 +136,8 @@ On Wed, 24 Aug 2022, K0LNY_Glenn wrote:
 > > Glenn
 > > ----- Original Message -----
 > > From: "Jude DaShiell" <jdashiel@panix.com>
-> > To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review system
+> > To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review 
+> > system
 > > for Linux." <speakup@linux-speakup.org>
 > > Sent: Tuesday, August 23, 2022 10:50 PM
 > > Subject: Re: hopefully some help with AntiX
@@ -147,18 +169,21 @@ On Wed, 24 Aug 2022, K0LNY_Glenn wrote:
 > > > tried both with sudo and without.
 > > > On the computer trying to get in, it tells me connection refused.
 > > > It is on the network as antix1
-> > > Everything I read on-line suggest it should have openssh installed, but
+> > > Everything I read on-line suggest it should have openssh installed, 
+> > > but
 > > > I
 > > > ran the apt install for openssh-server -y just in case.
 > > > I tried systemctl start openssh
 > > > and I tried system restart openssh
 > > > I guess it is possible espeak-NG may not be in its repository.
 > > > Then espeeakup wouldn't be there either.
-> > > If I had speakup going on the AntiX, or an SSH connection, I could start
+> > > If I had speakup going on the AntiX, or an SSH connection, I could 
+> > > start
 > > > getting it going.
 > > >
 > > > Anyone have any ideas for this?
-> > > This would be good on the Asus 701, it's using Buster, which isn't that
+> > > This would be good on the Asus 701, it's using Buster, which isn't 
+> > > that
 > > > old.Thanks for any assistance.
 > > >
 > > > Glenn
@@ -169,5 +194,6 @@ On Wed, 24 Aug 2022, K0LNY_Glenn wrote:
 > >
 >
 >
->
+> 
+
 
