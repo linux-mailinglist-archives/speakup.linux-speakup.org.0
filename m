@@ -1,35 +1,46 @@
-Return-Path: <speakup+bounces-609-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-610-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id E6BC259F1A3
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 05:02:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 468AC59F22D
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 05:50:10 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=ZiZhiPhg;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8CD2B380A89; Tue, 23 Aug 2022 23:02:31 -0400 (EDT)
+	id 75756380A01; Tue, 23 Aug 2022 23:50:09 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7A388380924
-	for <lists+speakup@lfdr.de>; Tue, 23 Aug 2022 23:02:31 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 55DA9380852
+	for <lists+speakup@lfdr.de>; Tue, 23 Aug 2022 23:50:09 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8137C3808C5; Tue, 23 Aug 2022 23:02:26 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0199.b.hostedemail.com [64.98.42.199])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 702B93807E9
-	for <speakup@linux-speakup.org>; Tue, 23 Aug 2022 23:02:26 -0400 (EDT)
-Received: from omf08.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id B5A278000947;
-	Wed, 24 Aug 2022 03:02:25 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf08.b.hostedemail.com (Postfix) with ESMTPA id 3E7EE18ADEA39;
-	Wed, 24 Aug 2022 03:02:24 +0000 (UTC)
-Message-ID: <005f01d8b765$cc1185f0$80ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Chime Hart" <chime@hubert-humphrey.com>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <d0e193e5-3c42-4190-e423-91eba152e0d5@hubert-humphrey.com>
+	id C2C913808C5; Tue, 23 Aug 2022 23:50:02 -0400 (EDT)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 0E8DE380630
+	for <speakup@linux-speakup.org>; Tue, 23 Aug 2022 23:50:02 -0400 (EDT)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4MCBtw5qQzz2kWH;
+	Tue, 23 Aug 2022 23:50:00 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1661313000; bh=A9uOLeJ193NetZAgUpSPjv5FiZCE4mqoNYVGqSm1PUw=;
+	h=Date:From:To:Subject:In-Reply-To:References;
+	b=ZiZhiPhgJ2MqmXbOqoyT8zMGTX+Msnm7oTSZM45qpe/nuf2CwhD7fKjruZc/B/jRd
+	 gkZk+El3sQ0CgqMe4ROskPj18PNU1voBeJ24C09ECtJp2MbF5X+AVJr7dgMO/EZIKn
+	 c5G/qLwY5YhsN8PDis3z4+ApS0dh9kavCXCN6GG0=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4MCBtw5Hxlzcbc; Tue, 23 Aug 2022 23:50:00 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by panix1.panix.com (Postfix) with ESMTP id 4MCBtw551XzcbC;
+	Tue, 23 Aug 2022 23:50:00 -0400 (EDT)
+Date: Tue, 23 Aug 2022 23:50:00 -0400
+From: Jude DaShiell <jdashiel@panix.com>
+To: K0LNY_Glenn <glenn@ervin.email>, 
+    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: hopefully some help with AntiX
-Date: Tue, 23 Aug 2022 22:01:22 -0500
-Organization: Home
+In-Reply-To: <005b01d8b764$65f690e0$80ffa8c0@Win7VM>
+Message-ID: <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com>
+References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -39,42 +50,46 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Spam-Status: No, score=-2.59
-X-Stat-Signature: g3mth8iyaawfamqezcm5zw51z87brekz
-X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: 3E7EE18ADEA39
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1/k4yJWJxDWPsbDkcVzAzb2sk5z8fKeHNw=
-X-HE-Tag: 1661310144-35555
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I can try that, although I wouldn't know if it offered suggestions.
-Glenn
-
-Thanks
------ Original Message ----- 
-From: "Chime Hart" <chime@hubert-humphrey.com>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Tuesday, August 23, 2022 9:58 PM
-Subject: Re: hopefully some help with AntiX
+You could try fenrir with git or pipi whichever is available.
 
 
-Hi Glen: Sometimes when I cannot find a package with an apt-get, I try 
-aptitude
-but you would first run an apt install for that. Aptitude may show you 
-related
-packages, which in most cases will not just install, but you would pick 
-through
-its listings.
-Chime
+Jude <jdashiel at panix dot com> "There are four boxes to be used in
+defense of liberty:
+ soap, ballot, jury, and ammo. Please use in that order."
+-Ed Howdershelt (Author, 1940)
 
+.
+
+On Tue, 23 Aug 2022, K0LNY_Glenn wrote:
+
+> Hello,
+> So I successfully got a live version of AntiX 19.5 base 386 on my Asus701
+> I am having trouble getting in with SSH.
+> When I do speaker test on the actual netbook, it works, so I know the audio
+> works.
+> Neither espeak test, or espeak-ng test, worked.
+> It is Debian based, so I did apt update and most of the following things, I
+> tried both with sudo and without.
+> On the computer trying to get in, it tells me connection refused.
+> It is on the network as antix1
+> Everything I read on-line suggest it should have openssh installed, but I
+> ran the apt install for openssh-server -y just in case.
+> I tried systemctl start openssh
+> and I tried system restart openssh
+> I guess it is possible espeak-NG may not be in its repository.
+> Then espeeakup wouldn't be there either.
+> If I had speakup going on the AntiX, or an SSH connection, I could start
+> getting it going.
+>
+> Anyone have any ideas for this?
+> This would be good on the Asus 701, it's using Buster, which isn't that
+> old.Thanks for any assistance.
+>
+> Glenn
+>
+>
+>
 
