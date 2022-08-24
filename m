@@ -1,34 +1,34 @@
-Return-Path: <speakup+bounces-611-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-612-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3EF1C59F272
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 06:13:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id DBC0E59F2DA
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 06:59:42 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9475B380A78; Wed, 24 Aug 2022 00:13:50 -0400 (EDT)
+	id C205D3809AC; Wed, 24 Aug 2022 00:59:41 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7F3BF3808C5
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 00:13:50 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id ABC1238097C
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 00:59:41 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8E2663808C5; Wed, 24 Aug 2022 00:13:45 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0082.b.hostedemail.com [64.98.42.82])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 7C6B93807BC
-	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 00:13:45 -0400 (EDT)
-Received: from omf03.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id 825AA100339AE;
-	Wed, 24 Aug 2022 04:13:44 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf03.b.hostedemail.com (Postfix) with ESMTPA id 11D1F8001F0F;
-	Wed, 24 Aug 2022 04:13:44 +0000 (UTC)
-Message-ID: <006501d8b76f$c2715610$80ffa8c0@Win7VM>
+	id AD7BE380852; Wed, 24 Aug 2022 00:59:36 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0251.b.hostedemail.com [64.98.42.251])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 9B3C53807BC
+	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 00:59:36 -0400 (EDT)
+Received: from omf13.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id EAA368A84876;
+	Wed, 24 Aug 2022 04:59:35 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf13.b.hostedemail.com (Postfix) with ESMTPA id 7BE6281D53D6;
+	Wed, 24 Aug 2022 04:59:35 +0000 (UTC)
+Message-ID: <007001d8b776$2a7193a0$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
 To: "Jude DaShiell" <jdashiel@panix.com>,
 	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com>
 Subject: Re: hopefully some help with AntiX
-Date: Tue, 23 Aug 2022 23:12:42 -0500
+Date: Tue, 23 Aug 2022 23:58:34 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -46,18 +46,29 @@ X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Spam-Status: No, score=-2.58
-X-Stat-Signature: on3b4s1fgiwn45fs3u94jogjjsx44awr
-X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: 11D1F8001F0F
+X-Rspamd-Server: rspamout02
+X-Rspamd-Queue-Id: 7BE6281D53D6
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: u384papwyr98re19nefaig9pfme6afef
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX18BWVWoOUoCd0wU3EolC5BOjsT4Eqiomgg=
-X-HE-Tag: 1661314424-419369
+X-Session-ID: U2FsdGVkX1/2/usHrSykbpNVHE3KpT1/iwmkr1I5Zdc=
+X-HE-Tag: 1661317175-852577
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Jude,
-If I can SSH into it, I may go with Fenrir.
-Otherwise, it is too much typing with no feedback.
+Well I tried using the iPhone app, seeing AI.
+I can't read back letter by letter using short text, which is what reads 
+monitors the best, so I have to rely on what I hear.
+It appears it does not know aptitude, so I tried apt, and that command 
+works.
+But I tried three different package names:
+openssh-server
+openssh
+and just ssh
+In all the returns, it said it could not find the packages, and they may 
+exist under a different name.
+So unless anyone has other Debian based SSH install names, I'll be doing 
+more research on antiX and SSH.
+
 Glenn
 ----- Original Message ----- 
 From: "Jude DaShiell" <jdashiel@panix.com>
