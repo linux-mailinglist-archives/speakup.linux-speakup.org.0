@@ -1,34 +1,35 @@
-Return-Path: <speakup+bounces-621-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-622-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C8BD35A0014
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 19:09:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id CF5C05A00C0
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 19:53:19 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D559F3819B5; Wed, 24 Aug 2022 13:09:29 -0400 (EDT)
+	id 6E753380A7D; Wed, 24 Aug 2022 13:53:18 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9BD92380A7F
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 13:09:28 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3C9A13847C9
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 13:53:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3CB3F380989; Wed, 24 Aug 2022 13:09:27 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0006.b.hostedemail.com [64.98.42.6])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 2245F380984
-	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 13:09:27 -0400 (EDT)
-Received: from omf02.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 9D61C1883F2FD;
-	Wed, 24 Aug 2022 17:09:26 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf02.b.hostedemail.com (Postfix) with ESMTPA id 1F0F1885CB07;
-	Wed, 24 Aug 2022 17:09:26 +0000 (UTC)
-Message-ID: <011d01d8b7dc$1fbf79c0$80ffa8c0@Win7VM>
+	id CEB20380986; Wed, 24 Aug 2022 13:53:15 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0029.b.hostedemail.com [64.98.42.29])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id BD3FD38097C
+	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 13:53:15 -0400 (EDT)
+Received: from omf11.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id C46ED100381EA;
+	Wed, 24 Aug 2022 17:53:13 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf11.b.hostedemail.com (Postfix) with ESMTPA id 17B6C17E2F;
+	Wed, 24 Aug 2022 17:53:12 +0000 (UTC)
+Message-ID: <012001d8b7e2$3d94bf40$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Willem van der Walt" <wvdwalt@csir.co.za>
+To: "K0LNY_Glenn" <glenn@ervin.email>,
+	"Willem van der Walt" <wvdwalt@csir.co.za>
 Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <007001d8b776$2a7193a0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208241123100.3538@willempc.meraka.csir.co.za>
+References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <007001d8b776$2a7193a0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208241123100.3538@willempc.meraka.csir.co.za> <011d01d8b7dc$1fbf79c0$80ffa8c0@Win7VM>
 Subject: Re: hopefully some help with AntiX
-Date: Wed, 24 Aug 2022 12:08:24 -0500
+Date: Wed, 24 Aug 2022 12:52:11 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -46,25 +47,42 @@ X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Queue-Id: 17B6C17E2F
 X-Spam-Status: No, score=-2.60
-X-Stat-Signature: 8zyix5hu86u6rkge7absfz447iuwof7u
-X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: 1F0F1885CB07
+X-Stat-Signature: bpkj4o7n9tkixyz7rnssddqc51cjrxnn
+X-Rspamd-Server: rspamout03
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX18aRt6YDgpgtbmJb7PDPd/EIxk9rkLufNE=
-X-HE-Tag: 1661360966-358191
+X-Session-ID: U2FsdGVkX1/7ga03+neg7D1C6RZo5ptagEFt0EIDDys=
+X-HE-Tag: 1661363592-647627
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Well after thinking about it, I realized that I could have just put in the 
+Well a bit of research tells me that in both the live and installed AntiX, 
+port 22 is closed.
+Is there a way I might be able to open it without a screenreader?
+About as much as I can muster without  a screenreader feedback is a basic 
+package install where I include the dash y to just make it happen.
+Thanks
+
+Glenn
+----- Original Message ----- 
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Willem van der Walt" <wvdwalt@csir.co.za>
+Cc: "Speakup is a screen review system for Linux." 
+<speakup@linux-speakup.org>
+Sent: Wednesday, August 24, 2022 12:08 PM
+Subject: Re: hopefully some help with AntiX
+
+
+Well after thinking about it, I realized that I could have just put in the
 actual IP address with nmap.
 So I did:
 nmap -f 10.248.1.143
-and it quickly found antix and it said all 1000 ports have been scanned and 
+and it quickly found antix and it said all 1000 ports have been scanned and
 they all are closed.
 Glenn
 ----- Original Message ----- 
 From: "Willem van der Walt" <wvdwalt@csir.co.za>
-Cc: "Speakup is a screen review system for Linux." 
+Cc: "Speakup is a screen review system for Linux."
 <speakup@linux-speakup.org>
 Sent: Wednesday, August 24, 2022 4:28 AM
 Subject: Re: hopefully some help with AntiX
@@ -149,5 +167,6 @@ On Tue, 23 Aug 2022, K0LNY_Glenn wrote:
 >
 >
 >
+
 
 
