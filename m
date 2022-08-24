@@ -1,47 +1,33 @@
-Return-Path: <speakup+bounces-606-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-607-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A183D59EEFE
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 00:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 9E17A59F185
+	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 04:52:32 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 28FE5384889; Tue, 23 Aug 2022 18:25:28 -0400 (EDT)
+	id C1C9B3809DB; Tue, 23 Aug 2022 22:52:31 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9ECC1384869
-	for <lists+speakup@lfdr.de>; Tue, 23 Aug 2022 18:25:27 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id AD1B83807BC
+	for <lists+speakup@lfdr.de>; Tue, 23 Aug 2022 22:52:31 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7A4E33847A3; Tue, 23 Aug 2022 18:25:26 -0400 (EDT)
-Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 4960438078B
-	for <speakup@linux-speakup.org>; Tue, 23 Aug 2022 18:25:23 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 1D14520135;
-	Wed, 24 Aug 2022 00:25:16 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id TXZswaRAW6Ks; Wed, 24 Aug 2022 00:25:16 +0200 (CEST)
-Received: from begin.home (lfbn-bor-1-376-208.w109-215.abo.wanadoo.fr [109.215.91.208])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 0A4B52011A;
-	Wed, 24 Aug 2022 00:25:16 +0200 (CEST)
-Received: from samy by begin.home with local (Exim 4.96)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1oQcKh-00GY3V-28;
-	Wed, 24 Aug 2022 00:25:15 +0200
-Message-ID: <20220823222515.412752202@ens-lyon.org>
-User-Agent: quilt/0.66
-Date: Wed, 24 Aug 2022 00:25:03 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: gregkh@linuxfoundation.org
-Cc: linux-kernel@vger.kernel.org,
- speakup@linux-speakup.org,
- Samuel Thibault <samuel.thibault@ens-lyon.org>
-Subject: [patch 2/2] speakup: Notify synthesizers of the punctuation level change
-References: <20220823222501.483597563@ens-lyon.org>
+	id BA8B83807E9; Tue, 23 Aug 2022 22:52:26 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0032.b.hostedemail.com [64.98.42.32])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A9775380175
+	for <speakup@linux-speakup.org>; Tue, 23 Aug 2022 22:52:26 -0400 (EDT)
+Received: from omf13.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id E1FB38A8CA6E
+	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 02:52:24 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf13.b.hostedemail.com (Postfix) with ESMTPA id 81CBD80024E7
+	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 02:52:24 +0000 (UTC)
+Message-ID: <005b01d8b764$65f690e0$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: hopefully some help with AntiX
+Date: Tue, 23 Aug 2022 21:51:23 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,127 +37,45 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=UTF-8
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Spam-Status: No, score=-2.18
+X-Stat-Signature: itgsppzn9e38tam5udstsgjanca63c4x
+X-Rspamd-Server: rspamout04
+X-Rspamd-Queue-Id: 81CBD80024E7
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/ffdbgZxHQZd5ulU1+cPQpnns7nFho5wo=
+X-HE-Tag: 1661309544-713235
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Even if speakup does the filtering itself, it does not filter out A_PUNC
-characters (because these are needed e.g. for prosody), so we have to tell
-synthesizers whether they should filter them out or not.
+Hello,
+So I successfully got a live version of AntiX 19.5 base 386 on my Asus701
+I am having trouble getting in with SSH.
+When I do speaker test on the actual netbook, it works, so I know the audio 
+works.
+Neither espeak test, or espeak-ng test, worked.
+It is Debian based, so I did apt update and most of the following things, I 
+tried both with sudo and without.
+On the computer trying to get in, it tells me connection refused.
+It is on the network as antix1
+Everything I read on-line suggest it should have openssh installed, but I 
+ran the apt install for openssh-server -y just in case.
+I tried systemctl start openssh
+and I tried system restart openssh
+I guess it is possible espeak-NG may not be in its repository.
+Then espeeakup wouldn't be there either.
+If I had speakup going on the AntiX, or an SSH connection, I could start 
+getting it going.
 
-Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Anyone have any ideas for this?
+This would be good on the Asus 701, it's using Buster, which isn't that 
+old.Thanks for any assistance.
 
----
- drivers/accessibility/speakup/speakup_soft.c |   26 ++++++++++++++++++++++++--
- drivers/accessibility/speakup/spk_types.h    |    2 +-
- drivers/accessibility/speakup/varhandlers.c  |   12 ++++++++----
- 3 files changed, 33 insertions(+), 7 deletions(-)
-
---- a/drivers/accessibility/speakup/varhandlers.c
-+++ b/drivers/accessibility/speakup/varhandlers.c
-@@ -138,6 +138,7 @@ struct st_var_header *spk_get_var_header
- 		return NULL;
- 	return p_header;
- }
-+EXPORT_SYMBOL_GPL(spk_get_var_header);
- 
- struct st_var_header *spk_var_header_by_name(const char *name)
- {
-@@ -221,15 +222,17 @@ int spk_set_num_var(int input, struct st
- 		*p_val = val;
- 	if (var->var_id == PUNC_LEVEL) {
- 		spk_punc_mask = spk_punc_masks[val];
--		return 0;
- 	}
- 	if (var_data->u.n.multiplier != 0)
- 		val *= var_data->u.n.multiplier;
- 	val += var_data->u.n.offset;
--	if (var->var_id < FIRST_SYNTH_VAR || !synth)
-+
-+	if (!synth)
-+		return 0;
-+	if (synth->synth_adjust && synth->synth_adjust(synth, var))
-+		return 0;
-+	if (var->var_id < FIRST_SYNTH_VAR)
- 		return 0;
--	if (synth->synth_adjust)
--		return synth->synth_adjust(var);
- 
- 	if (!var_data->u.n.synth_fmt)
- 		return 0;
-@@ -245,6 +248,7 @@ int spk_set_num_var(int input, struct st
- 	synth_printf("%s", cp);
- 	return 0;
- }
-+EXPORT_SYMBOL_GPL(spk_set_num_var);
- 
- int spk_set_string_var(const char *page, struct st_var_header *var, int len)
- {
---- a/drivers/accessibility/speakup/speakup_soft.c
-+++ b/drivers/accessibility/speakup/speakup_soft.c
-@@ -26,6 +26,7 @@
- static int softsynth_probe(struct spk_synth *synth);
- static void softsynth_release(struct spk_synth *synth);
- static int softsynth_is_alive(struct spk_synth *synth);
-+static int softsynth_adjust(struct spk_synth *synth, struct st_var_header *var);
- static unsigned char get_index(struct spk_synth *synth);
- 
- static struct miscdevice synth_device, synthu_device;
-@@ -41,7 +42,7 @@ static struct var_t vars[] = {
- 	{ INFLECTION, .u.n = {"\x01%dr", 5, 0, 9, 0, 0, NULL } },
- 	{ VOL, .u.n = {"\x01%dv", 5, 0, 9, 0, 0, NULL } },
- 	{ TONE, .u.n = {"\x01%dx", 1, 0, 2, 0, 0, NULL } },
--	{ PUNCT, .u.n = {"\x01%db", 0, 0, 2, 0, 0, NULL } },
-+	{ PUNCT, .u.n = {"\x01%db", 0, 0, 3, 0, 0, NULL } },
- 	{ VOICE, .u.n = {"\x01%do", 0, 0, 7, 0, 0, NULL } },
- 	{ FREQUENCY, .u.n = {"\x01%df", 5, 0, 9, 0, 0, NULL } },
- 	{ DIRECT, .u.n = {NULL, 0, 0, 1, 0, 0, NULL } },
-@@ -133,7 +134,7 @@ static struct spk_synth synth_soft = {
- 	.catch_up = NULL,
- 	.flush = NULL,
- 	.is_alive = softsynth_is_alive,
--	.synth_adjust = NULL,
-+	.synth_adjust = softsynth_adjust,
- 	.read_buff_add = NULL,
- 	.get_index = get_index,
- 	.indexing = {
-@@ -426,6 +427,27 @@ static int softsynth_is_alive(struct spk
- 	return 0;
- }
- 
-+static int softsynth_adjust(struct spk_synth *synth, struct st_var_header *var)
-+{
-+	struct st_var_header *punc_level_var;
-+	struct var_t *var_data;
-+
-+	if (var->var_id != PUNC_LEVEL)
-+		return 0;
-+
-+	/* We want to set the the speech synthesis punctuation level
-+	 * accordingly, so it properly tunes speaking A_PUNC characters */
-+	var_data = var->data;
-+	if (!var_data)
-+		return 0;
-+	punc_level_var = spk_get_var_header(PUNCT);
-+	if (!punc_level_var)
-+		return 0;
-+	spk_set_num_var(var_data->u.n.value, punc_level_var, E_SET);
-+
-+	return 1;
-+}
-+
- module_param_named(start, synth_soft.startup, short, 0444);
- 
- MODULE_PARM_DESC(start, "Start the synthesizer once it is loaded.");
---- a/drivers/accessibility/speakup/spk_types.h
-+++ b/drivers/accessibility/speakup/spk_types.h
-@@ -195,7 +195,7 @@ struct spk_synth {
- 	void (*catch_up)(struct spk_synth *synth);
- 	void (*flush)(struct spk_synth *synth);
- 	int (*is_alive)(struct spk_synth *synth);
--	int (*synth_adjust)(struct st_var_header *var);
-+	int (*synth_adjust)(struct spk_synth *synth, struct st_var_header *var);
- 	void (*read_buff_add)(u_char c);
- 	unsigned char (*get_index)(struct spk_synth *synth);
- 	struct synth_indexing indexing;
+Glenn 
 
 
