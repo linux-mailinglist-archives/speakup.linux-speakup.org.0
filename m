@@ -1,38 +1,53 @@
-Return-Path: <speakup+bounces-625-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-626-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AF95B5A0312
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 22:56:23 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (1024-bit key; unprotected) header.d=ukr.net header.i=@ukr.net header.a=rsa-sha256 header.s=fsm header.b=ox+6O3NZ;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id C8A345A0B7D
+	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 10:30:36 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 94CC33847CD; Wed, 24 Aug 2022 16:56:14 -0400 (EDT)
+	id 886AA384799; Thu, 25 Aug 2022 04:30:31 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7DFF6380AAB
-	for <lists+speakup@lfdr.de>; Wed, 24 Aug 2022 16:56:14 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 59FB838480D
+	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 04:30:30 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CF0D83809AC; Wed, 24 Aug 2022 16:56:10 -0400 (EDT)
-Received: from frv150.fwdcdn.com (frv150.fwdcdn.com [212.42.77.150])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id E8D54380996
-	for <speakup@linux-speakup.org>; Wed, 24 Aug 2022 16:56:09 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=ukr.net;
-	s=fsm; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:From:References:
-	To:Subject:MIME-Version:Date:Message-ID:Sender:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
-	List-Post:List-Owner:List-Archive;
-	bh=GJS/U/3887xula/9aY5eF6sE6dFhi7YXPbCDr/MUdt4=; b=ox+6O3NZ0AUkxnkmDy9w6h6+fR
-	y93V6UFhmipWio3CNbvns0wXMogve4rebsPvhCsTo1HxPbmwh7+20ji5cvkrby2xW3JWa0q8O/2JC
-	fFmu0mK0ktGGYGEMmQEtVxrlUcxGYUjOfKYPhI1cJg/pBUjH6txhWbPd64TIfjuntD6M=;
-Received: from public-gprs396388.centertel.pl ([37.47.179.165] helo=[192.168.25.9])
-	by frv150.fwdcdn.com with esmtpsa ID 1oQxPv-0000uG-Vh
-	for speakup@linux-speakup.org; Wed, 24 Aug 2022 23:56:04 +0300
-Message-ID: <62d5bc47-f8e4-ea38-bbd5-a121015556b2@ukr.net>
-Date: Wed, 24 Aug 2022 22:56:03 +0200
+	id 0FB2E3809CB; Thu, 25 Aug 2022 04:30:29 -0400 (EDT)
+Received: from pta-smg1.csir.co.za (pta-smg1.csir.co.za [146.64.81.180])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 77C463805D8
+	for <speakup@linux-speakup.org>; Thu, 25 Aug 2022 04:30:28 -0400 (EDT)
+Received: from pta-smg1.csir.co.za (localhost.localdomain [127.0.0.1])
+	by localhost (Email Security Appliance) with SMTP id B265D2978F81_3073318B;
+	Thu, 25 Aug 2022 08:30:16 +0000 (GMT)
+Received: from marge.meraka.csir.co.za (marge.meraka.csir.co.za [146.64.28.1])
+	by pta-smg1.csir.co.za (Sophos Email Appliance) with ESMTP id 598AD29760CF_3073317F;
+	Thu, 25 Aug 2022 08:30:14 +0000 (GMT)
+Received: from marge.meraka.csir.co.za (localhost [127.0.0.1])
+	by marge.meraka.csir.co.za (Postfix) with ESMTP id 944CB522A0;
+	Thu, 25 Aug 2022 10:30:14 +0200 (SAST)
+X-Virus-Scanned: amavisd-new at meraka.org.za
+Received: from marge.meraka.csir.co.za ([127.0.0.1])
+	by marge.meraka.csir.co.za (marge.meraka.csir.co.za [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id ki2FtfF3cZ9R; Thu, 25 Aug 2022 10:30:14 +0200 (SAST)
+Received: from willempc.meraka.csir.co.za (unknown [IPv6:2001:4200:7000:3:7a2b:cbff:fe9d:7520])
+	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by marge.meraka.csir.co.za (Postfix) with ESMTPS;
+	Thu, 25 Aug 2022 10:30:13 +0200 (SAST)
+Received: from [127.0.0.1] (helo=localhost)
+	by willempc.meraka.csir.co.za with esmtp (Exim 4.90_1)
+	(envelope-from <wvdwalt@csir.co.za>)
+	id 1oR8Fh-0004et-8A; Thu, 25 Aug 2022 10:30:13 +0200
+Date: Thu, 25 Aug 2022 10:30:13 +0200 (SAST)
+From: Willem van der Walt <wvdwalt@csir.co.za>
+X-X-Sender: wvdwalt@willempc.meraka.csir.co.za
+To: K0LNY_Glenn <glenn@ervin.email>
+cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: hopefully some help with AntiX
+In-Reply-To: <011d01d8b7dc$1fbf79c0$80ffa8c0@Win7VM>
+Message-ID: <alpine.DEB.2.21.1.2208251022200.17853@willempc.meraka.csir.co.za>
+References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <007001d8b776$2a7193a0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208241123100.3538@willempc.meraka.csir.co.za> <011d01d8b7dc$1fbf79c0$80ffa8c0@Win7VM>
+User-Agent: Alpine 2.21.1 (DEB 211 2017-05-04)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,127 +57,121 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101
- Thunderbird/91.11.0
-Subject: Re: hopefully some help with AntiX
-Content-Language: en-US
-To: speakup@linux-speakup.org
-References: <202208241649.27OGnL8e007327@nfbcal.org>
- <012d01d8b7f1$6e82b210$80ffa8c0@Win7VM>
- <013801d8b7fa$78626150$80ffa8c0@Win7VM>
-From: Volodymyr Dorozhinsky <dorozhinsky@ukr.net>
-Disposition-Notification-To: Volodymyr Dorozhinsky <dorozhinsky@ukr.net>
-In-Reply-To: <013801d8b7fa$78626150$80ffa8c0@Win7VM>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-Authentication-Result: IP=37.47.179.165; mail.from=dorozhinsky@ukr.net; dkim=pass; header.d=ukr.net
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+X-SASI-RCODE: 200
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi,
+Sorry, there was a typo in my nmap command, so what you did below is 
+correct.
+It is tricky without speech, but you can try the following iptables 
+commands on the machine.
+#Allow ssh from your network
+iptables -A INPUT -p tcp -s 10.248.1.0/24 --dport 22 -m state --state NEW,ESTABLISHED -j ACCEPT
+#Allow outgoing ssh
+iptables -A INPUT -p tcp --sport 22 -j ACCEPT
+The iptables command should work as it is the basic command used by all 
+firewall tools.
+HTH, Willem
 
 
-to install ssh server in Debian You should run:
+On Wed, 24 Aug 2022, K0LNY_Glenn wrote:
 
-
-sudo apt install openssh-server -y
-
-
-At least this worked for me in Ubuntu.
-
-
-Best regards
-
-Volodymyr
-
-
-On 8/24/22 22:45, K0LNY_Glenn wrote:
-> this is strange,
-> I tried again,
-> sudo apt install openssh -y
-> and it said that package is not available, but may be under another package
-> and it sounded like it said
-> try openssh-client
-> I don't think, that may only outbound on 22.
+> [The e-mail server of the sender could not be verified (SPF Record)]
+>
+> Well after thinking about it, I realized that I could have just put in the
+> actual IP address with nmap.
+> So I did:
+> nmap -f 10.248.1.143
+> and it quickly found antix and it said all 1000 ports have been scanned and
+> they all are closed.
 > Glenn
 > ----- Original Message -----
-> From: "K0LNY_Glenn" <glenn@ervin.email>
-> To: "Brian Buhrow" <buhrow@nfbcal.org>; "Willem van der Walt"
-> <wvdwalt@csir.co.za>
+> From: "Willem van der Walt" <wvdwalt@csir.co.za>
 > Cc: "Speakup is a screen review system for Linux."
-> <speakup@linux-speakup.org>; <buhrow@nfbcal.org>
-> Sent: Wednesday, August 24, 2022 2:40 PM
+> <speakup@linux-speakup.org>
+> Sent: Wednesday, August 24, 2022 4:28 AM
 > Subject: Re: hopefully some help with AntiX
 >
 >
-> Is ufw the only method to open or close ports?
-> I still cannot get in...
-> I did:
-> sudo ufw allow 22/tcp
-> and it didn't give me an error.
-> I tried system restart ufw
-> and systemctl restart ufw
-> with sudo of course, and it did not like the command.
-> So I rebooted, but I still get connection refused when trying to SSH into
-> it.
-> I've tried to stop the ufw, but I don't know if it got stopped.
-> I say, what the hell are people thinking about closing all ports.
-> A bunch of paranoid people.
-> Why don't they leave at least 22 open and they could create a pop up message
-> on startup that if not using SSH, it may be good to close it.
-> This really fucks things up for the Blind!
+> Hi,
+> The Ubuntu and I think, Debian ssh server package is called ssh-server.
+> I suggest you do a portscan with nmap f
+> om another machine to see if ssh server is running.
+> It should show an open port 22 if it is.
+> Note, you must ssh into the machine as a non-root user.
+> HTH, Willem
 >
-> Glenn
-> ----- Original Message -----
-> From: "Brian Buhrow" <buhrow@nfbcal.org>
-> To: "K0LNY_Glenn" <glenn@ervin.email>; "Willem van der Walt"
-> <wvdwalt@csir.co.za>
-> Cc: "Speakup is a screen review system for Linux."
-> <speakup@linux-speakup.org>; <buhrow@nfbcal.org>
-> Sent: Wednesday, August 24, 2022 11:49 AM
-> Subject: Re: hopefully some help with AntiX
+> On Tue, 23 Aug 2022, K0LNY_Glenn wrote:
 >
->
-> Hello Glen.  There is a faster way to determine if the machine you're trying
-> to reach is
-> listening on the network on the appropriate ports.  Nmap is good for finding
-> which ports a
-> machine is paying attention to, but if you know the port numbers, use telnet
-> instead.  If
-> you don't have telnet installed on your working machine, I highly recommend
-> installing it.
-> Then, do something like:
-> telnet <ipaddress of target machine> <port number>
-> You should see something like:
-> trying <ipaddress> ...
-> Then, you'll either get one of three things:
->
-> 1.  A long delay followed by: connectioned timed out trying to reach <ip
-> address>
->
-> 2.  Connect: connection refused.
->
-> 3.  Connected, escape is control-], followed by any banners the far end
-> might produce, or none
-> if it waits for you to send the first message.
->
-> If you get option 2 and the machine you're connecting to is on the same
-> network as the one
-> you're connecting from, then you know the machine is on the network, but not
-> listening on the
-> port you tried.
->
-> If you get option 1, then it's highly likely the target machine is not
-> connected to the
-> network.
->
-> I use this for testing connections to a huge variety of ports as it allows
-> me to determine at
-> which layer a problem is occurring.
->
-> -thanks
-> -Brian
->
->
+>> [The e-mail server of the sender could not be verified (SPF Record)]
+>>
+>> Well I tried using the iPhone app, seeing AI.
+>> I can't read back letter by letter using short text, which is what reads
+>> monitors the best, so I have to rely on what I hear.
+>> It appears it does not know aptitude, so I tried apt, and that command
+>> works.
+>> But I tried three different package names:
+>> openssh-server
+>> openssh
+>> and just ssh
+>> In all the returns, it said it could not find the packages, and they may
+>> exist under a different name.
+>> So unless anyone has other Debian based SSH install names, I'll be doing
+>> more research on antiX and SSH.
+>>
+>> Glenn
+>> ----- Original Message -----
+>> From: "Jude DaShiell" <jdashiel@panix.com>
+>> To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review system
+>> for Linux." <speakup@linux-speakup.org>
+>> Sent: Tuesday, August 23, 2022 10:50 PM
+>> Subject: Re: hopefully some help with AntiX
+>>
+>>
+>> You could try fenrir with git or pipi whichever is available.
+>>
+>>
+>> Jude <jdashiel at panix dot com> "There are four boxes to be used in
+>> defense of liberty:
+>> soap, ballot, jury, and ammo. Please use in that order."
+>> -Ed Howdershelt (Author, 1940)
+>>
+>> .
+>>
+>> On Tue, 23 Aug 2022, K0LNY_Glenn wrote:
+>>
+>>> Hello,
+>>> So I successfully got a live version of AntiX 19.5 base 386 on my Asus701
+>>> I am having trouble getting in with SSH.
+>>> When I do speaker test on the actual netbook, it works, so I know the
+>>> audio
+>>> works.
+>>> Neither espeak test, or espeak-ng test, worked.
+>>> It is Debian based, so I did apt update and most of the following things,
+>>> I
+>>> tried both with sudo and without.
+>>> On the computer trying to get in, it tells me connection refused.
+>>> It is on the network as antix1
+>>> Everything I read on-line suggest it should have openssh installed, but I
+>>> ran the apt install for openssh-server -y just in case.
+>>> I tried systemctl start openssh
+>>> and I tried system restart openssh
+>>> I guess it is possible espeak-NG may not be in its repository.
+>>> Then espeeakup wouldn't be there either.
+>>> If I had speakup going on the AntiX, or an SSH connection, I could start
+>>> getting it going.
+>>>
+>>> Anyone have any ideas for this?
+>>> This would be good on the Asus 701, it's using Buster, which isn't that
+>>> old.Thanks for any assistance.
+>>>
+>>> Glenn
+>>>
+>>>
+>>>
+>>
+>>
+>>
 >
 >
 
