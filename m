@@ -1,45 +1,45 @@
-Return-Path: <speakup+bounces-645-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-646-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3040E5A1C3F
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 00:24:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B2B2A5A1C47
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 00:26:02 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=TrKg45lt;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=iDXJSpYU;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C59DF380F76; Thu, 25 Aug 2022 18:24:54 -0400 (EDT)
+	id 3B8653810D0; Thu, 25 Aug 2022 18:26:02 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 4A04B380E98
-	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 18:24:53 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5E93B380F02
+	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 18:26:01 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3CB32380E50; Thu, 25 Aug 2022 18:24:50 -0400 (EDT)
+	id 42460380E8B; Thu, 25 Aug 2022 18:25:58 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 1CDE5380E2F
-	for <speakup@linux-speakup.org>; Thu, 25 Aug 2022 18:24:50 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1F70B380E64
+	for <speakup@linux-speakup.org>; Thu, 25 Aug 2022 18:25:58 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4MDHZn38mfz4807;
-	Thu, 25 Aug 2022 18:24:49 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4MDHc23Bk4z482S;
+	Thu, 25 Aug 2022 18:25:54 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1661466289; bh=DASyKTPLMmDW86by3aSTDHtFiyQr3bgKFilKECR+ksM=;
+	t=1661466354; bh=kwiZmdOWI0Jr894Zu+eEw6/zKnQ97ZfvFp2xyNPNnDg=;
 	h=Date:From:To:Subject:In-Reply-To:References;
-	b=TrKg45ltfqhb6qe3yauRA6YBcqmyKP7FHi2r72Cc9+EVbQfbPDiGDmBj540uY3TBT
-	 bPSp4885MV+kKFFf24JnnqNxuT5as2jPSqOnKf6SEiQZYztIo/KBFmx1G8j7i7j91D
-	 Cs9A+FXqZYv9wOc4SJUJZlUAL6xqD+HgTk1JQaek=
+	b=iDXJSpYUE6i1JnU5TrRL455W559gxXMxuU5OXDgTxjauSgt2yf9y8m+7OOI6tDk8r
+	 QbECl91boKyDaEOnehZbqugvmtrMEBYJBoj0p3MchIJ2CZvMcbqigD4TZB6tG0MUyG
+	 ZLU/mH/Gldh6RzH4bMIKSwXcND/yGDWfJzy/Od6c=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4MDHZn2dgWzcbc; Thu, 25 Aug 2022 18:24:49 -0400 (EDT)
+	id 4MDHc22x6Mzcbc; Thu, 25 Aug 2022 18:25:54 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4MDHZn2MgjzcbC;
-	Thu, 25 Aug 2022 18:24:49 -0400 (EDT)
-Date: Thu, 25 Aug 2022 18:24:49 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4MDHc22skkzcbC;
+	Thu, 25 Aug 2022 18:25:54 -0400 (EDT)
+Date: Thu, 25 Aug 2022 18:25:54 -0400
 From: Jude DaShiell <jdashiel@panix.com>
 To: K0LNY_Glenn <glenn@ervin.email>, 
     "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: hopefully some help with AntiX
 In-Reply-To: <025e01d8b8d0$bb189b50$80ffa8c0@Win7VM>
-Message-ID: <5c385ef2-b971-b176-26c0-518135f55195@panix.com>
+Message-ID: <7fa189ed-bfd1-921b-9f0-ec261bf3987@panix.com>
 References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <022401d8b8c1$9a2c40e0$80ffa8c0@Win7VM> <022901d8b8c6$2c5c46f0$80ffa8c0@Win7VM> <363bcd12-5bd3-5749-2d6e-348ebfa9b461@panix.com> <022d01d8b8c8$57f2a780$80ffa8c0@Win7VM>
  <a66e95d1-4eef-4ede-a970-39e5af7cddd@panix.com> <025e01d8b8d0$bb189b50$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
@@ -54,10 +54,8 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-it's either espeak or espeak-ng not speakup.  Both of those have
-dependencies that don't necessarily install in arch unless you add them to
-the install line.  I don't know what happens in debian.  What returns with
-uname -ar and cat /etc/*-version?
+If you got pip installed, it won't install speakup since speakup wasn't
+written in python.
 
 
 Jude <jdashiel at panix dot com> "There are four boxes to be used in
@@ -208,7 +206,6 @@ On Thu, 25 Aug 2022, K0LNY_Glenn wrote:
 > > >
 > >
 > >
->
 >
 >
 
