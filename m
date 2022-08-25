@@ -1,45 +1,45 @@
-Return-Path: <speakup+bounces-637-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-638-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D6C5D5A1AF7
-	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 23:23:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 712B55A1AFB
+	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 23:24:19 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=YTaBFl6C;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=BPNzbtQk;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6058B380CEE; Thu, 25 Aug 2022 17:23:26 -0400 (EDT)
+	id 1CCA4380E15; Thu, 25 Aug 2022 17:24:19 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 56B5F38110D
-	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 17:23:24 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8D6DC380E1B
+	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 17:24:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2A5BA380C5F; Thu, 25 Aug 2022 17:23:21 -0400 (EDT)
+	id 3CF42380CEE; Thu, 25 Aug 2022 17:24:14 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 18224380986
-	for <speakup@linux-speakup.org>; Thu, 25 Aug 2022 17:23:21 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 2C618380C60
+	for <speakup@linux-speakup.org>; Thu, 25 Aug 2022 17:24:14 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4MDGCn2GmCz44gx;
-	Thu, 25 Aug 2022 17:23:17 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4MDGDs4Rb4z44mX;
+	Thu, 25 Aug 2022 17:24:13 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1661462597; bh=Nl8EY6GB3MoaR8o4t9PRiqhMRMH7FKnIrJLZQeiiCV8=;
+	t=1661462653; bh=GgLUTfRwJWQgSN7u0O8OLy51SpAffrKEyX1hEN12Qpo=;
 	h=Date:From:To:Subject:In-Reply-To:References;
-	b=YTaBFl6CVfDcFJ7mUM67IIFcE84Sednm9aoCpy55ScRr1h7zXgh7qWbtslMa59SA5
-	 TaSP26+OTX0hE8j4MgIQCMhjCCeMkiLpb6NGytLghou10QVhTtpMr18/6oB0TLq2B9
-	 l/WpN8ENS6L1JRvMWZFivYpc7t45lZdDSdUDq6dw=
+	b=BPNzbtQkLLimtnwtCqmSPVy7viDoiUYp+mNY5UHUzc2kDSnAegXOpHtBLYLVzA4ol
+	 cpdnqvBAW/DhVsBmd85Fi3Uh3Yz6mrJfXsjNmnAO9wChoz3/sUNNt1sz8UnhTGNOEN
+	 pVGBiL3e5mdLk9KmXBo/8qXlgPdioiYvYXbiQbqA=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4MDGCn23Vhzcbc; Thu, 25 Aug 2022 17:23:17 -0400 (EDT)
+	id 4MDGDs4C1kzcbc; Thu, 25 Aug 2022 17:24:13 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4MDGCn20yYzcbP;
-	Thu, 25 Aug 2022 17:23:17 -0400 (EDT)
-Date: Thu, 25 Aug 2022 17:23:17 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4MDGDs47GyzcbP;
+	Thu, 25 Aug 2022 17:24:13 -0400 (EDT)
+Date: Thu, 25 Aug 2022 17:24:13 -0400
 From: Jude DaShiell <jdashiel@panix.com>
 To: K0LNY_Glenn <glenn@ervin.email>, 
     "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: hopefully some help with AntiX
 In-Reply-To: <022d01d8b8c8$57f2a780$80ffa8c0@Win7VM>
-Message-ID: <90ba215a-3c3f-4328-2e1a-892922c1f019@panix.com>
+Message-ID: <a66e95d1-4eef-4ede-a970-39e5af7cddd@panix.com>
 References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <022401d8b8c1$9a2c40e0$80ffa8c0@Win7VM> <022901d8b8c6$2c5c46f0$80ffa8c0@Win7VM> <363bcd12-5bd3-5749-2d6e-348ebfa9b461@panix.com>
  <022d01d8b8c8$57f2a780$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
@@ -54,17 +54,11 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I have debpackages as a search elvi with surfraw on my system and that
-tells me python3-pip-whl and fenrir are both available in different
-versions of debian.  Not all versions of debian either.  You probably
-haven't got bullseye or buster installed on debian as search repositories
-and that may be part of your problem.  It's been a while since I've done
-much with debian and I don't always remember all package names exactly.
-Lots of other life happening over here every so often.
+apt search "python-pip3*"
 
 
-Jude <jdashiel at panix dot com> "There are four boxes to be used in
-defense of liberty:
+Jude <jdashiel at panix dot com>
+"There are four boxes to be used in defense of liberty:
  soap, ballot, jury, and ammo. Please use in that order."
 -Ed Howdershelt (Author, 1940)
 
@@ -180,7 +174,6 @@ On Thu, 25 Aug 2022, K0LNY_Glenn wrote:
 > >
 > >
 > >
->
 >
 >
 
