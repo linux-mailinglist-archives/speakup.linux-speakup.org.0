@@ -1,34 +1,35 @@
-Return-Path: <speakup+bounces-672-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-673-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1E9825A2E9F
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 20:38:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 23CF25A2FEF
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 21:28:31 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B533338110F; Fri, 26 Aug 2022 14:38:22 -0400 (EDT)
+	id 0738D381649; Fri, 26 Aug 2022 15:06:36 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7B510384756
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 14:38:20 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E3AB7381647
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 15:06:35 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EB70B380EEF; Fri, 26 Aug 2022 14:38:18 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0189.b.hostedemail.com [64.98.42.189])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D8FFF380EC8
-	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 14:38:18 -0400 (EDT)
-Received: from omf13.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id B3F2B1888260D;
-	Fri, 26 Aug 2022 18:38:12 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf13.b.hostedemail.com (Postfix) with ESMTPA id 325A48004BCE;
-	Fri, 26 Aug 2022 18:38:12 +0000 (UTC)
-Message-ID: <006201d8b97a$ff989cd0$80ffa8c0@Win7VM>
+	id E00BA380642; Fri, 26 Aug 2022 15:06:30 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (unknown [64.98.42.185])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B737338063A
+	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 15:06:30 -0400 (EDT)
+Received: from omf12.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 6C54418870BB5;
+	Fri, 26 Aug 2022 19:06:14 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf12.b.hostedemail.com (Postfix) with ESMTPA id C44FC1807017E;
+	Fri, 26 Aug 2022 19:06:13 +0000 (UTC)
+Message-ID: <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Willem van der Walt" <wvdwalt@csir.co.za>
+To: "K0LNY_Glenn" <glenn@ervin.email>,
+	"Willem van der Walt" <wvdwalt@csir.co.za>
 Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za>
+References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM>
 Subject: Re: hopefully some help with AntiX
-Date: Fri, 26 Aug 2022 13:38:12 -0500
+Date: Fri, 26 Aug 2022 14:06:13 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -47,13 +48,37 @@ X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
 X-Spam-Status: No, score=-2.60
-X-Stat-Signature: xf6rfcpiq3yd9tmdtxk9m16rkf5phim8
-X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: 325A48004BCE
+X-Stat-Signature: 56xepoy9y1h74xgfscd6m1iszx5coofp
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: C44FC1807017E
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1+USJ5sHRwcAoooAm496J3iPkVIuTvAKZg=
-X-HE-Tag: 1661539092-783894
+X-Session-ID: U2FsdGVkX18LSifZDc9eilH8fkzDyBYcUCNU0TulbOo=
+X-HE-Tag: 1661540773-833001
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+I did a search on nc, and I found:
+https://linuxhandbook.com/nc-command/
+* So I found that on the AntiX (debian buster) I need to enter
+netcat
+and on my Pine64 Arm board, like a raspberry pi, (Armbian), I can use just 
+nc
+But so far I haven't figured out how to make them connect.
+On the antiX I did
+sudo netcat -l 22
+and then on the pine 64, I did sudo nc 10.248.1.143 22
+and it does not seem to connect.
+I wonder if it is because I am using 22 to get from my windows to the 
+Pine64, in order to go linux to linux.
+I guess netcat has a windows version, but I haven't looked for it yet.
+Glenn
+----- Original Message ----- 
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Willem van der Walt" <wvdwalt@csir.co.za>
+Cc: "Speakup is a screen review system for Linux." 
+<speakup@linux-speakup.org>
+Sent: Friday, August 26, 2022 1:38 PM
+Subject: Re: hopefully some help with AntiX
+
 
 Hi Willem,
 Can I operate the terminal with ncat like with SSH?
@@ -62,7 +87,7 @@ Thanks.
 ----- Original Message ----- 
 From: "Willem van der Walt" <wvdwalt@csir.co.za>
 To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Speakup is a screen review system for Linux." 
+Cc: "Speakup is a screen review system for Linux."
 <speakup@linux-speakup.org>
 Sent: Friday, August 26, 2022 1:19 PM
 Subject: Re: hopefully some help with AntiX
@@ -84,9 +109,9 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > It has something I think it was called apt-antiX or something, but it is
 > menu driven, and that does not work with OCR on the screen.
 > So it seems fast and viable, but I cannot get anything into it.
-> If I put stuff on a thumb drive and plugged it in, without speech output, 
+> If I put stuff on a thumb drive and plugged it in, without speech output,
 > I
-> couldn't possibly get all guesses needed to find the device in 
+> couldn't possibly get all guesses needed to find the device in
 > /media/demo.
 > Thanks though.
 >
@@ -95,7 +120,7 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > From: "Brian Buhrow" <buhrow@nfbcal.org>
 > To: "K0LNY_Glenn" <glenn@ervin.email>; "Chime Hart"
 > <chime@hubert-humphrey.com>
-> Cc: "Willem van der Walt" <wvdwalt@csir.co.za>; "Speakup is a screen 
+> Cc: "Willem van der Walt" <wvdwalt@csir.co.za>; "Speakup is a screen
 > review
 > system for Linux." <speakup@linux-speakup.org>; <buhrow@nfbcal.org>
 > Sent: Friday, August 26, 2022 10:12 AM
@@ -108,13 +133,13 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > It sounds like the machine you're installing is up and running to some
 > extent, i.e. you believe
 > it has enough network to go out and download packages from repositories.
-> If that's true, then I suggest building yourself a data file on the 
+> If that's true, then I suggest building yourself a data file on the
 > machine
 > about its
-> state and then scp it back to your working machine for post mortom 
+> state and then scp it back to your working machine for post mortom
 > analysis.
 > In this way, you
-> can be smarter about what's really going on with it rather than just 
+> can be smarter about what's really going on with it rather than just
 > trying
 > our suggestions and
 > getting more and more frustrated.
@@ -135,20 +160,20 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > netstat that I don't
 > remember off the top of my head.)
 >
-> The script command will capture your commands, and the output they 
+> The script command will capture your commands, and the output they
 > generate,
 > into a file called
 > typescript in the current directory (/tmp above).  When you've collected a
 > bunch of data, exit
-> the shell you started with the script command and scp the file 
+> the shell you started with the script command and scp the file
 > "typescript"
 > back to your
-> working installed machine and look it over.  Keep in mind there will be 
+> working installed machine and look it over.  Keep in mind there will be
 > some
 > portions of it
 > that will look like giberish because it captures all the terminal escape
 > sequences to format
-> the screen as well, but it will give you a lot more knowledge about what 
+> the screen as well, but it will give you a lot more knowledge about what
 > is
 > going on.  Also, it
 > will tell you which commands worked and which didn't, and why.
@@ -169,7 +194,7 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 >
 > Repeat commands, followed by >> typescript 2>&1
 >
-> over and over again, as described above, to dump the output of both 
+> over and over again, as described above, to dump the output of both
 > standard
 > out and standard
 > error (path for error messages) into your hand made typescript file.
@@ -195,6 +220,7 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > -Brian
 >
 >
-> 
+>
+
 
 
