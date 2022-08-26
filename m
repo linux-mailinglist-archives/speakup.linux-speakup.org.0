@@ -1,35 +1,48 @@
-Return-Path: <speakup+bounces-655-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-656-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 46D705A1D6F
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 02:02:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id DBB4E5A1D71
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 02:03:18 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=BHrZ/Lt/;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CF0363810CA; Thu, 25 Aug 2022 20:02:34 -0400 (EDT)
+	id 3A909380F2D; Thu, 25 Aug 2022 20:03:13 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8292B3818E4
-	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 20:02:33 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id A615E3810D6
+	for <lists+speakup@lfdr.de>; Thu, 25 Aug 2022 20:03:11 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 24586380E98; Thu, 25 Aug 2022 20:02:32 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0054.b.hostedemail.com [64.98.42.54])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 10DF8380C5D
-	for <speakup@linux-speakup.org>; Thu, 25 Aug 2022 20:02:32 -0400 (EDT)
-Received: from omf02.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id 6E766801E67A;
-	Fri, 26 Aug 2022 00:02:30 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf02.b.hostedemail.com (Postfix) with ESMTPA id EE6E088AC3DA;
-	Fri, 26 Aug 2022 00:02:29 +0000 (UTC)
-Message-ID: <028101d8b8df$22d65800$80ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Gregory Nowak" <greg@gregn.net>,
-	<speakup@linux-speakup.org>
-References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <007001d8b776$2a7193a0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208241123100.3538@willempc.meraka.csir.co.za> <011d01d8b7dc$1fbf79c0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208251022200.17853@willempc.meraka.csir.co.za> <YwgMl3QDVvPQ7HpZ@gregn.net>
+	id 820CB380EE3; Thu, 25 Aug 2022 20:03:08 -0400 (EDT)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 55A23380E98
+	for <speakup@linux-speakup.org>; Thu, 25 Aug 2022 20:03:08 -0400 (EDT)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4MDKmC6xRCz4DHQ;
+	Thu, 25 Aug 2022 20:03:07 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1661472187; bh=5k+aWJUJbiV32zR/U5KY1qZq9W0v5cW7UK+YEuSbBRk=;
+	h=Date:From:To:Subject:In-Reply-To:References;
+	b=BHrZ/Lt/Ew8LHsyjHGWfFHvYtGm60OF3wUIBrPXQgE1Jv8Bt6IZ5GkZIzycOl+oiY
+	 RZ7Rs2nAsAFP203YkfhObLIwS32ruMr65QAL3VuOWR8B/S2bWeQB1qONXb7pEYta3B
+	 wPnTCmuSxTa0YwIUgdOjOuIRaKX/EUqIKvkqwMO0=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4MDKmC6cVmzcbc; Thu, 25 Aug 2022 20:03:07 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by panix1.panix.com (Postfix) with ESMTP id 4MDKmC6MhYzcbP;
+	Thu, 25 Aug 2022 20:03:07 -0400 (EDT)
+Date: Thu, 25 Aug 2022 20:03:07 -0400
+From: Jude DaShiell <jdashiel@panix.com>
+To: K0LNY_Glenn <glenn@ervin.email>, 
+    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: hopefully some help with AntiX
-Date: Thu, 25 Aug 2022 19:02:29 -0500
-Organization: Home
+In-Reply-To: <027a01d8b8db$c63d14b0$80ffa8c0@Win7VM>
+Message-ID: <ecb56d32-e4f1-b1ff-ee5-981034d97e84@panix.com>
+References: <005b01d8b764$65f690e0$80ffa8c0@Win7VM> <f1e0bff4-cbdc-1766-293-dc2558869c6b@panix.com> <022401d8b8c1$9a2c40e0$80ffa8c0@Win7VM> <022901d8b8c6$2c5c46f0$80ffa8c0@Win7VM> <363bcd12-5bd3-5749-2d6e-348ebfa9b461@panix.com> <022d01d8b8c8$57f2a780$80ffa8c0@Win7VM>
+ <a66e95d1-4eef-4ede-a970-39e5af7cddd@panix.com> <025e01d8b8d0$bb189b50$80ffa8c0@Win7VM> <7fa189ed-bfd1-921b-9f0-ec261bf3987@panix.com> <efc0aea1-18fc-aa94-43e7-a17bb42cb1c0@panix.com> <027601d8b8d7$49b44520$80ffa8c0@Win7VM> <c2e2192-399e-6e18-d5fa-818b84d88130@panix.com>
+ <027a01d8b8db$c63d14b0$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -39,95 +52,239 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Queue-Id: EE6E088AC3DA
-X-Spam-Status: No, score=-2.60
-X-Stat-Signature: ux4q48ukxso8ion4tgbu5w1wt1k9h5h6
-X-Rspamd-Server: rspamout03
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19/fiK5xX2JN9OIXSStNvXdsTWSLCXa+YY=
-X-HE-Tag: 1661472149-41762
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I used 0/24 in what Willem sent out, but the IP addresses start at /1, so 
-would I want to use /0/24 or /1/24?
-Thanks.
-
------ Original Message ----- 
-From: "Gregory Nowak" <greg@gregn.net>
-To: <speakup@linux-speakup.org>
-Sent: Thursday, August 25, 2022 6:58 PM
-Subject: Re: hopefully some help with AntiX
+sapt search git-cli may help.
 
 
-On Thu, Aug 25, 2022 at 10:30:13AM +0200, Willem van der Walt wrote:
-> #Allow ssh from your network
-> iptables -A INPUT -p tcp -s 10.248.1.0/24 --dport 22 -m state --state 
-> NEW,ESTABLISHED -j ACCEPT
-> #Allow outgoing ssh
-> iptables -A INPUT -p tcp --sport 22 -j ACCEPT
-> The iptables command should work as it is the basic command used by all
-> firewall tools.
+Jude <jdashiel at panix dot com>
+"There are four boxes to be used in defense of liberty:
+ soap, ballot, jury, and ammo. Please use in that order."
+-Ed Howdershelt (Author, 1940)
 
-Not exactly, I would expect any new install these days done with
-something based on debian buster to use the newer nftables:
+.
 
-<https://wiki.debian.org/iptables>
+On Thu, 25 Aug 2022, K0LNY_Glenn wrote:
 
-So replace iptables in the above with iptables-legacy. Also, you'll
-want to replace 10.248.1.0/24 with whatever address range your network uses.
-
-
-On Thu, Aug 25, 2022 at 05:08:06PM -0500, K0LNY_Glenn wrote:
-> If pip will install speakup, what is the best order to install needed
-> things, like espeak-ng, speech-dispatcher, and I don't know if alsa is
-> installed either.
-> audio works through pulseaudio from what I have read.
-> There is audio with speaker-test.
-> But neither espeak or espeak-ng and a word work.
-
-If you have pulseaudio installed, I think your best bet is to install
-speech-dispatcher-espeak-ng, espeak-ng, and speechd-up. Those should
-pull in everything else you need. If you have pulseaudio installed,
-you will likely have problems if you try to install espeakup (I.E. no
-speech). If you can manage to get speechd-up going, you can then
-resolve your ssh issues, and with ssh access transition to espeakup,
-either dumping pulseaudio, or getting it to work nicely with espeakup.
-
-
-On Thu, Aug 25, 2022 at 05:19:22PM -0500, K0LNY_Glenn wrote:
-> well I just went ahead and tried
-> sudo pip install speakup
-> and got the same error as with fenrir, an environment problem.
-
-Judging from the other messages in this thread, sounds like you will
-need to first resolve that problem before you can install
-anything. Getting ssh access should help with that. See if what I
-posted at the beginning about iptables helps you.
-
-As far as adding repositories, I would advise against adding the repo
-for debian sid as someone else suggested. Adding the repos for buster
-should be OK, but I don't know anything about the distribution you're
-running, so won't fully endorse that.
-
-Greg
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your 
-contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-
+> Yeah, I tried that early on with no luck.
+> Glenn
+> ----- Original Message -----
+> From: "Jude DaShiell" <jdashiel@panix.com>
+> To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review system
+> for Linux." <speakup@linux-speakup.org>
+> Sent: Thursday, August 25, 2022 6:36 PM
+> Subject: Re: hopefully some help with AntiX
+>
+>
+> git is installed with apt or apt-get.
+>
+>
+> Jude <jdashiel at panix dot com>
+> "There are four boxes to be used in defense of liberty:
+>  soap, ballot, jury, and ammo. Please use in that order."
+> -Ed Howdershelt (Author, 1940)
+>
+> .
+>
+> On Thu, 25 Aug 2022, K0LNY_Glenn wrote:
+>
+> > pip gets the same error when I try to install git.
+> >
+> > ----- Original Message -----
+> > From: "Jude DaShiell" <jdashiel@panix.com>
+> > To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review system
+> > for Linux." <speakup@linux-speakup.org>
+> > Sent: Thursday, August 25, 2022 5:30 PM
+> > Subject: Re: hopefully some help with AntiX
+> >
+> >
+> > Try git clone https://github.com/chris87/fenrir and see if that works.
+> >
+> >
+> > Jude <jdashiel at panix dot com>
+> > "There are four boxes to be used in defense of liberty:
+> >  soap, ballot, jury, and ammo. Please use in that order."
+> > -Ed Howdershelt (Author, 1940)
+> >
+> > .
+> >
+> > On Thu, 25 Aug 2022, Jude DaShiell wrote:
+> >
+> > > If you got pip installed, it won't install speakup since speakup wasn't
+> > > written in python.
+> > >
+> > >
+> > > Jude <jdashiel at panix dot com> "There are four boxes to be used in
+> > > defense of liberty:
+> > >  soap, ballot, jury, and ammo. Please use in that order."
+> > > -Ed Howdershelt (Author, 1940)
+> > >
+> > > .
+> > >
+> > > On Thu, 25 Aug 2022, K0LNY_Glenn wrote:
+> > >
+> > > > well I just went ahead and tried
+> > > > sudo pip install speakup
+> > > > and got the same error as with fenrir, an environment problem.
+> > > >
+> > > > ----- Original Message -----
+> > > > From: "Jude DaShiell" <jdashiel@panix.com>
+> > > > To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review
+> > > > system
+> > > > for Linux." <speakup@linux-speakup.org>
+> > > > Sent: Thursday, August 25, 2022 4:24 PM
+> > > > Subject: Re: hopefully some help with AntiX
+> > > >
+> > > >
+> > > > apt search "python-pip3*"
+> > > >
+> > > >
+> > > > Jude <jdashiel at panix dot com>
+> > > > "There are four boxes to be used in defense of liberty:
+> > > >  soap, ballot, jury, and ammo. Please use in that order."
+> > > > -Ed Howdershelt (Author, 1940)
+> > > >
+> > > > .
+> > > >
+> > > > On Thu, 25 Aug 2022, K0LNY_Glenn wrote:
+> > > >
+> > > > > well it could not find python-pip3 and when I did
+> > > > > sudo apt search finrir
+> > > > > it just said full text search
+> > > > > sorting
+> > > > >
+> > > > > Then back to the prompt.
+> > > > >
+> > > > > ----- Original Message -----
+> > > > > From: "Jude DaShiell" <jdashiel@panix.com>
+> > > > > To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review
+> > > > > system
+> > > > > for Linux." <speakup@linux-speakup.org>
+> > > > > Sent: Thursday, August 25, 2022 4:06 PM
+> > > > > Subject: Re: hopefully some help with AntiX
+> > > > >
+> > > > >
+> > > > > python-pip3 may be the name of the package by now.  In any case, try
+> > > > > apt
+> > > > > search fenrir* and see what comes up then.
+> > > > >
+> > > > > Jude <jdashiel at panix dot com>
+> > > > > "There are four boxes to be used in defense of liberty:
+> > > > >  soap, ballot, jury, and ammo. Please use in that order."
+> > > > > -Ed Howdershelt (Author, 1940)
+> > > > >
+> > > > > .
+> > > > >
+> > > > > On Thu, 25 Aug 2022, K0LNY_Glenn wrote:
+> > > > >
+> > > > > > Well looking into antix repositories, it seems it uses a cli tool
+> > > > > > called
+> > > > > > cli-antiX
+> > > > > > but the trouble is, I can't tell what the choices are, for
+> > > > > > searching,
+> > > > > > and
+> > > > > > for installing, it reads
+> > > > > > enter on the highlighted choice.
+> > > > > > Glenn
+> > > > > > ----- Original Message -----
+> > > > > > From: "K0LNY_Glenn" <glenn@ervin.email>
+> > > > > > To: "Jude DaShiell" <jdashiel@panix.com>; "Speakup is a screen
+> > > > > > review
+> > > > > > system
+> > > > > > for Linux." <speakup@linux-speakup.org>
+> > > > > > Sent: Thursday, August 25, 2022 3:31 PM
+> > > > > > Subject: Re: hopefully some help with AntiX
+> > > > > >
+> > > > > >
+> > > > > > So I tried
+> > > > > > sudo pip install fenrir-screenreader -y
+> > > > > > and it didn't know pip
+> > > > > > So I tried
+> > > > > > sudo apt install pip -y
+> > > > > > and it couldn't find it.
+> > > > > > And I tried the same with git and it couldn't find the package.
+> > > > > >
+> > > > > > Frustrating.
+> > > > > >
+> > > > > > ----- Original Message -----
+> > > > > > From: "Jude DaShiell" <jdashiel@panix.com>
+> > > > > > To: "K0LNY_Glenn" <glenn@ervin.email>; "Speakup is a screen review
+> > > > > > system
+> > > > > > for Linux." <speakup@linux-speakup.org>
+> > > > > > Sent: Tuesday, August 23, 2022 10:50 PM
+> > > > > > Subject: Re: hopefully some help with AntiX
+> > > > > >
+> > > > > >
+> > > > > > You could try fenrir with git or pipi whichever is available.
+> > > > > >
+> > > > > >
+> > > > > > Jude <jdashiel at panix dot com> "There are four boxes to be used
+> > > > > > in
+> > > > > > defense of liberty:
+> > > > > >  soap, ballot, jury, and ammo. Please use in that order."
+> > > > > > -Ed Howdershelt (Author, 1940)
+> > > > > >
+> > > > > > .
+> > > > > >
+> > > > > > On Tue, 23 Aug 2022, K0LNY_Glenn wrote:
+> > > > > >
+> > > > > > > Hello,
+> > > > > > > So I successfully got a live version of AntiX 19.5 base 386 on
+> > > > > > > my
+> > > > > > > Asus701
+> > > > > > > I am having trouble getting in with SSH.
+> > > > > > > When I do speaker test on the actual netbook, it works, so I
+> > > > > > > know
+> > > > > > > the
+> > > > > > > audio
+> > > > > > > works.
+> > > > > > > Neither espeak test, or espeak-ng test, worked.
+> > > > > > > It is Debian based, so I did apt update and most of the
+> > > > > > > following
+> > > > > > > things,
+> > > > > > > I
+> > > > > > > tried both with sudo and without.
+> > > > > > > On the computer trying to get in, it tells me connection
+> > > > > > > refused.
+> > > > > > > It is on the network as antix1
+> > > > > > > Everything I read on-line suggest it should have openssh
+> > > > > > > installed,
+> > > > > > > but
+> > > > > > > I
+> > > > > > > ran the apt install for openssh-server -y just in case.
+> > > > > > > I tried systemctl start openssh
+> > > > > > > and I tried system restart openssh
+> > > > > > > I guess it is possible espeak-NG may not be in its repository.
+> > > > > > > Then espeeakup wouldn't be there either.
+> > > > > > > If I had speakup going on the AntiX, or an SSH connection, I
+> > > > > > > could
+> > > > > > > start
+> > > > > > > getting it going.
+> > > > > > >
+> > > > > > > Anyone have any ideas for this?
+> > > > > > > This would be good on the Asus 701, it's using Buster, which
+> > > > > > > isn't
+> > > > > > > that
+> > > > > > > old.Thanks for any assistance.
+> > > > > > >
+> > > > > > > Glenn
+> > > > > > >
+> > > > > > >
+> > > > > > >
+> > > > > >
+> > > > > >
+> > > > > >
+> > > > > >
+> > > > >
+> > > > >
+> > > >
+> > > >
+> > >
+> > >
+> >
+> >
+> >
+>
+>
 
