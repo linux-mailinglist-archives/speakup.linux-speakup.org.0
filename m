@@ -1,45 +1,45 @@
-Return-Path: <speakup+bounces-695-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-696-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B4BE15A3412
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 04:53:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id EC6995A3414
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 04:55:11 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=E68FgzbR;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=WRogEKU3;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E1C6B381117; Fri, 26 Aug 2022 22:53:27 -0400 (EDT)
+	id 7FFE83813DC; Fri, 26 Aug 2022 22:55:11 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C0B95380C93
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 22:53:27 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5E16B380F02
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 22:55:11 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E8FF1380D1C; Fri, 26 Aug 2022 22:53:18 -0400 (EDT)
+	id 89D2E380E68; Fri, 26 Aug 2022 22:55:02 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id BC0B2380C93
-	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 22:53:18 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 67849380C6F
+	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 22:55:02 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4MF1V50FCwz2mD4;
-	Fri, 26 Aug 2022 22:53:17 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4MF1X561x8z2mFg;
+	Fri, 26 Aug 2022 22:55:01 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1661568797; bh=P38n+SnrML8RHzyTj54yd7UNIWWNBiclLjEik/BTkzY=;
+	t=1661568901; bh=li05m/xw5zxE4QFy45i/HzZSvVUgODu40rPdhf9LBmI=;
 	h=Date:From:To:Subject:In-Reply-To:References;
-	b=E68FgzbRF+eru68noKg/2ofghLfXcPEyaCtsWIYObH/BNd0AXLMLctDDt6C9/3R+X
-	 9cg1EThG73Nj9MWglnwoKEsilX8ZymRjPTI1crcyTxkn5g4JvsF4QRduRUrxeqGph7
-	 DllTkr/JC4GX6CnFTBkoonL8kCRQMLw4kTBJcPlw=
+	b=WRogEKU3LL4eZUTTHr/7xczCP8PG2j0Dj91mBa8tsQRyC1RwfcFCsfRAPDh2Pa6Mq
+	 78XRmvq881nR2W8pgmiDVHbPKjPDD/3e9lvyePfIgmNY5UEiPz3LW7rplQq9pNEO0n
+	 jCaYDRpltolwEmAlx+SPSq1cVMmOmEeFuL09U0+8=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4MF1V46bVWzcbc; Fri, 26 Aug 2022 22:53:16 -0400 (EDT)
+	id 4MF1X55Sq7zcbc; Fri, 26 Aug 2022 22:55:01 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4MF1V46FvMzcbC;
-	Fri, 26 Aug 2022 22:53:16 -0400 (EDT)
-Date: Fri, 26 Aug 2022 22:53:16 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4MF1X54zrNzcbP;
+	Fri, 26 Aug 2022 22:55:01 -0400 (EDT)
+Date: Fri, 26 Aug 2022 22:55:01 -0400
 From: Jude DaShiell <jdashiel@panix.com>
 To: K0LNY_Glenn <glenn@ervin.email>, Gregory Nowak <greg@gregn.net>, 
     speakup@linux-speakup.org
 Subject: Re: hopefully some help with AntiX
 In-Reply-To: <010401d8b9bf$7da53220$80ffa8c0@Win7VM>
-Message-ID: <17d3febb-1125-763c-1eca-ffa8627118e6@panix.com>
+Message-ID: <bf5df74c-7111-ad54-c9b-6b9c926ad2f@panix.com>
 References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net>
  <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com> <00bc01d8b9aa$824f8ce0$80ffa8c0@Win7VM> <127b4a87-d4a5-f669-4d33-534e114ecb8@panix.com> <010401d8b9bf$7da53220$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
@@ -54,11 +54,13 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Did you run checkdependencies.py in that installation process?
+Also sysctl enable fenrir.service or is it fenrirscreenreader.service then
+sysctl start fenrir.service or sysctl start fenrirscreenreader.service.
+If a service is missing systemd will let you know about it.
 
 
-Jude <jdashiel at panix dot com> "There are four boxes to be used in
-defense of liberty:
+Jude <jdashiel at panix dot com>
+"There are four boxes to be used in defense of liberty:
  soap, ballot, jury, and ammo. Please use in that order."
 -Ed Howdershelt (Author, 1940)
 
