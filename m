@@ -1,29 +1,36 @@
-Return-Path: <speakup+bounces-709-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-710-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D56B35A38C2
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 18:26:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E827D5A3925
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 19:11:23 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E59AA385792; Sat, 27 Aug 2022 12:26:09 -0400 (EDT)
+	id C423E38576E; Sat, 27 Aug 2022 13:11:22 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CE9BC385751
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 12:26:09 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id ACF7238574A
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 13:11:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DEB68385752; Sat, 27 Aug 2022 12:26:04 -0400 (EDT)
-Received: from smtprelay07.ispgateway.de (smtprelay07.ispgateway.de [134.119.228.97])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 017B038574D
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 12:26:03 -0400 (EDT)
-Received: from [31.18.253.204] (helo=smtpclient.apple)
-	by smtprelay07.ispgateway.de with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-	(Exim 4.94.2)
-	(envelope-from <chrys@linux-a11y.org>)
-	id 1oRycw-0005Zr-MD; Sat, 27 Aug 2022 18:25:42 +0200
-Content-Type: multipart/alternative; boundary=Apple-Mail-BB31A84D-92AB-42A3-BE67-AE187A1AC06C
-Content-Transfer-Encoding: 7bit
-From: Linux A11y <chrys@linux-a11y.org>
+	id 9856C38574D; Sat, 27 Aug 2022 13:11:17 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0173.b.hostedemail.com [64.98.42.173])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 77746385748
+	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 13:11:17 -0400 (EDT)
+Received: from omf08.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay06.b.hostedemail.com (Postfix) with ESMTP id CDE19189133B8;
+	Sat, 27 Aug 2022 17:11:16 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf08.b.hostedemail.com (Postfix) with ESMTPA id 128B218C3D3AF;
+	Sat, 27 Aug 2022 17:11:15 +0000 (UTC)
+Message-ID: <015001d8ba38$051cd460$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Linux A11y" <chrys@linux-a11y.org>
+Cc: <speakup@linux-speakup.org>,
+	"Didier Spaier" <didier@slint.fr>
+References: <014401d8ba2e$2c769320$80ffa8c0@Win7VM> <DF76B91D-4AAA-47C0-A42E-21A47C70872A@linux-a11y.org>
+Subject: Re: hopefully some help with AntiX
+Date: Sat, 27 Aug 2022 12:11:16 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -32,1433 +39,1933 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-Mime-Version: 1.0 (1.0)
-Subject: Re: hopefully some help with AntiX
-Date: Sat, 27 Aug 2022 18:25:57 +0200
-Message-Id: <DF76B91D-4AAA-47C0-A42E-21A47C70872A@linux-a11y.org>
-References: <014401d8ba2e$2c769320$80ffa8c0@Win7VM>
-Cc: speakup@linux-speakup.org, Didier Spaier <didier@slint.fr>
-In-Reply-To: <014401d8ba2e$2c769320$80ffa8c0@Win7VM>
-To: K0LNY_Glenn <glenn@ervin.email>
-X-Mailer: iPhone Mail (19G82)
-X-Df-Sender: Y2hyeXNAbGludXgtYTExeS5vcmc=
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_014D_01D8BA0E.1B8DDCA0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: ust5kukz56gaq4smaft63kp3q1nma755
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: 128B218C3D3AF
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1+tcqZjowsztvo3sWAqjtLYGwV4TK8L6WU=
+X-HE-Tag: 1661620275-726182
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
+This is a multi-part message in MIME format.
 
---Apple-Mail-BB31A84D-92AB-42A3-BE67-AE187A1AC06C
+------=_NextPart_000_014D_01D8BA0E.1B8DDCA0
 Content-Type: text/plain;
-	charset=utf-8
+	charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
+
+Yeah, just OCR, using SeeingAI on an iPhone.
+I can't get SSH to work on it.
+Thanks.
+
+----- Original Message -----=20
+From: Linux A11y=20
+To: K0LNY_Glenn=20
+Cc: speakup@linux-speakup.org ; Didier Spaier=20
+Sent: Saturday, August 27, 2022 11:25 AM
+Subject: Re: hopefully some help with AntiX
+
 
 Howdy glenn,
 
-Nah, you can download the source from github just as zip or tar. Specialy th=
-e releases i did. See here:
+
+Nah, you can download the source from github just as zip or tar. =
+Specialy the releases i did. See here:
+
 
 https://github.com/chrys87/fenrir/archive/refs/tags/1.9.7.1.tar.gz
 
+
 You can just unpack and run it.
 
+
 You are using the system just with OCR? Respect.
+
 
 Cheers chrys
 
 
+
 Von meinem iPhone gesendet
 
-> Am 27.08.2022 um 18:00 schrieb K0LNY_Glenn <glenn@ervin.email>:
->=20
-> =EF=BB=BF
-> If Fenrir requires git, that is a problem, because git is not on AntiX, an=
-d I tried to apt install it, and it cannot find it.
-> I am wondering if the errors are related to git.
-> I'm using OCR on the screen, so it isn't easy to obtain the messages, and i=
-mpossible to save them.
-> =20
-> Glenn
-> ----- Original Message -----
-> From: Linux A11y
-> To: K0LNY_Glenn
-> Cc: speakup@linux-speakup.org ; Didier Spaier
-> Sent: Saturday, August 27, 2022 10:50 AM
-> Subject: Re: hopefully some help with AntiX
->=20
-> Howdy,
->=20
->>> Well I ran check-dependencies.py and it gave a couple mysterious errors,=
-=20
-> What errors you get? Fenrir starts for testing also just from git folder w=
-ithout any need to install. But it requires the needed dependencys and the c=
-orrect pulse setup.
-> See readme section pulseaudio.
-> https://github.com/chrys87/fenrir#configure-pulseaudio
->=20
-> Also this is the speakup list and people tend to flame if someone is =E2=80=
-=9Eadvertising=E2=80=9C different software. To prevent this you can register=
- to fenrirs mailing list to get useful help. We will get it run for sure.
->=20
-> Cheers chrys
->=20
->> Am 27.08.2022 um 17:37 schrieb K0LNY_Glenn <glenn@ervin.email>:
->>=20
->> =EF=BB=BFHi Didier,
->> I did try to join that forum about a week ago, and never got a confirmati=
-on=20
->> for the forum.
->> I also contacted someone associated with it and asked why accessibility=20=
 
->> wasn't built in.
->> Thanks.
->>=20
->>=20
->> ----- Original Message -----=20
->> From: "Didier Spaier" <didier@slint.fr>
->> To: <speakup@linux-speakup.org>
->> Sent: Saturday, August 27, 2022 12:22 PM
->> Subject: Re: hopefully some help with AntiX
->>=20
->>=20
->> Hi,
->>=20
->> Installing a package intended for another distribution can work... But
->> oftentimes does not.
->>=20
->> If not yet done, I suggest that you post your issue in this forum:
->> https://www.antixforum.com/
->> Caveat: I do not know if it is accessible with a screen reader.
->>=20
->> Cheers,
->> Dider
->>=20
->>=20
->>=20
->> Le 27/08/2022 =C3=A0 15:06, K0LNY_Glenn a =C3=A9crit :
->>> Well I found espeak-ng for Debian Buster here:
->>> https://packages.debian.org/buster/espeak-ng
->>> The file I downloaded was:
->>> espeak-ng_1.49.2+dfsg-8+deb10u1.debian.tar.xz
->>> Looking in the archive, there are some .install files, but I didn't find=
-=20
->>> any
->>> .sh files, so I don't know which file to use to get espeak installed on=20=
+  Am 27.08.2022 um 18:00 schrieb K0LNY_Glenn <glenn@ervin.email>:
 
->>> this
->>> system.
->>> Or if there is a .deb for RhVoice, that would work too, but did I downlo=
-ad
->>> the wrong espeak-ng file for installing it?
->>> Thanks.
->>>=20
->>> Glenn
->>>=20
->>> ----- Original Message -----=20
->>> From: "K0LNY_Glenn" <glenn@ervin.email>
->>> To: "Jude DaShiell" <jdashiel@panix.com>; "Gregory Nowak"=20
->>> <greg@gregn.net>;
->>> <speakup@linux-speakup.org>
->>> Sent: Saturday, August 27, 2022 9:46 AM
->>> Subject: Re: hopefully some help with AntiX
->>>=20
->>>=20
->>> Well I ran check-dependencies.py and it gave a couple mysterious errors,=
-=20
->>> but
->>> it didn't help.
->>> I ran install.sh again.
->>> I ran sudo fenrir and again it only gave me the startup tone.
->>> It acts like there is no TTS for it to use.
->>> Glenn
->>> ----- Original Message -----=20
->>> From: "Jude DaShiell" <jdashiel@panix.com>
->>> To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net>;=
 
->>> <speakup@linux-speakup.org>
->>> Sent: Friday, August 26, 2022 9:55 PM
->>> Subject: Re: hopefully some help with AntiX
->>>=20
->>>=20
->>> Also sysctl enable fenrir.service or is it fenrirscreenreader.service th=
-en
->>> sysctl start fenrir.service or sysctl start fenrirscreenreader.service.
->>> If a service is missing systemd will let you know about it.
->>>=20
->>>=20
->>> Jude <jdashiel at panix dot com>
->>> "There are four boxes to be used in defense of liberty:
->>> soap, ballot, jury, and ammo. Please use in that order."
->>> -Ed Howdershelt (Author, 1940)
->>>=20
->>> .
->>>=20
->>> On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
->>>=20
->>>> Well I ran install.sh on the system, and pressed enter where it said to=
+  =EF=BB=BF=20
+  If Fenrir requires git, that is a problem, because git is not on =
+AntiX, and I tried to apt install it, and it cannot find it.
+  I am wondering if the errors are related to git.
+  I'm using OCR on the screen, so it isn't easy to obtain the messages, =
+and impossible to save them.
 
->>>> proceed, and it said was finished, and it said to type
->>>> sudo fenrir
->>>> to test it, and all I can get is the two-tone sound when fenrir starts,=
+  Glenn
+  ----- Original Message -----=20
+  From: Linux A11y=20
+  To: K0LNY_Glenn=20
+  Cc: speakup@linux-speakup.org ; Didier Spaier=20
+  Sent: Saturday, August 27, 2022 10:50 AM
+  Subject: Re: hopefully some help with AntiX
 
->>>> but
->>>> no TTS.
->>>> Should have that installed espeak or espeak-ng?
->>>> Thanks.
->>>>=20
->>>> ----- Original Message -----
->>>> From: "Jude DaShiell" <jdashiel@panix.com>
->>>> To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net>=
-;
->>>> <speakup@linux-speakup.org>
->>>> Sent: Friday, August 26, 2022 8:27 PM
->>>> Subject: Re: hopefully some help with AntiX
->>>>=20
->>>>=20
->>>> For now and not forever, why not do apt purge ufw?
->>>>=20
->>>>=20
->>>> Jude <jdashiel at panix dot com>
->>>> "There are four boxes to be used in defense of liberty:
->>>> soap, ballot, jury, and ammo. Please use in that order."
->>>> -Ed Howdershelt (Author, 1940)
->>>>=20
->>>> .
->>>>=20
->>>>> On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
->>>>=20
->>>>> Then all 1000 ports show up in nmap as closed.
->>>>> So it seems if I allow a port in ufw, it shows up as closed, but not
->>>>> filtered.
->>>>> So filtered means ufw is running, and if 22 gets allowed, it is not
->>>>> filtered, but still closed.
->>>>> Glenn
->>>>>=20
->>>>>=20
->>>>> ----- Original Message -----
->>>>> From: "Jude DaShiell" <jdashiel@panix.com>
->>>>> To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net=
->;
->>>>> <speakup@linux-speakup.org>
->>>>> Sent: Friday, August 26, 2022 7:12 PM
->>>>> Subject: Re: hopefully some help with AntiX
->>>>>=20
->>>>>=20
->>>>> What happens if ufw --disable is run then the offending computer gets
->>>>> rebooted?
->>>>>=20
->>>>> Jude <jdashiel at panix dot com>
->>>>> "There are four boxes to be used in defense of liberty:
->>>>> soap, ballot, jury, and ammo. Please use in that order."
->>>>> -Ed Howdershelt (Author, 1940)
->>>>>=20
->>>>> .
->>>>>=20
->>>>>> On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
->>>>>=20
->>>>>> I've considered that, and if I can get any port to open, I will gladl=
-y
->>>>>> use
->>>>>> telnet.
->>>>>> Hell, if I could open all 1000 ports now, I would!
->>>>>> Glenn
->>>>>> ----- Original Message -----
->>>>>> From: "Gregory Nowak" <greg@gregn.net>
->>>>>> To: <speakup@linux-speakup.org>
->>>>>> Sent: Friday, August 26, 2022 7:01 PM
->>>>>> Subject: Re: hopefully some help with AntiX
->>>>>>=20
->>>>>>=20
->>>>>>> On Fri, Aug 26, 2022 at 02:06:13PM -0500, K0LNY_Glenn wrote:
->>>>>>> On the antiX I did
->>>>>>> sudo netcat -l 22
->>>>>>> and then on the pine 64, I did sudo nc 10.248.1.143 22
->>>>>>> and it does not seem to connect.
->>>>>>> I wonder if it is because I am using 22 to get from my windows to
->>>>>>> the
->>>>>>> Pine64, in order to go linux to linux.
->>>>>>=20
->>>>>> Port 22 is a privileged port. You should consider using 1024 or
->>>>>> higher. If the listening port is open on the firewall, the commands
->>>>>> you gave above should connect. If you type something on the client
->>>>>> side, you should see it typed on the antiX machine, and the other way=
 
->>>>>> round. This will however not give you a login terminal. To do that,
->>>>>> you need something that handles logins to listen on your netcat. This=
+  Howdy,=20
 
->>>>>> isn't something I've done, so can't give you more directions here. If=
 
->>>>>> you don't care about the connection being secure, which you don't see=
-m
->>>>>> to, you might as well try:
->>>>>>=20
->>>>>> apt install telnetd
->>>>>>=20
->>>>>> and open tcp 23 on your firewall.
->>>>>>=20
->>>>>>=20
->>>>>>> On Fri, Aug 26, 2022 at 04:12:28PM -0500, K0LNY_Glenn wrote:
->>>>>>> Well I thought I'd try iptables again.
->>>>>>> I finally got it to run without any errors, that long iptables
->>>>>>> command
->>>>>>> I
->>>>>>> got
->>>>>>> earlier.
->>>>>>> But nmap still sees no ports open on that host.
->>>>>>> Prior to running iptables, I tried to apt install it, and the
->>>>>>> message
->>>>>>> was
->>>>>>> that I'm already running the latest.
->>>>>>> So I needed to restart iptables with
->>>>>>> sudo service iptables restart
->>>>>>> and it can find no service iptables.
->>>>>>> I retyped it several times to be sure there was no typos.
->>>>>>=20
->>>>>> This is to be expected, iptables is not a system service.
->>>>>>=20
->>>>>>> So I tried
->>>>>>> sudo systemctl restart iptables
->>>>>>> and the system cannot find systemctl
->>>>>>=20
->>>>>> Is antiX running sysvinit, openrc, or something else? This is
->>>>>> something the antiX documentation should tell you. What does it use
->>>>>> for PID1 or init?
->>>>>>=20
->>>>>>> question:
->>>>>>> If I reboot, if the long iptables command worked, will it stick if I=
+      Well I ran check-dependencies.py and it gave a couple mysterious =
+errors,=20
+  What errors you get? Fenrir starts for testing also just from git =
+folder without any need to install. But it requires the needed =
+dependencys and the correct pulse setup.
+  See readme section pulseaudio.
+  https://github.com/chrys87/fenrir#configure-pulseaudio
 
->>>>>>> reboot?
->>>>>>=20
->>>>>> No.
->>>>>>=20
->>>>>>=20
->>>>>>> On Fri, Aug 26, 2022 at 05:57:37PM -0500, K0LNY_Glenn wrote:
->>>>>>> Well it seems ufw is there, but it must not be running
->>>>>>> automatically,
->>>>>>> but
->>>>>>> it
->>>>>>> does not fix the port problem.
->>>>>>> I did
->>>>>>> sudo ufw allow ssh
->>>>>>> it said tcp port allowed
->>>>>>> or something like that
->>>>>>> so I checked on the other computer with nmap
->>>>>>> 100 ports closed
->>>>>>> So I did sudo ufw restart
->>>>>>> and the other computer said 999 ports filtered tcp port 22 closed.
->>>>>>> I've done iptables too, but that does not stay after a reboot.
->>>>>>> if I do sudo ufw status
->>>>>>> it shows tcp port 22 allow
->>>>>>> but it does not stay from a reboot.
->>>>>>=20
->>>>>> You need to save the firewall configuration once you changed it for i=
-t
->>>>>> to persist across reboots. I haven't used ufw, so you will need to
->>>>>> read up on how to do that.
->>>>>>=20
->>>>>> If port tcp 22 shows up as not filtered but closed, then the port is
->>>>>> open, but there is no ssh service running.
->>>>>>=20
->>>>>> Greg
->>>>>>=20
->>>>>>=20
->>>>>>=20
->>>>>=20
->>>>>=20
->>>>>=20
->>>>=20
->>>>=20
->>>>=20
->>>=20
->>>=20
->>>=20
->>=20
->>=20
 
---Apple-Mail-BB31A84D-92AB-42A3-BE67-AE187A1AC06C
+  Also this is the speakup list and people tend to flame if someone is =
+=E2=80=9Eadvertising=E2=80=9C different software. To prevent this you =
+can register to fenrirs mailing list to get useful help. We will get it =
+run for sure.
+
+
+  Cheers chrys
+
+
+    Am 27.08.2022 um 17:37 schrieb K0LNY_Glenn <glenn@ervin.email>:
+
+
+    =EF=BB=BFHi Didier,
+    I did try to join that forum about a week ago, and never got a =
+confirmation=20
+    for the forum.
+    I also contacted someone associated with it and asked why =
+accessibility=20
+    wasn't built in.
+    Thanks.
+
+
+    ----- Original Message -----=20
+    From: "Didier Spaier" <didier@slint.fr>
+    To: <speakup@linux-speakup.org>
+    Sent: Saturday, August 27, 2022 12:22 PM
+    Subject: Re: hopefully some help with AntiX
+
+
+    Hi,
+
+    Installing a package intended for another distribution can work... =
+But
+    oftentimes does not.
+
+    If not yet done, I suggest that you post your issue in this forum:
+    https://www.antixforum.com/
+    Caveat: I do not know if it is accessible with a screen reader.
+
+    Cheers,
+    Dider
+
+
+
+    Le 27/08/2022 =C3=A0 15:06, K0LNY_Glenn a =C3=A9crit :
+
+      Well I found espeak-ng for Debian Buster here:
+
+      https://packages.debian.org/buster/espeak-ng
+
+      The file I downloaded was:
+
+      espeak-ng_1.49.2+dfsg-8+deb10u1.debian.tar.xz
+
+      Looking in the archive, there are some .install files, but I =
+didn't find=20
+
+      any
+
+      .sh files, so I don't know which file to use to get espeak =
+installed on=20
+
+      this
+
+      system.
+
+      Or if there is a .deb for RhVoice, that would work too, but did I =
+download
+
+      the wrong espeak-ng file for installing it?
+
+      Thanks.
+
+
+
+      Glenn
+
+
+
+      ----- Original Message -----=20
+
+      From: "K0LNY_Glenn" <glenn@ervin.email>
+
+      To: "Jude DaShiell" <jdashiel@panix.com>; "Gregory Nowak"=20
+
+      <greg@gregn.net>;
+
+      <speakup@linux-speakup.org>
+
+      Sent: Saturday, August 27, 2022 9:46 AM
+
+      Subject: Re: hopefully some help with AntiX
+
+
+
+
+
+      Well I ran check-dependencies.py and it gave a couple mysterious =
+errors,=20
+
+      but
+
+      it didn't help.
+
+      I ran install.sh again.
+
+      I ran sudo fenrir and again it only gave me the startup tone.
+
+      It acts like there is no TTS for it to use.
+
+      Glenn
+
+      ----- Original Message -----=20
+
+      From: "Jude DaShiell" <jdashiel@panix.com>
+
+      To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" =
+<greg@gregn.net>;
+
+      <speakup@linux-speakup.org>
+
+      Sent: Friday, August 26, 2022 9:55 PM
+
+      Subject: Re: hopefully some help with AntiX
+
+
+
+
+
+      Also sysctl enable fenrir.service or is it =
+fenrirscreenreader.service then
+
+      sysctl start fenrir.service or sysctl start =
+fenrirscreenreader.service.
+
+      If a service is missing systemd will let you know about it.
+
+
+
+
+
+      Jude <jdashiel at panix dot com>
+
+      "There are four boxes to be used in defense of liberty:
+
+      soap, ballot, jury, and ammo. Please use in that order."
+
+      -Ed Howdershelt (Author, 1940)
+
+
+
+      .
+
+
+
+      On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
+
+
+
+        Well I ran install.sh on the system, and pressed enter where it =
+said to
+
+        proceed, and it said was finished, and it said to type
+
+        sudo fenrir
+
+        to test it, and all I can get is the two-tone sound when fenrir =
+starts,
+
+        but
+
+        no TTS.
+
+        Should have that installed espeak or espeak-ng?
+
+        Thanks.
+
+
+
+        ----- Original Message -----
+
+        From: "Jude DaShiell" <jdashiel@panix.com>
+
+        To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" =
+<greg@gregn.net>;
+
+        <speakup@linux-speakup.org>
+
+        Sent: Friday, August 26, 2022 8:27 PM
+
+        Subject: Re: hopefully some help with AntiX
+
+
+
+
+
+        For now and not forever, why not do apt purge ufw?
+
+
+
+
+
+        Jude <jdashiel at panix dot com>
+
+        "There are four boxes to be used in defense of liberty:
+
+        soap, ballot, jury, and ammo. Please use in that order."
+
+        -Ed Howdershelt (Author, 1940)
+
+
+
+        .
+
+
+
+        On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
+
+
+
+          Then all 1000 ports show up in nmap as closed.
+
+          So it seems if I allow a port in ufw, it shows up as closed, =
+but not
+
+          filtered.
+
+          So filtered means ufw is running, and if 22 gets allowed, it =
+is not
+
+          filtered, but still closed.
+
+          Glenn
+
+
+
+
+
+          ----- Original Message -----
+
+          From: "Jude DaShiell" <jdashiel@panix.com>
+
+          To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" =
+<greg@gregn.net>;
+
+          <speakup@linux-speakup.org>
+
+          Sent: Friday, August 26, 2022 7:12 PM
+
+          Subject: Re: hopefully some help with AntiX
+
+
+
+
+
+          What happens if ufw --disable is run then the offending =
+computer gets
+
+          rebooted?
+
+
+
+          Jude <jdashiel at panix dot com>
+
+          "There are four boxes to be used in defense of liberty:
+
+          soap, ballot, jury, and ammo. Please use in that order."
+
+          -Ed Howdershelt (Author, 1940)
+
+
+
+          .
+
+
+
+          On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
+
+
+
+            I've considered that, and if I can get any port to open, I =
+will gladly
+
+            use
+
+            telnet.
+
+            Hell, if I could open all 1000 ports now, I would!
+
+            Glenn
+
+            ----- Original Message -----
+
+            From: "Gregory Nowak" <greg@gregn.net>
+
+            To: <speakup@linux-speakup.org>
+
+            Sent: Friday, August 26, 2022 7:01 PM
+
+            Subject: Re: hopefully some help with AntiX
+
+
+
+
+
+            On Fri, Aug 26, 2022 at 02:06:13PM -0500, K0LNY_Glenn wrote:
+
+              On the antiX I did
+
+              sudo netcat -l 22
+
+              and then on the pine 64, I did sudo nc 10.248.1.143 22
+
+              and it does not seem to connect.
+
+              I wonder if it is because I am using 22 to get from my =
+windows to
+
+              the
+
+              Pine64, in order to go linux to linux.
+
+
+
+            Port 22 is a privileged port. You should consider using 1024 =
+or
+
+            higher. If the listening port is open on the firewall, the =
+commands
+
+            you gave above should connect. If you type something on the =
+client
+
+            side, you should see it typed on the antiX machine, and the =
+other way
+
+            round. This will however not give you a login terminal. To =
+do that,
+
+            you need something that handles logins to listen on your =
+netcat. This
+
+            isn't something I've done, so can't give you more directions =
+here. If
+
+            you don't care about the connection being secure, which you =
+don't seem
+
+            to, you might as well try:
+
+
+
+            apt install telnetd
+
+
+
+            and open tcp 23 on your firewall.
+
+
+
+
+
+            On Fri, Aug 26, 2022 at 04:12:28PM -0500, K0LNY_Glenn wrote:
+
+              Well I thought I'd try iptables again.
+
+              I finally got it to run without any errors, that long =
+iptables
+
+              command
+
+              I
+
+              got
+
+              earlier.
+
+              But nmap still sees no ports open on that host.
+
+              Prior to running iptables, I tried to apt install it, and =
+the
+
+              message
+
+              was
+
+              that I'm already running the latest.
+
+              So I needed to restart iptables with
+
+              sudo service iptables restart
+
+              and it can find no service iptables.
+
+              I retyped it several times to be sure there was no typos.
+
+
+
+            This is to be expected, iptables is not a system service.
+
+
+
+              So I tried
+
+              sudo systemctl restart iptables
+
+              and the system cannot find systemctl
+
+
+
+            Is antiX running sysvinit, openrc, or something else? This =
+is
+
+            something the antiX documentation should tell you. What does =
+it use
+
+            for PID1 or init?
+
+
+
+              question:
+
+              If I reboot, if the long iptables command worked, will it =
+stick if I
+
+              reboot?
+
+
+
+            No.
+
+
+
+
+
+            On Fri, Aug 26, 2022 at 05:57:37PM -0500, K0LNY_Glenn wrote:
+
+              Well it seems ufw is there, but it must not be running
+
+              automatically,
+
+              but
+
+              it
+
+              does not fix the port problem.
+
+              I did
+
+              sudo ufw allow ssh
+
+              it said tcp port allowed
+
+              or something like that
+
+              so I checked on the other computer with nmap
+
+              100 ports closed
+
+              So I did sudo ufw restart
+
+              and the other computer said 999 ports filtered tcp port 22 =
+closed.
+
+              I've done iptables too, but that does not stay after a =
+reboot.
+
+              if I do sudo ufw status
+
+              it shows tcp port 22 allow
+
+              but it does not stay from a reboot.
+
+
+
+            You need to save the firewall configuration once you changed =
+it for it
+
+            to persist across reboots. I haven't used ufw, so you will =
+need to
+
+            read up on how to do that.
+
+
+
+            If port tcp 22 shows up as not filtered but closed, then the =
+port is
+
+            open, but there is no ssh service running.
+
+
+
+            Greg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------=_NextPart_000_014D_01D8BA0E.1B8DDCA0
 Content-Type: text/html;
-	charset=utf-8
+	charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-<html><head><meta http-equiv=3D"content-type" content=3D"text/html; charset=3D=
-utf-8"></head><body dir=3D"auto">Howdy glenn,<div><br></div><div>Nah, you ca=
-n download the source from github just as zip or tar. Specialy the releases i=
- did. See here:</div><div><br></div><div><a href=3D"https://github.com/chrys=
-87/fenrir/archive/refs/tags/1.9.7.1.tar.gz">https://github.com/chrys87/fenri=
-r/archive/refs/tags/1.9.7.1.tar.gz</a></div><div><br></div><div>You can just=
- unpack and run it.</div><div><br></div><div>You are using the system just w=
-ith OCR? Respect.</div><div><br></div><div>Cheers chrys</div><div><br><br><d=
-iv dir=3D"ltr">Von meinem iPhone gesendet</div><div dir=3D"ltr"><br><blockqu=
-ote type=3D"cite">Am 27.08.2022 um 18:00 schrieb K0LNY_Glenn &lt;glenn@ervin=
-.email&gt;:<br><br></blockquote></div><blockquote type=3D"cite"><div dir=3D"=
-ltr">=EF=BB=BF
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3Dutf-8" http-equiv=3Dcontent-type>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.9600.19597"></HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT size=3D2 face=3DArial>Yeah, just OCR, using SeeingAI on an=20
+iPhone.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I can't get SSH to work on =
+it.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV style=3D"FONT: 10pt arial">----- Original Message -----=20
+<DIV style=3D"BACKGROUND: #e4e4e4; font-color: black"><B>From:</B> <A=20
+title=3Dchrys@linux-a11y.org href=3D"mailto:chrys@linux-a11y.org">Linux =
+A11y</A>=20
+</DIV>
+<DIV><B>To:</B> <A title=3Dglenn@ervin.email=20
+href=3D"mailto:glenn@ervin.email">K0LNY_Glenn</A> </DIV>
+<DIV><B>Cc:</B> <A title=3Dspeakup@linux-speakup.org=20
+href=3D"mailto:speakup@linux-speakup.org">speakup@linux-speakup.org</A> =
+; <A=20
+title=3Ddidier@slint.fr href=3D"mailto:didier@slint.fr">Didier =
+Spaier</A> </DIV>
+<DIV><B>Sent:</B> Saturday, August 27, 2022 11:25 AM</DIV>
+<DIV><B>Subject:</B> Re: hopefully some help with AntiX</DIV></DIV>
+<DIV><BR></DIV>Howdy glenn,
+<DIV><BR></DIV>
+<DIV>Nah, you can download the source from github just as zip or tar. =
+Specialy=20
+the releases i did. See here:</DIV>
+<DIV><BR></DIV>
+<DIV><A=20
+href=3D"https://github.com/chrys87/fenrir/archive/refs/tags/1.9.7.1.tar.g=
+z">https://github.com/chrys87/fenrir/archive/refs/tags/1.9.7.1.tar.gz</A>=
+</DIV>
+<DIV><BR></DIV>
+<DIV>You can just unpack and run it.</DIV>
+<DIV><BR></DIV>
+<DIV>You are using the system just with OCR? Respect.</DIV>
+<DIV><BR></DIV>
+<DIV>Cheers chrys</DIV>
+<DIV><BR><BR>
+<DIV dir=3Dltr>Von meinem iPhone gesendet</DIV>
+<DIV dir=3Dltr><BR>
+<BLOCKQUOTE type=3D"cite">Am 27.08.2022 um 18:00 schrieb K0LNY_Glenn =
+&lt;<A=20
+  =
+href=3D"mailto:glenn@ervin.email">glenn@ervin.email</A>&gt;:<BR><BR></BLO=
+CKQUOTE></DIV>
+<BLOCKQUOTE type=3D"cite">
+  <DIV dir=3Dltr>=EF=BB=BF=20
+  <META name=3DGENERATOR content=3D"MSHTML 11.00.9600.19597">
+  <STYLE></STYLE>
 
-<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"content-type">
-<meta name=3D"GENERATOR" content=3D"MSHTML 11.00.9600.19597">
-<style></style>
+  <DIV><FONT size=3D2 face=3DArial>If Fenrir requires git, that is a =
+problem,=20
+  because git is not on AntiX, and I tried to apt install it, and it =
+cannot find=20
+  it.</FONT></DIV>
+  <DIV><FONT size=3D2 face=3DArial>I am wondering if the errors are =
+related to=20
+  git.</FONT></DIV>
+  <DIV><FONT size=3D2 face=3DArial>I'm using OCR on the screen, so it =
+isn't easy to=20
+  obtain the messages, and impossible to save them.</FONT></DIV>
+  <DIV>&nbsp;</DIV>
+  <DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV>
+  <DIV style=3D"FONT: 10pt arial">----- Original Message -----=20
+  <DIV style=3D"BACKGROUND: #e4e4e4; font-color: black"><B>From:</B> <A=20
+  title=3Dchrys@linux-a11y.org =
+href=3D"mailto:chrys@linux-a11y.org">Linux A11y</A>=20
+  </DIV>
+  <DIV><B>To:</B> <A title=3Dglenn@ervin.email=20
+  href=3D"mailto:glenn@ervin.email">K0LNY_Glenn</A> </DIV>
+  <DIV><B>Cc:</B> <A title=3Dspeakup@linux-speakup.org=20
+  =
+href=3D"mailto:speakup@linux-speakup.org">speakup@linux-speakup.org</A> =
+; <A=20
+  title=3Ddidier@slint.fr href=3D"mailto:didier@slint.fr">Didier =
+Spaier</A> </DIV>
+  <DIV><B>Sent:</B> Saturday, August 27, 2022 10:50 AM</DIV>
+  <DIV><B>Subject:</B> Re: hopefully some help with AntiX</DIV></DIV>
+  <DIV><BR></DIV>Howdy,=20
+  <DIV><BR></DIV>
+  <DIV>
+  <BLOCKQUOTE type=3D"cite">
+    <DIV dir=3Dltr>
+    <BLOCKQUOTE type=3D"cite">Well I ran check-dependencies.py and it =
+gave a=20
+      couple mysterious =
+errors,&nbsp;</BLOCKQUOTE></DIV></BLOCKQUOTE>What errors you=20
+  get? Fenrir starts for testing also just from git folder without any =
+need to=20
+  install. But it requires the needed dependencys and the correct pulse=20
+  setup.</DIV>
+  <DIV>See readme section pulseaudio.</DIV>
+  <DIV><A=20
+  =
+href=3D"https://github.com/chrys87/fenrir#configure-pulseaudio">https://g=
+ithub.com/chrys87/fenrir#configure-pulseaudio</A></DIV>
+  <DIV><BR></DIV>
+  <DIV>Also this is the speakup list and people tend to flame if someone =
+is=20
+  =E2=80=9Eadvertising=E2=80=9C different software. To prevent this you =
+can register to fenrirs=20
+  mailing list to get useful help. We will get it run for sure.</DIV>
+  <DIV><BR></DIV>
+  <DIV>Cheers chrys</DIV>
+  <DIV>
+  <DIV dir=3Dltr><BR>
+  <BLOCKQUOTE type=3D"cite">Am 27.08.2022 um 17:37 schrieb K0LNY_Glenn=20
+    &lt;glenn@ervin.email&gt;:<BR><BR></BLOCKQUOTE></DIV>
+  <BLOCKQUOTE type=3D"cite">
+    <DIV dir=3Dltr>=EF=BB=BF<SPAN>Hi Didier,</SPAN><BR><SPAN>I did try =
+to join that forum=20
+    about a week ago, and never got a confirmation </SPAN><BR><SPAN>for =
+the=20
+    forum.</SPAN><BR><SPAN>I also contacted someone associated with it =
+and asked=20
+    why accessibility </SPAN><BR><SPAN>wasn't built=20
+    =
+in.</SPAN><BR><SPAN>Thanks.</SPAN><BR><SPAN></SPAN><BR><SPAN></SPAN><BR><=
+SPAN>-----=20
+    Original Message ----- </SPAN><BR><SPAN>From: "Didier Spaier"=20
+    &lt;didier@slint.fr&gt;</SPAN><BR><SPAN>To:=20
+    &lt;speakup@linux-speakup.org&gt;</SPAN><BR><SPAN>Sent: Saturday, =
+August 27,=20
+    2022 12:22 PM</SPAN><BR><SPAN>Subject: Re: hopefully some help with=20
+    =
+AntiX</SPAN><BR><SPAN></SPAN><BR><SPAN></SPAN><BR><SPAN>Hi,</SPAN><BR><SP=
+AN></SPAN><BR><SPAN>Installing=20
+    a package intended for another distribution can work...=20
+    But</SPAN><BR><SPAN>oftentimes does =
+not.</SPAN><BR><SPAN></SPAN><BR><SPAN>If=20
+    not yet done, I suggest that you post your issue in this=20
+    =
+forum:</SPAN><BR><SPAN>https://www.antixforum.com/</SPAN><BR><SPAN>Caveat=
+: I=20
+    do not know if it is accessible with a screen=20
+    =
+reader.</SPAN><BR><SPAN></SPAN><BR><SPAN>Cheers,</SPAN><BR><SPAN>Dider</S=
+PAN><BR><SPAN></SPAN><BR><SPAN></SPAN><BR><SPAN></SPAN><BR><SPAN>Le=20
+    27/08/2022 =C3=A0 15:06, K0LNY_Glenn a =C3=A9crit :</SPAN><BR>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Well I found espeak-ng for Debian =
+Buster=20
+      here:</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>https://packages.debian.org/buster/espeak-ng</SPAN><B=
+R></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>The file I downloaded=20
+    was:</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>espeak-ng_1.49.2+dfsg-8+deb10u1.debian.tar.xz</SPAN><=
+BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Looking in the archive, there are =
+some=20
+      .install files, but I didn't find </SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>any</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>.sh files, so I don't know which =
+file to use=20
+      to get espeak installed on </SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>this</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>system.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Or if there is a .deb for RhVoice, =
+that=20
+      would work too, but did I download</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>the wrong espeak-ng file for =
+installing=20
+      it?</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Thanks.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Glenn</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>----- Original Message -----=20
+    </SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>From: "K0LNY_Glenn"=20
+      &lt;glenn@ervin.email&gt;</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>To: "Jude DaShiell"=20
+      &lt;jdashiel@panix.com&gt;; "Gregory Nowak" =
+</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE=20
+type=3D"cite"><SPAN>&lt;greg@gregn.net&gt;;</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN>&lt;speakup@linux-speakup.org&gt;</SPAN><BR></BLOCKQU=
+OTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Sent: Saturday, August 27, 2022 9:46 =
 
-
-<div><font size=3D"2" face=3D"Arial">If Fenrir requires git, that is a probl=
-em, because=20
-git is not on AntiX, and I tried to apt install it, and it cannot find=20
-it.</font></div>
-<div><font size=3D"2" face=3D"Arial">I am wondering if the errors are relate=
-d to=20
-git.</font></div>
-<div><font size=3D"2" face=3D"Arial">I'm using OCR on the screen, so it isn'=
-t easy to=20
-obtain the messages, and impossible to save them.</font></div>
-<div>&nbsp;</div>
-<div><font size=3D"2" face=3D"Arial">Glenn</font></div>
-<div style=3D"FONT: 10pt arial">----- Original Message -----=20
-<div style=3D"BACKGROUND: #e4e4e4; font-color: black"><b>From:</b> <a title=3D=
-"chrys@linux-a11y.org" href=3D"mailto:chrys@linux-a11y.org">Linux A11y</a>=20=
-
-</div>
-<div><b>To:</b> <a title=3D"glenn@ervin.email" href=3D"mailto:glenn@ervin.em=
-ail">K0LNY_Glenn</a> </div>
-<div><b>Cc:</b> <a title=3D"speakup@linux-speakup.org" href=3D"mailto:speaku=
-p@linux-speakup.org">speakup@linux-speakup.org</a> ; <a title=3D"didier@slin=
-t.fr" href=3D"mailto:didier@slint.fr">Didier Spaier</a> </div>
-<div><b>Sent:</b> Saturday, August 27, 2022 10:50 AM</div>
-<div><b>Subject:</b> Re: hopefully some help with AntiX</div></div>
-<div><br></div>Howdy,
-<div><br></div>
-<div>
-<blockquote type=3D"cite">
-  <div dir=3D"ltr">
-  <blockquote type=3D"cite">Well I ran check-dependencies.py and it gave a=20=
-
-    couple mysterious errors,&nbsp;</blockquote></div></blockquote>What erro=
-rs you=20
-get? Fenrir starts for testing also just from git folder without any need to=
-=20
-install. But it requires the needed dependencys and the correct pulse=20
-setup.</div>
-<div>See readme section pulseaudio.</div>
-<div><a href=3D"https://github.com/chrys87/fenrir#configure-pulseaudio">http=
-s://github.com/chrys87/fenrir#configure-pulseaudio</a></div>
-<div><br></div>
-<div>Also this is the speakup list and people tend to flame if someone is=20=
-
-=E2=80=9Eadvertising=E2=80=9C different software. To prevent this you can re=
-gister to fenrirs=20
-mailing list to get useful help. We will get it run for sure.</div>
-<div><br></div>
-<div>Cheers chrys</div>
-<div>
-<div dir=3D"ltr"><br>
-<blockquote type=3D"cite">Am 27.08.2022 um 17:37 schrieb K0LNY_Glenn=20
-  &lt;glenn@ervin.email&gt;:<br><br></blockquote></div>
-<blockquote type=3D"cite">
-  <div dir=3D"ltr">=EF=BB=BF<span>Hi Didier,</span><br><span>I did try to jo=
-in that forum=20
-  about a week ago, and never got a confirmation </span><br><span>for the=20=
-
-  forum.</span><br><span>I also contacted someone associated with it and ask=
-ed=20
-  why accessibility </span><br><span>wasn't built=20
-  in.</span><br><span>Thanks.</span><br><span></span><br><span></span><br><s=
-pan>-----=20
-  Original Message ----- </span><br><span>From: "Didier Spaier"=20
-  &lt;didier@slint.fr&gt;</span><br><span>To:=20
-  &lt;speakup@linux-speakup.org&gt;</span><br><span>Sent: Saturday, August 2=
-7,=20
-  2022 12:22 PM</span><br><span>Subject: Re: hopefully some help with=20
-  AntiX</span><br><span></span><br><span></span><br><span>Hi,</span><br><spa=
-n></span><br><span>Installing=20
-  a package intended for another distribution can work...=20
-  But</span><br><span>oftentimes does not.</span><br><span></span><br><span>=
-If=20
-  not yet done, I suggest that you post your issue in this=20
-  forum:</span><br><span>https://www.antixforum.com/</span><br><span>Caveat:=
- I=20
-  do not know if it is accessible with a screen=20
-  reader.</span><br><span></span><br><span>Cheers,</span><br><span>Dider</sp=
-an><br><span></span><br><span></span><br><span></span><br><span>Le=20
-  27/08/2022 =C3=A0 15:06, K0LNY_Glenn a =C3=A9crit :</span><br>
-  <blockquote type=3D"cite"><span>Well I found espeak-ng for Debian Buster=20=
-
-    here:</span><br></blockquote>
-  <blockquote type=3D"cite"><span>https://packages.debian.org/buster/espeak-=
-ng</span><br></blockquote>
-  <blockquote type=3D"cite"><span>The file I downloaded=20
-  was:</span><br></blockquote>
-  <blockquote type=3D"cite"><span>espeak-ng_1.49.2+dfsg-8+deb10u1.debian.tar=
-.xz</span><br></blockquote>
-  <blockquote type=3D"cite"><span>Looking in the archive, there are some=20
-    .install files, but I didn't find </span><br></blockquote>
-  <blockquote type=3D"cite"><span>any</span><br></blockquote>
-  <blockquote type=3D"cite"><span>.sh files, so I don't know which file to u=
-se=20
-    to get espeak installed on </span><br></blockquote>
-  <blockquote type=3D"cite"><span>this</span><br></blockquote>
-  <blockquote type=3D"cite"><span>system.</span><br></blockquote>
-  <blockquote type=3D"cite"><span>Or if there is a .deb for RhVoice, that wo=
-uld=20
-    work too, but did I download</span><br></blockquote>
-  <blockquote type=3D"cite"><span>the wrong espeak-ng file for installing=20=
-
-    it?</span><br></blockquote>
-  <blockquote type=3D"cite"><span>Thanks.</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span>Glenn</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span>----- Original Message -----=20
-  </span><br></blockquote>
-  <blockquote type=3D"cite"><span>From: "K0LNY_Glenn"=20
-    &lt;glenn@ervin.email&gt;</span><br></blockquote>
-  <blockquote type=3D"cite"><span>To: "Jude DaShiell"=20
-    &lt;jdashiel@panix.com&gt;; "Gregory Nowak" </span><br></blockquote>
-  <blockquote type=3D"cite"><span>&lt;greg@gregn.net&gt;;</span><br></blockq=
-uote>
-  <blockquote type=3D"cite"><span>&lt;speakup@linux-speakup.org&gt;</span><b=
-r></blockquote>
-  <blockquote type=3D"cite"><span>Sent: Saturday, August 27, 2022 9:46=20
-    AM</span><br></blockquote>
-  <blockquote type=3D"cite"><span>Subject: Re: hopefully some help with=20
-    AntiX</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span>Well I ran check-dependencies.py and it ga=
-ve a=20
-    couple mysterious errors, </span><br></blockquote>
-  <blockquote type=3D"cite"><span>but</span><br></blockquote>
-  <blockquote type=3D"cite"><span>it didn't help.</span><br></blockquote>
-  <blockquote type=3D"cite"><span>I ran install.sh again.</span><br></blockq=
-uote>
-  <blockquote type=3D"cite"><span>I ran sudo fenrir and again it only gave m=
-e=20
-    the startup tone.</span><br></blockquote>
-  <blockquote type=3D"cite"><span>It acts like there is no TTS for it to=20
-    use.</span><br></blockquote>
-  <blockquote type=3D"cite"><span>Glenn</span><br></blockquote>
-  <blockquote type=3D"cite"><span>----- Original Message -----=20
-  </span><br></blockquote>
-  <blockquote type=3D"cite"><span>From: "Jude DaShiell"=20
-    &lt;jdashiel@panix.com&gt;</span><br></blockquote>
-  <blockquote type=3D"cite"><span>To: "K0LNY_Glenn" &lt;glenn@ervin.email&gt=
-;;=20
-    "Gregory Nowak" &lt;greg@gregn.net&gt;;</span><br></blockquote>
-  <blockquote type=3D"cite"><span>&lt;speakup@linux-speakup.org&gt;</span><b=
-r></blockquote>
-  <blockquote type=3D"cite"><span>Sent: Friday, August 26, 2022 9:55=20
-    PM</span><br></blockquote>
-  <blockquote type=3D"cite"><span>Subject: Re: hopefully some help with=20
-    AntiX</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span>Also sysctl enable fenrir.service or is it=
-=20
-    fenrirscreenreader.service then</span><br></blockquote>
-  <blockquote type=3D"cite"><span>sysctl start fenrir.service or sysctl star=
-t=20
-    fenrirscreenreader.service.</span><br></blockquote>
-  <blockquote type=3D"cite"><span>If a service is missing systemd will let y=
-ou=20
-    know about it.</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span>Jude &lt;jdashiel at panix dot=20
-    com&gt;</span><br></blockquote>
-  <blockquote type=3D"cite"><span>"There are four boxes to be used in defens=
-e of=20
-    liberty:</span><br></blockquote>
-  <blockquote type=3D"cite"><span>soap, ballot, jury, and ammo. Please use i=
-n=20
-    that order."</span><br></blockquote>
-  <blockquote type=3D"cite"><span>-Ed Howdershelt (Author,=20
-  1940)</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span>.</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span>On Fri, 26 Aug 2022, K0LNY_Glenn=20
-    wrote:</span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>Well I ran install.sh on the system, and=
-=20
-      pressed enter where it said to</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>proceed, and it said was finished, and i=
-t=20
-      said to type</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>sudo fenrir</span><br></blockquote></blo=
-ckquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>to test it, and all I can get is the=20
-      two-tone sound when fenrir starts,</span><br></blockquote></blockquote=
->
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>but</span><br></blockquote></blockquote>=
-
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>no TTS.</span><br></blockquote></blockqu=
-ote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>Should have that installed espeak or=20
-      espeak-ng?</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>Thanks.</span><br></blockquote></blockqu=
-ote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>----- Original Message=20
-    -----</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>From: "Jude DaShiell"=20
-      &lt;jdashiel@panix.com&gt;</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>To: "K0LNY_Glenn" &lt;glenn@ervin.email&=
-gt;;=20
-      "Gregory Nowak" &lt;greg@gregn.net&gt;;</span><br></blockquote></block=
-quote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>&lt;speakup@linux-speakup.org&gt;</span>=
-<br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>Sent: Friday, August 26, 2022 8:27=20
-      PM</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>Subject: Re: hopefully some help with=20=
-
-      AntiX</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>For now and not forever, why not do apt=20=
-
-      purge ufw?</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>Jude &lt;jdashiel at panix dot=20
-      com&gt;</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>"There are four boxes to be used in defe=
-nse=20
-      of liberty:</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>soap, ballot, jury, and ammo. Please use=
- in=20
-      that order."</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>-Ed Howdershelt (Author,=20
-    1940)</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>.</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span>On Fri, 26 Aug 2022, K0LNY_Glenn=20
-      wrote:</span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>Then all 1000 ports show up in nmap as=
-=20
-        closed.</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>So it seems if I allow a port in ufw, i=
-t=20
-        shows up as closed, but not</span><br></blockquote></blockquote></bl=
-ockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>filtered.</span><br></blockquote></blo=
-ckquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>So filtered means ufw is running, and i=
-f=20
-        22 gets allowed, it is not</span><br></blockquote></blockquote></blo=
-ckquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>filtered, but still=20
-      closed.</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>Glenn</span><br></blockquote></blockqu=
-ote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>----- Original Message=20
-      -----</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>From: "Jude DaShiell"=20
-        &lt;jdashiel@panix.com&gt;</span><br></blockquote></blockquote></blo=
-ckquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>To: "K0LNY_Glenn"=20
+      AM</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Subject: Re: hopefully some help =
+with=20
+      AntiX</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Well I ran check-dependencies.py and =
+it gave=20
+      a couple mysterious errors, </SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>but</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>it didn't =
+help.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>I ran install.sh=20
+again.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>I ran sudo fenrir and again it only =
+gave me=20
+      the startup tone.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>It acts like there is no TTS for it =
+to=20
+      use.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Glenn</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>----- Original Message -----=20
+    </SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>From: "Jude DaShiell"=20
+      &lt;jdashiel@panix.com&gt;</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>To: "K0LNY_Glenn" =
+&lt;glenn@ervin.email&gt;;=20
+      "Gregory Nowak" &lt;greg@gregn.net&gt;;</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN>&lt;speakup@linux-speakup.org&gt;</SPAN><BR></BLOCKQU=
+OTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Sent: Friday, August 26, 2022 9:55=20
+      PM</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Subject: Re: hopefully some help =
+with=20
+      AntiX</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Also sysctl enable fenrir.service or =
+is it=20
+      fenrirscreenreader.service then</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>sysctl start fenrir.service or =
+sysctl start=20
+      fenrirscreenreader.service.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>If a service is missing systemd will =
+let you=20
+      know about it.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>Jude &lt;jdashiel at panix dot=20
+      com&gt;</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>"There are four boxes to be used in =
+defense=20
+      of liberty:</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>soap, ballot, jury, and ammo. Please =
+use in=20
+      that order."</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>-Ed Howdershelt (Author,=20
+    1940)</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>.</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN>On Fri, 26 Aug 2022, K0LNY_Glenn=20
+      wrote:</SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>Well I ran install.sh on the =
+system, and=20
+        pressed enter where it said =
+to</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>proceed, and it said was finished, =
+and it=20
+        said to type</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>sudo=20
+    fenrir</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>to test it, and all I can get is =
+the=20
+        two-tone sound when fenrir =
+starts,</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN>but</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>no =
+TTS.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>Should have that installed espeak =
+or=20
+        espeak-ng?</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN>Thanks.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>----- Original Message=20
+      -----</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>From: "Jude DaShiell"=20
+        &lt;jdashiel@panix.com&gt;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>To: "K0LNY_Glenn"=20
         &lt;glenn@ervin.email&gt;; "Gregory Nowak"=20
-        &lt;greg@gregn.net&gt;;</span><br></blockquote></blockquote></blockq=
-uote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>&lt;speakup@linux-speakup.org&gt;</spa=
-n><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>Sent: Friday, August 26, 2022 7:12=20
-        PM</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>Subject: Re: hopefully some help with=20=
+        &lt;greg@gregn.net&gt;;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>&lt;speakup@linux-speakup.org&gt;</SPAN><BR></BLOCKQU=
+OTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>Sent: Friday, August 26, 2022 8:27 =
 
-        AntiX</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>What happens if ufw --disable is run t=
-hen=20
-        the offending computer gets</span><br></blockquote></blockquote></bl=
-ockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>rebooted?</span><br></blockquote></blo=
-ckquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>Jude &lt;jdashiel at panix dot=20
-        com&gt;</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>"There are four boxes to be used in=20=
+        PM</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>Subject: Re: hopefully some help =
+with=20
+        AntiX</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>For now and not forever, why not =
+do apt=20
+        purge ufw?</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>Jude &lt;jdashiel at panix dot=20
+        com&gt;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>"There are four boxes to be used =
+in=20
+        defense of liberty:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>soap, ballot, jury, and ammo. =
+Please use=20
+        in that order."</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>-Ed Howdershelt (Author,=20
+      1940)</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN>.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite"><SPAN>On Fri, 26 Aug 2022, K0LNY_Glenn=20
+        wrote:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>Then all 1000 ports show up in =
+nmap as=20
+          closed.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>So it seems if I allow a port in =
+ufw, it=20
+          shows up as closed, but=20
+not</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>filtered.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCK=
+QUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>So filtered means ufw is =
+running, and if=20
+          22 gets allowed, it is =
+not</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>filtered, but still=20
+        closed.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN>Glenn</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOT=
+E>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>----- Original Message=20
+        -----</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>From: "Jude DaShiell"=20
+          =
+&lt;jdashiel@panix.com&gt;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUO=
+TE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>To: "K0LNY_Glenn"=20
+          &lt;glenn@ervin.email&gt;; "Gregory Nowak"=20
+          =
+&lt;greg@gregn.net&gt;;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>=
 
-        defense of liberty:</span><br></blockquote></blockquote></blockquote=
->
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>soap, ballot, jury, and ammo. Please u=
-se=20
-        in that order."</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>-Ed Howdershelt (Author,=20
-      1940)</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>.</span><br></blockquote></blockquote>=
-</blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span>On Fri, 26 Aug 2022, K0LNY_Glenn=20
-        wrote:</span><br></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>I've considered that, and if I can g=
-et=20
-          any port to open, I will=20
-    gladly</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>use</span><br></blockquote></blockqu=
-ote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>telnet.</span><br></blockquote></blo=
-ckquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>Hell, if I could open all 1000 ports=
-=20
-          now, I would!</span><br></blockquote></blockquote></blockquote></b=
-lockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>Glenn</span><br></blockquote></block=
-quote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>----- Original Message=20
-        -----</span><br></blockquote></blockquote></blockquote></blockquote>=
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+          =
+type=3D"cite"><SPAN>&lt;speakup@linux-speakup.org&gt;</SPAN><BR></BLOCKQU=
+OTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>Sent: Friday, August 26, 2022 =
+7:12=20
+          PM</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>Subject: Re: hopefully some help =
+with=20
+          AntiX</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>What happens if ufw --disable is =
+run=20
+          then the offending computer=20
+    gets</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>rebooted?</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCK=
+QUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>Jude &lt;jdashiel at panix dot=20
+          com&gt;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>"There are four boxes to be used =
+in=20
+          defense of =
+liberty:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>soap, ballot, jury, and ammo. =
+Please use=20
+          in that =
+order."</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>-Ed Howdershelt (Author,=20
+        1940)</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN>.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite"><SPAN>On Fri, 26 Aug 2022, K0LNY_Glenn =
 
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>From: "Gregory Nowak"=20
-          &lt;greg@gregn.net&gt;</span><br></blockquote></blockquote></block=
-quote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>To:=20
-          &lt;speakup@linux-speakup.org&gt;</span><br></blockquote></blockqu=
-ote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>Sent: Friday, August 26, 2022 7:01=20=
+          wrote:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>I've considered that, and if I =
+can get=20
+            any port to open, I will=20
+      =
+gladly</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>use</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>=
+</BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>telnet.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQU=
+OTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>Hell, if I could open all 1000 =
+ports=20
+            now, I =
+would!</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>Glenn</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOT=
+E></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>----- Original Message=20
+          =
+-----</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>From: "Gregory Nowak"=20
+            =
+&lt;greg@gregn.net&gt;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><=
+/BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>To:=20
+            =
+&lt;speakup@linux-speakup.org&gt;</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>Sent: Friday, August 26, 2022 =
+7:01=20
+            =
+PM</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>Subject: Re: hopefully some =
+help with=20
+            =
+AntiX</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>On Fri, Aug 26, 2022 at =
+02:06:13PM=20
+            -0500, K0LNY_Glenn=20
+    =
+wrote:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>On the antiX I=20
+            =
+did</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCK=
+QUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>sudo netcat -l=20
+            =
+22</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQ=
+UOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>and then on the pine 64, I =
+did sudo=20
+              nc 10.248.1.143=20
+      =
+22</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQ=
+UOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>and it does not seem to=20
+              =
+connect.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></=
+BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>I wonder if it is because I =
+am using=20
+              22 to get from my windows=20
+        =
+to</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQ=
+UOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>the</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>=
+</BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>Pine64, in order to go linux =
+to=20
+              =
+linux.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BL=
+OCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>Port 22 is a privileged port. =
+You=20
+            should consider using 1024=20
+      or</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>higher. If the listening port =
+is open=20
+            on the firewall, the=20
+      =
+commands</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>you gave above should connect. =
+If you=20
+            type something on the=20
+      =
+client</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>side, you should see it typed =
+on the=20
+            antiX machine, and the other=20
+      way</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>round. This will however not =
+give you=20
+            a login terminal. To do=20
+      =
+that,</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>you need something that =
+handles logins=20
+            to listen on your netcat.=20
+      =
+This</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>isn't something I've done, so =
+can't=20
+            give you more directions here.=20
+      If</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>you don't care about the =
+connection=20
+            being secure, which you don't=20
+      =
+seem</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>to, you might as well=20
+          =
+try:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>apt install=20
+          =
+telnetd</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>and open tcp 23 on your=20
+            =
+firewall.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>On Fri, Aug 26, 2022 at =
+04:12:28PM=20
+            -0500, K0LNY_Glenn=20
+    =
+wrote:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>Well I thought I'd try =
+iptables=20
+              =
+again.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BL=
+OCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>I finally got it to run =
+without any=20
+              errors, that long=20
+        =
+iptables</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></=
+BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+          =
+type=3D"cite"><SPAN>command</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQU=
+OTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>I</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></=
+BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>got</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>=
+</BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+          =
+type=3D"cite"><SPAN>earlier.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQ=
+UOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>But nmap still sees no ports =
+open on=20
+              that=20
+    =
+host.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLO=
+CKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>Prior to running iptables, I =
+tried=20
+              to apt install it, and=20
+        =
+the</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCK=
+QUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+          =
+type=3D"cite"><SPAN>message</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQU=
+OTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>was</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>=
+</BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>that I'm already running the =
 
-          PM</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>Subject: Re: hopefully some help wit=
-h=20
-          AntiX</span><br></blockquote></blockquote></blockquote></blockquot=
-e>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>On Fri, Aug 26, 2022 at 02:06:13PM=20=
+              =
+latest.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>So I needed to restart =
+iptables=20
+              =
+with</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOC=
+KQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>sudo service iptables=20
+              =
+restart</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>and it can find no service=20
+              =
+iptables.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><=
+/BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>I retyped it several times =
+to be=20
+              sure there was no=20
+        =
+typos.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BL=
+OCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>This is to be expected, =
+iptables is=20
+            not a system=20
+    =
+service.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>So I=20
+          =
+tried</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLO=
+CKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>sudo systemctl restart=20
+              =
+iptables</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></=
+BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>and the system cannot find=20
+              =
+systemctl</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><=
+/BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>Is antiX running sysvinit, =
+openrc, or=20
+            something else? This=20
+    is</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>something the antiX =
+documentation=20
+            should tell you. What does it=20
+      use</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>for PID1 or=20
+        =
+init?</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+          =
+type=3D"cite"><SPAN>question:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCK=
+QUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>If I reboot, if the long =
+iptables=20
+              command worked, will it stick if=20
+        =
+I</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQU=
+OTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+          =
+type=3D"cite"><SPAN>reboot?</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQU=
+OTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>No.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>=
+</BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>On Fri, Aug 26, 2022 at =
+05:57:37PM=20
+            -0500, K0LNY_Glenn=20
+    =
+wrote:</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>Well it seems ufw is there, =
+but it=20
+              must not be=20
+      =
+running</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+          =
+type=3D"cite"><SPAN>automatically,</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></=
+BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>but</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>=
+</BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE=20
+        =
+type=3D"cite"><SPAN>it</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><=
+/BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>does not fix the port=20
+              =
+problem.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></=
+BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>I=20
+          =
+did</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCK=
+QUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>sudo ufw allow=20
+            =
+ssh</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCK=
+QUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>it said tcp port=20
+            =
+allowed</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>or something like=20
+            =
+that</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOC=
+KQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>so I checked on the other =
+computer=20
+              with=20
+    =
+nmap</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOC=
+KQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>100 ports=20
+            =
+closed</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BL=
+OCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>So I did sudo ufw=20
+            =
+restart</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>and the other computer said =
+999=20
+              ports filtered tcp port 22=20
+        =
+closed.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>I've done iptables too, but =
+that=20
+              does not stay after a=20
+        =
+reboot.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>if I do sudo ufw=20
+            =
+status</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BL=
+OCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>it shows tcp port 22=20
+            =
+allow</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLO=
+CKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite">
+            <BLOCKQUOTE type=3D"cite"><SPAN>but it does not stay from a=20
+              =
+reboot.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>You need to save the firewall=20
+            configuration once you changed it for=20
+        =
+it</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>to persist across reboots. I =
+haven't=20
+            used ufw, so you will need=20
+      to</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>read up on how to do=20
+          =
+that.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>If port tcp 22 shows up as not =
 
-          -0500, K0LNY_Glenn=20
-  wrote:</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>On the antiX I=20
-          did</span><br></blockquote></blockquote></blockquote></blockquote>=
-</blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>sudo netcat -l=20
-        22</span><br></blockquote></blockquote></blockquote></blockquote></b=
-lockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>and then on the pine 64, I did sud=
-o nc=20
-            10.248.1.143=20
-    22</span><br></blockquote></blockquote></blockquote></blockquote></block=
-quote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>and it does not seem to=20
-            connect.</span><br></blockquote></blockquote></blockquote></bloc=
-kquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>I wonder if it is because I am usi=
-ng=20
-            22 to get from my windows=20
-      to</span><br></blockquote></blockquote></blockquote></blockquote></blo=
-ckquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>the</span><br></blockquote></block=
-quote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>Pine64, in order to go linux to=20=
+            filtered but closed, then the port=20
+        =
+is</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE type=3D"cite"><SPAN>open, but there is no ssh =
+service=20
+            =
+running.</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN>Greg</SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE=
+></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE type=3D"cite">
+          <BLOCKQUOTE=20
+      =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></B=
+LOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE type=3D"cite">
+        <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite">
+      <BLOCKQUOTE =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE>
+    <BLOCKQUOTE=20
+    =
+type=3D"cite"><SPAN></SPAN><BR></BLOCKQUOTE><SPAN></SPAN><BR><SPAN></SPAN=
+><BR></DIV></BLOCKQUOTE></DIV></DIV></BLOCKQUOTE></DIV></BODY></HTML>
 
-            linux.</span><br></blockquote></blockquote></blockquote></blockq=
-uote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>Port 22 is a privileged port. You sh=
-ould=20
-          consider using 1024=20
-  or</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>higher. If the listening port is ope=
-n on=20
-          the firewall, the=20
-  commands</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>you gave above should connect. If yo=
-u=20
-          type something on the=20
-    client</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>side, you should see it typed on the=
-=20
-          antiX machine, and the other=20
-    way</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>round. This will however not give yo=
-u a=20
-          login terminal. To do=20
-  that,</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>you need something that handles logi=
-ns=20
-          to listen on your netcat.=20
-    This</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>isn't something I've done, so can't g=
-ive=20
-          you more directions here.=20
-    If</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>you don't care about the connection=20=
+------=_NextPart_000_014D_01D8BA0E.1B8DDCA0--
 
-          being secure, which you don't=20
-    seem</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>to, you might as well=20
-        try:</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>apt install=20
-      telnetd</span><br></blockquote></blockquote></blockquote></blockquote>=
-
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>and open tcp 23 on your=20
-          firewall.</span><br></blockquote></blockquote></blockquote></block=
-quote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>On Fri, Aug 26, 2022 at 04:12:28PM=20=
-
-          -0500, K0LNY_Glenn=20
-  wrote:</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>Well I thought I'd try iptables=20=
-
-            again.</span><br></blockquote></blockquote></blockquote></blockq=
-uote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>I finally got it to run without an=
-y=20
-            errors, that long=20
-      iptables</span><br></blockquote></blockquote></blockquote></blockquote=
-></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>command</span><br></blockquote></b=
-lockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>I</span><br></blockquote></blockqu=
-ote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>got</span><br></blockquote></block=
-quote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>earlier.</span><br></blockquote></=
-blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>But nmap still sees no ports open o=
-n=20
-            that=20
-  host.</span><br></blockquote></blockquote></blockquote></blockquote></bloc=
-kquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>Prior to running iptables, I tried=
- to=20
-            apt install it, and=20
-    the</span><br></blockquote></blockquote></blockquote></blockquote></bloc=
-kquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>message</span><br></blockquote></b=
-lockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>was</span><br></blockquote></block=
-quote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>that I'm already running the=20
-            latest.</span><br></blockquote></blockquote></blockquote></block=
-quote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>So I needed to restart iptables=20=
-
-            with</span><br></blockquote></blockquote></blockquote></blockquo=
-te></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>sudo service iptables=20
-            restart</span><br></blockquote></blockquote></blockquote></block=
-quote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>and it can find no service=20
-            iptables.</span><br></blockquote></blockquote></blockquote></blo=
-ckquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>I retyped it several times to be s=
-ure=20
-            there was no=20
-    typos.</span><br></blockquote></blockquote></blockquote></blockquote></b=
-lockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>This is to be expected, iptables is n=
-ot=20
-          a system=20
-  service.</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>So I=20
-        tried</span><br></blockquote></blockquote></blockquote></blockquote>=
-</blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>sudo systemctl restart=20
-            iptables</span><br></blockquote></blockquote></blockquote></bloc=
-kquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>and the system cannot find=20
-            systemctl</span><br></blockquote></blockquote></blockquote></blo=
-ckquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>Is antiX running sysvinit, openrc, o=
-r=20
-          something else? This=20
-  is</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>something the antiX documentation sh=
-ould=20
-          tell you. What does it=20
-  use</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>for PID1 or=20
-      init?</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>question:</span><br></blockquote><=
-/blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>If I reboot, if the long iptables=20=
-
-            command worked, will it stick if=20
-      I</span><br></blockquote></blockquote></blockquote></blockquote></bloc=
-kquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>reboot?</span><br></blockquote></b=
-lockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>No.</span><br></blockquote></blockqu=
-ote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>On Fri, Aug 26, 2022 at 05:57:37PM=20=
-
-          -0500, K0LNY_Glenn=20
-  wrote:</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>Well it seems ufw is there, but it=
-=20
-            must not be=20
-    running</span><br></blockquote></blockquote></blockquote></blockquote></=
-blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>automatically,</span><br></blockqu=
-ote></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>but</span><br></blockquote></block=
-quote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>it</span><br></blockquote></blockq=
-uote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>does not fix the port=20
-            problem.</span><br></blockquote></blockquote></blockquote></bloc=
-kquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>I=20
-      did</span><br></blockquote></blockquote></blockquote></blockquote></bl=
-ockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>sudo ufw allow=20
-          ssh</span><br></blockquote></blockquote></blockquote></blockquote>=
-</blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>it said tcp port=20
-          allowed</span><br></blockquote></blockquote></blockquote></blockqu=
-ote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>or something like=20
-          that</span><br></blockquote></blockquote></blockquote></blockquote=
-></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>so I checked on the other computer=
-=20
-            with=20
-  nmap</span><br></blockquote></blockquote></blockquote></blockquote></block=
-quote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>100 ports=20
-        closed</span><br></blockquote></blockquote></blockquote></blockquote=
-></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>So I did sudo ufw=20
-          restart</span><br></blockquote></blockquote></blockquote></blockqu=
-ote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>and the other computer said 999 po=
-rts=20
-            filtered tcp port 22=20
-      closed.</span><br></blockquote></blockquote></blockquote></blockquote>=
-</blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>I've done iptables too, but that d=
-oes=20
-            not stay after a=20
-    reboot.</span><br></blockquote></blockquote></blockquote></blockquote></=
-blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>if I do sudo ufw=20
-          status</span><br></blockquote></blockquote></blockquote></blockquo=
-te></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>it shows tcp port 22=20
-          allow</span><br></blockquote></blockquote></blockquote></blockquot=
-e></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite">
-          <blockquote type=3D"cite"><span>but it does not stay from a=20
-            reboot.</span><br></blockquote></blockquote></blockquote></block=
-quote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>You need to save the firewall=20
-          configuration once you changed it for=20
-      it</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>to persist across reboots. I haven't=
-=20
-          used ufw, so you will need=20
-    to</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>read up on how to do=20
-        that.</span><br></blockquote></blockquote></blockquote></blockquote>=
-
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>If port tcp 22 shows up as not filte=
-red=20
-          but closed, then the port=20
-    is</span><br></blockquote></blockquote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>open, but there is no ssh service=20=
-
-          running.</span><br></blockquote></blockquote></blockquote></blockq=
-uote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span>Greg</span><br></blockquote></blockq=
-uote></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite">
-        <blockquote type=3D"cite"><span></span><br></blockquote></blockquote=
-></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite">
-      <blockquote type=3D"cite"><span></span><br></blockquote></blockquote><=
-/blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite">
-    <blockquote type=3D"cite"><span></span><br></blockquote></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote>
-  <blockquote type=3D"cite"><span></span><br></blockquote><span></span><br><=
-span></span><br></div></blockquote></div>
-</div></blockquote></div></body></html>=
-
---Apple-Mail-BB31A84D-92AB-42A3-BE67-AE187A1AC06C--
 
