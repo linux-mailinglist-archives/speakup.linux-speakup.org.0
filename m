@@ -1,47 +1,36 @@
-Return-Path: <speakup+bounces-680-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-681-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C2D855A32F8
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 02:13:10 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=RzfrGeYc;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 3DDDC5A3303
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 02:18:30 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 343D2380C6F; Fri, 26 Aug 2022 20:13:05 -0400 (EDT)
+	id 043D7380F82; Fri, 26 Aug 2022 20:18:24 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1423A380954
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 20:13:05 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E254A380985
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 20:18:23 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 40949380985; Fri, 26 Aug 2022 20:12:56 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 24625380954
-	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 20:12:56 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4MDxx20KFCzSGH;
-	Fri, 26 Aug 2022 20:12:54 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1661559174; bh=9DT2pHZuJqpMXV7uRouEqfgEZQ17WFAJRvUuKoDTIWY=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=RzfrGeYcym6DxH6qs2FMisswKWrdv8icafg7tTfSCDhWTjjiZvF6ElIB6oUoPQXG0
-	 Oz2gNF+WrhBIUXDAE03dJ9vSJfoASd9h5fkMW4JeWEhibv44koMwo9qkNv6PfxDKqV
-	 rxfqCOZGnx514MCFaUS+19ibDKA0NgMFCkNp+l5s=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4MDxx170jHzcbc; Fri, 26 Aug 2022 20:12:53 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4MDxx16ZnQzcbP;
-	Fri, 26 Aug 2022 20:12:53 -0400 (EDT)
-Date: Fri, 26 Aug 2022 20:12:53 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: K0LNY_Glenn <glenn@ervin.email>, Gregory Nowak <greg@gregn.net>, 
-    speakup@linux-speakup.org
+	id F1FAD380BDA; Fri, 26 Aug 2022 20:18:18 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0030.b.hostedemail.com [64.98.42.30])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id DF390380981
+	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 20:18:18 -0400 (EDT)
+Received: from omf07.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id 4437C86A7461;
+	Sat, 27 Aug 2022 00:18:18 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf07.b.hostedemail.com (Postfix) with ESMTPA id AD35110A1AFBA;
+	Sat, 27 Aug 2022 00:18:17 +0000 (UTC)
+Message-ID: <00bc01d8b9aa$824f8ce0$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Jude DaShiell" <jdashiel@panix.com>,
+	"Gregory Nowak" <greg@gregn.net>,
+	<speakup@linux-speakup.org>
+References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net> <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com>
 Subject: Re: hopefully some help with AntiX
-In-Reply-To: <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM>
-Message-ID: <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com>
-References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net>
- <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM>
+Date: Fri, 26 Aug 2022 19:18:17 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,8 +40,37 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: 94x3stmdqzsdstkb3g83kt89aqryrdqr
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: AD35110A1AFBA
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX18jvxQa49BtrKJIyAjXAW1V5REPrLrgTIQ=
+X-HE-Tag: 1661559497-755979
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+Then all 1000 ports show up in nmap as closed.
+So it seems if I allow a port in ufw, it shows up as closed, but not 
+filtered.
+So filtered means ufw is running, and if 22 gets allowed, it is not 
+filtered, but still closed.
+Glenn
+
+
+----- Original Message ----- 
+From: "Jude DaShiell" <jdashiel@panix.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net>; 
+<speakup@linux-speakup.org>
+Sent: Friday, August 26, 2022 7:12 PM
+Subject: Re: hopefully some help with AntiX
+
 
 What happens if ufw --disable is run then the offending computer gets
 rebooted?
@@ -106,7 +124,8 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > > got
 > > earlier.
 > > But nmap still sees no ports open on that host.
-> > Prior to running iptables, I tried to apt install it, and the message was
+> > Prior to running iptables, I tried to apt install it, and the message 
+> > was
 > > that I'm already running the latest.
 > > So I needed to restart iptables with
 > > sudo service iptables restart
@@ -131,7 +150,8 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 >
 >
 > On Fri, Aug 26, 2022 at 05:57:37PM -0500, K0LNY_Glenn wrote:
-> > Well it seems ufw is there, but it must not be running automatically, but
+> > Well it seems ufw is there, but it must not be running automatically, 
+> > but
 > > it
 > > does not fix the port problem.
 > > I did
@@ -157,5 +177,6 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > Greg
 >
 >
->
+> 
+
 
