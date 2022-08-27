@@ -1,47 +1,36 @@
-Return-Path: <speakup+bounces-690-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-691-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 137B25A3355
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 03:09:45 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=iH8pq7Ut;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id E2A045A3372
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 03:27:44 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 448AF381117; Fri, 26 Aug 2022 21:09:39 -0400 (EDT)
+	id 77153380EE3; Fri, 26 Aug 2022 21:27:41 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 22433380C8D
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 21:09:39 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 60EB1380C92
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 21:27:41 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 47804380CB1; Fri, 26 Aug 2022 21:09:30 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 0E678380C8D
-	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 21:09:30 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4MDzBK1bfpz2jRx;
-	Fri, 26 Aug 2022 21:09:29 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1661562569; bh=THtiOtTTk6hVnYEdOdge4jbVLIvEvcX5wYz2591NtDE=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=iH8pq7Ut/yku9ZWM3rhDqXQJswL3a8f92qrhT1eq/31zCXoQ3uW+49bxSxrtzAUJX
-	 PjlE9tJ7trFsTVH/9ZEbigS/l8w9IC3Imka7DIiL3JEGZMusk4lvDPbB24xWC6hZmO
-	 JfoqXQwA1BqYo1Pf5fzBCQ+qqdj6bn2ZeIoDfAnM=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4MDzBK1Ppwzcbc; Fri, 26 Aug 2022 21:09:29 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4MDzBK1NMbzcbC;
-	Fri, 26 Aug 2022 21:09:29 -0400 (EDT)
-Date: Fri, 26 Aug 2022 21:09:29 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: K0LNY_Glenn <glenn@ervin.email>, Gregory Nowak <greg@gregn.net>, 
-    speakup@linux-speakup.org
+	id 6A361380C92; Fri, 26 Aug 2022 21:27:36 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0127.b.hostedemail.com [64.98.42.127])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 566CD380C6F
+	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 21:27:36 -0400 (EDT)
+Received: from omf14.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id D0149867E1CB;
+	Sat, 27 Aug 2022 01:27:35 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf14.b.hostedemail.com (Postfix) with ESMTPA id 518408000045;
+	Sat, 27 Aug 2022 01:27:35 +0000 (UTC)
+Message-ID: <00e301d8b9b4$3074c340$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Jude DaShiell" <jdashiel@panix.com>,
+	"Gregory Nowak" <greg@gregn.net>,
+	<speakup@linux-speakup.org>
+References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net> <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com> <00c101d8b9ab$a53e0140$80ffa8c0@Win7VM> <e2d78268-e2ae-b780-e0d7-9c7875ca330@panix.com>
 Subject: Re: hopefully some help with AntiX
-In-Reply-To: <00c101d8b9ab$a53e0140$80ffa8c0@Win7VM>
-Message-ID: <e2d78268-e2ae-b780-e0d7-9c7875ca330@panix.com>
-References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net>
- <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com> <00c101d8b9ab$a53e0140$80ffa8c0@Win7VM>
+Date: Fri, 26 Aug 2022 20:27:35 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,8 +40,31 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Queue-Id: 518408000045
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: hnjq6r4qxpyti1bwosckrrwrod3mqopd
+X-Rspamd-Server: rspamout03
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX18v9YZ9qTMrwDEOD/t+Kqo0qZDuHe76CSw=
+X-HE-Tag: 1661563655-584389
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+Trouble is that it cannot find git in the repositories.
+Glenn
+----- Original Message ----- 
+From: "Jude DaShiell" <jdashiel@panix.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net>; 
+<speakup@linux-speakup.org>
+Sent: Friday, August 26, 2022 8:09 PM
+Subject: Re: hopefully some help with AntiX
+
 
 If you were able to download fenrir there's a requires script in the git
 directory and the README.md file tells you how to use it and that installs
@@ -69,7 +81,8 @@ defense of liberty:
 On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 
 > I guess I alluded to this when asking for some lines to make a script, but
-> is there a .deb package for either or speakup or fenrir that would fetch the
+> is there a .deb package for either or speakup or fenrir that would fetch 
+> the
 > dependencies?
 > Or would I need to get an espeak-ng .deb file and a speech-dispatcher.deb
 > file too?
@@ -96,7 +109,8 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 >
 > On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 >
-> > I've considered that, and if I can get any port to open, I will gladly use
+> > I've considered that, and if I can get any port to open, I will gladly 
+> > use
 > > telnet.
 > > Hell, if I could open all 1000 ports now, I would!
 > > Glenn
@@ -132,7 +146,8 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > >
 > > On Fri, Aug 26, 2022 at 04:12:28PM -0500, K0LNY_Glenn wrote:
 > > > Well I thought I'd try iptables again.
-> > > I finally got it to run without any errors, that long iptables command I
+> > > I finally got it to run without any errors, that long iptables command 
+> > > I
 > > > got
 > > > earlier.
 > > > But nmap still sees no ports open on that host.
@@ -192,5 +207,6 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > >
 >
 >
->
+> 
+
 
