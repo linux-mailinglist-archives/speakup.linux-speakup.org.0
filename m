@@ -1,34 +1,34 @@
-Return-Path: <speakup+bounces-718-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-719-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 0EA4C5A3A35
-	for <lists+speakup@lfdr.de>; Sun, 28 Aug 2022 00:18:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C824C5A3A40
+	for <lists+speakup@lfdr.de>; Sun, 28 Aug 2022 00:30:46 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9738638160E; Sat, 27 Aug 2022 18:18:35 -0400 (EDT)
+	id EC12838164F; Sat, 27 Aug 2022 18:30:45 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 82050380985
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 18:18:35 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D873C380F55
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 18:30:45 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A43C5380985; Sat, 27 Aug 2022 18:18:30 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0136.b.hostedemail.com [64.98.42.136])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 94506380953
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 18:18:30 -0400 (EDT)
-Received: from omf13.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id EC4498017DDE;
-	Sat, 27 Aug 2022 22:18:28 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf13.b.hostedemail.com (Postfix) with ESMTPA id 8170D84BA0FF;
-	Sat, 27 Aug 2022 22:18:28 +0000 (UTC)
-Message-ID: <001401d8ba62$ef64ed80$80ffa8c0@Win7VM>
+	id E1C1D380F6A; Sat, 27 Aug 2022 18:30:40 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0139.b.hostedemail.com [64.98.42.139])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id D166A380EEF
+	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 18:30:40 -0400 (EDT)
+Received: from omf06.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id 2AC1F100336B7;
+	Sat, 27 Aug 2022 22:30:40 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf06.b.hostedemail.com (Postfix) with ESMTPA id 9CC0A8E87FDC;
+	Sat, 27 Aug 2022 22:30:39 +0000 (UTC)
+Message-ID: <001901d8ba64$a3331700$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
 To: <speakup@linux-speakup.org>,
 	"Didier Spaier" <didier@slint.fr>
 References: <015b01d8ba38$fd13ae50$80ffa8c0@Win7VM> <3EB4BBCC-95D6-4112-87DC-DB41C8C6BC7F@linux-a11y.org> <016e01d8ba3c$5394bb90$80ffa8c0@Win7VM> <63e32391-63e4-53b2-42b1-3aa59261008c@slint.fr>
 Subject: Re: hopefully some help with AntiX
-Date: Sat, 27 Aug 2022 17:18:27 -0500
+Date: Sat, 27 Aug 2022 17:30:39 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -46,19 +46,27 @@ X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Spam-Status: No, score=-2.54
-X-Stat-Signature: ak9bcpmfkydc4ytoqdrjr3mmir8yqybj
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: ana3dg84hiuqn9o434fhkryo6xdykwrh
 X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: 8170D84BA0FF
+X-Rspamd-Queue-Id: 9CC0A8E87FDC
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19SlGogiXvZq7+EHyJUj4ghVGHjjUn+U4Y=
-X-HE-Tag: 1661638708-296493
+X-Session-ID: U2FsdGVkX19zP8TaXw7ldzUdeDouUIWy2vFDu/So1tA=
+X-HE-Tag: 1661639439-333719
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Didier
-I had tried some out, and they were older kernels that would work.
-A Vinux version worked, but not well.
-I believe it was 3.2.1.
+So, I am going to make a folder with the espeak tar.xz and the espeak-ng 
+tar.gz files in it, and I can write a script to do the typing part.
+The two files are:
+espeak-ng_1.49.2+dfsg-8+deb10u1.debian.tar.xz
+and
+espeakup_0.80.orig.tar.gz
+
+So is there a command I can put in a script that will run the installer from 
+the tar.gz files, or do I need to write in the tar -xv filename stuff, and 
+then know the folder name to install from?
+Thanks for any help.
+
 Glenn
 ----- Original Message ----- 
 From: "Didier Spaier" <didier@slint.fr>
