@@ -1,55 +1,36 @@
-Return-Path: <speakup+bounces-698-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-699-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B505E5A3651
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 11:27:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D00975A3828
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 16:46:34 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BE637380E8B; Sat, 27 Aug 2022 05:27:58 -0400 (EDT)
+	id CE0B7385775; Sat, 27 Aug 2022 10:46:33 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A82A4380BFD
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 05:27:58 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B829E385741
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 10:46:33 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CAA16380C58; Sat, 27 Aug 2022 05:27:53 -0400 (EDT)
-Received: from pta-smg1.csir.co.za (pta-smg1.csir.co.za [146.64.81.180])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 0C59F380BFD
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 05:27:53 -0400 (EDT)
-Received: from pta-smg1.csir.co.za (localhost.localdomain [127.0.0.1])
-	by localhost (Email Security Appliance) with SMTP id EC1512978CEE_309E38FB
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 09:27:43 +0000 (GMT)
-Received: from marge.meraka.csir.co.za (marge.meraka.csir.co.za [146.64.28.1])
-	by pta-smg1.csir.co.za (Sophos Email Appliance) with ESMTP id 7A605297605C_309E38FF
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 09:27:43 +0000 (GMT)
-Received: from marge.meraka.csir.co.za (localhost [127.0.0.1])
-	by marge.meraka.csir.co.za (Postfix) with ESMTP id 70A9553F5B
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 11:27:43 +0200 (SAST)
-X-Virus-Scanned: amavisd-new at meraka.org.za
-Received: from marge.meraka.csir.co.za ([127.0.0.1])
-	by marge.meraka.csir.co.za (marge.meraka.csir.co.za [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id gg_IDXETfgXX for <speakup@linux-speakup.org>;
-	Sat, 27 Aug 2022 11:27:43 +0200 (SAST)
-Received: from willempc.meraka.csir.co.za (unknown [IPv6:2001:4200:7000:3:7a2b:cbff:fe9d:7520])
-	(using TLSv1.2 with cipher ECDHE-ECDSA-AES256-GCM-SHA384 (256/256 bits))
-	(No client certificate requested)
-	by marge.meraka.csir.co.za (Postfix) with ESMTPS
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 11:27:43 +0200 (SAST)
-Received: from [127.0.0.1] (helo=localhost)
-	by willempc.meraka.csir.co.za with esmtp (Exim 4.90_1)
-	(envelope-from <wvdwalt@csir.co.za>)
-	id 1oRs6R-0004AI-2I
-	for speakup@linux-speakup.org; Sat, 27 Aug 2022 11:27:43 +0200
-Date: Sat, 27 Aug 2022 11:27:43 +0200 (SAST)
-From: Willem van der Walt <wvdwalt@csir.co.za>
-X-X-Sender: wvdwalt@willempc.meraka.csir.co.za
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+	id B7FC7385741; Sat, 27 Aug 2022 10:46:28 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0203.b.hostedemail.com [64.98.42.203])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A0990380A48
+	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 10:46:28 -0400 (EDT)
+Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id CA88610033317;
+	Sat, 27 Aug 2022 14:46:26 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id 368329B4519;
+	Sat, 27 Aug 2022 14:46:26 +0000 (UTC)
+Message-ID: <012301d8ba23$c9927530$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Jude DaShiell" <jdashiel@panix.com>,
+	"Gregory Nowak" <greg@gregn.net>,
+	<speakup@linux-speakup.org>
+References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net> <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com> <00bc01d8b9aa$824f8ce0$80ffa8c0@Win7VM> <127b4a87-d4a5-f669-4d33-534e114ecb8@panix.com> <010401d8b9bf$7da53220$80ffa8c0@Win7VM> <bf5df74c-7111-ad54-c9b-6b9c926ad2f@panix.com>
 Subject: Re: hopefully some help with AntiX
-In-Reply-To: <alpine.DEB.2.21.1.2208271055420.15485@willempc.meraka.csir.co.za>
-Message-ID: <alpine.DEB.2.21.1.2208271124110.15985@willempc.meraka.csir.co.za>
-References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM>
- <alpine.DEB.2.21.1.2208271055420.15485@willempc.meraka.csir.co.za>
-User-Agent: Alpine 2.21.1 (DEB 211 2017-05-04)
+Date: Sat, 27 Aug 2022 09:46:26 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -59,187 +40,212 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII; format=flowed
-X-SASI-RCODE: 200
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: d8h7oc8tmytmo6ctysejy7kmts6cgtcr
+X-Rspamd-Server: rspamout04
+X-Rspamd-Queue-Id: 368329B4519
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1+vnGm8dEQnsEu+oDER9KzE2E6cM7SlE30=
+X-HE-Tag: 1661611586-615182
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi,
-I see that you will have to get the antiX deb as it is specially built for 
-it.
-Many upstream core Debian packages have been rebuilt to remove a hard 
-dependency on libsystemd0/libelogind0
-    These include apt, cups, dbus, gvfs, openssh, policykit-1, procps, 
-pulseaudio, rpcbind, rsyslog, samba, sane-backends,
-    udisks2, util-linux, webkit2gtk and xorg-server
+Well I ran check-dependencies.py and it gave a couple mysterious errors, but 
+it didn't help.
+I ran install.sh again.
+I ran sudo fenrir and again it only gave me the startup tone.
+It acts like there is no TTS for it to use.
+Glenn
+----- Original Message ----- 
+From: "Jude DaShiell" <jdashiel@panix.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net>; 
+<speakup@linux-speakup.org>
+Sent: Friday, August 26, 2022 9:55 PM
+Subject: Re: hopefully some help with AntiX
 
-That is from their webpage.
+
+Also sysctl enable fenrir.service or is it fenrirscreenreader.service then
+sysctl start fenrir.service or sysctl start fenrirscreenreader.service.
+If a service is missing systemd will let you know about it.
 
 
-On Sat, 27 Aug 2022, Willem van der Walt wrote:
+Jude <jdashiel at panix dot com>
+"There are four boxes to be used in defense of liberty:
+ soap, ballot, jury, and ammo. Please use in that order."
+-Ed Howdershelt (Author, 1940)
 
-> [The e-mail server of the sender could not be verified (SPF Record)]
+.
+
+On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
+
+> Well I ran install.sh on the system, and pressed enter where it said to
+> proceed, and it said was finished, and it said to type
+> sudo fenrir
+> to test it, and all I can get is the two-tone sound when fenrir starts, 
+> but
+> no TTS.
+> Should have that installed espeak or espeak-ng?
+> Thanks.
 >
-> Hi Glenn,
-> My idea was that, on the AntiX, you do something like cat /dev/vcs1|netcat 
-> <dest_ip> 1234 -N
-> On the talking linux, do:
-> netcat -l 1234 -k
-> So, on the AntiX you go to tty2 and run the command there. It wil cat the 
-> screen of tty1 on the AntiX to the listening nc on the talking box.
-> It does not solve the problem, but it should allow you to listen to your 
-> AntiX screen.
-> I suggest googling for a .deb package of ssh-server and install it on the 
-> AntiX using your thumb drive.
-> Regards, Willem
+> ----- Original Message -----
+> From: "Jude DaShiell" <jdashiel@panix.com>
+> To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net>;
+> <speakup@linux-speakup.org>
+> Sent: Friday, August 26, 2022 8:27 PM
+> Subject: Re: hopefully some help with AntiX
 >
+>
+> For now and not forever, why not do apt purge ufw?
+>
+>
+> Jude <jdashiel at panix dot com>
+> "There are four boxes to be used in defense of liberty:
+>  soap, ballot, jury, and ammo. Please use in that order."
+> -Ed Howdershelt (Author, 1940)
+>
+> .
 >
 > On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 >
->> [The e-mail server of the sender could not be verified (SPF Record)]
->> 
->> Hi Willem,
->> Can I operate the terminal with ncat like with SSH?
->> Thanks.
->> 
->> ----- Original Message -----
->> From: "Willem van der Walt" <wvdwalt@csir.co.za>
->> To: "K0LNY_Glenn" <glenn@ervin.email>
->> Cc: "Speakup is a screen review system for Linux."
->> <speakup@linux-speakup.org>
->> Sent: Friday, August 26, 2022 1:19 PM
->> Subject: Re: hopefully some help with AntiX
->> 
->> 
->> Hi Glenn,
->> I think you should use nc.
->> I will send you detailed instructions tomorrow.
->> Regards, Willem
->> 
->> 
->> On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
->> 
->>> [The e-mail server of the sender could not be verified (SPF Record)]
->>> 
->>> Hi Brian,
->>> The trouble is that I cannot SCP because I cannot SSH into it.
->>> It has audio, and I can use apt, but AntiX has its own limited repository.
->>> It has something I think it was called apt-antiX or something, but it is
->>> menu driven, and that does not work with OCR on the screen.
->>> So it seems fast and viable, but I cannot get anything into it.
->>> If I put stuff on a thumb drive and plugged it in, without speech output,
->>> I
->>> couldn't possibly get all guesses needed to find the device in
->>> /media/demo.
->>> Thanks though.
->>> 
->>> Glenn
->>> ----- Original Message -----
->>> From: "Brian Buhrow" <buhrow@nfbcal.org>
->>> To: "K0LNY_Glenn" <glenn@ervin.email>; "Chime Hart"
->>> <chime@hubert-humphrey.com>
->>> Cc: "Willem van der Walt" <wvdwalt@csir.co.za>; "Speakup is a screen
->>> review
->>> system for Linux." <speakup@linux-speakup.org>; <buhrow@nfbcal.org>
->>> Sent: Friday, August 26, 2022 10:12 AM
->>> Subject: Re: hopefully some help with AntiX
->>> 
->>> 
->>> Hello Glen.  Here are a couple of suggestions to try and figure out what's
->>> going on.
->>> 
->>> It sounds like the machine you're installing is up and running to some
->>> extent, i.e. you believe
->>> it has enough network to go out and download packages from repositories.
->>> If that's true, then I suggest building yourself a data file on the
->>> machine
->>> about its
->>> state and then scp it back to your working machine for post mortom
->>> analysis.
->>> In this way, you
->>> can be smarter about what's really going on with it rather than just
->>> trying
->>> our suggestions and
->>> getting more and more frustrated.
->>> 
->>> Depending on the state of the machine, there are a couple of ways to
->>> approach this task.
->>> 
->>> 1.  If you have the script command installed,
->>> I suggest:
->>> cd /tmp
->>> script
->>> 
->>> Then, do a dump of the dmesg output of the machine, a dump of a list of
->>> packages on the
->>> machine, a dump of the network configuration on the machine, using such
->>> commands as ifconfig
->>> and netstat, (if this is Ubuntu based, there's a command that replaces
->>> netstat that I don't
->>> remember off the top of my head.)
->>> 
->>> The script command will capture your commands, and the output they
->>> generate,
->>> into a file called
->>> typescript in the current directory (/tmp above).  When you've collected a
->>> bunch of data, exit
->>> the shell you started with the script command and scp the file
->>> "typescript"
->>> back to your
->>> working installed machine and look it over.  Keep in mind there will be
->>> some
->>> portions of it
->>> that will look like giberish because it captures all the terminal escape
->>> sequences to format
->>> the screen as well, but it will give you a lot more knowledge about what
->>> is
->>> going on.  Also, it
->>> will tell you which commands worked and which didn't, and why.
->>> 
->>> You may need to repeat this process of collecting a script file from the
->>> machine several times,
->>> using the knowledge you gained from the last round, to try more informed
->>> commands.
->>> 
->>> 2.  If the script command is not available, then create your own
->>> approximation of the script
->>> command by doing the following:
->>> 
->>> cd /tmp
->>> touch typescript
->>> dmesg >> typescript 2>&1
->>> . . .
->>> 
->>> Repeat commands, followed by >> typescript 2>&1
->>> 
->>> over and over again, as described above, to dump the output of both
->>> standard
->>> out and standard
->>> error (path for error messages) into your hand made typescript file.
->>> 
->>> When you have collected enough initial data to try doing an analysis, scp
->>> the typescript file
->>> back to your working machine and have a look at it.
->>> 
->>> Keep in mind that when you reboot the Antics machine, the /tmp/typescript
->>> file will be erased.
->>> 
->>> My apologies for not being familiar with the aptitude commands to give you
->>> examples of how to
->>> get package listings from the machine directly.
->>> 
->>> Although, dumping the output of
->>> aptitude --help >> /tmp/typescript 2>&1
->>> into your typescript file should give you pretty good directions on how to
->>> use it.
->>> 
->>> Hope this helps.
->>> 
->>> -Brian
->>> 
->>> 
->>> 
->> 
->> 
+> > Then all 1000 ports show up in nmap as closed.
+> > So it seems if I allow a port in ufw, it shows up as closed, but not
+> > filtered.
+> > So filtered means ufw is running, and if 22 gets allowed, it is not
+> > filtered, but still closed.
+> > Glenn
+> >
+> >
+> > ----- Original Message -----
+> > From: "Jude DaShiell" <jdashiel@panix.com>
+> > To: "K0LNY_Glenn" <glenn@ervin.email>; "Gregory Nowak" <greg@gregn.net>;
+> > <speakup@linux-speakup.org>
+> > Sent: Friday, August 26, 2022 7:12 PM
+> > Subject: Re: hopefully some help with AntiX
+> >
+> >
+> > What happens if ufw --disable is run then the offending computer gets
+> > rebooted?
+> >
+> > Jude <jdashiel at panix dot com>
+> > "There are four boxes to be used in defense of liberty:
+> >  soap, ballot, jury, and ammo. Please use in that order."
+> > -Ed Howdershelt (Author, 1940)
+> >
+> > .
+> >
+> > On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
+> >
+> > > I've considered that, and if I can get any port to open, I will gladly
+> > > use
+> > > telnet.
+> > > Hell, if I could open all 1000 ports now, I would!
+> > > Glenn
+> > > ----- Original Message -----
+> > > From: "Gregory Nowak" <greg@gregn.net>
+> > > To: <speakup@linux-speakup.org>
+> > > Sent: Friday, August 26, 2022 7:01 PM
+> > > Subject: Re: hopefully some help with AntiX
+> > >
+> > >
+> > > On Fri, Aug 26, 2022 at 02:06:13PM -0500, K0LNY_Glenn wrote:
+> > > > On the antiX I did
+> > > > sudo netcat -l 22
+> > > > and then on the pine 64, I did sudo nc 10.248.1.143 22
+> > > > and it does not seem to connect.
+> > > > I wonder if it is because I am using 22 to get from my windows to 
+> > > > the
+> > > > Pine64, in order to go linux to linux.
+> > >
+> > > Port 22 is a privileged port. You should consider using 1024 or
+> > > higher. If the listening port is open on the firewall, the commands
+> > > you gave above should connect. If you type something on the client
+> > > side, you should see it typed on the antiX machine, and the other way
+> > > round. This will however not give you a login terminal. To do that,
+> > > you need something that handles logins to listen on your netcat. This
+> > > isn't something I've done, so can't give you more directions here. If
+> > > you don't care about the connection being secure, which you don't seem
+> > > to, you might as well try:
+> > >
+> > > apt install telnetd
+> > >
+> > > and open tcp 23 on your firewall.
+> > >
+> > >
+> > > On Fri, Aug 26, 2022 at 04:12:28PM -0500, K0LNY_Glenn wrote:
+> > > > Well I thought I'd try iptables again.
+> > > > I finally got it to run without any errors, that long iptables 
+> > > > command
+> > > > I
+> > > > got
+> > > > earlier.
+> > > > But nmap still sees no ports open on that host.
+> > > > Prior to running iptables, I tried to apt install it, and the 
+> > > > message
+> > > > was
+> > > > that I'm already running the latest.
+> > > > So I needed to restart iptables with
+> > > > sudo service iptables restart
+> > > > and it can find no service iptables.
+> > > > I retyped it several times to be sure there was no typos.
+> > >
+> > > This is to be expected, iptables is not a system service.
+> > >
+> > > > So I tried
+> > > > sudo systemctl restart iptables
+> > > > and the system cannot find systemctl
+> > >
+> > > Is antiX running sysvinit, openrc, or something else? This is
+> > > something the antiX documentation should tell you. What does it use
+> > > for PID1 or init?
+> > >
+> > > > question:
+> > > > If I reboot, if the long iptables command worked, will it stick if I
+> > > > reboot?
+> > >
+> > > No.
+> > >
+> > >
+> > > On Fri, Aug 26, 2022 at 05:57:37PM -0500, K0LNY_Glenn wrote:
+> > > > Well it seems ufw is there, but it must not be running 
+> > > > automatically,
+> > > > but
+> > > > it
+> > > > does not fix the port problem.
+> > > > I did
+> > > > sudo ufw allow ssh
+> > > > it said tcp port allowed
+> > > > or something like that
+> > > > so I checked on the other computer with nmap
+> > > > 100 ports closed
+> > > > So I did sudo ufw restart
+> > > > and the other computer said 999 ports filtered tcp port 22 closed.
+> > > > I've done iptables too, but that does not stay after a reboot.
+> > > > if I do sudo ufw status
+> > > > it shows tcp port 22 allow
+> > > > but it does not stay from a reboot.
+> > >
+> > > You need to save the firewall configuration once you changed it for it
+> > > to persist across reboots. I haven't used ufw, so you will need to
+> > > read up on how to do that.
+> > >
+> > > If port tcp 22 shows up as not filtered but closed, then the port is
+> > > open, but there is no ssh service running.
+> > >
+> > > Greg
+> > >
+> > >
+> > >
+> >
+> >
+> >
 >
 >
+> 
+
 
