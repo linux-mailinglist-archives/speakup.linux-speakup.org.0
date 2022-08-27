@@ -1,27 +1,27 @@
-Return-Path: <speakup+bounces-681-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-682-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3DDDC5A3303
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 02:18:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 870335A3310
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 02:26:33 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 043D7380F82; Fri, 26 Aug 2022 20:18:24 -0400 (EDT)
+	id 2A53A380C93; Fri, 26 Aug 2022 20:26:33 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E254A380985
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 20:18:23 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 13D4E380BDA
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 20:26:33 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id F1FAD380BDA; Fri, 26 Aug 2022 20:18:18 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0030.b.hostedemail.com [64.98.42.30])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id DF390380981
-	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 20:18:18 -0400 (EDT)
-Received: from omf07.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id 4437C86A7461;
-	Sat, 27 Aug 2022 00:18:18 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf07.b.hostedemail.com (Postfix) with ESMTPA id AD35110A1AFBA;
-	Sat, 27 Aug 2022 00:18:17 +0000 (UTC)
-Message-ID: <00bc01d8b9aa$824f8ce0$80ffa8c0@Win7VM>
+	id 0C200380BFD; Fri, 26 Aug 2022 20:26:28 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0254.b.hostedemail.com [64.98.42.254])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id EDC8F380A48
+	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 20:26:27 -0400 (EDT)
+Received: from omf06.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay06.b.hostedemail.com (Postfix) with ESMTP id 62BEB1896DC08;
+	Sat, 27 Aug 2022 00:26:26 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf06.b.hostedemail.com (Postfix) with ESMTPA id CBEA8870583F;
+	Sat, 27 Aug 2022 00:26:25 +0000 (UTC)
+Message-ID: <00c101d8b9ab$a53e0140$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
 To: "Jude DaShiell" <jdashiel@panix.com>,
@@ -29,7 +29,7 @@ To: "Jude DaShiell" <jdashiel@panix.com>,
 	<speakup@linux-speakup.org>
 References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net> <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com>
 Subject: Re: hopefully some help with AntiX
-Date: Fri, 26 Aug 2022 19:18:17 -0500
+Date: Fri, 26 Aug 2022 19:26:25 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -48,20 +48,20 @@ X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
 X-Spam-Status: No, score=-2.60
-X-Stat-Signature: 94x3stmdqzsdstkb3g83kt89aqryrdqr
-X-Rspamd-Server: rspamout01
-X-Rspamd-Queue-Id: AD35110A1AFBA
+X-Stat-Signature: f8ahbo5hwnm3axup1xpjpgxiakb4zuio
+X-Rspamd-Server: rspamout04
+X-Rspamd-Queue-Id: CBEA8870583F
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX18jvxQa49BtrKJIyAjXAW1V5REPrLrgTIQ=
-X-HE-Tag: 1661559497-755979
+X-Session-ID: U2FsdGVkX19OgsteppFtGdPuQOziqU2VBF7Hu5N5rkU=
+X-HE-Tag: 1661559985-881192
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Then all 1000 ports show up in nmap as closed.
-So it seems if I allow a port in ufw, it shows up as closed, but not 
-filtered.
-So filtered means ufw is running, and if 22 gets allowed, it is not 
-filtered, but still closed.
-Glenn
+I guess I alluded to this when asking for some lines to make a script, but 
+is there a .deb package for either or speakup or fenrir that would fetch the 
+dependencies?
+Or would I need to get an espeak-ng .deb file and a speech-dispatcher.deb 
+file too?
+Thanks.
 
 
 ----- Original Message ----- 
@@ -177,6 +177,6 @@ On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 > Greg
 >
 >
-> 
+>
 
 
