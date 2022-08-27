@@ -1,48 +1,48 @@
-Return-Path: <speakup+bounces-701-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-702-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3CF645A3844
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 17:09:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 7258D5A3848
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 17:13:07 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=nUWo43AF;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=UuajWmP1;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CD16F38574C; Sat, 27 Aug 2022 11:09:13 -0400 (EDT)
+	id E21E8385755; Sat, 27 Aug 2022 11:13:06 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A5F71385742
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 11:09:13 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id C1554385747
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 11:13:06 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C575C385743; Sat, 27 Aug 2022 11:09:04 -0400 (EDT)
+	id F2B4E385747; Sat, 27 Aug 2022 11:12:57 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 4F618380C02
-	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 11:09:04 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id CE254385743
+	for <speakup@linux-speakup.org>; Sat, 27 Aug 2022 11:12:57 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4MFKq341kcz3x4H;
-	Sat, 27 Aug 2022 11:09:03 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4MFKvY1f24z3xHB;
+	Sat, 27 Aug 2022 11:12:57 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1661612943; bh=HCPWiVvBNoGpQyIFXXw9cxsx+Pi2Xr8DYDLbyTa+Qzc=;
+	t=1661613177; bh=bjzBpn3CoGs0nBKv6CiduTTI7vMitZcJc1K+Tofyv8M=;
 	h=Date:From:To:Subject:In-Reply-To:References;
-	b=nUWo43AFmqQkeP6Oj6zJnZzJrlvGf6FS0xMuPmxznTVcKmA/8k9HaT5+rbppdZzYh
-	 S74deHw9yQXlQ2KvlpWZpRnMLfrY8mUJQGwObAejIqjGxCYXjtSJZ4DlBKg2lNeAKt
-	 NS6QHfAHaHEljpfw44tIKeCspCgxNKUVZM8xhcBw=
+	b=UuajWmP1hucr0eNrXK1Za4mULklxtjVu/3oyR6MfyfepPP3l0CMWrK/fTK9YYXtV3
+	 hCuaFjdEMnM9xWG24gE3WnbeBx7GwWiVD33I2Apl3iqKswL60nDgJXza9U3AZtpiEV
+	 0utcAoiiF1DIiqu9wzb5KTvmmquAOlNqyHRtp0ds=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4MFKq33SyJzcbc; Sat, 27 Aug 2022 11:09:03 -0400 (EDT)
+	id 4MFKvY166hzcbc; Sat, 27 Aug 2022 11:12:57 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4MFKq33FBlzcbC;
-	Sat, 27 Aug 2022 11:09:03 -0400 (EDT)
-Date: Sat, 27 Aug 2022 11:09:03 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4MFKvY0m9NzcbC;
+	Sat, 27 Aug 2022 11:12:57 -0400 (EDT)
+Date: Sat, 27 Aug 2022 11:12:56 -0400
 From: Jude DaShiell <jdashiel@panix.com>
 To: K0LNY_Glenn <glenn@ervin.email>, Gregory Nowak <greg@gregn.net>, 
     speakup@linux-speakup.org
 Subject: Re: hopefully some help with AntiX
-In-Reply-To: <012601d8ba26$85aada80$80ffa8c0@Win7VM>
-Message-ID: <fecaf044-e4e9-580-619f-5513c3f67be1@panix.com>
+In-Reply-To: <012301d8ba23$c9927530$80ffa8c0@Win7VM>
+Message-ID: <34c981ad-18f5-abe3-e5f0-c7ce48c730e7@panix.com>
 References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net>
  <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com> <00bc01d8b9aa$824f8ce0$80ffa8c0@Win7VM> <127b4a87-d4a5-f669-4d33-534e114ecb8@panix.com> <010401d8b9bf$7da53220$80ffa8c0@Win7VM> <bf5df74c-7111-ad54-c9b-6b9c926ad2f@panix.com>
- <012301d8ba23$c9927530$80ffa8c0@Win7VM> <012601d8ba26$85aada80$80ffa8c0@Win7VM>
+ <012301d8ba23$c9927530$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -55,9 +55,10 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-sudo dpkg -i espeak-ng
-then hit tab if in the same directory as the archive.
-Once done, try sysctl enable espeak then reboot.
+Did you read the README.md file and follow instructions?  If yes, you may
+have found a bug worth reporting.
+You can contact chrys@linux-a11y.org and describe your situation and ask
+for help getting fenrir speaking.  That one wrote the package.
 
 
 Jude <jdashiel at panix dot com> "There are four boxes to be used in
@@ -69,27 +70,6 @@ defense of liberty:
 
 On Sat, 27 Aug 2022, K0LNY_Glenn wrote:
 
-> Well I found espeak-ng for Debian Buster here:
-> https://packages.debian.org/buster/espeak-ng
-> The file I downloaded was:
-> espeak-ng_1.49.2+dfsg-8+deb10u1.debian.tar.xz
-> Looking in the archive, there are some .install files, but I didn't find any
-> .sh files, so I don't know which file to use to get espeak installed on this
-> system.
-> Or if there is a .deb for RhVoice, that would work too, but did I download
-> the wrong espeak-ng file for installing it?
-> Thanks.
->
-> Glenn
->
-> ----- Original Message -----
-> From: "K0LNY_Glenn" <glenn@ervin.email>
-> To: "Jude DaShiell" <jdashiel@panix.com>; "Gregory Nowak" <greg@gregn.net>;
-> <speakup@linux-speakup.org>
-> Sent: Saturday, August 27, 2022 9:46 AM
-> Subject: Re: hopefully some help with AntiX
->
->
 > Well I ran check-dependencies.py and it gave a couple mysterious errors, but
 > it didn't help.
 > I ran install.sh again.
@@ -281,7 +261,6 @@ On Sat, 27 Aug 2022, K0LNY_Glenn wrote:
 > >
 > >
 > >
->
 >
 >
 >
