@@ -1,36 +1,47 @@
-Return-Path: <speakup+bounces-688-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-689-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
-Received: from befuddled.reisers.ca (unknown [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 30C525A3342
-	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 02:54:57 +0200 (CEST)
+Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
+	by mail.lfdr.de (Postfix) with ESMTP id 37A3B5A3350
+	for <lists+speakup@lfdr.de>; Sat, 27 Aug 2022 03:07:24 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=MtmXp1Pd;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9C621380F39; Fri, 26 Aug 2022 20:54:35 -0400 (EDT)
+	id 1A71E380C8D; Fri, 26 Aug 2022 21:07:23 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 85E9F380C8D
-	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 20:54:35 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id ECF2B380C8D
+	for <lists+speakup@lfdr.de>; Fri, 26 Aug 2022 21:07:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 93756380C93; Fri, 26 Aug 2022 20:54:30 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0194.b.hostedemail.com [64.98.42.194])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 82568380C74
-	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 20:54:30 -0400 (EDT)
-Received: from omf12.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id 05604100339BF;
-	Sat, 27 Aug 2022 00:54:30 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf12.b.hostedemail.com (Postfix) with ESMTPA id 666A01807017A;
-	Sat, 27 Aug 2022 00:54:29 +0000 (UTC)
-Message-ID: <00db01d8b9af$90c6e980$80ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Gregory Nowak" <greg@gregn.net>
-Cc: "Jude DaShiell" <jdashiel@panix.com>,
-	<speakup@linux-speakup.org>
-References: <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net> <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com> <00bc01d8b9aa$824f8ce0$80ffa8c0@Win7VM> <YwlmdgNYEEgvwGSZ@gregn.net> <00ca01d8b9ad$a9f42460$80ffa8c0@Win7VM> <YwlqV+wBkx1HzRtX@gregn.net>
+	id 2FFA2380C8D; Fri, 26 Aug 2022 21:07:14 -0400 (EDT)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 15B38380C6F
+	for <speakup@linux-speakup.org>; Fri, 26 Aug 2022 21:07:14 -0400 (EDT)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4MDz7j2DG5z2jNb;
+	Fri, 26 Aug 2022 21:07:13 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1661562433; bh=Rc0Z/xvmlNz9QUeBqKpqDjp5fZFb2qzXpjwZtZK1D5E=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References;
+	b=MtmXp1PdaVFPj3Qbtl3u7J8KzZ2DnmvG7o9ZOA0iowMCgxyAbcSphBDwJZ3aAeLLh
+	 7KoOWhJ5cWaetF/ww0IXV3JMaiq90ibcIWYsZWY6u48VTZqjJxVUX5nBem//j5e8fV
+	 cUVTIpIR27msH2fiNcbkcUyXRhlH7A3IevXZ3msY=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4MDz7j1glmzcbc; Fri, 26 Aug 2022 21:07:13 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by panix1.panix.com (Postfix) with ESMTP id 4MDz7j1LG7zcbC;
+	Fri, 26 Aug 2022 21:07:13 -0400 (EDT)
+Date: Fri, 26 Aug 2022 21:07:13 -0400
+From: Jude DaShiell <jdashiel@panix.com>
+To: K0LNY_Glenn <glenn@ervin.email>, Gregory Nowak <greg@gregn.net>
+cc: speakup@linux-speakup.org
 Subject: Re: hopefully some help with AntiX
-Date: Fri, 26 Aug 2022 19:54:29 -0500
-Organization: Home
+In-Reply-To: <00ca01d8b9ad$a9f42460$80ffa8c0@Win7VM>
+Message-ID: <9e311f1c-989e-2ebb-8b3b-17306e64b42e@panix.com>
+References: <202208261512.27QFCDux008176@nfbcal.org> <02b101d8b963$7d039fc0$80ffa8c0@Win7VM> <alpine.DEB.2.21.1.2208262017280.8190@willempc.meraka.csir.co.za> <006201d8b97a$ff989cd0$80ffa8c0@Win7VM> <006601d8b97e$e9f9a6e0$80ffa8c0@Win7VM> <Ywle3kA6oGDCREfZ@gregn.net>
+ <00b601d8b9a9$5c664f10$80ffa8c0@Win7VM> <acd2012-2ab5-5ff2-4fa6-4e518867727a@panix.com> <00bc01d8b9aa$824f8ce0$80ffa8c0@Win7VM> <YwlmdgNYEEgvwGSZ@gregn.net> <00ca01d8b9ad$a9f42460$80ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -40,51 +51,26 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Spam-Status: No, score=-2.60
-X-Stat-Signature: auxwr8f937o93u311g74kra8keeqz3f8
-X-Rspamd-Server: rspamout01
-X-Rspamd-Queue-Id: 666A01807017A
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19vqb59oE5A7TS4GarGDzZJ5z8R3JlJQ8k=
-X-HE-Tag: 1661561669-196538
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I think I read on line that there only a couple hundred packages in the 
-antiX repository.
-But yeah, I always do apt update first thing, but I think I got a fuller 
-update when I ran their updater with something like apt-antiX update.
-
------ Original Message ----- 
-From: "Gregory Nowak" <greg@gregn.net>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Jude DaShiell" <jdashiel@panix.com>; <speakup@linux-speakup.org>
-Sent: Friday, August 26, 2022 7:50 PM
-Subject: Re: hopefully some help with AntiX
+See if rlogin is on that system, it's supposed to be a more secure flavor
+of telnet without using ssh.
 
 
-I don't remember if you mentioned this earlier, but you did run
+Jude <jdashiel at panix dot com>
+"There are four boxes to be used in defense of liberty:
+ soap, ballot, jury, and ammo. Please use in that order."
+-Ed Howdershelt (Author, 1940)
 
-apt update
+.
 
-right? If you have, then antiX really seems to have a limited
-repository.
+On Fri, 26 Aug 2022, K0LNY_Glenn wrote:
 
-Greg
-
-
-On Fri, Aug 26, 2022 at 07:40:52PM -0500, K0LNY_Glenn wrote:
-> Man, I thought that would work, but it said it cannot locate a package 
-> named
+> Man, I thought that would work, but it said it cannot locate a package named
 > telnetd
 > Glenn
-> ----- Original Message ----- 
+> ----- Original Message -----
 > From: "Gregory Nowak" <greg@gregn.net>
 > To: "K0LNY_Glenn" <glenn@ervin.email>
 > Cc: "Jude DaShiell" <jdashiel@panix.com>; <speakup@linux-speakup.org>
@@ -117,28 +103,5 @@ On Fri, Aug 26, 2022 at 07:40:52PM -0500, K0LNY_Glenn wrote:
 > Greg
 >
 >
-> -- 
-> web site: http://www.gregn.net
-> gpg public key: http://www.gregn.net/pubkey.asc
-> skype: gregn1
-> (authorization required, add me to your contacts list first)
-> If we haven't been in touch before, e-mail me before adding me to your
-> contacts.
 >
-> --
-> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
->
->
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your 
-contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org 
-
 
