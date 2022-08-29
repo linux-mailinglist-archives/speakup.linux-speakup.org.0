@@ -1,35 +1,35 @@
-Return-Path: <speakup+bounces-724-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-725-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 2FA075A4EFD
-	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 16:19:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 7E1615A4F1F
+	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 16:26:09 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EF93238476B; Mon, 29 Aug 2022 10:18:59 -0400 (EDT)
+	id 2154438577A; Mon, 29 Aug 2022 10:26:09 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id DA35D380A4D
-	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 10:18:59 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0CDC0380C88
+	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 10:26:09 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D8EEF3809DF; Mon, 29 Aug 2022 10:18:54 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0059.b.hostedemail.com [64.98.42.59])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 8B670380995
-	for <speakup@linux-speakup.org>; Mon, 29 Aug 2022 10:18:54 -0400 (EDT)
-Received: from omf06.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id 94C85881289D;
-	Mon, 29 Aug 2022 14:18:53 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf06.b.hostedemail.com (Postfix) with ESMTPA id 04D9989D4E34;
-	Mon, 29 Aug 2022 14:18:52 +0000 (UTC)
-Message-ID: <011301d8bbb2$44eb8c50$80ffa8c0@Win7VM>
+	id 21C22380C1B; Mon, 29 Aug 2022 10:26:04 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0224.b.hostedemail.com [64.98.42.224])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 11667380ADE
+	for <speakup@linux-speakup.org>; Mon, 29 Aug 2022 10:26:04 -0400 (EDT)
+Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 49C6318871CC4;
+	Mon, 29 Aug 2022 14:26:03 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id BA1329BA047;
+	Mon, 29 Aug 2022 14:26:02 +0000 (UTC)
+Message-ID: <011b01d8bbb3$451517e0$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Samuel Thibault" <samuel.thibault@aquilenet.fr>,
-	"John Covici" <covici@ccs.covici.com>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <20220829141057.lfbqnbb7rni4hstp@begin>
+To: "Samuel Thibault" <samuel.thibault@aquilenet.fr>
+Cc: "John Covici" <covici@ccs.covici.com>,
+	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <20220829141057.lfbqnbb7rni4hstp@begin> <011301d8bbb2$44eb8c50$80ffa8c0@Win7VM> <20220829142051.oa2e6iczklcwvfga@begin>
 Subject: Re: Debian With Speech Installer
-Date: Mon, 29 Aug 2022 09:18:52 -0500
+Date: Mon, 29 Aug 2022 09:26:02 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -41,55 +41,45 @@ List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
+	charset="UTF-8"
+Content-Transfer-Encoding: 8bit
 X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Spam-Status: No, score=-1.53
-X-Stat-Signature: 331xtjqr4urt5o4y3phr33ees7ia57uq
-X-Rspamd-Server: rspamout01
-X-Rspamd-Queue-Id: 04D9989D4E34
+X-Rspamd-Server: rspamout02
+X-Rspamd-Queue-Id: BA1329BA047
+X-Spam-Status: No, score=1.37
+X-Stat-Signature: mj9xi17dikwybkr3q5s5hye6t7wcrc1j
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1/z6r3TMyd2EYqCbvQeHkd5Aq5rJKZZ+oA=
-X-HE-Tag: 1661782732-157703
+X-Session-ID: U2FsdGVkX18CRANTJVnVECL0iz3uZMX+PHI7Rm4w2X0=
+X-HE-Tag: 1661783162-170966
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Thanks, as in a previous message, down arrowing 5 times worked, but neither 
-just S or alt S as I tried that too, worked.
+I may be able to do that, but of course I pressed enter, that is how I knew 
+the next page was the language selection, using SeeingAI.
+When I'm done with setting up the computer, I can boot to the SD card again 
+and have someone take a picture over face time.
+To whom would I send the pict to?
 Glenn
 ----- Original Message ----- 
 From: "Samuel Thibault" <samuel.thibault@aquilenet.fr>
-To: "K0LNY_Glenn" <glenn@ervin.email>; "John Covici" <covici@ccs.covici.com>
-Cc: "Speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Monday, August 29, 2022 9:10 AM
+To: "K0LNY_Glenn" <glenn@ervin.email>
+Cc: "John Covici" <covici@ccs.covici.com>; "Speakup is a screen review 
+system for Linux." <speakup@linux-speakup.org>
+Sent: Monday, August 29, 2022 9:20 AM
 Subject: Re: Debian With Speech Installer
 
 
-K0LNY_Glenn wrote:
-> I thought it said press F11 for something on the first screen, and I'm
-> wondering if anyone knows if S does work, or you know to arrow up or down 
-> a
-> certain number of times to get speech on this Debian installer.
+K0LNY_Glenn, le lun. 29 août 2022 09:18:52 -0500, a ecrit:
+> Thanks, as in a previous message, down arrowing 5 times worked, but 
+> neither
+> just S or alt S as I tried that too, worked.
 
-As documented, s and pressing the enter key should work:
+That's odd. Where you also typing enter after pressing s?
 
-https://www.debian.org/releases/stable/amd64/ch05s02.en.html#idm1289
-
-The wiki provides more details:
-
-https://wiki.debian.org/accessibility#Debian_installer_accessibility
-
-K0LNY_Glenn wrote:
-> Well I did find on-line something that stated to arrow down 5 times, and
-> that worked.
-
-"5 times" will depend on the image being used. Where did you find this
-information? It needs to be fixed: pressing s should "just work", and
-alternatively, since it is made the last element of the menu, pressing
-the end key then the enter key should work as well.
+Would you be able to take a photograph of the screen there, so we can
+know exactly how the boot menu is showing up?
 
 Samuel 
 
