@@ -1,35 +1,32 @@
-Return-Path: <speakup+bounces-725-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-726-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7E1615A4F1F
-	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 16:26:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 0D19C5A5300
+	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 19:21:23 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2154438577A; Mon, 29 Aug 2022 10:26:09 -0400 (EDT)
+	id 1DAB0380A89; Mon, 29 Aug 2022 13:21:12 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0CDC0380C88
-	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 10:26:09 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0809638098A
+	for <lists+speakup@lfdr.de>; Mon, 29 Aug 2022 13:21:12 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 21C22380C1B; Mon, 29 Aug 2022 10:26:04 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0224.b.hostedemail.com [64.98.42.224])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 11667380ADE
-	for <speakup@linux-speakup.org>; Mon, 29 Aug 2022 10:26:04 -0400 (EDT)
-Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 49C6318871CC4;
-	Mon, 29 Aug 2022 14:26:03 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id BA1329BA047;
-	Mon, 29 Aug 2022 14:26:02 +0000 (UTC)
-Message-ID: <011b01d8bbb3$451517e0$80ffa8c0@Win7VM>
+	id 11727380995; Mon, 29 Aug 2022 13:21:07 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0061.b.hostedemail.com [64.98.42.61])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id EFB2D380986
+	for <speakup@linux-speakup.org>; Mon, 29 Aug 2022 13:21:06 -0400 (EDT)
+Received: from omf05.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id EB595100334E9
+	for <speakup@linux-speakup.org>; Mon, 29 Aug 2022 17:20:55 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf05.b.hostedemail.com (Postfix) with ESMTPA id 94B4918020492
+	for <speakup@linux-speakup.org>; Mon, 29 Aug 2022 17:20:55 +0000 (UTC)
+Message-ID: <014f01d8bbcb$b33a5790$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Samuel Thibault" <samuel.thibault@aquilenet.fr>
-Cc: "John Covici" <covici@ccs.covici.com>,
-	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <20220829141057.lfbqnbb7rni4hstp@begin> <011301d8bbb2$44eb8c50$80ffa8c0@Win7VM> <20220829142051.oa2e6iczklcwvfga@begin>
-Subject: Re: Debian With Speech Installer
-Date: Mon, 29 Aug 2022 09:26:02 -0500
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Debian Packages
+Date: Mon, 29 Aug 2022 12:20:55 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -41,46 +38,41 @@ List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain;
-	charset="UTF-8"
-Content-Transfer-Encoding: 8bit
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
 X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Server: rspamout02
-X-Rspamd-Queue-Id: BA1329BA047
-X-Spam-Status: No, score=1.37
-X-Stat-Signature: mj9xi17dikwybkr3q5s5hye6t7wcrc1j
+X-Spam-Status: No, score=-2.58
+X-Stat-Signature: h86wc7pnwr1qfh75m8yi34younpsetdk
+X-Rspamd-Server: rspamout04
+X-Rspamd-Queue-Id: 94B4918020492
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX18CRANTJVnVECL0iz3uZMX+PHI7Rm4w2X0=
-X-HE-Tag: 1661783162-170966
+X-Session-ID: U2FsdGVkX19fMgFzlzLacca8fXwXJKrr04K9hLivTX4=
+X-HE-Tag: 1661793655-521795
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I may be able to do that, but of course I pressed enter, that is how I knew 
-the next page was the language selection, using SeeingAI.
-When I'm done with setting up the computer, I can boot to the SD card again 
-and have someone take a picture over face time.
-To whom would I send the pict to?
-Glenn
------ Original Message ----- 
-From: "Samuel Thibault" <samuel.thibault@aquilenet.fr>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "John Covici" <covici@ccs.covici.com>; "Speakup is a screen review 
-system for Linux." <speakup@linux-speakup.org>
-Sent: Monday, August 29, 2022 9:20 AM
-Subject: Re: Debian With Speech Installer
+Hi All,
+I'm running Debian 11.04 on the Asus 701 with speakup & espeak.
+I wanted to see if I can get Voxin installed, so I put the .deb file on a 
+USB drive, and I thought it would show up in /media, but the only thing 
+there is cdrom, and nothing is in there.
+During the install, I did the base install, because I wasn't sure if the 4GB 
+internal storage would hold the Mate desktop, so I'm working in the CLI.
+I didn't find anything in /mnt either.
+So I did fdisk -l and it did not recognize the command.
+So I tried sudo fdisk -l and it did not know the command sudo.
+So I tried just su and it wanted root's password, and I was root.
+But it still did not recognize fdisk.
+Now, during the install, one option was install ssh-server, that was #11, 
+and #12 was common system tools, and I thought I would get those choices 
+again after installing ssh-server, but they were never presented again.
+Question, without reinstalling again, is there a way to get the common 
+system tools installed?
+I did apt update as root.
+Thanks.
 
-
-K0LNY_Glenn, le lun. 29 août 2022 09:18:52 -0500, a ecrit:
-> Thanks, as in a previous message, down arrowing 5 times worked, but 
-> neither
-> just S or alt S as I tried that too, worked.
-
-That's odd. Where you also typing enter after pressing s?
-
-Would you be able to take a photograph of the screen there, so we can
-know exactly how the boot menu is showing up?
-
-Samuel 
+Glenn 
 
 
