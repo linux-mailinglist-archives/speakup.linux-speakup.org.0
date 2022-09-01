@@ -1,76 +1,48 @@
-Return-Path: <speakup+bounces-732-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-733-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8EEB75A9DEB
-	for <lists+speakup@lfdr.de>; Thu,  1 Sep 2022 19:21:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 353E15AA3D9
+	for <lists+speakup@lfdr.de>; Fri,  2 Sep 2022 01:42:38 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=UOvoDXck;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=4RtW015S;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=j/51RFXr;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8A3E7380A95; Thu,  1 Sep 2022 13:21:05 -0400 (EDT)
+	id 41DC63805F9; Thu,  1 Sep 2022 19:42:37 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6A7073805E4
-	for <lists+speakup@lfdr.de>; Thu,  1 Sep 2022 13:21:05 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 23170380335
+	for <lists+speakup@lfdr.de>; Thu,  1 Sep 2022 19:42:37 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 509253805E5; Thu,  1 Sep 2022 13:20:56 -0400 (EDT)
-Received: from wout1-smtp.messagingengine.com (wout1-smtp.messagingengine.com [64.147.123.24])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 7EEF53805D7
-	for <speakup@linux-speakup.org>; Thu,  1 Sep 2022 13:20:54 -0400 (EDT)
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
-	by mailout.west.internal (Postfix) with ESMTP id E95A232009F9
-	for <speakup@linux-speakup.org>; Thu,  1 Sep 2022 13:20:50 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute4.internal (MEProxy); Thu, 01 Sep 2022 13:20:51 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:content-type:date:date:from:from
-	:in-reply-to:message-id:mime-version:reply-to:sender:subject
-	:subject:to:to; s=fm1; t=1662052850; x=1662139250; bh=8OMFQK4bnM
-	X+f1WlBP0gdenKk/AuKZj5OzvLtpQajE0=; b=UOvoDXck2SRO8RL0npEJOJZGO9
-	c5/ucJDqlr/x5Qhore8y6Nzu/aGC9UVyhNhnbn8PhjrI3zDNizt3bKiDHERE20i7
-	uJvljY8cjcfpwHgoDtTHtgpChRmZPadVRD8p7Ff7sAa9FMCcUzJKBhv3yGj52mpp
-	ur9HDWuVFH/tB7SEefeRhL2tSM89L1NTIgeX0KvHrkixH+AyFp6BuqvqRIOeVoBV
-	w9Aqrx/KnM2sC7jMD3gJ25Vk/fSciHlOQ0qTDaOQV5Oom2CQZCLc37Zzhx53yzwV
-	Cupqgg023Js66boDf0om9t/u7rQ5PQtPTJsFV6q6EqJcQC7OVclF8PevQKMA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:content-type:date:date:feedback-id
-	:feedback-id:from:from:in-reply-to:message-id:mime-version
-	:reply-to:sender:subject:subject:to:to:x-me-proxy:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1662052850; x=
-	1662139250; bh=8OMFQK4bnMX+f1WlBP0gdenKk/AuKZj5OzvLtpQajE0=; b=4
-	RtW015S1Rfp16awcxxItOBxESjte0BVi/CrJ7C4rv0Xs4WNkKArmbKYKOlJ0RON3
-	cBtHwHFqze2A/Za48NDV/PkN+4NXlKZM5SsV+a335x9a//HNmhqopVyUofJSVV5x
-	0Zmq/4zEZgt/C+oh0/TdBFdInbvlciv3S3rNOg/u5pgQtiZCxaEnW1E35z4eaz1u
-	i0E88os62alBmZ6Kb541YC/WlXMPwMh3028Htqgmrvgu2itByL/joZ8nsFo7u+Ba
-	T+Tn8XhBIq1j6uWYAnd6TEUTNfXsdF+r6g8nmg4rZt9tBGItjfJXW4/Z86QPlu82
-	/cFMnj1Jw0PEduiiu4img==
-X-ME-Sender: <xms:8ukQY1yabv5HhTqXvAyOgGVqMEwqmqKbGJTOGdrKN7azOxRQ2XaWIQ>
-    <xme:8ukQY1R9jBAUmHLLPBjbgQnFQ-aFj_EBJmz5TciRl7mFub9O3Er2pEkrg_iTLZt_-
-    1Bf9vCBwFyO9l25OCo>
-X-ME-Received: <xmr:8ukQY_UsO53WdeOCnDMAd59VIuYlUPt-yQ6WPbDz5-Q-v1EFqx0iDXbM_9umidrhXtkFLfTwMWEYi_1x0i3OPIjSTPymqnl6gw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvfedrvdekkedgudduudcutefuodetggdotefrod
-    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
-    necuuegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfggtgesthdtredttd
-    dtvdenucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhh
-    uhhmphhhrhgvhidrtghomheqnecuggftrfgrthhtvghrnhepjeffffdujeelueffieevtd
-    eiteettdekgffgkedvueejteektdehfefhhfdvteeknecuvehluhhsthgvrhfuihiivgep
-    tdenucfrrghrrghmpehmrghilhhfrhhomheptghhihhmvgeshhhusggvrhhtqdhhuhhmph
-    hhrhgvhidrtghomh
-X-ME-Proxy: <xmx:8ukQY3iuVUm1Fq1F78xuvNk4sVqOXqxDd81gJiE9lnEkN9w0-JBctw>
-    <xmx:8ukQY3DdHlen1iHuv9iv674-7dIe2_vGCugegOLSLtDz2GzqVOXFqA>
-    <xmx:8ukQYwKFPZdb_l-HQZ3r7zsFcgyhhr6x7XTDvgvy3bPHhEInSkJJKQ>
-    <xmx:8ukQY6-G2xzBlnq5xo6nsW_Fhex6Pd4HkUvnQoq09iuJfw_6Ai5eKA>
-Feedback-ID: ia9b947fb:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA for
- <speakup@linux-speakup.org>; Thu, 1 Sep 2022 13:20:49 -0400 (EDT)
-Date: Thu, 1 Sep 2022 10:20:48 -0700 (PDT)
-From: Chime Hart <chime@hubert-humphrey.com>
-To: speakup@linux-speakup.org
-Subject: Can I Have A Speakup Kee Map with Voice-Over on a Mac?
-Message-ID: <181f82aa-a2fe-8f0e-07c0-6daf95300a51@hubert-humphrey.com>
+	id 635D1380337; Thu,  1 Sep 2022 19:42:28 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 3A288380334
+	for <speakup@linux-speakup.org>; Thu,  1 Sep 2022 19:42:28 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [172.56.80.28])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 0FD611325;
+	Thu,  1 Sep 2022 16:42:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+	t=1662075747; bh=jY7efs1vrXtI2DRHdyKJqyT570mdHZkY7Fc9T/tTu/Q=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=j/51RFXrtfG86VOGtlMHRMA6p3sGIdGBgOczC1HgsJZr6lhw2xFrmc/dPVIfpjHLK
+	 vXbMA9E/GPXL7UOM9rhTHriyZjO+0xkPd4IHYn1KwnBY2OQc++zXcDJ10gicckBFRm
+	 QRDd88n3avUOVy5FEerIWA3JPPx6104KwkHhGVL8vETgiKazDf1YRa8gQ7bsbuQy9L
+	 OQilr1l5Iy90bcowxinr8O7K81TmWBwRYByNpha4RKV1e8rExkmrLMNqG6ld/+Kul9
+	 WnlXtnK+MF+Lnr9CLabuL3WDBQ4PD+PndWD4xriNrTjFqMLCk8Rji8kn6gejJazyMn
+	 kxA7C3YMw5MaA==
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 34BEFC22D; Thu,  1 Sep 2022 16:42:53 -0700 (MST)
+Date: Thu, 1 Sep 2022 16:42:53 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: Chime Hart <chime@hubert-humphrey.com>
+Cc: speakup@linux-speakup.org
+Subject: Re: Can I Have A Speakup Kee Map with Voice-Over on a Mac?
+Message-ID: <YxFDfYuG2MxGc2H0@gregn.net>
+References: <181f82aa-a2fe-8f0e-07c0-6daf95300a51@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -80,17 +52,45 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <181f82aa-a2fe-8f0e-07c0-6daf95300a51@hubert-humphrey.com>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 0.103.6 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi All: I will eventually try-and-signup for classes at an Apple store-and-see 
-if I can learn a Mac? Thing is, probably my favorite Speakup function is 
-flat-review, which NVDA also has, but if the Mac has it, it may be complicated, 
-as many items require 3 keystrokes to accomplish, although I understand there 
-are ways of reducing those to 2. Since Voice-Over has many options of 
-voices-and-in its graphical site it might be more friendly than ORCA. Sure many 
-times I would want to use its Linux prompt. With a fact of Speakup in the 
-kernel, I just wonder how much lee way I have in integrating the best of both 
-worlds? Thanks so much in advance
-Chime
+Sorry to disappoint you chie, but the mac isn't running the linux
+kernel:
+
+<https://www.howtogeek.com/441599/is-macos-unix-and-what-does-that-mean/>
+
+As for if you could make voice-over have a speakup keymap, that's
+something a voice-over user will have to answer.
+
+Greg
+
+
+On Thu, Sep 01, 2022 at 10:20:48AM -0700, Chime Hart wrote:
+> Hi All: I will eventually try-and-signup for classes at an Apple
+> store-and-see if I can learn a Mac? Thing is, probably my favorite Speakup
+> function is flat-review, which NVDA also has, but if the Mac has it, it may
+> be complicated, as many items require 3 keystrokes to accomplish, although I
+> understand there are ways of reducing those to 2. Since Voice-Over has many
+> options of voices-and-in its graphical site it might be more friendly than
+> ORCA. Sure many times I would want to use its Linux prompt. With a fact of
+> Speakup in the kernel, I just wonder how much lee way I have in integrating
+> the best of both worlds? Thanks so much in advance
+> Chime
+> 
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
