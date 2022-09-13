@@ -1,34 +1,56 @@
-Return-Path: <speakup+bounces-735-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-736-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3027A5AA501
-	for <lists+speakup@lfdr.de>; Fri,  2 Sep 2022 03:26:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 5691E5B6C84
+	for <lists+speakup@lfdr.de>; Tue, 13 Sep 2022 13:48:08 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1663069682;
+	bh=l+c5Bjy/sowI9YCg8uI4gwEavxmgWhYlOiA9zWC7RUc=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Post:List-Help:
+	 List-Subscribe:From;
+	b=rISLQ7vdtmZee9GO/BfRqFogsvviNtZM1zHxUxXw8O9MfaF/+J52VLJuIaRYLPiTa
+	 A/tql9az/jx1AJm/Lg8FepxMT7dhvgb5PTNyOH02unS/KNsHZxQURaLCpTxKhK6g+8
+	 zrUmYOjigE49ewkIuc2735AYJWtLcy9rnCUhLkJA=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 43229380958; Thu,  1 Sep 2022 21:26:21 -0400 (EDT)
+	id A8E62380BD4; Tue, 13 Sep 2022 07:48:02 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1663069682;
+	bh=l+c5Bjy/sowI9YCg8uI4gwEavxmgWhYlOiA9zWC7RUc=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Post:List-Help:
+	 List-Subscribe:From;
+	b=rISLQ7vdtmZee9GO/BfRqFogsvviNtZM1zHxUxXw8O9MfaF/+J52VLJuIaRYLPiTa
+	 A/tql9az/jx1AJm/Lg8FepxMT7dhvgb5PTNyOH02unS/KNsHZxQURaLCpTxKhK6g+8
+	 zrUmYOjigE49ewkIuc2735AYJWtLcy9rnCUhLkJA=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2E0D8380406
-	for <lists+speakup@lfdr.de>; Thu,  1 Sep 2022 21:26:21 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8AB20380906
+	for <lists+speakup@lfdr.de>; Tue, 13 Sep 2022 07:48:02 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1663069673;
+	bh=l+c5Bjy/sowI9YCg8uI4gwEavxmgWhYlOiA9zWC7RUc=;
+	h=Date:From:To:Subject:From;
+	b=quuVVCLF+brE5l771dIp9MV6N3sQBcCQniMmUJARWC2K87Loly/HPqmqlgyWUBQGc
+	 63F4+0TEsoHOBZg+wxhnVnatbnAlyu8YJfs0GEomDHvJ6D3v9zw/MMmHRIlht4VPt9
+	 WKtqalxqYO0CQq8381vfPsNzJILsNfokTNmKobzQ=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 56289380406; Thu,  1 Sep 2022 21:26:16 -0400 (EDT)
-Received: from server2.shellworld.net (server2.shellworld.net [66.172.12.120])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 3AECB380337
-	for <speakup@linux-speakup.org>; Thu,  1 Sep 2022 21:26:16 -0400 (EDT)
-Received: by server2.shellworld.net (Postfix, from userid 1005)
-	id 93F9D121EE2; Fri,  2 Sep 2022 01:25:42 +0000 (UTC)
-Received: from localhost (localhost [127.0.0.1])
-	by server2.shellworld.net (Postfix) with ESMTP id 910A7120480;
-	Thu,  1 Sep 2022 21:25:42 -0400 (EDT)
-Date: Thu, 1 Sep 2022 21:25:42 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Chime Hart <chime@hubert-humphrey.com>
-cc: speakup@linux-speakup.org
-Subject: Re: Can I Have A Speakup Kee Map with Voice-Over on a Mac?
-In-Reply-To: <181f82aa-a2fe-8f0e-07c0-6daf95300a51@hubert-humphrey.com>
-Message-ID: <Pine.LNX.4.64.2209012118190.1718888@server2.shellworld.net>
-References: <181f82aa-a2fe-8f0e-07c0-6daf95300a51@hubert-humphrey.com>
+	id 7AE16380906; Tue, 13 Sep 2022 07:47:53 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1663069673;
+	bh=l+c5Bjy/sowI9YCg8uI4gwEavxmgWhYlOiA9zWC7RUc=;
+	h=Date:From:To:Subject:From;
+	b=quuVVCLF+brE5l771dIp9MV6N3sQBcCQniMmUJARWC2K87Loly/HPqmqlgyWUBQGc
+	 63F4+0TEsoHOBZg+wxhnVnatbnAlyu8YJfs0GEomDHvJ6D3v9zw/MMmHRIlht4VPt9
+	 WKtqalxqYO0CQq8381vfPsNzJILsNfokTNmKobzQ=
+Received: from localhost (localhost [IPv6:::1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 5D4203800B7
+	for <speakup@linux-speakup.org>; Tue, 13 Sep 2022 07:47:53 -0400 (EDT)
+Date: Tue, 13 Sep 2022 07:47:53 -0400 (EDT)
+From: Kirk Reiser <kirk@reisers.ca>
+To: speakup@linux-speakup.org
+Subject: speakup, espeakup, and asian languages?
+Message-ID: <b806ee0e-afd3-6fd1-fd69-f31314457a10@reisers.ca>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -38,41 +60,16 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Chime,
-as I am currently learning voiceover, drop me a private note with some 
-questions.
-If you mean running Linux  commands via the Mac terminal, many people on 
-the mac visionaries list do this many times a day.  some use voiceover 
-there  too, some use another screen reader, although I am unsure about 
-speakup.
-As for the keystrokes?
-well, depending on the machine and macos you get, one can still attach a 
-full sized keyboard via USB,
-but, much to my surprise, even with my somewhat smaller hands, at some 
-point the  keystrokes will feel more natural.
-Indeed, you can not only reduce those  keystrokes, but  You can use the menu 
-bar to shorten a great deal.
-Which voice is resonating for you?
-best off list I suspect,
-Karen
+Hi folks: I have been studying Mandarin for the last couple of months
+but find it is sometimes very difficult to determine the pronunciation
+of certain words. I have also been thinking it would be nice if
+speakup and espeakup could read chinese or any asian language for that
+matter. So I wondered if there were any blinks actually using them
+with Mandarin and might have some pointers and experiences to share.
 
+   Kirk
 
-
-On Thu, 1 Sep 2022, Chime Hart wrote:
-
-> Hi All: I will eventually try-and-signup for classes at an Apple 
-> store-and-see if I can learn a Mac? Thing is, probably my favorite Speakup 
-> function is flat-review, which NVDA also has, but if the Mac has it, it may 
-> be complicated, as many items require 3 keystrokes to accomplish, although I 
-> understand there are ways of reducing those to 2. Since Voice-Over has many 
-> options of voices-and-in its graphical site it might be more friendly than 
-> ORCA. Sure many times I would want to use its Linux prompt. With a fact of 
-> Speakup in the kernel, I just wonder how much lee way I have in integrating 
-> the best of both worlds? Thanks so much in advance
-> Chime
->
->
 
