@@ -1,40 +1,46 @@
-Return-Path: <speakup+bounces-746-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-747-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 4205C5FD484
-	for <lists+speakup@lfdr.de>; Thu, 13 Oct 2022 08:10:30 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=WDCh3eo5;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 0F5395FED23
+	for <lists+speakup@lfdr.de>; Fri, 14 Oct 2022 13:20:46 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1C440383FCF; Thu, 13 Oct 2022 02:10:28 -0400 (EDT)
+	id 298AD383F79; Fri, 14 Oct 2022 07:14:32 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id EECF73807C8
-	for <lists+speakup@lfdr.de>; Thu, 13 Oct 2022 02:10:27 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 152B8383EF6
+	for <lists+speakup@lfdr.de>; Fri, 14 Oct 2022 07:14:32 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0DC1C383F0E; Thu, 13 Oct 2022 02:10:19 -0400 (EDT)
-Received: from out2.migadu.com (out2.migadu.com [188.165.223.204])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 16396380605
-	for <speakup@linux-speakup.org>; Thu, 13 Oct 2022 02:10:17 -0400 (EDT)
-Date: Thu, 13 Oct 2022 17:08:36 +1100
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
-	t=1665641381;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type;
-	bh=o34iCj3r1oditr3GvsNqFl+vJ9PqioKbAQfbjKCnG2M=;
-	b=WDCh3eo5tAGyHAfHtbegxiJmKIBIIMMTj9+rAZ65Y/ll8OsSVGS5Y2F+z5t1BLCU2qhQ20
-	Q912Et0KJwwwWP2mAhuR28YTUX4HcrOszLTAdlYEW1w4xwK9zrjf1lxanNGDtS86Y50ekU
-	ZKEpz6gn2HVSQreyvhu7heMT4+DSDUCCOJwOtghTqoep8yILNW9/nKssE2tRHGPK4o+N9u
-	RQc27MCVJ2nXkVx+nggpDSYxlu4/7Izd0u0Yz4gva8ETYYUobEjPARDBABo7cBNkYmNSZx
-	ccqa233OiR7dNNiSoSn8uofsr/lCQu0ur41d6Hxtm7PzDRhbKEvW+xNnO40pKA==
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Jookia <contact@jookia.org>
-To: speakup@linux-speakup.org
-Subject: My guide to setting up espeakup on Linux
-Message-ID: <Y0erZIhtXhs4coWu@novena-choice-citizen>
+	id 192C1383FA7; Fri, 14 Oct 2022 07:14:27 -0400 (EDT)
+Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id E7DD4380786
+	for <speakup@linux-speakup.org>; Fri, 14 Oct 2022 07:14:26 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by sonata.ens-lyon.org (Postfix) with ESMTP id 15AA22015D;
+	Fri, 14 Oct 2022 13:14:19 +0200 (CEST)
+Received: from sonata.ens-lyon.org ([127.0.0.1])
+	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id MGaq2TVi_ns7; Fri, 14 Oct 2022 13:14:18 +0200 (CEST)
+Received: from begin (nat-inria-interne-52-gw-01-bso.bordeaux.inria.fr [194.199.1.52])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by sonata.ens-lyon.org (Postfix) with ESMTPSA id A77CF20158;
+	Fri, 14 Oct 2022 13:14:18 +0200 (CEST)
+Received: from samy by begin with local (Exim 4.96)
+	(envelope-from <samuel.thibault@ens-lyon.org>)
+	id 1ojIdt-00FwbK-37;
+	Fri, 14 Oct 2022 13:14:17 +0200
+Date: Fri, 14 Oct 2022 13:14:17 +0200
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: =?utf-8?B?xJBvw6BuIFRy4bqnbiBDw7RuZw==?= Danh <congdanhqx@gmail.com>
+Cc: speakup@linux-speakup.org, William Hubbs <w.d.hubbs@gmail.com>,
+	Chris Brannon <chris@the-brannons.com>,
+	Kirk Reiser <kirk@reisers.ca>
+Subject: Re: [PATCH] speakup: replace utils' u_char with unsigned char
+Message-ID: <20221014111417.3w2uj72mxh2diqo5@begin>
+References: <b75743026aaee2d81efe3d7f2e8fa47f7d0b8ea7.1665736571.git.congdanhqx@gmail.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -44,102 +50,44 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
+Content-Type: text/plain; charset=utf-8
 Content-Disposition: inline
-X-Migadu-Flow: FLOW_OUT
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <b75743026aaee2d81efe3d7f2e8fa47f7d0b8ea7.1665736571.git.congdanhqx@gmail.com>
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hello speakup friends,
+Đoàn Trần Công Danh, le ven. 14 oct. 2022 15:38:15 +0700, a ecrit:
+> drivers/accessibility/speakup/utils.h will be used to compile host tool
+> to generate metadata.
+> 
+> "u_char" is a non-standard type, which is defined to "unsigned char"
+> on glibc but not defined by some libc, e.g. musl.
+> 
+> Let's replace "u_char" with "unsigned char"
+> 
+> Signed-off-by: Đoàn Trần Công Danh <congdanhqx@gmail.com>
 
-I've been spending the week trying to get speakup to play nice with sound
-servers and seat management on Linux. If you're interesting for the gory details,
-see my full article here: https://www.jookia.org/wiki/System-wide_speakup (WIP)
+Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
-Anyway I wanted to share an excerpt from my page: How to run espeakup as your
-own user, have it start at boot and have it read your login prompt even if you
-log in as root or yourself.
-
-These steps are for Arch Linux but they should work for any distro that uses
-systemd. I've also explained what things actually do and why. I'd appreciate
-feedback and will update the original page with better instructions.
-
-Jookia.
-
-Running espeakup as your user
------------------------------
-
-It's possible to run espeakup as your own user by:
-
-- Taking control of the audio device away from logind
-- Giving control of all audio devices to your user
-- Giving control of the softsynth to your user
-- Running espeakup as a daemon as your user
-- Running espeakup at boot as your user
-
-I've prepared steps to follow to get this working below.
-
-Paste lines between --- PASTE START --- and --- PASTE END --- in to the file specified or a terminal.
-
-Step 1: Put this in /etc/modules-load.d/speakup.conf
-
---- PASTE START ---
-speakup
-speakup_soft
---- PASTE END ---
-
-This will cause the speakup kernel modules to load at boot.
-
-Step 2: Put this in /etc/udev/rules.d/99-speakup.rules
-
---- PASTE START ---
-SUBSYSTEM=="sound", TAG-="seat", GROUP="audio"
-KERNEL=="softsynth*", GROUP="audio"
---- PASTE END ---
-
-This will will do three things:
-
-- Stop logind managing sound devices
-- Give users in the audio group access to sound devices
-- Give users in the audio group access to Speakup
-
-Step 3: Put this in ~/.config/systemd/user/espeakup.service
-
---- PASTE START ---
-[Unit]
-Description=Software speech output for Speakup
-After=pulseaudio.service
-[Service]
-Environment="default_voice= ALSA_CARD="
-ExecStart=/usr/bin/espeakup -d --default-voice=${default_voice}
-Restart=always
-Nice=-10
-OOMScoreAdjust=-900
-[Install]
-WantedBy=default.target
---- PASTE END ---
-
-This is a service that just runs the espeakup daemon. It is set to start after pulseaudio.
-
-Change pulseaudio.service to pipewire.service if you're using on PipeWire.
-
-Step 4: Run these commands:
-
---- PASTE START ---
-systemctl --user enable espeakup
-loginctl enable-linger
-sudo gpasswd -a $USER audio
---- PASTE END ---
-
-This does three things:
-
-- Enable the speakup user service
-- Enable running user services when logged out
-- Add your user to the audio group
-
-Step 5: Reboot and run espeakup as your user.
-
-There's two downsides to this method:
-
-- Your user can see what other users are reading, including root
-- Other users can't play audio
+> ---
+>  drivers/accessibility/speakup/utils.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/accessibility/speakup/utils.h b/drivers/accessibility/speakup/utils.h
+> index 4bf2ee8ac246..4ce9a12f7664 100644
+> --- a/drivers/accessibility/speakup/utils.h
+> +++ b/drivers/accessibility/speakup/utils.h
+> @@ -54,7 +54,7 @@ static inline int oops(const char *msg, const char *info)
+>  
+>  static inline struct st_key *hash_name(char *name)
+>  {
+> -	u_char *pn = (u_char *)name;
+> +	unsigned char *pn = (unsigned char *)name;
+>  	int hash = 0;
+>  
+>  	while (*pn) {
+> -- 
+> 2.38.0.413.g74048e4d9e
 
