@@ -1,49 +1,49 @@
-Return-Path: <speakup+bounces-749-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-750-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AA4985FFC02
-	for <lists+speakup@lfdr.de>; Sat, 15 Oct 2022 23:30:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 115E95FFC09
+	for <lists+speakup@lfdr.de>; Sat, 15 Oct 2022 23:33:31 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=p7jap3xp;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 49EAB384006; Sat, 15 Oct 2022 17:30:22 -0400 (EDT)
+	id 98B96384000; Sat, 15 Oct 2022 17:33:30 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 348E3383EF3
-	for <lists+speakup@lfdr.de>; Sat, 15 Oct 2022 17:30:22 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 79A22383FD3
+	for <lists+speakup@lfdr.de>; Sat, 15 Oct 2022 17:33:30 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 32C27383FC8; Sat, 15 Oct 2022 17:30:17 -0400 (EDT)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 0C121383EF3
-	for <speakup@linux-speakup.org>; Sat, 15 Oct 2022 17:30:17 -0400 (EDT)
+	id 8A457383FD4; Sat, 15 Oct 2022 17:33:21 -0400 (EDT)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 3120C383FCF
+	for <speakup@linux-speakup.org>; Sat, 15 Oct 2022 17:33:21 -0400 (EDT)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4Mqc1r23qhz2sJr;
+	Sat, 15 Oct 2022 17:33:20 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1665869600; bh=kFk2Wy5p7k7Qx6f+/Y094g7slKCWD4bhAGb2jOOLhW4=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References;
+	b=p7jap3xpRIlorvQXy1s8MqnftYYIoxEbAWqgQDuyNd3Os+ONuy5kAAvg0qylMkeyL
+	 pheMP1eouKTq54a5q1co2n6orYhdq3nAiOmLV/GPy2I+1kSKBuZWTX2O3IdcWoE6rk
+	 bSazSNGg90ww5tRw+N9eu2TI1fhMETrhXyEubF2U=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4Mqc1r23CKzcbc; Sat, 15 Oct 2022 17:33:20 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id EA3FB2010E;
-	Sat, 15 Oct 2022 23:30:12 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id r8jX9eZX9SiD; Sat, 15 Oct 2022 23:30:12 +0200 (CEST)
-Received: from begin (lfbn-bor-1-376-208.w109-215.abo.wanadoo.fr [109.215.91.208])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id B0B1A20109;
-	Sat, 15 Oct 2022 23:30:12 +0200 (CEST)
-Received: from samy by begin with local (Exim 4.96)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1ojojU-001Tsz-1S;
-	Sat, 15 Oct 2022 23:30:12 +0200
-Date: Sat, 15 Oct 2022 23:30:12 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Osama Muhammad <osmtendev@gmail.com>
-Cc: gregkh@linuxfoundation.org, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2] Accessiblity: speakup: specifying the default driver
- parameters among the module params
-Message-ID: <20221015213012.zctcugroxehxtjim@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Osama Muhammad <osmtendev@gmail.com>, gregkh@linuxfoundation.org,
-	speakup@linux-speakup.org, linux-kernel@vger.kernel.org
-References: <20221013223024.22708-1-osmtendev@gmail.com>
+	by panix1.panix.com (Postfix) with ESMTP id 4Mqc1r20stzcbC;
+	Sat, 15 Oct 2022 17:33:20 -0400 (EDT)
+Date: Sat, 15 Oct 2022 17:33:20 -0400
+From: Jude DaShiell <jdashiel@panix.com>
+To: Samuel Thibault <samuel.thibault@ens-lyon.org>, 
+    Okash Khawaja <okash.khawaja@gmail.com>
+cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>, 
+    Mushahid Hussain <mushi.shar@gmail.com>, 
+    Osama Muhammad <osmtendev@gmail.com>
+Subject: Re: Reading charts
+In-Reply-To: <20221015212713.jnf52npv7lhjdkuv@begin>
+Message-ID: <f9a92fa5-9842-e3ae-f8ea-a8ff8bdc531a@panix.com>
+References: <CAOtcWM2rq=DAqLH=CT9S_ZHM-eZaJHADxKjYvxWcHOADPA2dmw@mail.gmail.com> <20221015212713.jnf52npv7lhjdkuv@begin>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -53,65 +53,37 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20221013223024.22708-1-osmtendev@gmail.com>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Osama Muhammad, le ven. 14 oct. 2022 03:30:24 +0500, a ecrit:
-> This is an enhancement which allows to specify the default driver
-> parameters among the module parameters.
-> 
-> Adding  default variables to the speakup_soft module
-> allows to easily set that at boot, rather than
-> setting the sys variables after boot.
-> More details can be found here:
-> https://github.com/linux-speakup/speakup/issues/7
-> 
-> Signed-off-by: Osama Muhammad <osmtendev@gmail.com>
-> 
-> ---
-> 
-> Changes since v1:
-> 	- Added NB_ID as the last member of enum default_vars_id.
-> 	- Added NB_ID as the size of array vars.
-> 	- Made sure that that the enteries in vars are in correct order.
+That's because no linux graph drawing program can draw in ascii or
+printable utf-8 characters for its line plots.
+The only possibility I can think of for this would be orgmode tables since
+graphs are only children of tables.
 
-Thanks!
 
-It looks almost good to me now.
 
-> ---
->  drivers/accessibility/speakup/speakup_soft.c | 57 ++++++++++++++------
->  1 file changed, 42 insertions(+), 15 deletions(-)
-> 
-> diff --git a/drivers/accessibility/speakup/speakup_soft.c b/drivers/accessibility/speakup/speakup_soft.c
-> index 28c8f60370cf..5d8e2c1e7f4c 100644
-> --- a/drivers/accessibility/speakup/speakup_soft.c
-> +++ b/drivers/accessibility/speakup/speakup_soft.c
-> @@ -33,21 +33,30 @@ static struct miscdevice synth_device, synthu_device;
->  static int init_pos;
->  static int misc_registered;
->  
-> -static struct var_t vars[] = {
-> +
-> +enum default_vars_id {
-> +	DIRECT_ID = 0, CAPS_START_ID, CAPS_STOP_ID,
-> +	PAUSE_ID, RATE_ID, PITCH_ID, INFLECTION_ID,
-> +	VOL_ID, TONE_ID, PUNCT_ID, VOICE_ID,
-> +	FREQUENCY_ID, V_LAST_VAR_ID,
-> +	 NB_ID
-> +};
-> +
-> +
-> +static struct var_t vars[NB_ID] = {
->  	/* DIRECT is put first so that module_param_named can access it easily */
-> -	{ DIRECT, .u.n = {NULL, 0, 0, 1, 0, 0, NULL } },
-> -
+Jude <jdashiel at panix dot com> "There are four boxes to be used in
+defense of liberty:
+ soap, ballot, jury, and ammo. Please use in that order."
+-Ed Howdershelt (Author, 1940)
 
-You can now remove the comment, since now the ordering is not important.
+.
 
-Samuel
+On Sat, 15 Oct 2022, Samuel Thibault wrote:
+
+> Hello,
+>
+> Okash Khawaja, le ven. 14 oct. 2022 07:04:47 +0100, a ecrit:
+> > I was wondering if it will be worth adding support for reading charts and
+> > graph. The idea came while reading this synopsis of a Linux conference talk
+> > [1].
+>
+> This synopsis is talking about desktop accessibility. I don't think it's
+> reasonable to try to do something on the console (I don't even know any
+> standard way to read charts and graphs on the console).
+>
+> Samuel
+>
+>
 
