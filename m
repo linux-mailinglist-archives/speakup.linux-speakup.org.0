@@ -1,34 +1,34 @@
-Return-Path: <speakup+bounces-779-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-780-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id BB44A61063B
-	for <lists+speakup@lfdr.de>; Fri, 28 Oct 2022 01:13:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B5478610646
+	for <lists+speakup@lfdr.de>; Fri, 28 Oct 2022 01:15:40 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5DA6C383FEF; Thu, 27 Oct 2022 19:13:45 -0400 (EDT)
+	id 36157384017; Thu, 27 Oct 2022 19:15:40 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 49AF2383FE0
-	for <lists+speakup@lfdr.de>; Thu, 27 Oct 2022 19:13:45 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1FF9B383FFA
+	for <lists+speakup@lfdr.de>; Thu, 27 Oct 2022 19:15:40 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E6088383FE3; Thu, 27 Oct 2022 19:13:39 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0062.b.hostedemail.com [64.98.42.62])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D4EE3383FD8
-	for <speakup@linux-speakup.org>; Thu, 27 Oct 2022 19:13:39 -0400 (EDT)
-Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id 352C18B198E3;
-	Thu, 27 Oct 2022 23:13:39 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id B85EFBCBC72;
-	Thu, 27 Oct 2022 23:13:38 +0000 (UTC)
-Message-ID: <086601d8ea59$9bd758c0$87ffa8c0@Win7VM>
+	id E78CF383FEB; Thu, 27 Oct 2022 19:15:34 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0154.b.hostedemail.com [64.98.42.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id D830F383FE6
+	for <speakup@linux-speakup.org>; Thu, 27 Oct 2022 19:15:34 -0400 (EDT)
+Received: from omf02.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id EF7E110033210;
+	Thu, 27 Oct 2022 23:15:32 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf02.b.hostedemail.com (Postfix) with ESMTPA id 857FD8A97D9C;
+	Thu, 27 Oct 2022 23:15:32 +0000 (UTC)
+Message-ID: <086901d8ea59$dfab15f0$87ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
 To: "Chime Hart" <chime@hubert-humphrey.com>
 Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 References: <082101d8ea38$0d104d70$87ffa8c0@Win7VM> <083301d8ea4e$aa578240$87ffa8c0@Win7VM> <32971cb4-513b-70e2-4371-fd1544adb848@hubert-humphrey.com> <085b01d8ea55$190b4b80$87ffa8c0@Win7VM> <d06e087d-7752-f42e-25ff-d2e736b5ed3b@hubert-humphrey.com>
 Subject: Re: Installing Voxin
-Date: Thu, 27 Oct 2022 18:12:36 -0500
+Date: Thu, 27 Oct 2022 18:14:30 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -46,26 +46,22 @@ X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Stat-Signature: jep184nm7yaqwfrbm74fcgea35pbg1js
-X-Rspamd-Server: rspamout02
-X-Rspamd-Queue-Id: B85EFBCBC72
-X-Spam-Status: No, score=-2.60
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: 857FD8A97D9C
+X-Spam-Status: No, score=-1.81
+X-Stat-Signature: 1hqpypfnqmfqu76zjj8p4bof9h9qti9j
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1+qIETmrJ5AKBCQ+ujUVtIxGduCu/2orDA=
-X-HE-Tag: 1666912418-297512
+X-Session-ID: U2FsdGVkX183jNPgBsF9tgvnJnsk8t+HcAehLfzek2o=
+X-HE-Tag: 1666912532-699396
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Chime,
-My Debian does not seem to know the locate command.
-I tried:
-sudo apt install spd
-and it couldn't find it.
 Also,
-I tried to install speech-dispatcher again, and it said it had a problem 
-with running speechd-up service.
-So I tried to install speechd-up again, and got the same error.
-In both cases, they said they were already installed and are the latest 
-packages.
+since I installed Voxin-2.2, testing with the command
+espeak test
+gives no feedback.
+But speakup seems to be using eSpeak okay.
+Just not Voxin.
+Glenn
 ----- Original Message ----- 
 From: "Chime Hart" <chime@hubert-humphrey.com>
 To: "K0LNY_Glenn" <glenn@ervin.email>
