@@ -1,35 +1,80 @@
-Return-Path: <speakup+bounces-777-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-778-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AC6806105E0
-	for <lists+speakup@lfdr.de>; Fri, 28 Oct 2022 00:41:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id ACF61610618
+	for <lists+speakup@lfdr.de>; Fri, 28 Oct 2022 01:06:09 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=MYJFWPGe;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=neLzzd30;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 37FCF384038; Thu, 27 Oct 2022 18:41:29 -0400 (EDT)
+	id 2ACED383FE3; Thu, 27 Oct 2022 19:06:09 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2361B383FEF
-	for <lists+speakup@lfdr.de>; Thu, 27 Oct 2022 18:41:29 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0C5E1383F41
+	for <lists+speakup@lfdr.de>; Thu, 27 Oct 2022 19:06:09 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DC6DA383FE6; Thu, 27 Oct 2022 18:41:23 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0014.b.hostedemail.com [64.98.42.14])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id CB64C383FE0
-	for <speakup@linux-speakup.org>; Thu, 27 Oct 2022 18:41:23 -0400 (EDT)
-Received: from omf05.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay06.b.hostedemail.com (Postfix) with ESMTP id C27BF18BAD0C8;
-	Thu, 27 Oct 2022 22:41:21 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf05.b.hostedemail.com (Postfix) with ESMTPA id 4F81C1803888E;
-	Thu, 27 Oct 2022 22:41:21 +0000 (UTC)
-Message-ID: <085b01d8ea55$190b4b80$87ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Chime Hart" <chime@hubert-humphrey.com>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <082101d8ea38$0d104d70$87ffa8c0@Win7VM> <083301d8ea4e$aa578240$87ffa8c0@Win7VM> <32971cb4-513b-70e2-4371-fd1544adb848@hubert-humphrey.com>
+	id 5C2AB383FDC; Thu, 27 Oct 2022 19:05:59 -0400 (EDT)
+Received: from wout4-smtp.messagingengine.com (wout4-smtp.messagingengine.com [64.147.123.20])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 29241383F41
+	for <speakup@linux-speakup.org>; Thu, 27 Oct 2022 19:05:59 -0400 (EDT)
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+	by mailout.west.internal (Postfix) with ESMTP id 2A7C1320093F;
+	Thu, 27 Oct 2022 19:05:58 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute4.internal (MEProxy); Thu, 27 Oct 2022 19:05:58 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:date:date:from:from
+	:in-reply-to:in-reply-to:message-id:mime-version:references
+	:reply-to:sender:subject:subject:to:to; s=fm3; t=1666911957; x=
+	1666998357; bh=ugH+QVzG9h6V+7Ljjc7bXfuK6wEi2VY4tKpTHUGLYLc=; b=M
+	YJFWPGezbBSEPCgYxTTFX8XHksXvs4rTSOIKPVa7h8Jww71MhhH/dGLjnyKbNQhS
+	LIzN9yh05wOos+30+1nHVNapYYptg5QHZ2/VFQTBOJmTVM735Wtx4cMq7gb11XH4
+	ai+4k4xX3288jsb0mOyvH1BfUxw8ZwQnRe4uTHFR1/eEx4cwKNPhaYwStfPEr7FY
+	mq7jgm41Up2xPvEaeky2iqrgSeHaLocwuGeYqDlV8vDUNkzcTBkkUxOjYmZiLHy/
+	qtlsWMlmD1mwyVaaCcRBIPwZcxTiIppnb/yguaj5gOOe/cmrJ1wUo/BsD+sgQ5iC
+	xvg9g4ghVoKWJ5QF3MGSw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:date:date:feedback-id
+	:feedback-id:from:from:in-reply-to:in-reply-to:message-id
+	:mime-version:references:reply-to:sender:subject:subject:to:to
+	:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1666911957; x=1666998357; bh=ugH+QVzG9h6V+7Ljjc7bXfuK6wEi
+	2VY4tKpTHUGLYLc=; b=neLzzd30JiZyso+LvgIvp/iR7h4sm/U21AKtfUYIcQP/
+	wUp94dFBC0B29jHGsj5FoaWpwhO1bj+1TWtkBUsKkn3uxPuaf9xmaxaaofsEFxm+
+	W8WZbxdNhEJNEXrK0K4AHqRQpSuFfyIkGK2DhfD9av6iaOASqaGNpqo2xTDzkYAd
+	jHU+UYOT7ahDcsjcjWeHdjyBSC/Lk1hSf76KGTEu7/XWutoIVICKzdZMubj8H3kP
+	tKmp57FWP7xL+VknnF4x4knr4eneZcpXft4yH3vikiYs4JEDm3AdjsGmuJSnyn+5
+	PTs7EoMUAi09MRjI3PXCgELdJpdCyFmVr2XOyqHNgw==
+X-ME-Sender: <xms:1Q5bY6nGzYb4wJeP7N81FY70ET1BT3ZleyGBy6kkl1skhO7VbUT2-Q>
+    <xme:1Q5bYx2I2z8QdCeVkwxoK-jXiWoDtEEc_trUiAOQvudp3ggdad257LpfjQKN4kP3Y
+    VMCUUgGnNlBzFShqe0>
+X-ME-Received: <xmr:1Q5bY4pa3wRrLSrO8lY70QFGE8yIs_C2W-yBfMPNBrFNBGKZOGQUg5lhhblP2cZcacoorC1Z3qI97ueJNRfODYwaPSYALNazpw>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvgedrtdehgddujecutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+    fjughrpeffhffvvefujgfkfhggtgesthdtredttddtvdenucfhrhhomhepvehhihhmvgcu
+    jfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomheqnecugg
+    ftrfgrthhtvghrnhepvdehgeeljeekgeeugfefleekjeeivdekkedvteeuveeufeefffff
+    feffledufedtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrh
+    homheptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
+X-ME-Proxy: <xmx:1Q5bY-n0jCa3eR-6kdjCOLwacQ3huFzNIcR2uRNwsy66U-mb32HhnQ>
+    <xmx:1Q5bY41hHR-pUbJEuB9uM52I9SqUCoqd5eWEomhlTAQ8bDTPIi5Ugw>
+    <xmx:1Q5bY1vTCVoqvDu1TjGV6Nla8Qsaz4zszE1a_lmXrYvhD4p_w46Exg>
+    <xmx:1Q5bY99-RU6FraCeSxipSRouVIGNNcHcXSzYqaRlwa2Fn6mjoL2eKg>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Thu,
+ 27 Oct 2022 19:05:57 -0400 (EDT)
+Date: Thu, 27 Oct 2022 16:05:55 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+To: K0LNY_Glenn <glenn@ervin.email>
+cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: Installing Voxin
-Date: Thu, 27 Oct 2022 17:40:20 -0500
-Organization: Home
+In-Reply-To: <085b01d8ea55$190b4b80$87ffa8c0@Win7VM>
+Message-ID: <d06e087d-7752-f42e-25ff-d2e736b5ed3b@hubert-humphrey.com>
+References: <082101d8ea38$0d104d70$87ffa8c0@Win7VM> <083301d8ea4e$aa578240$87ffa8c0@Win7VM> <32971cb4-513b-70e2-4371-fd1544adb848@hubert-humphrey.com> <085b01d8ea55$190b4b80$87ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -39,50 +84,14 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: 4F81C1803888E
-X-Spam-Status: No, score=-2.44
-X-Stat-Signature: 4u5wfgfqrnguqj361keh3snybxd85t4f
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19XSx+nH37Xjrnl9vmEk5tLxDqNovvAAoA=
-X-HE-Tag: 1666910481-901305
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-That is weird, I get the error
-spd-conf
-command not found
-I installed speech-dispatcher, and the voxin-installer for 2.2 doesn't 
-report it not being there.
-Are there some speech-dispatcher utilities that need to be installed?
-Thanks.
-
------ Original Message ----- 
-From: "Chime Hart" <chime@hubert-humphrey.com>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Thursday, October 27, 2022 5:16 PM
-Subject: Re: Installing Voxin
-
-
-Hi Glen-and-All: I have sure had alot of challenges getting Voxin working,
-however, try-and-type
-spd-conf
-When you answer its questions, backspace over espeak and type voxin. It will
-say you need to correct your answer. Say "no" Many of those values you can 
-just
-accept the defaults. My version of spd-conf is 0.11.3  but I am in Debian 
-SID.
-Also, you know, after running an installer for voxin, it will usually take
-affect after a reboot. Hope all of that helps alot.
+Well, Glen, I honestly don't remember how I solved that, but first try an
+sudo apt install spd
+Also, install locate as well as plocate. Run a locate for spd-conf 
+before-and-after trying those installs. Its possible you would need to cd to a 
+directory where spd-conf is located.
 Chime
-
 
 
