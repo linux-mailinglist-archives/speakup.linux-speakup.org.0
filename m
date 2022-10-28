@@ -1,38 +1,35 @@
-Return-Path: <speakup+bounces-781-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-790-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 14B56610647
-	for <lists+speakup@lfdr.de>; Fri, 28 Oct 2022 01:16:43 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=k6PQgUPC;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id B01366106A1
+	for <lists+speakup@lfdr.de>; Fri, 28 Oct 2022 02:04:06 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A4AEF384033; Thu, 27 Oct 2022 19:16:42 -0400 (EDT)
+	id 3B6C1384084; Thu, 27 Oct 2022 20:04:06 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 856D2383FF7
-	for <lists+speakup@lfdr.de>; Thu, 27 Oct 2022 19:16:42 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 252D3384037
+	for <lists+speakup@lfdr.de>; Thu, 27 Oct 2022 20:04:06 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1A40D383FFA; Thu, 27 Oct 2022 19:16:33 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B0E81383FEF
-	for <speakup@linux-speakup.org>; Thu, 27 Oct 2022 19:16:32 -0400 (EDT)
-Received: from [192.168.0.11] (sfa89-1-78-208-157-71.fbx.proxad.net [78.208.157.71])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id 086DA215CC
-	for <speakup@linux-speakup.org>; Fri, 28 Oct 2022 00:13:07 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1666908788; bh=iMky5YH1TexjTQfvqvSPvtiZiLwtnQlji19n0ZUYUEE=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=k6PQgUPCniQkJiPDBvIhOb7kzRL+JKzMs41vSDBii4lgkuvmPr2NY0UwTEN5IsTRn
-	 vdNZ9t8+2qtOwBW8Sj1DLNRalfd+sVi41cOHGxEIh5dV1pEEVS/p865qXNbzPm/kmw
-	 TtI4WFlOgiiFu6NSslq5DPirm+2HqK1YiMw/u6tbwNzJBsPs/CbsA4eGmq80uh5ZOO
-	 +zx8c/ea9uu0c1YZ0UVDRRowz7rOYBZ7xvW2hdq4WOAeAhiXUcWwhQ2SiIO+yO4++V
-	 Npr8byTtt4aaqQ9Cdyl3jSg8egl6bm4Y7Aqj3LihtamcAwCXfVCVZkN/yLt4sGylxg
-	 8fLKDdZaHeKZg==
-Message-ID: <f50c3495-a3f2-2128-a6d3-50e285d95aa5@slint.fr>
-Date: Fri, 28 Oct 2022 01:16:25 +0000
+	id DB012384023; Thu, 27 Oct 2022 20:04:00 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0223.b.hostedemail.com [64.98.42.223])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id C993A384016
+	for <speakup@linux-speakup.org>; Thu, 27 Oct 2022 20:04:00 -0400 (EDT)
+Received: from omf12.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 4D14118A9C180;
+	Fri, 28 Oct 2022 00:04:00 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf12.b.hostedemail.com (Postfix) with ESMTPA id C885618070179;
+	Fri, 28 Oct 2022 00:03:59 +0000 (UTC)
+Message-ID: <089101d8ea60$a48a59c0$87ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Chime Hart" <chime@hubert-humphrey.com>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <082101d8ea38$0d104d70$87ffa8c0@Win7VM> <083301d8ea4e$aa578240$87ffa8c0@Win7VM> <32971cb4-513b-70e2-4371-fd1544adb848@hubert-humphrey.com> <085b01d8ea55$190b4b80$87ffa8c0@Win7VM> <d06e087d-7752-f42e-25ff-d2e736b5ed3b@hubert-humphrey.com> <086601d8ea59$9bd758c0$87ffa8c0@Win7VM> <ebac52ac-209b-686e-ad06-d743658cc6cb@hubert-humphrey.com> <087e01d8ea5c$c01349d0$87ffa8c0@Win7VM> <5a70be54-54a6-fd05-d02f-7fdc5a24d691@hubert-humphrey.com> <088501d8ea5e$9033f820$87ffa8c0@Win7VM> <ce900000-695c-23de-19f0-6bb50e7fcd25@hubert-humphrey.com>
+Subject: Re: Installing Voxin
+Date: Thu, 27 Oct 2022 19:02:59 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,60 +39,39 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.4.0
-Subject: Re: Installing Voxin
-Content-Language: en-US
-To: speakup@linux-speakup.org
-References: <082101d8ea38$0d104d70$87ffa8c0@Win7VM>
- <083301d8ea4e$aa578240$87ffa8c0@Win7VM>
- <32971cb4-513b-70e2-4371-fd1544adb848@hubert-humphrey.com>
- <085b01d8ea55$190b4b80$87ffa8c0@Win7VM>
-From: Didier Spaier <didier@slint.fr>
-In-Reply-To: <085b01d8ea55$190b4b80$87ffa8c0@Win7VM>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout04
+X-Rspamd-Queue-Id: C885618070179
+X-Spam-Status: No, score=0.45
+X-Stat-Signature: s9b4wgsz9cohk9jon6e86oxa1jou8chp
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX19D567+SEiEt1N2jCrq8tZiTQ8Y/zPfby4=
+X-HE-Tag: 1666915439-820016
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I am not a Debian user, but...
-According to https://packages.debian.org/bullseye/python3-speechd
-spd-conf is provided in the package python3-speechd.
+When I do speaker-test, the test runs, but I hear no audio, maybe that is 
+the problem?
+So espeak with speakup is going through some audio system, but not other 
+sounds.
+Glenn
+----- Original Message ----- 
+From: "Chime Hart" <chime@hubert-humphrey.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>
+Cc: "Speakup is a screen review system for Linux." 
+<speakup@linux-speakup.org>
+Sent: Thursday, October 27, 2022 6:52 PM
+Subject: Re: Installing Voxin
 
-Did you install it?
 
-Cheers,
-Didier
+No, Glen, trying ibmtts will not help, you must type voxin, and yes, try 
+alsa.
+Chime
 
-Le 27/10/2022 à 22:40, K0LNY_Glenn a écrit :
-> That is weird, I get the error
-> spd-conf
-> command not found
-> I installed speech-dispatcher, and the voxin-installer for 2.2 doesn't 
-> report it not being there.
-> Are there some speech-dispatcher utilities that need to be installed?
-> Thanks.
-> 
-> ----- Original Message ----- 
-> From: "Chime Hart" <chime@hubert-humphrey.com>
-> To: "K0LNY_Glenn" <glenn@ervin.email>
-> Cc: "Speakup is a screen review system for Linux." 
-> <speakup@linux-speakup.org>
-> Sent: Thursday, October 27, 2022 5:16 PM
-> Subject: Re: Installing Voxin
-> 
-> 
-> Hi Glen-and-All: I have sure had alot of challenges getting Voxin working,
-> however, try-and-type
-> spd-conf
-> When you answer its questions, backspace over espeak and type voxin. It will
-> say you need to correct your answer. Say "no" Many of those values you can 
-> just
-> accept the defaults. My version of spd-conf is 0.11.3  but I am in Debian 
-> SID.
-> Also, you know, after running an installer for voxin, it will usually take
-> affect after a reboot. Hope all of that helps alot.
-> Chime
-> 
-> 
-> 
+
 
