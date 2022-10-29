@@ -1,35 +1,36 @@
-Return-Path: <speakup+bounces-807-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-808-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id BB43A611EB3
-	for <lists+speakup@lfdr.de>; Sat, 29 Oct 2022 02:24:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D1AB661245D
+	for <lists+speakup@lfdr.de>; Sat, 29 Oct 2022 18:11:46 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4B4C63840E4; Fri, 28 Oct 2022 20:24:51 -0400 (EDT)
+	id 06D73384002; Sat, 29 Oct 2022 12:11:46 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 35543384035
-	for <lists+speakup@lfdr.de>; Fri, 28 Oct 2022 20:24:51 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E203B383FE3
+	for <lists+speakup@lfdr.de>; Sat, 29 Oct 2022 12:11:45 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0ACFC384070; Fri, 28 Oct 2022 20:24:46 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0089.b.hostedemail.com [64.98.42.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id ED341384000
-	for <speakup@linux-speakup.org>; Fri, 28 Oct 2022 20:24:45 -0400 (EDT)
-Received: from omf05.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay01.b.hostedemail.com (Postfix) with ESMTP id 2DD2A18AA14F2;
-	Sat, 29 Oct 2022 00:24:45 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf05.b.hostedemail.com (Postfix) with ESMTPA id AC7FD18029850;
-	Sat, 29 Oct 2022 00:24:44 +0000 (UTC)
-Message-ID: <003b01d8eb2c$d89a7840$84ffa8c0@Win7VM>
+	id B431B383FE3; Sat, 29 Oct 2022 12:11:40 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0019.b.hostedemail.com [64.98.42.19])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A2AE7383FD8
+	for <speakup@linux-speakup.org>; Sat, 29 Oct 2022 12:11:40 -0400 (EDT)
+Received: from omf04.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id 30BCC10033411;
+	Sat, 29 Oct 2022 16:11:36 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf04.b.hostedemail.com (Postfix) with ESMTPA id 9936A10052C14;
+	Sat, 29 Oct 2022 16:11:35 +0000 (UTC)
+Message-ID: <007301d8ebb1$1e99bc00$84ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Gregory Nowak" <greg@gregn.net>
-Cc: <speakup@linux-speakup.org>,
+To: "Chime Hart" <chime@hubert-humphrey.com>
+Cc: "Gregory Nowak" <greg@gregn.net>,
+	<speakup@linux-speakup.org>,
 	"Didier Spaier" <didier@slint.fr>
-References: <089c01d8ea67$be809ae0$87ffa8c0@Win7VM> <Y1tQ09YHFIMW5W2P@gregn.net> <08ed01d8eae8$e7bbdab0$87ffa8c0@Win7VM> <153ebfb0-180b-a4b8-0027-857f22df878e@hubert-humphrey.com> <090701d8eaef$9a45f930$87ffa8c0@Win7VM> <082beb13-bca6-f001-6b28-8a2e14ad7b25@slint.fr> <096901d8eb12$060be090$87ffa8c0@Win7VM> <098901d8eb16$fcddc5b0$87ffa8c0@Win7VM> <Y1xm3HAleBaLGGnk@gregn.net> <002b01d8eb29$c48a8af0$84ffa8c0@Win7VM> <Y1xwn2kFZR5uVuI/@gregn.net>
+References: <089101d8ea60$a48a59c0$87ffa8c0@Win7VM> <53a80b58-5be4-63ee-ab32-9b7bd469f522@hubert-humphrey.com> <089c01d8ea67$be809ae0$87ffa8c0@Win7VM> <Y1tQ09YHFIMW5W2P@gregn.net> <08ed01d8eae8$e7bbdab0$87ffa8c0@Win7VM> <153ebfb0-180b-a4b8-0027-857f22df878e@hubert-humphrey.com> <090701d8eaef$9a45f930$87ffa8c0@Win7VM> <082beb13-bca6-f001-6b28-8a2e14ad7b25@slint.fr> <096901d8eb12$060be090$87ffa8c0@Win7VM> <098901d8eb16$fcddc5b0$87ffa8c0@Win7VM> <Y1xm3HAleBaLGGnk@gregn.net> <002b01d8eb29$c48a8af0$84ffa8c0@Win7VM> <6178c7b1-35b5-c47e-65c6-4a6dcddbeb25@hubert-humphrey.com>
 Subject: Re: Installing Voxin
-Date: Fri, 28 Oct 2022 19:24:43 -0500
+Date: Sat, 29 Oct 2022 11:11:34 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -47,70 +48,45 @@ X-Priority: 3
 X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Rspamd-Server: rspamout04
-X-Rspamd-Queue-Id: AC7FD18029850
-X-Spam-Status: No, score=-2.55
-X-Stat-Signature: g6id8sctf4dx7jeiufhf1rb7zh53q5pu
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: 9936A10052C14
+X-Spam-Status: No, score=-2.56
+X-Stat-Signature: bmqrqy7ahropae8anzx66in7ubjwjbhq
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19PkoBj1upex1KPj0PPlDh6GTjGiRzsx0c=
-X-HE-Tag: 1667003084-104002
+X-Session-ID: U2FsdGVkX19btGK5ZC42fUaRW02/gcI7w40cjNf0gSc=
+X-HE-Tag: 1667059895-219794
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Well, being impatient, I did run it before getting your message.
-This time, I heard voxin in the test, and the sound played with alsa as the 
-sound module.
-But when I rebooted, spd-say test used espeak again.
-And when I do spd-say -O it only lists espeak.
-The voxin installs without a problem, but it does not get used.
+Good morning All,
+At least it still is here.
+So I'm wondering, will speakup use Voxin?
+Seems like there is a way to launch it with a software synth.
+Also, I don't recall how to launch speakup, it was working before I tried 
+Fenrir.
+Thanks a bunch.
+
 Glenn
 ----- Original Message ----- 
-From: "Gregory Nowak" <greg@gregn.net>
+From: "Chime Hart" <chime@hubert-humphrey.com>
 To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: <speakup@linux-speakup.org>; "Didier Spaier" <didier@slint.fr>
-Sent: Friday, October 28, 2022 7:15 PM
+Cc: "Gregory Nowak" <greg@gregn.net>; <speakup@linux-speakup.org>; "Didier 
+Spaier" <didier@slint.fr>
+Sent: Friday, October 28, 2022 7:16 PM
 Subject: Re: Installing Voxin
 
 
-On Fri, Oct 28, 2022 at 07:02:41PM -0500, K0LNY_Glenn wrote:
-> I hate to join another list, in the event that I go back to speakup.
-> But I've gone through the whole speechd.conf, and I thought everything
-> important pointed to voxin.
-> But when I do
-> spd-say -O
-> it still says only espeak.
-
-You said you purged speech-dispatcher, and installed it again
-earlier. Since speech-dispatcher-voxin depends on speech-dispatcher,
-that probably got purged too. So:
-
-apt install speech-dispatcher-voxin
-
-and make sure that in /etc/speech-dispatcher/speechd.conf you change
-
-DefaultModule espeak-ng
-
-to
-
-DefaultModule voxin
-
-> I did make backups of speechd.conf, so I wonder if spd-conf will mess it 
-> up
-> again, or not.
-
-The spd-conf utility changes speechd.conf, so yes, it could mess it up.
-
-Greg
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your 
-contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org 
+Well, Glen, there are good reasons for reading-and-contributing to more than 
+a
+single list. As an example, for awhile I tried Slint, but now I am 
+completely
+in Debian, but I still read-and-help when I can. I tried subscribing to 
+Fenrir,
+but I guess something didn't work. As far as your config, I hope you created 
+a
+user-and-system config. You just never can be sure which of these list you
+might find an answer, including Blinux, but I certainly agree with Greg, let
+your subject-line adequately represent your inquiree, even if it means
+beginning a new thread.
+Chime
 
 
