@@ -1,38 +1,58 @@
-Return-Path: <speakup+bounces-817-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-818-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id CAE1561258D
-	for <lists+speakup@lfdr.de>; Sat, 29 Oct 2022 23:26:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1C5C26126E7
+	for <lists+speakup@lfdr.de>; Sun, 30 Oct 2022 03:39:31 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=liKI6vDu;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BED473840AE; Sat, 29 Oct 2022 17:26:23 -0400 (EDT)
+	id 2198E384057; Sat, 29 Oct 2022 22:39:30 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A9CE4383FDA
-	for <lists+speakup@lfdr.de>; Sat, 29 Oct 2022 17:26:23 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 008E8383FF4
+	for <lists+speakup@lfdr.de>; Sat, 29 Oct 2022 22:39:30 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8E3B8383FEB; Sat, 29 Oct 2022 17:26:18 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0207.b.hostedemail.com [64.98.42.207])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 7B213383FDA
-	for <speakup@linux-speakup.org>; Sat, 29 Oct 2022 17:26:18 -0400 (EDT)
-Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id 93E981003974C;
-	Sat, 29 Oct 2022 21:26:17 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id D15F5BD04FA;
-	Sat, 29 Oct 2022 21:26:16 +0000 (UTC)
-Message-ID: <00ce01d8ebdd$14c87190$84ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "K0LNY_Glenn" <glenn@ervin.email>,
-	"Chime Hart" <chime@hubert-humphrey.com>
-Cc: "Gregory Nowak" <greg@gregn.net>,
-	<speakup@linux-speakup.org>,
-	"Didier Spaier" <didier@slint.fr>
-References: <089101d8ea60$a48a59c0$87ffa8c0@Win7VM> <53a80b58-5be4-63ee-ab32-9b7bd469f522@hubert-humphrey.com> <089c01d8ea67$be809ae0$87ffa8c0@Win7VM> <Y1tQ09YHFIMW5W2P@gregn.net> <08ed01d8eae8$e7bbdab0$87ffa8c0@Win7VM> <153ebfb0-180b-a4b8-0027-857f22df878e@hubert-humphrey.com> <090701d8eaef$9a45f930$87ffa8c0@Win7VM> <082beb13-bca6-f001-6b28-8a2e14ad7b25@slint.fr> <096901d8eb12$060be090$87ffa8c0@Win7VM> <098901d8eb16$fcddc5b0$87ffa8c0@Win7VM> <Y1xm3HAleBaLGGnk@gregn.net> <002b01d8eb29$c48a8af0$84ffa8c0@Win7VM> <6178c7b1-35b5-c47e-65c6-4a6dcddbeb25@hubert-humphrey.com> <007301d8ebb1$1e99bc00$84ffa8c0@Win7VM> <62e3adc6-08c3-7df8-75e0-93a67a4b562a@hubert-humphrey.com> <007a01d8ebb3$01d52990$84ffa8c0@Win7VM> <ed3afead-d02f-1758-bb2c-4a454e2ecfc1@hubert-humphrey.com> <009d01d8ebc1$bfcf77d0$84ffa8c0@Win7VM> <7cb6fde6-471d-b408-61bb-4e9c6a122b03@hubert-humphrey.com> <00b401d8ebd3$3c5c2c10$84ffa8c0@Win7VM> <00bb01d8ebd7$e2239b70$84ffa8c0@Win7VM>
+	id B967E383FFB; Sat, 29 Oct 2022 22:39:20 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id F330E383FEE
+	for <speakup@linux-speakup.org>; Sat, 29 Oct 2022 22:39:19 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [172.56.80.138])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 5AA994DF;
+	Sat, 29 Oct 2022 19:38:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+	t=1667097528; bh=WOJ7UmpHNCMroj/Uf/G436N2LcYNhmJvzmE1GiN8pNI=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=liKI6vDuuqXNHZhrbV/0MWz7stSDv6wTKXBDTTTZmzoNeqsexuobhTjwino6E+0iF
+	 pqwJhq7h8c58MR6uDWD1k/2VpwbGRpjLCK45hg7o4WeAdW1wJKwbj40VCOa8dtNNjW
+	 hYuowcCbSsL7sX76pffKIOS8e8QYPjkHjkB9RYMrr7R/QVT6mVntO4XRci9CFwT+Ct
+	 gn1+/isjZPzKt7VnWzFHiKadnTqpaD/xn1dncS+V7tIEkBZzYHC/y6JSkty2OKo1M3
+	 W4bmyMZevCNnOQo2tpq13LEprEcf478MpTWXqmBqJhPgDXgbTe1fHbsb7Ka0QWEh1x
+	 EId/XFhKTf1IA==
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 4B6A6C1CB; Sat, 29 Oct 2022 19:38:47 -0700 (MST)
+Date: Sat, 29 Oct 2022 19:38:47 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: K0LNY_Glenn <glenn@ervin.email>
+Cc: Chime Hart <chime@hubert-humphrey.com>, speakup@linux-speakup.org,
+	Didier Spaier <didier@slint.fr>
 Subject: Re: Installing Voxin
-Date: Sat, 29 Oct 2022 16:26:16 -0500
-Organization: Home
+Message-ID: <Y13jtw4aw29Oy7p4@gregn.net>
+References: <08ed01d8eae8$e7bbdab0$87ffa8c0@Win7VM>
+ <153ebfb0-180b-a4b8-0027-857f22df878e@hubert-humphrey.com>
+ <090701d8eaef$9a45f930$87ffa8c0@Win7VM>
+ <082beb13-bca6-f001-6b28-8a2e14ad7b25@slint.fr>
+ <096901d8eb12$060be090$87ffa8c0@Win7VM>
+ <098901d8eb16$fcddc5b0$87ffa8c0@Win7VM>
+ <Y1xm3HAleBaLGGnk@gregn.net>
+ <002b01d8eb29$c48a8af0$84ffa8c0@Win7VM>
+ <6178c7b1-35b5-c47e-65c6-4a6dcddbeb25@hubert-humphrey.com>
+ <007301d8ebb1$1e99bc00$84ffa8c0@Win7VM>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,107 +62,41 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Stat-Signature: uu41fg1je7emuzuzr6x7j5ng591w6736
-X-Rspamd-Server: rspamout03
-X-Rspamd-Queue-Id: D15F5BD04FA
-X-Spam-Status: No, score=-2.60
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX19Q+9k7iMV9wzKLJqkbfHRn6UFBYawpJIo=
-X-HE-Tag: 1667078776-477076
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <007301d8ebb1$1e99bc00$84ffa8c0@Win7VM>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 0.103.6 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Well in running spd-say -O again, I noticed more specifically, the module 
-for speech-dispatcher was espeak-ng.
-So I tried
-espeak-ng test
-and it didn't work, bad command.
-So I did apt install espeak-ng and it installed.
-Then espeak-ng test worked.
-But speakup still does not work, I also rebooted.
-Interesting how spd-say spoke using just espeak, when the -O said that 
-espeak-ng was the module in use, but it was not installed.
-But still no speakup.
-Is there a speakup.conf file somewhere where I can specify the TTS?
-Glenn
------ Original Message ----- 
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "K0LNY_Glenn" <glenn@ervin.email>; "Chime Hart" 
-<chime@hubert-humphrey.com>
-Cc: "Gregory Nowak" <greg@gregn.net>; <speakup@linux-speakup.org>; "Didier 
-Spaier" <didier@slint.fr>
-Sent: Saturday, October 29, 2022 3:49 PM
-Subject: Re: Installing Voxin
+On Sat, Oct 29, 2022 at 11:11:34AM -0500, K0LNY_Glenn wrote:
+> Good morning All,
+> At least it still is here.
+> So I'm wondering, will speakup use Voxin?
+> Seems like there is a way to launch it with a software synth.
+
+It should. Install speechd-up, and that will interface speakup to
+speech-dispatcher. That will in turn use whatever speech-dispatcher is
+configured to use.
+
+> Also, I don't recall how to launch speakup, it was working before I tried 
+> Fenrir.
+
+apt install espeakup
+
+That will use espeak directly, without requiring speech-dispatcher.
+
+Greg
 
 
-Still just trying to get speakup to work again, it used to work until I
-started trying to get Voxin to work.
-But I found this page:
-http://linux-speakup.org/pipermail/speakup/2013-October/058386.html
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
 
-which suggests the following:
-Debian based distros start speakup/espeakup at boot. So, you don't
-need to edit boot scripts to make that happen. First put this line in
-/etc/modules
-
-speakup_soft
-
-which will load speakup's software speech module. If you don't want to
-reboot, you can simply load it by hand the first time by running the
-command:
-
-modprobe speakup_soft
-
-You won't need to do that after subsequent reboots since the
-speakup_soft module will be loaded for you when the system boots.
-* end of page copy
-But neither reboot nor the command brings up speakup.
-Even though speakup did work before, that line was not in /etc/modules until
-I just now put it there.
-Hope someone has some ideas, spd-say works with espeak, but not Voxin, and I
-can do espeak test and it works.
-Glenn
-
------ Original Message ----- 
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Chime Hart" <chime@hubert-humphrey.com>
-Cc: "Gregory Nowak" <greg@gregn.net>; <speakup@linux-speakup.org>; "Didier
-Spaier" <didier@slint.fr>
-Sent: Saturday, October 29, 2022 3:15 PM
-Subject: Re: Installing Voxin
-
-
-Hmm,
-Not sure what to try now.
-I have tried
-sudo modprobe speakup
-sudo modprobe speakup_soft
-and
-sudo speakup_soft
-and nothing works, but I don't get an error either.
-It just returns on sudo modprobe speakup
-Not sure what to do now.
-spd-say is still using espeak, so it should at least run with espeak.
-Glenn
------ Original Message ----- 
-From: "Chime Hart" <chime@hubert-humphrey.com>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Gregory Nowak" <greg@gregn.net>; <speakup@linux-speakup.org>; "Didier
-Spaier" <didier@slint.fr>
-Sent: Saturday, October 29, 2022 1:30 PM
-Subject: Re: Installing Voxin
-
-
-Hi Glen: I agree, that would be nice, but I think its
-sudo modprobe speakup
-Chime
-
-
-
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
