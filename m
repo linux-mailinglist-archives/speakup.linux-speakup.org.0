@@ -1,53 +1,36 @@
-Return-Path: <speakup+bounces-829-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-830-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A5689618CED
-	for <lists+speakup@lfdr.de>; Fri,  4 Nov 2022 00:45:48 +0100 (CET)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=TCkJRQxE;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 17D37618CFD
+	for <lists+speakup@lfdr.de>; Fri,  4 Nov 2022 00:49:38 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3FAFE383BBC; Thu,  3 Nov 2022 19:45:45 -0400 (EDT)
+	id A601D383BCF; Thu,  3 Nov 2022 19:49:37 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1DDB1383B58
-	for <lists+speakup@lfdr.de>; Thu,  3 Nov 2022 19:45:45 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 914C0383BAE
+	for <lists+speakup@lfdr.de>; Thu,  3 Nov 2022 19:49:37 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EEED3383BAC; Thu,  3 Nov 2022 19:45:35 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 922E9383B58
-	for <speakup@linux-speakup.org>; Thu,  3 Nov 2022 19:45:35 -0400 (EDT)
-Received: from vbox.gregn.net (unknown [IPv6:2607:fb90:2d06:e42e:71b0:7e55:a597:c60b])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits))
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id D1A614DF;
-	Thu,  3 Nov 2022 16:45:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1667519132; bh=CbBQW7dSE8nLCyXAEvP0pQXRpCBOZ+lqsOTub2GCO7o=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=TCkJRQxEJmpwTu6NcCytNLCMTZS4Na6R5Os+RxAExj5XNHjz2wvvNo2QHJ0Hiwbal
-	 CwKknf1WnD400fABCubC8dQGODMZncjUWIv3V2zNtfddc5f5Wn0KGKsh27m2j/j2WW
-	 jk5l5wnGdSWnYUAGPbSSF64ohjUkpxGIUBZn/VTAFyKK4TM1dqUD85cZ6JWNnJWGqQ
-	 zNEK2tb19ZpBHbXPc1yIEBA6Lz4Mt/2oHnHPqhrUZHeDXYrhfOalw3uKzW5/J215Dl
-	 dv3iKKb6ysyccyRdej6lsNCVDWNIocKC4f5nmnOSNThsmRPmfajwEByVUCIa/yt1aO
-	 g7G2qdkC9DnnA==
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 010FAC1D6; Thu,  3 Nov 2022 16:45:31 -0700 (MST)
-Date: Thu, 3 Nov 2022 16:45:31 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: K0LNY_Glenn <glenn@ervin.email>
-Cc: Samuel Thibault <samuel.thibault@aquilenet.fr>,
+	id ADC66383BAE; Thu,  3 Nov 2022 19:49:32 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0126.b.hostedemail.com [64.98.42.126])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 9DDD5383BAA
+	for <speakup@linux-speakup.org>; Thu,  3 Nov 2022 19:49:32 -0400 (EDT)
+Received: from omf05.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id C33198C24502;
+	Thu,  3 Nov 2022 23:49:30 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf05.b.hostedemail.com (Postfix) with ESMTPA id 2DA741802F718;
+	Thu,  3 Nov 2022 23:49:30 +0000 (UTC)
+Message-ID: <0ab401d8efde$eb620f40$80ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Gregory Nowak" <greg@gregn.net>
+Cc: "Samuel Thibault" <samuel.thibault@aquilenet.fr>,
 	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <05de01d8eefb$e44f16a0$80ffa8c0@Win7VM> <Y2LqK66AdnnW9DOg@gregn.net> <20221102233629.ayyi63uakfhkw3dc@begin> <072a01d8ef2a$7e7bd820$80ffa8c0@Win7VM> <08a901d8efbc$33020490$80ffa8c0@Win7VM> <Y2RSm7hG8WHdiygs@gregn.net>
 Subject: Re: Voxin/ibmtts with eSpeakup
-Message-ID: <Y2RSm7hG8WHdiygs@gregn.net>
-References: <05de01d8eefb$e44f16a0$80ffa8c0@Win7VM>
- <Y2LqK66AdnnW9DOg@gregn.net>
- <20221102233629.ayyi63uakfhkw3dc@begin>
- <072a01d8ef2a$7e7bd820$80ffa8c0@Win7VM>
- <08a901d8efbc$33020490$80ffa8c0@Win7VM>
+Date: Thu, 3 Nov 2022 18:49:30 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -57,17 +40,40 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <08a901d8efbc$33020490$80ffa8c0@Win7VM>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 0.103.6 at vserver
-X-Virus-Status: Clean
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: 2DA741802F718
+X-Spam-Status: No, score=-2.59
+X-Stat-Signature: rxhhgd9xneptm1e3aj6mrw494m5djybu
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX18rkAwn6GKZWhUKIkx/HUmWb0bwTW7BR34=
+X-HE-Tag: 1667519370-397647
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+Hi,
+The /etc/rc.local is only there because I created it, it wasn't there to 
+begin with.
+On the adding the user to the audio group, how is that done?
+Thanks
+----- Original Message ----- 
+From: "Gregory Nowak" <greg@gregn.net>
+To: "K0LNY_Glenn" <glenn@ervin.email>
+Cc: "Samuel Thibault" <samuel.thibault@aquilenet.fr>; "Speakup is a screen 
+review system for Linux." <speakup@linux-speakup.org>
+Sent: Thursday, November 03, 2022 6:45 PM
+Subject: Re: Voxin/ibmtts with eSpeakup
+
 
 On Thu, Nov 03, 2022 at 02:40:57PM -0500, K0LNY_Glenn wrote:
 > Well here's an update.
-> It seems that Bullseye no longer uses /etc/rc.local, I created the file, but 
+> It seems that Bullseye no longer uses /etc/rc.local, I created the file, 
+> but
 > my command:
 > sudo /usr/bin/speakupconf load
 > didn't work.
@@ -80,7 +86,7 @@ it still exists and is executed at boot in debian.
 
 Is the user you're running spd-say as in the audio group?
 
-> So, espeakup, or just speakup, whichever I'm using, is not runing as sudo, 
+> So, espeakup, or just speakup, whichever I'm using, is not runing as sudo,
 
 As far as I know, espeakup runs as root, unless you have a user named
 sudo on your system, and have made necessary changes to run espeakup
@@ -97,8 +103,10 @@ web site: http://www.gregn.net
 gpg public key: http://www.gregn.net/pubkey.asc
 skype: gregn1
 (authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
+If we haven't been in touch before, e-mail me before adding me to your 
+contacts.
 
 --
 Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+
 
