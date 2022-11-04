@@ -1,27 +1,27 @@
-Return-Path: <speakup+bounces-830-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-831-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 17D37618CFD
-	for <lists+speakup@lfdr.de>; Fri,  4 Nov 2022 00:49:38 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 1F091619BD7
+	for <lists+speakup@lfdr.de>; Fri,  4 Nov 2022 16:38:03 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A601D383BCF; Thu,  3 Nov 2022 19:49:37 -0400 (EDT)
+	id 52FFE383C01; Fri,  4 Nov 2022 11:38:01 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 914C0383BAE
-	for <lists+speakup@lfdr.de>; Thu,  3 Nov 2022 19:49:37 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3CAD2383BBD
+	for <lists+speakup@lfdr.de>; Fri,  4 Nov 2022 11:38:01 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ADC66383BAE; Thu,  3 Nov 2022 19:49:32 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0126.b.hostedemail.com [64.98.42.126])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 9DDD5383BAA
-	for <speakup@linux-speakup.org>; Thu,  3 Nov 2022 19:49:32 -0400 (EDT)
-Received: from omf05.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay03.b.hostedemail.com (Postfix) with ESMTP id C33198C24502;
-	Thu,  3 Nov 2022 23:49:30 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf05.b.hostedemail.com (Postfix) with ESMTPA id 2DA741802F718;
-	Thu,  3 Nov 2022 23:49:30 +0000 (UTC)
-Message-ID: <0ab401d8efde$eb620f40$80ffa8c0@Win7VM>
+	id 6967E383BBA; Fri,  4 Nov 2022 11:37:56 -0400 (EDT)
+Received: from smtprelay.b.hostedemail.com (smtprelay0220.b.hostedemail.com [64.98.42.220])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 37CCA383B5D
+	for <speakup@linux-speakup.org>; Fri,  4 Nov 2022 11:37:56 -0400 (EDT)
+Received: from omf13.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay04.b.hostedemail.com (Postfix) with ESMTP id 257B710038A79;
+	Fri,  4 Nov 2022 15:37:55 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf13.b.hostedemail.com (Postfix) with ESMTPA id 62E198064C11;
+	Fri,  4 Nov 2022 15:37:54 +0000 (UTC)
+Message-ID: <0b4101d8f063$69069fe0$80ffa8c0@Win7VM>
 Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
 From: "K0LNY_Glenn" <glenn@ervin.email>
 To: "Gregory Nowak" <greg@gregn.net>
@@ -29,7 +29,7 @@ Cc: "Samuel Thibault" <samuel.thibault@aquilenet.fr>,
 	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 References: <05de01d8eefb$e44f16a0$80ffa8c0@Win7VM> <Y2LqK66AdnnW9DOg@gregn.net> <20221102233629.ayyi63uakfhkw3dc@begin> <072a01d8ef2a$7e7bd820$80ffa8c0@Win7VM> <08a901d8efbc$33020490$80ffa8c0@Win7VM> <Y2RSm7hG8WHdiygs@gregn.net>
 Subject: Re: Voxin/ibmtts with eSpeakup
-Date: Thu, 3 Nov 2022 18:49:30 -0500
+Date: Fri, 4 Nov 2022 10:37:54 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -48,19 +48,23 @@ X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
 X-Rspamd-Server: rspamout01
-X-Rspamd-Queue-Id: 2DA741802F718
-X-Spam-Status: No, score=-2.59
-X-Stat-Signature: rxhhgd9xneptm1e3aj6mrw494m5djybu
+X-Rspamd-Queue-Id: 62E198064C11
+X-Spam-Status: No, score=-2.52
+X-Stat-Signature: o5y4q81ti5666do9j9j8g6pshx5h9d9u
 X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX18rkAwn6GKZWhUKIkx/HUmWb0bwTW7BR34=
-X-HE-Tag: 1667519370-397647
+X-Session-ID: U2FsdGVkX18PXVLL+2tcqwPOyQxmqdcBgJkwR5tlM+w=
+X-HE-Tag: 1667576274-205082
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi,
-The /etc/rc.local is only there because I created it, it wasn't there to 
-begin with.
-On the adding the user to the audio group, how is that done?
-Thanks
+I ran  the following:
+sudo adduser audio lenny
+and I got the message that lenny was already a member of audio.
+speaker-test works  as sudo, but no sound without sudo.
+Just like spd-say, no errors, just no audio.
+Any ideas?
+Thanks.
+Glenn
+
 ----- Original Message ----- 
 From: "Gregory Nowak" <greg@gregn.net>
 To: "K0LNY_Glenn" <glenn@ervin.email>
@@ -71,15 +75,6 @@ Subject: Re: Voxin/ibmtts with eSpeakup
 
 
 On Thu, Nov 03, 2022 at 02:40:57PM -0500, K0LNY_Glenn wrote:
-> Well here's an update.
-> It seems that Bullseye no longer uses /etc/rc.local, I created the file, 
-> but
-> my command:
-> sudo /usr/bin/speakupconf load
-> didn't work.
-
-Apologies. The rc.local file is still present in devuan, so I assumed
-it still exists and is executed at boot in debian.
 
 > spd-say test, without sudo is still silent
 > but with sudo, I get Voxin.
