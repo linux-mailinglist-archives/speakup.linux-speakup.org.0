@@ -1,36 +1,50 @@
-Return-Path: <speakup+bounces-838-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-839-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 022FB61DD50
-	for <lists+speakup@lfdr.de>; Sat,  5 Nov 2022 19:39:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id A0F4E61E342
+	for <lists+speakup@lfdr.de>; Sun,  6 Nov 2022 16:51:33 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CE50938363E; Sat,  5 Nov 2022 14:39:13 -0400 (EDT)
+	id 3E49E383617; Sun,  6 Nov 2022 10:51:23 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id BAF323831DA
-	for <lists+speakup@lfdr.de>; Sat,  5 Nov 2022 14:39:13 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 2B411383615
+	for <lists+speakup@lfdr.de>; Sun,  6 Nov 2022 10:51:23 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 19D253831E2; Sat,  5 Nov 2022 14:39:09 -0400 (EDT)
-Received: from smtprelay.b.hostedemail.com (smtprelay0030.b.hostedemail.com [64.98.42.30])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 090AD382BFC
-	for <speakup@linux-speakup.org>; Sat,  5 Nov 2022 14:39:09 -0400 (EDT)
-Received: from omf03.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id C9ADD1005EBED;
-	Sat,  5 Nov 2022 18:39:05 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf03.b.hostedemail.com (Postfix) with ESMTPA id 29326802715F;
-	Sat,  5 Nov 2022 18:39:05 +0000 (UTC)
-Message-ID: <0c3801d8f145$e2eb2b90$80ffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Gregory Nowak" <greg@gregn.net>
-Cc: "Samuel Thibault" <samuel.thibault@aquilenet.fr>,
-	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <05de01d8eefb$e44f16a0$80ffa8c0@Win7VM> <Y2LqK66AdnnW9DOg@gregn.net> <20221102233629.ayyi63uakfhkw3dc@begin> <072a01d8ef2a$7e7bd820$80ffa8c0@Win7VM> <08a901d8efbc$33020490$80ffa8c0@Win7VM> <Y2RSm7hG8WHdiygs@gregn.net> <0b4101d8f063$69069fe0$80ffa8c0@Win7VM> <Y2XF6wmcbFCsq5l/@gregn.net> <0bc501d8f0bd$c222dee0$80ffa8c0@Win7VM> <Y2XV2QOPjryMKRJv@gregn.net>
-Subject: Re: Voxin/ibmtts with eSpeakup
-Date: Sat, 5 Nov 2022 13:39:05 -0500
-Organization: Home
+	id 8C8E2383615; Sun,  6 Nov 2022 10:51:18 -0500 (EST)
+Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 619CB383615
+	for <speakup@linux-speakup.org>; Sun,  6 Nov 2022 10:51:18 -0500 (EST)
+Received: from localhost (localhost [127.0.0.1])
+	by sonata.ens-lyon.org (Postfix) with ESMTP id 352822010B;
+	Sun,  6 Nov 2022 16:51:10 +0100 (CET)
+Received: from sonata.ens-lyon.org ([127.0.0.1])
+	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id zKeRytKHzjnZ; Sun,  6 Nov 2022 16:51:10 +0100 (CET)
+Received: from begin (lfbn-bor-1-376-208.w109-215.abo.wanadoo.fr [109.215.91.208])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 85C4520107;
+	Sun,  6 Nov 2022 16:51:09 +0100 (CET)
+Received: from samy by begin with local (Exim 4.96)
+	(envelope-from <samuel.thibault@ens-lyon.org>)
+	id 1orhvR-00DuLc-0S;
+	Sun, 06 Nov 2022 16:51:09 +0100
+Date: Sun, 6 Nov 2022 16:51:09 +0100
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: wangkailong@jari.cn
+Cc: w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
+	gregkh@linuxfoundation.org, speakup@linux-speakup.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] speakup: Fix warning comparing pointer to 0
+Message-ID: <20221106155109.wh5ivhk2zc7cumn5@begin>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+	wangkailong@jari.cn, w.d.hubbs@gmail.com, chris@the-brannons.com,
+	kirk@reisers.ca, gregkh@linuxfoundation.org,
+	speakup@linux-speakup.org, linux-kernel@vger.kernel.org
+References: <1de9cab8.c1.1844d7bdf4b.Coremail.wangkailong@jari.cn>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -40,99 +54,38 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Stat-Signature: e5zjjx43ntemdyt8sfkpbn44exu9rrt1
-X-Rspamd-Server: rspamout02
-X-Rspamd-Queue-Id: 29326802715F
-X-Spam-Status: No, score=-2.60
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1+48YTW+eSs6EMNIRVfVlyUeqgfGO4Y2SA=
-X-HE-Tag: 1667673545-982929
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <1de9cab8.c1.1844d7bdf4b.Coremail.wangkailong@jari.cn>
+Organization: I am not organized
+User-Agent: NeoMutt/20170609 (1.8.3)
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-In doing some research, I'm wondering if the only user, "lenny" can't get 
-audio, but root can, is that I need to give ownership to "lenny" for the 
-1000 folder.
-In similar problems I found on-line, the suggested command was as follows, 
-but in the command, it can't find lenny or ./lenny.
-sudo chown 1000 ./lenny
-or
-sudo chown 1000 lenny
-So I don't know how to make this work.
-Glenn
------ Original Message ----- 
-From: "Gregory Nowak" <greg@gregn.net>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Samuel Thibault" <samuel.thibault@aquilenet.fr>; "Speakup is a screen 
-review system for Linux." <speakup@linux-speakup.org>
-Sent: Friday, November 04, 2022 10:17 PM
-Subject: Re: Voxin/ibmtts with eSpeakup
+wangkailong@jari.cn, le dim. 06 nov. 2022 23:07:54 +0800, a ecrit:
+> Fix the following coccicheck warning:
+> 
+> drivers/accessibility/speakup/utils.h:39:15-16: WARNING comparing
+> pointer to 0
 
+You're replacing it with the contrary of what it should be...
 
-What's under 1000?
-
-Greg
-
-
-On Fri, Nov 04, 2022 at 09:24:38PM -0500, K0LNY_Glenn wrote:
-> Correct, I never understood why in the user folder is only 1000.
-> That is all there is in /user.
-> Glenn
-> ----- Original Message ----- 
-> From: "Gregory Nowak" <greg@gregn.net>
-> To: "K0LNY_Glenn" <glenn@ervin.email>
-> Cc: "Samuel Thibault" <samuel.thibault@aquilenet.fr>; "Speakup is a screen
-> review system for Linux." <speakup@linux-speakup.org>
-> Sent: Friday, November 04, 2022 9:09 PM
-> Subject: Re: Voxin/ibmtts with eSpeakup
->
->
-> I assume that lenny is the only  login user on the system. So,
-> anything interesting in /var/run/user/1000/speech-dispatcher/log/*
-> after you run spd-say as lenny?
->
-> Greg
->
->
-> On Fri, Nov 04, 2022 at 10:37:54AM -0500, K0LNY_Glenn wrote:
-> > I ran  the following:
-> > sudo adduser audio lenny
-> > and I got the message that lenny was already a member of audio.
-> > speaker-test works  as sudo, but no sound without sudo.
-> > Just like spd-say, no errors, just no audio.
-> > Any ideas?
-> > Thanks.
-> > Glenn
->
->
+> ---
+>  drivers/accessibility/speakup/utils.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/accessibility/speakup/utils.h b/drivers/accessibility/speakup/utils.h
+> index 4bf2ee8ac246..5803b521df2b 100644
+> --- a/drivers/accessibility/speakup/utils.h
+> +++ b/drivers/accessibility/speakup/utils.h
+> @@ -36,7 +36,7 @@ static inline void open_input(const char *dir_name, const char *name)
+>  	else
+>  		snprintf(filename, sizeof(filename), "%s", name);
+>  	infile = fopen(filename, "r");
+> -	if (infile == 0) {
+> +	if (infile) {
+>  		fprintf(stderr, "can't open %s\n", filename);
+>  		exit(1);
+>  	}
 > -- 
-> web site: http://www.gregn.net
-> gpg public key: http://www.gregn.net/pubkey.asc
-> skype: gregn1
-> (authorization required, add me to your contacts list first)
-> If we haven't been in touch before, e-mail me before adding me to your
-> contacts.
->
-> --
-> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
->
->
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your 
-contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org 
-
+> 2.25.1
 
