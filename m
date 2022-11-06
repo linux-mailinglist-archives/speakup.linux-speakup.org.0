@@ -1,50 +1,38 @@
-Return-Path: <speakup+bounces-839-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-840-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A0F4E61E342
-	for <lists+speakup@lfdr.de>; Sun,  6 Nov 2022 16:51:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id E37E661E6FE
+	for <lists+speakup@lfdr.de>; Sun,  6 Nov 2022 23:50:05 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=IJW2YkHp;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3E49E383617; Sun,  6 Nov 2022 10:51:23 -0500 (EST)
+	id C8A3F383648; Sun,  6 Nov 2022 17:50:04 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2B411383615
-	for <lists+speakup@lfdr.de>; Sun,  6 Nov 2022 10:51:23 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id AB54D383618
+	for <lists+speakup@lfdr.de>; Sun,  6 Nov 2022 17:50:04 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8C8E2383615; Sun,  6 Nov 2022 10:51:18 -0500 (EST)
-Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 619CB383615
-	for <speakup@linux-speakup.org>; Sun,  6 Nov 2022 10:51:18 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 352822010B;
-	Sun,  6 Nov 2022 16:51:10 +0100 (CET)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id zKeRytKHzjnZ; Sun,  6 Nov 2022 16:51:10 +0100 (CET)
-Received: from begin (lfbn-bor-1-376-208.w109-215.abo.wanadoo.fr [109.215.91.208])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 85C4520107;
-	Sun,  6 Nov 2022 16:51:09 +0100 (CET)
-Received: from samy by begin with local (Exim 4.96)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1orhvR-00DuLc-0S;
-	Sun, 06 Nov 2022 16:51:09 +0100
-Date: Sun, 6 Nov 2022 16:51:09 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: wangkailong@jari.cn
-Cc: w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
-	gregkh@linuxfoundation.org, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] speakup: Fix warning comparing pointer to 0
-Message-ID: <20221106155109.wh5ivhk2zc7cumn5@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	wangkailong@jari.cn, w.d.hubbs@gmail.com, chris@the-brannons.com,
-	kirk@reisers.ca, gregkh@linuxfoundation.org,
-	speakup@linux-speakup.org, linux-kernel@vger.kernel.org
-References: <1de9cab8.c1.1844d7bdf4b.Coremail.wangkailong@jari.cn>
+	id 08EDB383617; Sun,  6 Nov 2022 17:49:56 -0500 (EST)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+	by befuddled.reisers.ca (Postfix) with ESMTP id 62D553831D7
+	for <speakup@linux-speakup.org>; Sun,  6 Nov 2022 17:49:55 -0500 (EST)
+Received: from [192.168.0.11] (sfa89-1-78-208-157-71.fbx.proxad.net [78.208.157.71])
+	by darkstar.slint.fr (Postfix) with ESMTPSA id A731121873;
+	Sun,  6 Nov 2022 22:46:23 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+	t=1667771183; bh=YZQLAmJVAxaoVyJXrHiXtmbL2UuX4TNZbKquZ9R5o4I=;
+	h=Date:To:From:Subject:Cc:From;
+	b=IJW2YkHpvpy+wyEqUpfNfuH/72zaC8sE05tsB3p3JiVpowP+qPpkDaMaWSuHyH1Bl
+	 6zadPAFnFUJOA+j8ORbKW5sW/j/q3yyHHtCK9DexW+auvq8knJp3d4VumZtsqS3d01
+	 Q7UAh3duEoDJwDK1fNxhkTcHjl4xUDU1DmXRp4dEJ6V1AXLKFJVksrSlCEYVjDyNOj
+	 9jSog1Y4kG0jp5Tt68vqtxKKV1UEv323MeBF9ciau24rctEAFD4r4ZveILb2jOThEU
+	 8fePQIzGV2ZbT3do3VeSslka7gzXxs2VHD20sBJnATZEodQAL1bjby6Jj2xLLZorwr
+	 vv7X4bq87U1NA==
+Message-ID: <770d29f0-0ccd-0618-4434-7a54c201846a@slint.fr>
+Date: Sun, 6 Nov 2022 23:48:58 +0000
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -54,38 +42,43 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <1de9cab8.c1.1844d7bdf4b.Coremail.wangkailong@jari.cn>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.4.2
+Content-Language: en-US
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: Didier Spaier <didier@slint.fr>
+Subject: How to ship the speakup drivers
+Cc: Tony Seth <lp800@samobile.net>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-wangkailong@jari.cn, le dim. 06 nov. 2022 23:07:54 +0800, a ecrit:
-> Fix the following coccicheck warning:
-> 
-> drivers/accessibility/speakup/utils.h:39:15-16: WARNING comparing
-> pointer to 0
+Hello,
 
-You're replacing it with the contrary of what it should be...
+Currently in Slint 15.0 all speakup drivers are shipped as modules.
 
-> ---
->  drivers/accessibility/speakup/utils.h | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/accessibility/speakup/utils.h b/drivers/accessibility/speakup/utils.h
-> index 4bf2ee8ac246..5803b521df2b 100644
-> --- a/drivers/accessibility/speakup/utils.h
-> +++ b/drivers/accessibility/speakup/utils.h
-> @@ -36,7 +36,7 @@ static inline void open_input(const char *dir_name, const char *name)
->  	else
->  		snprintf(filename, sizeof(filename), "%s", name);
->  	infile = fopen(filename, "r");
-> -	if (infile == 0) {
-> +	if (infile) {
->  		fprintf(stderr, "can't open %s\n", filename);
->  		exit(1);
->  	}
-> -- 
-> 2.25.1
+So far, so good, but ...
+
+A user equipped with a DoubleTalk (driver speakup-ltlk) would like to edit the
+GRUB command line of the installer so this device be available early.
+
+He could append speakup.synth=ltlk to the kernel command line if speakup was
+built-in (as indicated in Documentation/adminguide/spkguide.txt) but this is not
+the case currently here (Linux 6.0.5 at time of writing if that matters).
+
+Another possibility is to tell dracut to put all speakup modules in the
+initramfs it generates, in which case a user could append for instance
+rd.driver.pre='speakup_ltlk" to the command line.
+
+However...
+
+1. Are there other ways to get the same result, without changing how the drivers
+are provided?
+2. Are there inconveniences to have the main speakup driver built-in the kernel?
+And in this case should the other drivers also built-in?
+
+Thanks for any clue.
+
+Cheers,
+Didier
 
