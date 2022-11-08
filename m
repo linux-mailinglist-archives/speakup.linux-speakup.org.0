@@ -1,58 +1,54 @@
-Return-Path: <speakup+bounces-846-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-847-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C94A66203CD
-	for <lists+speakup@lfdr.de>; Tue,  8 Nov 2022 00:32:55 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 65BCE620689
+	for <lists+speakup@lfdr.de>; Tue,  8 Nov 2022 03:17:51 +0100 (CET)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=mijKanfG;
+	dkim=pass (2048-bit key; unprotected) header.d=samobile.net header.i=@samobile.net header.a=rsa-sha256 header.s=mr01 header.b=qleLscEY;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A7FF0383624; Mon,  7 Nov 2022 18:32:54 -0500 (EST)
+	id 17E54383634; Mon,  7 Nov 2022 21:17:30 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 88153382C44
-	for <lists+speakup@lfdr.de>; Mon,  7 Nov 2022 18:32:54 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id EABF93831DA
+	for <lists+speakup@lfdr.de>; Mon,  7 Nov 2022 21:17:29 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D31CB3831D7; Mon,  7 Nov 2022 18:32:45 -0500 (EST)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id AA49438041F
-	for <speakup@linux-speakup.org>; Mon,  7 Nov 2022 18:32:45 -0500 (EST)
-Received: from vbox.gregn.net (unknown [172.56.81.116])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	id 2BB033835F5; Mon,  7 Nov 2022 21:17:21 -0500 (EST)
+Received: from 005.lax.mailroute.net (005.lax.mailroute.net [199.89.1.8])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A7EB938106D
+	for <speakup@linux-speakup.org>; Mon,  7 Nov 2022 21:17:20 -0500 (EST)
+Received: from localhost (005.lax.mailroute.net [127.0.0.1])
+	by 005.lax.mailroute.net (Postfix) with ESMTP id 4N5sDv1sPdz1T5K1;
+	Tue,  8 Nov 2022 02:17:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samobile.net; h=
+	in-reply-to:message-id:date:date:subject:subject:from:from
+	:content-type:content-type:content-transfer-encoding
+	:mime-version:received:received:received; s=mr01; t=1667873838;
+	 x=1670465839; bh=h8Ni8zHJTMQhJp3KIGGxpxzEDZYoy6mB01yeZtjXREc=; b=
+	qleLscEYQ6/QQOqMOtIhneW9HA7VoXrIDU9xCbYrhXJVeJG6rpRBLEOAHkmtWb1K
+	EuhEVtgMOaXHh9ZJABZjUsipDO6HFegrZxwh9E1pvOj9T94NUC2DgEWwoRS05Ydc
+	y2EDkN3HINUMSvM/NgDVcnabiHUvvhNQmYt3h6PkU/bxmDW7+G8cQgHG2pJB5xsJ
+	Ar5AKh00GEKdpPxUGcummjbuLTWbs8qUIXqgjUoYH6a6D5S8mwcXyIFvaL2ACUWj
+	HWH7VnXX1/5yDpcuZvsKqRtjhFIRPWCPMmFW4gdMsS0e6OAaQywQF6UQ7dlYZ6ev
+	4a+VQ9Si2rY0gQZD6D6pGw==
+X-Virus-Scanned: by MailRoute
+Received: from 005.lax.mailroute.net ([199.89.1.8])
+	by localhost (005.lax [127.0.0.1]) (mroute_mailscanner, port 10026)
+	with LMTP id LvLL_kMudxKA; Tue,  8 Nov 2022 02:17:18 +0000 (UTC)
+Received: from vin1.pneumasolutions.com (vin1.pneumasolutions.com [15.204.140.160])
+	(using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
 	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id 5C5DB3D8;
-	Mon,  7 Nov 2022 15:32:14 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1667863934; bh=flxWA7vAZ1jpfg3WUgdCe52fiH9whbicgnloaTDJIzE=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=mijKanfG65HjKo+eAhuve7d3RenGsrfY2mJyqCvHa3gibTLIIej8MxOXKrIt99MZI
-	 EvATagnIVR7ZUdkHw9uRe4eb6Tlcp28amtLsXwNUl6gLuI41olkNrxCEyNClXX14HP
-	 xczcQqha7/VabZwzpVyyRsg0JBsmrEFJ0h9uA591hN/Jp8rSYVZs9pfpBV/EnP/kYR
-	 cOvYpPKx0kLOZf6NfrpHn63PoFmEm7WZDtI3gz7S/Ok4kBwS04HgmSNPDsUU9ZkCPc
-	 NqlOC3ueTy45+hsg/Mn8WREmg35IFuKdROwdyt2CN/Tls+I8KDSiK6D2LdeC99VSze
-	 4o2APqoi/GHJg==
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 0F205C300; Mon,  7 Nov 2022 16:32:13 -0700 (MST)
-Date: Mon, 7 Nov 2022 16:32:13 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: K0LNY_Glenn <glenn@ervin.email>
-Cc: Samuel Thibault <samuel.thibault@aquilenet.fr>,
-	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Voxin/ibmtts with eSpeakup
-Message-ID: <Y2mVfR5AnGTOs9Sm@gregn.net>
-References: <072a01d8ef2a$7e7bd820$80ffa8c0@Win7VM>
- <08a901d8efbc$33020490$80ffa8c0@Win7VM>
- <Y2RSm7hG8WHdiygs@gregn.net>
- <0b4101d8f063$69069fe0$80ffa8c0@Win7VM>
- <Y2XF6wmcbFCsq5l/@gregn.net>
- <0bc501d8f0bd$c222dee0$80ffa8c0@Win7VM>
- <Y2XV2QOPjryMKRJv@gregn.net>
- <0c3801d8f145$e2eb2b90$80ffa8c0@Win7VM>
- <Y2h53YPr311PDObk@gregn.net>
- <0d4001d8f25b$b873c450$80ffa8c0@Win7VM>
+	by 005.lax.mailroute.net (Postfix) with ESMTPS id 4N5sDt04MJz1T5Hq;
+	Tue,  8 Nov 2022 02:17:17 +0000 (UTC)
+Received: from vin1.pneumasolutions.com (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (2048 bits) server-digest SHA256)
+	(No client certificate requested)
+	(Authenticated sender: lp800@internal.samobile.net)
+	by vin1.pneumasolutions.com (Postfix) with ESMTPSA id AF4A13B640;
+	Mon,  7 Nov 2022 21:17:16 -0500 (EST)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -62,63 +58,32 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <0d4001d8f25b$b873c450$80ffa8c0@Win7VM>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 0.103.6 at vserver
-X-Virus-Status: Clean
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; format="flowed"
+From: tony seth <lp800@samobile.net>
+To: didier@slint.fr
+Cc: speakup@linux-speakup.org
+Subject: Re: How to ship the speakup drivers
+Date: Mon, 07 Nov 2022 21:17:16 -0500
+Message-ID: <11ac737c.8924.47b4.9bf1.622de472c6b3@samobile.net>
+In-Reply-To: <c7dd7efd-7f01-a827-97ba-7fa9356a3bcb@slint.fr>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-In your speech-dispatcher.log, I see this:
-
-[Sun Nov  6 21:34:35 2022 : 781132] speechd:  Initializing output
-module voxin
-+with binary /usr/lib/speech-dispatcher-modules/sd_voxin and
-configuration
-+/home/lenny/.config/speech-dispatcher/modules/voxin.conf
-[Sun Nov  6 21:34:35 2022 : 781180] speechd:   Output module is
-logging to file
-+/run/user/1000/speech-dispatcher/log//voxin.log
-[Sun Nov  6 21:34:35 2022 : 782083] speechd:  Module voxin loaded.
-[Sun Nov  6 21:34:35 2022 : 783321] speechd: Exec of module
-+"/usr/lib/speech-dispatcher-modules/sd_voxin" with config
-+"/home/lenny/.config/speech-dispatcher/modules/voxin.conf" failed
-with error 2:+No such file or directory
-[Sun Nov  6 21:34:35 2022 : 784208] speechd: ERROR: Bad syntax from
-output
-+module voxin 1
-
-It looks like you're running speech-dispatcher with per user
-configuration instead of system wide. That's something I haven't done,
-and don't have experience with. My best suggestion is to copy your
-system wide voxin.conf into lenny's configuration directory:
-
-mkdir -p /home/lenny/.config/speech-dispatcher/modules
-cp /etc/speech-dispatcher/modules/voxin.conf
-/home/lenny/.config/speech-dispatcher/modules/
-chown lenny.lenny
-/home/lenny/.config/speech-dispatcher/modules/voxin.conf
-
-Reboot, and see if you get speech. If you don't, you should now at
-least have a voxin.log file which should help pin down other problems.
-
-Greg
-
-
-On Sun, Nov 06, 2022 at 09:47:54PM -0600, K0LNY_Glenn wrote:
-> Here are two files from 1000/speech-dispatcher/log
-> The voxin log is empty.
-> 
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+Heya there Didier and all:
+Hope this finds ya well when you do wake up over there.
+Your instructions worked just fine indeed.
+The module loads up nice and early in the boot process just like the 
+days of old, with only one little hitch.
+When I logged in, my speakup settings for ltlk didn't take affect. I 
+figured that this was because I chose "none" for the speak-with option.
+So, I chose ltlk and said yes to the option to load at next boot.
+On the next reboot, the speakup settings did go into affect and no 
+error messages as I thought there might be do to speakup_ltlk already running.
+So once a user has their hard synth running then as root or su they 
+should be able to save their speakup settings with the speak-with 
+command so they won't have to put a command in their /etc/rc.d/rc.local 
+file to save them the way I used to have to in days past.
+So the test was a raging success!
+Thanks muchee!
+Take care... Cheereoe!
 
