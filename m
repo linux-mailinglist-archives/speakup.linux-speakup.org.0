@@ -1,40 +1,44 @@
-Return-Path: <speakup+bounces-863-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-864-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 75589634419
-	for <lists+speakup@lfdr.de>; Tue, 22 Nov 2022 19:56:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 84236634F74
+	for <lists+speakup@lfdr.de>; Wed, 23 Nov 2022 06:24:23 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=zwKMWw5M;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B00543829EA; Tue, 22 Nov 2022 13:56:28 -0500 (EST)
+	id 66D59382A10; Wed, 23 Nov 2022 00:24:22 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9B75438002A
-	for <lists+speakup@lfdr.de>; Tue, 22 Nov 2022 13:56:28 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 466CC382926
+	for <lists+speakup@lfdr.de>; Wed, 23 Nov 2022 00:24:22 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7C1F53829DA; Tue, 22 Nov 2022 13:56:23 -0500 (EST)
-Received: from nfbcal.org (ns.NFBCAL.ORG [157.22.230.125])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 0611D38002A
-	for <speakup@linux-speakup.org>; Tue, 22 Nov 2022 13:56:22 -0500 (EST)
-Received: from nfbcal.org (localhost [127.0.0.1])
-	by nfbcal.org (8.15.2/8.14.1-NFBNETBSD) with ESMTPS id 2AMIt5h4022376
-	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
-	Tue, 22 Nov 2022 10:55:06 -0800 (PST)
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.102.2 at lothlorien.nfbcal.org
-Received: (from buhrow@localhost)
-	by nfbcal.org (8.15.2/8.12.11) id 2AMIt5fI014845;
-	Tue, 22 Nov 2022 10:55:05 -0800 (PST)
-Message-Id: <202211221855.2AMIt5fI014845@nfbcal.org>
-From: Brian Buhrow <buhrow@nfbcal.org>
-Date: Tue, 22 Nov 2022 10:55:05 -0800
-In-Reply-To: <D9069478-2D9A-4DC3-97D7-BB365C7A4222@gena-j.me.uk>
-X-Mailer: Mail User's Shell (7.2.6 beta(4.pl1)+dynamic 20000103)
-To: Georgina Joyce <gena@gena-j.me.uk>,
-        "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Could someone help with bash scripting?
-Cc: buhrow@nfbcal.org
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.4.3 (nfbcal.org [127.0.0.1]); Tue, 22 Nov 2022 10:55:06 -0800 (PST)
+	id E32C1382928; Wed, 23 Nov 2022 00:24:12 -0500 (EST)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 992CB38000A
+	for <speakup@linux-speakup.org>; Wed, 23 Nov 2022 00:24:12 -0500 (EST)
+Received: from [IPV6:fd6e:ebcf:467e:3::1] (jdc.jasonjgw.net [IPv6:fd6e:ebcf:467e:3::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
+	(Client did not present a certificate)
+	by svr.jasonjgw.net (Postfix) with ESMTPSA id 42DF0320EA
+	for <speakup@linux-speakup.org>; Wed, 23 Nov 2022 05:23:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+	s=mail; t=1669181013;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=O8uYVoYM9DDqRXXOClAEDf5a5BgScQ0QGgiikOoeZeA=;
+	b=zwKMWw5MVdvTCv+wHWhdbuxB8I7rGj1Ihs6Xy+DOz+r7+9LBEyYzDBRWKyWP7JmYXcOV8s
+	jvt6Q63juGRQUT8FHyZxmJf/6JAXDuFHklTHqUdVJks5N/+wleTe3p4vSEGlKSdom+90cn
+	/ob6bnsbmdPKVYexe1vuTIUuWO9WZp+EOnlrRdFCjApbzmnWYYKsFJ6tpGbw1lGteQvRcK
+	K31ip/pdo3LIFJT2yY61VvDXgxyNUF2vK6E+A8xlbjFi1BUekiVnlWZszFIwEASU7aKew+
+	w+H72OC/en93FUiJiIYpXEJoGdsJZE4jMFpcu/ffX9ACIHvInGnvjbYWb5TCaw==
+Message-ID: <f2b5cdc5-4d50-0958-4746-227f5d22f9a4@jasonjgw.net>
+Date: Wed, 23 Nov 2022 16:23:29 +1100
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -43,62 +47,47 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
+MIME-Version: 1.0
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.5.0
+Subject: Re: Could someone help with bash scripting?
+Content-Language: en-US
+To: speakup@linux-speakup.org
+References: <D9069478-2D9A-4DC3-97D7-BB365C7A4222@gena-j.me.uk>
+From: Jason White <jason@jasonjgw.net>
+In-Reply-To: <D9069478-2D9A-4DC3-97D7-BB365C7A4222@gena-j.me.uk>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-	hello.  Is the chat(1) program available  on your system?  It's designed to allow you to
-do just what you're talking about from a shell script.  
-	In general, the steps for talking to a device via a tty (serial port) are as follows:
+Have you considered C-Kermit?
 
-1.  Set the parameters of the serial port (tty) by using the stty command.  The stty command
-operates on the terminal associated with standard input on the process running stty.  For
-example, if the serial port you want to set is: /dev/ttyu0, then to set the baud rate to
-115200, you would do something like:
-stty speed 115200 < /dev/ttyu0
-The redirection at the end of the command tells stty to set the parameters on /dev/ttyu0.
-To check the settings on /dev/ttyu0, do something like:
-stty < /dev/ttyu0
+It's a long time since I've worked with a serial device, but C-Kermit 
+used to be an excellent tool for the purpose.
 
-2.  Once you get the speed, bits, stop bits and parity set the way you want, as well as the
-flow control, use the chat command to send data down the serial port and to receive responses
-from the device at the other end.  A snippet of shell script that does this might look like:
-
-$SERDEV is the name of the /dev/tty device we're talking to.
-$TMPFIL is just the name of a temporary file we're using for capturing the responses from the
-modem on the end of $SERDEV  so we can figure out what it's doing.
-The -v flag to chat makes it write a transcript of its conversation with the device it's
-talking to.
-The -s flag forces that transcript to come out on standard error, which is what we write to 
-$TMPFIL
-
-#First, see if we have a modem and can see signal.
-/bin/rm -f $TMPFIL
-sleep $RESETTIME
-chat -V -s "" '\r\n\r\nATZ' 'OK' "$SIGNALSTR" 'OK' < $SERDEV > $SERDEV 2>$TMPFIL
-grep -i 'LTE' $TMPFIL > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-	signal="Using LTE (G4) services"
-	hasmodem="true"
-fi
-grep -i '1X' $TMPFIL > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-	signal="Using WCDMA (G3) services"
-	hasmodem="true"
-fi
-/bin/rm -f $TMPFIL
-
-3.  If you want to interact with the device using a live terminal session, as opposed to a
-shell script, I suggest using the Kermit package from the University of Columbia.  There are
-other programs like cu(1) and tip(1) that can do this, but I have found that kermit has the
-best user interface and that it can be used interactively to both set the serial port up the
-way you want as well as open a live session to talk with the device attached to it.
-
-If the chat and kermit programs are not available on your native installation, do a google
-search for examples of using those programs with your Linux distribution and that should reveal
-the name of the precise packages you need to install to get them.
-
-The kermit package may be called c-kermit or kermit.
-
-Hope that helps.
--Brian
-
+On 23/11/22 05:07, Georgina Joyce wrote:
+> Hello All,
+>
+> I would like to write a bash script to control a Yaesu FT-991A transceiver. I have been using rigctl a part of the hamlib libraries. However, I find the command structure difficult and doesn't contain some of the daily commands like nudging the frequency up in Kilohertz etc.
+>
+> I have looked and researched  that I can change the tty device baud rate by using stty with the -speed switch but can't really get my head around the stty syntax.
+>
+> I see from a unix stack exchange listing that I can crudely use echo and cat to the device using 2 console windows. The answer on Stack Exchange suggests using screen. I recall some members here were a fan of screen but I have never used it myself.
+>
+> According to the CAT reference manual. If I send "FA145500000;" as a set command The transceiver will respond with the same as a read command. So I want to clean up the responses and put them in human form. You might note that the radio deals with integers in this case. But us humans like decimals, so there is some cleaning up the output. I think I might be able to do that. But it is this issue of sending commands to the tty device and reading the responses that I haven't a clue.
+>
+> Anyone can offer suggestions?
+>
+> Thanks,
+>
+> Georgina
+>
+>
+> Call: M0EBP
+> DMR ID: 2346259
+> Allstar: 52178
+> Locater: IO83PS
+>
+>
+>
 
