@@ -1,47 +1,36 @@
-Return-Path: <speakup+bounces-885-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-886-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 6E3A064210F
-	for <lists+speakup@lfdr.de>; Mon,  5 Dec 2022 02:32:07 +0100 (CET)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=jXRXW8ly;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 5078F642110
+	for <lists+speakup@lfdr.de>; Mon,  5 Dec 2022 02:34:28 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 92452382ADA; Sun,  4 Dec 2022 20:32:06 -0500 (EST)
+	id C4E2C382ADB; Sun,  4 Dec 2022 20:34:25 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 723E7380A94
-	for <lists+speakup@lfdr.de>; Sun,  4 Dec 2022 20:32:06 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id AE031382A1E
+	for <lists+speakup@lfdr.de>; Sun,  4 Dec 2022 20:34:25 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6FF71382A3F; Sun,  4 Dec 2022 20:31:57 -0500 (EST)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 31194380A94
-	for <speakup@linux-speakup.org>; Sun,  4 Dec 2022 20:31:57 -0500 (EST)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4NQQy35K6jz3kmL;
-	Sun,  4 Dec 2022 20:31:55 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1670203915; bh=np1IvoURD57On/HwgrIBu2u1R/mZOH6oiR5TsVz+WD0=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=jXRXW8lyeCW8C5klufmJS3oU62GMdAMXCPDOJuOIvfvyJgOCmmRCq5CVIJBNN5PN8
-	 jLaJWmJ5O87nCVejdY9fx4YSHE0wOzuVquZ1IF3262/ED6YfU0MXUVmunyZaZWI8wl
-	 gnp8YYfiAH85kgBkBEyEUrvr5u/OcRTVbCGZz6kg=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4NQQy35Rznzcbc; Sun,  4 Dec 2022 20:31:55 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4NQQy35PwwzcbC;
-	Sun,  4 Dec 2022 20:31:55 -0500 (EST)
-Date: Sun, 4 Dec 2022 20:31:55 -0500
-From: Jude DaShiell <jdashiel@panix.com>
-To: K0LNY_Glenn <glenn@ervin.email>, speakup@linux-speakup.org, 
-    Didier Spaier <didier@slint.fr>
+	id C63DC382A45; Sun,  4 Dec 2022 20:34:20 -0500 (EST)
+Received: from smtprelay.b.hostedemail.com (smtprelay0151.b.hostedemail.com [64.98.42.151])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B4E79382A1E
+	for <speakup@linux-speakup.org>; Sun,  4 Dec 2022 20:34:20 -0500 (EST)
+Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id EEF838026DB7;
+	Mon,  5 Dec 2022 01:34:19 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id 5F4F7CD521D;
+	Mon,  5 Dec 2022 01:34:19 +0000 (UTC)
+Message-ID: <024b01d90849$8e685fa0$88ffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Jude DaShiell" <jdashiel@panix.com>,
+	<speakup@linux-speakup.org>,
+	"Didier Spaier" <didier@slint.fr>
+References: <013f01d9074d$551a6650$88ffa8c0@Win7VM> <Y4wZa/0WtgPE3nyH@gregn.net> <017701d90794$4d7619c0$88ffa8c0@Win7VM> <Y4wcSYOKzFn/yIeh@gregn.net> <018001d90797$3bf04b00$88ffa8c0@Win7VM> <Y4woAGJEUf430mTc@gregn.net> <018701d9079f$53126810$88ffa8c0@Win7VM> <5ab5197f-f3c3-c7f1-b497-0e702525d2cd@slint.fr> <01a801d907fd$bb39fbc0$88ffa8c0@Win7VM> <3137b9f2-ce47-ce5-955b-36d5d06b7b71@panix.com>
 Subject: Re: change eSpeak Default Voice
-In-Reply-To: <01a801d907fd$bb39fbc0$88ffa8c0@Win7VM>
-Message-ID: <3137b9f2-ce47-ce5-955b-36d5d06b7b71@panix.com>
-References: <013f01d9074d$551a6650$88ffa8c0@Win7VM> <Y4wZa/0WtgPE3nyH@gregn.net> <017701d90794$4d7619c0$88ffa8c0@Win7VM> <Y4wcSYOKzFn/yIeh@gregn.net> <018001d90797$3bf04b00$88ffa8c0@Win7VM> <Y4woAGJEUf430mTc@gregn.net> <018701d9079f$53126810$88ffa8c0@Win7VM>
- <5ab5197f-f3c3-c7f1-b497-0e702525d2cd@slint.fr> <01a801d907fd$bb39fbc0$88ffa8c0@Win7VM>
+Date: Sun, 4 Dec 2022 19:33:18 -0600
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,8 +40,32 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout01
+X-Rspamd-Queue-Id: 5F4F7CD521D
+X-Spam-Status: No, score=-2.60
+X-Stat-Signature: rhxjj8rzd39oth39brxqbhd587gn8gx9
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/mchmiQRqgJoJ1B8/mO6YoMTzA2CwhdDU=
+X-HE-Tag: 1670204059-476189
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+I have wondered if screenreaders are using the NG one or not, such as Orca.
+Orca just calls it eSpeak.
+Glenn
+----- Original Message ----- 
+From: "Jude DaShiell" <jdashiel@panix.com>
+To: "K0LNY_Glenn" <glenn@ervin.email>; <speakup@linux-speakup.org>; "Didier 
+Spaier" <didier@slint.fr>
+Sent: Sunday, December 04, 2022 7:31 PM
+Subject: Re: change eSpeak Default Voice
+
 
 espeak-ng is a fork off espeak and intended to be a more modern
 replacement for espeak.
@@ -93,7 +106,8 @@ On Sun, 4 Dec 2022, K0LNY_Glenn wrote:
 > > question
 > > to an email  list.
 >
-> It would have been a fair question if asked in the right list, BUT this one
+> It would have been a fair question if asked in the right list, BUT this 
+> one
 > if
 > primarily about the speakup kernel driver, rather than software that make
 > use of
@@ -109,9 +123,11 @@ On Sun, 4 Dec 2022, K0LNY_Glenn wrote:
 > http://www.catb.org/~esr/faqs/smart-questions.html
 >
 > > That is the biggest problem with Linux users, they think they are above
-> > helping people who aren't into that operating system as much as they are.
+> > helping people who aren't into that operating system as much as they 
+> > are.
 >
-> Is that how grateful you are for people who spend their time, of which they
+> Is that how grateful you are for people who spend their time, of which 
+> they
 > have
 > already not enough to do all they need to, to try to help you?
 >
@@ -121,7 +137,8 @@ On Sun, 4 Dec 2022, K0LNY_Glenn wrote:
 > > looking
 > > up the information already saved.
 >
-> Again, only if the question is properly asked and in the right channel, see
+> Again, only if the question is properly asked and in the right channel, 
+> see
 > above.
 >
 > > But there is so little traffic on these Linux lists, that I can only
@@ -138,7 +155,8 @@ On Sun, 4 Dec 2022, K0LNY_Glenn wrote:
 > provided with your software, in this case at least using the "man" utility
 > installed in your system.
 >
-> > I have gotten some help here, but I don't understand why people bother to
+> > I have gotten some help here, but I don't understand why people bother 
+> > to
 > > reply, or even be on a list if they don't want to help others.
 >
 > This very unfair statement convince me that we were wrong wasting our time
@@ -148,5 +166,6 @@ On Sun, 4 Dec 2022, K0LNY_Glenn wrote:
 > Didier
 >
 >
->
+> 
+
 
