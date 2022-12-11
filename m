@@ -1,58 +1,33 @@
-Return-Path: <speakup+bounces-906-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-907-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 32DA964581F
-	for <lists+speakup@lfdr.de>; Wed,  7 Dec 2022 11:46:19 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id A5E6564973B
+	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 00:46:36 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0D754382AEF; Wed,  7 Dec 2022 05:46:13 -0500 (EST)
+	id 75FAA382848; Sun, 11 Dec 2022 18:46:33 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id ECCD0382A1C
-	for <lists+speakup@lfdr.de>; Wed,  7 Dec 2022 05:46:12 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5F803382821
+	for <lists+speakup@lfdr.de>; Sun, 11 Dec 2022 18:46:33 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CE049382A28; Wed,  7 Dec 2022 05:46:07 -0500 (EST)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A6379382A10
-	for <speakup@linux-speakup.org>; Wed,  7 Dec 2022 05:46:07 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 8ECD920152;
-	Wed,  7 Dec 2022 11:46:04 +0100 (CET)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id Z0b3ieXArZz6; Wed,  7 Dec 2022 11:46:04 +0100 (CET)
-Received: from begin (nat-inria-interne-52-gw-01-bso.bordeaux.inria.fr [194.199.1.52])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 14E212014F;
-	Wed,  7 Dec 2022 11:46:03 +0100 (CET)
-Received: from samy by begin with local (Exim 4.96)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1p2rwB-000kuI-1Q;
-	Wed, 07 Dec 2022 11:46:03 +0100
-Date: Wed, 7 Dec 2022 11:46:03 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Colin Ian King <colin.i.king@gmail.com>
-Cc: William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Mushahid Hussain <mushi.shar@gmail.com>, speakup@linux-speakup.org,
-	kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] accessibility: speakup: Fix spelling mistake "thw" ->
- "the"
-Message-ID: <20221207104603.awjfxnv67yhzdanv@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Colin Ian King <colin.i.king@gmail.com>,
-	William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Mushahid Hussain <mushi.shar@gmail.com>, speakup@linux-speakup.org,
-	kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20221207095202.2282567-1-colin.i.king@gmail.com>
+	id 2BB8B382823; Sun, 11 Dec 2022 18:46:28 -0500 (EST)
+Received: from smtprelay.b.hostedemail.com (smtprelay0105.b.hostedemail.com [64.98.42.105])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 19A47382820
+	for <speakup@linux-speakup.org>; Sun, 11 Dec 2022 18:46:28 -0500 (EST)
+Received: from omf09.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
+	by smtprelay02.b.hostedemail.com (Postfix) with ESMTP id 790CF8031CC0
+	for <speakup@linux-speakup.org>; Sun, 11 Dec 2022 23:46:26 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf09.b.hostedemail.com (Postfix) with ESMTPA id 16CECCEB134
+	for <speakup@linux-speakup.org>; Sun, 11 Dec 2022 23:46:26 +0000 (UTC)
+Message-ID: <000701d90dba$a449abf0$8bffa8c0@Win7VM>
+Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
+From: "K0LNY_Glenn" <glenn@ervin.email>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Installing Ubuntu Server
+Date: Sun, 11 Dec 2022 17:45:24 -0600
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -62,47 +37,42 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20221207095202.2282567-1-colin.i.king@gmail.com>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Spam-Status: No, score=-2.57
+X-Stat-Signature: uogbomx1xsc33xjaonz3eo1m8w7gnkd8
+X-Rspamd-Server: rspamout02
+X-Rspamd-Queue-Id: 16CECCEB134
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX1/0t/PD/lx2lmpdreimaNF0iVZqG1QY9EY=
+X-HE-Tag: 1670802386-402092
+X-HE-Meta: U2FsdGVkX18r9UjFMo3Yq4JA5DgOPyJdsyvV7A97N4eusPbYyOh7PKbcrVl1R2dJUK9mSgn4bxtlYDysgbYgsA==
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Colin Ian King, le mer. 07 déc. 2022 09:52:02 +0000, a ecrit:
-> There is a spelling mistake in the module parameter description
-> for say_word_ctl and an extra space. Fix the spelling mistake and
-> remove the extraneous space.
-> 
-> Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
+Hey Group,
+I thought I'd test out Ubuntu server in a VM, using VmWare.
+The first problem I noticed is that there is no way to call up speakup 
+because it is configuring a few things, like disk space to use and user 
+group and an account.
+When I have installed Windows, I didn't have trouble with this because 
+VmWare took the information from the running windows system.
+Actually, I'm not sure how one would install Ubuntu-server non-visually 
+outside a hypervisor.
+I was using:
+Ubuntu22.04 64 lite server
+I might be able to get through the VmWare installer, I thought I had it 
+using the Be My Eyes app, but I couldn't tell if I was at a prompt, and 
+speaker-test produced nothing, and the soundcard was checked for the VM.
+I also have Ubuntu Mate on the same computer in a VM, and sometimes I have 
+to enable the soundcard again to get Orca talking, but that didn't happen 
+here.
+Just hoping someone has installed Ubuntu-server and gotten speakup to work 
+on first boot.
+Glenn 
 
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
-
-> ---
->  drivers/accessibility/speakup/main.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/accessibility/speakup/main.c b/drivers/accessibility/speakup/main.c
-> index 4733fd6334ab..56c073103cbb 100644
-> --- a/drivers/accessibility/speakup/main.c
-> +++ b/drivers/accessibility/speakup/main.c
-> @@ -2490,7 +2490,7 @@ MODULE_PARM_DESC(punc_level, "Controls the level of punctuation spoken as the sc
->  MODULE_PARM_DESC(reading_punc, "It controls the level of punctuation when reviewing the screen with speakup's screen review commands.");
->  MODULE_PARM_DESC(cursor_time, "This controls cursor delay when using arrow keys.");
->  MODULE_PARM_DESC(say_control, "This controls if speakup speaks shift, alt and control when those keys are pressed or not.");
-> -MODULE_PARM_DESC(say_word_ctl, "Sets thw say_word_ctl  on load.");
-> +MODULE_PARM_DESC(say_word_ctl, "Sets the say_word_ctl on load.");
->  MODULE_PARM_DESC(no_interrupt, "Controls if typing interrupts output from speakup.");
->  MODULE_PARM_DESC(key_echo, "Controls if speakup speaks keys when they are typed. One = on zero = off or don't echo keys.");
->  MODULE_PARM_DESC(cur_phonetic, "Controls if speakup speaks letters phonetically during navigation. One = on zero = off or don't speak phonetically.");
-> -- 
-> 2.38.1
-> 
-
--- 
-Samuel
----
-Pour une évaluation indépendante, transparente et rigoureuse !
-Je soutiens la Commission d'Évaluation de l'Inria.
 
