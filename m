@@ -1,77 +1,79 @@
-Return-Path: <speakup+bounces-912-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-913-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 5DEB564A4B2
-	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 17:20:43 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 8287164A557
+	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 17:55:45 +0100 (CET)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=math.wisc.edu header.i=@math.wisc.edu header.a=rsa-sha256 header.s=selector1 header.b=IbryugSv;
+	dkim=pass (1024-bit key; unprotected) header.d=math.wisc.edu header.i=@math.wisc.edu header.a=rsa-sha256 header.s=selector1 header.b=XxAupdga;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 912A438283F; Mon, 12 Dec 2022 11:20:42 -0500 (EST)
+	id 0552238285B; Mon, 12 Dec 2022 11:55:45 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6D861382823
-	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 11:20:42 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D5142382823
+	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 11:55:44 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A4864382838; Mon, 12 Dec 2022 11:20:32 -0500 (EST)
-Received: from wmauth2.doit.wisc.edu (wmauth2.doit.wisc.edu [144.92.197.222])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 88666382822
-	for <speakup@linux-speakup.org>; Mon, 12 Dec 2022 11:20:31 -0500 (EST)
-Received: from NAM11-BN8-obe.outbound.protection.outlook.com
- (mail-bn8nam11lp2168.outbound.protection.outlook.com [104.47.58.168])
- by smtpauth2.wiscmail.wisc.edu
+	id 1845C382838; Mon, 12 Dec 2022 11:55:35 -0500 (EST)
+Received: from wmauth1.doit.wisc.edu (wmauth1.doit.wisc.edu [144.92.197.141])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 58B0E382814
+	for <speakup@linux-speakup.org>; Mon, 12 Dec 2022 11:55:34 -0500 (EST)
+Received: from NAM10-MW2-obe.outbound.protection.outlook.com
+ (mail-mw2nam10lp2102.outbound.protection.outlook.com [104.47.55.102])
+ by smtpauth1.wiscmail.wisc.edu
  (Oracle Communications Messaging Server 8.1.0.16.20220118 64bit (built Jan 18
- 2022)) with ESMTPS id <0RMS002RIDE40930@smtpauth2.wiscmail.wisc.edu> for
- speakup@linux-speakup.org; Mon, 12 Dec 2022 10:20:28 -0600 (CST)
-X-Spam-Report: AuthenticatedSender=yes, SenderIP=[104.47.58.168]
+ 2022)) with ESMTPS id <0RMS00DEUF0JHI50@smtpauth1.wiscmail.wisc.edu> for
+ speakup@linux-speakup.org; Mon, 12 Dec 2022 10:55:32 -0600 (CST)
+X-Spam-Report: AuthenticatedSender=yes, SenderIP=[104.47.55.102]
 X-Wisc-Env-From-B64: amhlaW1AbWF0aC53aXNjLmVkdQ==
-X-Spam-PmxInfo: Server=avs-2, Version=6.4.9.2830568,
- Antispam-Engine: 2.7.2.2107409, Antispam-Data: 2022.12.12.160917,
+X-Spam-PmxInfo: Server=avs-1, Version=6.4.9.2830568,
+ Antispam-Engine: 2.7.2.2107409, Antispam-Data: 2022.12.12.164517,
  AntiVirus-Engine: 5.95.0, AntiVirus-Data: 2022.11.22.5950000,
- SenderIP=[104.47.58.168]
+ SenderIP=[104.47.55.102]
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LOl3lObdBpjafpFsxqBvzrhHtmM3F8cddaCYMxoOuETipIKmPwCNI4TKeNfuqm5BxItjFQc59HFiKfJ6OJgzM21G8IrZmSQibOLRkm7h+2imZKk8z/sxfOMXc9WBjj+cNgJPrhn30OAKw38ZfkqHnoQiqvjJivTa7T0X1jyvhFOt68opnScBc+DBociaA+9YdWzpxQmtcjFXx8lhM/HR8YlzAIIH4RxLfjE8KTGXu39eUEjHo8VeH/BTuN1oL8bSTdXPkw7VgKVykHqQ5bY8nxf1gBkHAjbrPfK/T+3ZylEhliQIhyeZ3tdQxjmwASOBvfnE7c96i+BoP7I0OX8Scw==
+ b=FF4ZTv5FHZr2E3az1Z7OOYmdAgOTPE5CZET25wj78styBtHvo8vje1RNbb5FNgoNVMmHIH6tsNVzksHJEvd4H0lxm8E9grh86vxIJkr/rUjd9Jl1r4562XrbbjcID5E0fczMLlFk7HI6LWpL5FZjhg4MoweU6SYHh9bqfTjh7RKAgQJlvQKYezFuMb92YwTpPL5oUzGhToWUFXBlbbjpnD30kAi0hg4pbI3PqCxwZ7V41B+k20fw/9ozvmuAItv9YXmJs7AFb/02JqpzqDpZd+gLSBrtDThL63NCOvygtuf7j8GzAR3CrWmrir6t64Lf2Zb2Jzchlzs8l0Hm/QZZ1Q==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=LwT8pECsAMw/bsCLA1XF2ha0Jgc6PE60OMXMEQsv2dk=;
- b=AkSVOXhi505tOB0BsULpszYv81bmT/dNJGm2YpAt/OH6DMM0kivlfiMW5QtVle0bg3X0Y7Fb/paxfgrjdMuh874uJHF6QFWyvuv2lClxW2K/zyTpoSw3CJMLmIeGUIXKwn4d+zDflBvcDMbXnQmR+qXFqkXvLPgf+ROUDiYZSFnfJOqIxf/G0IgzH8gDovqKy/qsdvJ0IgQGIZCGJeW5EwCdi1LKT4cBM+GP+Miya3ZbF8iJlaYd4TW2Tmumk5ahcVKIcLtArW44wPW6g2RJmSqBuJuJSzYRemyvES/wAhg33r13+j/Laoob0BSq0B0bOL45fH/D1jsvlGyXAaK70Q==
+ bh=QqH2B6ZTxFPxo7yYYObLQeok+QKzmQDf0aHrP/+VWtI=;
+ b=bbHMaXszIoJSPLFbzn1krmVdGoDPgTglD4bnvDbYYffYX49nWAihILcsK5VtiKTAB3F+qxmxfKv4hn6Pj+0mkcFOkKpOMekpx3/9Bm1Yeb67hmrv78jIiAiB+rEjIUvyLpfQ9jl1opPQffQHuDZzolxofo2CIJvdJ+WE2ARwdvZ4w3sgujmsTWkpQwDBQh+E/uGHgRXAGnhUpiZ16DycvW2va2pN0U1ySBUmuAjObam//f1H3ZU2qhLq8OCOpCntjJyJEInkiGnoJCWE7wsTDo4AWIanHIsYuTmrJ2bXk6z2n5yFZK2i6fkJ8+2jVwN/HisDt+OCrPA8yMOweJQd1w==
 ARC-Authentication-results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=math.wisc.edu; dmarc=pass action=none header.from=math.wisc.edu;
  dkim=pass header.d=math.wisc.edu; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=math.wisc.edu;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=LwT8pECsAMw/bsCLA1XF2ha0Jgc6PE60OMXMEQsv2dk=;
- b=IbryugSvLwiWkScFplbr56/rTDQY1n+JLKfHYfkwSn25K8KybefaWC+HgW10cnNznWQxJAO8XwMifoiFDnScOi/yhxdlpmVQDxIx8FXpD4eCpLfKPvT3wInWZjDGhPnMDU7mtmv3nS9DsPsbUmrEY1fRHCGmR4kx9QIMs3EWX0Q=
+ bh=QqH2B6ZTxFPxo7yYYObLQeok+QKzmQDf0aHrP/+VWtI=;
+ b=XxAupdga2eBeN8t/reJTeKzoAuVkYd0+wlizSgznSEg0yCkQd3qhx4veVpzxfL7Hb3R/a69dSNEs29D9SxH+sYEib24qUxGdrdUss5G7j9glcB1575nWeSw1TXNrRxsjPjrztLc9Y3yiMvSk/hvKQblVXYcFWdr7dnmNc2r+o2Y=
 Authentication-results: dkim=none (message not signed) header.d=none;dmarc=none
  action=none header.from=math.wisc.edu;
 Received: from SJ0PR06MB8325.namprd06.prod.outlook.com (2603:10b6:a03:393::17)
- by DM6PR06MB5659.namprd06.prod.outlook.com (2603:10b6:5:3b::10)
+ by BYAPR06MB5144.namprd06.prod.outlook.com (2603:10b6:a03:c2::29)
  with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384)
- id 15.20.5924.9; Mon, 12 Dec 2022 16:20:27 +0000
+ id 15.20.5924.8; Mon, 12 Dec 2022 16:55:29 +0000
 Received: from SJ0PR06MB8325.namprd06.prod.outlook.com
  ([fe80::e991:dce9:1f68:fa06]) by SJ0PR06MB8325.namprd06.prod.outlook.com
  ([fe80::e991:dce9:1f68:fa06%8]) with mapi id 15.20.5924.009; Mon,
- 12 Dec 2022 16:20:26 +0000
-Message-id: <e1d24b63-a7af-6752-a775-29c90d7405c3@math.wisc.edu>
-Date: Mon, 12 Dec 2022 10:20:21 -0600
+ 12 Dec 2022 16:55:29 +0000
+Message-id: <8472dc26-01a1-e0fc-0247-60b6b6581a06@math.wisc.edu>
+Date: Mon, 12 Dec 2022 10:55:25 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
  Thunderbird/102.3.3
 Subject: Re: Installing Ubuntu Server
 Content-language: en-US
-To: K0LNY_Glenn <glenn@ervin.email>,
- "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+To: K0LNY_Glenn <glenn@ervin.email>, Jookia <contact@jookia.org>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 References: <000701d90dba$a449abf0$8bffa8c0@Win7VM>
+ <Y5Z7cfzORuPgHUeo@novena-choice-citizen>
+ <002001d90dc4$dbf1d370$8bffa8c0@Win7VM>
 From: "John G. Heim" <jheim@math.wisc.edu>
-In-reply-to: <000701d90dba$a449abf0$8bffa8c0@Win7VM>
+In-reply-to: <002001d90dc4$dbf1d370$8bffa8c0@Win7VM>
 Content-type: text/plain; charset=UTF-8; format=flowed
 Content-transfer-encoding: 8bit
-X-ClientProxiedBy: CH0PR03CA0248.namprd03.prod.outlook.com
- (2603:10b6:610:e5::13) To SJ0PR06MB8325.namprd06.prod.outlook.com
+X-ClientProxiedBy: CH0PR13CA0026.namprd13.prod.outlook.com
+ (2603:10b6:610:b1::31) To SJ0PR06MB8325.namprd06.prod.outlook.com
  (2603:10b6:a03:393::17)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -83,119 +85,151 @@ List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: SJ0PR06MB8325:EE_|DM6PR06MB5659:EE_
-X-MS-Office365-Filtering-Correlation-Id: e3735a6b-452b-452e-ab13-08dadc5cc74c
+X-MS-TrafficTypeDiagnostic: SJ0PR06MB8325:EE_|BYAPR06MB5144:EE_
+X-MS-Office365-Filtering-Correlation-Id: e5024d64-0482-4363-d4a5-08dadc61ac6b
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam: BCL:0;
 X-Microsoft-Antispam-Message-Info:
- tLgqNp/pjfo4W4rcBQx6BDGpueUWo/wCSUkTHmO1PujoBrM3/MgyJlnURjC4wfFvwZfyksobVdiwh8kiC/QgsV9K4uNTUnmBbMuXUYNetyH7mmYIrkDur/+Mt+YtW/WTkW/GMh4J7J0k64fjVJt7QYy8vdwz9G2rTt98urvXEgsuiwWtje+EGqRKR3GZebJjfXJ+NoOWpcFP732Ro4olaRaWn6hK8yzrsCa1linB+QD/cWHF8Zvy39OP3qrH/F0Y/+SkQcQoO1jlKU8SR+DL947T+hIHsonqEtIaofMNdW8wlfBJTZ+3/gBpMBMGS5ugXBISjRNxSE7+Rp9tXdnZfBrngLtekRKx/sbq/Pqs92gfc33b3fpfhNYhl+7CCwNZgpc1n1vrFbgrz+LLvFOI3HFkoiTAcI5q2TR2ToWBVzOAT5yxpe5P3QgLlLeGAHEC316h0WCU0SvmPRyFlaw9vbn+6+RmPewV1vl90P1lPCJ0uxc6nk9wcBAalyC9OIsZoeWPFTF5YQOHXZDFhtwAl4pauiG7imcmLiox1yWmfdTQVzWMz5Rf02QeKMcS6S+UedJHKC/6R/bsr4CAowb7bkIGuGcj85ADtTobkJasV/yIW0r4D+XLcY3H9VaCUPoAk7ipKGqKNaZl0/ONnUYtyA8pCW5ULTaaty0TRxNrsS7VXQj7bXW/+iA4kl7SuA5lqHmF+BFdh1eg/9pVIEfB7HPsW09bL5+1jf8Krq9ux0w=
+ FZIyKY8ZoHLNkoDyXfI+abxLOe7jdoivI5J0EDEAfw0bigszDEJPNgkUJwiXb7upfcLK9L3IoA/ONDsEt2ftDJzDrZj6BJyI4DNPoxWZdxlwro41KUGFCnOq/PLIVkxSlbFcwfel7cYet4KqNewUAt4sK9kWW09qHxdthA7oZ4jt09kKG3OQ6TU6XPmmKBEMlra/G5N00ywyO1RhNobpPASYBHvoYbJCjiunLTgrd2MLf9jMVIXZBec8nBBCkw5VbI/Hb25JXwELNMqLDxKiYtfstp4Uu663AtJzCSEmRT/8mydpnR4+AvHcCDZQxY/Hvi7puuJOsJ8MJE3tr20nBpsGmMzy+91NKkUj/RDx56Oc7sNBYv3RFOJwzAgHUxI2KxI3vt31HgObzxBw8UTsUJZSQ1Ml6mJ00uY/J7Q3QKnz71cVPclk8qTBItjkBbovC3ruieHx3diQEcloDzyHuXsVn4FoPVP5NXA3dJg7kHGwUhD8+wZ619y3kB2bnh8Rds74BvHRjUQ156d75Kxczl6o6axACnBLJFTuJpyeKvQZ0ZEMP0P+RwL1QjetYWDZblgyBvbBTGDVzT1Tr4DhHF+J/TJjxNE/gS9HEmPTTs91Z8/Jw2HTQsy2SEqiYNTXiu6HBVqCnlfHdOaGhJIXbxwQmRWwfD7MOv2XVdXDBxXAdRETPm8rhuALXNWs/8vd86QlO20s9koB98FVKVsHBNvx0GNCz++K12hucUmETeo=
 X-Forefront-Antispam-Report:
- CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ0PR06MB8325.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(346002)(366004)(376002)(39860400002)(136003)(396003)(451199015)(110136005)(7116003)(786003)(6512007)(2906002)(316002)(186003)(31696002)(6506007)(26005)(6666004)(6486002)(478600001)(31686004)(53546011)(38100700002)(2616005)(5660300002)(86362001)(8936002)(3480700007)(83380400001)(41300700001)(66476007)(75432002)(66946007)(66556008)(41320700001)(8676002)(45980500001)(43740500002);DIR:OUT;SFP:1101;
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ0PR06MB8325.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(396003)(376002)(39860400002)(136003)(366004)(346002)(451199015)(75432002)(31696002)(86362001)(2906002)(478600001)(6486002)(6512007)(6506007)(6666004)(41300700001)(7116003)(26005)(186003)(8676002)(110136005)(66556008)(66476007)(66946007)(5660300002)(786003)(316002)(8936002)(4326008)(53546011)(38100700002)(2616005)(41320700001)(3480700007)(83380400001)(31686004)(43740500002)(45980500001);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
 X-MS-Exchange-AntiSpam-MessageData-0:
- =?utf-8?B?VU1LY1ZBYTYzUmowM2luQ3BLdzBWVEk2VkYrMlZ0RXdOOXE4SmlPMTM0M0NR?=
- =?utf-8?B?QndGeWg4TXd0R2dNbXpRNjdieTBEcFNoYnVYcHBWUUh2UzN1YlQwK1RhVGtp?=
- =?utf-8?B?UmhmUm5hSTJEUzZ3WWJtbjlWLzQzZzhiQzVmeEpuN2JaekFLNzdUUHhZdXNO?=
- =?utf-8?B?YWM3d2dSZDdJcFF0QU1Wc1diR2wvOXlZeXpmcE5RSjJ2T3VXbmlPSEpwNkxq?=
- =?utf-8?B?bkRBbDdqL295c0IwS1JLR0NoeHQ3ejFmWWNPSjljanpVVnBTOXQvVzB4V0Jy?=
- =?utf-8?B?VjQxS3MwbGFDYllXVGk4aTlIeXNUWENCME4xaDgwdHMwN1BEYU9YY0ZqTEIy?=
- =?utf-8?B?aGJvMXpXTERNbDZMVTJoUTJ0dDhkeS9HR3Z3Yy9Jb0ljU3RSQUl6MXV1bGRk?=
- =?utf-8?B?NmUrbEVvRW9GL1VUZEg2anpLSzczaHlmcDJoNForb0JFZ0NiUjVNRkJSNnhN?=
- =?utf-8?B?RzlmaHljNVdFZWFjaDJYVjRySHV5R05aKzd2dHJUQklVTTkxMFU0WGxHbExp?=
- =?utf-8?B?dlRaR1drNVNiK2pSb0V3dkhkU0dpQnB3NlJ5SmZIQTliMzlMUmx4ZDMyemtv?=
- =?utf-8?B?Q0h6Rk12cno4ZVJzU0NFWUFPTDVqbHlLcjdKQzM1akw3Y21rQmY1cGhqdW54?=
- =?utf-8?B?TDJhcnJVdjh6VXVMamhWK3BtZEp6Sk9RRFNpTFArNG9Wd1cvWTB1MzNZLy9Y?=
- =?utf-8?B?R3J1K0x5RzVQTk91dHUwNTNCczdTR3BWQmswQlprVytDbVh3aWwwT01iVFJM?=
- =?utf-8?B?WXhuVk9yTFhlNmwxVWxBSG9wcHZ2aWQ3MDJuNXZRM2tXOVpJUkRlTUxxaGZo?=
- =?utf-8?B?VkZ1dVVGZjFabkpiWkcyMDFsejlrakFnbW1KSnpNOWVKZEZFc2xHd2xtNjQ3?=
- =?utf-8?B?SnBMeTVGeWN5ZWhZRkh5SzFSeW1WdGVBcWxnaitRdnVtTHlPNTNLd2YzWXVh?=
- =?utf-8?B?U0k5YWtvR05MVFpkeWNWalJnZHRMa1pVTFZ5VUFvdVhvWkROUFB3b0prVS90?=
- =?utf-8?B?dVJCRVJNemJHdmVIVmk0bE5uMlV3UG12b0hGRXZTbktMdWZKd1NMaVFkcWE0?=
- =?utf-8?B?a29QQlV5NXFCQTZoTWRFM1VjRFhXSnprcU03K1RVaFpuYW9XRlhLZzRNNGJo?=
- =?utf-8?B?OE0yQ21vanpSbHpZb3owcVU2SzQ5bHJ6V29lMU1pYlNjQTFUaW5SMEdjTXJl?=
- =?utf-8?B?eFZRQ1hvTmtjOWF0NGZiU3QvVjlyL21oUFZ5VHhOUlpJRUVmQW1Ma29yNnhJ?=
- =?utf-8?B?WGZIQzVvR0ZmNnZ4a0p0YzVWL1h3c3BSa1IxNU5QVWNZOUpoSWJmZ1UxNGEy?=
- =?utf-8?B?OFRsNE4vU1EreGowd2lURmdsVXlrSmU1OTE4OWdLci9tMVVQWXc2Y3RDbmcy?=
- =?utf-8?B?eVA3WkFUU1lvQUJMYW1mTGphS3EvSjF6RVhCSmszQXMxV1BiLzEwdGhFMUwy?=
- =?utf-8?B?clczMktpVWxqZklTWUlEM0VGNlpuK2Zrem9tb3hYUTRQcVFCVmhHMytvdDFB?=
- =?utf-8?B?c1NGN0ZPdEwxMk96VHVmd2dyS3BiKzdWZlBsUFRab09GT1lid1pLVGVnQjlG?=
- =?utf-8?B?aFVBUjdYOUJOSnE3T1RKUWdpZEN2aWlHZHhhY3VWeFd1ZkpPNzdpa3N5ODdk?=
- =?utf-8?B?MENzanJwcXA4eHpaY3RhRlpuc1o1Vjk0Skh1ZzlSV2NkK0M1Z3pVVm9XbXNy?=
- =?utf-8?B?ZkZKVCtTbWhCbDJlMXpHUk9qWkZIdXVqS0l6RWozSjUvOGl0MzlVZ1ZZT0w4?=
- =?utf-8?B?dWNRWWloNWVaZEtUNVQ2Syt3TkR2MzFyaFVLenMzVVZoRStxT29jeTFyejZW?=
- =?utf-8?B?bGF1R2F5dzBGTk5JcUV6ay9WYkgzdE5MOGl5MmliSWxQejNvVytVUGZQSzUx?=
- =?utf-8?B?UGpVM3pKMnJNY0pKUVdHdFdlY3lhR00wWGhCZGNlUDE2S3Z4NGFGSkxYOEZP?=
- =?utf-8?B?VjJVUUpnS1ptbExKQ004a1pyT3pHY2pNRWJZTVRIYlZFRUZaWllUNFdJaDU5?=
- =?utf-8?B?d2doa1pWckJ3VEp6NjJjTmRlN0htMzBsWGs2SnNKVzh5dldwV1AvNXVEU3h6?=
- =?utf-8?B?eS9EYTNQOWRCQXdjZGhKcFVQR1FsY1FLbUxIbVZhTzNBcTBPMEUwY3AvM3B4?=
- =?utf-8?Q?h/l5Li0NZVZyfx5qV3v2sh0e8?=
+ =?utf-8?B?Tnd4eHhoMVVGMDRBaFhZU0RmV2ZIQldDNTYxejhjUU5WN0F1REVzRkI5QkZW?=
+ =?utf-8?B?VStUQ3hpREhWL0dReFhnd04yNndRVVhHVkZLekZSMWJ3bUFSQWVFc29YeS9H?=
+ =?utf-8?B?SGRFcmJlZmxSbU5kMHhmUzRwS0hDcG1yOGpDMWVuYmNFYTJlK0hkSzNrV2xq?=
+ =?utf-8?B?a0gxNE95K0dPYmZFaDBWU0ZTS01YSWhKZzdjWnVjWE5rVnJPN2hsL2Voem1X?=
+ =?utf-8?B?ZlIvM0JVWmIrMWVYUjlmSFJiV0Z0ZnNvZDFjOE9id0kzdGRIeUxQMFphSmlH?=
+ =?utf-8?B?RkI2cnk2cnJ5NElQUzFKRWtXQ1huY3RXdzJmcXFYNk9vdTZMbUtwSjZDMS9i?=
+ =?utf-8?B?SmkyS0hBT3M5bi9FWVJtTUFzZ21KRythci8zcWNLVE1KT2N2aWx5ODcyS3l6?=
+ =?utf-8?B?V3c3Q0hpTk8xcXhqUkNMQitFalljVUo1bElyeFdyY0wveCtlSC9MZi9LVEVV?=
+ =?utf-8?B?MEJVZzJ1bUZidDRTMWFldW5jNnRKcjZQZC9tZk1rS1JNWU9vRFBmMGQ4Z05B?=
+ =?utf-8?B?WWdFUUp3c01hcksvZEZQVWdvMGV1bCt3c3dmWUVaSkh6dDlMbnhPNlMzL3M0?=
+ =?utf-8?B?YXN0WXFzem05ZTJRVk9rWnlyTlZVa3NrSzZIODNLL0xTZlVRL25rMHAwMm4r?=
+ =?utf-8?B?L2tobnNZcjUyMnhpNXNJckZqaFZNaE9RVEtuZklERnU2Z1VLYkVzQWdoMDNT?=
+ =?utf-8?B?bW10ckFhZ2gzUStLQ05ld0YxWWUrMUo5RFNwcmtzTHc5blNLeHV6WlJCL2xw?=
+ =?utf-8?B?TUM2akhYNzNsWElvSmk5QW5qWURwaGE0S20veVJ4ZGFpOFZlVUJSQzE1VEND?=
+ =?utf-8?B?Sm16TzZGQzR1Mmx2cEZYWS9zZHRxUVd0OGZSNDJQdXBIMHg3WERTbEtXSEZw?=
+ =?utf-8?B?M1RRZUNVU09WL1Fqai9pWUpuay9pNm9pYmR3NHN6U0Zlcmtrblk4UkdOVEtY?=
+ =?utf-8?B?ZGtQaE05QXhwcFhKRDZET1BDOHllMU9DOUtOdHd0TU5GTGlGQ1VZbFp3VzBY?=
+ =?utf-8?B?NDNSVnUwMi9hY2hMWjUzb2Y4NWRmZUFKeEZ2aXM4YngvVXRUQ1pyTkNtSGpr?=
+ =?utf-8?B?enNHK1ZnNFcvZnBXYU02ckMwMmhtT2g2UythUU1BeHRxUWV2U2M4YzFycmxk?=
+ =?utf-8?B?YVNza1BHbHB1bm1aRUVwbVZnd2FwTElUbXJKTldzWmVKeDFlZkRueWw0VVY0?=
+ =?utf-8?B?c0hMM1VZTUt0UkorYVV6ZjBLYUI4QXBtRHVTSVF1cGlnZGdTMUtSbW84cUtl?=
+ =?utf-8?B?NjFCb1dnOUFvTVV4Q1gyT0k1RGRrSFFwQTVua2hqdFNjS3loRzdISkg0V0JZ?=
+ =?utf-8?B?VmhsNEZ1b0h4ZlY1Qng4TEIvTTVmbW1qUThPQnV1RG54TG83WHp2azY3UWlm?=
+ =?utf-8?B?TCtPQlllZnFJUlJQL2JwemU1czExbWlPbkh5QXNOOGdwZmp2TmZQaldjSmxO?=
+ =?utf-8?B?bkVad0pkN3E1RFQ3OFhrOWZ4eXpueE1UT0ZuU1YyUWUwQjRsUFA5S3VlUHNQ?=
+ =?utf-8?B?ZDdRMVFQdndwQnBCTFdFUHhicUdqZGxyMXFacTR6YmlmKzFva2MxNTFISjdX?=
+ =?utf-8?B?L2FBaGVtWTBmWmJFd045TElZYlBoWkp3RGpGa3RnSWNMSGVVcm5zZVFveXE0?=
+ =?utf-8?B?VTZkMDdqTW94K0lyS0N5RXdPYnhCVEdxVjFlK0ZaMmt0K3d1eUNkSGUyajE4?=
+ =?utf-8?B?MkhlZkFraXRoMlpqQ2ZUMkUyUnFKNEtaeHFEVE9OS0c2MjhQRnVtbDRUbzZa?=
+ =?utf-8?B?MXh5aTZJL1JRU0dYdHh5d00wSVovaEk2UWNBNFdXd3I3SkJaWis4dlpkVXVK?=
+ =?utf-8?B?UVV6Z0tpWWZoNlRVRlFTUU9TZm56WHBIYXQ1cHdMVWhXY1UzK0t0TkZDOUtx?=
+ =?utf-8?B?K2NHNFU5WWN0clZWTlU2MStyamN0VHVFNndXT09NTGJTTk9EK2l2cUU0b0VX?=
+ =?utf-8?B?L3p0TG8vZTl5SXd0WVZSWVI0RnY0S1RPSlB4bjdxaDkzQVV3T05ybHBZOHYw?=
+ =?utf-8?B?RzFMcVkxeFNaUVRZOEtuelY5M3NGNG0vWnE5ZzFkR0haaXhGbHlnbGdQQ1ps?=
+ =?utf-8?B?TVVPcUoycGJUbU1uS1hhdXR0Vk5ELzcxdmlneTBKU3Uwa1lwN0sxWlYxdTFq?=
+ =?utf-8?Q?ZRzwRBeJH8wKH3T9T7SDdvZiw?=
 X-OriginatorOrg: math.wisc.edu
 X-MS-Exchange-CrossTenant-Network-Message-Id:
- e3735a6b-452b-452e-ab13-08dadc5cc74c
+ e5024d64-0482-4363-d4a5-08dadc61ac6b
 X-MS-Exchange-CrossTenant-AuthSource: SJ0PR06MB8325.namprd06.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Dec 2022 16:20:26.9044 (UTC)
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Dec 2022 16:55:29.1219 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 2ca68321-0eda-4908-88b2-424a8cb4b0f9
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
 X-MS-Exchange-CrossTenant-UserPrincipalName:
- 1w7witeHMKDGsrHIOLpv8dPjhp6jy84lZDgjRIaNMylBh7wR60ehAZIjfzjoAKka
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR06MB5659
+ 6SwXW2a+RFKfkxLbOK2Qfx76SdOJlc4ExCp0NthKqoPOkX7xn1D0S+AEqwsW0JZa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR06MB5144
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Three things:
+If you're just doing this for fun, then I'd recommend not even trying. 
+As I said in my other message, there is no longer a meaningful 
+difference between Ubuntu Desktop and Ubuntu Server. The only difference 
+is in the set of packages that are installed by default.
 
-1. There is very little reason to use Ubuntu Server. It is really a 
-holdover from back when you needed a special kernel for servers because 
-of things like memory allocation and drivers. These days, the Linux has 
-dynamic memory allocation and module loading. So Ubuntu no longer 
-creates separate kernels for servers and desktops.  Installing Ubuntu 
-server can save a small amount of disk space and set you up with a 
-character interface. If you care about those things, I would recommend 
-using Debian instead.
+But if you are doing this for career advancement, first of all, good for 
+you. I am at the University Of Wisconsin and there are Linux sys admin 
+positions that go unfilled for years. I don't know if it is like that 
+everywhere but around here, if you are a Linux sys admin, you won't be 
+unemployed for 5 minutes.
 
-2. One way to do an eyes-free install of Ubuntu Server is to use their 
-auto-installer. You can configure a text file that answers all the 
-installation questions. It is non-trivial to do this but once you have 
-it, you can use it over and over. If you are setting up a Ubuntu server 
-farm, this is what you want.
+Anyway, if you are doing this for career advancement, you should look 
+into the Ubuntu auto-installer. I used to do this because I ran a 
+Beowulf research cluster. All the machines from the giant research 
+servers to the office desktops  had to be running the same version of 
+Linux. But I can't think of any other reason to use Ubuntu on a server. 
+If I was running a database server or a file server, I'd just run Debian.
 
-3. Another way I have installed Ubuntu Server in a virtual machine was 
-to take screen shots, run them through an OCR program, and then answered 
-the questions one by one. The Ubuntu Server installation doesn't have a 
-huge number of questions, usually you can just take the default. This is 
-not going to be easy but it can be done. For the OCR program, I would 
-recommend gocr. It seems to work way better than tesseract on screen caps.
+The way the Ubuntu auto-installer works is that at boot time, you tell 
+it where a text file is with all the answers to the config questions. I 
+actually haven't set this up for a long time but, IIRC, I would boot via 
+PXE and configure the PXE config file to point to what is called a 
+kickstart file. Of course, this means you have to configure a PXE boot 
+environment which is, in itself, non-trivial. All good stuff for a Linux 
+sys admin to know though. If you don't want to mess around with PXE 
+booting, you can remaster the Ubuntu installer ISO image instead. IMO, 
+that is just as difficult as setting up PXE and less useful in the long run.
 
-PS: Back when I first started using Linux, you had to compile your own 
-kernel. That was just part of the normal installation process. You had 
-to configure how many file handles you wanted and how many simultaneous 
-users you would allow. You had to specify all the drivers you wanted and 
-if you left one out, your machine might not boot.
+One last thing, if you really want to figure this out, I can send you 
+sample files. Ubuntu totally revamped its auto-installer protocol right 
+when I stopped using Ubuntu Server probably 10 years ago. I had to throw 
+out all the stuff I had developed over the years and relearn how to do 
+an auto-install. Shortly after that, I stopped using Ubuntu Server at 
+all. I am sure I can still find the files though.
 
 
-On 12/11/22 17:45, K0LNY_Glenn wrote:
-> Hey Group,
-> I thought I'd test out Ubuntu server in a VM, using VmWare.
-> The first problem I noticed is that there is no way to call up speakup
-> because it is configuring a few things, like disk space to use and user
-> group and an account.
-> When I have installed Windows, I didn't have trouble with this because
-> VmWare took the information from the running windows system.
-> Actually, I'm not sure how one would install Ubuntu-server non-visually
-> outside a hypervisor.
-> I was using:
-> Ubuntu22.04 64 lite server
-> I might be able to get through the VmWare installer, I thought I had it
-> using the Be My Eyes app, but I couldn't tell if I was at a prompt, and
-> speaker-test produced nothing, and the soundcard was checked for the VM.
-> I also have Ubuntu Mate on the same computer in a VM, and sometimes I have
-> to enable the soundcard again to get Orca talking, but that didn't happen
-> here.
-> Just hoping someone has installed Ubuntu-server and gotten speakup to work
-> on first boot.
-> Glenn
+
+On 12/11/22 18:58, K0LNY_Glenn wrote:
+> Hi Jookia,
+> I don't see how, unless I was doing a VM in a VM onto my Ubuntu Mate that is
+> a  VM.
+> This is just running windows 10, with VmWare Player, and I have Ubuntu Mate
+> desktop and two versions of windows as VMs too, and I wanted to try
+> Ubuntu-server in a VM.
+> I don't know if VmWare can run an install script, sort of like the windows
+> answer file for a windows install.
+> There may be such a thing for Ubuntu, but the next thing is how to run it
+> during the VmWare install of Ubuntu-server.
+> Thanks.
 >
+> Glenn
+> ----- Original Message -----
+> From: "Jookia" <contact@jookia.org>
+> To: "K0LNY_Glenn" <glenn@ervin.email>
+> Cc: "Speakup is a screen review system for Linux."
+> <speakup@linux-speakup.org>
+> Sent: Sunday, December 11, 2022 6:53 PM
+> Subject: Re: Installing Ubuntu Server
+>
+>
+> Is there an install via SSH option?
+>
+> On Sun, Dec 11, 2022 at 05:45:24PM -0600, K0LNY_Glenn wrote:
+>> Hey Group,
+>> I thought I'd test out Ubuntu server in a VM, using VmWare.
+>> The first problem I noticed is that there is no way to call up speakup
+>> because it is configuring a few things, like disk space to use and user
+>> group and an account.
+>> When I have installed Windows, I didn't have trouble with this because
+>> VmWare took the information from the running windows system.
+>> Actually, I'm not sure how one would install Ubuntu-server non-visually
+>> outside a hypervisor.
+>> I was using:
+>> Ubuntu22.04 64 lite server
+>> I might be able to get through the VmWare installer, I thought I had it
+>> using the Be My Eyes app, but I couldn't tell if I was at a prompt, and
+>> speaker-test produced nothing, and the soundcard was checked for the VM.
+>> I also have Ubuntu Mate on the same computer in a VM, and sometimes I have
+>> to enable the soundcard again to get Orca talking, but that didn't happen
+>> here.
+>> Just hoping someone has installed Ubuntu-server and gotten speakup to work
+>> on first boot.
+>> Glenn
+>>
+>>
 >
 
