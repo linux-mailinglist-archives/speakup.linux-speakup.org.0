@@ -1,35 +1,44 @@
-Return-Path: <speakup+bounces-909-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-910-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 74888649789
-	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 01:59:41 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 69059649903
+	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 07:34:59 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=haS0aFge;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 04A6B38283D; Sun, 11 Dec 2022 19:59:41 -0500 (EST)
+	id 539C8382867; Mon, 12 Dec 2022 01:34:57 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E2A1F38282B
-	for <lists+speakup@lfdr.de>; Sun, 11 Dec 2022 19:59:40 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 34E66382823
+	for <lists+speakup@lfdr.de>; Mon, 12 Dec 2022 01:34:57 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 97C7638282C; Sun, 11 Dec 2022 19:59:35 -0500 (EST)
-Received: from smtprelay.b.hostedemail.com (smtprelay0164.b.hostedemail.com [64.98.42.164])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 84694382829
-	for <speakup@linux-speakup.org>; Sun, 11 Dec 2022 19:59:35 -0500 (EST)
-Received: from omf04.b.hostedemail.com (10.5.19.248.rfc1918.com [10.5.19.248])
-	by smtprelay05.b.hostedemail.com (Postfix) with ESMTP id CCCCF100329D2;
-	Mon, 12 Dec 2022 00:59:34 +0000 (UTC)
-Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf04.b.hostedemail.com (Postfix) with ESMTPA id 4DF3910051B78;
-	Mon, 12 Dec 2022 00:59:34 +0000 (UTC)
-Message-ID: <002001d90dc4$dbf1d370$8bffa8c0@Win7VM>
-Reply-To: "K0LNY_Glenn" <glenn@ervin.email>
-From: "K0LNY_Glenn" <glenn@ervin.email>
-To: "Jookia" <contact@jookia.org>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <000701d90dba$a449abf0$8bffa8c0@Win7VM> <Y5Z7cfzORuPgHUeo@novena-choice-citizen>
-Subject: Re: Installing Ubuntu Server
-Date: Sun, 11 Dec 2022 18:58:32 -0600
-Organization: Home
+	id D31D138283B; Mon, 12 Dec 2022 01:34:47 -0500 (EST)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 3D071382823
+	for <speakup@linux-speakup.org>; Mon, 12 Dec 2022 01:34:47 -0500 (EST)
+Received: from [IPV6:fd6e:ebcf:467e:3::1] (jdc.jasonjgw.net [IPv6:fd6e:ebcf:467e:3::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (secp384r1))
+	(Client did not present a certificate)
+	by svr.jasonjgw.net (Postfix) with ESMTPSA id 4B2D33208F
+	for <speakup@linux-speakup.org>; Mon, 12 Dec 2022 06:34:10 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+	s=mail; t=1670826850;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=cs9mtdFhPN2vSHa7IwcqST8QSW4Y89ZRisS7zYdU4Fo=;
+	b=haS0aFgeiDU0aNTusRS9YNxsm9XNE0f6P/9Z0dYnwj9r6I4PSN047QZ86Xp32jUIuHZOGO
+	gzFghY7utZCPYsGuBFzLih6ZaDKXnAzMSttMGbKT34TL3eZ3JcF/p53akAN9qZPeSXFNuY
+	R8QXts06mhlALHLi9yXJW/35b7eshjJKDL3RMJ3ii70uwVXXmtH9Bg9R70lAhFnWd7+H7o
+	ALk5K93DztWKCBmSKlNVfA/4fO9UH6nESepnyV9/JfOp6WcUnMEkhpFt9Uv/sl3GWf9eQt
+	ks42FXAVeWzH0DDr+OcZUQP80VKo+ZSRdmdCJB+xcAXHibNU6OJS6/EJ/Gsmhw==
+Message-ID: <46911939-7d7b-ad31-4cd4-d5cba4ea7715@jasonjgw.net>
+Date: Mon, 12 Dec 2022 17:34:07 +1100
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -39,69 +48,31 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.5.1
+Subject: Re: Installing Ubuntu Server
+Content-Language: en-US
+To: speakup@linux-speakup.org
+References: <000701d90dba$a449abf0$8bffa8c0@Win7VM>
+ <Y5Z7cfzORuPgHUeo@novena-choice-citizen>
+From: Jason White <jason@jasonjgw.net>
+In-Reply-To: <Y5Z7cfzORuPgHUeo@novena-choice-citizen>
+Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-Spam-Status: No, score=-2.60
-X-Stat-Signature: f5t6b8f47mrbdch8isamgeofxfp6g1yd
-X-Rspamd-Server: rspamout02
-X-Rspamd-Queue-Id: 4DF3910051B78
-X-Session-Marker: 676C656E6E40657276696E2E656D61696C
-X-Session-ID: U2FsdGVkX1+KxRw6bA1+l+irDCQjh9SHm0MwIwGU8IA=
-X-HE-Tag: 1670806774-76484
-X-HE-Meta: U2FsdGVkX18d9Q4QtbmnkFHp+dVWAg/9meNgfSb2LBdlV2alpsHeqWXNaJlMVV3M6IF12K01MrfCifMf1DI0sQ==
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Jookia,
-I don't see how, unless I was doing a VM in a VM onto my Ubuntu Mate that is 
-a  VM.
-This is just running windows 10, with VmWare Player, and I have Ubuntu Mate 
-desktop and two versions of windows as VMs too, and I wanted to try 
-Ubuntu-server in a VM.
-I don't know if VmWare can run an install script, sort of like the windows 
-answer file for a windows install.
-There may be such a thing for Ubuntu, but the next thing is how to run it 
-during the VmWare install of Ubuntu-server.
-Thanks.
 
-Glenn
------ Original Message ----- 
-From: "Jookia" <contact@jookia.org>
-To: "K0LNY_Glenn" <glenn@ervin.email>
-Cc: "Speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Sunday, December 11, 2022 6:53 PM
-Subject: Re: Installing Ubuntu Server
+On 12/12/22 11:53, Jookia wrote:
+> Is there an install via SSH option?
 
+For Debian, you should be able to install via ssh using Debootstrap or, 
+as recently recommended by an experienced system administrator in 
+mailing list discussion, Mmdebstrap.
 
-Is there an install via SSH option?
+I don't know whether Ubuntu can do the same.
 
-On Sun, Dec 11, 2022 at 05:45:24PM -0600, K0LNY_Glenn wrote:
-> Hey Group,
-> I thought I'd test out Ubuntu server in a VM, using VmWare.
-> The first problem I noticed is that there is no way to call up speakup
-> because it is configuring a few things, like disk space to use and user
-> group and an account.
-> When I have installed Windows, I didn't have trouble with this because
-> VmWare took the information from the running windows system.
-> Actually, I'm not sure how one would install Ubuntu-server non-visually
-> outside a hypervisor.
-> I was using:
-> Ubuntu22.04 64 lite server
-> I might be able to get through the VmWare installer, I thought I had it
-> using the Be My Eyes app, but I couldn't tell if I was at a prompt, and
-> speaker-test produced nothing, and the soundcard was checked for the VM.
-> I also have Ubuntu Mate on the same computer in a VM, and sometimes I have
-> to enable the soundcard again to get Orca talking, but that didn't happen
-> here.
-> Just hoping someone has installed Ubuntu-server and gotten speakup to work
-> on first boot.
-> Glenn
->
->
+However, there should be prepared images available for virtual machines 
+that don't require you to "install" anything.
+
 
 
