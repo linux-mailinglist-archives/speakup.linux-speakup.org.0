@@ -1,50 +1,64 @@
-Return-Path: <speakup+bounces-921-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-922-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 9F3A566AF1B
-	for <lists+speakup@lfdr.de>; Sun, 15 Jan 2023 03:42:28 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id D25E167C8B7
+	for <lists+speakup@lfdr.de>; Thu, 26 Jan 2023 11:37:38 +0100 (CET)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=W94+cPo+;
+	dkim=pass (1024-bit key; unprotected) header.d=the-brannons.com header.i=@the-brannons.com header.a=rsa-sha256 header.s=hurricane header.b=ChZwhIoV;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C5CEA382B62; Sat, 14 Jan 2023 21:42:27 -0500 (EST)
+	id 68A26382BC7; Thu, 26 Jan 2023 05:37:36 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A80C5382836
-	for <lists+speakup@lfdr.de>; Sat, 14 Jan 2023 21:42:27 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 476B23827A3
+	for <lists+speakup@lfdr.de>; Thu, 26 Jan 2023 05:37:36 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D5FC838283F; Sat, 14 Jan 2023 21:42:18 -0500 (EST)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 95767382833
-	for <speakup@linux-speakup.org>; Sat, 14 Jan 2023 21:42:18 -0500 (EST)
-Received: from vbox.gregn.net (unknown [IPv6:2607:fb90:2d09:4f69:a3be:8488:3c7d:2996])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id 2594E5E0;
-	Sat, 14 Jan 2023 18:41:46 -0800 (PST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1673750506; bh=Ppg3ol2dITYJ+fZsJKNtg/x2i4mLkWFPSkIVNf6Qxsw=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=W94+cPo+TqRu4phUyPCoskq/5wmtjg/IjiF1da/PeGyhxwuN8rqPL81ATMZefsn29
-	 mXNnOYcLlAFis5eyXqj0quacCVId/K8lsSYYJMED4XtYLIYyrg3jgFcTCoy1ksgpCo
-	 1LJ2j7T2Jl4RfDjaWiCuH91Dn5NjRd1/iaHD4XbBTJgzx2POnO8H5/84plilzbK7S8
-	 la3qqLMwfI5Il1X03zd90zk7/cO6ohSn3wWAW3sWRqHNCZm6l5gZEmHEZknuHaqDlL
-	 TLaPWaXaEX0yv/xti1iTFN/ZOqBAab6YORJ00M/bIErwdds8A5wyRLlCuD1JE96w+e
-	 xxjZ5pKm944DA==
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id ABEDDC0D7; Sat, 14 Jan 2023 19:41:44 -0700 (MST)
-Date: Sat, 14 Jan 2023 19:41:44 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: Cleverson Casarin Uliana <speakup@clul.router5.com>
-Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+	id 1860A382840; Thu, 26 Jan 2023 05:37:27 -0500 (EST)
+Received: from hurricane.the-brannons.com (hurricane.the-brannons.com [216.252.162.32])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 872A73827A3
+	for <speakup@linux-speakup.org>; Thu, 26 Jan 2023 05:37:26 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; s=hurricane; bh=1ygJGMbhid
+	TCkrADmRk+Rn/iavzNsfNLqlmQfcwqbqc=; h=in-reply-to:date:references:
+	subject:cc:to:from; d=the-brannons.com; b=ChZwhIoVSGCGTSsyTR4ZgdqKGkEm
+	3KOltn6G07zwjcYiYJUsDkB4cgSMS25PHP+auorKNBtXk3BcHQcmZkzsdKW9gI+fXi7kEb
+	PfKpBBwSzBU3OgrYPDjbcvSCMGa/A0d/Zv4Tbb3WmkSYhO2OwEoOpu7PQoz5HwTRIHR6I5
+	X1k=
+X-Spam: yes
+X-Spam-Score: 7.233538 / 6
+X-Spam-Status: Yes, score=7.234 required=6.000
+	tests=[ARC_NA=0.000, ASN=0.000, BAYES_HAM=-0.766
+	FREEMAIL_ENVRCPT=0.000, FREEMAIL_TO=0.000, FROM_EQ_ENVFROM=0.000
+	FROM_HAS_DN=0.000, MID_RHS_MATCH_FROM=0.000, MIME_GOOD=-0.100
+	MIME_TRACE=0.000, RCPT_COUNT_THREE=0.000, RCVD_COUNT_TWO=0.000
+	RCVD_NO_TLS_LAST=0.100, RCVD_VIA_SMTP_AUTH=0.000
+	SURBL_MULTI_FAIL=0.000, TO_DN_SOME=0.000, TO_MATCH_ENVRCPT_ALL=0.000
+	URIBL_SBL_CSS=6.500, URIBL_XBL=1.500]
+Received: 
+	by hurricane.the-brannons.com (OpenSMTPD) with ESMTPSA id e2c784cd (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO) auth=yes user=chris;
+	Thu, 26 Jan 2023 10:37:17 +0000 (UTC)
+From: Chris Brannon <chris@the-brannons.com>
+To: Al Sten-Clanton <albert.e.sten_clanton@verizon.net>
+Cc: "Speakup is a screen review system for Linux."
+ <speakup@linux-speakup.org>, discuss@blvuug.org
 Subject: Re: looking for archived messages later than January 2021
-Message-ID: <Y8Nn6EKBhrAjzgfs@gregn.net>
 References: <64291a12-7cfc-3aa6-75d1-f8b369b47ec4.ref@verizon.net>
- <64291a12-7cfc-3aa6-75d1-f8b369b47ec4@verizon.net>
- <MTAwMDAzNi5jbHVs.1673737456@quikprotect>
+	<64291a12-7cfc-3aa6-75d1-f8b369b47ec4@verizon.net>
+Autocrypt: addr=chris@the-brannons.com; prefer-encrypt=mutual; keydata=
+ mDMEX37pCBYJKwYBBAHaRw8BAQdASkFrVm/MHGNpj7Oa+nq4b7eBg5LX5qnvS6ojH04ZE9+0LENo
+ cmlzdG9waGVyIEJyYW5ub24gPGNocmlzQHRoZS1icmFubm9ucy5jb20+iJAEExYIADgWIQTFfzWT
+ HzF7+QWPg09oJ1i8YNj4egUCX37pCAIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRBoJ1i8
+ YNj4esVsAQCJXDxhj5gZjcrNMmSH6Z+X5RDdbvsTRvS5wwQXM3g4kAEAjOrdx/fvZDiKL8dylDhU
+ YUVVSkwWeOD2UtmYjm/QtwG4OARffukIEgorBgEEAZdVAQUBAQdAOMaQorDR8QUdM34/Q9mUyBvS
+ 9WFK0Mb76dHyNkERx2kDAQgHiHgEGBYIACAWIQTFfzWTHzF7+QWPg09oJ1i8YNj4egUCX37pCAIb
+ DAAKCRBoJ1i8YNj4eo/8AQC4AX6NMv65KQQU7s95T/1Y4E+Z7KTbvhKJeSjdDfj88AEA/qzPnDvl
+ dLmqqNTqsfZCK81teOxSoNhRlhWcQ8QQ/wY=
+Date: Thu, 26 Jan 2023 02:37:16 -0800
+In-Reply-To: <64291a12-7cfc-3aa6-75d1-f8b369b47ec4@verizon.net> (Al
+	Sten-Clanton's message of "Sat, 14 Jan 2023 12:07:36 -0500")
+Message-ID: <87a625h99f.fsf@the-brannons.com>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/28.2 (gnu/linux)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -54,44 +68,42 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <MTAwMDAzNi5jbHVs.1673737456@quikprotect>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 0.103.7 at vserver
-X-Virus-Status: Clean
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-It is possible to tell the list software to send you a copy of a
-message. To do that, you would have to know the number of the message
-since the list manager mlmmj started being used to run this
-list. Unfortunately, there seems to be no way to get a message
-number/subject index as far as I can tell. For info, send a blank
-message to:
-speakup+help@linux-speakup.org
+Al Sten-Clanton <albert.e.sten_clanton@verizon.net> writes:
 
-Greg
+> Greetings!
+>
+>
+> I want to check if an answer to a question I have was on the Speakup
+> list a few months ago.=C2=A0 So far, I haven't found anything later than
+> January of 2021.=C2=A0 Could somebody tell me where to look?
 
+Cc'ed the BLVUUG list, since this concerns y'all too.
 
-On Sat, Jan 14, 2023 at 08:04:07PM -0300, Cleverson Casarin Uliana wrote:
-> Hi, as far as I know, the archives haven't been preserved unfortunately.
-> Last year, I contacted Kirk privately and he told me so, then I simply set
-> the list for me to start receiving individual messages instead of vacation
-> mode. I've done a quick search here, and it appears I have deleted your
-> thread already, otherwise perhaps I could retrieve the answer you need.
-> 
-> Sorry for not being able to help.
-> Regards,
-> Cleverson
-> 
+Ask and you shall receive.  I've imported all of the Speakup archives,
+from 2000 until the present, into a public-inbox (see
+https://www.public-inbox.org/README.html for details about what that
+is).
 
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
+You can find the archive at https://inbox.the-brannons.com/speakup.  You
+can also read the archives or follow the list using NNTP or IMAP.  I use
+nonstandard ports: the NNTP server is at port 1119, and the IMAP server
+is at port 1143.
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+Public-inbox stores all the messages in a git repo.  So if you want to,
+you can clone and mirror the whole archive, and keep it up to date by
+pulling regularly.
+
+There's also an archive of blinux-list on inbox.the-brannons.com, just
+because I could do it.  The lists I administer --
+edbrowse-dev, commandline, and blvuug-discuss -- are all there too, of cour=
+se.
+
+I'm happy to publish archives of other lists with public-inbox if people
+ask.
+
+-- Chris
 
