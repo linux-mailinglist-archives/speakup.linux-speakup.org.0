@@ -1,53 +1,55 @@
-Return-Path: <speakup+bounces-926-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-927-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 109A66E5049
-	for <lists+speakup@lfdr.de>; Mon, 17 Apr 2023 20:33:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B96236F2BE0
+	for <lists+speakup@lfdr.de>; Mon,  1 May 2023 03:32:44 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B7C3F38292D; Mon, 17 Apr 2023 14:33:36 -0400 (EDT)
+	id 88FD938290E; Sun, 30 Apr 2023 21:32:43 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A405F382762
-	for <lists+speakup@lfdr.de>; Mon, 17 Apr 2023 14:33:36 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 72E58382745
+	for <lists+speakup@lfdr.de>; Sun, 30 Apr 2023 21:32:43 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7C5AE3827C9; Mon, 17 Apr 2023 14:33:31 -0400 (EDT)
+	id 427C6382757; Sun, 30 Apr 2023 21:32:38 -0400 (EDT)
 Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 45F1E3806EB
-	for <speakup@linux-speakup.org>; Mon, 17 Apr 2023 14:33:31 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A4625382734
+	for <speakup@linux-speakup.org>; Sun, 30 Apr 2023 21:32:37 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 19C5B20161;
-	Mon, 17 Apr 2023 20:33:29 +0200 (CEST)
+	by sonata.ens-lyon.org (Postfix) with ESMTP id C9D642014C;
+	Mon,  1 May 2023 03:32:20 +0200 (CEST)
 Received: from sonata.ens-lyon.org ([127.0.0.1])
 	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id hr61X2M0I_RQ; Mon, 17 Apr 2023 20:33:28 +0200 (CEST)
-Received: from begin.home (apoitiers-658-1-118-253.w92-162.abo.wanadoo.fr [92.162.65.253])
+	with ESMTP id TEH3NvUQEhpT; Mon,  1 May 2023 03:32:20 +0200 (CEST)
+Received: from begin (lfbn-bor-1-1163-184.w92-158.abo.wanadoo.fr [92.158.138.184])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
 	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
 	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 69A5720147;
-	Mon, 17 Apr 2023 20:33:27 +0200 (CEST)
-Received: from samy by begin.home with local (Exim 4.96)
+	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 2A1F020146;
+	Mon,  1 May 2023 03:32:20 +0200 (CEST)
+Received: from samy by begin with local (Exim 4.96)
 	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1poTfK-005f4r-2Z;
-	Mon, 17 Apr 2023 20:33:26 +0200
-Date: Mon, 17 Apr 2023 20:33:26 +0200
+	id 1ptIOp-00EpS0-2S;
+	Mon, 01 May 2023 03:32:19 +0200
+Date: Mon, 1 May 2023 03:32:19 +0200
 From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Colin Ian King <colin.i.king@gmail.com>
-Cc: William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org,
-	kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] speakup: Fix spelling mistake "windo" -> "window"
-Message-ID: <20230417183326.ylyd5xpog7dydw55@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Colin Ian King <colin.i.king@gmail.com>,
+To: Randy Dunlap <rdunlap@infradead.org>
+Cc: linux-kernel@vger.kernel.org, Mushahid Hussain <mushi.shar@gmail.com>,
 	William Hubbs <w.d.hubbs@gmail.com>,
 	Chris Brannon <chris@the-brannons.com>,
 	Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org,
-	kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-References: <20230417183203.54388-1-colin.i.king@gmail.com>
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: [PATCH] accessibility: use C99 array init
+Message-ID: <20230501013219.e4ekzxgoequdlmsu@begin>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+	Randy Dunlap <rdunlap@infradead.org>, linux-kernel@vger.kernel.org,
+	Mushahid Hussain <mushi.shar@gmail.com>,
+	William Hubbs <w.d.hubbs@gmail.com>,
+	Chris Brannon <chris@the-brannons.com>,
+	Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org,
+	Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <20230501001617.9152-1-rdunlap@infradead.org>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -59,36 +61,46 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <20230417183203.54388-1-colin.i.king@gmail.com>
+In-Reply-To: <20230501001617.9152-1-rdunlap@infradead.org>
 Organization: I am not organized
 User-Agent: NeoMutt/20170609 (1.8.3)
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Colin Ian King, le lun. 17 avril 2023 19:32:03 +0100, a ecrit:
-> There is a spelling mistake in a literal string. Fix it.
+Randy Dunlap, le dim. 30 avril 2023 17:16:17 -0700, a ecrit:
+> Use C99 array initializer syntax for consistency with other array
+> initializers around it and to eliminate a sparse warning:
 > 
-> Signed-off-by: Colin Ian King <colin.i.king@gmail.com>
+> drivers/accessibility/speakup/main.c:1290:26: sparse: warning: obsolete array initializer, use C99 syntax
+> 
+> Fixes: f43241aafedb ("accessibility: speakup: Specify spk_vars among module parameters")
+> Signed-off-by: Randy Dunlap <rdunlap@infradead.org>
+> Cc: Mushahid Hussain <mushi.shar@gmail.com>
+> Cc: William Hubbs <w.d.hubbs@gmail.com>
+> Cc: Chris Brannon <chris@the-brannons.com>
+> Cc: Kirk Reiser <kirk@reisers.ca>
+> Cc: Samuel Thibault <samuel.thibault@ens-lyon.org>
+> Cc: speakup@linux-speakup.org
+> Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 
 Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
+Thanks!
+
 > ---
->  drivers/accessibility/speakup/i18n.c | 2 +-
+>  drivers/accessibility/speakup/main.c |    2 +-
 >  1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/drivers/accessibility/speakup/i18n.c b/drivers/accessibility/speakup/i18n.c
-> index d62079b1661f..554bf81f2c1c 100644
-> --- a/drivers/accessibility/speakup/i18n.c
-> +++ b/drivers/accessibility/speakup/i18n.c
-> @@ -31,7 +31,7 @@ static char *speakup_default_msgs[MSG_LAST_INDEX] = {
->  	[MSG_CURSORING_OFF] = "cursoring off",
->  	[MSG_CURSORING_ON] = "cursoring on",
->  	[MSG_HIGHLIGHT_TRACKING] = "highlight tracking",
-> -	[MSG_READ_WINDOW] = "read windo",
-> +	[MSG_READ_WINDOW] = "read window",
->  	[MSG_READ_ALL] = "read all",
->  	[MSG_EDIT_DONE] = "edit done",
->  	[MSG_WINDOW_ALREADY_SET] = "window already set, clear then reset",
-> -- 
-> 2.30.2
+> diff -- a/drivers/accessibility/speakup/main.c b/drivers/accessibility/speakup/main.c
+> --- a/drivers/accessibility/speakup/main.c
+> +++ b/drivers/accessibility/speakup/main.c
+> @@ -1287,7 +1287,7 @@ static struct var_t spk_vars[NB_ID] = {
+>  	[PUNC_LEVEL_ID] = { PUNC_LEVEL, .u.n = {NULL, 1, 0, 4, 0, 0, NULL} },
+>  	[READING_PUNC_ID] = { READING_PUNC, .u.n = {NULL, 1, 0, 4, 0, 0, NULL} },
+>  	[CURSOR_TIME_ID] = { CURSOR_TIME, .u.n = {NULL, 120, 50, 600, 0, 0, NULL} },
+> -	[SAY_CONTROL_ID] { SAY_CONTROL, TOGGLE_0},
+> +	[SAY_CONTROL_ID] = { SAY_CONTROL, TOGGLE_0},
+>  	[SAY_WORD_CTL_ID] = {SAY_WORD_CTL, TOGGLE_0},
+>  	[NO_INTERRUPT_ID] = { NO_INTERRUPT, TOGGLE_0},
+>  	[KEY_ECHO_ID] = { KEY_ECHO, .u.n = {NULL, 1, 0, 2, 0, 0, NULL} },
 > 
 
