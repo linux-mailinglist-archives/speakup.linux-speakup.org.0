@@ -1,38 +1,51 @@
-Return-Path: <speakup+bounces-932-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-933-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C61F271349C
-	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 14:07:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1E964713518
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 16:03:51 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=W4C2ERTD;
+	dkim=pass (1024-bit key; secure) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=ONTJ4jFr;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E99F438246F; Sat, 27 May 2023 08:07:26 -0400 (EDT)
+	id 292E6382477; Sat, 27 May 2023 10:03:50 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CB35F382419
-	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 08:07:26 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 085AB382451
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 10:03:50 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A7AEB382421; Sat, 27 May 2023 08:07:17 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 24FC0380F81
-	for <speakup@linux-speakup.org>; Sat, 27 May 2023 08:07:17 -0400 (EDT)
-Received: from [IPV6:2a01:cb09:e077:9693:abc9:ce8c:85c4:79d4] (pop.92-184-107-76.mobile.abo.orange.fr [92.184.107.76])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id 9E79CE6EB3
-	for <speakup@linux-speakup.org>; Sat, 27 May 2023 13:04:32 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1685185472; bh=Rt71rpG6vl/4bGOJl0fEvNdZ9XouvX7C1u6Ykioz1Ng=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=W4C2ERTDRITsNw+eRS4/UT6YIeHLW4rSYgf3oRL0uNRkO/HoYPXwo/bqWO9EmYB22
-	 6RxtM85GnbL1Qbng/P8ZWtkN5PdQZyezfM8dCndK/G9+d6hzYAENLf5sGGYBQlESJY
-	 R0NcO7BH6or0RK9NDIw7HLBIvMu4Go/xLZyjpU7zBO+3S/k2RTH3I2+taV8Z+MslbZ
-	 AaApB4f8bUPKjf3VYrF2RCKInoZVje/pcAK9lSjP9nTziXKYeG0F88t3NHc5iNFR3j
-	 cucIyp6hf9gBoFcmCqFiAng/+VL8/8MimvY3YJ8Fn0F2D07Vr9lHs8y9DgzEF2O+/f
-	 IjmikICW0DB3w==
-Message-ID: <b175e143-de30-9fb6-1ed2-d352a3af34a9@slint.fr>
-Date: Sat, 27 May 2023 14:07:07 +0200
+	id D6A75382451; Sat, 27 May 2023 10:03:40 -0400 (EDT)
+Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B989D38233E
+	for <speakup@linux-speakup.org>; Sat, 27 May 2023 10:03:40 -0400 (EDT)
+Received: from opera.rednote.net (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by mail.rednote.net (Postfix) with ESMTPS id 2AA21FA191;
+	Sat, 27 May 2023 10:03:10 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
+	t=1685196190;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=YG2zOUcXjI2nC0TTGA51T8Lyuu57eF2vcQpCJ97zZuw=;
+	b=ONTJ4jFr+XEGn/RH4QOHXCzXZdXOdxyUlOwt8ceejWpE9d/yZw2AnmdNZNKG1ElnuEpm2w
+	lcm+Ft/CwFSJVGgI2GblEAM79UfdNiw4D8kPPJrpWCjNCI7WswpeR5MHKWGJMxUfI4P5Tw
+	BP0yUWJihFwOHWfzYM8FYcBAlU3ABdw=
+Received: (from janina@localhost)
+	by opera.rednote.net (8.17.1/8.16.1/Submit) id 34RE39Le322356;
+	Sat, 27 May 2023 10:03:09 -0400
+Date: Sat, 27 May 2023 10:03:09 -0400
+From: Janina Sajka <janina@rednote.net>
+To: Samuel Thibault <samuel.thibault@aquilenet.fr>
+Cc: "Joseph C. Lininger" <joe@pcdesk.net>, speakup@linux-speakup.org
+Subject: Re: Beep on Backspace in Console Sessions
+Message-ID: <ZHINne5OJCQnDMVf@rednote.net>
+References: <ZHGmQFwqgliD6p3X@rednote.net>
+ <d9409a2a-457a-0427-0535-b5e5c2816ee7@pcdesk.net>
+ <20230527090519.wmilxntbwgtfqdge@begin>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,79 +55,66 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: Beep on Backspace in Console Sessions
-To: speakup@linux-speakup.org
-References: <ZHGmQFwqgliD6p3X@rednote.net>
-Content-Language: en-US
-From: Didier Spaier <didier@slint.fr>
-In-Reply-To: <ZHGmQFwqgliD6p3X@rednote.net>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20230527090519.wmilxntbwgtfqdge@begin>
+X-Operating-System: Linux opera.rednote.net 6.2.15-300.fc38.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hey Janina,
+Thanks, Samuel and Joseph, for both your emails on this topic.
 
-as Joseph suggested I would first check that the kernel driver pcspkr is
-compiled as a module.
+Thanks for confirming the code is still present, but that it directs to
+a builtin speaker--something that doesn't exist much anymore. It
+certainly isn't present in my System76 Meercat, which is the native
+Linux machine I'm planning to take with me when I move to New York City
+in (probably just a month or so). My 2012 era tower machine has that
+built in speaker, and is beeping, but much argues against keeping it on
+this move.
 
-The answer is yes if this command gives an output:
-lsmod|grep pcspkr
+Thanks, Joseph, for the detailed flow explanation. That suggests there
+may be some value in running a few different shells to see whether
+there's any difference.
 
-You coule also check the output of:
-zgrep INPUT_PCSPKR /proc/config.gz
-Here it gives:
-CONFIG_INPUT_PCSPKR=m
+I'm quite comfortable running:
 
-If this module is provided, check that you have in /etc/inputrc:
+amixer -cX controls
 
-set bell-style audible (the argument should not be "visible" or "none")
+and I don't see snd-pcsp anywhere. The Meercat currently has two
+devices.
 
-If this module is not provided you need to rebuild your kernel or use one that
-provides it.
+It seems to me some kind of bug on alsa, or perhaps an RFE, might be in
+order. The available beep command isn't a reliable substitute because it
+returns "device in use" message. Seems, with pipewire, that shouldn't be
+an issue, and we should be able to specify which device gets the alert
+sound? Is that reasonable? Or am I a vanishing fossil here! <smile>
 
-If you have this module but not the needed hardware you could use this software:
-https://github.com/Hawk777/abeep
+Best,
 
-It is available for Arch in the AUR:
-https://aur.archlinux.org/packages/abeep-git
-
-I built it in Slint, it works and relies on the libasound.so shared library from
-alsa
-
-But what I don't know is how to tell bash to replace the call to pcspkr by
-/usr/bin/bell and "man readline" did not give me a clue :(
-
-there is also a beep software:
-https://github.com/spkr-beep/beep also available on Arch:
-https://archlinux.org/packages/extra/x86_64/beep/
-
-It works here (TM) but also needs a the pcspkr module and the hardware.
-
-Cheers
+Janina
 
 
-Le 27/05/2023 à 08:42, Janina Sajka a écrit :
-> Dear All:
+PS: Because I am indeed moving, I may not be as on top of this as I
+otherwise might be. Many things are being tossed or given away even as
+other items are being packed.
+
+Samuel Thibault writes:
+> Joseph C. Lininger, le sam. 27 mai 2023 04:59:11 -0400, a ecrit:
+> > Failing that, do you know if the snd_pcsp code has been removed entirely
 > 
-> I'm wondering whether it's still supported in alsa?
+> It does still exist, but does the converse: using the old PC speaker as
+> a sound card, which thus provides very low-quality sound card support.
 > 
-> Yes, in ancient history, with speakers in the computer case just for a
-> beep on backspace, the old pcskpr module did the trick.
-> 
-> Then those speakers disappeared, but alsa-lib gave us an snd-beep module
-> (as I recall). I'm not finding that module these days, and I'm wondering
-> wheter it's just not getting compiled for some reason? Or has it really
-> been dropped.
-> 
-> I know most fot the sighted world hates that beep on backspace. That's
-> partly why it's quite hard to google for this question. I don't mind if
-> it's off by default, but it should be something those of us who find it
-> beneficial should be able to turn on, imo.
-> 
-> Anyone know.
-> 
-> Janina
-> 
+> Samuel
+
+-- 
+
+Janina Sajka (she/her/hers)
+Accessibility Consultant https://linkedin.com/in/jsajka
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
+Linux Foundation Fellow
+https://www.linuxfoundation.org/board-of-directors-2/
+
 
