@@ -1,81 +1,36 @@
-Return-Path: <speakup+bounces-934-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-935-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 05DF771352C
-	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 16:30:52 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=git+5Tbx;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=N9BHeQV4;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 0508871357E
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 17:52:34 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8E7EF382473; Sat, 27 May 2023 10:30:51 -0400 (EDT)
+	id 0EE5F38247D; Sat, 27 May 2023 11:52:26 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6F659382442
-	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 10:30:51 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id EC97138111F
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 11:52:25 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 23D89382452; Sat, 27 May 2023 10:30:42 -0400 (EDT)
-Received: from out5-smtp.messagingengine.com (out5-smtp.messagingengine.com [66.111.4.29])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 5DED738242C
-	for <speakup@linux-speakup.org>; Sat, 27 May 2023 10:30:41 -0400 (EDT)
-Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
-	by mailout.nyi.internal (Postfix) with ESMTP id AB28B5C00B0;
-	Sat, 27 May 2023 10:30:38 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
-  by compute5.internal (MEProxy); Sat, 27 May 2023 10:30:38 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:sender:subject:subject:to:to; s=fm2; t=
-	1685197838; x=1685284238; bh=7UC9HIJlgeb18XeBSBucrIEAe3KhA8Jt8Ow
-	UlkVb0JY=; b=git+5TbxgvJus4hBAOaMgLoSwef/sbsnfo2K5I1Z/eUYEczsKjW
-	oJqgMy47vYkBS30+ku1jDOLQ7ST+6aTjfp+Bq0CMmrmxYRT56hKR3eFfnuPdWIyF
-	o53m035P8+qClK7eBSMLJVAk6yNDIdWzFfUdAM4jnnLJ0uDO5w4XO3TsTtSP6D7X
-	2TrzQvYOEk8WfiU4wwYfXrWnGgosoDe940VdtW8K4OAw4FpHyrjGO+3IRDLNvuOQ
-	yjPFFBTiyqB3umhQvzNjDS6TeC7C9F4GdL0FPGaR0auZeO6yPrtEDH3AGgdgrl0u
-	AGR+zRPbdssJx8KQc2hK3rySKB/0BDJsmsg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:sender:subject
-	:subject:to:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
-	:x-sasl-enc; s=fm1; t=1685197838; x=1685284238; bh=7UC9HIJlgeb18
-	XeBSBucrIEAe3KhA8Jt8OwUlkVb0JY=; b=N9BHeQV4UvDi3pXYQidXrwajDsVBc
-	Qr0sxImW592Vnt70pzBWG+ZW1osN3SxxxyQbwFfhhYCEcslhBV2RQWxJyKNxRRvL
-	+JVk3vvgmlUU7n2Idw5fJojoCu33DhcvxYgBkzfpFM8fP0Xc0xlBU4nfn0L3skHd
-	rdSMZ3KSz48DhZ476pZ7ZzYh9jEHRgmi9EwuYI0Co05+lcK3Sh/bXShNSCH8+MgA
-	tmLmWyJgW69HGlPyHWsqXPEQ1eTvqYE0XQQn529SchPZrNONOSZh80ZPhOPxm6WX
-	gF0EZ49+no9RCQCWvZQgkbnYia5OsKnBUVR7BSPb6+EsUIzcBYngQSSGg==
-X-ME-Sender: <xms:DhRyZDgglpDtxUluKfso5bKpzCSDiHODGdzbZEM4W0ber7KsK_cikg>
-    <xme:DhRyZAAkdPwh9h7Un-H3n2JewpF0HiVT6f9WG7ethrfzPPuNI15_DCC2iqf6EDtAH
-    DUuO1o9iUrgCH0LMOM>
-X-ME-Received: <xmr:DhRyZDGsK_0iz8Rgc8eslDtXbJfe0mcgL_21u4hRhIyxQHJ79mQpLY_5KMfSnLhxqtNkCrpyNWzdlZGFpjosMoO3kqmaV6lw_82syA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvhedrfeekuddgjeejucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepfffhvfevufgjkfhfgggtsehttdertddttddvnecuhfhrohhmpeevhhhimhgv
-    ucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenuc
-    ggtffrrghtthgvrhhnpedvheegleejkeeguefgfeelkeejiedvkeekvdetueevueeffeff
-    ffefffeludeftdenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
-    hrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
-X-ME-Proxy: <xmx:DhRyZATDW4gtLddnFp8mwYsMFYQipopRFaxQbUjd_LvK_4Cf_9Lbow>
-    <xmx:DhRyZAxlO_wXs1qs4K8qRA1nbdefnx7hvMmC5pknHekjxu0cLvuH0A>
-    <xmx:DhRyZG5qCdJUVuDMkNJDcZdE754g8L79tymUdzfYtiYM4aimWglvyg>
-    <xmx:DhRyZL-H8TKhV2-F6FEG4rbyHCk9EKAgp5gSRL1c7jTGSobW3tDVhQ>
-Feedback-ID: ia9b947fb:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
- 27 May 2023 10:30:37 -0400 (EDT)
-Date: Sat, 27 May 2023 07:30:36 -0700 (PDT)
-From: Chime Hart <chime@hubert-humphrey.com>
-To: Janina Sajka <janina@rednote.net>
-cc: Samuel Thibault <samuel.thibault@aquilenet.fr>, 
-    "Joseph C. Lininger" <joe@pcdesk.net>, speakup@linux-speakup.org
+	id D4B653823A0; Sat, 27 May 2023 11:52:20 -0400 (EDT)
+Received: from relay.b.hostedemail.com (smtprelay0251.b.hostedemail.com [64.98.42.251])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B9E2438111F
+	for <speakup@linux-speakup.org>; Sat, 27 May 2023 11:52:20 -0400 (EDT)
+Received: from omf10.b.hostedemail.com (omf10 [10.200.6.73])
+	by unirelay03.b.hostedemail.com (Postfix) with ESMTP id 57EEF601BB;
+	Sat, 27 May 2023 15:52:18 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf10.b.hostedemail.com (Postfix) with ESMTPA id DCE65C0004;
+	Sat, 27 May 2023 15:52:14 +0000 (UTC)
+Message-ID: <29b001d990b3$35931e40$01ffa8c0@nucwin10>
+Reply-To: "K0LNY" <glenn@ervin.email>
+From: "K0LNY" <glenn@ervin.email>
+To: "Joseph C. Lininger" <joe@pcdesk.net>,
+	"Janina Sajka" <janina@rednote.net>,
+	<speakup@linux-speakup.org>
+References: <ZHGmQFwqgliD6p3X@rednote.net> <d9409a2a-457a-0427-0535-b5e5c2816ee7@pcdesk.net>
 Subject: Re: Beep on Backspace in Console Sessions
-In-Reply-To: <ZHINne5OJCQnDMVf@rednote.net>
-Message-ID: <ddd034ac-1a67-a8b3-d11c-04babbe98c59@hubert-humphrey.com>
-References: <ZHGmQFwqgliD6p3X@rednote.net> <d9409a2a-457a-0427-0535-b5e5c2816ee7@pcdesk.net> <20230527090519.wmilxntbwgtfqdge@begin> <ZHINne5OJCQnDMVf@rednote.net>
+Date: Sat, 27 May 2023 10:52:14 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -85,16 +40,108 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+Content-Type: text/plain;
+	format=flowed;
+	charset="UTF-8";
+	reply-type=response
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Rspamd-Server: rspamout05
+X-Rspamd-Queue-Id: DCE65C0004
+X-Stat-Signature: qjje3cizietpj96f5usxqcgc6r6bt5mn
+X-Spam-Status: No, score=-2.40
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX19X6cGZo+yruCzYnJduvKeJ5WuPaL+8vX8=
+X-HE-Tag: 1685202734-174703
+X-HE-Meta: U2FsdGVkX1+vbWg7qDniEmdWvvXgfHhY90MD4BGsXl9Qj/qyLfIvfwthEdsACTmCBUGh/KvpRItUjEwjApf2GQ==
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Thank you Janina-and-others for bringing up this topic-and-hopefully solutions. 
-Whats interesting, when we first got this laptop, nuked windows, installed 
-Debian testing, I had a beep on backspace, but no speech. Eventually got Voxin 
-running, but have not had a backspace or tab-completing beep in quite a while. 
-That command Didier mentioned returned pcspkr 16384 0
-I did just install abeep, but so-far no change, or won't I notice until a 
-restart? Thanks so much in advance
-Chime
+I do know that some systems produce a beep using the soundcard.
+I just tried installing an Open Media Vault ISO into a VM, it is a Debian 
+rebuild, and although the startup beep was the only hope of accessibility 
+there, I was surprised when I heard the beep, because my Intel NUC does not 
+have a speaker for that, so it was sent through the soundcard.
+I didn't know that this was ever done.
+But I hadn't noticed the missing sound when I backspaced to the wall, but I 
+sure miss it.
+I guess I figured it was the particular system I was using, but that sound 
+can tell us a lot, like if we are in an edit field or actually made it to a 
+terminal, when we can't tell if we even booted.
+Glenn
+----- Original Message ----- 
+From: "Joseph C. Lininger" <joe@pcdesk.net>
+To: "Janina Sajka" <janina@rednote.net>; <speakup@linux-speakup.org>
+Sent: Saturday, May 27, 2023 3:59 AM
+Subject: Re: Beep on Backspace in Console Sessions
+
+
+> Hi Janina,
+> First, unfortunately, I don't have a definite answer to your question. I 
+> wish I did, as this is a question I myself would like answered. I am going 
+> to provide some additional information here though, including a possible 
+> fix. If you aren't interested, feel free to use the delete key.
+>
+> That beep on backspace functionality is actually a function of the shell 
+> working in conjunction with the kernel code. More specifically, if you 
+> press the backspace key and you are at the beginning of the line, the 
+> shell sends an alert character to the controlling terminal, in this case 
+> your console. That should, if things are working right, result in a beep 
+> from the PC speaker or maybe a sound from the sound card speakers 
+> depending on your hardware and on what's loaded in the kernel.
+>
+> The shell (bash specifically) is still doing this. I verified this by 
+> connecting remotely to a Linux server using Windows, then purposely 
+> backspacing at the beginning of a line. Sure enough, I got an alert. In 
+> fact, I got the same one as what I get if I purposely print an alert 
+> character to the terminal. I also booted my PC into Linux and verified 
+> that if I print an alert character to the terminal, nothing happens. Also 
+> nothing if I backspace in the terminal, which was exactly what I expected.
+>
+> I mentioned all of this for a couple of reasons. First, if this isn't 
+> working, it isn't just the beep on backspace functionality that is 
+> disabled. The ability for shell scripts to provide audible alerts and such 
+> is also less functional; now they have to play an audio file or something 
+> like that instead of just sending an alert to the controlling terminal. 
+> There are problems with that approach, which I won't go into here. Pretty 
+> much any tool that would use the PC speaker for some reason can't do so.
+>
+> Second, there may be a fix. Some laptop hardware actually can act on PC 
+> speaker signals. The sound would come through the regular laptop speakers. 
+> I believe to do this you use the regular PC speaker kernel code, I.E. the 
+> pcspkr module. You may need to set parameters on the sound card as well; 
+> amixer should give you a clue as to what needs changing. You might have to 
+> set a control to on, unmute a control, and/or increase a control's volume. 
+> Failing that, do you know if the snd_pcsp code has been removed entirely 
+> or is it just disabled in your distribution's stock kernel? Could you 
+> perhaps recompile your kernel to put the module back?
+> Joe
+>
+> On 5/27/2023 2:42 AM, Janina Sajka wrote:
+>> Dear All:
+>>
+>> I'm wondering whether it's still supported in alsa?
+>>
+>> Yes, in ancient history, with speakers in the computer case just for a
+>> beep on backspace, the old pcskpr module did the trick.
+>>
+>> Then those speakers disappeared, but alsa-lib gave us an snd-beep module
+>> (as I recall). I'm not finding that module these days, and I'm wondering
+>> wheter it's just not getting compiled for some reason? Or has it really
+>> been dropped.
+>>
+>> I know most fot the sighted world hates that beep on backspace. That's
+>> partly why it's quite hard to google for this question. I don't mind if
+>> it's off by default, but it should be something those of us who find it
+>> beneficial should be able to turn on, imo.
+>>
+>> Anyone know.
+>>
+>> Janina
+>>
+>
+> 
 
 
