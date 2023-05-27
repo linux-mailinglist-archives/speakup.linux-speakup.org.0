@@ -1,41 +1,46 @@
-Return-Path: <speakup+bounces-929-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-930-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 19DE870E18F
-	for <lists+speakup@lfdr.de>; Tue, 23 May 2023 18:20:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 8EEC17132D5
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 08:42:52 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=carmickle.com header.i=@carmickle.com header.a=rsa-sha256 header.s=2021081500 header.b=kUx3Y+IS;
+	dkim=pass (1024-bit key; secure) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=TbQ8opWC;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BDF06381148; Tue, 23 May 2023 12:20:13 -0400 (EDT)
+	id 37C4D382474; Sat, 27 May 2023 02:42:51 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9986F381148
-	for <lists+speakup@lfdr.de>; Tue, 23 May 2023 12:20:13 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 148EE38233E
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 02:42:51 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3D0213823CD; Tue, 23 May 2023 12:20:04 -0400 (EDT)
-Received: from bullseyemail.carmickle.com (bullseyemail.carmickle.com [50.116.61.232])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D93E2381148
-	for <speakup@linux-speakup.org>; Tue, 23 May 2023 12:20:03 -0400 (EDT)
-Received: from smtpclient.apple (unknown [IPv6:2600:4040:5dba:7e00:b55e:de41:6950:d494])
-	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	id D487E38238C; Sat, 27 May 2023 02:42:41 -0400 (EDT)
+Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 0D01A380F1C
+	for <speakup@linux-speakup.org>; Sat, 27 May 2023 02:42:41 -0400 (EDT)
+Received: from opera.rednote.net (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
 	(No client certificate requested)
-	by bullseyemail.carmickle.com (Postfix) with ESMTPSA id ACC6A591F2E6;
-	Tue, 23 May 2023 16:19:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=carmickle.com;
-	s=2021081500; t=1684858768;
+	by mail.rednote.net (Postfix) with ESMTPS id 68E75FA191
+	for <speakup@linux-speakup.org>; Sat, 27 May 2023 02:42:08 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
+	t=1685169728;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=jHT/fk3WbIc4GV/pVAwrtuST3Y0AsbqPeSxvTUw6LsA=;
-	b=kUx3Y+ISJkzpHw16dWdXEHa/v/SM8Bo0UwKaJ2J3gjAc10y2kBknsKObAg6uAu9KX8cxDL
-	z1ZdJm6NwVokAcu9gcqI16ksXyT/sNB/RsFkahBWbe6sYhBkAEfUmnLKlOApK2+mSK7+hu
-	/3bykUZRKLYTnmh+cSeSOrcnBmIXOQ8=
-Content-Type: text/plain;
-	charset=us-ascii
+	 to:to:cc:mime-version:mime-version:content-type:content-type;
+	bh=+IcI/GOSBu3DRD6J9PGtJDG6HUr1Potk0k3nzSW0GNU=;
+	b=TbQ8opWChd1zInhJsN9RBHYN8OmHVDuI7jWiLsZ7mpamhStYDWLCseCa3vbyqhjg8MAm15
+	jX0Ra30UctcNnEYPebp4KMHcjyoFXpZJx+9uvc5lrFee9IwFFBHRYV0lYWS0vZWEdSDx4d
+	1azsVtH/8rn8/0AMKx2Gh5CeAIh7zgQ=
+Received: (from janina@localhost)
+	by opera.rednote.net (8.17.1/8.16.1/Submit) id 34R6g8hR307727
+	for speakup@linux-speakup.org; Sat, 27 May 2023 02:42:08 -0400
+Date: Sat, 27 May 2023 02:42:08 -0400
+From: Janina Sajka <janina@rednote.net>
+To: speakup@linux-speakup.org
+Subject: Beep on Backspace in Console Sessions
+Message-ID: <ZHGmQFwqgliD6p3X@rednote.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -44,55 +49,41 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3731.500.231\))
-Subject: Re: Can I Increase a Buffer size in Speakup?
-From: Frank Carmickle <frank@carmickle.com>
-In-Reply-To: <2b29145e-c2f5-feec-9fd8-c312b1b089ae@hubert-humphrey.com>
-Date: Tue, 23 May 2023 12:19:28 -0400
-Cc: speakup@linux-speakup.org
-Content-Transfer-Encoding: quoted-printable
-Message-Id: <BD451480-536C-4F58-8D27-F72E75DD208C@carmickle.com>
-References: <2b29145e-c2f5-feec-9fd8-c312b1b089ae@hubert-humphrey.com>
-To: Chime Hart <chime@hubert-humphrey.com>
-X-Mailer: Apple Mail (2.3731.500.231)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Chime,
+Dear All:
 
-On May 20, 2023, at 17:29, Chime Hart <chime@hubert-humphrey.com> wrote:
->=20
-> Hi All: This list has been `quite quiet lately. I am temporarily =
-useing a laptop with Voxin. Since I am in Alpine with 135 lines, I tend =
-to use a num-pad 9 to rapidly scroll through text. Well, more often =
-lately, I suppose a buffer is over-flowing,=20
+I'm wondering whether it's still supported in alsa?
 
-I don't think so. It seems more likely that the control character to =
-quiet the speech is getting dropped.
+Yes, in ancient history, with speakers in the computer case just for a
+beep on backspace, the old pcskpr module did the trick.
 
-I do not know a way of changing the output buffer of speakup, but I =
-think you'd want to make it smaller not larger, to increase =
-interactivity. I'd be very surprised if the problem is in the text and =
-control characters from speakup reaching the speechd-up buffer. It's =
-much more likely that the audio driver isn't receiving the flush =
-command.
+Then those speakers disappeared, but alsa-lib gave us an snd-beep module
+(as I recall). I'm not finding that module these days, and I'm wondering
+wheter it's just not getting compiled for some reason? Or has it really
+been dropped.
 
-I too am having issues with software synthesis using speakup. I'll let =
-the list know when I've made any progress towards something better .
+I know most fot the sighted world hates that beep on backspace. That's
+partly why it's quite hard to google for this question. I don't mind if
+it's off by default, but it should be something those of us who find it
+beneficial should be able to turn on, imo.
 
---FC
+Anyone know.
 
-> as sometimes for several minutes it will continue reading, no =
-keystrokes or tty changing will stop it until its finished. I even tried =
-altering the niceness of speakup-and-voxin all the way from 10 to minus =
-20. Didn't seem to make any difference. As it is with Voxin, I still =
-hear a smijin of a previous line jumbled with a current line. I did try =
-an embedded Alison voice, but last November on a trip to NJ, speech =
-mysteriously quit, no errors in the log, couldn't get it back with
-> sudo ./speechd-up
-> Anyway, I am not exactly thrilled with performance of software speech =
-on this laptop. Can any1 please suggest any settings or improvements, =
-but please `no e speak. Thanks so  much in advance
-> Chime
->=20
+Janina
+
+-- 
+
+Janina Sajka (she/her/hers)
+Accessibility Consultant https://linkedin.com/in/jsajka
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
+Linux Foundation Fellow
+https://www.linuxfoundation.org/board-of-directors-2/
 
 
