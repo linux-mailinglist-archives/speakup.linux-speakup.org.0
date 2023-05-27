@@ -1,47 +1,35 @@
-Return-Path: <speakup+bounces-940-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-941-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 97CC0713648
-	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 21:48:08 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="signature verification failed" (2048-bit key; unprotected) header.d=noisynotes.com header.i=@noisynotes.com header.a=rsa-sha256 header.s=default header.b=CU2Au5j8;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 2203D71364A
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 21:49:41 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 122B0382480; Sat, 27 May 2023 15:48:07 -0400 (EDT)
+	id B0F973824D3; Sat, 27 May 2023 15:49:40 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E68D7382467
-	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 15:48:06 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 9AA5B38249D
+	for <lists+speakup@lfdr.de>; Sat, 27 May 2023 15:49:40 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B02DA382451; Sat, 27 May 2023 15:47:57 -0400 (EDT)
-Received: from premium139-1.web-hosting.com (premium139-1.web-hosting.com [162.0.232.137])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 83E2E382419
-	for <speakup@linux-speakup.org>; Sat, 27 May 2023 15:47:57 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=noisynotes.com; s=default; h=In-Reply-To:From:References:To:Subject:
-	MIME-Version:Date:Message-ID:Content-Type:Sender:Reply-To:Cc:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
-	List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
-	bh=zyY6+ns/ql7gE3RX1XAOEK1vDFZybS/SCBcPlc56iWY=; b=CU2Au5j85m6PrKL/DH9NBgXuuX
-	dtztbR34G1AJDNqAWfVsx/Uqa4KFR2lsLHctWNNE8xDKYKDj3HSuQYJK6+ln4St4riA1LoFQ/CCiY
-	gEeaep0kP1yRWyLdQ7ejtNaOe5j1T+9tVGy75piij7SBGqVtabfMWuZa+Disny1Xj95k27C0sCFTr
-	Vq3FQvQXaZh0Hye/1Mmj1EeWIG4D9GpHMl6VnfM9Q4ctdqhnRjlhfmj5EsUTOWLNRM2gytcVwXDYJ
-	Ot4NgEHfwziJiBhOxSxn3pB3jU2XpR6GgeCt9XbyxAeop1FSsBF6KD6eObNSsnj2BWJJ+88pzR6DZ
-	qzKiWg3Q==;
-Received: from pool-108-41-98-141.nycmny.fios.verizon.net ([108.41.98.141]:56152 helo=[192.168.1.140])
-	by premium139.web-hosting.com with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.95)
-	(envelope-from <sm@noisynotes.com>)
-	id 1q2ztH-0073dy-WA
-	for speakup@linux-speakup.org;
-	Sat, 27 May 2023 15:47:56 -0400
-Content-Type: multipart/alternative;
- boundary="------------0Dz3sTCh0RwgV3akVOLaPTJG"
-Message-ID: <2a28b749-ffd1-5fe1-7e25-d12e7807fbb3@noisynotes.com>
-Date: Sat, 27 May 2023 15:47:34 -0400
+	id 7A92538247C; Sat, 27 May 2023 15:49:35 -0400 (EDT)
+Received: from relay.b.hostedemail.com (smtprelay0251.b.hostedemail.com [64.98.42.251])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1FF50382469
+	for <speakup@linux-speakup.org>; Sat, 27 May 2023 15:49:35 -0400 (EDT)
+Received: from omf12.b.hostedemail.com (omf12 [10.200.6.75])
+	by unirelay04.b.hostedemail.com (Postfix) with ESMTP id 05791140217;
+	Sat, 27 May 2023 19:49:32 +0000 (UTC)
+Received: from [HIDDEN] (Authenticated sender: glenn@ervin.email) by omf12.b.hostedemail.com (Postfix) with ESMTPA id B37721C0002;
+	Sat, 27 May 2023 19:49:30 +0000 (UTC)
+Message-ID: <2a6501d990d4$5ac92b20$01ffa8c0@nucwin10>
+Reply-To: "K0LNY" <glenn@ervin.email>
+From: "K0LNY" <glenn@ervin.email>
+To: <speakup@linux-speakup.org>,
+	"Steve Matzura" <sm@noisynotes.com>
+References: <2a1801d990c2$5c0559d0$01ffa8c0@nucwin10> <69604dc4-6b77-821c-9ec0-dcd77152dc32@noisynotes.com>
+Subject: Re: Debian Install With Speech
+Date: Sat, 27 May 2023 14:49:30 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,148 +39,172 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: Debian Install With Speech
-Content-Language: en-US
-To: speakup@linux-speakup.org
-References: <2a1801d990c2$5c0559d0$01ffa8c0@nucwin10>
- <2a2b01d990c6$28c3b860$01ffa8c0@nucwin10>
-From: Steve Matzura <sm@noisynotes.com>
-In-Reply-To: <2a2b01d990c6$28c3b860$01ffa8c0@nucwin10>
-X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
-X-AntiAbuse: Primary Hostname - premium139.web-hosting.com
-X-AntiAbuse: Original Domain - linux-speakup.org
-X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
-X-AntiAbuse: Sender Address Domain - noisynotes.com
-X-Get-Message-Sender-Via: premium139.web-hosting.com: authenticated_id: sm@noisynotes.com
-X-Authenticated-Sender: premium139.web-hosting.com: sm@noisynotes.com
-X-Source: 
-X-Source-Args: 
-X-Source-Dir: 
-X-From-Rewrite: unmodified, already matched
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_2A62_01D990AA.71483D20"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-Stat-Signature: 71bbm5z69ygnmf5w1zfheo9ktkucfhfd
+X-Rspamd-Server: rspamout02
+X-Spam-Status: No, score=-2.40
+X-Rspamd-Queue-Id: B37721C0002
+X-Session-Marker: 676C656E6E40657276696E2E656D61696C
+X-Session-ID: U2FsdGVkX19ecUUTb+h1JfD0Ej6TSfh8MJ+TPzUpxII=
+X-HE-Tag: 1685216970-373120
+X-HE-Meta: U2FsdGVkX1+Uzb6uiYClWpb9hPG+ejK2hwzbulXC0H8yJDtanTVYAB718KtsTL8cR5KRzkvtzOyi0bgMR6dGMw==
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
 This is a multi-part message in MIME format.
---------------0Dz3sTCh0RwgV3akVOLaPTJG
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
 
-Glad to know I was wrong. I swear I read in some wiki that only the full 
-installer disks had speech during installation.
+------=_NextPart_000_2A62_01D990AA.71483D20
+Content-Type: text/plain;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+I finally got it talking, but the strange issue I'm having is that I get =
+through the language, location and keyboard, and then it does not find =
+the installation media.
+I was never prompted for the WIFI, and I know it works, because I boot =
+to an SD card on this computer, and I had Debian on that card.
+I'm trying to get an install without a desktop.
+So I wonder if I need to go with the full DVD installer, if it is =
+available.
+Glenn
+  ----- Original Message -----=20
+  From: Steve Matzura=20
+  To: speakup@linux-speakup.org=20
+  Sent: Saturday, May 27, 2023 2:45 PM
+  Subject: Re: Debian Install With Speech
 
 
-On 5/27/2023 2:07 PM, K0LNY wrote:
-> Hi All,
-> It was operator error.
-> My system wasn't booting to my USB media, and when I did the actions 
-> to select a boot drive, I got it to work with S and enter.
-> Thanks.
-> Glenn
-> -----
->
->     ----- Original Message -----
->     *From:* K0LNY <mailto:glenn@ervin.email>
->     *To:* Speakup is a screen review system for Linux.
->     <mailto:speakup@linux-speakup.org>
->     *Sent:* Saturday, May 27, 2023 12:40 PM
->     *Subject:* Debian Install With Speech
->
->             Howdy All,
->     I am not having luck with getting the Debian installer to speak.
->     I am booting to:
->     debian-11.7.0-i386-netinst.iso
->     from:
->     https://cdimage.debian.org/debian-cd/current/i386/iso-cd/
->     and I have tried alt S, S alone, and down arrowing 5 times and
->     enter, and down arrowing 4 times and enter.
->     These are things I read that are supposed to put it into a talking
->     installer.
->     Does this version not have a talking installer?
->     I asked on the Debian accessibility list, but I have gotten no
->     responses, so I thought I'd ask here.
->     I'll use speakup on it in a CLI, if I can get it working.
->     Thanks.
->     Glenn
->
---------------0Dz3sTCh0RwgV3akVOLaPTJG
-Content-Type: text/html; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+  Unless I am sadly mistaken, the only Debian distro with speech is the =
+full installer, Disk #1. I didn't know that 11.7 was out in distributed =
+form, only upgradable from 11.6, which I just did the other day =
+successfully.
 
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body>
-    <p>Glad to know I was wrong. I swear I read in some wiki that only
-      the full installer disks had speech during installation.</p>
-    <p><br>
-    </p>
-    <div class="moz-cite-prefix">On 5/27/2023 2:07 PM, K0LNY wrote:<br>
-    </div>
-    <blockquote type="cite"
-      cite="mid:2a2b01d990c6$28c3b860$01ffa8c0@nucwin10">
-      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-      <meta name="GENERATOR" content="MSHTML 11.00.10570.1001">
-      <style></style>
-      <div><font size="2" face="Arial">   
-          <div>Hi All,</div>
-          <div>It was operator error.</div>
-          <div>My system wasn't booting to my USB media, and when I did
-            the actions to select a boot drive, I got it to work with S
-            and enter.</div>
-          <div>Thanks.</div>
-          <div>Glenn</div>
-          <div>----- </div>
-        </font></div>
-      <blockquote style="PADDING-LEFT: 5px; MARGIN-LEFT: 5px;
-        BORDER-LEFT: #000000 2px solid; PADDING-RIGHT: 0px;
-        MARGIN-RIGHT: 0px" dir="ltr">
-        <div style="FONT: 10pt arial">----- Original Message ----- </div>
-        <div style="BACKGROUND: #e4e4e4; FONT: 10pt arial; font-color:
-          black"><b>From:</b> <a title="glenn@ervin.email"
-            href="mailto:glenn@ervin.email" moz-do-not-send="true">K0LNY</a>
-        </div>
-        <div style="FONT: 10pt arial"><b>To:</b> <a
-            title="speakup@linux-speakup.org"
-            href="mailto:speakup@linux-speakup.org"
-            moz-do-not-send="true">Speakup is a screen review system for
-            Linux.</a> </div>
-        <div style="FONT: 10pt arial"><b>Sent:</b> Saturday, May 27,
-          2023 12:40 PM</div>
-        <div style="FONT: 10pt arial"><b>Subject:</b> Debian Install
-          With Speech</div>
-        <div><br>
-        </div>
-        <div><font size="2" face="Arial">        Howdy All,</font></div>
-        <div><font size="2" face="Arial">I am not having luck with
-            getting the Debian installer to speak.</font></div>
-        <div><font size="2" face="Arial">I am booting to:</font></div>
-        <div><font size="2" face="Arial">debian-11.7.0-i386-netinst.iso</font></div>
-        <div><font size="2" face="Arial">from:</font></div>
-        <div><font size="2" face="Arial"><a
-              href="https://cdimage.debian.org/debian-cd/current/i386/iso-cd/"
-              moz-do-not-send="true" class="moz-txt-link-freetext">https://cdimage.debian.org/debian-cd/current/i386/iso-cd/</a></font></div>
-        <div><font size="2" face="Arial">and I have tried alt S, S
-            alone, and down arrowing 5 times and enter, and down
-            arrowing 4 times and enter.</font></div>
-        <div><font size="2" face="Arial">These are things I read that
-            are supposed to put it into a talking installer.</font></div>
-        <div><font size="2" face="Arial">Does this version not have a
-            talking installer?</font></div>
-        <div><font size="2" face="Arial">I asked on the Debian
-            accessibility list, but I have gotten no responses, so I
-            thought I'd ask here.</font></div>
-        <div><font size="2" face="Arial">I'll use speakup on it in a
-            CLI, if I can get it working.</font></div>
-        <div> </div>
-        <div><font size="2" face="Arial">Thanks.</font></div>
-        <div> </div>
-        <div><font size="2" face="Arial">Glenn</font></div>
-      </blockquote>
-    </blockquote>
-  </body>
-</html>
 
---------------0Dz3sTCh0RwgV3akVOLaPTJG--
+
+
+  On 5/27/2023 1:40 PM, K0LNY wrote:
+
+            Howdy All,
+    I am not having luck with getting the Debian installer to speak.
+    I am booting to:
+    debian-11.7.0-i386-netinst.iso
+    from:
+    https://cdimage.debian.org/debian-cd/current/i386/iso-cd/
+    and I have tried alt S, S alone, and down arrowing 5 times and =
+enter, and down arrowing 4 times and enter.
+    These are things I read that are supposed to put it into a talking =
+installer.
+    Does this version not have a talking installer?
+    I asked on the Debian accessibility list, but I have gotten no =
+responses, so I thought I'd ask here.
+    I'll use speakup on it in a CLI, if I can get it working.
+
+    Thanks.
+
+    Glenn
+------=_NextPart_000_2A62_01D990AA.71483D20
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+=EF=BB=BF<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3DUTF-8" http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001"></HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT size=3D2 face=3DArial>I finally got it talking, but the =
+strange issue I'm=20
+having is that I get through the language, location and keyboard, and =
+then it=20
+does not find the installation media.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I was never prompted for the WIFI, and =
+I know it=20
+works, because I boot to an SD card on this computer, and I had Debian =
+on that=20
+card.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I'm trying to get an install without a=20
+desktop.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>So I wonder if I need to go with the =
+full DVD=20
+installer, if it is available.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV>
+<BLOCKQUOTE=20
+style=3D"PADDING-LEFT: 5px; MARGIN-LEFT: 5px; BORDER-LEFT: #000000 2px =
+solid; PADDING-RIGHT: 0px; MARGIN-RIGHT: 0px"=20
+dir=3Dltr>
+  <DIV style=3D"FONT: 10pt arial">----- Original Message ----- </DIV>
+  <DIV=20
+  style=3D"BACKGROUND: #e4e4e4; FONT: 10pt arial; font-color: =
+black"><B>From:</B>=20
+  <A title=3Dsm@noisynotes.com href=3D"mailto:sm@noisynotes.com">Steve =
+Matzura</A>=20
+  </DIV>
+  <DIV style=3D"FONT: 10pt arial"><B>To:</B> <A =
+title=3Dspeakup@linux-speakup.org=20
+  =
+href=3D"mailto:speakup@linux-speakup.org">speakup@linux-speakup.org</A> =
+</DIV>
+  <DIV style=3D"FONT: 10pt arial"><B>Sent:</B> Saturday, May 27, 2023 =
+2:45=20
+PM</DIV>
+  <DIV style=3D"FONT: 10pt arial"><B>Subject:</B> Re: Debian Install =
+With=20
+  Speech</DIV>
+  <DIV><FONT size=3D2 face=3DArial></FONT><BR></DIV>
+  <P>Unless I am sadly mistaken, the only Debian distro with speech is =
+the full=20
+  installer, Disk #1. I didn't know that 11.7 was out in distributed =
+form, only=20
+  upgradable from 11.6, which I just did the other day successfully.</P>
+  <P><BR></P>
+  <DIV class=3Dmoz-cite-prefix>On 5/27/2023 1:40 PM, K0LNY =
+wrote:<BR></DIV>
+  <BLOCKQUOTE cite=3Dmid:2a1801d990c2$5c0559d0$01ffa8c0@nucwin10 =
+type=3D"cite">
+    <META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
+    <STYLE></STYLE>
+
+    <DIV><FONT size=3D2 face=3DArial>&nbsp;&nbsp;&nbsp; =
+&nbsp;&nbsp;&nbsp; Howdy=20
+    All,</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>I am not having luck with getting =
+the Debian=20
+    installer to speak.</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>I am booting to:</FONT></DIV>
+    <DIV><FONT size=3D2 =
+face=3DArial>debian-11.7.0-i386-netinst.iso</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>from:</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial><A class=3Dmoz-txt-link-freetext=20
+    href=3D"https://cdimage.debian.org/debian-cd/current/i386/iso-cd/"=20
+    =
+moz-do-not-send=3D"true">https://cdimage.debian.org/debian-cd/current/i38=
+6/iso-cd/</A></FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>and I have tried alt S, S alone, =
+and down=20
+    arrowing 5 times and enter, and down arrowing 4 times and=20
+enter.</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>These are things I read that are =
+supposed to=20
+    put it into a talking installer.</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>Does this version not have a =
+talking=20
+    installer?</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>I asked on the Debian accessibility =
+list, but I=20
+    have gotten no responses, so I thought I'd ask here.</FONT></DIV>
+    <DIV><FONT size=3D2 face=3DArial>I'll use speakup on it in a CLI, if =
+I can get=20
+    it working.</FONT></DIV>
+    <DIV>&nbsp;</DIV>
+    <DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
+    <DIV>&nbsp;</DIV>
+    <DIV><FONT size=3D2=20
+face=3DArial>Glenn</FONT></DIV></BLOCKQUOTE></BLOCKQUOTE></BODY></HTML>
+
+------=_NextPart_000_2A62_01D990AA.71483D20--
+
 
