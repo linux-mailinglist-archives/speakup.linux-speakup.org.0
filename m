@@ -1,38 +1,51 @@
-Return-Path: <speakup+bounces-952-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-953-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D998F718EEA
-	for <lists+speakup@lfdr.de>; Thu,  1 Jun 2023 01:05:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 09215718EFD
+	for <lists+speakup@lfdr.de>; Thu,  1 Jun 2023 01:15:54 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=uLZ4CsIS;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=IbnDFaxH;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 676253824CB; Wed, 31 May 2023 19:05:51 -0400 (EDT)
+	id 89A603824C7; Wed, 31 May 2023 19:15:53 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 4943938236B
-	for <lists+speakup@lfdr.de>; Wed, 31 May 2023 19:05:51 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6C6E6382347
+	for <lists+speakup@lfdr.de>; Wed, 31 May 2023 19:15:53 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 439AB382348; Wed, 31 May 2023 19:05:42 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E540B382343
-	for <speakup@linux-speakup.org>; Wed, 31 May 2023 19:05:41 -0400 (EDT)
-Received: from [IPV6:2a01:cb09:b069:2502:4e22:e17a:54a5:6293] (pop.92-184-106-69.mobile.abo.orange.fr [92.184.106.69])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id 0CCE3E707E;
-	Thu,  1 Jun 2023 00:02:50 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1685570571; bh=TVHeuCPdCVryEvB+gX0WRxO6cdYmXpHH+1GQwlKAvmU=;
-	h=Date:Subject:To:Cc:References:From:In-Reply-To:From;
-	b=uLZ4CsISZSvrtdB3MuKCUULvZe4heBI6RZEpPftZHqc3O54r5eI3dXNDrR0zJBJMB
-	 dn5x5dNxrLeMCafWGQwCXxlbBJGTem320AslMb2xW8Jef7pv5PETKSzLWAVdekUX4Y
-	 4klKWtpvtwTDc3o3jheqLELR9KbBH4LbE7q63UJ67yZO4QhlQ+9ZsKjWPWIsjkgDQ8
-	 k0a4Q64JyYeZHlVrtgzn9HRRyT7X856fZQoJcUareiraq8MTNIKAi4xFEe24xA/g5C
-	 4PuYhzV/19ZUqzNA6gTCprhhIX00BDAPDiaq20zIAy0NviX3Am4CloPzRMI+j+szRZ
-	 CQrUMwXSJ8lKA==
-Message-ID: <87e9db08-ba5f-1287-9409-d51fd5c3bad4@slint.fr>
-Date: Thu, 1 Jun 2023 01:05:32 +0200
+	id 3F293382389; Wed, 31 May 2023 19:15:44 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id F31BC382347
+	for <speakup@linux-speakup.org>; Wed, 31 May 2023 19:15:43 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [172.56.80.62])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 38C0F16B3;
+	Wed, 31 May 2023 16:15:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+	t=1685574940; bh=16q9RpuQoxmCrZii0d35xf3pvINw+84iIKSswqFCZ3g=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=IbnDFaxHZyeZ+AMlXUROys5enc75GsQHLTeJ2CsAMR+a033J4TeZQpQR/M5ubdpj9
+	 r28QvuYlqGZZBRqMsh0rVgsHWdDqYWnvqVQEeVrYRXmhl5vYevPo3s/68sk7tHM4V2
+	 wYbC3/RQ6mZaq7xkOqbb3GNaAwxP+Zo3GTW9vdY/HVK/1VTylqKHyHjF0SOGQc0DAB
+	 amXJGJxB4o7GEGmhQTkXMzZ/YEGnaaZbvVDVv7cnLdwFE6/LRzh46SmNvWrDmoSxH3
+	 KftiYYxA8kO4q2D26nZ/rRZxQJpIUvFk58VvvTimKs2Xoye97VUzmRlZTE8KI337D1
+	 NOOgedwBRctLQ==
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 1D1EAC13C; Wed, 31 May 2023 16:15:39 -0700 (MST)
+Date: Wed, 31 May 2023 16:15:39 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: Didier Spaier <didier@slint.fr>
+Cc: speakup@linux-speakup.org
+Subject: Re: Beep on Backspace in Console Sessions
+Message-ID: <ZHfVG9Z7CiU6csE6@gregn.net>
+References: <ZHGmQFwqgliD6p3X@rednote.net>
+ <b175e143-de30-9fb6-1ed2-d352a3af34a9@slint.fr>
+ <ZHUKjA+f+SLDtpR+@gregn.net>
+ <87e9db08-ba5f-1287-9409-d51fd5c3bad4@slint.fr>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,90 +55,37 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.11.0
-Subject: Re: Beep on Backspace in Console Sessions
-To: Gregory Nowak <greg@gregn.net>
-Cc: speakup@linux-speakup.org
-References: <ZHGmQFwqgliD6p3X@rednote.net>
- <b175e143-de30-9fb6-1ed2-d352a3af34a9@slint.fr> <ZHUKjA+f+SLDtpR+@gregn.net>
-Content-Language: en-US
-From: Didier Spaier <didier@slint.fr>
-In-Reply-To: <ZHUKjA+f+SLDtpR+@gregn.net>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <87e9db08-ba5f-1287-9409-d51fd5c3bad4@slint.fr>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 0.103.8 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-It is possible to compile the pcspkr driver built-in the kernel instead as a
-module, then it would not appear in the output of lsmod. Maybe that is the case
-for your ancient laptop?
+No. The pcspkr module is compiled as a module, and doesn't need to be
+loaded for the speakers or headphone jack to produce the console beep.
 
-Cheers,
-Didier
+Greg
 
-Le 29/05/2023 à 22:26, Gregory Nowak a écrit :
-> On my ancient laptop bought in early 2013, I still get a beep from the
-> speakers and headphone jack when pressing backspace at the
-> console. Looking at the list of loaded sound modules, it isn't
-> immediately obvious which one of them is responsible for that. No,
-> there is no snd-beep module, and the pcspkr module isn't loaded. I can
-> post a list of the loaded sound modules if that would help.
-> There is a Beep sound control, which needs to be unmuted, and have its
-> sound level adjusted for the beep to be heard.
+
+On Thu, Jun 01, 2023 at 01:05:32AM +0200, Didier Spaier wrote:
+> It is possible to compile the pcspkr driver built-in the kernel instead as a
+> module, then it would not appear in the output of lsmod. Maybe that is the case
+> for your ancient laptop?
 > 
-> For reference, my desktop built in June 2019 has a PC speaker attached
-> to the motherboard header, and I do get a beep out of that speaker
-> for which the pcspkr module is responsible.
+> Cheers,
+> Didier
 > 
-> It may also be worth pointing out that one will not always get a beep
-> when pressing backspace on an empty line in the console, if in a
-> screen(1) session for example. Good luck with your move Janina.
-> 
-> Greg
-> 
-> 
-> On Sat, May 27, 2023 at 02:07:07PM +0200, Didier Spaier wrote:
->> Hey Janina,
->>
->> as Joseph suggested I would first check that the kernel driver pcspkr is
->> compiled as a module.
->>
->> The answer is yes if this command gives an output:
->> lsmod|grep pcspkr
->>
->> You coule also check the output of:
->> zgrep INPUT_PCSPKR /proc/config.gz
->> Here it gives:
->> CONFIG_INPUT_PCSPKR=m
->>
->> If this module is provided, check that you have in /etc/inputrc:
->>
->> set bell-style audible (the argument should not be "visible" or "none")
->>
->> If this module is not provided you need to rebuild your kernel or use one that
->> provides it.
->>
->> If you have this module but not the needed hardware you could use this software:
->> https://github.com/Hawk777/abeep
->>
->> It is available for Arch in the AUR:
->> https://aur.archlinux.org/packages/abeep-git
->>
->> I built it in Slint, it works and relies on the libasound.so shared library from
->> alsa
->>
->> But what I don't know is how to tell bash to replace the call to pcspkr by
->> /usr/bin/bell and "man readline" did not give me a clue :(
->>
->> there is also a beep software:
->> https://github.com/spkr-beep/beep also available on Arch:
->> https://archlinux.org/packages/extra/x86_64/beep/
->>
->> It works here (TM) but also needs a the pcspkr module and the hardware.
->>
->> Cheers
->>
->>
-> 
-> 
+
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
