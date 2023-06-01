@@ -1,51 +1,45 @@
-Return-Path: <speakup+bounces-953-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-954-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 09215718EFD
-	for <lists+speakup@lfdr.de>; Thu,  1 Jun 2023 01:15:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 8C1D2718FFD
+	for <lists+speakup@lfdr.de>; Thu,  1 Jun 2023 03:26:14 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=IbnDFaxH;
+	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=v+Y7eFWY;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 89A603824C7; Wed, 31 May 2023 19:15:53 -0400 (EDT)
+	id DDCC53824B5; Wed, 31 May 2023 21:26:13 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6C6E6382347
-	for <lists+speakup@lfdr.de>; Wed, 31 May 2023 19:15:53 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id BC7E338236A
+	for <lists+speakup@lfdr.de>; Wed, 31 May 2023 21:26:13 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3F293382389; Wed, 31 May 2023 19:15:44 -0400 (EDT)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id F31BC382347
-	for <speakup@linux-speakup.org>; Wed, 31 May 2023 19:15:43 -0400 (EDT)
-Received: from vbox.gregn.net (unknown [172.56.80.62])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id 38C0F16B3;
-	Wed, 31 May 2023 16:15:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
-	t=1685574940; bh=16q9RpuQoxmCrZii0d35xf3pvINw+84iIKSswqFCZ3g=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=IbnDFaxHZyeZ+AMlXUROys5enc75GsQHLTeJ2CsAMR+a033J4TeZQpQR/M5ubdpj9
-	 r28QvuYlqGZZBRqMsh0rVgsHWdDqYWnvqVQEeVrYRXmhl5vYevPo3s/68sk7tHM4V2
-	 wYbC3/RQ6mZaq7xkOqbb3GNaAwxP+Zo3GTW9vdY/HVK/1VTylqKHyHjF0SOGQc0DAB
-	 amXJGJxB4o7GEGmhQTkXMzZ/YEGnaaZbvVDVv7cnLdwFE6/LRzh46SmNvWrDmoSxH3
-	 KftiYYxA8kO4q2D26nZ/rRZxQJpIUvFk58VvvTimKs2Xoye97VUzmRlZTE8KI337D1
-	 NOOgedwBRctLQ==
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 1D1EAC13C; Wed, 31 May 2023 16:15:39 -0700 (MST)
-Date: Wed, 31 May 2023 16:15:39 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: Didier Spaier <didier@slint.fr>
-Cc: speakup@linux-speakup.org
-Subject: Re: Beep on Backspace in Console Sessions
-Message-ID: <ZHfVG9Z7CiU6csE6@gregn.net>
-References: <ZHGmQFwqgliD6p3X@rednote.net>
- <b175e143-de30-9fb6-1ed2-d352a3af34a9@slint.fr>
- <ZHUKjA+f+SLDtpR+@gregn.net>
- <87e9db08-ba5f-1287-9409-d51fd5c3bad4@slint.fr>
+	id A2EF93823A9; Wed, 31 May 2023 21:26:04 -0400 (EDT)
+Received: from out-4.mta1.migadu.com (out-4.mta1.migadu.com [95.215.58.4])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B9F8538236A
+	for <speakup@linux-speakup.org>; Wed, 31 May 2023 21:26:02 -0400 (EDT)
+Date: Thu, 1 Jun 2023 11:21:49 +1000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
+	t=1685582730;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=4S7psH4mYLmgt8nmGHTk+J5vq0yzdiE3eZ5P9WIgsgs=;
+	b=v+Y7eFWYXPb9sn0cq6lv7YFNoX5b8vVSgKp6JL2KLTYmnxiXuP5lGzgfzuyWVQnTv/AYKu
+	RIIPw2XSAbWcHjRNM0Gp1cyEvtx3mPhUhQGyuVmuqEJc9KbHZ4lQd649hcWjBy/xTE+unU
+	HNsAXYLi6TUhOIqZx26gAZE7Ahu2iCsjYU4fBqPOmdO3HrX86PDI0ubX91PJeDd/7Gevfa
+	Dngqt9i++yBxHLEwOk/2piPTUQsmfaGdDOK7zN4h7OCYYVJkxfOHYaZMGfK8vEgAGGz/mn
+	rczxioIHkKLlmOZyqoMRM/Nav4fCt6ayRRdTqj8Yr6g96EQHfiW3G4Z9Zn9phg==
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Jookia <contact@jookia.org>
+To: Martin McCormick <martin.m@suddenlink.net>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: Would the world end if Linux Sound just worked?
+Message-ID: <ZHfyrRc6sc1k_5me@titan>
+References: <018f01d99337$13e15880$01ffa8c0@nucwin10>
+ <01a201d99346$d40918a0$01ffa8c0@nucwin10>
+ <E1q4S4G-0003O3-Hc@wb5agz.lan>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -57,35 +51,100 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <87e9db08-ba5f-1287-9409-d51fd5c3bad4@slint.fr>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 0.103.8 at vserver
-X-Virus-Status: Clean
+In-Reply-To: <E1q4S4G-0003O3-Hc@wb5agz.lan>
+X-Migadu-Flow: FLOW_OUT
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-No. The pcspkr module is compiled as a module, and doesn't need to be
-loaded for the speakers or headphone jack to produce the console beep.
+Try this:
 
-Greg
+https://www.jookia.org/wiki/System-wide_speakup#Running_espeakup_as_your_user
 
-
-On Thu, Jun 01, 2023 at 01:05:32AM +0200, Didier Spaier wrote:
-> It is possible to compile the pcspkr driver built-in the kernel instead as a
-> module, then it would not appear in the output of lsmod. Maybe that is the case
-> for your ancient laptop?
+On Wed, May 31, 2023 at 03:05:12PM -0500, Martin McCormick wrote:
+> I am writing this with a bit of a smile but not much of one.  I
+> have an orca AMD64 system running Bullseye and it's almost
+> perfect except for audio which seems to be a right of passage.
 > 
-> Cheers,
-> Didier
+> 	Right this moment, I am getting audio via a
+> HDMI-to-analog converter and it works fine but there is this
+> perfectly good built-in sound card on the mother board which I
+> know functions because the HP Rizen system had Windows10 on the
+> SSD hard drive and that audio was just fine.
 > 
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-skype: gregn1
-(authorization required, add me to your contacts list first)
-If we haven't been in touch before, e-mail me before adding me to your contacts.
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+> 	Here's the issue and it looks like a number of people
+> have it if you do a duckduckgo search and these people are not
+> trying to get a screen reader to work.  They are just trying to
+> make sound work on an otherwise normal setup.
+> 
+> 	In Linux, one should be a member of the audio group so,
+> if it's your system, you need to use pw to add yourself to the
+> audio group.
+> 
+> 	That used to be good enough and your card 0 according to
+> aplay -list would work as it should and amixer printed out all
+> the "Simple Mixer Control's" that you could use for your
+> particular sound system.
+> 
+> 	This system is a bit over a year old and has 16 GB of RAM
+> so it's not a slouch system but it has a case of the problem I am
+> describing.
+> 
+> 	In one sentence, Audio doesn't work on that system unless
+> you are logged in as root.
+> 
+> 	That's not right since the unix philosophy is to do as
+> little stuff as root as you have to avoid making big mistakes
+> like cd /;rm -r *
+> OOPS!
+> 
+> 	Anyway, if you su to root or do sudo amixer, card 0 is
+> right there and all the controls report sensible value settings.
+> Do amixer as you and amixer feels compelled to makeup settings
+> based on nothing present.  Your adjustable controls all have
+> 65536 steps and they don't do anything.
+> 
+> 	The research I did shows a different fiddly solution for
+> everybody who posted and many did get non-root access to their
+> sound card but I think nobody has the real answer because so many
+> different people had so many solutions that worked for them but
+> not others who tried the same things.
+> 
+> 	Here's what I have noticed so far.  I have some raspberry
+> Pi's, 1 23-year old I86 Dell running stretch, I think and one
+> 19-year-old I86 system running buster and if you do ls -l
+> /dev/snd on any of those systems including the new HP running
+> bullseye, they all have exactly the same ALSA ownership:group
+> listing which is root:audio so the problem's not there.
+> 
+> 	The older ones work right and bullseye doesn't yet.
+> 
+> 	As for the fiddly solutions, some people had timidity
+> running which is a midi program.  They weren't using it so, when
+> they removed it, they got their proper functionality with user
+> level access to audio by audio group members.
+> 
+> 	On my system, timidity is not even installed and never
+> was so what now, Coach?
+> 
+> 	The othere fiddly solutions were even worse, involving
+> permission changes or other things that might end up causing more
+> trouble in the long run.
+> 
+> 	A long time ago, any user of the system could call aplay
+> or whatever the audio player was at the time and pranksters would
+> telnet in from anywhere and tell the sound application to play
+> whatever sound or music they thought would bother the heck out of
+> whoever was physically near the system such as people in a college computer
+> lab.
+> 
+> 	On my system, the first sound card supports speakup plus
+> mplayer and sox applications that use aplay so everything would
+> have to be root to work.
+> 
+> 	Are there any acceptable solutions to get back user-level
+> access to the sound card?
+> 
+> 	Sorry for the length of this post, but what gives, here?
+> 
+> Martin
+> 
 
