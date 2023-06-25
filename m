@@ -1,40 +1,46 @@
-Return-Path: <speakup+bounces-963-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-964-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 147BE73CE28
-	for <lists+speakup@lfdr.de>; Sun, 25 Jun 2023 05:11:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B8F5773CE39
+	for <lists+speakup@lfdr.de>; Sun, 25 Jun 2023 05:17:42 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=ZGYJnVIA;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ACEE238257B; Sat, 24 Jun 2023 23:11:51 -0400 (EDT)
+	id 4B56B382587; Sat, 24 Jun 2023 23:17:42 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 97A3938241D
-	for <lists+speakup@lfdr.de>; Sat, 24 Jun 2023 23:11:51 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 2C3EE382424
+	for <lists+speakup@lfdr.de>; Sat, 24 Jun 2023 23:17:42 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 52163382445; Sat, 24 Jun 2023 23:11:47 -0400 (EDT)
-Received: from atlas.bondproducts.com (23-24-6-165-static.hfc.comcastbusiness.net [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 31739382417
-	for <speakup@linux-speakup.org>; Sat, 24 Jun 2023 23:11:47 -0400 (EDT)
-Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id 5153340508;
-	Sat, 24 Jun 2023 23:11:46 -0400 (EDT)
-Received: by users.shellworld.net (Postfix, from userid 1005)
-	id 1798D1001B8; Sat, 24 Jun 2023 23:11:46 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id 1703F100063;
-	Sat, 24 Jun 2023 23:11:46 -0400 (EDT)
-Date: Sat, 24 Jun 2023 23:11:46 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Tyler Spivey <tspivey@pcdesk.net>
-cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+	id 317FC382476; Sat, 24 Jun 2023 23:17:34 -0400 (EDT)
+Received: from out-46.mta0.migadu.com (out-46.mta0.migadu.com [91.218.175.46])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id ABC82382424
+	for <speakup@linux-speakup.org>; Sat, 24 Jun 2023 23:17:32 -0400 (EDT)
+Date: Sun, 25 Jun 2023 13:17:11 +1000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
+	t=1687663050;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=UmeRamtTjvbgWZrGOJbgkkf/ktjvVCBqXPQnv+UOuHw=;
+	b=ZGYJnVIA2nwpI0i/E7/qtbER/XggVCRBoxs0Z8HDBs0sY4pYVmitLo1+yPkASPL8HYO8wx
+	g6h7IqDvTiluy662mPr//v6gsXQ3Fzyrf/im+l+d9GVxtmdZSEw4O/OW7kWkGKsrqgjrtr
+	5XFWD8ze2iN8j4GV+TELLc5SjCEo/BVYltS9/xMwMcGb2C9wdPI9VUnJWCWrZiBWxTLUNf
+	w1v9i0cuWkByjkgsU+ElaKjYAkTQRKr543C5Jmo+TSAcRg3oNNxksZciRLNHMN0GsjJaN+
+	Q/C4/Y8+0sRG9sDdgMF8q5P9+zLPMbJVzJ6rdWKyBxuaszsVIyAO8bb22Mb1AQ==
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Jookia <contact@jookia.org>
+To: Karen Lewellen <klewellen@shellworld.net>
+Cc: Tyler Spivey <tspivey@pcdesk.net>,
+	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: ot: dectalk internal drivers?
-In-Reply-To: <c6d291a5-8c81-f306-6257-147e16933c4e@pcdesk.net>
-Message-ID: <Pine.LNX.4.64.2306242311000.778686@users.shellworld.net>
+Message-ID: <ZJextwg4IF88wZpM@titan>
 References: <Pine.LNX.4.64.2306241500460.774016@users.shellworld.net>
  <1486e800-a981-31bd-05da-86699f680285@pcdesk.net>
- <Pine.LNX.4.64.2306241601470.774699@users.shellworld.net>
- <c6d291a5-8c81-f306-6257-147e16933c4e@pcdesk.net>
+ <Pine.LNX.4.64.2306242309530.778686@users.shellworld.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -44,54 +50,35 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: MULTIPART/MIXED; BOUNDARY="1949452079-1407719728-1687662706=:778686"
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <Pine.LNX.4.64.2306242309530.778686@users.shellworld.net>
+X-Migadu-Flow: FLOW_OUT
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-  This message is in MIME format.  The first part should be readable text,
-  while the remaining parts are likely unreadable without MIME-aware tools.
+They are DOS exe files.
 
---1949452079-1407719728-1687662706=:778686
-Content-Type: TEXT/PLAIN; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: QUOTED-PRINTABLE
-
-except that when one gets those the .exec file states it is a windows self=
-=20
-extract..why?
-
-
-
-On Sat, 24 Jun 2023, Tyler Spivey wrote:
-
-> I don't know. But it's safe enough to just load PC1 drivers, and if they=
-=20
-> don't work, try PC2.
->
-> On 6/24/2023 1:02 PM, Karen Lewellen wrote:
->>  How will I know which I have?
->>  and yes, just the dos drivers, using arctic busines vision.
->>  Sorry no spell check.
->>
->>
->>
->>  On Sat, 24 Jun 2023, Tyler Spivey wrote:
->>=20
->> >  You just need the dos drivers? My site has them for both the PC1 and=
-=20
->> >  PC2:
->> >  https://allinaccess.com/happ/
->> >=20
->> >=20
->> >  On 6/24/2023 12:02 PM, Karen Lewellen wrote:
->> > >  =C2=A0Seeking these.
->> > >  =C2=A0As it can run with speakup, anyone have them?
->> > >  =C2=A0Thanks,
->> > >  =C2=A0Karen
->> > >=20
->> > >=20
->> > >=20
->> >=20
->> >=20
->
->
---1949452079-1407719728-1687662706=:778686--
+On Sat, Jun 24, 2023 at 11:10:24PM -0400, Karen Lewellen wrote:
+> Wait...why is this a windows file?
+> I do not have words for that.
+> 
+> 
+> 
+> On Sat, 24 Jun 2023, Tyler Spivey wrote:
+> 
+> > You just need the dos drivers? My site has them for both the PC1 and PC2:
+> > https://allinaccess.com/happ/
+> > 
+> > 
+> > On 6/24/2023 12:02 PM, Karen Lewellen wrote:
+> > >  Seeking these.
+> > >  As it can run with speakup, anyone have them?
+> > >  Thanks,
+> > >  Karen
+> > > 
+> > > 
+> > > 
+> > 
+> > 
+> 
 
