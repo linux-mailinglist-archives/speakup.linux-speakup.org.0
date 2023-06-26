@@ -1,44 +1,55 @@
-Return-Path: <speakup+bounces-969-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-970-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3856173D142
-	for <lists+speakup@lfdr.de>; Sun, 25 Jun 2023 16:03:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D02B773D576
+	for <lists+speakup@lfdr.de>; Mon, 26 Jun 2023 03:07:36 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=suXZL1yJ;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=VpD6b2bx;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0258438256F; Sun, 25 Jun 2023 10:03:02 -0400 (EDT)
+	id 32B06382584; Sun, 25 Jun 2023 21:07:35 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D5E2E38252F
-	for <lists+speakup@lfdr.de>; Sun, 25 Jun 2023 10:03:01 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1296138237A
+	for <lists+speakup@lfdr.de>; Sun, 25 Jun 2023 21:07:35 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1248638252F; Sun, 25 Jun 2023 10:02:54 -0400 (EDT)
-Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 9F8A6382453
-	for <speakup@linux-speakup.org>; Sun, 25 Jun 2023 10:02:53 -0400 (EDT)
-Received: from [10.0.2.1] (jpw.jasonjgw.net [10.0.2.1])
+	id 300AC3823C3; Sun, 25 Jun 2023 21:07:27 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id D7E55382375
+	for <speakup@linux-speakup.org>; Sun, 25 Jun 2023 21:07:26 -0400 (EDT)
+Received: from vbox.gregn.net (unknown [172.56.81.38])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
-	(Client did not present a certificate)
-	by svr.jasonjgw.net (Postfix) with ESMTPSA id 07839321C9
-	for <speakup@linux-speakup.org>; Sun, 25 Jun 2023 14:02:20 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
-	s=mail; t=1687701740;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
-	 content-transfer-encoding:content-transfer-encoding:
-	 in-reply-to:in-reply-to:references:references;
-	bh=CR8yyy2iIfJxGBfclzEHDSjIMRHht+CRcogYgs9wnb8=;
-	b=suXZL1yJ2bxMGB9MwNbviA3RAOnJi5MqwLH4TJZ3Zuo9cpjBM1iBHcXaA+wYjih/GR/V/y
-	VQFCor76wu60kX8KtkAlRNZgNxXgPzybNZSx8e9mvoYO2yNr4lUJ5BVRaPb9Dy2l5W/wri
-	L3YRuYKVDb7o1LDvxhDKbX76AvwuwY+rWGne8RzHlfE9HqbsGTBrJ8qCOeDBxKs2g18rde
-	Y3s7JKUPXJrBgZAURIr/QWXzT2vKJjvO5Ur7tWInvrqgzKEgSrItpSg2A20CM9dirMy2SX
-	pP2ekbEkWFnShnAVd5rSDgH5vH9rPQAnLHXm3/KiT7n+XR+LiqjG4QFXszT4Sg==
-Message-ID: <208a3964-66c6-35ed-028c-1126bd0da3bf@jasonjgw.net>
-Date: Sun, 25 Jun 2023 10:02:19 -0400
+	 key-exchange X25519 server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 88B505B0A;
+	Sun, 25 Jun 2023 18:06:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=gregn.net; s=default;
+	t=1687741614; bh=j5x1MYjfD++UsbfcMK9LheraS+el+LYoldvV5EJrPJg=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=VpD6b2bxSrOTT1glnZjDDKdUCyHUDucZA8birHDqKwuGKvvaM0mYthssnplgLbEYy
+	 tML/86QbdhuAG7IxM68kE9HASZxRajSPxkC7QG8EdDFAEZN2cusOyUTmcHPcAvlXWp
+	 XqMWhswiW+UYsDW7MUfiPtuLHLt3pYxhvaTNjLC1rTW5QHNhotbTG9Nj4VcTJbT5qA
+	 QrS9p1Ge4bOuQMQR6w1cu5YLri+0dclIBoe3LJ8t4kyxcOIJDuBYZyQSxeV1Iu4IIY
+	 rbWWbmtPddnVSbU2YF48L8PkD7hdbXvLDl1xULQ0wMHGvTMUPuhcjefw+OGeZuIkDy
+	 HT3VTr6gOuUWA==
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 31F03C075; Sun, 25 Jun 2023 18:06:53 -0700 (MST)
+Date: Sun, 25 Jun 2023 18:06:53 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: Jason White <jason@jasonjgw.net>
+Cc: speakup@linux-speakup.org
+Subject: Re: ot: dectalk internal drivers?
+Message-ID: <ZJjkrZTOTRNk8NUE@gregn.net>
+References: <Pine.LNX.4.64.2306241500460.774016@users.shellworld.net>
+ <1486e800-a981-31bd-05da-86699f680285@pcdesk.net>
+ <Pine.LNX.4.64.2306242309530.778686@users.shellworld.net>
+ <ZJextwg4IF88wZpM@titan>
+ <Pine.LNX.4.64.2306242321590.778686@users.shellworld.net>
+ <ZJezr66-vWtVj5zE@titan>
+ <Pine.LNX.4.64.2306242359540.779316@users.shellworld.net>
+ <208a3964-66c6-35ed-028c-1126bd0da3bf@jasonjgw.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -48,36 +59,34 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
- Thunderbird/102.12.0
-Content-Language: en-US
-To: speakup@linux-speakup.org
-References: <Pine.LNX.4.64.2306241500460.774016@users.shellworld.net>
- <1486e800-a981-31bd-05da-86699f680285@pcdesk.net>
- <Pine.LNX.4.64.2306242309530.778686@users.shellworld.net>
- <ZJextwg4IF88wZpM@titan>
- <Pine.LNX.4.64.2306242321590.778686@users.shellworld.net>
- <ZJezr66-vWtVj5zE@titan>
- <Pine.LNX.4.64.2306242359540.779316@users.shellworld.net>
-From: Jason White <jason@jasonjgw.net>
-Subject: Re: ot: dectalk internal drivers?
-In-Reply-To: <Pine.LNX.4.64.2306242359540.779316@users.shellworld.net>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <208a3964-66c6-35ed-028c-1126bd0da3bf@jasonjgw.net>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 0.103.8 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
+On Sun, Jun 25, 2023 at 10:02:19AM -0400, Jason White wrote:
+> In fact, I don't know whether Linux
+> still runs on x86 machines with ISA slots.
 
-On 25/6/23 00:02, Karen Lewellen wrote:
-> I note no install, does that mean I need only say  run dt.bat for the 
-> drivers to run?
-> i. e. place that in my autoexec.bat?
->
-If I remember correctly, and this was a long time ago, you simply have 
-to run the batch file, then whatever screen reader you plan to use. The 
-batch file loads a large amount of software onto the card, and runs it.
+# uname -r; dmesg |grep -i "doubletalk"
+5.10.0-23-686-pae
+[   67.301489] Probing for DoubleTalk.
+[   67.305490] DoubleTalk PC: 29e-29f, ROM ver 5.74, s/n xxxxx,
+driver: 2.10
 
-If you're planning to use this under Linux as well, I would be 
-astonished if it were supported by modern kernels. In fact, I don't know 
-whether Linux still runs on x86 machines with ISA slots.
+Greg
 
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+skype: gregn1
+(authorization required, add me to your contacts list first)
+If we haven't been in touch before, e-mail me before adding me to your contacts.
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
