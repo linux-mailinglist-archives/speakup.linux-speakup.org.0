@@ -1,46 +1,45 @@
-Return-Path: <speakup+bounces-983-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-984-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 4808674C90E
-	for <lists+speakup@lfdr.de>; Mon, 10 Jul 2023 01:13:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 25A9E74C91F
+	for <lists+speakup@lfdr.de>; Mon, 10 Jul 2023 01:46:23 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign002.email header.i=@t39smtp-sign002.email header.a=rsa-sha256 header.s=titan1 header.b=Yf62DFyL;
+	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=UJC44dhm;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 77D08382578; Sun,  9 Jul 2023 19:13:47 -0400 (EDT)
+	id AD214382536; Sun,  9 Jul 2023 19:46:22 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 57720382441
-	for <lists+speakup@lfdr.de>; Sun,  9 Jul 2023 19:13:47 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8E1B5382441
+	for <lists+speakup@lfdr.de>; Sun,  9 Jul 2023 19:46:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id AA02F382459; Sun,  9 Jul 2023 19:13:39 -0400 (EDT)
-Received: from mail41.out.titan.email (mail41.out.titan.email [209.209.25.33])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 5CA8C3823DC
-	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 19:13:39 -0400 (EDT)
-Received: from smtp-out.flockmail.com (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id F07C060068
-	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 23:13:25 +0000 (UTC)
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 9DBB1600CF
-	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 23:13:25 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=t39smtp-sign002.email; s=titan1; t=1688944405;
-	bh=BY40g8hI32sT6NpbdsTOH0rXgQWfG0kQZCr0iCXaOgs=;
-	h=Message-ID:Reply-To:From:To:Subject:Date:MIME-Version:From:To:Cc:
-	 Subject:Message-ID;
-	b=Yf62DFyLC4HLCRVd69TXnnlJF6GfB77bPnXEhVuZeN5eYcTIsXKTvx4IHn65dwMce
-	 Bspt5CkGZdpP4b0orJad2uBtcMYltlS9M3Y35yzFeZ4IEsl1QqaqTrI+qcYRyx8glF
-	 IBDtDfuywDMW2vW/rsFO0Dif8qmXNEfM7ruWxIsU=
-Message-ID: <022501d9b2ba$f6c7ca10$01ffa8c0@nucwin10>
-Reply-To: "K0LNY" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY" <glenn@ervin.email>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: configuring a USB/Serial port
-Date: Sun, 9 Jul 2023 18:13:25 -0500
-Organization: Home
+	id F0FAF38245A; Sun,  9 Jul 2023 19:46:14 -0400 (EDT)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id D5414382441
+	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 19:46:14 -0400 (EDT)
+Received: from [10.0.2.1] (jpw.jasonjgw.net [10.0.2.1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
+	(Client did not present a certificate)
+	by svr.jasonjgw.net (Postfix) with ESMTPSA id 22B8432006
+	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 23:45:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+	s=mail; t=1688946344;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=rXw/skeM0YU/ViUbaGjPybPUOj89okTnS/7ehhDpLgM=;
+	b=UJC44dhm7oDb6RzkmRqQwUEYxjXQVePlLs7b+kXbSb8gR2bsKritYeHeAVSARfkdCXLs9U
+	/wznIcsiXi6YiLoc5bqEbDuaU19pswt9QWSLIxok88kT3/Jp9/rNIMBXNix1ubCXGOcVKn
+	KPxAMqtTsCU4OE4YUfN5Zd4Bw2NOzcEOT0YDQOi5ZJ/8QcR+rULfzbsLhHwXWD/Z7g/3z3
+	2KyXAoKv5LgN5pX+rK/WzJaP7JdkrX70YLENf1WwXgWo0hY10FOZ+Ugj4nz4WU8EoZVk3a
+	mcyTi+jsXOrN4K2I5FndpF6CVIZ56QhJgWWGfqGLOGL61xAcbj0qhW+cOoZUfA==
+Content-Type: multipart/alternative;
+ boundary="------------bhOUCtSjvcpOObcanr0z2W3I"
+Message-ID: <a9d7f09d-71c6-8e1d-5f90-243a82de497c@jasonjgw.net>
+Date: Sun, 9 Jul 2023 19:45:43 -0400
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,83 +49,68 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_0222_01D9B291.0D7C9210"
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1688944405795988700.5404.1899900184386676158@prod-use1-smtp-out1001.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=RbBWSXhv c=1 sm=1 tr=0 ts=64ab3f15
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=MKtGQD3n3ToA:10 a=P3K-DvM3-jgA:10 a=CEWIc4RMnpUA:10
-	a=r77TgQKjGQsHNAKrUKIA:9 a=NWVyi6acFmK7yo8P69sA:9 a=wPNLvfGTeEIA:10
-	a=ZXulRonScM0A:10 a=7x4gi3i2s2xg_ZBCrFoA:9 a=A2CfKYFFfDNv4iAA:21
-	a=_W_S_7VecoQA:10
-X-Virus-Scanned: ClamAV using ClamSMTP
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Content-Language: en-US
+To: speakup@linux-speakup.org
+References: <022501d9b2ba$f6c7ca10$01ffa8c0@nucwin10>
+From: Jason White <jason@jasonjgw.net>
+Subject: Re: configuring a USB/Serial port
+In-Reply-To: <022501d9b2ba$f6c7ca10$01ffa8c0@nucwin10>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
 This is a multi-part message in MIME format.
+--------------bhOUCtSjvcpOObcanr0z2W3I
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
 
-------=_NextPart_000_0222_01D9B291.0D7C9210
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
 
-Hello Group,
-I have a Dectalk on a futureTK serial to USB converter in Ubuntu-server =
-(CLI).
-This is in a VM.
-I am trying to be able to send anything to the Dectalk express.
-I have tried configuring the port with the below command, and I get the =
-error
-unable to  perform all requested actions
-I really don't know what I'm doing, so any advice would be appreciated.
-Here's what I'm entering:
-stty -F /dev/tty4 9600 cs8 -cstopb -parenb
+On 9/7/23 19:13, K0LNY wrote:
+> I am trying to be able to send anything to the Dectalk express.
+> I have tried configuring the port with the below command, and I get 
+> the error
+> unable to  perform all requested actions
+> I really don't know what I'm doing, so any advice would be appreciated.
+> Here's what I'm entering:
+> stty -F /dev/tty4 9600 cs8 -cstopb -parenb
+Check your kernel logs to obtain the name of the device representing the 
+serial port. It's probably /dev/ttyS0 or /dev/ttyusb0 or similar. 
+/dev/tty4 is not it, I'm fairly sure.
+--------------bhOUCtSjvcpOObcanr0z2W3I
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-Thanks.
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">On 9/7/23 19:13, K0LNY wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:022501d9b2ba$f6c7ca10$01ffa8c0@nucwin10">
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+      <meta name="GENERATOR" content="MSHTML 11.00.10570.1001">
+      <style></style><font size="2" face="Arial">I am trying to be able
+        to send anything to the Dectalk express.</font>
+      <div><font size="2" face="Arial">I have tried configuring the port
+          with the below command, and I get the error</font></div>
+      <div><font size="2" face="Arial">unable to  perform all requested
+          actions</font></div>
+      <div><font size="2" face="Arial">I really don't know what I'm
+          doing, so any advice would be appreciated.</font></div>
+      <div><font size="2" face="Arial">Here's what I'm entering:</font></div>
+      <div><font size="2" face="Arial">stty -F /dev/tty4 9600 cs8
+          -cstopb -parenb</font></div>
+    </blockquote>
+    <font size="2"><font face="Arial">Check your kernel logs to obtain
+        the name of the device representing the serial port. It's
+        probably /dev/ttyS0 or /dev/ttyusb0 or similar. /dev/tty4 is not
+        it, I'm fairly sure.</font></font><br>
+  </body>
+</html>
 
-Glenn
-------=_NextPart_000_0222_01D9B291.0D7C9210
-Content-Type: text/html;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD>
-<META content=3D"text/html; charset=3Diso-8859-1" =
-http-equiv=3DContent-Type>
-<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
-<STYLE></STYLE>
-</HEAD>
-<BODY bgColor=3D#ffffff>
-<DIV><FONT size=3D2 face=3DArial>Hello Group,</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I have a Dectalk on a futureTK serial =
-to USB=20
-converter in Ubuntu-server (CLI).</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>This is in a VM.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I am trying to be able to send anything =
-to the=20
-Dectalk express.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I have tried configuring the port with =
-the below=20
-command, and I get the error</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>unable to&nbsp; perform all requested=20
-actions</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I really don't know what I'm doing, so =
-any advice=20
-would be appreciated.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Here's what I'm entering:</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>stty -F /dev/tty4 9600 cs8 -cstopb=20
--parenb</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
-<DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
-<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV></BODY></HTML>
-
-------=_NextPart_000_0222_01D9B291.0D7C9210--
-
+--------------bhOUCtSjvcpOObcanr0z2W3I--
 
