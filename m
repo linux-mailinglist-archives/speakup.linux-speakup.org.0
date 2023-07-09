@@ -1,49 +1,45 @@
-Return-Path: <speakup+bounces-979-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-980-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 44A7774C7DA
-	for <lists+speakup@lfdr.de>; Sun,  9 Jul 2023 21:30:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C2A2574C844
+	for <lists+speakup@lfdr.de>; Sun,  9 Jul 2023 22:50:19 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign002.email header.i=@t39smtp-sign002.email header.a=rsa-sha256 header.s=titan1 header.b=WeytvMcG;
+	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=DATfic0S;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0411D382561; Sun,  9 Jul 2023 15:20:20 -0400 (EDT)
+	id CBFD038245D; Sun,  9 Jul 2023 16:50:18 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D953A3823DC
-	for <lists+speakup@lfdr.de>; Sun,  9 Jul 2023 15:20:19 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id AD561380771
+	for <lists+speakup@lfdr.de>; Sun,  9 Jul 2023 16:50:18 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3AC003823EF; Sun,  9 Jul 2023 15:20:12 -0400 (EDT)
-Received: from mail44.out.titan.email (mail44.out.titan.email [3.69.224.234])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id BFAD4382320
-	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 15:20:11 -0400 (EDT)
-Received: from mail1.out.titan.email (ip-10-10-85-123.eu-central-1.compute.internal [10.10.85.123])
-	by smtp-out.titan.email (Postfix) with ESMTP id 7C38E120374
-	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 19:20:02 +0000 (UTC)
-Received: from smtp-out.flockmail.com (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 1E87960025
-	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 19:20:02 +0000 (UTC)
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id A736C60092
-	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 19:20:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
-	d=t39smtp-sign002.email; s=titan1; t=1688930402;
-	bh=gebwhxhWRNMkq+dtrjk6NbYFakUN+YfzCxRQc9Vy99s=;
-	h=Message-ID:Reply-To:From:To:Subject:Date:MIME-Version:From:To:Cc:
-	 Subject:Message-ID;
-	b=WeytvMcGt9W7gVutD8Gcez/FlYqoqn4+/P8TaWzy0m2CL3q8hOWyCDoPTiGQq3/4W
-	 qi9j76jTK4APiWzvQjhbzh9hbPGD44B2VlLpfm3yvTtAtFX7Nu/Vw6+fy0fu4neitl
-	 EgwjtBQfWg83EljPuOK/whtLkLAXC5HLCQlW7N1M=
-Message-ID: <01e901d9b29a$5bbdbf90$01ffa8c0@nucwin10>
-Reply-To: "K0LNY" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY" <glenn@ervin.email>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Dectalk
-Date: Sun, 9 Jul 2023 14:19:44 -0500
-Organization: Home
+	id 11990382440; Sun,  9 Jul 2023 16:50:11 -0400 (EDT)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1760E380771
+	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 16:50:10 -0400 (EDT)
+Received: from [10.0.2.1] (jpw.jasonjgw.net [10.0.2.1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
+	(Client did not present a certificate)
+	by svr.jasonjgw.net (Postfix) with ESMTPSA id 0F57732006
+	for <speakup@linux-speakup.org>; Sun,  9 Jul 2023 20:49:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+	s=mail; t=1688935775;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=3yVwQbD32OXv0OzR6XUdB4WpE00g7Ouyjg4AQCSaonw=;
+	b=DATfic0Sukp1O67+wrB37ThM0UNCnKqr8u32zKIOwmBQmG9HmuDh31SlY+BT+kX+ROTKk9
+	RDqiXd5VA1MlU1DKiyVEbrjXTicUL6qkTwzL4grbhm21m9QHviBZNK3jAcznt0SUD/eTmO
+	c/ewJX9OXfqP+LFxbiwV/Y/RSheZ2TUBkk3m9MjtnGLiyI9J6U4ccBkcT8a875SbTGsyAp
+	t5ncop8uITzv/lScanopxp7K+R6g3vcAbVgsTf2YTcMCq56q/wWJeI81HtE6nsdeeG7BMd
+	irhTx0tNwl0a9hsJIFVTfn+RQ6cY8PJjaxvAiLRPvUoCwex2FiBeeiSDzNllvg==
+Content-Type: multipart/alternative;
+ boundary="------------m3GmfcqzKana02ca8NW0EuFt"
+Message-ID: <af03dac9-b93b-59a9-845c-706ec37ddb1c@jasonjgw.net>
+Date: Sun, 9 Jul 2023 16:49:34 -0400
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -53,72 +49,70 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_01E6_01D9B270.68C73FB0"
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1688930401860967685.5404.3521073860679148107@prod-use1-smtp-out1001.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=F76RNItN c=1 sm=1 tr=0 ts=64ab0861
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=MKtGQD3n3ToA:10 a=P3K-DvM3-jgA:10 a=CEWIc4RMnpUA:10
-	a=r77TgQKjGQsHNAKrUKIA:9 a=gtX8l0KGZYtjKS6Uli8A:9 a=wPNLvfGTeEIA:10
-	a=klU0DRoOmYZnWirUWr0A:9 a=4_JgvyNwgpy8T5oy:21 a=_W_S_7VecoQA:10
-X-Virus-Scanned: ClamAV using ClamSMTP
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101
+ Thunderbird/102.13.0
+Content-Language: en-US
+To: speakup@linux-speakup.org
+References: <01e901d9b29a$5bbdbf90$01ffa8c0@nucwin10>
+From: Jason White <jason@jasonjgw.net>
+Subject: Re: Dectalk
+In-Reply-To: <01e901d9b29a$5bbdbf90$01ffa8c0@nucwin10>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
 This is a multi-part message in MIME format.
+--------------m3GmfcqzKana02ca8NW0EuFt
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
-------=_NextPart_000_01E6_01D9B270.68C73FB0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
 
-Hi,
-I dug out my old Dectalk, and I plan on using it in a few different =
-operating systems.
-I have Ubuntu in a VM that I would like to try it in, and I will also =
-try it out in FreeDOS.
-Seems like I would run something like
-speakup_synth name
-I'm wondering, do I need to install some Linux drivers for the Dectalk =
-into the system first?
-Thanks.
+On 9/7/23 15:19, K0LNY wrote:
+> I'm wondering, do I need to install some Linux drivers for the Dectalk 
+> into the system first?
 
-Glenn
-------=_NextPart_000_01E6_01D9B270.68C73FB0
-Content-Type: text/html;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+You shouldn't need drivers, but if you wish to set up a serial 
+connection manually, you'll need to run the stty command to configure 
+the serial interface.
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD>
-<META content=3D"text/html; charset=3Diso-8859-1" =
-http-equiv=3DContent-Type>
-<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
-<STYLE></STYLE>
-</HEAD>
-<BODY bgColor=3D#ffffff>
-<DIV><FONT size=3D2 face=3DArial>Hi,</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I dug out my old Dectalk, and I plan on =
-using it in=20
-a few different operating systems.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I have Ubuntu in a VM that I would like =
-to try it=20
-in, and I will also try it out in FreeDOS.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Seems like I would run something =
-like</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>speakup_synth name</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I'm wondering, do I need to install =
-some Linux=20
-drivers for the Dectalk into the system first?</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
-<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV></BODY></HTML>
+ From memory, it requires a 9600 baud connection, 8 data bits, 1 stop 
+bit, hardware flow control. I might be wrong though.
 
-------=_NextPart_000_01E6_01D9B270.68C73FB0--
+A VM will complicate the situation, as you would have to configure it to 
+pass through the serial port to the guest operating system.
 
+--------------m3GmfcqzKana02ca8NW0EuFt
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">On 9/7/23 15:19, K0LNY wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:01e901d9b29a$5bbdbf90$01ffa8c0@nucwin10">
+      <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+      <meta name="GENERATOR" content="MSHTML 11.00.10570.1001">
+      <style></style><font size="2" face="Arial">I'm wondering, do I
+        need to install some Linux drivers for the Dectalk into the
+        system first?</font></blockquote>
+    <p><font size="2"><font face="Arial">You shouldn't need drivers, but
+          if you wish to set up a serial connection manually, you'll
+          need to run the stty command to configure the serial
+          interface.</font></font></p>
+    <p><font size="2"><font face="Arial">From memory, it requires a 9600
+          baud connection, 8 data bits, 1 stop bit, hardware flow
+          control. I might be wrong though.<br>
+        </font></font></p>
+    <p><font size="2"><font face="Arial">A VM will complicate the
+          situation, as you would have to configure it to pass through
+          the serial port to the guest operating system.<br>
+        </font></font></p>
+  </body>
+</html>
+
+--------------m3GmfcqzKana02ca8NW0EuFt--
 
