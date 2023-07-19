@@ -1,46 +1,50 @@
-Return-Path: <speakup+bounces-1021-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1022-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id DCF9B75A2D6
-	for <lists+speakup@lfdr.de>; Thu, 20 Jul 2023 01:29:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 6526F75A2F7
+	for <lists+speakup@lfdr.de>; Thu, 20 Jul 2023 01:53:29 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=L4b68Z06;
+	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign002.email header.i=@t39smtp-sign002.email header.a=rsa-sha256 header.s=titan1 header.b=iMb3HuS5;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9E43638256B; Wed, 19 Jul 2023 19:29:15 -0400 (EDT)
+	id DCB46382563; Wed, 19 Jul 2023 19:53:28 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7E81538243D
-	for <lists+speakup@lfdr.de>; Wed, 19 Jul 2023 19:29:15 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id BC024382419
+	for <lists+speakup@lfdr.de>; Wed, 19 Jul 2023 19:53:28 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C536D382445; Wed, 19 Jul 2023 19:29:07 -0400 (EDT)
-Received: from out-47.mta1.migadu.com (out-47.mta1.migadu.com [95.215.58.47])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 6F10F38234B
-	for <speakup@linux-speakup.org>; Wed, 19 Jul 2023 19:29:06 -0400 (EDT)
-Date: Thu, 20 Jul 2023 09:28:10 +1000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
-	t=1689809307;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=yvWg11iA24mwlWWSk0rTug0YUjjIirSxunC+j3K6qRc=;
-	b=L4b68Z06+VN8f3k5m3E1amPClxF/piboV9I1Z/vv8x+MrMs17buEqzSYsgDRFGO4s/qzJo
-	qvxEKaC8ZeTA1K702bbXHl3thnCPEkO02S+E5dOpluaGfFmcH2UQG0guDNrOJf/Tl2qu8q
-	mHBaV61a/VLk9e4wbl7ckrusbwSguOc/Rzw4haNtw2xPgXmIyDj4iNMx8OyTUrX3b5ecHt
-	fXigEhIjHRzopOty4p11w90Dp55QGNq/AOzQAmMUjbsQTRRJR5WmiRAEVf2a/Csx4Av97g
-	431TLtDFmu40BKCOxgbOzXs9hn0SVfN5TwdelEwjgwzRIXU2Trg/vyG57Dm7aQ==
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Jookia <contact@jookia.org>
-To: Karen Lewellen <klewellen@shellworld.net>
-Cc: John Covici <covici@ccs.covici.com>,
+	id 18F1E38245B; Wed, 19 Jul 2023 19:53:21 -0400 (EDT)
+Received: from mail12.out.flockmail.com (mail12.out.flockmail.com [52.7.194.170])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id C215D38234B
+	for <speakup@linux-speakup.org>; Wed, 19 Jul 2023 19:53:20 -0400 (EDT)
+Received: from smtp-out.flockmail.com (localhost [127.0.0.1])
+	by smtp-out.flockmail.com (Postfix) with ESMTP id CD592600CC;
+	Wed, 19 Jul 2023 23:53:17 +0000 (UTC)
+Received: from nucwin10 (unknown [140.228.165.201])
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4B0C1600CD;
+	Wed, 19 Jul 2023 23:53:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=t39smtp-sign002.email; s=titan1; t=1689810797;
+	bh=ow31f+BRFz5Up9UiUphdNgpEZqTTGVpIg+DL+T95++s=;
+	h=Message-ID:Reply-To:From:To:Cc:References:Subject:Date:
+	 MIME-Version:From:To:Cc:Subject:Message-ID;
+	b=iMb3HuS5g6gW9o61edkg/iK7IcIiN9R6e/yHw7qKEY1ln9G48JS2VU/2Hac/UGUIj
+	 Ms1P1j0kZtJtCI7jkl7nVeYFHc5NnviEdyIM6ovozfuEgMDJjJyxKppuX8jWWzzTb6
+	 E6kt83HZRAriC0llrJpJFqyixBE9DTWqK1kselQc=
+Message-ID: <0c4301d9ba9c$30ff4300$01ffa8c0@nucwin10>
+Reply-To: "K0LNY" <glenn@ervin.email>
+Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
+From: "K0LNY" <glenn@ervin.email>
+To: "Jookia" <contact@jookia.org>,
+	"Karen Lewellen" <klewellen@shellworld.net>
+Cc: "John Covici" <covici@ccs.covici.com>,
 	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <Pine.LNX.4.64.2307190655310.1206822@users.shellworld.net> <m3y1jcdu3l.wl-covici@ccs.covici.com> <Pine.LNX.4.64.2307190821260.1207890@users.shellworld.net> <ZLhxip9u1Z_8RMvx@titan>
 Subject: Re: sort of ot: what causes this issue?
-Message-ID: <ZLhxip9u1Z_8RMvx@titan>
-References: <Pine.LNX.4.64.2307190655310.1206822@users.shellworld.net>
- <m3y1jcdu3l.wl-covici@ccs.covici.com>
- <Pine.LNX.4.64.2307190821260.1207890@users.shellworld.net>
+Date: Wed, 19 Jul 2023 18:53:17 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,16 +54,46 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <Pine.LNX.4.64.2307190821260.1207890@users.shellworld.net>
-X-Migadu-Flow: FLOW_OUT
+Content-Type: text/plain;
+	format=flowed;
+	charset="iso-8859-1";
+	reply-type=original
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-F-Verdict: SPFVALID
+X-Titan-Src-Out: 1689810797642221201.1460.2912826044219048115@prod-use1-smtp-out1001.
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.4 cv=F76RNItN c=1 sm=1 tr=0 ts=64b8776d
+	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
+	a=8nJEP1OIZ-IA:10 a=MKtGQD3n3ToA:10 a=P3K-DvM3-jgA:10 a=CEWIc4RMnpUA:10
+	a=jovt0mFxAAAA:8 a=9_GH9xibAAAA:8 a=uJ_w1ttZAAAA:8 a=qPKtzgQbAAAA:8
+	a=z7KTAxwijA80W5ezjAoA:9 a=wPNLvfGTeEIA:10 a=Q2Fs8dv5wtUA:10
+	a=StMmMNtBgVvPiZYFi0f4:22 a=dO7qa_Xy17WzffDKgyPM:22
+	a=muQ5ErImgoUO71fbljk_:22 a=OTAqJWGB1laLS8RTg9aS:22
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Try changing the power supply of the device, maybe this new place has power
-spikes that it can't handle.
+Also, perhaps a UPS would stop any power spikes.
+Glenn
+----- Original Message ----- 
+From: "Jookia" <contact@jookia.org>
+To: "Karen Lewellen" <klewellen@shellworld.net>
+Cc: "John Covici" <covici@ccs.covici.com>; "Speakup is a screen review 
+system for Linux." <speakup@linux-speakup.org>
+Sent: Wednesday, July 19, 2023 6:28 PM
+Subject: Re: sort of ot: what causes this issue?
 
-On Wed, Jul 19, 2023 at 08:25:10AM -0400, Karen Lewellen wrote:
-> What has been happening since I moved is that, say after a power change
-> happen sup stairs, I will first get a spike in pitch,
+
+> Try changing the power supply of the device, maybe this new place has 
+> power
+> spikes that it can't handle.
+>
+> On Wed, Jul 19, 2023 at 08:25:10AM -0400, Karen Lewellen wrote:
+>> What has been happening since I moved is that, say after a power change
+>> happen sup stairs, I will first get a spike in pitch,
+> 
+
 
