@@ -1,56 +1,46 @@
-Return-Path: <speakup+bounces-1026-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1027-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id DE2FA7A3358
-	for <lists+speakup@lfdr.de>; Sun, 17 Sep 2023 01:08:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 380AA7AA6F8
+	for <lists+speakup@lfdr.de>; Fri, 22 Sep 2023 04:20:22 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign002.email header.i=@t39smtp-sign002.email header.a=rsa-sha256 header.s=titan1 header.b=Yc76hGA4;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 95C3D3823CA; Sat, 16 Sep 2023 19:08:16 -0400 (EDT)
+	id 18DDA382696; Thu, 21 Sep 2023 22:20:13 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7E3473822F1
-	for <lists+speakup@lfdr.de>; Sat, 16 Sep 2023 19:08:16 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E96FE38263A
+	for <lists+speakup@lfdr.de>; Thu, 21 Sep 2023 22:20:12 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4AD4C3822D9; Sat, 16 Sep 2023 19:08:12 -0400 (EDT)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 17B28382204
-	for <speakup@linux-speakup.org>; Sat, 16 Sep 2023 19:08:12 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id D89D32013C;
-	Sun, 17 Sep 2023 01:08:09 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id o1eLfS2tQsgw; Sun, 17 Sep 2023 01:08:09 +0200 (CEST)
-Received: from begin (lfbn-bor-1-1163-184.w92-158.abo.wanadoo.fr [92.158.138.184])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 7FDB520137;
-	Sun, 17 Sep 2023 01:08:08 +0200 (CEST)
-Received: from samy by begin with local (Exim 4.96)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1qheOW-007HHT-04;
-	Sun, 17 Sep 2023 01:08:08 +0200
-Date: Sun, 17 Sep 2023 01:08:07 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Justin Stitt <justinstitt@google.com>
-Cc: Kees Cook <keescook@chromium.org>, William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org, linux-hardening@vger.kernel.org
-Subject: Re: [PATCH] accessibility: speakup: refactor deprecated strncpy
-Message-ID: <20230916230807.motaqyb5gqzqjvub@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Justin Stitt <justinstitt@google.com>,
-	Kees Cook <keescook@chromium.org>,
-	William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org, linux-hardening@vger.kernel.org
-References: <20230824-strncpy-drivers-accessibility-speakup-kobjects-c-v1-1-3a1ef1221e90@google.com>
- <202308251439.36BC33ADB2@keescook>
- <CAFhGd8r6A4VH5C=yF1WHKEPY86oh6PEzt6wuxPxsJAD0XKfrsQ@mail.gmail.com>
+	id 6ED5638263B; Thu, 21 Sep 2023 22:20:05 -0400 (EDT)
+Received: from mail12.out.flockmail.com (mail12.out.flockmail.com [52.7.194.170])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id ABB48382636
+	for <speakup@linux-speakup.org>; Thu, 21 Sep 2023 22:20:04 -0400 (EDT)
+Received: from smtp-out.flockmail.com (localhost [127.0.0.1])
+	by smtp-out.flockmail.com (Postfix) with ESMTP id D26FC60095
+	for <speakup@linux-speakup.org>; Fri, 22 Sep 2023 02:20:02 +0000 (UTC)
+Received: from nucwin10 (unknown [140.228.165.201])
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 6A1B660076
+	for <speakup@linux-speakup.org>; Fri, 22 Sep 2023 02:20:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=t39smtp-sign002.email; s=titan1; t=1695349202;
+	bh=Gk5aqDcUs3GzHC5OK8O1L7i/zBFsDiYX6FYkxZg4kHg=;
+	h=Message-ID:Reply-To:From:To:Subject:Date:MIME-Version:From:To:Cc:
+	 Subject:Message-ID;
+	b=Yc76hGA4OSe8yeWQnHaVvaEqCRjQM4M45IZnK+P107tsbdCSttTRukX5eTzfGJEHU
+	 JTiJR8x6wpPPozQZXkCM34bhP1pOezhNNS4k1rTJ+YAo/DAQ8aKGT8grs1Hy6Gp931
+	 11GOLfBDSMCtuTX607AAn3omVSGXf2DmuxJ5lRvs=
+Message-ID: <042301d9ecfb$4b9a9a70$01ffa8c0@nucwin10>
+Reply-To: "K0LNY ??" <glenn@ervin.email>
+Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
+From: "K0LNY ??" <glenn@ervin.email>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Voxin In Ubuntu-Server
+Date: Thu, 21 Sep 2023 21:20:02 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -60,98 +50,100 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <CAFhGd8r6A4VH5C=yF1WHKEPY86oh6PEzt6wuxPxsJAD0XKfrsQ@mail.gmail.com>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0420_01D9ECD1.623C76B0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-F-Verdict: SPFVALID
+X-Titan-Src-Out: 1695349202589551902.1460.2331327320222237278@prod-use1-smtp-out1001.
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.4 cv=b5x0oPKx c=1 sm=1 tr=0 ts=650cf9d2
+	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
+	a=MKtGQD3n3ToA:10 a=P3K-DvM3-jgA:10 a=CEWIc4RMnpUA:10
+	a=r77TgQKjGQsHNAKrUKIA:9 a=cgY4HTEKVMvgrbhspVkA:9 a=wPNLvfGTeEIA:10
+	a=eaem5abnVm5gNZGoc9IA:9 a=1xiaDYMIoMxA6leZ:21 a=_W_S_7VecoQA:10
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hello,
+This is a multi-part message in MIME format.
 
-Justin Stitt, le ven. 25 août 2023 15:41:03 -0700, a ecrit:
-> Thanks for the review Kees and Samuel. Hoping to get this picked-up soon :)
-> 
-> FWIW, I've quickly copy/pasted Kees' suggested refactor of
-> synth_direct_store and rebased against v6.5-rc7 if anyone has the
-> means by which to test it.
-> 
-> TEST PATCH BELOW
-> ---
-> From e7216bca30673a162660c51f8bad3b463d283041 Mon Sep 17 00:00:00 2001
-> From: Justin Stitt <justinstitt@google.com>
-> Date: Fri, 25 Aug 2023 22:32:03 +0000
-> Subject: [PATCH NEEDS TEST] synth_direct_store refactor to use synth_write
-> 
-> I've just copy/pasted Kees' suggestion here [1] and rebased it against
-> 6.5-rc7.
-> 
-> This patch needs testing as it refactors behavior in synth_direct_store.
-> 
-> [1]: https://lore.kernel.org/all/202308251439.36BC33ADB2@keescook/
-> 
-> Signed-off-by: Justin Stitt <justinstitt@google.com>
+------=_NextPart_000_0420_01D9ECD1.623C76B0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 
-Tested-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+Hello Group,
+I have a VM running of Ubuntu Server, CLI only, and latest version, I =
+downloaded it this year, and the latest Voxin (IBM voice).
+I installed Voxin, and it spoke after the install, and no errors.
+I rebooted the server,  and espeak was all that was talking.
+I ran spd-say, with no sound.
+So I ran spd-conf multiple times with different variations.
+I tried it with and without sudo.
+I always set up a user config.
+I tried both voxin and ibmtts for the synth choice.
+The only way I got audio from the audio test was with alsa, and with =
+sudo when I started it.
+But never any voxin or ibmtts output.
+Thanks for any suggestions.
+Glenn
 
-but please submit it properly :) It was completely mangled in the mail.
+A man with a clock always knows what time it is.
+A man with two clocks is never sure.
+-- A derivative of Segal's law
+------=_NextPart_000_0420_01D9ECD1.623C76B0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 
-> ---
->  drivers/accessibility/speakup/kobjects.c | 25 +++++++++++-------------
->  1 file changed, 11 insertions(+), 14 deletions(-)
-> 
-> diff --git a/drivers/accessibility/speakup/kobjects.c
-> b/drivers/accessibility/speakup/kobjects.c
-> index a7522d409802..0dfdb6608e02 100644
-> --- a/drivers/accessibility/speakup/kobjects.c
-> +++ b/drivers/accessibility/speakup/kobjects.c
-> @@ -413,27 +413,24 @@ static ssize_t synth_direct_store(struct kobject *kobj,
->     struct kobj_attribute *attr,
->     const char *buf, size_t count)
->  {
-> - u_char tmp[256];
-> - int len;
-> - int bytes;
-> - const char *ptr = buf;
-> + char *unescaped;
->   unsigned long flags;
-> 
->   if (!synth)
->   return -EPERM;
-> 
-> - len = strlen(buf);
-> + unescaped = kstrdup(buf, GFP_KERNEL);
-> + if (!unescaped)
-> + return -ENOMEM;
-> +
-> + string_unescape_any_inplace(unescaped);
-> +
->   spin_lock_irqsave(&speakup_info.spinlock, flags);
-> - while (len > 0) {
-> - bytes = min_t(size_t, len, 250);
-> - strncpy(tmp, ptr, bytes);
-> - tmp[bytes] = '\0';
-> - string_unescape_any_inplace(tmp);
-> - synth_printf("%s", tmp);
-> - ptr += bytes;
-> - len -= bytes;
-> - }
-> + synth_write(unescaped, strlen(unescaped));
->   spin_unlock_irqrestore(&speakup_info.spinlock, flags);
-> +
-> + kfree(unescaped);
-> +
->   return count;
->  }
-> 
-> --
-> 2.42.0.rc1.204.g551eb34607-goog
-> 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3Diso-8859-1" =
+http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT size=3D2 face=3DArial>Hello Group,</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I have a VM running of Ubuntu Server, =
+CLI only, and=20
+latest version, I downloaded it this year, and the latest Voxin (IBM=20
+voice).</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I installed Voxin, and it spoke after =
+the install,=20
+and no errors.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I rebooted the server,&nbsp; and espeak =
+was all=20
+that was talking.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I ran spd-say, with no =
+sound.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>So I ran spd-conf multiple times with =
+different=20
+variations.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I tried it with and without =
+sudo.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I always set up a user =
+config.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I tried both voxin and ibmtts for the =
+synth=20
+choice.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>The only way I got audio from the audio =
+test was=20
+with alsa, and with sudo when I started it.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>But never any voxin or ibmtts =
+output.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Thanks for any =
+suggestions.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
+<DIV><FONT size=3D2 face=3DArial>A man with a clock always knows what =
+time it=20
+is.<BR>A man with two clocks is never sure.<BR>-- A derivative of =
+Segal's=20
+law</FONT></DIV></BODY></HTML>
 
--- 
-Samuel
----
-Pour une évaluation indépendante, transparente et rigoureuse !
-Je soutiens la Commission d'Évaluation de l'Inria.
+------=_NextPart_000_0420_01D9ECD1.623C76B0--
+
 
