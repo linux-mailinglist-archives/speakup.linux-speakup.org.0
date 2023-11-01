@@ -1,38 +1,40 @@
-Return-Path: <speakup+bounces-1052-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1053-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 98D137DE575
-	for <lists+speakup@lfdr.de>; Wed,  1 Nov 2023 18:40:51 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 411977DE7C3
+	for <lists+speakup@lfdr.de>; Wed,  1 Nov 2023 22:57:52 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CDB91382751; Wed,  1 Nov 2023 13:40:50 -0400 (EDT)
+	id 9D74C38274D; Wed,  1 Nov 2023 17:57:49 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B6CCB38222F
-	for <lists+speakup@lfdr.de>; Wed,  1 Nov 2023 13:40:50 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 860FB3822E1
+	for <lists+speakup@lfdr.de>; Wed,  1 Nov 2023 17:57:49 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9404638220F; Wed,  1 Nov 2023 13:40:46 -0400 (EDT)
+	id 7556C38222F; Wed,  1 Nov 2023 17:57:45 -0400 (EDT)
 Received: from atlas.bondproducts.com (23-24-6-165-static.hfc.comcastbusiness.net [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 7A2DF382113
-	for <speakup@linux-speakup.org>; Wed,  1 Nov 2023 13:40:46 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5AD2A3821A9
+	for <speakup@linux-speakup.org>; Wed,  1 Nov 2023 17:57:45 -0400 (EDT)
 Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id 8F6AF40508;
-	Wed,  1 Nov 2023 13:40:39 -0400 (EDT)
-Received: by users.shellworld.net (Postfix, from userid 1005)
-	id 4C4711001B8; Wed,  1 Nov 2023 13:40:39 -0400 (EDT)
+	by atlas.bondproducts.com (Postfix) with ESMTP id B2C6B40508;
+	Wed,  1 Nov 2023 17:57:36 -0400 (EDT)
+Received: by users.shellworld.net (Postfix, from userid 1034)
+	id 7DBAE1001B8; Wed,  1 Nov 2023 17:57:36 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id 4BE521001AA;
-	Wed,  1 Nov 2023 13:40:39 -0400 (EDT)
-Date: Wed, 1 Nov 2023 13:40:39 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Brian Buhrow <buhrow@nfbcal.org>
-cc: K0LNY ?? <glenn@ervin.email>, Butch Bussen <butchb@shellworld.net>, 
+	by users.shellworld.net (Postfix) with ESMTP id 7C4781001AA;
+	Wed,  1 Nov 2023 14:57:36 -0700 (PDT)
+Date: Wed, 1 Nov 2023 14:57:35 -0700 (PDT)
+From: Butch Bussen <butchb@shellworld.net>
+To: K0LNY ?? <glenn@ervin.email>
+cc: Karen Lewellen <klewellen@shellworld.net>, 
     "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: slightly different dectalk question.
-In-Reply-To: <202311011705.3A1H5095003406@nfbcal.org>
-Message-ID: <Pine.LNX.4.64.2311011339340.3176199@users.shellworld.net>
-References: <202311011705.3A1H5095003406@nfbcal.org>
+In-Reply-To: <1a1901da0c58$b29deac0$01ffa8c0@nucwin10>
+Message-ID: <Pine.LNX.4.64.2311011456240.3180685@users.shellworld.net>
+References: <Pine.LNX.4.64.2310311538430.3146024@users.shellworld.net>
+ <Pine.LNX.4.64.2310311709250.3149750@users.shellworld.net>
+ <1a1901da0c58$b29deac0$01ffa8c0@nucwin10>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -45,43 +47,49 @@ MIME-Version: 1.0
 Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Mercy this is brilliant!
-Thanks profoundly, can run these tests on my own using a different speech 
-source, and learn each result.
-thanks so very truly much!
-Kare
+As I recall on the sounding board, irq 2 was default, and we sometimes 
+used seven.  I think 5 was for sound card, irq 4 was for come 1 and 3 
+and irq3 was for com 2 and com 4 as I recall.  On Tue, 31 Oct 2023, K0LNY 
+?? wrote:
 
-
-
-On Wed, 1 Nov 2023, Brian Buhrow wrote:
-
-> 	hello.  Here are some notes on how to configure the Dectalk PC, taken from work I did on
-> this product many years ago.
+> I thought that somewhere in with the DecTalk files, there was a tool that
+> probes for the Dectalk.
+> It should not be hard to change the jumpers on the card, I used to do it all
+> the time.
+> Seems like I usually used IRQ 5 or 7 and what is the other, DMA?
+> I think that was usually 3.
+> Anyway, it wouldn't hurt to move them, as the worse that can happen is that
+> it will be not working like it it is currently.
+> You just feel the the available jumper pins, and move the jumper over.
 >
-> 1.  The I/O base addresses choices for the Dectalk are:
-> 0x240, 0x250, 0x340 or 0x350
+> Glenn
+> ----- Original Message -----
+> From: "Butch Bussen" <butchb@shellworld.net>
+> To: "Karen Lewellen" <klewellen@shellworld.net>
+> Cc: "Speakup is a screen review system for Linux."
+> <speakup@linux-speakup.org>
+> Sent: Tuesday, October 31, 2023 7:10 PM
+> Subject: Re: slightly different dectalk question.
 >
-> 2.  the BIOS base choices are:
-> 0xc000, 0xc800, 0xd000 or 0xd800
 >
-> 3.  Although the Dectalk is capable of running with interrupts enabled, my notes indicate the
-> Dectalk software runs the synthesizer in polling mode, so a discussion of which interrupt to
-> use is mostly academic.
+> I don't know of a tool, but I have a whole folder of dectalk stuff, says
+> software 4.2 if I remember right.  There is one file, for example, that
+> talks about a conflict with certain cdrom drives.
+> On Tue, 31 Oct 2023,
+> Karen Lewellen wrote:
 >
-> 4.  It appears the default i/o address setting for the Dectalk PC is 0x240.  My suggestion is
-> to edit your config.bat file with each of the choices listed above, in the order listed, and
-> try and start up the Dectalk software.  You won't hurt anything with this technique, though
-> you may need to reboot several times as my notes say that you can hang the machine by trying to
-> get the software to talk to the hardware at the wrong address.  To prevent yourself from
-> getting locked out of the system, don't set the dectalk to come up talking automatically on
-> boot until you've confirmed that you have the right settings and that it works when started
-> manually.  By doing things this way, you shouldn't have to adjust the jumpers on the card at
-> all.
->
-> 	I hope these notes are helpful.  It has been a long time since I touched this card, 25
-> years if the dates on my notes are to be believed, so I may be leaving some details out.
->
-> -Brian
+>> And likely more on point.
+>> I did get a copy of the pc1 software, from another list.
+>> The error suggests address factors, but my associate took one look at all
+>> those switches and was afraid to touch them.
+>> Given dt.bat can be edited it seems,
+>> any tool that will locate the dectalk internal card?
+>> Thanks,
+>> Karen
+>>
+>>
+>>
+>>
 >
 >
 
