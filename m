@@ -1,37 +1,37 @@
-Return-Path: <speakup+bounces-1055-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1056-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id A63DC7E0D77
-	for <lists+speakup@lfdr.de>; Sat,  4 Nov 2023 04:23:59 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id F2FA57E0E00
+	for <lists+speakup@lfdr.de>; Sat,  4 Nov 2023 06:52:52 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EA3FB38271C; Fri,  3 Nov 2023 23:23:57 -0400 (EDT)
+	id E9F2E382768; Sat,  4 Nov 2023 01:52:51 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D296E38223F
-	for <lists+speakup@lfdr.de>; Fri,  3 Nov 2023 23:23:57 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D323938232F
+	for <lists+speakup@lfdr.de>; Sat,  4 Nov 2023 01:52:51 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id AD0823821A3; Fri,  3 Nov 2023 23:23:53 -0400 (EDT)
+	id A415B38232F; Sat,  4 Nov 2023 01:52:47 -0400 (EDT)
 Received: from atlas.bondproducts.com (23-24-6-165-static.hfc.comcastbusiness.net [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8E9A93821A3
-	for <speakup@linux-speakup.org>; Fri,  3 Nov 2023 23:23:53 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 87616382127
+	for <speakup@linux-speakup.org>; Sat,  4 Nov 2023 01:52:47 -0400 (EDT)
 Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id BD8CA40508;
-	Fri,  3 Nov 2023 23:23:51 -0400 (EDT)
+	by atlas.bondproducts.com (Postfix) with ESMTP id A63CA40508;
+	Sat,  4 Nov 2023 01:52:45 -0400 (EDT)
 Received: by users.shellworld.net (Postfix, from userid 1034)
-	id 7A2E7100081; Fri,  3 Nov 2023 23:23:51 -0400 (EDT)
+	id 799141001BB; Sat,  4 Nov 2023 01:52:45 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id 78B3A100063;
-	Fri,  3 Nov 2023 20:23:51 -0700 (PDT)
-Date: Fri, 3 Nov 2023 20:23:50 -0700 (PDT)
+	by users.shellworld.net (Postfix) with ESMTP id 791FF1000AB;
+	Fri,  3 Nov 2023 22:52:45 -0700 (PDT)
+Date: Fri, 3 Nov 2023 22:52:44 -0700 (PDT)
 From: Butch Bussen <butchb@shellworld.net>
 To: Karen Lewellen <klewellen@shellworld.net>
 cc: K0LNY ?? <glenn@ervin.email>, 
     "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: slightly different dectalk question.
 In-Reply-To: <Pine.LNX.4.64.2311011800050.3180608@users.shellworld.net>
-Message-ID: <Pine.LNX.4.64.2311032023040.3220009@users.shellworld.net>
+Message-ID: <Pine.LNX.4.64.2311032251450.3221455@users.shellworld.net>
 References: <Pine.LNX.4.64.2310311538430.3146024@users.shellworld.net>
  <Pine.LNX.4.64.2310311709250.3149750@users.shellworld.net>
  <1a1901da0c58$b29deac0$01ffa8c0@nucwin10> <Pine.LNX.4.64.2311011456240.3180685@users.shellworld.net>
@@ -48,10 +48,12 @@ MIME-Version: 1.0
 Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I'll haveto do some looking.  I don't think I have a machine running 
-with one.  I'll see whatg I can do.
-On Wed, 1 Nov 2023, Karen Lewellen 
-wrote:
+I don't remember how to attach a file in pine and would have to copy it 
+to shellworld which I don't do much anymore.  I'm sending you an mp3 
+file from my outlook express address.  Will show up as from tiny puppy.
+
+Hope you get it o.k.
+On Wed, 1 Nov 2023, Karen Lewellen wrote:
 
 > Hi there,
 > Do you have a sample of the sounding board?
@@ -114,5 +116,7 @@ wrote:
 >> > 
 >> > 
 >> 
+>
+>
 >
 
