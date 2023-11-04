@@ -1,41 +1,42 @@
-Return-Path: <speakup+bounces-1056-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1057-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id F2FA57E0E00
-	for <lists+speakup@lfdr.de>; Sat,  4 Nov 2023 06:52:52 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 363557E102B
+	for <lists+speakup@lfdr.de>; Sat,  4 Nov 2023 17:08:58 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E9F2E382768; Sat,  4 Nov 2023 01:52:51 -0400 (EDT)
+	id 2F06A38277C; Sat,  4 Nov 2023 12:08:57 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D323938232F
-	for <lists+speakup@lfdr.de>; Sat,  4 Nov 2023 01:52:51 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 1820238271C
+	for <lists+speakup@lfdr.de>; Sat,  4 Nov 2023 12:08:57 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A415B38232F; Sat,  4 Nov 2023 01:52:47 -0400 (EDT)
-Received: from atlas.bondproducts.com (23-24-6-165-static.hfc.comcastbusiness.net [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 87616382127
-	for <speakup@linux-speakup.org>; Sat,  4 Nov 2023 01:52:47 -0400 (EDT)
-Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id A63CA40508;
-	Sat,  4 Nov 2023 01:52:45 -0400 (EDT)
-Received: by users.shellworld.net (Postfix, from userid 1034)
-	id 799141001BB; Sat,  4 Nov 2023 01:52:45 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id 791FF1000AB;
-	Fri,  3 Nov 2023 22:52:45 -0700 (PDT)
-Date: Fri, 3 Nov 2023 22:52:44 -0700 (PDT)
-From: Butch Bussen <butchb@shellworld.net>
-To: Karen Lewellen <klewellen@shellworld.net>
-cc: K0LNY ?? <glenn@ervin.email>, 
-    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+	id D38F038271D; Sat,  4 Nov 2023 12:08:52 -0400 (EDT)
+Received: from nfbcal.org (ns3.NFBCAL.ORG [157.22.230.125])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 929E73822E0
+	for <speakup@linux-speakup.org>; Sat,  4 Nov 2023 12:08:52 -0400 (EDT)
+Received: from nfbcal.org (localhost [127.0.0.1])
+	by nfbcal.org (8.15.2/8.14.1-NFBNETBSD) with ESMTPS id 3A4G8YU4015845
+	(version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+	Sat, 4 Nov 2023 09:08:34 -0700 (PDT)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.102.2 at lothlorien.nfbcal.org
+Received: (from buhrow@localhost)
+	by nfbcal.org (8.15.2/8.12.11) id 3A4G8XV7016338;
+	Sat, 4 Nov 2023 09:08:33 -0700 (PDT)
+Message-Id: <202311041608.3A4G8XV7016338@nfbcal.org>
+From: Brian Buhrow <buhrow@nfbcal.org>
+Date: Sat, 4 Nov 2023 09:08:32 -0700
+In-Reply-To: <Pine.LNX.4.64.2311032251450.3221455@users.shellworld.net>
+X-Mailer: Mail User's Shell (7.2.6 beta(4.pl1)+dynamic 20000103)
+To: Butch Bussen <butchb@shellworld.net>,
+        Karen Lewellen <klewellen@shellworld.net>
 Subject: Re: slightly different dectalk question.
-In-Reply-To: <Pine.LNX.4.64.2311011800050.3180608@users.shellworld.net>
-Message-ID: <Pine.LNX.4.64.2311032251450.3221455@users.shellworld.net>
-References: <Pine.LNX.4.64.2310311538430.3146024@users.shellworld.net>
- <Pine.LNX.4.64.2310311709250.3149750@users.shellworld.net>
- <1a1901da0c58$b29deac0$01ffa8c0@nucwin10> <Pine.LNX.4.64.2311011456240.3180685@users.shellworld.net>
- <Pine.LNX.4.64.2311011800050.3180608@users.shellworld.net>
+Cc: K0LNY ?? <glenn@ervin.email>,
+        "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
+        buhrow@nfbcal.org
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.4.3 (nfbcal.org [127.0.0.1]); Sat, 04 Nov 2023 09:08:35 -0700 (PDT)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -44,79 +45,10 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I don't remember how to attach a file in pine and would have to copy it 
-to shellworld which I don't do much anymore.  I'm sending you an mp3 
-file from my outlook express address.  Will show up as from tiny puppy.
+	hello.  Just for reference, in pine, to attach a file, use control-j.
+-thanks
+-Brian
 
-Hope you get it o.k.
-On Wed, 1 Nov 2023, Karen Lewellen wrote:
-
-> Hi there,
-> Do you have a sample of the sounding board?
-> I also have 2 of them, including installation software.
-> Must choose synth sources with care however, wanting to hear it before even 
-> considering putting it in as a backup.
->
->
-> On Wed, 1 Nov 2023, Butch Bussen wrote:
->
->>  As I recall on the sounding board, irq 2 was default, and we sometimes
->>  used seven.  I think 5 was for sound card, irq 4 was for come 1 and 3 and
->>  irq3 was for com 2 and com 4 as I recall.  On Tue, 31 Oct 2023, K0LNY ??
->>  wrote:
->> 
->> >   I thought that somewhere in with the DecTalk files, there was a tool 
->> >   that
->> >   probes for the Dectalk.
->> >   It should not be hard to change the jumpers on the card, I used to do 
->> >   it
->> >   all
->> >   the time.
->> >   Seems like I usually used IRQ 5 or 7 and what is the other, DMA?
->> >   I think that was usually 3.
->> >   Anyway, it wouldn't hurt to move them, as the worse that can happen is
->> >   that
->> >   it will be not working like it it is currently.
->> >   You just feel the the available jumper pins, and move the jumper over.
->> > 
->> >   Glenn
->> >   ----- Original Message -----
->> >   From: "Butch Bussen" <butchb@shellworld.net>
->> >   To: "Karen Lewellen" <klewellen@shellworld.net>
->> >   Cc: "Speakup is a screen review system for Linux."
->> >   <speakup@linux-speakup.org>
->> >   Sent: Tuesday, October 31, 2023 7:10 PM
->> >   Subject: Re: slightly different dectalk question.
->> > 
->> > 
->> >   I don't know of a tool, but I have a whole folder of dectalk stuff, 
->> >   says
->> >   software 4.2 if I remember right.  There is one file, for example, that
->> >   talks about a conflict with certain cdrom drives.
->> >   On Tue, 31 Oct 2023,
->> >   Karen Lewellen wrote:
->> > 
->> > >   And likely more on point.
->> > >   I did get a copy of the pc1 software, from another list.
->> > >   The error suggests address factors, but my associate took one look at 
->> > >   all
->> > >   those switches and was afraid to touch them.
->> > >   Given dt.bat can be edited it seems,
->> > >   any tool that will locate the dectalk internal card?
->> > >   Thanks,
->> > >   Karen
->> > > 
->> > > 
->> > > 
->> > > 
->> > 
->> > 
->> 
->
->
->
 
