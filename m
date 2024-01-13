@@ -1,35 +1,46 @@
-Return-Path: <speakup+bounces-1060-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1061-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 82D557F95A3
-	for <lists+speakup@lfdr.de>; Sun, 26 Nov 2023 22:58:29 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id ACD7782C84D
+	for <lists+speakup@lfdr.de>; Sat, 13 Jan 2024 01:24:36 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign002.email header.i=@t39smtp-sign002.email header.a=rsa-sha256 header.s=titan1 header.b=Cv6tmeEU;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CE2E23822BD; Sun, 26 Nov 2023 16:58:25 -0500 (EST)
+	id 19A1138278A; Fri, 12 Jan 2024 19:24:28 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B6D1D380953
-	for <lists+speakup@lfdr.de>; Sun, 26 Nov 2023 16:58:25 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id EAC643821B4
+	for <lists+speakup@lfdr.de>; Fri, 12 Jan 2024 19:24:27 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A82903821A8; Sun, 26 Nov 2023 16:58:21 -0500 (EST)
-Received: from atlas.bondproducts.com (23-24-6-165-static.hfc.comcastbusiness.net [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8AB11380953
-	for <speakup@linux-speakup.org>; Sun, 26 Nov 2023 16:58:21 -0500 (EST)
-Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id 1D89140508;
-	Sun, 26 Nov 2023 16:58:20 -0500 (EST)
-Received: by users.shellworld.net (Postfix, from userid 1005)
-	id DDA211001B1; Sun, 26 Nov 2023 16:58:19 -0500 (EST)
-Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id DC16810005A;
-	Sun, 26 Nov 2023 16:58:19 -0500 (EST)
-Date: Sun, 26 Nov 2023 16:58:19 -0500 (EST)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: "lynx-dev@nongnu.org" <lynx-dev@nongnu.org>
-cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: OT: Seeking someone who..? ( 
-Message-ID: <Pine.LNX.4.64.2311261653380.3669744@users.shellworld.net>
+	id 58D203821B4; Fri, 12 Jan 2024 19:24:20 -0500 (EST)
+Received: from mail42.out.titan.email (mail42.out.titan.email [209.209.25.43])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 0A24A38206A
+	for <speakup@linux-speakup.org>; Fri, 12 Jan 2024 19:24:20 -0500 (EST)
+Received: from smtp-out.flockmail.com (localhost [127.0.0.1])
+	by smtp-out.flockmail.com (Postfix) with ESMTP id BB3DAE0046
+	for <speakup@linux-speakup.org>; Sat, 13 Jan 2024 00:24:18 +0000 (UTC)
+Received: from nucwin10 (unknown [140.228.165.201])
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 67F86E0033
+	for <speakup@linux-speakup.org>; Sat, 13 Jan 2024 00:24:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=t39smtp-sign002.email; s=titan1; t=1705105458;
+	bh=E2Md19o7aw+amGnO9hzVqW1xqUin1lzYfmMGFicNdSM=;
+	h=Message-ID:Reply-To:From:To:Subject:Date:MIME-Version:From:To:Cc:
+	 Subject:Message-ID;
+	b=Cv6tmeEU663uBKOWumg+xl56eGtxkmv8KjC+OSKcOCYMXF27G8vgbrCa0AGiByX5d
+	 2jXothZT9JwfpUcqnHpIYy2JLd4i7j7K0R48PNlm94FLneRFQWb+4wyPE/6Z0TFPa8
+	 V5gkFUHKznm3PI7x4PyGMothNLccTcriv3Z+DU48=
+Message-ID: <011701da45b6$d8e23a00$01ffa8c0@nucwin10>
+Reply-To: "K0LNY ??" <glenn@ervin.email>
+Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
+From: "K0LNY ??" <glenn@ervin.email>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Documentation For Some Hardware Synths
+Date: Fri, 12 Jan 2024 18:24:17 -0600
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -39,61 +50,91 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0114_01DA4584.8DD64380"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-F-Verdict: SPFVALID
+X-Titan-Src-Out: 1705105458569436208.4525.3849004164581411601@prod-use1-smtp-out1004.
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.4 cv=Z/zqHmRA c=1 sm=1 tr=0 ts=65a1d832
+	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
+	a=MKtGQD3n3ToA:10 a=P3K-DvM3-jgA:10 a=CEWIc4RMnpUA:10
+	a=r77TgQKjGQsHNAKrUKIA:9 a=bLFSaJE4owTN6Uph2yoA:9 a=wPNLvfGTeEIA:10
+	a=DLuIbwvRiOrO7gjQEdMA:9 a=y3EomSOYWBH6skzw:21 a=_W_S_7VecoQA:10
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi all,
-  owning this is off topic, given the far more knowledgeable and I would 
-imagine likely more emotionally grounded  Linux folks here, I am sending 
-out   a request I have circulated elsewhere as well.
-Elsewhere includes the Blinux, Debian, and alpine lists.
-Please if you can support here, get in touch.
-Thanks,
-Kare
+This is a multi-part message in MIME format.
 
+------=_NextPart_000_0114_01DA4584.8DD64380
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 
-Date: Sun, 26 Nov 2023 16:43:12 -0500 (EST)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: debian-user@lists.debian.org
-Subject: Seeking someone who..? (
-Resent-Date: Sun, 26 Nov 2023 21:43:37 +0000 (UTC)
-Resent-From: debian-user@lists.debian.org
+Hello All,
+I thought I'd start here, since I think this group might be the most =
+likely to have the documentation I'm looking for.
+An acquaintance is working on a project to make his device for Ham =
+radios feed out to a speech synthesizer for Blind Hams.
+He will need to know the port string information for communicating with =
+them.
+I have a Dectalk and a Doubletalk, and I think those are the most synths =
+that folks might still have.
+Can anyone with documentation on these and any other synths zip them up =
+and send them to me, so I can send them on to him?
+This is a fantastic project for Blind Hams.
+Thanks.
 
-Sharing what I posted to alpine  as well as here..My resource is    doing all 
-they can, but I truly am not equips to help them..please someone who knows what 
-they are doing first hand get in touch?
+Glenn
+A man with a clock always knows what time it is.
+A man with two clocks is never sure.
+-- A derivative of Segal's law
+------=_NextPart_000_0114_01DA4584.8DD64380
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3Diso-8859-1" =
+http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT size=3D2 face=3DArial>Hello All,</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I thought I'd start here, since I think =
+this group=20
+might be the most likely to have the documentation I'm looking =
+for.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>An acquaintance is working on a project =
+to make his=20
+device for Ham radios feed out to a speech synthesizer for Blind=20
+Hams.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>He will need to know the port string =
+information=20
+for communicating with them.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I have a Dectalk and a Doubletalk, and =
+I think=20
+those are the most synths that folks might still have.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Can anyone with documentation on these =
+and any=20
+other synths zip them up and send them to me, so I can send them on to=20
+him?</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>This is a fantastic project for Blind=20
+Hams.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
+<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>A man with a clock always knows what =
+time it=20
+is.<BR>A man with two clocks is never sure.<BR>-- A derivative of =
+Segal's=20
+law</FONT></DIV></BODY></HTML>
 
-
-Currently uses alpine to access their gmail account.
-A bit of context
-I experience sight loss, with basic html my only direct access to my gmail 
-account..which has been removed as of last Monday.
-I use my gmail account personally and professionally, its lost is quite quite 
-quite a situation for me.
-There is an associate in Toronto who is aiming to provide an email setup, 
-configuring alpine to access gmail, but he has never configured alpine before.
-As I experience sight loss, and have only accessed my gmail account via the web 
-interface, I  need to
-1, be sure what I am told should happen here incorporating imap is what I 
-expect,
-and 2, insure my associate has correct information, all of my alpine access is 
-via dreamhost, and they do not configure alpine well.
-My associate is using Alpine 2.5, which I recall has a tool that allows one to 
-authenticate to gmail,  but I am seeking someone with direct experience so this 
-gets done  to the best of Alpine's ability.
-If you are personally doing this, Can you please write me off list?
-I absolutely positively do not have the emotional capacity to gamble here, 
-hoping to connect Ron with someone who knows what they are doing.
-klewellen@shellworld.net
-thanks,
-Kare
-
-
-_______________________________________________
-Alpine-info mailing list
-Alpine-info@u.washington.edu
-http://mailman12.u.washington.edu/mailman/listinfo/alpine-info
-
+------=_NextPart_000_0114_01DA4584.8DD64380--
 
 
