@@ -1,46 +1,48 @@
-Return-Path: <speakup+bounces-1100-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1101-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 5B10F880E23
-	for <lists+speakup@lfdr.de>; Wed, 20 Mar 2024 10:00:05 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 32D85881126
+	for <lists+speakup@lfdr.de>; Wed, 20 Mar 2024 12:43:40 +0100 (CET)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=UAP310U+;
+	dkim=pass (1024-bit key; secure) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=ucuopyLP;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3148A382669; Wed, 20 Mar 2024 05:00:04 -0400 (EDT)
+	id 2D81A382664; Wed, 20 Mar 2024 07:43:39 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0FF553825CC
-	for <lists+speakup@lfdr.de>; Wed, 20 Mar 2024 05:00:04 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0D02D3825CA
+	for <lists+speakup@lfdr.de>; Wed, 20 Mar 2024 07:43:39 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 80BD53825CB; Wed, 20 Mar 2024 04:59:56 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 3C1663820F0
-	for <speakup@linux-speakup.org>; Wed, 20 Mar 2024 04:59:56 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4V02bZ5jMMz17xm;
-	Wed, 20 Mar 2024 04:59:54 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1710925194; bh=0/J7BCglo6BS0U8OXxOz3IcB8nagbPXX0kUfaJNXhqw=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=UAP310U+ohbsezgAb5SOj7oV2shUV5Uaj+DeLzjHXD2ZpsudbqvQFUYwvu+2PG2Hx
-	 pUa/XuFVGDi9+fl5R4U1tCr0KP8tHk1bXO/33KsgRmnIiuHJem59aOQOuMPc+RFq4y
-	 HquEmrsm54kVrwzo7ZPzlNFzgs5YkODM64hwE8Hc=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4V02bZ5SxPzcbc; Wed, 20 Mar 2024 04:59:54 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4V02bZ5Q27zcbV;
-	Wed, 20 Mar 2024 04:59:54 -0400 (EDT)
-Date: Wed, 20 Mar 2024 04:59:54 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: Martin McCormick <martin.m@suddenlink.net>, 
-    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Trouble-shooting a Mute Speakup on a Raspberry Pi
-In-Reply-To: <E1rmkQD-000BSn-06@wb5agz>
-Message-ID: <23c504ea-60e0-d2b9-c9b1-3d60404d7a2b@panix.com>
-References: <E1rmffd-0009s5-0f@wb5agz> <d021a211-bbe2-7b3f-0357-40c64c707afb@panix.com> <E1rmkQD-000BSn-06@wb5agz>
+	id 838853825DE; Wed, 20 Mar 2024 07:43:31 -0400 (EDT)
+Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 3CE213825C0
+	for <speakup@linux-speakup.org>; Wed, 20 Mar 2024 07:43:31 -0400 (EDT)
+Received: from opera.rednote.net (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by mail.rednote.net (Postfix) with ESMTPS id 89A1AFA020
+	for <speakup@linux-speakup.org>; Wed, 20 Mar 2024 07:42:58 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
+	t=1710934978;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=gybnI/044+GauKxavGe3yNXLNPMiapEdpI5uq3Ky7pI=;
+	b=ucuopyLP2xn5jwQYUDbhTwVyq/AtTbE6dmCYPjyeJFCwirD4PatZtVKUgx5LxWbwEjvRvP
+	6Ahyp2lHQ6wrpkjIipJsxI/3v6mSho4/hg9kkYFWWeegeZYgGpeF1Sskscfjo8VqqBvrW6
+	YdEevLiBc3B/EQkx++VzvKCcnbqmFfU=
+Received: (from janina@localhost)
+	by opera.rednote.net (8.17.2/8.16.1/Submit) id 42KBgwNn234154
+	for speakup@linux-speakup.org; Wed, 20 Mar 2024 07:42:58 -0400
+Date: Wed, 20 Mar 2024 07:42:58 -0400
+From: Janina Sajka <janina@rednote.net>
+To: speakup@linux-speakup.org
+Subject: Re: UTF-8 encoding of i18n files?
+Message-ID: <ZfrLwvrqnuevfEIY@rednote.net>
+References: <20240312224254.umw3ezrolerdu4yf@begin>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,34 +52,43 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20240312224254.umw3ezrolerdu4yf@begin>
+X-Operating-System: Linux opera.rednote.net 6.7.9-200.fc39.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-If you enabled espeak.service reboot and see if it works.
+I'm also in support of UTF8 for Speakup.
+
+I'd like to set my mua, mutt, to utf8; but, that's currently a fraught
+undertaking that makes knowing where I am rather impossible, so I've reverted the mutt default to iso8859-1.
+
+Best,
+Janina
 
 
---
- Jude <jdashiel at panix dot com>
- "There are four boxes to be used in defense of liberty:
- soap, ballot, jury, and ammo.
- Please use in that order."
- Ed Howdershelt 1940.
+Samuel Thibault writes:
+> Hello,
+> 
+> i18n files are currently encoded in latin1 (aka iso-8859-1), which poses
+> problem for various languages whose characters cannot be encoded that
+> way.  We could duplicate the i18n entries, one in latin1 and one in
+> utf-8, but it will probably be much simpler to just switch the i18n
+> files to utf-8 and be done? Would anybody be against this?
+> 
+> (for english that changes nothing)
+> 
+> Samuel
 
-On Tue, 19 Mar 2024, Martin McCormick wrote:
+-- 
 
-> All of you have told me something that I either didn't already
-> know or was hazy about.
->
-> 	When I figure it out, I'll send a short message to the
-> list explaining what it was so I really appreciate your help.
->
-> 	The biggest surprise is that speech-dispatcher is most
-> likely not being used.  To be honest, we don't learn much when
-> everything works perfectly so this is a teachable moment.
-> Thanks.
-> Jude DaShiell <jdashiel@panix.com> writes:
-> > Did you do:
-> > sysctl enable espeakup.service
->
->
+Janina Sajka (she/her/hers)
+Accessibility Consultant https://linkedin.com/in/jsajka
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
+Linux Foundation Fellow
+https://www.linuxfoundation.org/board-of-directors-2/
+
 
