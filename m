@@ -1,47 +1,78 @@
-Return-Path: <speakup+bounces-1094-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1095-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id E3BA2887987
-	for <lists+speakup@lfdr.de>; Sat, 23 Mar 2024 17:49:04 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id C6B0B888C8E
+	for <lists+speakup@lfdr.de>; Mon, 25 Mar 2024 05:24:18 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=ZKc3/1bH;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm2 header.b=ZL75cXrX;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1C191C81C69; Sat, 23 Mar 2024 12:49:03 -0400 (EDT)
+	id 42698C81C1F; Mon, 25 Mar 2024 00:24:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 09BC1C80BC7
-	for <lists+speakup@lfdr.de>; Sat, 23 Mar 2024 12:49:03 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 238FFC80FE2
+	for <lists+speakup@lfdr.de>; Mon, 25 Mar 2024 00:24:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 981C3C80BC7; Sat, 23 Mar 2024 12:48:58 -0400 (EDT)
-Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 5F71EC80BAB
-	for <speakup@linux-speakup.org>; Sat, 23 Mar 2024 12:48:58 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 2D99DA02C5;
-	Sat, 23 Mar 2024 17:48:54 +0100 (CET)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id ChON3L8JAySc; Sat, 23 Mar 2024 17:48:54 +0100 (CET)
-Received: from begin (aamiens-653-1-111-57.w83-192.abo.wanadoo.fr [83.192.234.57])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 13220A02A6;
-	Sat, 23 Mar 2024 17:48:54 +0100 (CET)
-Received: from samy by begin with local (Exim 4.97)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1ro4Y9-00000005zEE-2agA;
-	Sat, 23 Mar 2024 17:48:53 +0100
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: gregkh@linuxfoundation.org
-Cc: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	linux-kernel@vger.kernel.org,
-	speakup@linux-speakup.org,
-	stable@vger.kernel.org
-Subject: [PATCH] speakup: Avoid crash on very long word
-Date: Sat, 23 Mar 2024 17:48:43 +0100
-Message-ID: <20240323164843.1426997-1-samuel.thibault@ens-lyon.org>
-X-Mailer: git-send-email 2.43.0
+	id B9B34C80FD8; Mon, 25 Mar 2024 00:24:08 -0400 (EDT)
+Received: from fhigh2-smtp.messagingengine.com (fhigh2-smtp.messagingengine.com [103.168.172.153])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 34108C80B90
+	for <speakup@linux-speakup.org>; Mon, 25 Mar 2024 00:24:08 -0400 (EDT)
+Received: from compute7.internal (compute7.nyi.internal [10.202.2.48])
+	by mailfhigh.nyi.internal (Postfix) with ESMTP id E4C121140097
+	for <speakup@linux-speakup.org>; Mon, 25 Mar 2024 00:24:03 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute7.internal (MEProxy); Mon, 25 Mar 2024 00:24:03 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:content-type:date:date
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to; s=fm3; t=1711340643; x=1711427043; bh=+z4G0/7yxQ
+	xOjvU04M49229E6R7FdbWg6oM8ZFO20jo=; b=ZKc3/1bHntng5rCjrj4CLPGdAY
+	mESFjNUGtcFm9kevZ6TTWgu3I1fuw7vqGdSiur2U2jbc9HHBheKpxz9VaGPsacig
+	UmcEZNjwlhm3GT/+m4mURuKy91EeZOlQ/vxqXJgqc1KIRZ6KuragTKL4gJW2OId0
+	M6t87nW/DtWdmWXY10J7IRJZTSdCmT/L+JMtb/wwJYi+xY8x4GIBRc9ViUdNxi2o
+	8BWWA1byZBPqPV5KktIXOQErAodxvwXkEHDWPI7OWxnaseQns0XKf/1P5oS2+Hv9
+	hAg5USnkCFJhbWonfAVJY1kn2tVMWOaze8IKA3/Rie7z8xPRiTSjaYCpPXYA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:message-id
+	:mime-version:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1711340643; x=1711427043; bh=+z4G0/7yxQxOjvU04M49229E6R7FdbWg6oM
+	8ZFO20jo=; b=ZL75cXrX3wPdCl/BD4oJq2ByJbYtfys9uhBLRSKcTEKJPJYbRpQ
+	9DNK/WzyWosNdXigpsiatvetLt4gM/YfXp7xA2ONviGRcDgA9rBJ7N5nqeLH58R8
+	f+tGhytPxklRBjNJCyNnL7MayrHX9no8GgDhHOkkUrm9m2Z4Bz6gj7qrQO52TIaO
+	IrStoXeckA3rO3qucDQKaU9EMI2HrhEzXqWcBO9eBCh8wPzw8FiALnbWip3LSjRr
+	ZgPGqJ4He5erDhqJ15JUGIySzVYN8zicAEPMhMebkqeVqUxEWZHKgJ0g0ZB7ww8b
+	npqbMUfe/XGWAulb5Nk6NxpnC6vCcvvFX4A==
+X-ME-Sender: <xms:Y_wAZuDgKfc8qsExjci4TeMY4KmMYso3mxBuQb_NYjdoyiKarEci-Q>
+    <xme:Y_wAZogbVLNPcpgSA1o4CupKrZ5WzFHpb7VwDvRORJyQ5jdFxjXw8cDvfjgbtlCvP
+    CTyVRCsHwzsgUwa6YA>
+X-ME-Received: <xmr:Y_wAZhlBTDSJ4F98oBcyxJFjBVA5TLUtuj5NlZ7BNmh4zbyjH-PwuZHwl_RplY-tP2GqN5UMe9TzaDxDnsWBmYbPO2s62w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvledruddtkedgjeduucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttd
+    dvnecuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhu
+    mhhphhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtie
+    ettedtkefggfekvdeujeetkedtheefhffhvdetkeenucevlhhushhtvghrufhiiigvpedt
+    necurfgrrhgrmhepmhgrihhlfhhrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphh
+    hrvgihrdgtohhm
+X-ME-Proxy: <xmx:Y_wAZsyZ47y5RM6aBSYUZmg7bisnYkxIu1zQ-iB58qhtx9nEmjBmlw>
+    <xmx:Y_wAZjSIadWbl3vODeFDnNBw6lsrY6XNFjSEPEQ32v26o5rp9Qek9w>
+    <xmx:Y_wAZnZSJNes8nrplvnYhGEiyyA4Qg6jhgQ28l3bFpxGvlP4ZuJybg>
+    <xmx:Y_wAZsSx8gfr2sbpbgH1QNKZPPjuZejAg4BceFDZ-T2Zxrwqd5hypw>
+    <xmx:Y_wAZufngcZuc5xPK6XcUsz5fCu1aBY0x9-Lydo4UDp33CkyvKw3kg>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Mon, 25 Mar 2024 00:24:03 -0400 (EDT)
+Date: Sun, 24 Mar 2024 21:24:01 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: speakup@linux-speakup.org
+Subject: Is Park/Un park Broken?
+Message-ID: <ddc7825c-b7db-8820-8483-b551b898062b@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,33 +82,17 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-In case a console is set up really large and contains a really long word
-(> 256 characters), we have to stop before the length of the word buffer.
-
-Signed-off-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
-Fixes: c6e3fd22cd538 ("Staging: add speakup to the staging directory")
-Cc: stable@vger.kernel.org
----
- drivers/accessibility/speakup/main.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/accessibility/speakup/main.c b/drivers/accessibility/speakup/main.c
-index 1fbc9b921c4f..736c2eb8c0f3 100644
---- a/drivers/accessibility/speakup/main.c
-+++ b/drivers/accessibility/speakup/main.c
-@@ -574,7 +574,7 @@ static u_long get_word(struct vc_data *vc)
- 	}
- 	attr_ch = get_char(vc, (u_short *)tmp_pos, &spk_attr);
- 	buf[cnt++] = attr_ch;
--	while (tmpx < vc->vc_cols - 1) {
-+	while (tmpx < vc->vc_cols - 1 && cnt < sizeof(buf) - 1) {
- 		tmp_pos += 2;
- 		tmpx++;
- 		ch = get_char(vc, (u_short *)tmp_pos, &temp);
--- 
-2.43.0
-
+Hi All: Yesterday after 104days I restarted my Debian SID machine. Among the 
+minuses, my console fonts directory went away, had to re-install. I finally can 
+have spd-say working as user along with sudo. However, a surprise, when I hit 
+that top right key on the num-pad, it says "park" but it doesn't seem to work 
+any more in my kernel
+Linux chime 6.5.0-5-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.5.13-1 (2023-11-29) 
+x86_64 GNU/Linux
+I guess if that option were removed, it wouldn't say "park" or "unpark. Thanks 
+in advance
+Chime
 
