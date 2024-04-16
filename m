@@ -1,57 +1,78 @@
-Return-Path: <speakup+bounces-1099-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1100-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id E3B1D8A50F7
-	for <lists+speakup@lfdr.de>; Mon, 15 Apr 2024 15:20:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id F2AA58A71FE
+	for <lists+speakup@lfdr.de>; Tue, 16 Apr 2024 19:12:32 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=NNbn5tZX;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm2 header.b=cWWEan6A;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 340C7C81CC2; Mon, 15 Apr 2024 09:12:45 -0400 (EDT)
+	id A1770C81C80; Tue, 16 Apr 2024 13:12:30 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1FC6DC80D2E
-	for <lists+speakup@lfdr.de>; Mon, 15 Apr 2024 09:12:45 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8223AC80879
+	for <lists+speakup@lfdr.de>; Tue, 16 Apr 2024 13:12:30 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8BCDBC80D2E; Mon, 15 Apr 2024 09:12:40 -0400 (EDT)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 9CD6AC80BA9
-	for <speakup@linux-speakup.org>; Mon, 15 Apr 2024 09:12:39 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 14966A0356;
-	Mon, 15 Apr 2024 15:12:27 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id 0ePUsKKeAeGk; Mon, 15 Apr 2024 15:12:27 +0200 (CEST)
-Received: from begin (unknown [61.199.131.154])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 4D97EA0326;
-	Mon, 15 Apr 2024 15:12:25 +0200 (CEST)
-Received: from samy by begin with local (Exim 4.97)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1rwM89-00000007bTI-0YTQ;
-	Mon, 15 Apr 2024 15:12:17 +0200
-Date: Mon, 15 Apr 2024 15:12:17 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Dan Carpenter <dan.carpenter@linaro.org>
-Cc: William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Randy Dunlap <rdunlap@infradead.org>, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org, kernel-janitors@vger.kernel.org
-Subject: Re: [PATCH] speakup: Fix sizeof() vs ARRAY_SIZE() bug
-Message-ID: <20240415131217.t3zfjucclauc3rkz@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Dan Carpenter <dan.carpenter@linaro.org>,
-	William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>,
-	Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
-	Randy Dunlap <rdunlap@infradead.org>, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org, kernel-janitors@vger.kernel.org
-References: <d16f67d2-fd0a-4d45-adac-75ddd11001aa@moroto.mountain>
+	id 2ED49C80A25; Tue, 16 Apr 2024 13:12:22 -0400 (EDT)
+Received: from fhigh1-smtp.messagingengine.com (fhigh1-smtp.messagingengine.com [103.168.172.152])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 94F2CC80879
+	for <speakup@linux-speakup.org>; Tue, 16 Apr 2024 13:12:21 -0400 (EDT)
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+	by mailfhigh.nyi.internal (Postfix) with ESMTP id D589B11400D3
+	for <speakup@linux-speakup.org>; Tue, 16 Apr 2024 13:12:16 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute4.internal (MEProxy); Tue, 16 Apr 2024 13:12:16 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:content-type:date:date
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to; s=fm3; t=1713287536; x=1713373936; bh=epw2hn5aZd
+	kZ/amDH7GZVx9RG+Vg8bYW08FJ0MgGP44=; b=NNbn5tZXvT/gtwUtWsp5Jd0qGi
+	rgbErudDtMVN4jdjlbXZBHvrfgDd3iMbu7wRgSK6O5NjvJdENfN6FEJsiG/oF0Vh
+	DMxL/pjvqAV4ZttKwexKJ92Jsljnkxl0wZAzWLjn5vJ2CR7jpTyNiUdyvI9c3N4o
+	4qz+XJ7daSREUQiTGN48fsmNTrVC8KOtrH0owCQ4vrbTqOxG3arGj2F3xmBHmnBB
+	c2O6pKtNKwx+6xPUO/YvteorHIXzyc9pBqnB8gPFHDFm1iggok+R59EKPH/f3QAX
+	w/olpdibNoulog6TqIR6mfrCrXRd+hHjnIaqL0gQF9/T4Y8Raue6jAHjOv2w==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:message-id
+	:mime-version:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1713287536; x=1713373936; bh=epw2hn5aZdkZ/amDH7GZVx9RG+Vg8bYW08F
+	J0MgGP44=; b=cWWEan6A+g5jL0lXsK2ybQ9unEe/duGyllIOqKFK3yeJjFarjen
+	W2qkjpEXgGwc0DYDLYdE2NCAvJKQ5vf+fpdF/7OKi63UcSBku5kCV320UlVxucGr
+	WECyN/HXDE0YkHxQ1Qa4p47+QaHkk190Jc6ush0S2rSOQBHIeOnguHrOMBVg+4hk
+	2np2ySWi5E/3xOcJCYahA2tW0fYjW7VBffPEKBcl9cJDnzkPIBze/cq0vfyyJSIW
+	r+cKcqvhWYSln2ms+uveT8OyzqpNgvNDJVsylOdoxLbr2iKisgOGODHiH/42GwU9
+	/GNQ+qgnl5LJSzfzcuppYwWtcwCbt+HQ3bQ==
+X-ME-Sender: <xms:cLEeZttwSLPbRoRpHa8bg_pqd0ZuOfxmH86mw39YcsztV06qPSt6dw>
+    <xme:cLEeZmfrFqeqoAOHbvZLRPlZn63esX6otVSSSNQ2Y25hhQQswycrZV-aCXz1ZkS-o
+    k5nCqPiQKapCjO5SK0>
+X-ME-Received: <xmr:cLEeZgwdlQi-ifDbZSzeEGbqfHkIobbIz8Gy5rBucRFxyx-OjZqxnE43-PDk>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvledrudejiedggeekucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttd
+    dvnecuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhu
+    mhhphhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtie
+    ettedtkefggfekvdeujeetkedtheefhffhvdetkeenucevlhhushhtvghrufhiiigvpedt
+    necurfgrrhgrmhepmhgrihhlfhhrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphh
+    hrvgihrdgtohhm
+X-ME-Proxy: <xmx:cLEeZkOSiRP-dFQ6LRXF6hIZylulZnVI583Tim8TrcnFn0j30vKC9g>
+    <xmx:cLEeZt88Axd5W9TxaW0ia4PUpwQc5pjfdg2juPlvh4CbYKtEx1bE4A>
+    <xmx:cLEeZkXhi7V2zH-zPrQEgnCHR5JhSU54CbzhKj6VRVy-bnALUzGVOw>
+    <xmx:cLEeZud5LO0JaILUZ9XokOjkhLoYiGPUOwKWAvYq9oVX0Yp2lFj9gQ>
+    <xmx:cLEeZvmCmdJ363oNTU-fDu-0Tn_5RzV18Nh7IT94xEMLV8vRVqx1cV2P>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Tue, 16 Apr 2024 13:12:15 -0400 (EDT)
+Date: Tue, 16 Apr 2024 10:12:14 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: speakup@linux-speakup.org
+Subject: How Can I Enable Speakup in Arch?
+Message-ID: <5f590a48-de70-df83-f932-7c8b45f20c9d@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -61,44 +82,15 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <d16f67d2-fd0a-4d45-adac-75ddd11001aa@moroto.mountain>
-Organization: I am not organized
-User-Agent: NeoMutt/20170609 (1.8.3)
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Dan Carpenter, le lun. 15 avril 2024 14:02:23 +0300, a ecrit:
-> The "buf" pointer is an array of u16 values.  This code should be
-> using ARRAY_SIZE() (which is 256) instead of sizeof() (which is 512),
-> otherwise it can the still got out of bounds.
-> 
-> Fixes: c8d2f34ea96e ("speakup: Avoid crash on very long word")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Dan Carpenter <dan.carpenter@linaro.org>
-
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org
-
-Thanks!
-
-> ---
->  drivers/accessibility/speakup/main.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/accessibility/speakup/main.c b/drivers/accessibility/speakup/main.c
-> index 736c2eb8c0f3..f677ad2177c2 100644
-> --- a/drivers/accessibility/speakup/main.c
-> +++ b/drivers/accessibility/speakup/main.c
-> @@ -574,7 +574,7 @@ static u_long get_word(struct vc_data *vc)
->  	}
->  	attr_ch = get_char(vc, (u_short *)tmp_pos, &spk_attr);
->  	buf[cnt++] = attr_ch;
-> -	while (tmpx < vc->vc_cols - 1 && cnt < sizeof(buf) - 1) {
-> +	while (tmpx < vc->vc_cols - 1 && cnt < ARRAY_SIZE(buf) - 1) {
->  		tmp_pos += 2;
->  		tmpx++;
->  		ch = get_char(vc, (u_short *)tmp_pos, &temp);
-> -- 
-> 2.43.0
-> 
+Hi All: I am out of town on a laptop, which we recently switched from Debian to 
+Arch. I wanted to try Fenrir as it has some options which I like. However, as I 
+am mostly reading my Alpine mail remotely, I am having alot of issues which I 
+can certainly bringup with Storm. Meanwhile, can any1 please inform if there 
+are easy ways on the fly of switching to Speakup? I just ran a locate, found 14 
+Speakup items, including modules for 6.8.5. I realize at very least I would 
+need to hit an insert+q to turn off Fenrir. Thanks so much in advance.
+Chime
 
