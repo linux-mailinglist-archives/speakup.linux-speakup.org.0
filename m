@@ -1,46 +1,43 @@
-Return-Path: <speakup+bounces-1106-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1107-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 096618A789D
-	for <lists+speakup@lfdr.de>; Wed, 17 Apr 2024 01:37:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 04AE08B2DC2
+	for <lists+speakup@lfdr.de>; Fri, 26 Apr 2024 01:49:17 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=lfkUXPuz;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=NEuv+tnm;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id F3302C81C92; Tue, 16 Apr 2024 19:37:01 -0400 (EDT)
+	id 0F03BC81C9B; Thu, 25 Apr 2024 19:49:12 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D1D12C81C75
-	for <lists+speakup@lfdr.de>; Tue, 16 Apr 2024 19:37:01 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E7589C80AE4
+	for <lists+speakup@lfdr.de>; Thu, 25 Apr 2024 19:49:11 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 92065C81C76; Tue, 16 Apr 2024 19:36:53 -0400 (EDT)
+	id C0BD7C80AE4; Thu, 25 Apr 2024 19:49:03 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 76F6CC81C74
-	for <speakup@linux-speakup.org>; Tue, 16 Apr 2024 19:36:53 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 7DEB6C8088E
+	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 19:49:03 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4VK0mr75nHzJSr;
-	Tue, 16 Apr 2024 19:36:44 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4VQXcc4rhnzQsl
+	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 19:48:48 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1713310605; bh=5RGeRQN/Yfw+F1G0XF7MbA55HvtVC/OcLrv54hmisQI=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References;
-	b=lfkUXPuz/fRm0brnNGcU+hiEPWV/EQgIqOW9Tn0esMijrpIehx4gfu9CUFgtwsZuO
-	 aLIm9a9adKRcuhlApWQCSJXp3lTukrvWrDMi2As5E8t8RwkQlHU1JXExpVGMyCzfgu
-	 co1mCy7DvAjy9nmDJ0Ia02h0caX1NhF/pvwrMYhQ=
+	t=1714088928; bh=no3nFOWu1n9BGoBh+LAh4xkr26ehmWakJ/MM7lvZ49E=;
+	h=Date:From:To:Subject;
+	b=NEuv+tnmu9wrbe6mR3GWCQQFDXV0dnBY1oH2YlnQeQ01NMG4lD2zXXH8tnw3MRy28
+	 gFWLBMCh8h/ENLXTf8DMnBTJI7pL0YZtz9UeEQ1JXZaHB/3u+mrW3dswkLEH2Nw1O6
+	 r53FnPqYCFjqSFPitoR33G8jy8sDGBfi6I9DWGk0=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4VK0mr6nWpzcbc; Tue, 16 Apr 2024 19:36:44 -0400 (EDT)
+	id 4VQXcc4VqWzcbc; Thu, 25 Apr 2024 19:48:48 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4VK0mr6kT0zcbC;
-	Tue, 16 Apr 2024 19:36:44 -0400 (EDT)
-Date: Tue, 16 Apr 2024 19:36:44 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4VQXcc4Rx6zcbC
+	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 19:48:48 -0400 (EDT)
+Date: Thu, 25 Apr 2024 19:48:48 -0400
 From: Jude DaShiell <jdashiel@panix.com>
-To: Chime Hart <chime@hubert-humphrey.com>
-cc: speakup@linux-speakup.org
-Subject: Re: How Can I Enable Speakup in Arch?
-In-Reply-To: <1ab88af6-465e-5351-3955-27ee90bbabaf@hubert-humphrey.com>
-Message-ID: <c0b8b801-7873-c3ac-efd8-6c4e8ccf5d68@panix.com>
-References: <5f590a48-de70-df83-f932-7c8b45f20c9d@hubert-humphrey.com> <018d835d-9ff8-e6cb-1cb3-d3182c40c3ec@panix.com> <1ab88af6-465e-5351-3955-27ee90bbabaf@hubert-humphrey.com>
+To: speakup@linux-speakup.org
+Subject: speakup and gentoo
+Message-ID: <10acd4eb-8872-1669-0086-fb591ee6cad4@panix.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -53,11 +50,13 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Okay, try updatedb if you have locate on that computer and if you don't
-you want to install the mlocate package then run updatedb.
-Then type locate fenrir*.service and see if anything comes up.  I could
-have got the name wrong and this will find the correct name of the service
-for you.
+Does anyone on this list know what command to run in gentoo after booting
+is finished to bring up espeak and have espeak read all of what comes up
+on the screen?  I'm using speakup.synth=soft after the speakup command and
+all it says is speakup.synth=soft.
+I can't catch the boot: prompt so need to start this up after booting is
+finished.  Apparently this is an openrc system though stage3 disks can put
+other process managers like systemd on at user option.
 
 
 --
@@ -66,17 +65,4 @@ for you.
  soap, ballot, jury, and ammo.
  Please use in that order."
  Ed Howdershelt 1940.
-
-On Tue, 16 Apr 2024, Chime Hart wrote:
-
-> Well, Jude, your 2nd command did certainly enable espeakup on reboot, but
-> Fenrir says it cannot stop a service which is not running. So now much of the
-> time I have both Allison in Fenrir at the same time as espeakup, unless I use
-> the "you killed speakup" key. Even trying to kill processes of Fenrir they
-> immediately restart. I cannot find an unstall command among yay or pacman.
-> Thanks in advance
-> Chime
->
->
->
 
