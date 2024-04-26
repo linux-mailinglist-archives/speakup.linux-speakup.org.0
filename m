@@ -1,45 +1,57 @@
-Return-Path: <speakup+bounces-1111-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1112-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id ADC8C8B356A
-	for <lists+speakup@lfdr.de>; Fri, 26 Apr 2024 12:39:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 0FECB8B3A5E
+	for <lists+speakup@lfdr.de>; Fri, 26 Apr 2024 16:49:19 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=H9XO0B1z;
+	dkim=temperror header.d=ccs.covici.com header.i=@ccs.covici.com header.a=rsa-sha256 header.s=default header.b=FrjZs/B8;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 42408C81C8D; Fri, 26 Apr 2024 06:39:19 -0400 (EDT)
+	id 2B609C81C99; Fri, 26 Apr 2024 10:49:18 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 232E7C8103E
-	for <lists+speakup@lfdr.de>; Fri, 26 Apr 2024 06:39:19 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 07AFFC81C3C
+	for <lists+speakup@lfdr.de>; Fri, 26 Apr 2024 10:49:18 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CE3CCC81C3B; Fri, 26 Apr 2024 06:39:10 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id B4EB9C8103D
-	for <speakup@linux-speakup.org>; Fri, 26 Apr 2024 06:39:10 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4VQq323W8vz11Cp;
-	Fri, 26 Apr 2024 06:39:10 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1714127950; bh=+Drh/QQxScJoC7iFneivaVIcsLU5mPyofQIG/efpxUU=;
-	h=Date:From:To:Subject:In-Reply-To:References;
-	b=H9XO0B1zKWdgx35tLzr81A1vOZ06oSHnD+oxl8yJMobH5294oHxjJtyq+lpIFE9iT
-	 Z2SvaQcDo32DI1QxzAuTQjwnTbUs5pKLsFYhd/986g09jPyvN1k/TyrmsBivGojoM6
-	 +4cGj3JPMCTOeDLK6brG9170imeObQHJYZYSfCS0=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4VQq323Hg9zcbc; Fri, 26 Apr 2024 06:39:10 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4VQq323FZLzcbC;
-	Fri, 26 Apr 2024 06:39:10 -0400 (EDT)
-Date: Fri, 26 Apr 2024 06:39:10 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: John Covici <covici@ccs.covici.com>, speakup@linux-speakup.org
+	id A5CA7C81C5C; Fri, 26 Apr 2024 10:49:09 -0400 (EDT)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 53FD8C81C3C
+	for <speakup@linux-speakup.org>; Fri, 26 Apr 2024 10:49:09 -0400 (EDT)
+Received: from ccs.covici.com (ccs.covici.com [70.109.51.194])
+	(authenticated bits=0)
+	by covici.com (8.15.2/8.15.2/Debian-22) with ESMTPSA id 43QEnNqa364720
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Fri, 26 Apr 2024 10:49:25 -0400
+Received: from ccs.covici.com (localhost [127.0.0.1])
+	by ccs.covici.com (8.17.1.9/8.17.1.9) with ESMTPS id 43QEn2Zu209700
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Fri, 26 Apr 2024 10:49:02 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ccs.covici.com;
+	s=default; t=1714142942;
+	bh=3g1YkAPDZlzeokOthjZTQIDls9p385e4Nvnp8QEYPcM=;
+	h=Date:From:To:Cc:Subject:In-Reply-To:References:Reply-To;
+	b=FrjZs/B8j4q2iUE6nEskHQ7nsTRjlZiMG8kz+29RCC/ZTpHAsxFTr3K0KPT3geteJ
+	 1wvE+DpwiNq5fszdyO8t7cg+RDS40RzpEUnFx3y8oVyoSYqOlxNzpswbpTfKP8PsOH
+	 KCHuJ1V+Dq5iGrCithusIk/LY2NEn1r2xCJNgKHM=
+Received: (from covici@localhost)
+	by ccs.covici.com (8.17.1.9/8.17.1/Submit) id 43QEn2P2209699;
+	Fri, 26 Apr 2024 10:49:02 -0400
+Date: Fri, 26 Apr 2024 10:49:02 -0400
+Message-ID: <m3v84418o1.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
+To: Jude DaShiell <jdashiel@panix.com>
+Cc: speakup@linux-speakup.org
 Subject: Re: insert getting permanently stuck on
-In-Reply-To: <m3zftg26le.wl-covici@ccs.covici.com>
-Message-ID: <846f7932-83fa-583e-d440-9b72890c9211@panix.com>
+In-Reply-To: <846f7932-83fa-583e-d440-9b72890c9211@panix.com>
 References: <m3zftg26le.wl-covici@ccs.covici.com>
+	<846f7932-83fa-583e-d440-9b72890c9211@panix.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM-LB/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL-LB/10.8 EasyPG/1.0.0
+ Emacs/29.3 (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Reply-To: covici@ccs.covici.com
+Organization: Covici Computer Systems
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -48,31 +60,46 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-have you tried control-insert as a toggle yet?  If I do capslock
-accidentally I found out earlier that control-capslock turned capslock
-off.
+I was just experimenting and apparently insert-z is what is causing
+the problem -- easy combination to do  by mistake.
 
+On Fri, 26 Apr 2024 06:39:10 -0400,
+Jude DaShiell wrote:
+> 
+> have you tried control-insert as a toggle yet?  If I do capslock
+> accidentally I found out earlier that control-capslock turned capslock
+> off.
+> 
+> 
+> --
+>  Jude <jdashiel at panix dot com>
+>  "There are four boxes to be used in defense of liberty:
+>  soap, ballot, jury, and ammo.
+>  Please use in that order."
+>  Ed Howdershelt 1940.
+> 
+> On Thu, 25 Apr 2024, John Covici wrote:
+> 
+> > Hi.  So, I have had two instances in the last few weeks where the
+> > insert key remains on, fooling with the insert,shift keys does
+> > nothing.  Only solution seems to be a reboot.  I am using kernel
+> > 6.1.82 -- with gentoo patches.  Is there a flag somewhere I can
+> > toggle?
+> >
+> > Thanks in advance for any suggestions.
+> >
+> >
+> 
 
---
- Jude <jdashiel at panix dot com>
- "There are four boxes to be used in defense of liberty:
- soap, ballot, jury, and ammo.
- Please use in that order."
- Ed Howdershelt 1940.
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
 
-On Thu, 25 Apr 2024, John Covici wrote:
-
-> Hi.  So, I have had two instances in the last few weeks where the
-> insert key remains on, fooling with the insert,shift keys does
-> nothing.  Only solution seems to be a reboot.  I am using kernel
-> 6.1.82 -- with gentoo patches.  Is there a flag somewhere I can
-> toggle?
->
-> Thanks in advance for any suggestions.
->
->
+         John Covici wb2una
+         covici@ccs.covici.com
 
