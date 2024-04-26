@@ -1,43 +1,53 @@
-Return-Path: <speakup+bounces-1107-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1108-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 04AE08B2DC2
-	for <lists+speakup@lfdr.de>; Fri, 26 Apr 2024 01:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 2796C8B2EBE
+	for <lists+speakup@lfdr.de>; Fri, 26 Apr 2024 04:36:38 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=NEuv+tnm;
+	dkim=temperror header.d=ccs.covici.com header.i=@ccs.covici.com header.a=rsa-sha256 header.s=default header.b=Ohmp/Ed+;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0F03BC81C9B; Thu, 25 Apr 2024 19:49:12 -0400 (EDT)
+	id 55177C81CA0; Thu, 25 Apr 2024 22:36:37 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id E7589C80AE4
-	for <lists+speakup@lfdr.de>; Thu, 25 Apr 2024 19:49:11 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 389E8C80FD7
+	for <lists+speakup@lfdr.de>; Thu, 25 Apr 2024 22:36:37 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C0BD7C80AE4; Thu, 25 Apr 2024 19:49:03 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 7DEB6C8088E
-	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 19:49:03 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4VQXcc4rhnzQsl
-	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 19:48:48 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1714088928; bh=no3nFOWu1n9BGoBh+LAh4xkr26ehmWakJ/MM7lvZ49E=;
-	h=Date:From:To:Subject;
-	b=NEuv+tnmu9wrbe6mR3GWCQQFDXV0dnBY1oH2YlnQeQ01NMG4lD2zXXH8tnw3MRy28
-	 gFWLBMCh8h/ENLXTf8DMnBTJI7pL0YZtz9UeEQ1JXZaHB/3u+mrW3dswkLEH2Nw1O6
-	 r53FnPqYCFjqSFPitoR33G8jy8sDGBfi6I9DWGk0=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4VQXcc4VqWzcbc; Thu, 25 Apr 2024 19:48:48 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4VQXcc4Rx6zcbC
-	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 19:48:48 -0400 (EDT)
-Date: Thu, 25 Apr 2024 19:48:48 -0400
-From: Jude DaShiell <jdashiel@panix.com>
+	id EA566C80FD7; Thu, 25 Apr 2024 22:36:28 -0400 (EDT)
+Received: from covici.com (debian-2.covici.com [166.84.7.93])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 0D584C80B51
+	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 22:36:28 -0400 (EDT)
+Received: from ccs.covici.com (ccs.covici.com [70.109.51.194])
+	(authenticated bits=0)
+	by covici.com (8.15.2/8.15.2/Debian-22) with ESMTPSA id 43Q2aY7F353135
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 22:36:40 -0400
+Received: from ccs.covici.com (localhost [127.0.0.1])
+	by ccs.covici.com (8.17.1.9/8.17.1.9) with ESMTPS id 43Q2aDCi170138
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
+	for <speakup@linux-speakup.org>; Thu, 25 Apr 2024 22:36:13 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ccs.covici.com;
+	s=default; t=1714098973;
+	bh=E9LHo61VDmA1A+TmjOE9g2kg0G3q9dOQ8anLviiI65A=;
+	h=Date:From:To:Subject:Reply-To;
+	b=Ohmp/Ed+Zc5lP/zhNK/reDd4Rm/xlZ3FEzOVmjHJst5aGNGYvHjyLId9alfkjukBD
+	 V+k+j7Zq7Rk0A3yN2AG2gMWHnab7cKNWTJa6qBElhPuFh/4Z2VWagZ8PuEfqR7o1gl
+	 ch0JhPgJK6Mv1OXD/sQhdlEwXCl4Sgy1OjRy2l/I=
+Received: (from covici@localhost)
+	by ccs.covici.com (8.17.1.9/8.17.1/Submit) id 43Q2aD4k170137;
+	Thu, 25 Apr 2024 22:36:13 -0400
+Date: Thu, 25 Apr 2024 22:36:13 -0400
+Message-ID: <m3zftg26le.wl-covici@ccs.covici.com>
+From: John Covici <covici@ccs.covici.com>
 To: speakup@linux-speakup.org
-Subject: speakup and gentoo
-Message-ID: <10acd4eb-8872-1669-0086-fb591ee6cad4@panix.com>
+Subject: insert getting permanently stuck on
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM-LB/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL-LB/10.8 EasyPG/1.0.0
+ Emacs/29.3 (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Reply-To: covici@ccs.covici.com
+Organization: Covici Computer Systems
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -46,23 +56,23 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Does anyone on this list know what command to run in gentoo after booting
-is finished to bring up espeak and have espeak read all of what comes up
-on the screen?  I'm using speakup.synth=soft after the speakup command and
-all it says is speakup.synth=soft.
-I can't catch the boot: prompt so need to start this up after booting is
-finished.  Apparently this is an openrc system though stage3 disks can put
-other process managers like systemd on at user option.
+Hi.  So, I have had two instances in the last few weeks where the
+insert key remains on, fooling with the insert,shift keys does
+nothing.  Only solution seems to be a reboot.  I am using kernel
+6.1.82 -- with gentoo patches.  Is there a flag somewhere I can
+toggle?
 
+Thanks in advance for any suggestions.
 
---
- Jude <jdashiel at panix dot com>
- "There are four boxes to be used in defense of liberty:
- soap, ballot, jury, and ammo.
- Please use in that order."
- Ed Howdershelt 1940.
+-- 
+Your life is like a penny.  You're going to lose it.  The question is:
+How do
+you spend it?
+
+         John Covici wb2una
+         covici@ccs.covici.com
 
