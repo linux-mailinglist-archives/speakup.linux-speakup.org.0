@@ -1,46 +1,47 @@
-Return-Path: <speakup+bounces-1122-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1123-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id E48FE8B8F04
-	for <lists+speakup@lfdr.de>; Wed,  1 May 2024 19:27:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 0A31E8B8F22
+	for <lists+speakup@lfdr.de>; Wed,  1 May 2024 19:40:28 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=utgIvVvy;
+	dkim=pass (2048-bit key; unprotected) header.d=suddenlink.net header.i=@suddenlink.net header.a=rsa-sha256 header.s=dkim-001 header.b=WK4Mq7ME;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 41232C81C5F; Wed, 01 May 2024 13:27:24 -0400 (EDT)
+	id 9AAA7C81C77; Wed, 01 May 2024 13:40:27 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1E3C6C81C82
-	for <lists+speakup@lfdr.de>; Wed, 01 May 2024 13:27:24 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 7CEE8C81C5A
+	for <lists+speakup@lfdr.de>; Wed, 01 May 2024 13:40:27 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DDB0CC81030; Wed, 01 May 2024 13:27:15 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id C1AD2C81015
-	for <speakup@linux-speakup.org>; Wed, 01 May 2024 13:27:15 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4VV3sV2hRWzHqL;
-	Wed,  1 May 2024 13:27:10 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1714584430; bh=uBeQesDfYpfLuItrcIuc5XrUe+oMVEuomJJ1T1PC/gI=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References;
-	b=utgIvVvyPZszsB26gFOZYAQNXf1xnSAi8xXtnsKegwE0knwoBWlq1zMkC3J/LxHQ5
-	 9SggEnRcvQde+IMLWFOO1g8SroQ17VNxLTmyFV7aFRPdC3cS6T3n1V1fKob54ffaM7
-	 gvezV8Xhq0d4VkQZvl/6pFZ5+bEwP5K6spZYpjTk=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4VV3sV2VRCzcbc; Wed,  1 May 2024 13:27:10 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4VV3sV2QlzzcbV;
-	Wed,  1 May 2024 13:27:10 -0400 (EDT)
-Date: Wed, 1 May 2024 13:27:10 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: Karen Lewellen <klewellen@shellworld.net>
-cc: speakup@linux-speakup.org
-Subject: Re: thinking about gentoo install
-In-Reply-To: <0bc8374d-8339-19b5-87f1-cf342c8df6d4@panix.com>
-Message-ID: <4507012e-70ed-1ee3-20ad-09b4666e5b22@panix.com>
-References: <feebe4f0-79a4-9ef2-ee0a-a201ed637a03@panix.com> <Pine.LNX.4.64.2405011214580.1999345@users.shellworld.net> <0bc8374d-8339-19b5-87f1-cf342c8df6d4@panix.com>
+	id 2F889C81C5F; Wed, 01 May 2024 13:40:19 -0400 (EDT)
+Received: from altprdrgo02.altice.prod.cloud.openwave.ai (altprdrgo02.altice.prod.cloud.openwave.ai [65.20.63.242])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id E361DC8104F
+	for <speakup@linux-speakup.org>; Wed, 01 May 2024 13:40:18 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suddenlink.net; s=dkim-001; t=1714585218; 
+        bh=T62r+Y/me09qafAAD/T973p3ZK+0JxOORlQW+UXiRYI=;
+        h=From:To:Subject:MIME-Version:Content-Type:Date:Message-Id;
+        b=WK4Mq7MEAye4pfl6ebY4qXKccPxTXHOolNZqtclI9ef/jgExdr1qij5R/Qv3rhTWn3WkYDicVPebzZh/f6E8/DhjqLWmKbmZOvVEJcpNn06L6nJOgfouEOvxeJWPHhLOB7/HHT0hPyKnp8i06g/fxlD56wl5EQf8Ip1nIGLtW6Ct7XQj68qXdEFYW99C+L9RwOMlnmwEYcdeQEwiw7ajRrQeu7r+Tl4g3OxRYrsyPtwui/7CKGt6XzmEmbr3PSKPrmY8Qa1XCfuajDYCCQABkpVt4mG6gmWl680MtfWihyfCgp2J0E5LeyVY5v6LTWXM13IN0gsstJrDGGs5/01PRQ==
+X-RG-VS-CS: clean
+X-RG-VS-SC: 0
+X-RG-VS: Clean
+X-Originating-IP: [47.217.109.117]
+X-RG-Env-Sender: martin.m@suddenlink.net
+X-RG-Rigid: 6616C1B3036BA7B4
+X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgedvledrvdduiedgvdefucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecutefnvffkvefgfgfupdggtfgfnhhsuhgsshgtrhhisggvpdfqfgfvnecuuegrihhlohhuthemuceftddtnecunecujfgurhephffvufggtgesthdttddttddtvdenucfhrhhomhepfdforghrthhinhcuofgtvehorhhmihgtkhdfuceomhgrrhhtihhnrdhmsehsuhguuggvnhhlihhnkhdrnhgvtheqnecuggftrfgrthhtvghrnhephfektdektdeljedtvefhgfeuleeiveevffduieelieffueejteelledukeekhfeunecukfhppeegjedrvddujedruddtledruddujeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhephhgvlhhopeifsgehrghgiidpihhnvghtpeegjedrvddujedruddtledruddujedpmhgrihhlfhhrohhmpehmrghrthhinhdrmhesshhuugguvghnlhhinhhkrdhnvghtpdhnsggprhgtphhtthhopedupdhrtghpthhtohepshhpvggrkhhupheslhhinhhugidqshhpvggrkhhuphdrohhrghdprghuthhhpghushgvrhepmhgrrhhtihhnrdhmsehsuhguuggvnhhlihhnkhdrnhgvthdpghgvohfkrfepfgfupdfovfetjfhoshhtpegrlhhtphhrughrghhotddv
+X-RazorGate-Vade-Verdict: clean 0
+X-RazorGate-Vade-Classification: clean
+Received: from wb5agz (47.217.109.117) by altprdrgo02.altice.prod.cloud.openwave.ai (5.8.812) (authenticated as martin.m@suddenlink.net)
+        id 6616C1B3036BA7B4 for speakup@linux-speakup.org; Wed, 1 May 2024 13:39:10 -0400
+Received: from martin by wb5agz with local (Exim 4.96)
+	(envelope-from <martin.m@suddenlink.net>)
+	id 1s2Dv6-0005vb-2W
+	for speakup@linux-speakup.org;
+	Wed, 01 May 2024 12:39:04 -0500
+From: "Martin McCormick" <martin.m@suddenlink.net>
+To: speakup@linux-speakup.org
+Subject: 8-bit Chaos
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,80 +51,80 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain; charset="us-ascii"
+Content-ID: <22789.1714585144.1@wb5agz.lan>
+Date: Wed, 01 May 2024 12:39:04 -0500
+Message-Id: <E1s2Dv6-0005vb-2W@wb5agz>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-There is another reason for this.  Let's say for hypothetical purposes
-that a particular form of Linux used becomes the favorite of state actors
-and those actors do lots of damage with it.  At that point it would be a
-reasonable security precaution to clean a system down to bare iron and
-install another form of linux.  If you have the next linux to install and
-already know how to do that installation in the event that becomes
-necessary you will be able to do the job.  Not having other forms and/or
-ignorance on how to do this puts you behind one or more 8 balls.
+I am using espeakup on a Raspberry Pi running debian bookworm and
+couldn't be more pleased, for the most part, with the way it is
+working but I wouldn't be posting this message if there wasn't a
+problem and here it is to the best of my ability to describe it.
 
+	A long time ago, I wrote some shell and even a perl
+script to mask off the most significant bit of data, what we
+might also call the eighth bit or bit 7, hex 80.
 
---
- Jude <jdashiel at panix dot com>
- "There are four boxes to be used in defense of liberty:
- soap, ballot, jury, and ammo.
- Please use in that order."
- Ed Howdershelt 1940.
+	I placed it in the output stream of an email reader and
+it worked but it also had side effects such as when one piped the
+output of a message to a file so I couldn't leave things that
+way.
 
-On Wed, 1 May 2024, Jude DaShiell wrote:
+	With espeakup, any character starting at hex 80 or
+decimal 128 causes espeakup to utter something that sounds like
+"I umlaut ahalf inverted question."
 
-> Nothing wrong at all Karen.  I am doing what I am doing for how shall I
-> put this experimental purposes only.  If you don't test these things you
-> don't know.
->
->
-> --
->  Jude <jdashiel at panix dot com>
->  "There are four boxes to be used in defense of liberty:
->  soap, ballot, jury, and ammo.
->  Please use in that order."
->  Ed Howdershelt 1940.
->
-> On Wed, 1 May 2024, Karen Lewellen wrote:
->
-> > Jude,
-> > I have an odd question?
-> > Is there something wrong with your current  preferred Linux distribution?
-> > A problem that you feel this one can  provide better?
-> > Karen
-> >
-> >
-> >
-> > On Wed, 1 May 2024, Jude DaShiell wrote:
-> >
-> > > Burning gentoo onto a flash drive probably burns the image with all
-> > > permissions intact.
-> > > If those permissions are read-only and if the installer does not change
-> > > any of those permissions it will be impossible to edit anything and have
-> > > the edits saved.
-> > > This may explain why espeakup cannot be started after booting the
-> > > installer.  If that is the case, the accessibility project in order to
-> > > promote screen reader accessibility use in gentoo will need to do a little
-> > > more writing which will expand the espeakup start up process after boot.
-> > > If I could run slint and actually reach into gentoo on a hard drive in its
-> > > own mount point I might be able to inspect file permissions for files in
-> > > gentoo and if I had chroot access into gentoo change the necessary file
-> > > permissions so once edits got done those edits would stick.
-> > > Many years ago a process for doing this was put up on the speakup mailing
-> > > list and I didn't need it at the time so deleted it on this end.  I
-> > > remember it involved using loop in some way.
-> > >
-> > >
-> > > --
-> > > Jude <jdashiel at panix dot com>
-> > > "There are four boxes to be used in defense of liberty:
-> > > soap, ballot, jury, and ammo.
-> > > Please use in that order."
-> > > Ed Howdershelt 1940.
-> > >
-> > >
-> >
-> >
->
->
+	I ran a perl script that sends hex 80 through hex FF to
+standard output and every single character in that range causes
+the same "i umlaut ahalf inverted question" response so there is no
+reason to send anything but 7-bit characters there.
+
+	Interestingly, when I send a hex 90 out, espeakup stops
+talking for several seconds until I've reached well past hex 92
+or so and then it starts the same 8-bit "i umlaut ahalf" message. as
+before.
+
+	On an older debian system, also running a speakup kernel
+and debian 12 or bookworm, this behavior does not happen as often.
+
+	My $LANG variable is set to
+en_US.UTF-8.
+
+	When I read email or other text that has 8-bit characters
+in it, the message gets garbled with these characters and
+strange things happen that I am not sure as to why or even if
+they are related to the 8-bit characters.
+
+	Basically, I want to read text that is free of chaos and
+random weirdness.  Most of the time it is slightly annoying, but
+sometimes there is enough of this stuff to obscure the sense of
+what one is reading.
+
+	The Raspberry Pi is being used as a small talking ASCII
+terminal that can ssh in to other unix systems and give them
+speech when I am logged in so I probably would be okay if I could
+keep the 8-bit stuff out of speakup on the Raspberry Pi.
+
+	Finally, here is the character generator test perl script
+which has a 2-second delay between characters and which I am
+starting a few characters below hex 80.  All the 7-bit ASCII
+characters make it to speakup just fine so the only real problem
+happens when any 8-bit junk makes it to speakup.  Also, the
+silencing that happens at hex 90 does not shut off reception of
+characters, only the speaking of them.  When I hit hex 92 or so,
+it picks up speaking where it left off.
+
+#!/usr/bin/perl -w
+use strict;
+#use warnings::unused;
+
+my $char;
+for ($char = 125; $char < 256;$char++)
+{
+$_ = sprintf("%x %c",$char, $char);
+print("$_\n");
+sleep(2);
+}
+exit(0);
 
