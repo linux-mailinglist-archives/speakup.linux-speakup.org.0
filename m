@@ -1,57 +1,82 @@
-Return-Path: <speakup+bounces-1130-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1131-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C16CC8BCEE1
-	for <lists+speakup@lfdr.de>; Mon,  6 May 2024 15:22:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id CC57E8BD0A7
+	for <lists+speakup@lfdr.de>; Mon,  6 May 2024 16:47:21 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=temperror header.d=ccs.covici.com header.i=@ccs.covici.com header.a=rsa-sha256 header.s=default header.b=OV+A19UF;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=RNTdYRMN;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=Px4qqWkM;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 28B86C81CAE; Mon, 06 May 2024 09:22:50 -0400 (EDT)
+	id C243EC81C9B; Mon, 06 May 2024 10:47:20 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 04CF3C81040
-	for <lists+speakup@lfdr.de>; Mon, 06 May 2024 09:22:50 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id A2046C80A5E
+	for <lists+speakup@lfdr.de>; Mon, 06 May 2024 10:47:20 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id AA58BC81049; Mon, 06 May 2024 09:22:41 -0400 (EDT)
-Received: from covici.com (debian-2.covici.com [166.84.7.93])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 3E98CC80FF1
-	for <speakup@linux-speakup.org>; Mon, 06 May 2024 09:22:41 -0400 (EDT)
-Received: from ccs.covici.com (ccs.covici.com [70.109.51.194])
-	(authenticated bits=0)
-	by covici.com (8.15.2/8.15.2/Debian-22) with ESMTPSA id 446DMqiG541953
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Mon, 6 May 2024 09:22:58 -0400
-Received: from ccs.covici.com (localhost [127.0.0.1])
-	by ccs.covici.com (8.17.1.9/8.17.1.9) with ESMTPS id 446DMKXE4038686
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
-	Mon, 6 May 2024 09:22:20 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ccs.covici.com;
-	s=default; t=1715001740;
-	bh=zAi4p3euSX4ihSODezTkwg7z8SFCDKk9MbbHBef65Es=;
-	h=Date:From:To:Cc:Subject:In-Reply-To:References:Reply-To;
-	b=OV+A19UFREWFPfK3JGnRmpdTZG7fM93b0m09EYTBsRW2w0vHNqy1t861CLtbs/zLc
-	 IBXzedSBKZdfDoRnLZeMdXO/m3EAdXn0MBsG+o+Mk4HEbVmM1HfZDiN81NTKmWl/JA
-	 zcmgJE3czEUNZjjK74wA0l4or301aCA3XQaBNLkk=
-Received: (from covici@localhost)
-	by ccs.covici.com (8.17.1.9/8.17.1/Submit) id 446DMKTk4038685;
-	Mon, 6 May 2024 09:22:20 -0400
-Date: Mon, 06 May 2024 09:22:20 -0400
-Message-ID: <m3bk5jyt0z.wl-covici@ccs.covici.com>
-From: John Covici <covici@ccs.covici.com>
+	id 4CAE2C80A63; Mon, 06 May 2024 10:47:12 -0400 (EDT)
+Received: from fhigh8-smtp.messagingengine.com (fhigh8-smtp.messagingengine.com [103.168.172.159])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A970AC802EC
+	for <speakup@linux-speakup.org>; Mon, 06 May 2024 10:47:11 -0400 (EDT)
+Received: from compute7.internal (compute7.nyi.internal [10.202.2.48])
+	by mailfhigh.nyi.internal (Postfix) with ESMTP id B58CA114009A;
+	Mon,  6 May 2024 10:47:06 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute7.internal (MEProxy); Mon, 06 May 2024 10:47:06 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm1; t=1715006826;
+	 x=1715093226; bh=CZWAutrneop9vnwWwWtzXt+/8HWEemWZVhmjZi2G0+o=; b=
+	RNTdYRMN7UMczzenOejXNg2hqVoQjocGttppY/b+dvyI7cvd8UgvBIJHOJ/uVEw9
+	awDeljQAf5DVo2R7BooVPdB/Ix1hcWH3k/cF4ckTsfk9MvM3XTijGUurkKWo0MV/
+	ECASJm+bBPq/h4caj3OJosqUhZNAUMaOaDXwmPnReX1a4ndfkPfCPYn7cBot1H2A
+	eLqb5zh4ZSJvW/sxlBFCMEHZcqocfsR/e8s5esbSFNFCjiCVtdCnPJ0o6bfVj9S1
+	NBZQLb7+dwbAldd0+cbKln8c48mMNRUVo5BcWQrZtQrebpjjY+JKy47OnYstwZYA
+	/oTDTDK/TlTFaGZFcJdcHQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm3; t=1715006826; x=1715093226; bh=CZWAutrneop9vnwWwWtzXt+/8HWE
+	emWZVhmjZi2G0+o=; b=Px4qqWkMbzrZu/ioTXzURq1LtXeOKIZa1ys+8vwRmrrE
+	pFwkw48CFw27HkyLSec99T5LAjsSp2E7bjtYV8WtNeFMMBMZkJmZGf6ULeQthlV+
+	j+XrWsbKh2X4sRPN8JQZRb2jkM1IdN0YY088bvpR1PQNNetgTC8ADa9y8pfut7FT
+	SPpK4kYysznC3qGx98iSF3FwhuHshx190MFu1QNdV69zdHMyp3LmsUSeubt/gmoA
+	3Ydg+BqyCNIUhR7yyrhBZL2ev13OuqkCFcB2stfJ8F1ZAlvTNVn93eordjLe4uQH
+	A1GRM1K/fo2hIQ41IgvStXF2mLLkSUdS45PbcoPcdw==
+X-ME-Sender: <xms:au04Zq0Htc68NzPy9L_1PRpY1I1ELTyJEdAx_edT6QtB2sta0OrfsQ>
+    <xme:au04ZtHOawk3m4sY69D4yr07pYf6WY13TP66HsqnYiKkFXrCwEZ6Y_pKu2VG55ZYQ
+    pTW2YoKIwL-ScMp_90>
+X-ME-Received: <xmr:au04Zi4tw7wLWYZ4lD8axm7qCo99J5cBg_3HW8tLnQMqhgDaTofMS2SAzMG4VQce2EVzi-hWtdV4a9lu95z4P-3TFKazOBcyK-8>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvledrvddviedgkeduucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+    cujfgurhepfffhvfevufgjkfhfgggtsehttdertddttddvnecuhfhrohhmpeevhhhimhgv
+    ucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenuc
+    ggtffrrghtthgvrhhnpedvheegleejkeeguefgfeelkeejiedvkeekvdetueevueeffeff
+    ffefffeludeftdenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
+    hrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
+X-ME-Proxy: <xmx:au04Zr38_Ijwe2SANDMmVRz0J9p4f6XDitbFUr2j4lOJaS15LQtShw>
+    <xmx:au04ZtEuSb__E-bjyfzs3wojysojOZfo8Dspl7iW16MugsKSRdB0IA>
+    <xmx:au04Zk9RyxnoTZVTSnqaKSzutplfAl7Rc2UMOFn6Oa9EHqxvU40wnQ>
+    <xmx:au04ZikqEJCkhQUnJgqyLwVYEmPoJssjjndmUhGZVrXQZVTY7l7I3Q>
+    <xmx:au04ZiTlgmyZujaQd6k8nKnVF6XSA8ahyHzxqUEvKr828WEPoyxlD8HK>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
+ 6 May 2024 10:47:05 -0400 (EDT)
+Date: Mon, 6 May 2024 07:47:04 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
 To: Janina Sajka <janina@rednote.net>
-Cc: speakup@linux-speakup.org
+cc: speakup@linux-speakup.org
 Subject: Re: Can We `Please Enjoy Single Digit Numbering in Speakup?
 In-Reply-To: <ZjjPiNYlatNpb7tK@rednote.net>
-References: <af4eb9cb-7a49-f290-7fbe-d77cb5e39982@hubert-humphrey.com>
-	<ZjjPiNYlatNpb7tK@rednote.net>
-User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
- FLIM-LB/1.14.9 (=?ISO-8859-4?Q?Goj=F2?=) APEL-LB/10.8 EasyPG/1.0.0
- Emacs/29.3 (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
-Reply-To: covici@ccs.covici.com
-Organization: Covici Computer Systems
+Message-ID: <4411ea8e-2679-e510-4c40-3662964802af@hubert-humphrey.com>
+References: <af4eb9cb-7a49-f290-7fbe-d77cb5e39982@hubert-humphrey.com> <ZjjPiNYlatNpb7tK@rednote.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -60,85 +85,21 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
-Content-Type: text/plain; charset=US-ASCII
+MIME-Version: 1.0
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I wrote a small perl program to put spaces between the digits because
-the vocalizer voice of speech dispatcher does this crazy million
-... thing.  So, when I have a program that is going to output phone
-numbers, I put the number through this program.
+Thank you Janina-and-John for your analysis. Janina, would you also think an 
+acception dictionary would also be purely dependant on each TTS? I think 
+Speakup-and-YASR are an only Linux screen-readers without such a dictionary. 
+Not sure if Storm reads this list, but I think Fenrir has a way of changing 
+pronunciations?I asked Storm about single digits-and-he rigged up something, I 
+think useing John's method, but it only works with Allison, not the DecTalk 
+software. And Janina, recently in addition to phone 
+numbers-and-zip-codes, we have Zoom ID numbers. I suppose as I think Kirk 
+created Speakup, he would be an authority on why these 2 features were never implemented.
+I would think since we can easily ajust caractors, we could also enjoy these 
+other options.
+Chime
 
-On Mon, 06 May 2024 08:39:36 -0400,
-Janina Sajka wrote:
-> 
-> Providing text to speech readback of a string of numeric digits as
-> individual digits rather than as a number would indeed be useful.
-> However, I'm not so sure that's a Speakup problem, meaning that I
-> suspect this is a bug with the TTS itself.
-> 
-> Historically, TTS engines have assumed responsibility for similar
-> content interpretations. This has always been problematic and
-> inappropriate, imo, but getting them to understand that has proven
-> problematic in my experience. My favorite example is the way Eloquence
-> (and it's Linux versions) insisted on rendering cd as "cendelas," not
-> change directory, not compact disc, not even certificate of deposit, but
-> candelas as if we blind folks were exclusively fixated on measuring
-> luminosity in some arbitrary direction!
-> 
-> Rendering strings of numeric digits as digits would actually satisfy the
-> more common use case, imo. I find it annoyingly difficult to translate a
-> phone number from a speech rendering that starts with so many billion,
-> followed by so many million, and then so many thousands. And why? Just
-> because some developer saw an opportunity to show off how clever they were?
-> 
-> But to go back to my original point, I don't believe Speakup is
-> processing any semantic understanding of the text it feeds to the speech
-> engine. And, that's what it would take to solve this problem in Speakup.
-> I could be wrong, of course.
-> 
-> Best,
-> Janina
-> 
-> Chime Hart writes:
-> > Hi All: I think Speakup is an only screen-reader in almost any platform
-> > without an option to switch to hear single digits while reading. Maybe
-> > Chromevox may not have this, but just about all others from DOS up through
-> > Fenrir have offered this in some form. While it may seem like a small thing,
-> > while reading an Alpine mail index, hearing the word "hundred" feels as if
-> > it wastes alot of time. If it would be more official I can file a wish-list
-> > bug against speakup-tools? When I run reportbug, that seems an only package
-> > to file against. And speaking of outstanding bugs, back on February 20 I
-> > filed
-> > #1062507
-> > about the DecTalk drivers. Funny thing was, even while reading over what I
-> > had submitted, settings dropped. I looked around the Speakup drivers
-> > directory in a newest 6.9 kernel, where a specific change which Samuel had
-> > helped me with reguarding flush time. 10 is wonderful but in dectlk.c it
-> > still says 4000.
-> > In basicly nearly 21years of useing Speakup, an only other wish list item
-> > would be an exception dictionary. Again, an item in most other
-> > screen-readers. Thanks so much in advance for listing-and-considering these.
-> > Chime
-> 
-> -- 
-> 
-> Janina Sajka (she/her/hers)
-> Accessibility Consultant https://linkedin.com/in/jsajka
-> 
-> The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
-> Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
-> 
-> Linux Foundation Fellow
-> https://www.linuxfoundation.org/board-of-directors-2/
-> 
-> 
-
--- 
-Your life is like a penny.  You're going to lose it.  The question is:
-How do
-you spend it?
-
-         John Covici wb2una
-         covici@ccs.covici.com
 
