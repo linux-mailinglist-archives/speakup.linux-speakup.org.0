@@ -1,82 +1,51 @@
-Return-Path: <speakup+bounces-1131-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1132-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id CC57E8BD0A7
-	for <lists+speakup@lfdr.de>; Mon,  6 May 2024 16:47:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id DBDAC8BD0EF
+	for <lists+speakup@lfdr.de>; Mon,  6 May 2024 17:00:16 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=RNTdYRMN;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=Px4qqWkM;
+	dkim=pass (1024-bit key; secure) header.d=rednote.net header.i=@rednote.net header.a=rsa-sha256 header.s=dkim header.b=dRJ1tPd8;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id C243EC81C9B; Mon, 06 May 2024 10:47:20 -0400 (EDT)
+	id 79636C81CD6; Mon, 06 May 2024 11:00:16 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id A2046C80A5E
-	for <lists+speakup@lfdr.de>; Mon, 06 May 2024 10:47:20 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5BCFDC80B8C
+	for <lists+speakup@lfdr.de>; Mon, 06 May 2024 11:00:16 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4CAE2C80A63; Mon, 06 May 2024 10:47:12 -0400 (EDT)
-Received: from fhigh8-smtp.messagingengine.com (fhigh8-smtp.messagingengine.com [103.168.172.159])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A970AC802EC
-	for <speakup@linux-speakup.org>; Mon, 06 May 2024 10:47:11 -0400 (EDT)
-Received: from compute7.internal (compute7.nyi.internal [10.202.2.48])
-	by mailfhigh.nyi.internal (Postfix) with ESMTP id B58CA114009A;
-	Mon,  6 May 2024 10:47:06 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
-  by compute7.internal (MEProxy); Mon, 06 May 2024 10:47:06 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
-	:from:from:in-reply-to:in-reply-to:message-id:mime-version
-	:references:reply-to:subject:subject:to:to; s=fm1; t=1715006826;
-	 x=1715093226; bh=CZWAutrneop9vnwWwWtzXt+/8HWEemWZVhmjZi2G0+o=; b=
-	RNTdYRMN7UMczzenOejXNg2hqVoQjocGttppY/b+dvyI7cvd8UgvBIJHOJ/uVEw9
-	awDeljQAf5DVo2R7BooVPdB/Ix1hcWH3k/cF4ckTsfk9MvM3XTijGUurkKWo0MV/
-	ECASJm+bBPq/h4caj3OJosqUhZNAUMaOaDXwmPnReX1a4ndfkPfCPYn7cBot1H2A
-	eLqb5zh4ZSJvW/sxlBFCMEHZcqocfsR/e8s5esbSFNFCjiCVtdCnPJ0o6bfVj9S1
-	NBZQLb7+dwbAldd0+cbKln8c48mMNRUVo5BcWQrZtQrebpjjY+JKy47OnYstwZYA
-	/oTDTDK/TlTFaGZFcJdcHQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
-	:message-id:mime-version:references:reply-to:subject:subject:to
-	:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
-	fm3; t=1715006826; x=1715093226; bh=CZWAutrneop9vnwWwWtzXt+/8HWE
-	emWZVhmjZi2G0+o=; b=Px4qqWkMbzrZu/ioTXzURq1LtXeOKIZa1ys+8vwRmrrE
-	pFwkw48CFw27HkyLSec99T5LAjsSp2E7bjtYV8WtNeFMMBMZkJmZGf6ULeQthlV+
-	j+XrWsbKh2X4sRPN8JQZRb2jkM1IdN0YY088bvpR1PQNNetgTC8ADa9y8pfut7FT
-	SPpK4kYysznC3qGx98iSF3FwhuHshx190MFu1QNdV69zdHMyp3LmsUSeubt/gmoA
-	3Ydg+BqyCNIUhR7yyrhBZL2ev13OuqkCFcB2stfJ8F1ZAlvTNVn93eordjLe4uQH
-	A1GRM1K/fo2hIQ41IgvStXF2mLLkSUdS45PbcoPcdw==
-X-ME-Sender: <xms:au04Zq0Htc68NzPy9L_1PRpY1I1ELTyJEdAx_edT6QtB2sta0OrfsQ>
-    <xme:au04ZtHOawk3m4sY69D4yr07pYf6WY13TP66HsqnYiKkFXrCwEZ6Y_pKu2VG55ZYQ
-    pTW2YoKIwL-ScMp_90>
-X-ME-Received: <xmr:au04Zi4tw7wLWYZ4lD8axm7qCo99J5cBg_3HW8tLnQMqhgDaTofMS2SAzMG4VQce2EVzi-hWtdV4a9lu95z4P-3TFKazOBcyK-8>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvledrvddviedgkeduucetufdoteggodetrfdotf
-    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
-    uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
-    cujfgurhepfffhvfevufgjkfhfgggtsehttdertddttddvnecuhfhrohhmpeevhhhimhgv
-    ucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenuc
-    ggtffrrghtthgvrhhnpedvheegleejkeeguefgfeelkeejiedvkeekvdetueevueeffeff
-    ffefffeludeftdenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfh
-    hrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhm
-X-ME-Proxy: <xmx:au04Zr38_Ijwe2SANDMmVRz0J9p4f6XDitbFUr2j4lOJaS15LQtShw>
-    <xmx:au04ZtEuSb__E-bjyfzs3wojysojOZfo8Dspl7iW16MugsKSRdB0IA>
-    <xmx:au04Zk9RyxnoTZVTSnqaKSzutplfAl7Rc2UMOFn6Oa9EHqxvU40wnQ>
-    <xmx:au04ZikqEJCkhQUnJgqyLwVYEmPoJssjjndmUhGZVrXQZVTY7l7I3Q>
-    <xmx:au04ZiTlgmyZujaQd6k8nKnVF6XSA8ahyHzxqUEvKr828WEPoyxlD8HK>
-Feedback-ID: ia9b947fb:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
- 6 May 2024 10:47:05 -0400 (EDT)
-Date: Mon, 6 May 2024 07:47:04 -0700 (PDT)
-From: Chime Hart <chime@hubert-humphrey.com>
-X-X-Sender: chime@chime.lan
-To: Janina Sajka <janina@rednote.net>
-cc: speakup@linux-speakup.org
+	id 32CAFC80B8C; Mon, 06 May 2024 11:00:08 -0400 (EDT)
+Received: from mail.rednote.net (opera.rednote.net [66.228.34.147])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 14659C80B87
+	for <speakup@linux-speakup.org>; Mon, 06 May 2024 11:00:08 -0400 (EDT)
+Received: from opera.rednote.net (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by mail.rednote.net (Postfix) with ESMTPS id 61748FA020;
+	Mon,  6 May 2024 10:59:37 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=rednote.net; s=dkim;
+	t=1715007577;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=YD7DoG9QeJcdRsKciPyz44aeky35hV4qe0XBUtNggIU=;
+	b=dRJ1tPd8wuzqegT9veGmOBg+x3RkDl6EZYgsro70j0w5DnyWTTEnv53jRdEbSYlD4UYrVY
+	kKRYhwn+OO/vIJXTWn7GbS0GTGojJCyNomM7ttDcWfm8Yb+e/F/e7bvGPH1i7Pwv0LvUx3
+	reIIVz5DI6BNW+e7lfBc9ocYmLpkFTI=
+Received: (from janina@localhost)
+	by opera.rednote.net (8.17.2/8.16.1/Submit) id 446Exbg1116147;
+	Mon, 6 May 2024 10:59:37 -0400
+Date: Mon, 6 May 2024 10:59:37 -0400
+From: Janina Sajka <janina@rednote.net>
+To: Chime Hart <chime@hubert-humphrey.com>
+Cc: speakup@linux-speakup.org
 Subject: Re: Can We `Please Enjoy Single Digit Numbering in Speakup?
-In-Reply-To: <ZjjPiNYlatNpb7tK@rednote.net>
-Message-ID: <4411ea8e-2679-e510-4c40-3662964802af@hubert-humphrey.com>
-References: <af4eb9cb-7a49-f290-7fbe-d77cb5e39982@hubert-humphrey.com> <ZjjPiNYlatNpb7tK@rednote.net>
+Message-ID: <ZjjwWbRcbtXWhaWc@rednote.net>
+References: <af4eb9cb-7a49-f290-7fbe-d77cb5e39982@hubert-humphrey.com>
+ <ZjjPiNYlatNpb7tK@rednote.net>
+ <4411ea8e-2679-e510-4c40-3662964802af@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -86,20 +55,61 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; format=flowed; charset=US-ASCII
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <4411ea8e-2679-e510-4c40-3662964802af@hubert-humphrey.com>
+X-Operating-System: Linux opera.rednote.net 6.8.8-200.fc39.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Thank you Janina-and-John for your analysis. Janina, would you also think an 
-acception dictionary would also be purely dependant on each TTS? I think 
-Speakup-and-YASR are an only Linux screen-readers without such a dictionary. 
-Not sure if Storm reads this list, but I think Fenrir has a way of changing 
-pronunciations?I asked Storm about single digits-and-he rigged up something, I 
-think useing John's method, but it only works with Allison, not the DecTalk 
-software. And Janina, recently in addition to phone 
-numbers-and-zip-codes, we have Zoom ID numbers. I suppose as I think Kirk 
-created Speakup, he would be an authority on why these 2 features were never implemented.
-I would think since we can easily ajust caractors, we could also enjoy these 
-other options.
-Chime
+Sure, Chime. Clever hacks like John's could go into the screen reader, I
+suppose. I was simply pointing out the correct place for the fix is to
+give the TTS the ability to say digits and not numbers.
+
+The logic is fairly simple:
+
+Look at every string of characters, i.e. from white space to the next
+white space.
+
+If there are digits in that string add a space after each char in what
+you send to the TTS engine.
+
+That would get you ham radio call signs in addition to phone numbers,
+zip codes, and teleconference meeting IDs.
+
+It would, of course, read prices as digits, too. You'd hear three nin
+dot five two and not thirty nine decimal fifty two, or if the engine
+knows about dollar signs thirty nine dollars and fifty two cents.
+
+I could easily live with prices as digits to have more accessible phone
+numbers, zip codes, and teleconference IDs myself! :)
+
+Best,
+Janina
+
+Chime Hart writes:
+> Thank you Janina-and-John for your analysis. Janina, would you also think an
+> acception dictionary would also be purely dependant on each TTS? I think
+> Speakup-and-YASR are an only Linux screen-readers without such a dictionary.
+> Not sure if Storm reads this list, but I think Fenrir has a way of changing
+> pronunciations?I asked Storm about single digits-and-he rigged up something,
+> I think useing John's method, but it only works with Allison, not the
+> DecTalk software. And Janina, recently in addition to phone
+> numbers-and-zip-codes, we have Zoom ID numbers. I suppose as I think Kirk
+> created Speakup, he would be an authority on why these 2 features were never
+> implemented.
+> I would think since we can easily ajust caractors, we could also enjoy these
+> other options.
+> Chime
+
+-- 
+
+Janina Sajka (she/her/hers)
+Accessibility Consultant https://linkedin.com/in/jsajka
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
+Linux Foundation Fellow
+https://www.linuxfoundation.org/board-of-directors-2/
 
 
