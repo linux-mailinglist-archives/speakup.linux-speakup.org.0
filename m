@@ -1,45 +1,45 @@
-Return-Path: <speakup+bounces-1120-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1121-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id D2BD88CF2B5
-	for <lists+speakup@lfdr.de>; Sun, 26 May 2024 08:55:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id BBFC38CF2C2
+	for <lists+speakup@lfdr.de>; Sun, 26 May 2024 09:53:50 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=LYSAEtdl;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=erdo0L2R;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 32FE53827F6; Sun, 26 May 2024 02:55:27 -0400 (EDT)
+	id 229A33828D8; Sun, 26 May 2024 03:53:43 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 14074382707
-	for <lists+speakup@lfdr.de>; Sun, 26 May 2024 02:55:27 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 054F538205D
+	for <lists+speakup@lfdr.de>; Sun, 26 May 2024 03:53:43 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EBD7138270E; Sun, 26 May 2024 02:55:19 -0400 (EDT)
+	id D9326382710; Sun, 26 May 2024 03:53:35 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id CFAAB382703
-	for <speakup@linux-speakup.org>; Sun, 26 May 2024 02:55:19 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B8FF638205D
+	for <speakup@linux-speakup.org>; Sun, 26 May 2024 03:53:35 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4Vn8fq0Y0Gzs0f;
-	Sun, 26 May 2024 02:55:15 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4Vn9xv0SVbztJ3;
+	Sun, 26 May 2024 03:53:23 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1716706515; bh=miF4fxMR/dfqt0fWr9jEuu7wbXg9mRtc7FYKaKuiKk4=;
+	t=1716710003; bh=xkpa+8YyLmxpVMUsjjKImL8XsAvkmt7APkyk+jfwq5s=;
 	h=Date:From:To:Subject:In-Reply-To:References;
-	b=LYSAEtdlVj1fGMG81oUvpN9Vtw9tXSJqyX7EX/NJ7KEuMg2Yr38fWi4/X4kh/XQcS
-	 qa/FR3lvHPrg9rGoOf01xGCcHmD+nJ4rOZVgNldarrtMgOTOcDsLdwzpvl30ykeHR5
-	 ciisryv/fMvpcQX22BA+mSLa1yD6hFvVntEIKnkE=
+	b=erdo0L2RWcrrW7mt76tiSlaSUEOLr5XKHP3P7aozPWd4i6OTuMkom9eeUr+CYC9Rl
+	 AWsRot8PiuoI/LfXIFjbLuPrlFQzsOCdpufCxk4FLRA2ZE6v/0JSi3AHlEc7+h5lcc
+	 zs66/soEmm94Rri8YRPQWAfcVwav7NeR9NxHEUYo=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4Vn8fq0JNjzcbc; Sun, 26 May 2024 02:55:15 -0400 (EDT)
+	id 4Vn9xv032Lzcbc; Sun, 26 May 2024 03:53:22 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4Vn8fq0DrmzcbV;
-	Sun, 26 May 2024 02:55:15 -0400 (EDT)
-Date: Sun, 26 May 2024 02:55:15 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4Vn9xt74knzcbV;
+	Sun, 26 May 2024 03:53:22 -0400 (EDT)
+Date: Sun, 26 May 2024 03:53:22 -0400
 From: Jude DaShiell <jdashiel@panix.com>
 To: Cleverson Casarin Uliana <speakup@clul.router5.com>, 
     speakup@linux-speakup.org
 Subject: Re: gentoo dracut puzzle
 In-Reply-To: <MTAwMDA0MS5jbHVs.1716645692@quikprotect>
-Message-ID: <fe9275ba-a1cd-7bf1-b8fe-de68ec93df2a@panix.com>
+Message-ID: <91bea563-a99b-e67e-5b2b-94d8b918be3d@panix.com>
 References: <a65a8a6f-4230-3bd9-153c-8edef21e74da@panix.com> <MTAwMDA0MS5jbHVs.1716645692@quikprotect>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -53,13 +53,10 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I am repeating emerge linux-firmware step since two errors come up and I'm
-trying to hack through them.
-The first is emerge assumes I have no boot partition and suggests
-KERNELDIR variable be defined.
-Would something like:
-KERNELDIR="/dev/sda1/boot"
-be correct once /mnt/boot had been mounted?
+Having used tee to capture output from emerge linux-firmware I learned
+KERNEL_DIR is the correct name of that variable and it isn't being picked
+up from make.conf so will try doing this another way.
+KERNEL_DIR="/mnt/gentoo/efi" && emerge linux-firmware
 
 
 -- 
