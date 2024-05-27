@@ -1,43 +1,46 @@
-Return-Path: <speakup+bounces-1127-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1128-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 536708CF62D
-	for <lists+speakup@lfdr.de>; Sun, 26 May 2024 23:41:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id A41848CF700
+	for <lists+speakup@lfdr.de>; Mon, 27 May 2024 02:29:43 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=l1rpZONg;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=cx5FqosP;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 49BF1382935; Sun, 26 May 2024 17:41:19 -0400 (EDT)
+	id 830B038286D; Sun, 26 May 2024 20:29:42 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2D5EC38265C
-	for <lists+speakup@lfdr.de>; Sun, 26 May 2024 17:41:19 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 64255382703
+	for <lists+speakup@lfdr.de>; Sun, 26 May 2024 20:29:42 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 03591382653; Sun, 26 May 2024 17:41:12 -0400 (EDT)
+	id 3012E382713; Sun, 26 May 2024 20:29:35 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A92C53820F9
-	for <speakup@linux-speakup.org>; Sun, 26 May 2024 17:41:11 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 148DB382703
+	for <speakup@linux-speakup.org>; Sun, 26 May 2024 20:29:35 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4VnXJl3CtNz499w
-	for <speakup@linux-speakup.org>; Sun, 26 May 2024 17:40:55 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4Vnc386ZrNz4Pm;
+	Sun, 26 May 2024 20:29:24 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1716759655; bh=RQholcPnS+9xktuxQ9s+kf2Oc4w4n8T+BYvZ+MotrLE=;
-	h=Date:From:To:Subject;
-	b=l1rpZONggCZU/qoNwUmB0+ewYCENzqUPyalK0YWxMIvHUU+anZnpUNUd4kLh/fdR+
-	 P/qMXBMLM4r6RUDg8LmBT9oI+40/VaKW8hGz57DOB7jWUKph9lnmrtV9fO57cEoRx8
-	 wLjKDeuTU8AALJLR0bvyqcBi0DhE0QGmeGGMvGyo=
+	t=1716769764; bh=wz6nfEHZ7f6FBhm8eExpcAM4QsjFtTSVL/eHq3RtOz0=;
+	h=Date:From:To:Subject:In-Reply-To:References;
+	b=cx5FqosPwG5HlzyGaLVRdbTIFxFUy/Y3dLtYJ5vynfZdjuNrSulWITtPJ8QLOJVWe
+	 7rxruLQSq2obqGXvWXjmHLpIrR9wz0Vq2jAyZpPkB3Q2J0kl0QlAIixGDWqUymtGaa
+	 Na27tyY9cP0f3olvykzYNGmFUjLWhKywdmKInMwg=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4VnXJl381Xzcbc; Sun, 26 May 2024 17:40:55 -0400 (EDT)
+	id 4Vnc3866dbzcbc; Sun, 26 May 2024 20:29:24 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4VnXJl37T3zcbV
-	for <speakup@linux-speakup.org>; Sun, 26 May 2024 17:40:55 -0400 (EDT)
-Date: Sun, 26 May 2024 17:40:55 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4Vnc3863JPzcbC;
+	Sun, 26 May 2024 20:29:24 -0400 (EDT)
+Date: Sun, 26 May 2024 20:29:24 -0400
 From: Jude DaShiell <jdashiel@panix.com>
-To: speakup@linux-speakup.org
-Subject: gentoo install helper script update
-Message-ID: <2269f248-5fc4-9dba-a975-992a1b486fa1@panix.com>
+To: Cleverson Casarin Uliana <speakup@clul.router5.com>, 
+    speakup@linux-speakup.org
+Subject: Re: gentoo dracut puzzle
+In-Reply-To: <642f4f62-0f76-ee6a-3cfb-053a755e92a7@panix.com>
+Message-ID: <d503086f-7d5b-1f3b-aef0-b51cc083638e@panix.com>
+References: <a65a8a6f-4230-3bd9-153c-8edef21e74da@panix.com> <MTAwMDA0MS5jbHVs.1716645692@quikprotect> <642f4f62-0f76-ee6a-3cfb-053a755e92a7@panix.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,27 +53,33 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-#!/usr/bin/bash
-# file: sgentoo.sh - setup gentoo mounts
-echo "once disk setup from gentoo handbook is complete"
-echo "press <enter> to chroot into gentoo environment."
-read
-sudo mount /dev/sda3 /mnt/gentoo
-sudo mount /dev/sda1 /mnt/gentoo/boot
-sudo swapon /dev/sda2
-sudo cp --dereference /etc/resolv.conf /mnt/gentoo/etc
-sudo mount --types proc /proc /mnt/gentoo/proc
-sudo mount --rbind /sys /mnt/gentoo/sys
-sudo mount --rbind /dev /mnt/gentoo/dev
-sudo mount --bind /run /mnt/gentoo/run
-sudo chroot /mnt/gentoo /bin/bash
+It turns out the license file had a mistake in it which I fixed the at
+sign should not have a space between it and the B in
+BINARY-REDISTRIBUTABLE.
+The emerge gentoo-kernel-bin
+needed dracut use allowed so I added that to make.conf's USE= line and the
+kernel compiled and got saved in the world file.
+Now I need to make me a boot loader with grub and have it play a tune when
+it loads up and then it should be about time to test this system.
 
-For those that don't install gentoo in a single session at the computer.
 
--- 
+--
  Jude <jdashiel at panix dot com>
  "There are four boxes to be used in defense of liberty:
  soap, ballot, jury, and ammo.
  Please use in that order."
  Ed Howdershelt 1940.
+
+On Sun, 26 May 2024, Jude DaShiell wrote:
+
+> emerge: there are no ebuilds to satisfy "installkernel-gentoo".
+>
+> emerge: searching for similar names...
+> emerge: Maybe you meant any of these: sys-kernel/installkernel,
+> dev-vcs/gitolite-gentoo, dev-python/installer?
+>
+> Which of these to install?
+>
+>
+>
 
