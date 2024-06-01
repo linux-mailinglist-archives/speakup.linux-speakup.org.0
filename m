@@ -1,51 +1,82 @@
-Return-Path: <speakup+bounces-1131-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1132-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id BAAD08D71E3
-	for <lists+speakup@lfdr.de>; Sat,  1 Jun 2024 22:47:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B4DD18D71FA
+	for <lists+speakup@lfdr.de>; Sat,  1 Jun 2024 23:33:18 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=suddenlink.net header.i=@suddenlink.net header.a=rsa-sha256 header.s=dkim-001 header.b=Sl5tCZZ6;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=VB5OR6cN;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=iwmLJPPw;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id F26923827FC; Sat,  1 Jun 2024 16:47:32 -0400 (EDT)
+	id 4548E382821; Sat,  1 Jun 2024 17:33:18 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id C8BDD3825E1
-	for <lists+speakup@lfdr.de>; Sat,  1 Jun 2024 16:47:32 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 25A99382256
+	for <lists+speakup@lfdr.de>; Sat,  1 Jun 2024 17:33:18 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5D80B382256; Sat,  1 Jun 2024 16:47:25 -0400 (EDT)
-Received: from altprdrgo02.altice.prod.cloud.openwave.ai (altprdrgo02.altice.prod.cloud.openwave.ai [65.20.63.73])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 0551F3821CE
-	for <speakup@linux-speakup.org>; Sat,  1 Jun 2024 16:47:25 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suddenlink.net; s=dkim-001; t=1717274845; 
-        bh=0RCJzznlOXM+LsVwF1zCtlj36ztuxkcXzSi0bcpsfIU=;
-        h=From:To:Subject:In-reply-to:References:MIME-Version:Content-Type:Date:Message-Id;
-        b=Sl5tCZZ6wlv/+09YzpvC2Nud7erxLGL2Nu3iv+vIJakn9YAIMEM0ceDJRIdwn5NGGE1KC//TelzmdjXC1sopQ7rmWP4il9Ne19X8Np/j9bv8boGiDHFoMT3s9bvHSEDLdImMvtc2z8MwKePh7FXq3bjbbbjqoZDdIpC29+qlOymGP3j3w/pak+oFecWWEsFuIKsUp0NOsGrTdV/00D+SupWLPUrSW+mKVLDUBxnJxo7WQIyWU/Ygbu2EGmpdVx+dXTP/udLCmzpTmEqTzHW2w3i789z57yESvwYyEyljjCX4+SWlahDQqev8CpMF1NEysatyn5x4JhANRoYBRig4Jg==
-X-RG-VS-CS: clean
-X-RG-VS-SC: 0
-X-RG-VS: Clean
-X-Originating-IP: [47.217.109.117]
-X-RG-Env-Sender: martin.m@suddenlink.net
-X-RG-Rigid: 6643BF38029E9019
-X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgedvledrvdekkedgudehvdcutefuodetggdotefrodftvfcurfhrohhfihhlvgemucetnffvkfevgfgfufdpggftfghnshhusghstghrihgsvgdpqfgfvfenuceurghilhhouhhtmecufedttdenucenucfjughrpefhvffujghfgggtsehttddttddttddvnecuhfhrohhmpedfofgrrhhtihhnucfotgevohhrmhhitghkfdcuoehmrghrthhinhdrmhesshhuugguvghnlhhinhhkrdhnvghtqeenucggtffrrghtthgvrhhnpefgieejtdffvedtffdtgfekvdeufeetvdevleffgeejteeuledtfeeguedtieehgfenucfkphepgeejrddvudejrddutdelrdduudejnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehhvghlohepfigshegrghiipdhinhgvthepgeejrddvudejrddutdelrdduudejpdhmrghilhhfrhhomhepmhgrrhhtihhnrdhmsehsuhguuggvnhhlihhnkhdrnhgvthdpnhgspghrtghpthhtohepuddprhgtphhtthhopehsphgvrghkuhhpsehlihhnuhigqdhsphgvrghkuhhprdhorhhgpdgruhhthhgpuhhsvghrpehmrghrthhinhdrmhesshhuugguvghnlhhinhhkrdhnvghtpdhgvghokffrpegfufdpoffvtefjohhstheprghlthhprhgurhhgohdtvd
-X-RazorGate-Vade-Verdict: clean 0
-X-RazorGate-Vade-Classification: clean
-Received: from wb5agz (47.217.109.117) by altprdrgo02.altice.prod.cloud.openwave.ai (5.8.812) (authenticated as martin.m@suddenlink.net)
-        id 6643BF38029E9019 for speakup@linux-speakup.org; Sat, 1 Jun 2024 16:47:20 -0400
-Received: from martin by wb5agz with local (Exim 4.96)
-	(envelope-from <martin.m@suddenlink.net>)
-	id 1sDVdC-0002UC-15
-	for speakup@linux-speakup.org;
-	Sat, 01 Jun 2024 15:47:14 -0500
-From: "Martin McCormick" <martin.m@suddenlink.net>
-To: speakup@linux-speakup.org
+	id D1B5B3825DC; Sat,  1 Jun 2024 17:33:10 -0400 (EDT)
+Received: from fhigh8-smtp.messagingengine.com (fhigh8-smtp.messagingengine.com [103.168.172.159])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 12A0038221E
+	for <speakup@linux-speakup.org>; Sat,  1 Jun 2024 17:33:10 -0400 (EDT)
+Received: from compute6.internal (compute6.nyi.internal [10.202.2.47])
+	by mailfhigh.nyi.internal (Postfix) with ESMTP id 4348D11400BA;
+	Sat,  1 Jun 2024 17:33:09 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute6.internal (MEProxy); Sat, 01 Jun 2024 17:33:09 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1717277589;
+	 x=1717363989; bh=Ycpo4Xlu6DciBYafwCFtu/KDbNYd8F45VOBS1TpOftU=; b=
+	VB5OR6cNFt3RLqCKr/D/GjGYRolEqDE6qlNoRXX9V/VcusY5SoSC54HDWGTIfWW7
+	Y5zKGZxyErqahSnm3gECZEqlazEw5E/P60ZuPajzv0N/v3pSa40QXT7kE2LQ/Nhu
+	WucZbHK+fAdOrrdok3ybUUI5Xy9TcEevehPL1pNfIjYo5tZWByhVHwnwLkjziSIG
+	fmgYTqk9NR9Fo6mh2Ow4ormvPZkWKGwODBeeksbGF5NlVqkdjjkB/lXBFrDohRzI
+	0Gm/NCrAJbThtZCUCPVSnUvSomX32HI8AEJJFvKkqVdcElTTA3bQusPZt+i1gtWI
+	grT4ogEeG7baa1kOdxooKQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
+	fm1; t=1717277589; x=1717363989; bh=Ycpo4Xlu6DciBYafwCFtu/KDbNYd
+	8F45VOBS1TpOftU=; b=iwmLJPPwFyKIVIAgHiSCBE1Yg1faytvVb/D+lNN/wbtg
+	cSUPq5ib5BVnPFuSr1zJiuwoMB9ivAPVnoMVN+JXXaY/VSNa+swAhVajYVO4TZjL
+	lKGg1v9ksrq3Gyk4Dp1HE5SBYx0aE95CbhGDDdWARRu4eHznocu4lFbUR1CKpXuE
+	zzYESDxmxfQNM06RiaBymUOR0sJhcm7hykwneXmsZONGVh9iBgO755zcIn7inGfh
+	ZhLrkORDhPLbE5CDQY3MyILfIfxs3WOfFSK3fy85u8wMqK0Vd259+8yiAgHFpTSU
+	dEHHPCftAPf+Wy+AqE/bBdWzH6A+jkYqxYj4RX911g==
+X-ME-Sender: <xms:lZNbZnYgbU4YBztuLFT5YWaBrHpOMxm_NyiGpAxhEByfRvNgsO4P6w>
+    <xme:lZNbZmbyXvjIGokbBbLpo_47zpIfAqZ8ARkLVGH40jC_appgWxmO8BLtn_kCyZkaV
+    z8zuic5lWbON1jSYNw>
+X-ME-Received: <xmr:lZNbZp8xne9uTazndtjSDQSGnX_iyTALQiGy_llG22vXDc9fBwPaNyTFWopXfFii8WeLwNN5yaS8NytHl_YIVaLdDIFpjIHlSFo>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedvledrvdekkedgudeiudcutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
+    necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
+    enucfjughrpeffhffvvefujgfkfhggtgesthdtredttddtvdenucfhrhhomhepvehhihhm
+    vgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomheqne
+    cuggftrfgrthhtvghrnhepvdehgeeljeekgeeugfefleekjeeivdekkedvteeuveeufeef
+    fffffeffledufedtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilh
+    hfrhhomheptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomh
+X-ME-Proxy: <xmx:lZNbZtpm-iUtAMDwNq7oV82x1pwNLiAjI4GQeA8Ol4ATLggVKqC2LA>
+    <xmx:lZNbZiprQT0uygyXbUNccC_JotzOcY0ny7OtTdrpemO1YI5oms_RcA>
+    <xmx:lZNbZjT5wJLdtp4sQgXdJ206ZRhFztQL175wOPLbhF02NxZyiepOxg>
+    <xmx:lZNbZqpknCLhRmJgTLa87s_Ra0hnuRDT5pf4mWn-4u_YnuHjrbhtyQ>
+    <xmx:lZNbZp3z2tYlWNX4x5VZ00EoxtbeAGfmhlS1j8uXAKjn_QCiWPgLTJ_8>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sat,
+ 1 Jun 2024 17:33:08 -0400 (EDT)
+Date: Sat, 1 Jun 2024 14:33:07 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: Martin McCormick <martin.m@suddenlink.net>
+cc: speakup@linux-speakup.org
 Subject: Re: Can We `Please Enjoy Single Digit Numbering in Speakup?
-In-reply-to: <ZjjwWbRcbtXWhaWc@rednote.net>
-References: <af4eb9cb-7a49-f290-7fbe-d77cb5e39982@hubert-humphrey.com> <ZjjPiNYlatNpb7tK@rednote.net> <4411ea8e-2679-e510-4c40-3662964802af@hubert-humphrey.com> <ZjjwWbRcbtXWhaWc@rednote.net>
-Comments: In-reply-to Janina Sajka <janina@rednote.net>
-   message dated "Mon, 06 May 2024 10:59:37 -0400."
+In-Reply-To: <E1sDVdC-0002UC-15@wb5agz>
+Message-ID: <f82f802f-0c5c-efc7-e559-2e42f7526537@hubert-humphrey.com>
+References: <af4eb9cb-7a49-f290-7fbe-d77cb5e39982@hubert-humphrey.com> <ZjjPiNYlatNpb7tK@rednote.net> <4411ea8e-2679-e510-4c40-3662964802af@hubert-humphrey.com> <ZjjwWbRcbtXWhaWc@rednote.net> <E1sDVdC-0002UC-15@wb5agz>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -55,80 +86,14 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-ID: <9558.1717274834.1@wb5agz.lan>
-Date: Sat, 01 Jun 2024 15:47:14 -0500
-Message-Id: <E1sDVdC-0002UC-15@wb5agz>
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I am following this discussion with interest because I see this
-situation constantly but as one who enjoys writing programs,
-there sure are a lot of traps no matter what route someone
-chooses because a bunch of digits together could just as easily
-be a large number as digits that should be read singly and what
-we are really asking for is context-sensitive speech such as one
-would get from a human reader which would mean some sort of AI
-logic engine in the screen reader and even then, it would
-probably hit situations where it would blow up and do something
-stupid.
+Hi Martin: While I basicly agree with your analysis, I would say Vocal-Eyes in 
+DOS had it completely right. Your comments about NOAA Weather Radio, it 
+actually sounded better when they were useing DecTalk, however sales of Radios 
+had dropped. This particular AT&T Natural Voice has odd seggment jumps or even 
+hicups.
+Chime
 
-	Think of the word R E A D.  We all know it should rhyme
-with need and weed when it is talking about the process of
-converting print on a page to words and ideas but after you've
-done that, you have read something, same spelling but sounding
-like the color rather than rhyming with speed.
-
-	The NOAA Weather Radio broadcasts as heard in the United
-States are text-to-speech engines that use a fairly natural
-male voice that often-times sounds like a live person until it
-does something really cringe-worthy such as the pronunciation of
-the word "winds" as in what pushes a sail boat.  The
-voice says, the same word one would say if one was talking about
-winding the spring of an old mechanical clock or a pitcher
-getting ready to throw a baseball as in "He winds up."
-
-	Okay, somebody goes in and makes the plural of W I N D
-have a short I sound which is perfect until
-"Thunderstorm activity should begin to wind down later tonight but W I N D is
-now spoken with the short I sound instead of the long I sound so that
-just makes the other pronunciation of W I N D wrong now.  The
-only way one can win is to use a text-to-speech engine with a
-large language model and this should definitely be part of the
-screen reader, itself.
-
-	This should be quite possible but it means that the
-speech engine in a screen reader will just have to get bigger and
-smarter.
-
-	Think how long it takes a child to get some of the rules
-right.  Some adults who should know better never get some of this
-concept right so our hope should be to get context-sensitive
-rules right most of the time.
-
-Janina Sajka <janina@rednote.net> writes:
-> Sure, Chime. Clever hacks like John's could go into the screen reader, I
-> suppose. I was simply pointing out the correct place for the fix is to
-> give the TTS the ability to say digits and not numbers.
-> 
-> The logic is fairly simple:
-> 
-> Look at every string of characters, i.e. from white space to the next
-> white space.
-> 
-> If there are digits in that string add a space after each char in what
-> you send to the TTS engine.
-> 
-> That would get you ham radio call signs in addition to phone numbers,
-> zip codes, and teleconference meeting IDs.
-> 
-> It would, of course, read prices as digits, too. You'd hear three nin
-> dot five two and not thirty nine decimal fifty two, or if the engine
-> knows about dollar signs thirty nine dollars and fifty two cents.
-> 
-> I could easily live with prices as digits to have more accessible phone
-> numbers, zip codes, and teleconference IDs myself! :)
-> 
-> Best,
-> Janina
-> 
 
