@@ -1,45 +1,45 @@
-Return-Path: <speakup+bounces-1145-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1146-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id DEBE1900CC2
-	for <lists+speakup@lfdr.de>; Fri,  7 Jun 2024 22:14:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1D313901673
+	for <lists+speakup@lfdr.de>; Sun,  9 Jun 2024 17:16:36 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=HsLomqNY;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=BU+WWUCx;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5FB43382824; Fri,  7 Jun 2024 16:14:30 -0400 (EDT)
+	id 21A8438282A; Sun,  9 Jun 2024 11:16:32 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 4003A380ACA
-	for <lists+speakup@lfdr.de>; Fri,  7 Jun 2024 16:14:30 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0266738229C
+	for <lists+speakup@lfdr.de>; Sun,  9 Jun 2024 11:16:32 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1490C38251E; Fri,  7 Jun 2024 16:14:23 -0400 (EDT)
+	id D9E3A38229C; Sun,  9 Jun 2024 11:16:24 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id B23B1380989
-	for <speakup@linux-speakup.org>; Fri,  7 Jun 2024 16:14:22 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 2F25F380923
+	for <speakup@linux-speakup.org>; Sun,  9 Jun 2024 11:16:24 -0400 (EDT)
 Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4Vwsq75PYbzDb2;
-	Fri,  7 Jun 2024 16:14:11 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4Vxz6V5TPLzlg5;
+	Sun,  9 Jun 2024 11:16:18 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1717791251; bh=EUenO9Z2QrOkbXsw3bcoh3yhswPKnvAZyOITQXU9Rx0=;
+	t=1717946178; bh=dMJccLE8bDWR9otwhEwCQ+SBPfglU8XOJMTkxXIQKro=;
 	h=Date:From:To:Subject:In-Reply-To:References;
-	b=HsLomqNY0gl6006W9Bk4aNFbdxUZC/eGSRJ8HGo+XRfVrSfZupHuyOPDE5BxaDs1z
-	 wuC8y6vKNBJZZuyilS5zk8gIHR2NHYv982u8CpmWz+Z+bwXXfzVH8ycWoeQMI1skt1
-	 ITQ32jxqGzUN+HiFI92Soz/L45Js4wtIi3T5GXhg=
+	b=BU+WWUCxuBJ0xthzBl706s8rIAlXD8BBVjcs0TF9P/bP2P5HxwEPaggpwdnV2atip
+	 4kihFJn/3aM2Yok3qugAm85zctZjjssiyZW9l/GPspnbqAnGanJLkQAfe0i57Y1Pjo
+	 4lhqTsmx2s53wQnzLfJkpxxu6Kgt/NGuJMdPxzys=
 Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4Vwsq75KkHzcbc; Fri,  7 Jun 2024 16:14:11 -0400 (EDT)
+	id 4Vxz6V50dqzcbc; Sun,  9 Jun 2024 11:16:18 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4Vwsq75K81zcbV;
-	Fri,  7 Jun 2024 16:14:11 -0400 (EDT)
-Date: Fri, 7 Jun 2024 16:14:11 -0400
+	by panix1.panix.com (Postfix) with ESMTP id 4Vxz6V4wrBzcbC;
+	Sun,  9 Jun 2024 11:16:18 -0400 (EDT)
+Date: Sun, 9 Jun 2024 11:16:18 -0400
 From: Jude DaShiell <jdashiel@panix.com>
 To: Cleverson Casarin Uliana <speakup@clul.router5.com>, 
     speakup@linux-speakup.org
 Subject: Re: gentoo dracut puzzle
 In-Reply-To: <MTAwMDA0MS5jbHVs.1716645692@quikprotect>
-Message-ID: <7664c1ad-a169-ff29-0a35-c449cfabc3a6@panix.com>
+Message-ID: <a5a6e2fd-fbd9-8c1f-87d2-ecf227d3f402@panix.com>
 References: <a65a8a6f-4230-3bd9-153c-8edef21e74da@panix.com> <MTAwMDA0MS5jbHVs.1716645692@quikprotect>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -53,25 +53,12 @@ MIME-Version: 1.0
 Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-install-kernel-gentoo no longer exists so I emerged:
-sys-kernel-gentoo
-When I tried
-emerge gentoo-kernel-bin
-I gotThe following USE changes are necessary to proceed:
- (see "package.use" in the portage(5) man page for more details)
-# required by sys-kernel/gentoo-kernel-bin-6.6.30::gentoo[initramfs]
-# required by virtual/dist-kernel-6.6.30::gentoo
->=sys-kernel/installkernel-28 dracut
-
-Use --autounmask-write to write changes to config files (honoring
-CONFIG_PROTECT). Carefully examine the list of proposed changes,
-paying special attention to mask or keyword changes that may expose
-experimental or unstable packages.
-
-Where do I go from here?
+My reason for asking about the specific espeakup instructions is although
+the packages are installed, for whatever reason gentoo failed to create
+the /dev/softsynth device.  So I suspect I didn't do something correctly.
 
 
--- 
+--
  Jude <jdashiel at panix dot com>
  "There are four boxes to be used in defense of liberty:
  soap, ballot, jury, and ammo.
