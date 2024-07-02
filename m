@@ -1,45 +1,78 @@
-Return-Path: <speakup+bounces-1135-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1136-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 214B2901893
-	for <lists+speakup@lfdr.de>; Mon, 10 Jun 2024 00:59:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D0F50924737
+	for <lists+speakup@lfdr.de>; Tue,  2 Jul 2024 20:21:46 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=xZ8cWK0F;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=pedNmUBT;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm2 header.b=hIHodmIl;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 84E62C81C9D; Sun, 09 Jun 2024 18:58:59 -0400 (EDT)
+	id 7A114C81CA0; Tue, 02 Jul 2024 14:21:45 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 65378C80FE8
-	for <lists+speakup@lfdr.de>; Sun, 09 Jun 2024 18:58:59 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 5B818C80879
+	for <lists+speakup@lfdr.de>; Tue, 02 Jul 2024 14:21:45 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6E656C80FEF; Sun, 09 Jun 2024 18:58:51 -0400 (EDT)
-Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 1AABBC80FE8
-	for <speakup@linux-speakup.org>; Sun, 09 Jun 2024 18:58:51 -0400 (EDT)
-Received: from [IPV6:fd6e:ebcf:467e:2::1] (jpw.jasonjgw.net [IPv6:fd6e:ebcf:467e:2::1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
-	(Client did not present a certificate)
-	by svr.jasonjgw.net (Postfix) with ESMTPSA id D23BC320A1
-	for <speakup@linux-speakup.org>; Sun,  9 Jun 2024 22:58:17 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
-	s=mail; t=1717973897;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
-	bh=mpz1N7NcVAMQETmDv0uKn7BVR1ZcYh9vualSVmVcyTI=;
-	b=xZ8cWK0FfxccprIxy3hSmm9v6fBKPNWg/cQ3WxidfGsC3bw66DuxuKmAMQZheq5guZBvbz
-	alygCINZ5vCPFPO4oX20ys6CVJtJDgIUl4OVui/zqCF3TyO0cB4ea5C6P5NlxWv9CJ71EG
-	jZzYe9ZuTKOh829GuhCwCSfJvR5gKjgCWKb29aN1CoGvKF8ErffzPgxwfoyBd+YhDIGHwf
-	L/mnVe9kbbWOYfsgRSCDrIuU5A/i5NoGCUJ/IksHokT3GVNe9R9k2GqW4yco7YRvGae0nb
-	1ac92FRo2C+rWhTjHQREGrsQdblEm4EbLSVcANhHdGFcQ5Wij9ZnAf85OoXOqw==
-Content-Type: multipart/alternative;
- boundary="------------XuPM63ffrjlmOZSsxVrXU001"
-Message-ID: <cf268ee9-f565-4db7-bc3c-c2e098605cb0@jasonjgw.net>
-Date: Sun, 9 Jun 2024 18:58:17 -0400
+	id 62ABAC80894; Tue, 02 Jul 2024 14:21:37 -0400 (EDT)
+Received: from fhigh8-smtp.messagingengine.com (fhigh8-smtp.messagingengine.com [103.168.172.159])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id C3AC6C80879
+	for <speakup@linux-speakup.org>; Tue, 02 Jul 2024 14:21:36 -0400 (EDT)
+Received: from compute2.internal (compute2.nyi.internal [10.202.2.46])
+	by mailfhigh.nyi.internal (Postfix) with ESMTP id 7103D1140149
+	for <speakup@linux-speakup.org>; Tue,  2 Jul 2024 14:21:34 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+  by compute2.internal (MEProxy); Tue, 02 Jul 2024 14:21:34 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:content-type:date:date
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to; s=fm3; t=1719944494; x=1720030894; bh=b+eAPow4Jg
+	Jkx99xWc7XoReLl9KorPr+OyqFOXSUeF0=; b=pedNmUBTnC2LnsjVvnLDv7H7mj
+	8VlrUTlKQxiJGj0v3r38kcGP10IF1aZRk2NQNp92l7PcFMLMRvljXhJ1Faix4RhT
+	CgaG/btwwtMU7A5suWG+tiufz0+/zBAg5Ogqioj7vIx5ImRrUZL8GYkdDSsAo8Y/
+	x1RENd1x7YJIBGyq/TiVMWZu4eD9EO3j3mrWFlUtJqXbOXfYklcznd9YDdA0bjv3
+	N+0vzakC9T3jMzG9gCdk7WqdEAbva9ZYuU8+shwhs6qXnnj6J0LyBEB70hNbeck7
+	cK/ClPMo3/330jKKmEfQrGNJxiOUNVX5KJfKQaSoGjL6trVwRGCR9Y1ZFsCg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:message-id
+	:mime-version:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1719944494; x=1720030894; bh=b+eAPow4JgJkx99xWc7XoReLl9KorPr+Oyq
+	FOXSUeF0=; b=hIHodmIldJHzmOjecUMt7UIU6mMhZgktEIBEsrg7PFGCMUjgEn3
+	nfW8TjVbtds/33jM3XCJiAB3Aiy7YaqU6rzvtjHIIXIXObbkwUZdu0Y/8kXV42Of
+	v4FfIRvZX+6x4PERAJAxl6nafqlPo66Ha/G6yyoxVBf1h/sSfYR8x4uaZ0+Dht1m
+	DQrW4eLB0vqqx2E937KLLAU1KtOUn54UFPjOBMSg1dcvXK29G99tOuCgF3kokJ3D
+	ZzANnIrRwAX3+wYHfce/5z9MxhuRoDo2L37jZBSIEaVDbqDsmwKJwnMEEIS3VNrc
+	krJthNhrKbfj5gPa/Ac93yM7qoyTKaaK8EQ==
+X-ME-Sender: <xms:LkWEZtt-6XgEVVmhE9bUNy_3h1xiACz6KsRf6hjf36jce5HXxVZ3ww>
+    <xme:LkWEZmfhPWe5QNad1aovuRKW2d7DwNrkb32rBGEuEIHxq3um9C8i6jxkHFg68PFFg
+    gM9F5kRLe1-hpcepfE>
+X-ME-Received: <xmr:LkWEZgzbL6Isiiu4jNo36HtWDMzYrhlKFD_gL5uaECMgoJ_oHotXOshN6f_9yC0EvBfDab5-FdP8DKEKLjlXfpsYmHGeyddfseE>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeftddrudehgdduvdduucetufdoteggodetrfdotf
+    fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+    uceurghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttd
+    dvnecuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhu
+    mhhphhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtie
+    ettedtkefggfekvdeujeetkedtheefhffhvdetkeenucevlhhushhtvghrufhiiigvpedt
+    necurfgrrhgrmhepmhgrihhlfhhrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphh
+    hrvgihrdgtohhm
+X-ME-Proxy: <xmx:LkWEZkN4IKkzR1kDSl_8PJU0XE9I6yKzJYv7Vb4DGU_BDk2mJXdYyQ>
+    <xmx:LkWEZt8q52LvC5_BqHLrbGi_zoRGM4bbjvHdJPGZIEQw0_RE0qKA_A>
+    <xmx:LkWEZkU3bDVMKjEOXlXCQKMGX0nmfZGbH7gCp3PE1tc-y1MEulJTWA>
+    <xmx:LkWEZucX9TSsihCI4Rf0KprL3-kwk9DkuetdhcjIsNzhfSIaPwnsfQ>
+    <xmx:LkWEZvko5xEGcwhl_SM1fduYNtFATZSFpfx59GYdWE3inlidSkx35cyx>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Tue, 2 Jul 2024 14:21:33 -0400 (EDT)
+Date: Tue, 2 Jul 2024 11:21:32 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: speakup@linux-speakup.org
+Subject: Can We Use Open Mary with Speakup?
+Message-ID: <74c245c5-99a9-1fe3-57f8-82dbce6cb42f@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -49,105 +82,17 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: gentoo dracut puzzle
-To: speakup@linux-speakup.org
-References: <a65a8a6f-4230-3bd9-153c-8edef21e74da@panix.com>
- <MTAwMDA0MS5jbHVs.1716645692@quikprotect>
- <a5a6e2fd-fbd9-8c1f-87d2-ecf227d3f402@panix.com>
- <MTAwMDAxOC5jbHVs.1717947444@quikprotect>
- <7e945c59-8b40-6a07-e67c-357dbe70b1a4@panix.com>
-Content-Language: en-US, en-AU-large, en-US-large
-From: "Jason J.G. White" <jason@jasonjgw.net>
-Autocrypt: addr=jason@jasonjgw.net; keydata=
- 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
- Jlx6Ar305Q==
-In-Reply-To: <7e945c59-8b40-6a07-e67c-357dbe70b1a4@panix.com>
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-This is a multi-part message in MIME format.
---------------XuPM63ffrjlmOZSsxVrXU001
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-
-
-On 9/6/24 18:19, Jude DaShiell wrote:
-> Earlier today I wiped debian off the system and tried booting into gentoo
-> directly.  Result, total silence.  It was as if no disk had been booted at
-> all.  Should I have run grub-install before doing that or did the dracut
-> process take care of that detail earlier for me?
-
-Dracut only builds the initial ram disk image; it doesn't install Grub 
-or any other boot loader.
-
-The way I have mine set up (running Arch Linux), there is a unified 
-kernel image built by dracut-ukify. The Unified Kernel Image is loaded 
-directly by the UEFI firmware, so there is no boot loader at all. So 
-far, it has worked reliably.
-
-
---------------XuPM63ffrjlmOZSsxVrXU001
-Content-Type: text/html; charset=UTF-8
-Content-Transfer-Encoding: 7bit
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body>
-    <p><br>
-    </p>
-    <div class="moz-cite-prefix">On 9/6/24 18:19, Jude DaShiell wrote:<br>
-    </div>
-    <blockquote type="cite"
-      cite="mid:7e945c59-8b40-6a07-e67c-357dbe70b1a4@panix.com">
-      <pre>Earlier today I wiped debian off the system and tried booting into gentoo
-directly.  Result, total silence.  It was as if no disk had been booted at
-all.  Should I have run grub-install before doing that or did the dracut
-process take care of that detail earlier for me?  </pre>
-    </blockquote>
-    <p>Dracut only builds the initial ram disk image; it doesn't install
-      Grub or any other boot loader.</p>
-    <p>The way I have mine set up (running Arch Linux), there is a
-      unified kernel image built by dracut-ukify. The Unified Kernel
-      Image is loaded directly by the UEFI firmware, so there is no boot
-      loader at all. So far, it has worked reliably.</p>
-    <p><br>
-    </p>
-  </body>
-</html>
-
---------------XuPM63ffrjlmOZSsxVrXU001--
+Hi All: First of all, I want to thank Chuck-and-Samuel in 2009 for creating 
+"talkwith" so I can now switch among my DecTalk-and-Voxin Allison. While both 
+have plusses-and-minuses, I think a more perfect sounding speech is Open Mary. 
+Supposedly there are versions for Linux, but looking around, Github is quite a 
+challenge if a creator doesn't have a direct download link, especially viewing 
+in L Y N X. So, forst, can some1 please inform an easiest way of 
+grabbing-and-installing Mary? 2nd, would it just be an entry in 
+speechd-up.conf, or would speakup need an additional driver? Thanks so much in 
+advance
+Chime
 
