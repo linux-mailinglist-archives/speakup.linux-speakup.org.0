@@ -1,41 +1,46 @@
-Return-Path: <speakup+bounces-1143-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1144-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 08FCD926DEE
-	for <lists+speakup@lfdr.de>; Thu,  4 Jul 2024 05:10:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 6DC4592702F
+	for <lists+speakup@lfdr.de>; Thu,  4 Jul 2024 09:03:15 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=gFuhfpDZ;
+	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=g+3rO1tp;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 27B48C80BA0; Wed, 03 Jul 2024 23:10:40 -0400 (EDT)
+	id 6D48DC81C82; Thu, 04 Jul 2024 03:03:14 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 08749C80B78
-	for <lists+speakup@lfdr.de>; Wed, 03 Jul 2024 23:10:40 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 4CD66C80A5A
+	for <lists+speakup@lfdr.de>; Thu, 04 Jul 2024 03:03:14 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ED69CC80B84; Wed, 03 Jul 2024 23:10:31 -0400 (EDT)
-Received: from out-183.mta1.migadu.com (out-183.mta1.migadu.com [95.215.58.183])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A740FC80B77
-	for <speakup@linux-speakup.org>; Wed, 03 Jul 2024 23:10:30 -0400 (EDT)
-X-Envelope-To: speakup@linux-speakup.org
+	id 4071AC80A68; Thu, 04 Jul 2024 03:03:06 -0400 (EDT)
+Received: from out-186.mta0.migadu.com (out-186.mta0.migadu.com [91.218.175.186])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B7790C80A5A
+	for <speakup@linux-speakup.org>; Thu, 04 Jul 2024 03:03:03 -0400 (EDT)
+X-Envelope-To: samuel.thibault@aquilenet.fr
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
-	t=1720062627;
+	t=1720076551;
 	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:mime-version:mime-version:content-type:content-type;
-	bh=vSXDFQig/7jP1my/SLxEB28fLL0BHBOw9wv8fqGCoUA=;
-	b=gFuhfpDZSCIzNAalSOuq2zt1qvLG40HZA9wXhum53V7hOYAz1tGORTGARaidoAw60QzMhs
-	JLSBOZzSRAhK3eV0oxgFLCW+fZ+9EtV81FOvCeQJtu0yyjUOfMupFdTVrW2EIiGMW9JLbz
-	bvWUlFwgOklnXk55w2qmcYD9mI4dKVf7CheD1wbAnB4o0NydFinxB/Ka3ckFhUC23CZFes
-	KwR21ophvEMOSLJ5RwbbgmOy4jKFHya6qJwNCLYpLzKm/Ak7iC0brA/GyrW0pu6+GVa4fS
-	n3L93oQG2KDjTwjqTUqViuordy46ORukWsdprtzegEOrvZARuoNKTMds1ylREA==
-Date: Thu, 4 Jul 2024 13:10:05 +1000
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=yDnQ07phxHetFSawbNwnnNj8ZMj47Dc9N0Cmi/Qr0Uc=;
+	b=g+3rO1tpTNzz985n0AOi784SY0busz32Kqihl4IIPLxYks9u+yMeuiZFkb3yNBLDeRdUKG
+	W4QU+Vgcp61R6r6jTIP3eDXEhXi+tBWvDyUb9Ut1TMi9n6TxFT1RCKMq7HeER2JnIMqs8x
+	Up+D7hlxylegyaHx+JeKHMtREBIzGlrCvjaYGd/bzMm69p6npK1oKX7fnX4aViSEoyHCUi
+	QJCzolW3/7nAPYb45ypGsUYHoqo1wlyDqHuFJb2Uq5fSbpaVREMvR/OtulquBkUPfEP84n
+	OSM2lb0co15rKRg90019Zfg2gS3nlr8lgiCgXTVmnhyhRxFSFMXkhf/HTrxI7Q==
+X-Envelope-To: speakup@linux-speakup.org
+Date: Thu, 4 Jul 2024 17:02:14 +1000
 X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
 From: Jookia <contact@jookia.org>
-To: speakup@linux-speakup.org
-Subject: Plans for CONFIG_VT death?
-Message-ID: <ZoYSjTol94J676j_@titan>
+To: Samuel Thibault <samuel.thibault@aquilenet.fr>
+Cc: speakup@linux-speakup.org
+Subject: Re: Plans for CONFIG_VT death?
+Message-ID: <ZoZI9lPJV7OfvqOT@titan>
+References: <ZoYSjTol94J676j_@titan>
+ <20240704065714.gqe2ieny5jf5g33j@begin>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -47,13 +52,34 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+In-Reply-To: <20240704065714.gqe2ieny5jf5g33j@begin>
 X-Migadu-Flow: FLOW_OUT
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi there,
+On Thu, Jul 04, 2024 at 08:57:14AM +0200, Samuel Thibault wrote:
+> Hello,
+> 
+> Jookia, le jeu. 04 juil. 2024 13:10:05 +1000, a ecrit:
+> > More and more sighted developers want to remove CONFIG_VT
+> 
+> Where is that raised?
 
-More and more sighted developers want to remove CONFIG_VT without adding
-accessibility support. Is this going to be the end of speakup?
+It's not raised, but it seems to be a goal that's been around for a while.
+Every year a reddit post comes out by someone testing CONFIG_VT=n and
+showing how much better it's getting, without mentioning it breaks
+speakup. The VT subsystem is also apparently not actively developed.
+
+> > without adding accessibility support.
+> 
+> Was that explicitly expressed?
+
+No, but that's what will happen at this point.
+
+Maybe this is an overreaction, but it feels a lot like the writing is on
+the wall.
+
+> 
+> Samuel
 
 Jookia.
 
