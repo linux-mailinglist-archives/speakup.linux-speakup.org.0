@@ -1,38 +1,38 @@
-Return-Path: <speakup+bounces-1164-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1165-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 447A592E330
-	for <lists+speakup@lfdr.de>; Thu, 11 Jul 2024 11:14:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 460BF932386
+	for <lists+speakup@lfdr.de>; Tue, 16 Jul 2024 12:03:42 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=Hr/XKcPk;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=Q7YSM1Mw;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8D933382084; Thu, 11 Jul 2024 05:14:51 -0400 (EDT)
+	id B855A382510; Tue, 16 Jul 2024 06:03:40 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 6A284382068
-	for <lists+speakup@lfdr.de>; Thu, 11 Jul 2024 05:14:51 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 961BC3820B2
+	for <lists+speakup@lfdr.de>; Tue, 16 Jul 2024 06:03:40 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4D2EF382079; Thu, 11 Jul 2024 05:14:44 -0400 (EDT)
+	id 9D7D7382223; Tue, 16 Jul 2024 06:03:33 -0400 (EDT)
 Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 3EAD7382068
-	for <speakup@linux-speakup.org>; Thu, 11 Jul 2024 05:14:43 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B09D33820B2
+	for <speakup@linux-speakup.org>; Tue, 16 Jul 2024 06:03:32 -0400 (EDT)
 Received: from [192.168.1.186] (212-194-64-62.abo.bbox.fr [212.194.64.62])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id C7EF5625D8
-	for <speakup@linux-speakup.org>; Thu, 11 Jul 2024 11:12:06 +0200 (CEST)
+	by darkstar.slint.fr (Postfix) with ESMTPSA id 07B1762606;
+	Tue, 16 Jul 2024 12:00:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1720689126; bh=LNmvQy1fCjjs27nbwpewR8LhWk/YEegG1pPNgtuEhVw=;
-	h=Date:From:Subject:To:References:In-Reply-To:From;
-	b=Hr/XKcPk1J/LkC+vYVMzE67j9hVEomG77rPPj+7lPsFzYxjk7IDF1uH9Be4FyQRS9
-	 nwicY1i1lJjISrY3Rjk87NrVGQ+eX/1piM82fjHzVK4iVo/7tgcAgC7DDjiRuXktQ+
-	 XoY3FZDAhBaWvVetsrzGkpIQTT76uqewXFxK8neaPAt2SHHl/3U6o/ejtOsg1xQmsd
-	 kvmzLVkxlAJpgnQF0rk0lKy6ZHEzBFRS4ES3J0zWlRLYjxx3sCEf1GiDnD/wLh8Xfe
-	 f7sEpj0PdrN638c1fJ1i+ymQHwaV+Q5rwlYl/0hPlExnYJAjD2xyiNQgITgzAExb9W
-	 o5qKx0XOvFrfQ==
-Message-ID: <9a0c0bd3-70c3-42a3-af0d-ebd414369e12@slint.fr>
-Date: Thu, 11 Jul 2024 11:14:41 +0200
+	t=1721124052; bh=lLinkMdJGuOiLIIXUFdVau+YtDRUuvGLbQp9ImXyjAQ=;
+	h=Date:Subject:To:References:From:Cc:In-Reply-To:From;
+	b=Q7YSM1MwyBjEt1cKNPE/5SiApnZbQDdI2er3VKIMw1u2eGHjZBJmwgKqJtUKijwUI
+	 WDgUOZYDI9VS3B79+Fkpk8KtPkR34Sa8xP2rPCRA7i9x0mGSnoTyWQoNBntnizEG1M
+	 jLe/tHHQiaop9aBKYRiWmoTusWhlExjLDgrv8+sL1Cois5jf6RxCNpwFrOrGGH47hG
+	 tMXOy72f/DFzwo28yxo87HKFVJjRHokZkET8jT1FcNxEe9hvFUltD9/NTR8453M077
+	 D9wnvmkIbdWdkpeziOToSXj5hTDZHsomQP/orNDx1dSAWxj1hDdTS4eYFHwFcvC3cL
+	 Kwd18gye6ZuPw==
+Message-ID: <0c709023-98e8-4ad9-b717-f01752f37a39@slint.fr>
+Date: Tue, 16 Jul 2024 12:03:24 +0200
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -43,12 +43,11 @@ List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 User-Agent: Mozilla Thunderbird
-From: Didier Spaier <didier@slint.fr>
-Subject: Re: How to enable speech during boot up?
-To: speakup@linux-speakup.org
-References: <ZoP_ogmiMrg_BtDu@cudneys.ca>
- <20240710232918.hpfxyppxphbgufoy@begin> <Zo9Y3m_Yu61vGlHK@cudneys.ca>
+Subject: Re: speakup and elinks interaction
+To: blinux-list@redhat.com
+References: <ZpXs8Lk1QKF-3nHB@panix.com>
 Content-Language: en-US
+From: Didier Spaier <didier@slint.fr>
 Autocrypt: addr=didier@slint.fr; keydata=
  xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
  dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
@@ -72,78 +71,57 @@ Autocrypt: addr=didier@slint.fr; keydata=
  lZPMFlB9IZN9681cXuv2sZzAZlR2+3PsSAftpPQxReoSC7hj3dfiCiAis19G3A184HClA5MB
  I5heGinSz7R/AXhkiej8HZZzz9ZPkS7aeL8HsZKqCwZvViutbGmpm+V70JnbRAHLFjYb+Se3
  rdUWWAXcca4Ry8HCLTo5iK9xCTQh5gEuJ7ROdOXeY4SvMiqWjYhlrsR0qhTv9q/gfg==
-In-Reply-To: <Zo9Y3m_Yu61vGlHK@cudneys.ca>
+Cc: "Speakup is a screen review system for Linux."
+ <speakup@linux-speakup.org>, Storm Dragon <storm_dragon@linux-a11y.org>
+In-Reply-To: <ZpXs8Lk1QKF-3nHB@panix.com>
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Terry,
+Hello Rudy and All,
 
-Le 7/11/24 à 06:00, Terry D. Cudney a écrit :
+a quick look at "man elinks.conf" did not give me a clue, maybe there is one i
+didn't find?
 
-> --> The problem will them be concurrent access to the audio card between
-> --> espeakup and speech-dispatcher. If in the desktop you use alsa and the
-> --> dmix module, that should work fine.
-> 
->     Ah! That seems to be where the problem lies! The desktop is using pipewire/pulseaudio.
-> 
-> 
-> **--**> *** Key question:
-> What is the best way to disable pulseaudio/pipewire/wireplumber/whatever and force the desktop to use alsa, dmix?
+However, I observed that using fenrir instead of espeakup and still running
+elinks in a tty, each letter is spoken as typed, so I'm afraid the behavior you
+reported comes from speakup or at at least from elinks+speakup.
 
-You do not have to.
+Maybe Storm (in CC), co-author of fenrir can give us a clue?
 
-You can set in /etc/speech-dispatcher/speechd.conf alsa as AudioOutputMethod
-or set it as libao and set default_driver=alsa on /etc/libao.conf.
-
-Then you can redirect the audio output deop puse to dmix. For instance in
-/etc/pulse/default.pa:
-
-### In Slint, we want to share audio resources between speech apps that
-### rely on alsa and other apps that rely on pulseaudio.
-load-module module-alsa-sink device=dmix
-load-module module-alsa-source device=dsnoop
-
-With this setting pulse is not disabled (but started only in demand, by
-applications that require it), I have speech during boot up, both if the system
-stats in console mode or in a graphical environment, I can hear the music
-started in a graphical environment while in a tty.
-
-Caveat: I remember that Samuel had objections about this setup, I do not
-remember which ones, maybe he does? All I can say is I do not receive complaints
-by Slint users about these default settings.
-
-Another solution is proposed in the Arch wiki:
-https://wiki.archlinux.org/title/PulseAudio/Examples#PulseAudio_as_a_minimal_unintrusive_dumb_pipe_to_ALSA
-
-
-> -->If you use pulseaudio or pipewire
-> --> you'll get a conflict. This is a concern that I've never found time
-> --> to tackle, and I have hoped for years that somebody else would have
-> --> a look at it since it won't involve coding, but discussing properly
-> --> with pulseaudio/pipewire people to work out a proper solution. In the
-> --> meanwhile people have rather looked at workarounds and stay half-happy
-> --> with that...
-> --> 
-> --> Samuel
-> 
->     I'm happy to lose pulseaudio/pipewire et al and use alsa/dmix.
->     
->     Question out of curiosity: What does pulseaudio add; why are  distributions seeming to abandon alsa in favour of pulseaudio?
-
-Well, to know everything about pulseaudio, you can read  PulseAudio under the
-hood from Victor Gaydov: https://gavv.net/articles/pulseaudio-under-the-hood/
-
-
->     My naive observation is that pulseaudio just adds a lot of complexity...
-
-Amazingly the introduction of pulseaudio in Slackware triggered the same
-question some years ago and even flame wars, leading Patrick Volkerding
- to during some time propose a variant "alsa only" ;)
-
-All this being said I know nothing about pipewire and systemd.
+I also CC the speakup mailing list.
 
 Cheers,
 Didier
 
+PS Please tell when you receive this message as it seems that not all I sent
+recently to the blinux list reached it.
+
+Le 7/16/24 à 05:45, Rudy Vener a écrit :
+> 
+> I'm just starting to use elinks on my Slint Linux 15.0 system with speakup and
+> notice an annoying situation whenever elinks prompts me to enter a filename.
+> 
+> When I type in each letter, speakup will say the letter  followed by the partially spelled out word.
+> 
+> For example, if I enter the file name junk as the 
+> save file for the current rendered screen speakup says:
+> j,
+> j,
+> u,
+> ju,
+> n,
+> jun,
+> k,
+> junk.
+> 
+> This is driving me nuts.  Elinks is obviously refreshing the input
+> line after each typed letter and forcing speakup to
+> doublespeak.
+> Is there an elinks option which would prevent this behavior?
+> I don't want to tamper with speakup since its settings work fine with everything else.
+> 
+> Thanks.
+> 
+> Rudy 
 
