@@ -1,38 +1,78 @@
-Return-Path: <speakup+bounces-1165-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1166-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 460BF932386
-	for <lists+speakup@lfdr.de>; Tue, 16 Jul 2024 12:03:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 56A8B93404F
+	for <lists+speakup@lfdr.de>; Wed, 17 Jul 2024 18:19:48 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=Q7YSM1Mw;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=v9vDsd2A;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm2 header.b=uMCBD4k2;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id B855A382510; Tue, 16 Jul 2024 06:03:40 -0400 (EDT)
+	id BA8613825D2; Wed, 17 Jul 2024 12:19:43 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 961BC3820B2
-	for <lists+speakup@lfdr.de>; Tue, 16 Jul 2024 06:03:40 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 9B0233820B2
+	for <lists+speakup@lfdr.de>; Wed, 17 Jul 2024 12:19:43 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9D7D7382223; Tue, 16 Jul 2024 06:03:33 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B09D33820B2
-	for <speakup@linux-speakup.org>; Tue, 16 Jul 2024 06:03:32 -0400 (EDT)
-Received: from [192.168.1.186] (212-194-64-62.abo.bbox.fr [212.194.64.62])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id 07B1762606;
-	Tue, 16 Jul 2024 12:00:52 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1721124052; bh=lLinkMdJGuOiLIIXUFdVau+YtDRUuvGLbQp9ImXyjAQ=;
-	h=Date:Subject:To:References:From:Cc:In-Reply-To:From;
-	b=Q7YSM1MwyBjEt1cKNPE/5SiApnZbQDdI2er3VKIMw1u2eGHjZBJmwgKqJtUKijwUI
-	 WDgUOZYDI9VS3B79+Fkpk8KtPkR34Sa8xP2rPCRA7i9x0mGSnoTyWQoNBntnizEG1M
-	 jLe/tHHQiaop9aBKYRiWmoTusWhlExjLDgrv8+sL1Cois5jf6RxCNpwFrOrGGH47hG
-	 tMXOy72f/DFzwo28yxo87HKFVJjRHokZkET8jT1FcNxEe9hvFUltD9/NTR8453M077
-	 D9wnvmkIbdWdkpeziOToSXj5hTDZHsomQP/orNDx1dSAWxj1hDdTS4eYFHwFcvC3cL
-	 Kwd18gye6ZuPw==
-Message-ID: <0c709023-98e8-4ad9-b717-f01752f37a39@slint.fr>
-Date: Tue, 16 Jul 2024 12:03:24 +0200
+	id 9529A3821E5; Wed, 17 Jul 2024 12:19:36 -0400 (EDT)
+Received: from fhigh5-smtp.messagingengine.com (fhigh5-smtp.messagingengine.com [103.168.172.156])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id AC943382057
+	for <speakup@linux-speakup.org>; Wed, 17 Jul 2024 12:19:35 -0400 (EDT)
+Received: from compute5.internal (compute5.nyi.internal [10.202.2.45])
+	by mailfhigh.nyi.internal (Postfix) with ESMTP id 7BF8C11400EF
+	for <speakup@linux-speakup.org>; Wed, 17 Jul 2024 12:19:34 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+  by compute5.internal (MEProxy); Wed, 17 Jul 2024 12:19:34 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:content-type:date:date
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to; s=fm3; t=1721233174; x=1721319574; bh=macsSvqLdv
+	NGZrU2v+fuVncStCJZErl2EX4wansidTE=; b=v9vDsd2A/+UIj4DW9Z33V4Uk5j
+	E9yifNZ3XONsU9D/vcCE3seye7fz5mnnhIsWBGCQCqg+Eh+PdRspbpsSl/LDXMkF
+	o0tMePQDI1WceXWl4dMaXD3R5YvAQSjoCsbuvLRN/hSCGBQEzXCfH2Fn9gad32Sc
+	xyLAlm1bq+I1i0IMusYOA0dDxgk90y1UO/Rl1wmQEyI7BHmS4G68j6Mdyc4yl0Vf
+	W1qznpQAmIO+AIoq/IMH2xivDjhuGoxywea4cnVKKDRjFM++rFqvVGRpxKLB1vCG
+	lROhYXGUzuQruHs1h8LtW4YaXkK2A5yYZi1W2LDrl9b9uc5nMuXNWq9/OJOA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:message-id
+	:mime-version:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1721233174; x=1721319574; bh=macsSvqLdvNGZrU2v+fuVncStCJZErl2EX4
+	wansidTE=; b=uMCBD4k2AEvaPtYRlBkXqDgUM+8Ceha0S3i4YK/EtUsnL43MiSu
+	Zwv0bAKw1rM6nMrrajnMHDsJWdnVHQZnpFAE8ccUgnWmdUyrIgwaXC1Pts2d3UKv
+	SCVaTwN3ySNIr6MOC0tkXCWf8zYauVbRE8ccVJ2uRddV9knYFWbiPmZz1u0xn1RO
+	PZd6q/ebNxM0fQBvHP+E7FPdnBMBYAQVfftdJphkuiobFhlosy/gT0vJDsPSaN8y
+	98GPFkAjmw6hNFAOP/EE2xGOgtR1BKbTbqp3iiTy3OKM+d+EiH0a0Ot4K4kW5vsw
+	cAm/2xCa9HoD2j0nUKJwEbMFsp8THtUwNvw==
+X-ME-Sender: <xms:Fe-XZk6UhtvzlpszH3HAq3qWH3LZdhi-Sl_lzTyvVe18Q7_V9IR6nw>
+    <xme:Fe-XZl5VaQVSnGCp5UmPp7carXoxgeG9ybqXS9IVKH8oMJK3Oxf1hQ5PU3-jJ9z5j
+    9n-VmNVndA_XwfwUR0>
+X-ME-Received: <xmr:Fe-XZjcllB6jiseiXG7wRDs643QxJB_9tw2ZcHKgV_610EMGAcplAlbYeU1LWGq7koHon07qaCOMeh6qXy2UiMN-6i1LdmWvZkA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeftddrgeejgddtlecutefuodetggdotefrodftvf
+    curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+    uegrihhlohhuthemuceftddtnecunecujfgurhepfffhvffukfggtgesthdtredttddtvd
+    enucfhrhhomhepvehhihhmvgcujfgrrhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhm
+    phhhrhgvhidrtghomheqnecuggftrfgrthhtvghrnhepjeffffdujeelueffieevtdeite
+    ettdekgffgkedvueejteektdehfefhhfdvteeknecuvehluhhsthgvrhfuihiivgeptden
+    ucfrrghrrghmpehmrghilhhfrhhomheptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrh
+    gvhidrtghomh
+X-ME-Proxy: <xmx:Fe-XZpKuGmRTBxwoW4q3foh_fWEYdDILNH8vDNgWUEdSCF1bc8EEjQ>
+    <xmx:Fe-XZoJED1-F7toVQpNQWDAm0yTgrrJx6wnCvtlOFuy0QxpAD8xcZw>
+    <xmx:Fe-XZqyTy5VNies8TwM1h0x9EWi4tddaBVO2Pl_lLnOozthlkHWTsw>
+    <xmx:Fe-XZsL5h2swxvVFMebAAQ3iWhJ1qA0HbINElB2YJxiMrRNA_F41GQ>
+    <xmx:Fu-XZig6Tn6z8Ccu1UcAh0Q9qgwT8XVG6Ghc8evY4nb85U1nycQtTZm1>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Wed, 17 Jul 2024 12:19:33 -0400 (EDT)
+Date: Wed, 17 Jul 2024 09:19:32 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: speakup@linux-speakup.org
+Subject: I Would Like to Run Piper TTS?
+Message-ID: <d02e54a3-831f-ae1b-6a9c-e2d85ce4ad21@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,86 +82,16 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: speakup and elinks interaction
-To: blinux-list@redhat.com
-References: <ZpXs8Lk1QKF-3nHB@panix.com>
-Content-Language: en-US
-From: Didier Spaier <didier@slint.fr>
-Autocrypt: addr=didier@slint.fr; keydata=
- xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
- dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
- TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
- jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
- 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
- AAHNH0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj7CwHkEEwEKACMCGwMHCwkIBwMC
- AQYVCAIJCgsEFgIDAQIeAQIXgAUCYZVPGAAKCRDVAgLvYMA+6pOxCADB2pKmm/LgncWREzob
- Z6M+RsvgzvGS/48ik/E/TH2KyPO/hn+Fzbj4MmMwQdqz5YPfdBmkcM7WyDzkPaukzfS8QUvl
- VKyWQ92pqpbI/JUeShI+DLMKV7LZxiPinMBuKmpyLdpxuhk08g2+6F8X6ztbl8mbXQy5jcIZ
- zKQ442N0D4wnn8VXM0tb0uonmqc6ly7dcmkQ/GI7Q0tF/hkn4n3g1Lh6+K1jBqEIC9vn/c6X
- yf67ec+CwbE0GtgVM1FR1R0J1y/6vkYWr7gZHhnzgwKr6k1wzCGkVUyCSpFwB2oeANT9c0qP
- rgn4YjoYQIHS3vMWd630vRyOfqwetWXmVjPxzsBNBFY6fG8BCACqDQKHSw0ElDkwPPpNguL0
- ujOyygO30xlLyfW9pWOEycHSLhLzvDTlFkvr5IxvyCDBIFBdzpkeQqh1+ZxrFliwWyj+9/ro
- JlIjxeAyNs2xQZ7tQM6K5xtbUs8O5YtkCCO3OegAiLgmzzgxes79Qy+V3ciKbl+vrsNu7T9r
- o3zZhyinci1eOCcKEtXFPQW5P4woB+6+JheN9pIiDkjojmdC+xkvDadP7kJYKp19Itys/CbN
- vxEoOLsgeJhsZSmNU2QNhXkLfr7+AC99fb/c5ZDTNPRBqgLJCp+gTxn1QVJrAbq2OP3refmS
- RxdA3yUDMjxEeHwDNZJL9aEtTDlTzPk5ABEBAAHCwF8EGAEKAAkCGwwFAmGVT44ACgkQ1QIC
- 72DAPuqjhwgApl0pdNIrbU+8Hn0mr3CTEXxPaTbAU2bYFPDiBaEvXsBGoz8xJ6EZQnywbC7o
- l5wFtVT08LKDewLHaL78zS+Q8rv5sNmWwzMAaipFtZg67e/rU3V5tw4E12nUghyMzQpngUur
- lZPMFlB9IZN9681cXuv2sZzAZlR2+3PsSAftpPQxReoSC7hj3dfiCiAis19G3A184HClA5MB
- I5heGinSz7R/AXhkiej8HZZzz9ZPkS7aeL8HsZKqCwZvViutbGmpm+V70JnbRAHLFjYb+Se3
- rdUWWAXcca4Ry8HCLTo5iK9xCTQh5gEuJ7ROdOXeY4SvMiqWjYhlrsR0qhTv9q/gfg==
-Cc: "Speakup is a screen review system for Linux."
- <speakup@linux-speakup.org>, Storm Dragon <storm_dragon@linux-a11y.org>
-In-Reply-To: <ZpXs8Lk1QKF-3nHB@panix.com>
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hello Rudy and All,
-
-a quick look at "man elinks.conf" did not give me a clue, maybe there is one i
-didn't find?
-
-However, I observed that using fenrir instead of espeakup and still running
-elinks in a tty, each letter is spoken as typed, so I'm afraid the behavior you
-reported comes from speakup or at at least from elinks+speakup.
-
-Maybe Storm (in CC), co-author of fenrir can give us a clue?
-
-I also CC the speakup mailing list.
-
-Cheers,
-Didier
-
-PS Please tell when you receive this message as it seems that not all I sent
-recently to the blinux list reached it.
-
-Le 7/16/24 à 05:45, Rudy Vener a écrit :
-> 
-> I'm just starting to use elinks on my Slint Linux 15.0 system with speakup and
-> notice an annoying situation whenever elinks prompts me to enter a filename.
-> 
-> When I type in each letter, speakup will say the letter  followed by the partially spelled out word.
-> 
-> For example, if I enter the file name junk as the 
-> save file for the current rendered screen speakup says:
-> j,
-> j,
-> u,
-> ju,
-> n,
-> jun,
-> k,
-> junk.
-> 
-> This is driving me nuts.  Elinks is obviously refreshing the input
-> line after each typed letter and forcing speakup to
-> doublespeak.
-> Is there an elinks option which would prevent this behavior?
-> I don't want to tamper with speakup since its settings work fine with everything else.
-> 
-> Thanks.
-> 
-> Rudy 
+Hi All: Since it looks as if I cannot run "mary tts" Storm had informed us of 
+another fine sounding engine called "piper" The voice I really wanted was too 
+large, but another reasonable choice was installed. We made changes in spd-conf 
+as well as creating a piper.conf. Meanwhile if I run
+talkwith spd
+it still plays Voxin Allison. Can some1 please outline steps to run Piper with 
+Speakup? Right now talkwith will switch among Allison and my DecTalk. Thanks so 
+much in advance
+Chime
 
