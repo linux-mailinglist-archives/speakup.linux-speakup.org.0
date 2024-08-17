@@ -1,43 +1,59 @@
-Return-Path: <speakup+bounces-1178-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1179-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 56F7195564C
-	for <lists+speakup@lfdr.de>; Sat, 17 Aug 2024 09:58:47 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=GyYwBqBc;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 8D2489558E7
+	for <lists+speakup@lfdr.de>; Sat, 17 Aug 2024 18:25:25 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723911922;
+	bh=0T08BxBgby9dwFNG/wnm7gGH0iPndDi+5p6EsLUJZE0=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=jB9Mh0Y7rlHhqmsUzXLQq936eWimbrSYK+SMDhuWDtCn3KYVZ/IDnKKHPlX7BKLq3
+	 mnzDBUzjDcy5klpsOVui9ITw3OvpqisfiRrUm6FwVPc5mEaNpnBXbr2SgGJCZhPGcJ
+	 S9DL+Xj2VsEaDboFO1pcqMajCvwg6kGwKY5uEWKA=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A60FC3830C3; Sat, 17 Aug 2024 03:58:44 -0400 (EDT)
+	id B356D382706; Sat, 17 Aug 2024 12:25:22 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723911922;
+	bh=0T08BxBgby9dwFNG/wnm7gGH0iPndDi+5p6EsLUJZE0=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=jB9Mh0Y7rlHhqmsUzXLQq936eWimbrSYK+SMDhuWDtCn3KYVZ/IDnKKHPlX7BKLq3
+	 mnzDBUzjDcy5klpsOVui9ITw3OvpqisfiRrUm6FwVPc5mEaNpnBXbr2SgGJCZhPGcJ
+	 S9DL+Xj2VsEaDboFO1pcqMajCvwg6kGwKY5uEWKA=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 876D23821DD
-	for <lists+speakup@lfdr.de>; Sat, 17 Aug 2024 03:58:44 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 932B23821DB
+	for <lists+speakup@lfdr.de>; Sat, 17 Aug 2024 12:25:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723911915;
+	bh=0T08BxBgby9dwFNG/wnm7gGH0iPndDi+5p6EsLUJZE0=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=eW+KMFGyDWSj6OOMWa5jYfMRBYBH4BWqRHkhEetlkPLQZejBlkLt79OTQdqjdq7Vm
+	 dHC2svcdqDoWaxIAXnhyLOmchILNgAVWWA0Xjw38mMUpqlpD2zSyFOUfyutYedUcsU
+	 ZvHsFGrg3BLutCTHzw3i9vnu9N3pwnVvz2WLuIVw=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8C3AB382500; Sat, 17 Aug 2024 03:58:37 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 506E83821DB
-	for <speakup@linux-speakup.org>; Sat, 17 Aug 2024 03:58:37 -0400 (EDT)
-Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4WmB7b2JpGzqJK
-	for <speakup@linux-speakup.org>; Sat, 17 Aug 2024 03:58:35 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1723881515; bh=6M7iDbxDXLnwiB4dNGpcHLtU0/YsMVG2fNcSt1YUxbI=;
-	h=Date:From:To:Subject;
-	b=GyYwBqBcNTaxpB65eRp8shcA3meEOCrb8/kvalJhdP7cATh+Tk8WDvVN7/brbddSJ
-	 DLL7fQXQ1ahz0FBK3n5e34wXsTBYBbABo9ENEFVf7ciAgxBgrO/JihSgQuihEX5/j0
-	 Y34skTa1IjhYgp7Mqy53W478DnVBft/gPqeR3v9o=
-Received: by panix1.panix.com (Postfix, from userid 20712)
-	id 4WmB7b22SFzcbc; Sat, 17 Aug 2024 03:58:35 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by panix1.panix.com (Postfix) with ESMTP id 4WmB7b1yzmzcbC
-	for <speakup@linux-speakup.org>; Sat, 17 Aug 2024 03:58:35 -0400 (EDT)
-Date: Sat, 17 Aug 2024 03:58:35 -0400
-From: Jude DaShiell <jdashiel@panix.com>
-To: speakup@linux-speakup.org
-Subject: speakup crashing
-Message-ID: <a25a455d-8a84-f0ad-826d-5ba67f14ee99@panix.com>
+	id A531C382508; Sat, 17 Aug 2024 12:25:15 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723911915;
+	bh=0T08BxBgby9dwFNG/wnm7gGH0iPndDi+5p6EsLUJZE0=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=eW+KMFGyDWSj6OOMWa5jYfMRBYBH4BWqRHkhEetlkPLQZejBlkLt79OTQdqjdq7Vm
+	 dHC2svcdqDoWaxIAXnhyLOmchILNgAVWWA0Xjw38mMUpqlpD2zSyFOUfyutYedUcsU
+	 ZvHsFGrg3BLutCTHzw3i9vnu9N3pwnVvz2WLuIVw=
+Received: from localhost (localhost [IPv6:::1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 845863821DB;
+	Sat, 17 Aug 2024 12:25:15 -0400 (EDT)
+Date: Sat, 17 Aug 2024 12:25:15 -0400 (EDT)
+From: Kirk Reiser <kirk@reisers.ca>
+To: Jude DaShiell <jdashiel@panix.com>
+cc: speakup@linux-speakup.org
+Subject: Re: speakup crashing
+In-Reply-To: <a25a455d-8a84-f0ad-826d-5ba67f14ee99@panix.com>
+Message-ID: <b2ea57df-4d66-e408-4179-a220e4d2b9d3@reisers.ca>
+References: <a25a455d-8a84-f0ad-826d-5ba67f14ee99@panix.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -47,21 +63,31 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Every so often speakup crashes on my computer.
-I am running a recent version of Jenux so systemd is in use here.
-What I would like to know is a procedure once the system has been rebooted
-to locate any crash messages speakup may have left in logs.  pipewire is
-running the sound system along with alsa here and there's necessary
-pulseaudio artifacts pipewire uses on the system.
+Hi Jude: This may be a silly question, but are you sure it's speakup
+crashing? Often, espeakup dies here and so I have a simple script to
+kill it off and restart espeakup. I haven''t had speakup itself hang
+the system for quite a while.
 
+   Kirk
 
---
- Jude <jdashiel at panix dot com>
- "There are four boxes to be used in defense of liberty:
- soap, ballot, jury, and ammo.
- Please use in that order."
- Ed Howdershelt 1940.
+On Sat, 17 Aug 2024, Jude DaShiell wrote:
+
+> Every so often speakup crashes on my computer.
+> I am running a recent version of Jenux so systemd is in use here.
+> What I would like to know is a procedure once the system has been rebooted
+> to locate any crash messages speakup may have left in logs.  pipewire is
+> running the sound system along with alsa here and there's necessary
+> pulseaudio artifacts pipewire uses on the system.
+>
+>
+> --
+> Jude <jdashiel at panix dot com>
+> "There are four boxes to be used in defense of liberty:
+> soap, ballot, jury, and ammo.
+> Please use in that order."
+> Ed Howdershelt 1940.
+>
 
