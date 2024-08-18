@@ -1,38 +1,60 @@
-Return-Path: <speakup+bounces-1185-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1186-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id AC2519559D6
-	for <lists+speakup@lfdr.de>; Sat, 17 Aug 2024 23:29:38 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; secure) header.d=pcdesk.net header.i=@pcdesk.net header.a=rsa-sha256 header.s=pcdesk20210713 header.b=T87J0iOu;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id B011E955A85
+	for <lists+speakup@lfdr.de>; Sun, 18 Aug 2024 03:28:01 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723944480;
+	bh=88uzM4qQCTJKewF7JsOfFoP9uBFixyJ5hLtt38HXFYs=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=nMD65DI5iuSi0iyEDEk5wF5FUjMiwRZle2fiHu1fHBCYybloU8Z5HT5n1rY+wmPss
+	 wyHBi7WW2YMVYzV8oKFX0GzEyDeCbThjzgcTcpAUrU52IN6i/WtyDyS8s1iKeeSBp/
+	 sQFVrcGa/Du1TR9lIRm3fGcKy40L+QZ+5KxbSEgE=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 41613382675; Sat, 17 Aug 2024 17:29:38 -0400 (EDT)
+	id D7E39382708; Sat, 17 Aug 2024 21:28:00 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723944480;
+	bh=88uzM4qQCTJKewF7JsOfFoP9uBFixyJ5hLtt38HXFYs=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=nMD65DI5iuSi0iyEDEk5wF5FUjMiwRZle2fiHu1fHBCYybloU8Z5HT5n1rY+wmPss
+	 wyHBi7WW2YMVYzV8oKFX0GzEyDeCbThjzgcTcpAUrU52IN6i/WtyDyS8s1iKeeSBp/
+	 sQFVrcGa/Du1TR9lIRm3fGcKy40L+QZ+5KxbSEgE=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 21EA53820A0
-	for <lists+speakup@lfdr.de>; Sat, 17 Aug 2024 17:29:38 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B66DC3821E1
+	for <lists+speakup@lfdr.de>; Sat, 17 Aug 2024 21:28:00 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723944473;
+	bh=88uzM4qQCTJKewF7JsOfFoP9uBFixyJ5hLtt38HXFYs=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=j2sIwn0ZHqVoXhW9Ra+PZpt1rCaC0BBolm4/11AVzfesWBy5F1qBrFTtf3kbPrVcC
+	 QEzALnIlM+0L0dnfgkbCKZqedvCzkeUwjq1uHsFHCZ7XrXZev2lWLHoN5PmnCO1Glt
+	 iAq1VftoA7qNIcSQ5WvIUg6ZEzTBIbaFmLBqTSVw=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2B1D8382508; Sat, 17 Aug 2024 17:29:31 -0400 (EDT)
-Received: from mail.pcdesk.net (mail.pcdesk.net [69.28.94.151])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id C7DF83820A0
-	for <speakup@linux-speakup.org>; Sat, 17 Aug 2024 17:29:30 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=pcdesk.net;
-	s=pcdesk20210713; t=1723930169;
-	bh=Ydfep5Yb878iliMy8sU+kxd4iusEYpoA+krcsOa6g8w=;
-	h=Date:Subject:To:References:From:In-Reply-To;
-	b=T87J0iOulTILRz33XElwZ5GySef32X8RZhWobw/037sPdLwVMh56exE7sKJPR1s3e
-	 NTv8wbKPT8C0+E9oGN1bQbe8EbSs+CXEp519kaJHQTquR63C8o9ORjSm34Rl0Gk6Nc
-	 lBbUrTXSbLde0rX8NkEEFu7BmuqVv6zeWX+oqxdb4kaXMW4dxBMbf0MetoIVZlg3J7
-	 60mM2NCsg4X69I84Dw1xjPCkz/Y/PihI8oRebqunszbGMyGzjX5QfSWnXlR773o/ws
-	 joZNkVcGiKg8KoUjwGo6Q6GATbrsRIOdJWZsGknjmzNjY0cr1TyAvkfPJKsitALqXX
-	 WwN984EWQqCKw==
-Original-Subject: Re: speakup crashing
-Author: Tyler Spivey <tspivey@pcdesk.net>
-Message-ID: <908ee927-94dd-47f1-af3a-57f423525614@pcdesk.net>
-Date: Sat, 17 Aug 2024 14:29:26 -0700
+	id C02653825D2; Sat, 17 Aug 2024 21:27:53 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1723944472;
+	bh=88uzM4qQCTJKewF7JsOfFoP9uBFixyJ5hLtt38HXFYs=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=Q0p+Cq8p/OIHHRHdDttDCqN7qAqimcgz4UvHtxAy/LoBbgHJ+elxKfVyiN/ettvfI
+	 gsOFuRrLqxu7nAb5NeLq7W1QuMi8To71DGk3mYqOyd5QZOtxKzL9pYYpCOAVaFiUAt
+	 mO3cn3SULaf+DHJ9jjwzDIVRqGyTeQxZmZWyFP78=
+Received: from localhost (localhost [IPv6:::1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id CFDD83821DD;
+	Sat, 17 Aug 2024 21:27:52 -0400 (EDT)
+Date: Sat, 17 Aug 2024 21:27:52 -0400 (EDT)
+From: Kirk Reiser <kirk@reisers.ca>
+To: Jookia <contact@jookia.org>
+cc: Jude DaShiell <jdashiel@panix.com>, speakup@linux-speakup.org
+Subject: Re: speakup crashing
+In-Reply-To: <ZsEUoeCSciVaSALS@titan>
+Message-ID: <c461630e-ab14-a966-0d29-08960033f630@reisers.ca>
+References: <a25a455d-8a84-f0ad-826d-5ba67f14ee99@panix.com> <b2ea57df-4d66-e408-4179-a220e4d2b9d3@reisers.ca> <c152034f-942c-d477-04ab-58903eae7117@panix.com> <a7fea02a-cfc1-34e1-315a-86c03a63ec17@reisers.ca> <ZsEQBh0EshF4Y9Dn@titan>
+ <31dc8d77-3c27-ed83-1a48-cd7577a3d7d6@reisers.ca> <ZsEUoeCSciVaSALS@titan>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,39 +64,32 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: speakup crashing
-To:
-  "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <a25a455d-8a84-f0ad-826d-5ba67f14ee99@panix.com>
- <b2ea57df-4d66-e408-4179-a220e4d2b9d3@reisers.ca>
- <c152034f-942c-d477-04ab-58903eae7117@panix.com>
- <a7fea02a-cfc1-34e1-315a-86c03a63ec17@reisers.ca> <ZsEQBh0EshF4Y9Dn@titan>
- <31dc8d77-3c27-ed83-1a48-cd7577a3d7d6@reisers.ca> <ZsEUoeCSciVaSALS@titan>
-Content-Language: en-US
-From: Tyler Spivey <tspivey@pcdesk.net>
-In-Reply-To: <ZsEUoeCSciVaSALS@titan>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-In my experience, espeakup with systemd just doesn't work. The last time 
-I tried it, in Archlinux, the option for setting the pid file was 
-broken. I think that was fixed in git.
+Zookia: I invite you to post your scripts here on the list please. I
+know a lot of folks that have faught valiantly trying to get their
+systems to come up talking unsuccessfully.
 
-On 8/17/2024 2:22 PM, Jookia wrote:
+I myself prefer that things that can, use userspace instead of root,
+other than speakup_soft....
+
+   Kirk
+
+On Sun, 18 Aug 2024, Jookia wrote:
+
 > Ah, people don't have that?
-> 
+>
 > I have systemd units and udev rules that let you run espeakup system-wide at boot,
 > including logging in as root in a TTY and with GUI support.
-> 
+>
 > On Sat, Aug 17, 2024 at 05:18:53PM -0400, Kirk Reiser wrote:
 >> That is probably a good idea if you are lucky enough to be on a system
->>   which actually starts speakup on boot up with the systemd service
->>   files. On one of my systems that actually works but on my other
->>   systems they don't come up talking.  I have a speakup-start script
->>   which sets all the appropriate files to userland permissions and runs
->>   espeakup in userspace.
+>>  which actually starts speakup on boot up with the systemd service
+>>  files. On one of my systems that actually works but on my other
+>>  systems they don't come up talking.  I have a speakup-start script
+>>  which sets all the appropriate files to userland permissions and runs
+>>  espeakup in userspace.
 >>
 >> I've noticed there have been a number of folks that have also
 >> complained of espeakup not starting correctly on boot.
@@ -82,7 +97,7 @@ On 8/17/2024 2:22 PM, Jookia wrote:
 >> I will also post that script if anyone wishes but if you have a system
 >> which does work as planned then definitely do it as jookia suggests.
 >>
->>    Kirk
+>>   Kirk
 >>
 >> On Sun, 18 Aug 2024, Jookia wrote:
 >>
@@ -111,7 +126,7 @@ On 8/17/2024 2:22 PM, Jookia wrote:
 >>>>
 >>>> My bash script is named respeakup but you can name it anything you like, of course.
 >>>>
->>>>    Kirk
+>>>>   Kirk
 >>>>
 >>>> On Sat, 17 Aug 2024, Jude DaShiell wrote:
 >>>>
@@ -134,7 +149,7 @@ On 8/17/2024 2:22 PM, Jookia wrote:
 >>>>>> kill it off and restart espeakup. I haven''t had speakup itself hang
 >>>>>> the system for quite a while.
 >>>>>>
->>>>>>    Kirk
+>>>>>>   Kirk
 >>>>>>
 >>>>>> On Sat, 17 Aug 2024, Jude DaShiell wrote:
 >>>>>>
@@ -158,6 +173,5 @@ On 8/17/2024 2:22 PM, Jookia wrote:
 >>>>>
 >>>>
 >>>
-> 
-
+>
 
