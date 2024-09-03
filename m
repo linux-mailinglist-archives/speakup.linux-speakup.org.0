@@ -1,134 +1,78 @@
-Return-Path: <speakup+bounces-1205-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1206-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 005D996A16C
-	for <lists+speakup@lfdr.de>; Tue,  3 Sep 2024 16:59:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E939196A429
+	for <lists+speakup@lfdr.de>; Tue,  3 Sep 2024 18:22:47 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=math.wisc.edu header.i=@math.wisc.edu header.a=rsa-sha256 header.s=selector1 header.b=DKVv6wwV;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 18BFD3841DD; Tue, 03 Sep 2024 10:59:01 -0400 (EDT)
+	id 229EC3841DB; Tue, 03 Sep 2024 12:22:47 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id F22783822AA
-	for <lists+speakup@lfdr.de>; Tue, 03 Sep 2024 10:59:00 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0048738266E
+	for <lists+speakup@lfdr.de>; Tue, 03 Sep 2024 12:22:47 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D5761383CB3; Tue, 03 Sep 2024 10:58:56 -0400 (EDT)
-Received: from NAM10-DM6-obe.outbound.protection.outlook.com (mail-dm6nam10on2131.outbound.protection.outlook.com [40.107.93.131])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A90B3382089
-	for <speakup@linux-speakup.org>; Tue, 03 Sep 2024 10:58:56 -0400 (EDT)
+	id CA27138267B; Tue, 03 Sep 2024 12:22:39 -0400 (EDT)
+Received: from mx0b-007b0c01.pphosted.com (mx0b-007b0c01.pphosted.com [205.220.177.71])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B6D10382270
+	for <speakup@linux-speakup.org>; Tue, 03 Sep 2024 12:22:38 -0400 (EDT)
+Received: from pps.filterd (m0316047.ppops.net [127.0.0.1])
+	by mx0b-007b0c01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 4839XFpM003646;
+	Tue, 3 Sep 2024 11:22:34 -0500
+Received: from nam12-dm6-obe.outbound.protection.outlook.com (mail-dm6nam12lp2171.outbound.protection.outlook.com [104.47.59.171])
+	by mx0b-007b0c01.pphosted.com (PPS) with ESMTPS id 41cr07bpjj-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+	Tue, 03 Sep 2024 11:22:33 -0500 (CDT)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=DWw4dCXTc+6GdHwnX8MqcZw45AsQxQvHJfnZoRN86e+phHO1HyYTCOAFQPeq9lLCV8M5hHV44FNA6l+BWRd9l7dN1B7JnAVRwFw9ScBITEj2Z8LZ91M2c+LzKtIUfM7X34zL2Ly6PD0S1LufoTJmYafeA47TakXmi/HcHPTuf+fiKurc5zcBz/NekB0g+wF9ThW4uhKCiPr2hMEh8b5Lu+BNb/+OgFq/rV6kit0e3SeKsfAWxELJLKG7s9J2qFqHTZM1jtstEqmCzYGOPizKYasXzHvNp3ZebtIioM2iUSm/aH7Ja2yOUX4zFLzew68pIfaD+Vny6R5t9pXssLD2PQ==
+ b=niE1RpnyqBfvBb4/v64BODY2YWmbQihrISU0c5G/svvNDQw4rlrrju07tAQ6JlJLns4PXfEvfcnCxJrOrR40y7sNsVMq2BverU3BKyeM3qI6Ha7XW72Kw7vyK33YtS6gDjNB4GVc2Mk1MiCGB4A4aQhlP61SLH/IbeBm85taO6Jdp8uzlNtiubReiwJlG3WYb89V1bmI9vPep2dxV3tA8uzXLy0gt5UhfQ1dwzC9dMgc6z5BiKcw7wo8SWke1g4xopIJlqCVJ4hUq8ecx9g0mMghH7iBRx+kQI09BdM0O9QiUSGE5JT69sIHPPUSljR/VkGfZzIkA2pVIkIYRIDZcw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=KaeSpE6qYkJQz8IJ1ZOP4NXrCOvW38xaKa/B/4SNWcc=;
- b=hX/n0ltwafhgGrCh/zYUQZDsphP7gBEYYXH1lOyV2EEsyFX1zPB8BbEF+Sda51LGTNPW69W6KvCOzEx2NmAAXLzUvj4S9PG0dP3jxxmhzhQc3pvVYNEpNVPszdzQSmFllbaJdXUayedhlWf/29+6CtSrVbI0OxAHbKas8ZRKAG1Z57hMIE8ti554vU+boaQqdmjB/RCR5+ot5GSQGZO/mPI59qyPHM4RtWBcMlfff090ZGjQpK1TPBIiauluJKL5jXEQp9IwmpOSj9c+xEAWKeV83DO/OBYuB1OKP2dY7SK+UHO0v22plMVuYEsSHOQVWX3cMaqgr10iUOU9qwt/ew==
+ bh=B4fx2IH2kjGe/a4n7MwUlAfQEhtViYCa+FysFgAwCfc=;
+ b=gyxLI5/rlWHxvAK+3nnd2G5RTkOLJq978mvaqMF9WsDeCM/xIUEJZMnLylEU1IAk56e+DyOEmN3x5GyiQ5Y5izGl5aM8g9YWt6huK/ugnjGrCUFrwmqucKUHF/Flm6ERE6VFuNBJYCdPg+244Ez/E8baI0kWLrA+C+aGThs1ytkPk6r/2yTXGNNFpUVuQahjByNaZGdLEvGSynD6WGAJkCwrMTRVx8cdBkUSrWyzoAfTYUZV1wd5Dj5q7FQum+GmR2mcFj0kqNqf0v9xAccLwX122gi5nyzhHZViEj21Vv3GyUuTIzjGoUdikVoDgY3PNP/VeQXzcUNIQ1vvVFaJNw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=crosslink.net; dmarc=pass action=none
- header.from=crosslink.net; dkim=pass header.d=crosslink.net; arc=none
-Received: from MN2PR18MB3344.namprd18.prod.outlook.com (2603:10b6:208:15a::12)
- by MW4PR18MB5157.namprd18.prod.outlook.com (2603:10b6:303:1b4::12) with
+ smtp.mailfrom=math.wisc.edu; dmarc=pass action=none
+ header.from=math.wisc.edu; dkim=pass header.d=math.wisc.edu; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=math.wisc.edu;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=B4fx2IH2kjGe/a4n7MwUlAfQEhtViYCa+FysFgAwCfc=;
+ b=DKVv6wwVVUwDvT4T7yYWrT1Pys04MEtpH/YvOwyvrMOA56oiOLvbL8vwBAEvPWdH26bI5Ma4302Kpp/iVeIzy1q9z05dXMHisCzIGI02ocbHXqX56smqutjBnJk3+Gf7Z7XEPAZzH7oB0NRwPSMQQ3NZIFYsb004X10NdNdW9Yw=
+Received: from MW4PR06MB8441.namprd06.prod.outlook.com (2603:10b6:303:12c::14)
+ by SJ0PR06MB7600.namprd06.prod.outlook.com (2603:10b6:a03:326::14) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.23; Tue, 3 Sep
- 2024 14:58:50 +0000
-Received: from MN2PR18MB3344.namprd18.prod.outlook.com
- ([fe80::e77b:5e45:ff9f:4d53]) by MN2PR18MB3344.namprd18.prod.outlook.com
- ([fe80::e77b:5e45:ff9f:4d53%7]) with mapi id 15.20.7918.024; Tue, 3 Sep 2024
- 14:58:50 +0000
-From: cstrobel crosslink.net <cstrobel@crosslink.net>
-To: Martin McCormick <martin.m@suddenlink.net>, "speakup@linux-speakup.org"
-	<speakup@linux-speakup.org>
-Subject: Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with Speakup (Was
- howto run speakup/orca concurrently in ubuntu)
-Thread-Topic: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with Speakup (Was
- howto run speakup/orca concurrently in ubuntu)
-Thread-Index:
- AQHa/TJ0NpEgjpMMBUGUO5q26eCe07JEdHUAgAAhaACAADd+gIAAB9+AgAAxNwCAAAhgAIABGCAc
-Date: Tue, 3 Sep 2024 14:58:50 +0000
-Message-ID:
- <MN2PR18MB3344FAF885B2801CAC79DD75C7932@MN2PR18MB3344.namprd18.prod.outlook.com>
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7918.27; Tue, 3 Sep
+ 2024 16:22:31 +0000
+Received: from MW4PR06MB8441.namprd06.prod.outlook.com
+ ([fe80::1e0d:706b:3a:45a]) by MW4PR06MB8441.namprd06.prod.outlook.com
+ ([fe80::1e0d:706b:3a:45a%7]) with mapi id 15.20.7918.024; Tue, 3 Sep 2024
+ 16:22:30 +0000
+Content-Type: multipart/alternative;
+ boundary="------------qotNF0FyDtLbjRjvYC610MvS"
+Message-ID: <99cfd787-9c6c-4344-9f1f-e37a6b174074@math.wisc.edu>
+Date: Tue, 3 Sep 2024 11:22:28 -0500
+User-Agent: Mozilla Thunderbird
+Subject: Debian v Ubuntu (Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals
+ with Speakup (Was howto run speakup/orca concurrently in ubuntu))
+To: "cstrobel crosslink.net" <cstrobel@crosslink.net>,
+        Martin McCormick <martin.m@suddenlink.net>,
+        "speakup@linux-speakup.org" <speakup@linux-speakup.org>
 References: <ZoieyBFD0TXlL_bd@cudneys.ca> <ZojtZ3RQxdiZaMN1@gregn.net>
  <E1sl62C-0002oX-0Y@wb5agz> <b47611eb-67aa-5c99-07b8-3b31b4168e67@csir.co.za>
  <e7b27ee1-63bd-430c-8d66-d6dc9e9829ec@math.wisc.edu>
  <E1slBYr-0003js-0w@wb5agz> <cb2e836c-c6ce-aa54-a752-3a0d56126c7a@reisers.ca>
  <8aaba50a-94aa-4171-afa0-71530ea1290c@jasonjgw.net>
  <E1slFDa-0001Hb-0R@wb5agz>
-In-Reply-To: <E1slFDa-0001Hb-0R@wb5agz>
-Accept-Language: en-US
+ <MN2PR18MB3344FAF885B2801CAC79DD75C7932@MN2PR18MB3344.namprd18.prod.outlook.com>
 Content-Language: en-US
-X-MS-Has-Attach:
-X-MS-TNEF-Correlator:
-msip_labels:
-authentication-results: dkim=none (message not signed)
- header.d=none;dmarc=none action=none header.from=crosslink.net;
-x-ms-publictraffictype: Email
-x-ms-traffictypediagnostic: MN2PR18MB3344:EE_|MW4PR18MB5157:EE_
-x-ms-office365-filtering-correlation-id: dfd3d08d-75ea-4fc8-e64d-08dccc28eb85
-x-ms-exchange-senderadcheck: 1
-x-ms-exchange-antispam-relay: 0
-x-microsoft-antispam:
- BCL:0;ARA:13230040|7093399012|1800799024|366016|376014|38070700018;
-x-microsoft-antispam-message-info:
- =?iso-8859-1?Q?hXa3uqpsA6LuMUOd5uAFjISs/+v32hvHKF8+HCUxORcoE6TXTz/7GM2Xnx?=
- =?iso-8859-1?Q?GPo3VmGceTdJOsMZbWUWBh9KaXCXREppIDOky4eAXPmG8SlcOoU6jamOsE?=
- =?iso-8859-1?Q?A4nmhsBnDbkMEtpBvfBPM7CDRMgelgWVlv3VmMobPajX2GeB2/n7Qu8BKj?=
- =?iso-8859-1?Q?hsuh7u/5OSAyIadKwCdVN3OAjsBveH7KMwc4FehX8P15P29qRGzXm+Rcs1?=
- =?iso-8859-1?Q?L4UJeK6lxt9j9vx2hJ9PGIsD07oSFE7zMPjBNnFb4COQSPqaLa8dYakxm+?=
- =?iso-8859-1?Q?81fP8EMcpwsM7vXRKSJTESR8ba6IyTYfGCFgAYqTND2yXBYkcBlFNWBvIJ?=
- =?iso-8859-1?Q?R5ZQcPFZNuBpImCwfVDbBsOATjqKy/tfOMFCRC3elEVnXyv3WSz7qT1d42?=
- =?iso-8859-1?Q?5rKT5F/1XEJP6eNvx/SJTNBHBMDgewUFcXzj6njHMCHSIk2kigm2ei2A5O?=
- =?iso-8859-1?Q?2e27J/skkoAzM1diOHSal0YCLKJm2Pp1HZbZULJstwK68dBHvxm8tjRInQ?=
- =?iso-8859-1?Q?Nc4sp39WMo9O8UH/gBAua+riITCO+3/DOURGHmPrRQxmQtC/rsunWdYjCR?=
- =?iso-8859-1?Q?LauYVpzx339WoRlcNz4JnxUV0fp/99L3Mm07rjenGiQankH0MjNpcH2hg+?=
- =?iso-8859-1?Q?0rGQ0TaZxZFIHLvvUeal/Dppjk1XJuXAf/NyGKkxy8KW7762JQErCHa6WA?=
- =?iso-8859-1?Q?1hExSxhH9TshidEWq9G7hlyHfaXmTc05blcEmrEF4ARsDK7k5ufGQxN/Mj?=
- =?iso-8859-1?Q?vFWKGLg3LQCeegMcVUl169QFc/wAiVajC3c1BcH4X3aI+u9wCH86CHZTLD?=
- =?iso-8859-1?Q?v9Lrh4h/vyW6wB6nwaNZaKJVl68wDdHVHHCGoMx9KG3rbYV23RFrXx1Siy?=
- =?iso-8859-1?Q?i4PlwRTIGGaVgq3zAWExlhrby6JS9uOnzV6W7BUnJ3YT4knOobhRsc4X9K?=
- =?iso-8859-1?Q?wYzde7vFKRKIt92OkVasVuAIjqoOYJiRMdiZSM7hW2szUznAGnIikIt7oN?=
- =?iso-8859-1?Q?6qka+tUCwDWI7GQhMj2iilMYME1/J1IrY1+7v/+jmVXA+H1v+K8HrEsWvy?=
- =?iso-8859-1?Q?ma4hpUsMDKTgALA6r3kL1YmyoQbz6pEUV2hdb+2fGyHFFktyRCVEKWjGt7?=
- =?iso-8859-1?Q?qqVA/A1cFe4L08vHmrScwW0iocPusFFz2CiknY0oEg8jianMs8yF0AMKqE?=
- =?iso-8859-1?Q?aTm1fspWYxkF7aEV4/2B9J5umvdcqoQcr7JR0L9aXZe8Rth8OQVoun0aCi?=
- =?iso-8859-1?Q?phxx3Szu6E7Kondc5T+c7vbgz/Vz72IIxqqom+LEvqGeFxuPxD8GZ/MM49?=
- =?iso-8859-1?Q?GZKQRp8b/dxrUBFllJzexQcF1+DwdYy5OZi3Eeqg0n9/y7MPXta/BfQRmG?=
- =?iso-8859-1?Q?U8EjpMUCLcoFWIsi6v0TaDqXQmFIYGKZRkXqkcfuwKhRGdTbCn3VHBsXpf?=
- =?iso-8859-1?Q?24xuyzk3Vfu5K0qkjbf/idzZWoKQpdlUCMUNp4w1hvNwMlxII33fD4hV6y?=
- =?iso-8859-1?Q?0=3D?=
-x-forefront-antispam-report:
- CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MN2PR18MB3344.namprd18.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(7093399012)(1800799024)(366016)(376014)(38070700018);DIR:OUT;SFP:1102;
-x-ms-exchange-antispam-messagedata-chunkcount: 1
-x-ms-exchange-antispam-messagedata-0:
- =?iso-8859-1?Q?z5KsDrAqitGGrUs577NClKKx8pKtsnJFG/sfEdZdYVTWHFW8Rdw82Zrzz4?=
- =?iso-8859-1?Q?X4YtTQsBtIyo8wkoHcXbgZW66i2mWwGm6P7onjAUtNtJD4Viyl5wUCLVtd?=
- =?iso-8859-1?Q?20F8quwW9KxU+zkX05yS7ugyLBq0ZXvFoFxaH3Lg+Ir+qNnpKuR4/NGPnu?=
- =?iso-8859-1?Q?jxaOnguTXlcYTHjm+UAyQjbR5a5L7uisovufMeXo0vi/DpEjG1DVVHS/ZT?=
- =?iso-8859-1?Q?BkLe4gTE4jFrklp/+70GGctzZBc0+K5EQuLYkoNEFuPO93MjNaf8uobEE6?=
- =?iso-8859-1?Q?1nlGXpZQ2XnugM9TZ8kB8y5OF9g5gFwXoQib2GhykBINQ3GzJQir9OVrQX?=
- =?iso-8859-1?Q?/DLv/g08SvRA7CpDtv3PUcy534RdrS8/09js+bdBUzIzEQnKiQGJMC8xZr?=
- =?iso-8859-1?Q?dX5Ci0EWvO7S4hD3unTLpHLCLR9wTHbRNQHnxGwlmXvYzwuN3NGsDHKuE8?=
- =?iso-8859-1?Q?F3Ki6JlMVB3UkjnkiYQNdjXpLJasJzoB0XoD4Z+/itA85jq3L7EuOUT1Vt?=
- =?iso-8859-1?Q?SRwwJmPsXFHw/mg299UMmUhSW/DP1TtkaWDSyhZ8AwSIQkD3RuOnXhLv1w?=
- =?iso-8859-1?Q?2by553RYc/IjV/CGfDUbMvz1SR8wMEaWt1nvA/V+Ffdd1jeEl+ewlr9qCL?=
- =?iso-8859-1?Q?V1B/zogDUmVzyLD98uSp0z5IenXO2fHb3bFlaDTUVJKLrUyEGmfNZTWmPR?=
- =?iso-8859-1?Q?0NGWStIhpt9CTgGAcUi0Ge0BcB+lE+MvyhDQfr2JEbtPa7jPU2gncnD5t1?=
- =?iso-8859-1?Q?cZFro5es2n8OipYLozvCWNNgPjvi6gAExxd9MMBUAAbGojI/ioce/TwK1M?=
- =?iso-8859-1?Q?BiKqSc7+o95LCCPLJaVzwJ0Mzy7Du6LzUXz1U9u5PrzKa5pdLt7hdaxl2M?=
- =?iso-8859-1?Q?x+8DJzVva4QrZVi/sW753Qu/ahUTSP9G1hkraQ/CsdZYqpNbzNDLVUTmPq?=
- =?iso-8859-1?Q?K5qOyPrzmD89DAuf62mqEtNLvwm/X3++GDqlsGj9m1NyJr5Rr/dn58KSal?=
- =?iso-8859-1?Q?9MNloyI+228Qw3hCqQ9bV4/hfg0MZMTdH5L8CV/mvOB0OUSd3iFGpPrTh6?=
- =?iso-8859-1?Q?MdlUF4P2DPBv+815J79JHN0KFAP8+mNXh7Ht/R/XLNBGtGMOJX8aHo81d5?=
- =?iso-8859-1?Q?kcYOmRMVwD7zm1JIfCNzBdy3+2ZixNTwNDns9i2naIvZZ4xa5qPPnWBfwm?=
- =?iso-8859-1?Q?C5lzIZu1YRA4m82oR7JZvBPLMzQOHurIgXEVCjh1d4oXwlI2+bP5nLj+RR?=
- =?iso-8859-1?Q?dGQyER2+iMwOfV9hj3rwnrW5Ppmgbi9guolJa2a6M9e3AYLawVzRYZ/5nA?=
- =?iso-8859-1?Q?QO9wWH5Vg/QK3VA3igzRI2iomkrQ2HsS/SMrSX2rSaJZOBpRLfWfjWx+mt?=
- =?iso-8859-1?Q?DczfMqgXMxVHzBzhB4IM0Hgd9BtRVlMEOVV+kN+c30sPcbIcpI5QKas163?=
- =?iso-8859-1?Q?PfW2Q2OHXTDf5qdaTs9udbm4VWQDaLy84DbYzjtYJN2tAF6O8dBzMlXKXr?=
- =?iso-8859-1?Q?nDR8BgCUGpUieYkVQlFjAGvrNHh07WjolW+ChHgOtWN+I9dDiJUunto/WE?=
- =?iso-8859-1?Q?qlFzuY8pI/lMcUrkIscxHwB6CiqTEF0uatwmF0S9SVrn1Kv/+iusQBs5ua?=
- =?iso-8859-1?Q?oKbgXwLxcmYfdP9i6INO51P8gAgla4TbTq?=
-Content-Type: multipart/alternative;
-	boundary="_000_MN2PR18MB3344FAF885B2801CAC79DD75C7932MN2PR18MB3344namp_"
+From: "John G. Heim" <jheim@math.wisc.edu>
+In-Reply-To: <MN2PR18MB3344FAF885B2801CAC79DD75C7932@MN2PR18MB3344.namprd18.prod.outlook.com>
+X-ClientProxiedBy: CH2PR08CA0021.namprd08.prod.outlook.com
+ (2603:10b6:610:5a::31) To MW4PR06MB8441.namprd06.prod.outlook.com
+ (2603:10b6:303:12c::14)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -138,276 +82,365 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-X-OriginatorOrg: crosslink.net
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: MW4PR06MB8441:EE_|SJ0PR06MB7600:EE_
+X-MS-Office365-Filtering-Correlation-Id: 502d98cf-c3b5-437c-87cf-08dccc349be9
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|376014|41320700013;
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?K0hXaUZoOFZtQmdqRVhUem1iWlNzZmdNWmFycHY1WFBnU2N6cjlsK2d1NkZL?=
+ =?utf-8?B?c002YmE4TnVzWGxNR3Z5UFZQeHowZzRMejQ4YXFNNkVObkZuYTIySFU3S3VR?=
+ =?utf-8?B?b25xUDQya01ubHFKRzRkTzl4MTRaQmd2eUIxdEdyV3lRTVNqdElYUWtZYnpF?=
+ =?utf-8?B?RGtFbEVRL1NzYXVaUlplN25SRmkxN2FwWnFoR2pQbkxoTXpZVURuZTloL2xJ?=
+ =?utf-8?B?bWdPMXpwcm1mS1d3THJrUDN6VS9veUtZVDZmQWdOZzNxQnlFT2ZrN25QYU5B?=
+ =?utf-8?B?WXovb2RIUjBMNGNJK203UWdraW9TTmNiei9udk1qaHIvZmdtV0NzR3VZa0RW?=
+ =?utf-8?B?RWRTVmErL1pBekJpOEdESklnUGc4Z2I3V21kMUs3R2JndGN0WHluaW1iRkNB?=
+ =?utf-8?B?QlhJMEJMb1oxR0JJMlVZTWlLQnJSK1BKU21RMGhEMnBEQ0hZVEpjdjBxR2JD?=
+ =?utf-8?B?V2Z3VjhuRXFEdWxlcThMTkFUU2lYejc2cWNmR3FidVJRTmRrb0k3cUFrUU5n?=
+ =?utf-8?B?ZmQ5SEdzbzlNclhQdllUcG1DWE9wMTNRYWQ4OXhZSlhBVjdiZjl1K0drQk1Q?=
+ =?utf-8?B?emZ0UDNXdFFodWcxTXk0MVltdHJMZVlRZmMzc1RhRmVlcWNyTXArUWFXajlz?=
+ =?utf-8?B?bHQycWN6QVhoZERQbVR3Y2xqdE96QUN2bGFsbytVdE1NZXVnRHNRdmZjQU1E?=
+ =?utf-8?B?SmdXSS9zS1ZrKzR3aUF6R3NyKzVGRk5BYkRVOS93Y2N5ZjhLaDlyd3FKdmhD?=
+ =?utf-8?B?M1hjOUFoZFJ0ekllVExpczZveXovdThuY1FlaURWSWkrclV1dUJ1VHFqTzdP?=
+ =?utf-8?B?eGJRUWJvT1k3bElzVm5uVHgvTnphcWxPQTZ4QVlZcy9RRmtEa0hKN3FTTUhT?=
+ =?utf-8?B?dlBsUkVLTVlBMmFSVGpBbnVMOFl6RytvV0ZPM0IzRUI2S01hNENqbGVEWHpR?=
+ =?utf-8?B?bTAvYzl6Nlo5OFl4K3NEdXNnMnlFV0hTUkc0NDMwUi9HamZHcTBoTmlUaXdP?=
+ =?utf-8?B?dVV1YkFUdVo2bVZrcmRqMmV5dncrNm5EZjhXUm0wVG81ZXFIRG96QWRRZkho?=
+ =?utf-8?B?YzJVMVJQK0x3eCt2clJmY3JORzlDcitpNUVhNyt0RWtEQTV2NGFLU2pDYVlZ?=
+ =?utf-8?B?R29Eb3ZPaHozVmJ5YkkxbmVLRWltNkRiYmt2ei9zblRiZ0t5dUloUkp2aEtl?=
+ =?utf-8?B?TnFpS1cvRXNjYUpxUnhIK3JtNjQxZXlMalV2N0RIMTVVRDdHNmUwSjBqU29C?=
+ =?utf-8?B?WmlBM0FLaXE0UWMwNUZQWVIyYW1jR09BbWNKcGZkRi82ZnByVnFjR0VFSDVX?=
+ =?utf-8?B?RW9xTjkveEYwMzd0ZUJyYk1hTkRvWXpKY3A2dllhMDZJNFNaT2ZDSWl5WVhR?=
+ =?utf-8?B?R2F6UHUxaXM3cnhLNmZlMThWWnQ0UDhDVUZvK1YvR1lLMGFjRmMvdU9nMHp0?=
+ =?utf-8?B?b2kyWFVDK0VVaWhlSGpyZzduNDJrd28zSjRPL1U2SlFSM1dnbjBoT0xkNVhq?=
+ =?utf-8?B?bS9Xak5zVTFaQUo0bVNZenVPT1RPRDFrdnhhaUNjNUo2cUFiQ2t3TE52cGNy?=
+ =?utf-8?B?MHJzSWtLcWI4ZGlDUHlVME9aRHpVZ1dlcG54SkF2VXJxMjYvYkoxYm9BNUpY?=
+ =?utf-8?B?ZzQrTmZva3UzOWxYOUV4akcrVmIxWDNFbDhwOFYwSFpualNCN2VpR0NBT1hs?=
+ =?utf-8?B?T25FN1c1Q2laWGVsTGU1OHlJUXIwQ2lzd0tvR1I0MUlDRWlBeWlhZnM0TEFJ?=
+ =?utf-8?B?d1k0RVR4TW9CRTJTbzdIL2ZGelEyV21DalpybGtJTmltTXRrc1ByWFd3OHQ2?=
+ =?utf-8?B?Umg4K0gwRG1NOEcyK05QUT09?=
+X-Forefront-Antispam-Report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MW4PR06MB8441.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(376014)(41320700013);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	=?utf-8?B?THQyaFhtZmNKcUUyOEczdlNMRzJwY25wcGp5SFJzdzRVQ3ZtM0trOEx1bEpl?=
+ =?utf-8?B?U01MRGptK2pVKzJHdVljcnEyeERSamYyUkdSa201cDFLOFpIQ25SNndKTHZM?=
+ =?utf-8?B?MEFKV2hrc1VYang5aEw3aUd3Y1owK2hSSTVKQkNobUl6OEptd1VXMEx6QTBT?=
+ =?utf-8?B?WE1SaVhmSzd1Q0d6a1Zidi9mYng1ekpwR3dSSHdDbU1uQmJLeHkrTko5VGZM?=
+ =?utf-8?B?U1BBb1FIQ0hjcHoySWlaaTlVcmIwK1lqMUY4NU9EQ2JEKzZ5bUVJTkJyY1la?=
+ =?utf-8?B?dFRFV2ZJTitHZFlidEt4SlpLZzRHVDBFejJDQ1RmRWNLOStraG96TEsyNFJS?=
+ =?utf-8?B?aEdDSTliNnkwOFNySjdiMjE4YWY4aU50V3ZuVHV4SDJlMDZwR0lSb2ZQZFZR?=
+ =?utf-8?B?QWVxbysrMjdIbmhqd0VDWm45TFM2alRlNk52eCtHL2hGMmVhc0o2bHFkUGc3?=
+ =?utf-8?B?L282YStYNjhtcTBPV0FDQjJHK2FMbS9Jcks5bmo1WU1zOFE1WUN6TGtZaFZW?=
+ =?utf-8?B?MHIzSmIzdDNrYWJzV01wL004b0JFT0UyeFNvaTM2a3hQNUNHUU5zWklTRUJ0?=
+ =?utf-8?B?RXpZWHl4bmRzZE1FY2JhWllQL0hRalQ4UGdvWVhOdit0Z0M4UktSQUM5Nzh1?=
+ =?utf-8?B?eEhyaTc0ZlhNTURvQmdYdXVLTGs5TGRsL1YrWFNLYmpKUDN0RkpqaXVZRXRk?=
+ =?utf-8?B?aHRqM2tWNkk3enh1YkhBODV2bXk1MHRQU0x5cjR3Zkx4SmtMY3N1MzFSNDJw?=
+ =?utf-8?B?UzJHbStGWU5iTG9jK0o3U1pGbGFjZkYxTzNLSFBtbXNtSVVCMkdxbVVVRktP?=
+ =?utf-8?B?aVBDdzV4U2Y3d2lGM3V5SVlkRjBjdU9LcCtXSkNvVHZidE9kbDBGdTFNbkpB?=
+ =?utf-8?B?akxYa1Z3UEgvcjNiVk94YVE3RWhiNXo1dDRKZGxaY2VXMG04MzAvRzlTckxy?=
+ =?utf-8?B?ZHBnclFIbTJrTnNVNVk5MGhST3laVDlzbDM3aEFUNndvc3VKQjRMTWxSK2Ix?=
+ =?utf-8?B?cjRIZnNxcGhvNmppS2UzRDN3L0xUZ29wODVpMCs2ZmQyQUtkRVRJdW9pVm1m?=
+ =?utf-8?B?VncvdDR5N0gybVNZOTlVOFBzUFNOVmhqM3FScEpJM1d5eDl4YXRENk9OUU05?=
+ =?utf-8?B?VzdodkFnNHpXOGJxY1YxUXhrYTZONmVLK2VuSVNlUGpoNE5saUh2d1BPbHB0?=
+ =?utf-8?B?M0VNS0JESzVleTRoNEVlRWFBYXJGZUJWWlQyNHBlSnNFODBnYkFDUko0RURa?=
+ =?utf-8?B?Y0IzVUduTmlSbGwwbW9ub1VSL0p6ZUdWcE84UkFJMDdvMGMweTVtdTc0TDFB?=
+ =?utf-8?B?T3pIa0pEYktnTnZFdWRQT3htZDBKYlBlZmYxT1VsYVJCSDhDSkhqaHNLZ3Ez?=
+ =?utf-8?B?VXJRTVRpK1hPQlRXbDhTNTNEVmhLekNUUmRNcUlxdWxCREJ5ajVEZlZLaUdo?=
+ =?utf-8?B?YVEvR1JyOHg4cDk3OTdwcGJsM0c0T1FQdFUwNTR0bis5QTNQK1hSVmR1eVRQ?=
+ =?utf-8?B?aEpwWk0wdDNUTWtVYXFrL3ZMdlU5MjJWKy8rOUVoeWpYdFZJQ3VaeXVMYllF?=
+ =?utf-8?B?ZlQ2RlA3N09zWU9nSktVS2tPbjNGZU9xYmc5YjJvZTRwWEVsS3QzZk5DTTBF?=
+ =?utf-8?B?WFdkOEQ1QXE3R2hvUmdFYkdQTzBmcEN0NVVHbkhxSWNkWFBFTGxSTHBWSTZE?=
+ =?utf-8?B?VGhTZzZWcFNFTDFtTkl6MmI1Z25mMDhTTUtEUFRyMUtScVYvbEE0R3pvam5j?=
+ =?utf-8?B?MlkyNmEySmxwNVJ6RzY5akM2VmFFd1Y3NFdwRGZXbnFTOXJkYlMzb3dFS09v?=
+ =?utf-8?B?WVd3VFRJNGJhb3Vid0xMeERNak1Ydk12WWd5TnFNbVJsVW1ITExIZDlkZ3Jm?=
+ =?utf-8?B?LzREZDFjdUNUL01nMnVaK3YwTzV5dkYwR3o0RnQyQ3dlOVpnc3ZhZ2FzMVNL?=
+ =?utf-8?B?UEdZZTdZbEsrd21RblBZRHRJaHdnZkRkS3NTVmlJRGhxcVdSTkVyampkM1Zj?=
+ =?utf-8?B?SHRHL2xGdWpRV1A2QytoWXV0SFJQeUJRK3JpNFpWeEpNS0N0cjNTaTJzSmt3?=
+ =?utf-8?B?ZUs3UGZFakU5Smh4NElLQ1VrRy9HTi9EL2hnWlV6NlQzOGJSQUNrV3lNQjAw?=
+ =?utf-8?Q?fbhM=3D?=
+X-OriginatorOrg: math.wisc.edu
+X-MS-Exchange-CrossTenant-Network-Message-Id: 502d98cf-c3b5-437c-87cf-08dccc349be9
+X-MS-Exchange-CrossTenant-AuthSource: MW4PR06MB8441.namprd06.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-AuthSource: MN2PR18MB3344.namprd18.prod.outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: dfd3d08d-75ea-4fc8-e64d-08dccc28eb85
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Sep 2024 14:58:50.1709
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2024 16:22:30.7114
  (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: ffc1c47c-8879-4594-ade0-28ea8c2224c5
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8EKWuPAbVoJOmeAvLDO2ICUkU5Jp2FU/im9XxIEWrPiGlmHlXILewp2qd3xFQmeQdRjf0kj5pRr4Djyv0t7XYA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MW4PR18MB5157
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 2ca68321-0eda-4908-88b2-424a8cb4b0f9
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: sftig/S4SRt/sSKsJvLw4mM+T456tIa+XjxN4QS+emcRqEkHR/f3TnzbqhQGY0R1
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR06MB7600
+X-Proofpoint-ORIG-GUID: GnqpmaEagHhKbdA7zHp8XcVMHdk3wwnp
+X-Proofpoint-GUID: GnqpmaEagHhKbdA7zHp8XcVMHdk3wwnp
+X-Wisc_ValidFrom: true
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1039,Hydra:6.0.680,FMLib:17.12.60.29
+ definitions=2024-09-03_04,2024-09-03_01,2024-09-02_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 lowpriorityscore=0
+ impostorscore=0 clxscore=1011 bulkscore=0 phishscore=0 suspectscore=0
+ mlxscore=0 malwarescore=0 spamscore=0 priorityscore=1501 adultscore=0
+ mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2407110000 definitions=main-2409030132
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
---_000_MN2PR18MB3344FAF885B2801CAC79DD75C7932MN2PR18MB3344namp_
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+--------------qotNF0FyDtLbjRjvYC610MvS
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
 
-aI have been using Speakup and ORCA at the same time for about a year on Bo=
-okworm.  I have Bookworm backports active. I agree with Jason, use Pipewire=
-.  I'm not sure why folks want to use Ubuntu any more unless they have some=
- very specific package that isn't on Debian you may be asking for more trou=
-ble than it is worth.
-I know I read the Debian accessibility FAQ, but I'm not sure exactly what I=
- did off the top of my head.
-Make sure that pipewire-pulse is running on your system by doing "ps -ef|gr=
-ep pipewire" or something similar.
+Its not just the packages, although that is part of it. The main reason 
+Ubuntu is still favored over Debian by many end-users is ease of 
+installation and upkeep. I support Linux users in STEM fields. As you 
+probably know, Linux is huge with researchers in STEM fields. But they 
+don't want to figure out how to install Debian and update it. They just 
+want their computer to work.
 
-
-
-________________________________
-From: Martin McCormick <martin.m@suddenlink.net>
-Sent: Monday, September 2, 2024 6:08 PM
-To: speakup@linux-speakup.org <speakup@linux-speakup.org>
-Subject: Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with Speakup (Wa=
-s howto run speakup/orca concurrently in ubuntu)
-
-Thanks for the clarification about pipewire and why it is here.
-
-        I didn't realize that pulseaudio is fading into the
-sunset as it has been around and served well for quite a few
-years.
-
-        To remind those who have followed this thread today, the
-only real problem I am talking about is minor compared with stuff
-that is supposed to work but doesn't.
-
-        It looks like one should be able to get speakup to work
-older world of pure text-based command-line consoles since there
-are things that runa little more smoothly there than when GUI
-tools are needed.
-
-        By the same token, the present implimentation of speakup
-with gnome also does well and all I was hoping to do was have
-both functionalities on the same system.
-
-        Thanks for the information that has been provided as it
-is useful and I am still interested if there is a way to do this
-but at least things are about 95% working.
-
-Martin
-
-"Jason J.G. White" <jason@jasonjgw.net> writes:
-> While we're discussing clarifications, note that Pulseaudio is effectivel=
-y
-> deprecated now. Pipewire has superseded it. Also, Pipewire includes an
-> implementation of the Pulseaudio client API, so that client applications
-> designed for Pulseaudio still work normally under Pipewire.
+Personally, I run Debian. That Ubuntu automatic update system gives me 
+the willies. I don't want to click a button that says "Update now". But 
+I'm not a researcher, I'm the support staff.
 
 
-________________________________
-From: Martin McCormick <martin.m@suddenlink.net>
-Sent: Monday, September 2, 2024 6:08 PM
-To: speakup@linux-speakup.org <speakup@linux-speakup.org>
-Subject: Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with Speakup (Wa=
-s howto run speakup/orca concurrently in ubuntu)
+On 9/3/24 9:58 AM, cstrobel crosslink.net wrote:
+> aI have been using Speakup and ORCA at the same time for about a year 
+> on Bookworm.  I have Bookworm backports active. I agree with Jason, 
+> use Pipewire.  I'm not sure why folks want to use Ubuntu any more 
+> unless they have some very specific package that isn't on Debian you 
+> may be asking for more trouble than it is worth.
+> I know I read the Debian accessibility FAQ, but I'm not sure exactly 
+> what I did off the top of my head.
+> Make sure that pipewire-pulse is running on your system by doing "ps 
+> -ef|grep pipewire" or something similar.
+>
+>
+>
+> ------------------------------------------------------------------------
+> *From:* Martin McCormick <martin.m@suddenlink.net>
+> *Sent:* Monday, September 2, 2024 6:08 PM
+> *To:* speakup@linux-speakup.org <speakup@linux-speakup.org>
+> *Subject:* Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with 
+> Speakup (Was howto run speakup/orca concurrently in ubuntu)
+> Thanks for the clarification about pipewire and why it is here.
+>
+>         I didn't realize that pulseaudio is fading into the
+> sunset as it has been around and served well for quite a few
+> years.
+>
+>         To remind those who have followed this thread today, the
+> only real problem I am talking about is minor compared with stuff
+> that is supposed to work but doesn't.
+>
+>         It looks like one should be able to get speakup to work
+> older world of pure text-based command-line consoles since there
+> are things that runa little more smoothly there than when GUI
+> tools are needed.
+>
+>         By the same token, the present implimentation of speakup
+> with gnome also does well and all I was hoping to do was have
+> both functionalities on the same system.
+>
+>         Thanks for the information that has been provided as it
+> is useful and I am still interested if there is a way to do this
+> but at least things are about 95% working.
+>
+> Martin
+>
+> "Jason J.G. White" <jason@jasonjgw.net> writes:
+> > While we're discussing clarifications, note that Pulseaudio is 
+> effectively
+> > deprecated now. Pipewire has superseded it. Also, Pipewire includes an
+> > implementation of the Pulseaudio client API, so that client applications
+> > designed for Pulseaudio still work normally under Pipewire.
+>
+>
+> ------------------------------------------------------------------------
+> *From:* Martin McCormick <martin.m@suddenlink.net>
+> *Sent:* Monday, September 2, 2024 6:08 PM
+> *To:* speakup@linux-speakup.org <speakup@linux-speakup.org>
+> *Subject:* Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with 
+> Speakup (Was howto run speakup/orca concurrently in ubuntu)
+> Thanks for the clarification about pipewire and why it is here.
+>
+>         I didn't realize that pulseaudio is fading into the
+> sunset as it has been around and served well for quite a few
+> years.
+>
+>         To remind those who have followed this thread today, the
+> only real problem I am talking about is minor compared with stuff
+> that is supposed to work but doesn't.
+>
+>         It looks like one should be able to get speakup to work
+> older world of pure text-based command-line consoles since there
+> are things that runa little more smoothly there than when GUI
+> tools are needed.
+>
+>         By the same token, the present implimentation of speakup
+> with gnome also does well and all I was hoping to do was have
+> both functionalities on the same system.
+>
+>         Thanks for the information that has been provided as it
+> is useful and I am still interested if there is a way to do this
+> but at least things are about 95% working.
+>
+> Martin
+>
+> "Jason J.G. White" <jason@jasonjgw.net> writes:
+> > While we're discussing clarifications, note that Pulseaudio is 
+> effectively
+> > deprecated now. Pipewire has superseded it. Also, Pipewire includes an
+> > implementation of the Pulseaudio client API, so that client applications
+> > designed for Pulseaudio still work normally under Pipewire.
+>
+--------------qotNF0FyDtLbjRjvYC610MvS
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 
-Thanks for the clarification about pipewire and why it is here.
-
-        I didn't realize that pulseaudio is fading into the
-sunset as it has been around and served well for quite a few
-years.
-
-        To remind those who have followed this thread today, the
-only real problem I am talking about is minor compared with stuff
-that is supposed to work but doesn't.
-
-        It looks like one should be able to get speakup to work
-older world of pure text-based command-line consoles since there
-are things that runa little more smoothly there than when GUI
-tools are needed.
-
-        By the same token, the present implimentation of speakup
-with gnome also does well and all I was hoping to do was have
-both functionalities on the same system.
-
-        Thanks for the information that has been provided as it
-is useful and I am still interested if there is a way to do this
-but at least things are about 95% working.
-
-Martin
-
-"Jason J.G. White" <jason@jasonjgw.net> writes:
-> While we're discussing clarifications, note that Pulseaudio is effectivel=
-y
-> deprecated now. Pipewire has superseded it. Also, Pipewire includes an
-> implementation of the Pulseaudio client API, so that client applications
-> designed for Pulseaudio still work normally under Pipewire.
-
-
---_000_MN2PR18MB3344FAF885B2801CAC79DD75C7932MN2PR18MB3344namp_
-Content-Type: text/html; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-<html>
-<head>
-<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
-1">
-<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
-ttom:0;} </style>
-</head>
-<body dir=3D"ltr">
-<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
-nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
-olor: rgb(0, 0, 0);">
-aI have been using Speakup and ORCA at the same time for about a year on Bo=
-okworm.&nbsp; I have Bookworm backports active. I agree with Jason, use Pip=
-ewire.&nbsp; I'm not sure why folks want to use Ubuntu any more unless they=
- have some very specific package that isn't
- on Debian you may be asking for more trouble than it is worth.</div>
-<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
-nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
-olor: rgb(0, 0, 0);">
-I know I read the Debian accessibility FAQ, but I'm not sure exactly what I=
- did off the top of my head.</div>
-<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
-nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
-olor: rgb(0, 0, 0);">
-Make sure that pipewire-pulse is running on your system by doing &quot;ps -=
-ef|grep pipewire&quot; or something similar.</div>
-<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
-nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
-olor: rgb(0, 0, 0);">
-<br>
-</div>
-<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
-nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
-olor: rgb(0, 0, 0);">
-<br>
-</div>
-<div id=3D"appendonsend"></div>
-<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
-nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
-olor: rgb(0, 0, 0);">
-<br>
-</div>
-<hr style=3D"display: inline-block; width: 98%;">
-<div id=3D"divRplyFwdMsg" dir=3D"ltr" class=3D"elementToProof"><span style=
-=3D"font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);=
-"><b>From:</b>&nbsp;Martin McCormick &lt;martin.m@suddenlink.net&gt;<br>
-</span></div>
-<div style=3D"direction: ltr; font-family: Calibri, sans-serif; font-size: =
-11pt; color: rgb(0, 0, 0);">
-<b>Sent:</b>&nbsp;Monday, September 2, 2024 6:08 PM<br>
-<b>To:</b>&nbsp;speakup@linux-speakup.org &lt;speakup@linux-speakup.org&gt;=
-</div>
-<div style=3D"direction: ltr; font-family: Calibri, sans-serif; font-size: =
-11pt; color: rgb(0, 0, 0);" class=3D"elementToProof">
-<b>Subject:</b>&nbsp;Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with=
- Speakup (Was howto run speakup/orca concurrently in ubuntu)</div>
-<div style=3D"direction: ltr;" class=3D"elementToProof">&nbsp;</div>
-<div class=3D"elementToProof" style=3D"font-size: 11pt;">Thanks for the cla=
-rification about pipewire and why it is here.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I didn't realize that pulseaudio=
- is fading into the<br>
-sunset as it has been around and served well for quite a few<br>
-years.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To remind those who have followe=
-d this thread today, the<br>
-only real problem I am talking about is minor compared with stuff<br>
-that is supposed to work but doesn't.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It looks like one should be able=
- to get speakup to work<br>
-older world of pure text-based command-line consoles since there<br>
-are things that runa little more smoothly there than when GUI<br>
-tools are needed.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; By the same token, the present i=
-mplimentation of speakup<br>
-with gnome also does well and all I was hoping to do was have<br>
-both functionalities on the same system.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thanks for the information that =
-has been provided as it<br>
-is useful and I am still interested if there is a way to do this<br>
-but at least things are about 95% working.<br>
-<br>
-Martin<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-&quot;Jason J.G. White&quot; &lt;jason@jasonjgw.net&gt; writes:<br>
-&gt; While we're discussing clarifications, note that Pulseaudio is effecti=
-vely<br>
-&gt; deprecated now. Pipewire has superseded it. Also, Pipewire includes an=
-<br>
-&gt; implementation of the Pulseaudio client API, so that client applicatio=
-ns<br>
-&gt; designed for Pulseaudio still work normally under Pipewire.<br>
-<br>
-</div>
-<div id=3D"appendonsend"></div>
-<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
-Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
-<br>
-</div>
-<hr style=3D"display: inline-block; width: 98%;">
-<div id=3D"divRplyFwdMsg" dir=3D"ltr"><span style=3D"font-family: Calibri, =
-sans-serif; font-size: 11pt; color: rgb(0, 0, 0);"><b>From:</b>&nbsp;Martin=
- McCormick &lt;martin.m@suddenlink.net&gt;<br>
-<b>Sent:</b>&nbsp;Monday, September 2, 2024 6:08 PM<br>
-<b>To:</b>&nbsp;speakup@linux-speakup.org &lt;speakup@linux-speakup.org&gt;=
-<br>
-<b>Subject:</b>&nbsp;Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with=
- Speakup (Was howto run speakup/orca concurrently in ubuntu)</span>
-<div>&nbsp;</div>
-</div>
-<div style=3D"font-size: 11pt;">Thanks for the clarification about pipewire=
- and why it is here.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I didn't realize that pulseaudio=
- is fading into the<br>
-sunset as it has been around and served well for quite a few<br>
-years.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To remind those who have followe=
-d this thread today, the<br>
-only real problem I am talking about is minor compared with stuff<br>
-that is supposed to work but doesn't.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It looks like one should be able=
- to get speakup to work<br>
-older world of pure text-based command-line consoles since there<br>
-are things that runa little more smoothly there than when GUI<br>
-tools are needed.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; By the same token, the present i=
-mplimentation of speakup<br>
-with gnome also does well and all I was hoping to do was have<br>
-both functionalities on the same system.<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thanks for the information that =
-has been provided as it<br>
-is useful and I am still interested if there is a way to do this<br>
-but at least things are about 95% working.<br>
-<br>
-Martin<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-&quot;Jason J.G. White&quot; &lt;jason@jasonjgw.net&gt; writes:<br>
-&gt; While we're discussing clarifications, note that Pulseaudio is effecti=
-vely<br>
-&gt; deprecated now. Pipewire has superseded it. Also, Pipewire includes an=
-<br>
-&gt; implementation of the Pulseaudio client API, so that client applicatio=
-ns<br>
-&gt; designed for Pulseaudio still work normally under Pipewire.<br>
-<br>
-</div>
-</body>
+<!DOCTYPE html><html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  </head>
+  <body>
+    <p>Its not just the packages, although that is part of it. The main
+      reason Ubuntu is still favored over Debian by many end-users is
+      ease of installation and upkeep. I support Linux users in STEM
+      fields. As you probably know, Linux is huge with researchers in
+      STEM fields. But they don't want to figure out how to install
+      Debian and update it. They just want their computer to work.</p>
+    <p>Personally, I run Debian. That Ubuntu automatic update system
+      gives me the willies. I don't want to click a button that says
+      &quot;Update now&quot;. But I'm not a researcher, I'm the support staff.</p>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">On 9/3/24 9:58 AM, cstrobel
+      crosslink.net wrote:<br>
+    </div>
+    <blockquote type="cite" cite="mid:MN2PR18MB3344FAF885B2801CAC79DD75C7932@MN2PR18MB3344.namprd18.prod.outlook.com">
+      
+      <style type="text/css" style="display:none;">P {margin-top:0;margin-bottom:0;}</style>
+      <div class="elementToProof" style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        aI have been using Speakup and ORCA at the same time for about a
+        year on Bookworm.&nbsp; I have Bookworm backports active. I agree
+        with Jason, use Pipewire.&nbsp; I'm not sure why folks want to use
+        Ubuntu any more unless they have some very specific package that
+        isn't on Debian you may be asking for more trouble than it is
+        worth.</div>
+      <div class="elementToProof" style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        I know I read the Debian accessibility FAQ, but I'm not sure
+        exactly what I did off the top of my head.</div>
+      <div class="elementToProof" style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        Make sure that pipewire-pulse is running on your system by doing
+        &quot;ps -ef|grep pipewire&quot; or something similar.</div>
+      <div class="elementToProof" style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        <br>
+      </div>
+      <div class="elementToProof" style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        <br>
+      </div>
+      <div class="elementToProof" style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        <br>
+      </div>
+      <hr style="display: inline-block; width: 98%;">
+      <div id="divRplyFwdMsg" dir="ltr" class="elementToProof"><span style="font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);"><b>From:</b>&nbsp;Martin
+          McCormick <a class="moz-txt-link-rfc2396E" href="mailto:martin.m@suddenlink.net">&lt;martin.m@suddenlink.net&gt;</a><br>
+        </span></div>
+      <div style="direction: ltr; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);">
+        <b>Sent:</b>&nbsp;Monday, September 2, 2024 6:08 PM<br>
+        <b>To:</b>&nbsp;<a class="moz-txt-link-abbreviated" href="mailto:speakup@linux-speakup.org">speakup@linux-speakup.org</a>
+        <a class="moz-txt-link-rfc2396E" href="mailto:speakup@linux-speakup.org">&lt;speakup@linux-speakup.org&gt;</a></div>
+      <div style="direction: ltr; font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);" class="elementToProof">
+        <b>Subject:</b>&nbsp;Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI
+        Terminals with Speakup (Was howto run speakup/orca concurrently
+        in ubuntu)</div>
+      <div style="direction: ltr;" class="elementToProof">&nbsp;</div>
+      <div class="elementToProof" style="font-size: 11pt;">Thanks for
+        the clarification about pipewire and why it is here.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I didn't realize that pulseaudio is fading into the<br>
+        sunset as it has been around and served well for quite a few<br>
+        years.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To remind those who have followed this thread today, the<br>
+        only real problem I am talking about is minor compared with
+        stuff<br>
+        that is supposed to work but doesn't.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It looks like one should be able to get speakup to work<br>
+        older world of pure text-based command-line consoles since there<br>
+        are things that runa little more smoothly there than when GUI<br>
+        tools are needed.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; By the same token, the present implimentation of speakup<br>
+        with gnome also does well and all I was hoping to do was have<br>
+        both functionalities on the same system.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thanks for the information that has been provided as it<br>
+        is useful and I am still interested if there is a way to do this<br>
+        but at least things are about 95% working.<br>
+        <br>
+        Martin<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &quot;Jason J.G. White&quot; <a class="moz-txt-link-rfc2396E" href="mailto:jason@jasonjgw.net">&lt;jason@jasonjgw.net&gt;</a> writes:<br>
+        &gt; While we're discussing clarifications, note that Pulseaudio
+        is effectively<br>
+        &gt; deprecated now. Pipewire has superseded it. Also, Pipewire
+        includes an<br>
+        &gt; implementation of the Pulseaudio client API, so that client
+        applications<br>
+        &gt; designed for Pulseaudio still work normally under Pipewire.<br>
+        <br>
+      </div>
+      <div style="font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+        <br>
+      </div>
+      <hr style="display: inline-block; width: 98%;">
+      <div id="divRplyFwdMsg" dir="ltr"><span style="font-family: Calibri, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);"><b>From:</b>&nbsp;Martin
+          McCormick <a class="moz-txt-link-rfc2396E" href="mailto:martin.m@suddenlink.net">&lt;martin.m@suddenlink.net&gt;</a><br>
+          <b>Sent:</b>&nbsp;Monday, September 2, 2024 6:08 PM<br>
+          <b>To:</b>&nbsp;<a class="moz-txt-link-abbreviated" href="mailto:speakup@linux-speakup.org">speakup@linux-speakup.org</a>
+          <a class="moz-txt-link-rfc2396E" href="mailto:speakup@linux-speakup.org">&lt;speakup@linux-speakup.org&gt;</a><br>
+          <b>Subject:</b>&nbsp;Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI
+          Terminals with Speakup (Was howto run speakup/orca
+          concurrently in ubuntu)</span>
+        <div>&nbsp;</div>
+      </div>
+      <div style="font-size: 11pt;">Thanks for the clarification about
+        pipewire and why it is here.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I didn't realize that pulseaudio is fading into the<br>
+        sunset as it has been around and served well for quite a few<br>
+        years.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To remind those who have followed this thread today, the<br>
+        only real problem I am talking about is minor compared with
+        stuff<br>
+        that is supposed to work but doesn't.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It looks like one should be able to get speakup to work<br>
+        older world of pure text-based command-line consoles since there<br>
+        are things that runa little more smoothly there than when GUI<br>
+        tools are needed.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; By the same token, the present implimentation of speakup<br>
+        with gnome also does well and all I was hoping to do was have<br>
+        both functionalities on the same system.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thanks for the information that has been provided as it<br>
+        is useful and I am still interested if there is a way to do this<br>
+        but at least things are about 95% working.<br>
+        <br>
+        Martin<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+        &quot;Jason J.G. White&quot; <a class="moz-txt-link-rfc2396E" href="mailto:jason@jasonjgw.net">&lt;jason@jasonjgw.net&gt;</a> writes:<br>
+        &gt; While we're discussing clarifications, note that Pulseaudio
+        is effectively<br>
+        &gt; deprecated now. Pipewire has superseded it. Also, Pipewire
+        includes an<br>
+        &gt; implementation of the Pulseaudio client API, so that client
+        applications<br>
+        &gt; designed for Pulseaudio still work normally under Pipewire.<br>
+        <br>
+      </div>
+    </blockquote>
+  </body>
 </html>
 
---_000_MN2PR18MB3344FAF885B2801CAC79DD75C7932MN2PR18MB3344namp_--
+--------------qotNF0FyDtLbjRjvYC610MvS--
 
