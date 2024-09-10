@@ -1,51 +1,41 @@
-Return-Path: <speakup+bounces-1215-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1216-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7AB4796CBF9
-	for <lists+speakup@lfdr.de>; Thu,  5 Sep 2024 03:02:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id A2D13974366
+	for <lists+speakup@lfdr.de>; Tue, 10 Sep 2024 21:22:41 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=suddenlink.net header.i=@suddenlink.net header.a=rsa-sha256 header.s=dkim-001 header.b=LCsjt+39;
+	dkim=pass (1024-bit key; unprotected) header.d=carmickle.com header.i=@carmickle.com header.a=rsa-sha256 header.s=2021081500 header.b=hBHlFpom;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id ECC3A3822A5; Wed, 04 Sep 2024 21:02:18 -0400 (EDT)
+	id EA60538199A; Tue, 10 Sep 2024 15:13:58 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CDD6D382068
-	for <lists+speakup@lfdr.de>; Wed, 04 Sep 2024 21:02:18 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id CA4B73809C4
+	for <lists+speakup@lfdr.de>; Tue, 10 Sep 2024 15:13:58 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EBF3B382064; Wed, 04 Sep 2024 21:02:11 -0400 (EDT)
-Received: from altprdrgo06.altice.prod.cloud.openwave.ai (altprdrgo06.altice.prod.cloud.openwave.ai [65.20.63.204])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id AFFF9382053
-	for <speakup@linux-speakup.org>; Wed, 04 Sep 2024 21:02:11 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=suddenlink.net; s=dkim-001; t=1725498131; 
-        bh=jextHMhNArinDLL7VJe4cN7dWOcf3QVGbAr8H+D3hyE=;
-        h=From:To:Subject:In-reply-to:References:MIME-Version:Content-Type:Date:Message-Id;
-        b=LCsjt+39Zm/qNGeCJEyya/FhBM21QnVjGQ8EhfPvapXFDljfcdGlsgUpD48fKKy6Js7/pS8goxVztLHQ11MFMY9H26QQ24IBtiMBi15+TSicLFrpfoGs0b+PD4EQVWpxQa/1NCy/MHdkSQQINGgjIik1TVxQDJ/KJoSM54PtrVCSeU1kTX7vlT+ZsuKDoYSqhNh4pNHLy5Xz2PLputEyU3q2Cm008fvT5K5IrEx6pRNzOnMSjieiAfPXJ+p42GCkp+o0pRZvNzy1wH5WXXxN5uFIqtZWQoaQmDgg8dDU9ZuITlyMgDxOyvipdE2oNaJb0E+Yw6/7uF074YuLHZzpEw==
-X-RG-VS-CS: clean
-X-RG-VS-SC: 0
-X-RG-VS: Clean
-X-Originating-IP: [47.217.109.117]
-X-RG-Env-Sender: martin.m@suddenlink.net
-X-RG-Rigid: 66CF3E2A0119360D
-X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgeeftddrudehkedggedvucetufdoteggodetrfdotffvucfrrhhofhhilhgvmecutefnvffkvefgfgfupdggtfgfnhhsuhgsshgtrhhisggvpdfqfgfvnecuuegrihhlohhuthemuceftddtnecunecujfgurhephffvufgjfhggtgesthdttddttddtvdenucfhrhhomhepfdforghrthhinhcuofgtvehorhhmihgtkhdfuceomhgrrhhtihhnrdhmsehsuhguuggvnhhlihhnkhdrnhgvtheqnecuggftrfgrthhtvghrnhepgfeijedtffevtdfftdfgkedvueeftedvveelffegjeetueeltdefgeeutdeihefgnecukfhppeegjedrvddujedruddtledruddujeenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhephhgvlhhopeifsgehrghgiidpihhnvghtpeegjedrvddujedruddtledruddujedpmhgrihhlfhhrohhmpehmrghrthhinhdrmhesshhuugguvghnlhhinhhkrdhnvghtpdhnsggprhgtphhtthhopedupdhrtghpthhtohepshhpvggrkhhupheslhhinhhugidqshhpvggrkhhuphdrohhrghdprghuthhhpghushgvrhepmhgrrhhtihhnrdhmsehsuhguuggvnhhlihhnkhdrnhgvthdpghgvohfkrfepfgfupdfovfetjfhoshhtpegrlhhtphhrughrghhotdei
-X-RazorGate-Vade-Verdict: clean 0
-X-RazorGate-Vade-Classification: clean
-Received: from wb5agz (47.217.109.117) by altprdrgo06.altice.prod.cloud.openwave.ai (5.8.812) (authenticated as martin.m@suddenlink.net)
-        id 66CF3E2A0119360D for speakup@linux-speakup.org; Wed, 4 Sep 2024 21:02:11 -0400
-Received: from martin by wb5agz with local (Exim 4.96)
-	(envelope-from <martin.m@suddenlink.net>)
-	id 1sm0sv-0002Gf-0u
-	for speakup@linux-speakup.org;
-	Wed, 04 Sep 2024 20:02:05 -0500
-From: "Martin McCormick" <martin.m@suddenlink.net>
-To: speakup@linux-speakup.org
-Subject: Re: SPFUNSUPPORTED MAY BE MALICIOUS CLI Terminals with Speakup (Was howto run speakup/orca concurrently in ubuntu)
-In-reply-to: <Ztjd01MJ4P4u7Zuz@titan>
-References: <b47611eb-67aa-5c99-07b8-3b31b4168e67@csir.co.za> <e7b27ee1-63bd-430c-8d66-d6dc9e9829ec@math.wisc.edu> <E1slBYr-0003js-0w@wb5agz> <cb2e836c-c6ce-aa54-a752-3a0d56126c7a@reisers.ca> <8aaba50a-94aa-4171-afa0-71530ea1290c@jasonjgw.net> <E1slFDa-0001Hb-0R@wb5agz> <Zta33F80vCUd8tBU@titan> <E1slZoq-0004cu-22@wb5agz> <ZtduSMS0hyMMjZQZ@titan> <E1slxjW-0001nZ-2d@wb5agz> <Ztjd01MJ4P4u7Zuz@titan>
-Comments: In-reply-to Jookia <contact@jookia.org>
-   message dated "Thu, 05 Sep 2024 08:23:15 +1000."
+	id F17CB3809C4; Tue, 10 Sep 2024 15:13:51 -0400 (EDT)
+Received: from bullseyemail.carmickle.com (bullseyemail.carmickle.com [173.255.224.66])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A46CC3809C4
+	for <speakup@linux-speakup.org>; Tue, 10 Sep 2024 15:13:51 -0400 (EDT)
+Received: from smtpclient.apple (pool-96-252-121-51.bstnma.fios.verizon.net [96.252.121.51])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by bullseyemail.carmickle.com (Postfix) with ESMTPSA id DE74A8F7D16B;
+	Tue, 10 Sep 2024 19:13:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=carmickle.com;
+	s=2021081500; t=1725995600;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=tIGPkYabA4eAbKpOaO+5I74HS9eomvf96bKdR4xaZM4=;
+	b=hBHlFpomQHCOvEDET1B1N2hBeGkFAthlZyjFzCNUSab3rHs5mk7CXxRBSIDBbkboVUuw4L
+	LZVRn3mo/rajaMSc3Els2Xnt3nhq7T/aTL+HRteQLXB7vHMIdxhIHMASK6K9Q8SmnSH1NO
+	8cScYB/xu5TdfltahNIfXY2DlhZVVok=
+Content-Type: text/plain;
+	charset=us-ascii
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -54,62 +44,107 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-ID: <8719.1725498125.1@wb5agz.lan>
-Date: Wed, 04 Sep 2024 20:02:05 -0500
-Message-Id: <E1sm0sv-0002Gf-0u@wb5agz>
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3731.700.6.1.2\))
+Subject: Re: speakup crashing
+From: Frank Carmickle <frank@carmickle.com>
+In-Reply-To: <a7fea02a-cfc1-34e1-315a-86c03a63ec17@reisers.ca>
+Date: Tue, 10 Sep 2024 15:13:19 -0400
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Content-Transfer-Encoding: quoted-printable
+Message-Id: <6D90B2FB-A20E-4A94-88EE-16C609812A9D@carmickle.com>
+References: <a25a455d-8a84-f0ad-826d-5ba67f14ee99@panix.com>
+ <b2ea57df-4d66-e408-4179-a220e4d2b9d3@reisers.ca>
+ <c152034f-942c-d477-04ab-58903eae7117@panix.com>
+ <a7fea02a-cfc1-34e1-315a-86c03a63ec17@reisers.ca>
+To: Kirk Reiser <kirk@reisers.ca>
+X-Mailer: Apple Mail (2.3731.700.6.1.2)
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-The truth is that I was kind of stupid on several counts.  Read on.
-Jookia <contact@jookia.org> writes:
-> Did the non-GUI consoles work when you followed my instructions?
+Greetings Kirk Et Al,
 
-No they never worked and here is one reason why.  I was
-confused/stupid.  Since speakup and espeakup both have the same
-text-to-speech engine, I thought that what was installed which is
-espeakup and serves orca was going to somehow get input from both
-the GUI and non-GUI environments especially since only one speech
-stream would be active at any given time.  As I think about it,
-that's not a good design because one of the GUI terminals might
-receive some text while one was actually on one of the non-GUI
-consoles so at best that would be confusing to hear and at worst,
-it would just be a garble of junk.  You continue:
-> If so then it's probably that you needed to blindly login as espeakup was
-> running as your user but you didn't have Orca running as your user, it
-> was instead running as the system user.
-> 
-> The short answer is that you're not going to be able to have speakup and
-> Orca read login prompts. You have to pick one and blindly type in the
-> other. There's no easy way to fix this on a modern Linux desktop.
-> 
-> Jookia.
+Does
 
-	My thanks to everybody who contributed ideas here.
+killall -1 espeakup
 
-	My first experience with unix or a unix-like operating
-system was in the Summer of 1989 when I was transitioning from
-being a repair technician for the university's Audio Visual
-Center to a worker in what then was called the University
-Computer Center Data Communications Group.
+work for you, when espeakup hangs? It works for me.
 
-	Just to remind everyone, Unix with an upper case U is the
-original AT&T operating system that Bell Labs spawned in 1968 at
-the dawn of what became the internet.  What I was using in 1989
-was DEC Ultrix which was Digital Equipment Company's
-implementation of AT&T Unix and, if memory serves me, it was more
-BSD-like as in Berkeley Software Domain.  FreeBSD is probably
-closer to that than Linux but all these versions of unixen are
-called unix-like OS's because they look and feel a lot like the
-original AT&T product with the capital U.
+Are you seeing espeakup hang on bare metal systems? I see it hang quite =
+frequently when running on a virtual machine, but I have not seen it =
+have on bare metal as of yet. I spend a lot less time running espeakup =
+on bare metal, so that may be why.
 
-	I can say I have 35 years of experience with unix but
-since it is used in so many different ways by so many different
-people, many of you know far more than I do so we all have our
-favorite things we like to do and other areas where we don't know
-enough to stay out of trouble.
+There was quite some discussion about this issue, on the Debian =
+Accessibility list, over the last year. I'd really like to see this =
+issue get sorted. Any thoughts are greatly appreciated.
 
-Thanks for all the help.
+Best,
+--FC
 
-Martin McCormick	amateur radio call WB5AGZ
+On Aug 17, 2024, at 16:46, Kirk Reiser <kirk@reisers.ca> wrote:
+>=20
+> Okay, try this it's basically a one liner. The reason you can't
+> restart espeakup is because it doesn't actually die, so it has to be
+> killed off before restarting it.
+>=20
+> ```
+> #!/bin/bash
+>=20
+> killall -9 espeakup; espeakup
+>=20
+> ```
+>=20
+> My bash script is named respeakup but you can name it anything you =
+like, of course.
+>=20
+>  Kirk
+>=20
+> On Sat, 17 Aug 2024, Jude DaShiell wrote:
+>=20
+>> It's entirely possible espeakup is crashing.  When this happens, I =
+can't
+>> restart espeakup either so end up having to reboot to regain control =
+of
+>> the system.
+>>=20
+>>=20
+>> --
+>> Jude <jdashiel at panix dot com>
+>> "There are four boxes to be used in defense of liberty:
+>> soap, ballot, jury, and ammo.
+>> Please use in that order."
+>> Ed Howdershelt 1940.
+>>=20
+>> On Sat, 17 Aug 2024, Kirk Reiser wrote:
+>>=20
+>>> Hi Jude: This may be a silly question, but are you sure it's speakup
+>>> crashing? Often, espeakup dies here and so I have a simple script to
+>>> kill it off and restart espeakup. I haven''t had speakup itself hang
+>>> the system for quite a while.
+>>>=20
+>>>  Kirk
+>>>=20
+>>> On Sat, 17 Aug 2024, Jude DaShiell wrote:
+>>>=20
+>>>> Every so often speakup crashes on my computer.
+>>>> I am running a recent version of Jenux so systemd is in use here.
+>>>> What I would like to know is a procedure once the system has been =
+rebooted
+>>>> to locate any crash messages speakup may have left in logs.  =
+pipewire is
+>>>> running the sound system along with alsa here and there's necessary
+>>>> pulseaudio artifacts pipewire uses on the system.
+>>>>=20
+>>>>=20
+>>>> --
+>>>> Jude <jdashiel at panix dot com>
+>>>> "There are four boxes to be used in defense of liberty:
+>>>> soap, ballot, jury, and ammo.
+>>>> Please use in that order."
+>>>> Ed Howdershelt 1940.
+>>>>=20
+>>>=20
+>>>=20
+>>=20
+>=20
+
 
