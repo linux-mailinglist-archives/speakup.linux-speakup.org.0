@@ -1,60 +1,63 @@
-Return-Path: <speakup+bounces-1219-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1220-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1B6B7975ADA
-	for <lists+speakup@lfdr.de>; Wed, 11 Sep 2024 21:31:44 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1726083091;
-	bh=dG3qMwGY2lxZBofW+Y3erFWEmS3WXM+B1wN1+9iRsQk=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
-	b=bJDtt4l3p8pfl1dzJdZFEyr68GcoGzHRzpsimz5Ght95ZTieWXWB0LAvr/FmHivhO
-	 fSKGReXgC/OvvpMXTX5Z8fVJGJRziz6ChfMACVNXQe47FIDEsw7gC2xmWfsMwrK7nc
-	 GTPCcGzZweE2SrB1OOiiEhCAEjoLPccFbufBEmOU=
+	by mail.lfdr.de (Postfix) with ESMTP id 6A8489D9BD8
+	for <lists+speakup@lfdr.de>; Tue, 26 Nov 2024 17:52:01 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=aol.com header.i=@aol.com header.a=rsa-sha256 header.s=a2048 header.b=oa2GxG1+;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7F1BB3819AD; Wed, 11 Sep 2024 15:31:31 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1726083091;
-	bh=dG3qMwGY2lxZBofW+Y3erFWEmS3WXM+B1wN1+9iRsQk=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
-	b=bJDtt4l3p8pfl1dzJdZFEyr68GcoGzHRzpsimz5Ght95ZTieWXWB0LAvr/FmHivhO
-	 fSKGReXgC/OvvpMXTX5Z8fVJGJRziz6ChfMACVNXQe47FIDEsw7gC2xmWfsMwrK7nc
-	 GTPCcGzZweE2SrB1OOiiEhCAEjoLPccFbufBEmOU=
+	id 6478D3825AF; Tue, 26 Nov 2024 11:51:49 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 5EFA1380686
-	for <lists+speakup@lfdr.de>; Wed, 11 Sep 2024 15:31:31 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 4489E38257D
+	for <lists+speakup@lfdr.de>; Tue, 26 Nov 2024 11:51:49 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1726083084;
-	bh=dG3qMwGY2lxZBofW+Y3erFWEmS3WXM+B1wN1+9iRsQk=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
-	b=q+u0hR7A/8hfJS2I4yWJVHR8pGG5hUqLUzny4+tmayLCU1z2e2feTT4VWETAxOUHX
-	 1qqqgs58XX4icNyqfcdOuWX5VfxVG3bX8iQDyCeSd/qExLr6L4Dng27gvZFBqBK8m7
-	 4XdeNBIe6w11075zKWhJiMokOXHBtD/fx5Ae9gdA=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6736B381960; Wed, 11 Sep 2024 15:31:24 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1726083084;
-	bh=dG3qMwGY2lxZBofW+Y3erFWEmS3WXM+B1wN1+9iRsQk=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
-	b=q+u0hR7A/8hfJS2I4yWJVHR8pGG5hUqLUzny4+tmayLCU1z2e2feTT4VWETAxOUHX
-	 1qqqgs58XX4icNyqfcdOuWX5VfxVG3bX8iQDyCeSd/qExLr6L4Dng27gvZFBqBK8m7
-	 4XdeNBIe6w11075zKWhJiMokOXHBtD/fx5Ae9gdA=
-Received: from localhost (localhost [IPv6:::1])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 0B308380686;
-	Wed, 11 Sep 2024 15:31:24 -0400 (EDT)
-Date: Wed, 11 Sep 2024 15:31:23 -0400 (EDT)
-From: Kirk Reiser <kirk@reisers.ca>
-To: Frank Carmickle <frank@carmickle.com>
-cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: speakup crashing
-In-Reply-To: <BC5C0DB8-5CF1-4FD8-9946-5862B8DCE1DE@carmickle.com>
-Message-ID: <721bc55d-9d0a-d66c-152f-697067d0e94d@reisers.ca>
-References: <a25a455d-8a84-f0ad-826d-5ba67f14ee99@panix.com> <b2ea57df-4d66-e408-4179-a220e4d2b9d3@reisers.ca> <c152034f-942c-d477-04ab-58903eae7117@panix.com> <a7fea02a-cfc1-34e1-315a-86c03a63ec17@reisers.ca> <6D90B2FB-A20E-4A94-88EE-16C609812A9D@carmickle.com>
- <774a987a-fe4c-bd11-9c7f-9b4d06d08ce4@reisers.ca> <BC5C0DB8-5CF1-4FD8-9946-5862B8DCE1DE@carmickle.com>
+	id 6B1AF38257E; Tue, 26 Nov 2024 11:51:42 -0500 (EST)
+Received: from sonic311-24.consmr.mail.ne1.yahoo.com (sonic311-24.consmr.mail.ne1.yahoo.com [66.163.188.205])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id C3D39381952
+	for <speakup@linux-speakup.org>; Tue, 26 Nov 2024 11:51:41 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aol.com; s=a2048; t=1732639899; bh=FFwLCQoKpUQGSap5CG5IankhlmrRNde0im+9P8ZZbNg=; h=Date:To:From:Subject:References:From:Subject:Reply-To; b=oa2GxG1+ekkEGzSO+/KMx9nNO1mITt2jj/xnLc1ILmH4AvHsEHMEiadNiPaO9ONWiT7QCIWhP5/Qg5FngxgE/sL12NP8mkdCgRzC/+bX2+X7o/+IhTddg4x7Ih+sPl99wzKV5Lz9WSapQFavc0+0wpqLCGLpcmgNRcmrnSAX0Joo3eRAZspDyF2OJ1xacSleY4VYS0fFq2vn11MkR4L51FsE0rPkBKz7OYEJy4mDLUhj4rTkXa7OkeRpdIhcQd6KFJlF7LOohhIaqA6Yw9E7m/kD5TZkV7QGMz5rmZ618e/4aIVdLp/JtCAuN/ZCYuFt4R9bNLHVEdFEum4kuTyj8A==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1732639899; bh=Jd1xj534JZksjtMbNY1I1OnEc97FExHAFgWd4bzQLOn=; h=X-Sonic-MF:Date:To:From:Subject:From:Subject; b=ZxFRu0hMXVmYjXO4q+dfMMTbgU3Y1Fc/P8OAwXoxvIKxmEJlIaYi/wVj0M02KuY3nNiI6ShX6e3cRHbbCHgMtbRkJjAHjBZ6hf18ihYeeOmzSRbrWe7SrUPNE/MFNHDmCzd7hdeiLTxmMyR0vzYJuXDA7pP9RWFStwhBNX6lsWiuCCO+r3PrizgH4wkdo75QvmLit8OWyL6uM7VZb/OONrXrN/sukqUEweEDAZJCr28g700Qy6XyQ8n97aRKdUe18y9SfgGiBLlh3lLaTOTPmJsQDrTNw1ZnnF0LSMXFWNsqY9RXlsowTJEZuCvP3ZuVZcqzlfb4rw8pnCkpEHbfHQ==
+X-YMail-OSG: 778YM0wVM1kQ8lcbMRJ2jdH9edU.ElFtTHSiCzWWsTlHR2MycefY40msGQKf4TT
+ u2gJuZMHNioFAT8wgaZhlavwAe9pbOBFBWrlEfW0lWFj_3S1q6I7EmH4VwfoR6y2Dds5cUAYbARz
+ 3AJr7FYyr0QbogLygJ1AQFj7R7MtfrAAnh0B8c1ZJYOdwWuXhB071VG6AlpDaT2mDN.sExNnnBro
+ bjNpwJIVb2OIWp6VgFj13MNxGWiWEeMojHJYn6c0iaRuJM36GF9q.51AYGbv5OAvNe9K69B9aTx0
+ ZIBd2K0lQAy1QMk2q8q5jt6yS3pMSzpY4NfPpO.gPKn3qoEP1CYRLZDtfMl5RUMy04t0HnC5Ry8d
+ _0zwIraR18OlWmA1kXb3jvYkCTAe7fJ40iiR9oEC14xfMvwYeQbkHiPi98v0ZGTeqoImMjCgpPfY
+ 95mlAVSm_YpMzRE5Db8v23WAkTeVXBojzWijvIaVfzOE2kxWr6sOGF7uGfzkuDHYUXJEQ2WhgOqi
+ zruP7zu8_XfTnvZiuoKnekVAFep2_fSxnc6oCmzDt7KPTVva0IMItCFm0a0IO2L6g6mS_ZDNFxak
+ nK2iG5GMQNkQHKrLHdlc5fNqL1G4Gbr_2oDv0KYYc3jGZkerY3zdpfKrIlAoY.Mg4oc7rP2Il9Dm
+ fNlupP6QLfX1G8Uig9uZlxMJ9b4XRkREzjqPGs59Hftwkk926hRlsNNCakmnu0XZ7aFSLcjXl9Ly
+ VWymUSMYio5yVVUU8Q2nQhOgXcLc8te.bYzumZYxiFcoSJCEkRnK5lg3fen4sLrVMyyWSlTZ3Rsb
+ kCYrBZxfHw5VV0WisgpzOYy.OHoL4fsHcFf2OHFzRmLwoP6g9Bt.bXD7WsTgTEudQPMGC.uVZCFG
+ 4M_hv_Fp3Ff1gSYLWDaN4ahZn9eL1OVJP0VAREK7z2BfZSsWzSfMWsrPLklP3fgov5CizguNVRZM
+ Cpm9O_xu4z7yszlpM4.hxBN0TQYhFx9Z7E72GqTaPUYCCOopaf98T_eKVsO0hVmh.V7zp.pQfCiT
+ OynAMnu6WynIokibueox82IMbBbxg2mLwX4iSa_QNNi6c0SgjN.zb87j3U0Dtj8oYk0PoH5IvZ6c
+ tcPiN0..AX_8PA5BgivQbZSuYVBMtW9xcTjZRA_D6ohSAa_t.w7Q_xNddttS4RWglvCVxDaDX4n8
+ krdF7qIqlVBn5B1SGJtpO0.XXpJ9MIo7rLl6FD9ffxgAkDqLg3PCtz7sS.G3hJMG8MFPr6bcol9c
+ AXMgpMm8XM7j_qjEV1mbiVXh1e.NavXE9q_RU48qUGbXcpEIJ8TShZZ9fniG52rQ43AvOPLbX.sj
+ 1tRuQgvOG4x3Z6QKO584WvzoDqH3.WghbCJHxlPqyauJUFNtuSZI3JY7zscf9nJYrWb.PDEjq3Xf
+ JLtATqWjX.SiLXAXwfR_vyHsaZqwMy6l7ypRvs2r_HAGlt3il4CnQUHsDPx1xEWWmtg7r5frc5Vr
+ JYhVHsKkc1MfIK0nGEHvFDuXYZzXAGGUuqdENmhMl6qzKZoifUqnX6bBQt5szDqTZsXlQPlFWegJ
+ d7burw0bDhS56J4RwG4m4oZihl5rtWbV8jgDbQTxcVT8vFod1bCpxRf.fAj4ifmrMuM0IJOn1Q7v
+ egK1aNdoZZA.O9HuFYqyKCwZ5FIdl5_4oG9.L3rXrNfEUpNJLMiHh3kL.adYl8XYBJS20frl5s25
+ Wbd5aVGc8IAaM_0Uf8zH25jzmWl2XuhdB0aROOyz4E.f.f1gxrztE4FKe63kmSUvVCBssEYAjsDU
+ HL4byrCRBd09LEmoITdQWcR9FKn_HTCAtSawbzoN7_J2gg4Plc5bxupxQ5VZn7dcasMzGI_Q6dHD
+ ym.fV7yxs144_CLr_yiXc_Oh0aPA8fj_cCWaFCQg.rH9Nt2dNVcGlETXnSPxrHBAa1Oi4_0WO.j3
+ 55uKrAX79nmp2UpvtKj8s2q_0TxGLuEn7c..Wi6mA6ctaiMm5jDITr3MOPmw.whBdXAabPDd57EW
+ LYXj7LHlsPfXmqQss8E2hWLP4GJiT3PbSRVJ00ANApQrCAxSONLxG.AwVQAc3stlCcWdX059s0hw
+ aDvBWiDPy2w1YRoRQFBQvKKnW04h16Mmz4G.joR3c5qdML0kGbqJqX1unwNbG8bEp5pmruzohvut
+ JIJXr8yMSdzbdNfhAxPuTUgmzrWGey30OX15N5lTeMnypl4e_dLYExmFSpeYpgdhQsgo-
+X-Sonic-MF: <kb8aey0@aol.com>
+X-Sonic-ID: 442f26cf-1e36-41a4-8546-0f278c03ea1f
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic311.consmr.mail.ne1.yahoo.com with HTTP; Tue, 26 Nov 2024 16:51:39 +0000
+Received: by hermes--production-gq1-5dd4b47f46-5kxd4 (Yahoo Inc. Hermes SMTP Server) with ESMTPA ID d288bea968a46ea6d3784e51add35fa1;
+          Tue, 26 Nov 2024 16:51:34 +0000 (UTC)
+Message-ID: <f283de6f-885c-434e-ae2c-9e35699b849b@aol.com>
+Date: Tue, 26 Nov 2024 08:51:32 -0800
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -64,115 +67,22 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII; format=flowed
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: speakup@linux-speakup.org
+From: Mike Coulombe <kb8aey0@aol.com>
+Subject: dosemu
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+References: <f283de6f-885c-434e-ae2c-9e35699b849b.ref@aol.com>
+X-Mailer: WebService/1.1.22941 mail.backend.jedi.jws.acl:role.jedi.acl.token.atz.jws.hermes.aol
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I have not seen it and I don't run espeakup on a virtual machine as
-you predict. You may want to ask Ty and Chris directly on the mumble
-server though. at mumble.the-brannons.com:6473.
+Hi, I'm trying to use dosemu under linux to play some of the old text 
+based games. It works fine other than one issue, after a few moves lines 
+are repeated. Has anyone else had this issue? if so, have you found a 
+solution?
 
-   Kirk
+Regards.
 
-On Wed, 11 Sep 2024, Frank Carmickle wrote:
-
-> Hi Kirk,
->
->> On Sep 10, 2024, at 16:59, Kirk Reiser <kirk@reisers.ca> wrote:
->>
->> Hi Frank: My issue has been that espeakup doesn't start on boot and
->> hasn't for the last couple of years. Just in the past few days Chris
->> and Tyler have been helping me and I think we have a work around which
->> I've been testing for a couple days now. It looks pretty consistant so
->> far.
->
-> Interesting. I have not had this issue. The systemd unit, that has shipped with Debian versions, for years now, has worked for me.
->
-> From what you are saying you have not seen the issue that I am having. I take it you are not running espeakup on a virtual machine?
->
-> Best,
-> --FC
->
->>
->>  Kirk
->>
->> On Tue, 10 Sep 2024, Frank Carmickle wrote:
->>
->>> Greetings Kirk Et Al,
->>>
->>> Does
->>>
->>> killall -1 espeakup
->>>
->>> work for you, when espeakup hangs? It works for me.
->>>
->>> Are you seeing espeakup hang on bare metal systems? I see it hang quite frequently when running on a virtual machine, but I have not seen it have on bare metal as of yet. I spend a lot less time running espeakup on bare metal, so that may be why.
->>>
->>> There was quite some discussion about this issue, on the Debian Accessibility list, over the last year. I'd really like to see this issue get sorted. Any thoughts are greatly appreciated.
->>>
->>> Best,
->>> --FC
->>>
->>> On Aug 17, 2024, at 16:46, Kirk Reiser <kirk@reisers.ca> wrote:
->>>>
->>>> Okay, try this it's basically a one liner. The reason you can't
->>>> restart espeakup is because it doesn't actually die, so it has to be
->>>> killed off before restarting it.
->>>>
->>>> ```
->>>> #!/bin/bash
->>>>
->>>> killall -9 espeakup; espeakup
->>>>
->>>> ```
->>>>
->>>> My bash script is named respeakup but you can name it anything you like, of course.
->>>>
->>>> Kirk
->>>>
->>>> On Sat, 17 Aug 2024, Jude DaShiell wrote:
->>>>
->>>>> It's entirely possible espeakup is crashing.  When this happens, I can't
->>>>> restart espeakup either so end up having to reboot to regain control of
->>>>> the system.
->>>>>
->>>>>
->>>>> --
->>>>> Jude <jdashiel at panix dot com>
->>>>> "There are four boxes to be used in defense of liberty:
->>>>> soap, ballot, jury, and ammo.
->>>>> Please use in that order."
->>>>> Ed Howdershelt 1940.
->>>>>
->>>>> On Sat, 17 Aug 2024, Kirk Reiser wrote:
->>>>>
->>>>>> Hi Jude: This may be a silly question, but are you sure it's speakup
->>>>>> crashing? Often, espeakup dies here and so I have a simple script to
->>>>>> kill it off and restart espeakup. I haven''t had speakup itself hang
->>>>>> the system for quite a while.
->>>>>>
->>>>>> Kirk
->>>>>>
->>>>>> On Sat, 17 Aug 2024, Jude DaShiell wrote:
->>>>>>
->>>>>>> Every so often speakup crashes on my computer.
->>>>>>> I am running a recent version of Jenux so systemd is in use here.
->>>>>>> What I would like to know is a procedure once the system has been rebooted
->>>>>>> to locate any crash messages speakup may have left in logs.  pipewire is
->>>>>>> running the sound system along with alsa here and there's necessary
->>>>>>> pulseaudio artifacts pipewire uses on the system.
->>>>>>>
->>>>>>>
->>>>>>> --
->>>>>>> Jude <jdashiel at panix dot com>
->>>>>>> "There are four boxes to be used in defense of liberty:
->>>>>>> soap, ballot, jury, and ammo.
->>>>>>> Please use in that order."
->>>>>>> Ed Howdershelt 1940.
->>>>>>>
->>>>>>
->>>>>>
->>>>>
->>>>
->>>
->
 
