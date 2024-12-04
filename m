@@ -1,38 +1,51 @@
-Return-Path: <speakup+bounces-1221-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1222-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B7B929D9D1E
-	for <lists+speakup@lfdr.de>; Tue, 26 Nov 2024 19:09:12 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id C76B59E480C
+	for <lists+speakup@lfdr.de>; Wed,  4 Dec 2024 23:41:54 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2C5C138258A; Tue, 26 Nov 2024 13:09:06 -0500 (EST)
+	id 7472B3825A1; Wed, 04 Dec 2024 17:34:33 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 19F1538196A
-	for <lists+speakup@lfdr.de>; Tue, 26 Nov 2024 13:09:06 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 60556381906
+	for <lists+speakup@lfdr.de>; Wed, 04 Dec 2024 17:34:33 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6405F38257D; Tue, 26 Nov 2024 13:09:02 -0500 (EST)
-Received: from atlas.bondproducts.com (atlas.bondproducts.com [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 491D038196A
-	for <speakup@linux-speakup.org>; Tue, 26 Nov 2024 13:09:02 -0500 (EST)
-Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id 1E51240508;
-	Tue, 26 Nov 2024 13:09:01 -0500 (EST)
-Received: by users.shellworld.net (Postfix, from userid 1005)
-	id D549B1001BD; Tue, 26 Nov 2024 13:09:00 -0500 (EST)
+	id 9A530381909; Wed, 04 Dec 2024 17:34:29 -0500 (EST)
+Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 74C7B381905
+	for <speakup@linux-speakup.org>; Wed, 04 Dec 2024 17:34:29 -0500 (EST)
 Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id D28501001B8;
-	Tue, 26 Nov 2024 13:09:00 -0500 (EST)
-Date: Tue, 26 Nov 2024 13:09:00 -0500 (EST)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Mike Coulombe <kb8aey0@aol.com>
-cc: speakup@linux-speakup.org
-Subject: Re: dosemu
-In-Reply-To: <f283de6f-885c-434e-ae2c-9e35699b849b@aol.com>
-Message-ID: <Pine.LNX.4.64.2411261307460.521231@users.shellworld.net>
-References: <f283de6f-885c-434e-ae2c-9e35699b849b.ref@aol.com>
- <f283de6f-885c-434e-ae2c-9e35699b849b@aol.com>
+	by sonata.ens-lyon.org (Postfix) with ESMTP id 09670A2003;
+	Wed,  4 Dec 2024 23:34:22 +0100 (CET)
+Received: from sonata.ens-lyon.org ([127.0.0.1])
+	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id cBM__F55PESV; Wed,  4 Dec 2024 23:34:21 +0100 (CET)
+Received: from begin.home (aamiens-653-1-40-48.w83-192.abo.wanadoo.fr [83.192.199.48])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 4F43BA1FFD;
+	Wed,  4 Dec 2024 23:34:20 +0100 (CET)
+Received: from samy by begin.home with local (Exim 4.98)
+	(envelope-from <samuel.thibault@ens-lyon.org>)
+	id 1tIxwq-00000003GVc-1GEa;
+	Wed, 04 Dec 2024 23:34:20 +0100
+Date: Wed, 4 Dec 2024 23:34:20 +0100
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: liujing <liujing@cmss.chinamobile.com>
+Cc: w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
+	masahiroy@kernel.org, nicolas@fjasle.eu, speakup@linux-speakup.org,
+	linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] speakup: Fix the wrong format specifier
+Message-ID: <Z1DY7PPuTA0y86ey@begin>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+	liujing <liujing@cmss.chinamobile.com>, w.d.hubbs@gmail.com,
+	chris@the-brannons.com, kirk@reisers.ca, masahiroy@kernel.org,
+	nicolas@fjasle.eu, speakup@linux-speakup.org,
+	linux-kernel@vger.kernel.org
+References: <20241204150303.8219-1-liujing@cmss.chinamobile.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -42,25 +55,37 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <20241204150303.8219-1-liujing@cmss.chinamobile.com>
+Organization: I am not organized
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Speaking of DOS text games, anyone have a copy of the Holiday edition of 
-Hangman?
-I think mine is still on 5.25 floppy.
-Cheers,
+liujing, le mer. 04 déc. 2024 23:03:03 +0800, a ecrit:
+> Make a minor change to eliminate a static checker warning. The type
+> of '(unsigned int)kp[i]' is unsigned int, so the correct format specifier should be
+> %u instead of %d.
+> 
+> Signed-off-by: liujing <liujing@cmss.chinamobile.com>
 
+Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
+Thanks!
 
-On Tue, 26 Nov 2024, Mike Coulombe wrote:
-
-> Hi, I'm trying to use dosemu under linux to play some of the old text based 
-> games. It works fine other than one issue, after a few moves lines are 
-> repeated. Has anyone else had this issue? if so, have you found a solution?
->
-> Regards.
->
->
->
->
+> diff --git a/drivers/accessibility/speakup/genmap.c b/drivers/accessibility/speakup/genmap.c
+> index 0882bab10fb8..9bd78e1f023b 100644
+> --- a/drivers/accessibility/speakup/genmap.c
+> +++ b/drivers/accessibility/speakup/genmap.c
+> @@ -153,7 +153,7 @@ main(int argc, char *argv[])
+>  			continue;
+>  		printf("\n\t%d,", lc);
+>  		for (i = 0; i < max_states; i++)
+> -			printf(" %d,", (unsigned int)kp[i]);
+> +			printf(" %u,", (unsigned int)kp[i]);
+>  	}
+>  	printf("\n\t0, %d\n", map_ver);
+>  
+> -- 
+> 2.27.0
 
