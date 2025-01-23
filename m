@@ -1,32 +1,38 @@
-Return-Path: <speakup+bounces-1231-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1232-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id CD311A19B02
-	for <lists+speakup@lfdr.de>; Wed, 22 Jan 2025 23:40:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 7CC8AA1A102
+	for <lists+speakup@lfdr.de>; Thu, 23 Jan 2025 10:43:23 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=up0+/mBP;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3B9D03818EC; Wed, 22 Jan 2025 17:40:24 -0500 (EST)
+	id 22AE93820F4; Thu, 23 Jan 2025 04:43:22 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 24F353818EC
-	for <lists+speakup@lfdr.de>; Wed, 22 Jan 2025 17:40:24 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0175F38073C
+	for <lists+speakup@lfdr.de>; Thu, 23 Jan 2025 04:43:22 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6DF3D3818FD; Wed, 22 Jan 2025 17:40:20 -0500 (EST)
-Received: from smtprelay06.ispgateway.de (smtprelay06.ispgateway.de [80.67.31.101])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 1FAE33818A1
-	for <speakup@linux-speakup.org>; Wed, 22 Jan 2025 17:40:20 -0500 (EST)
-Received: from [77.22.216.110] (helo=[10.19.10.1])
-	by smtprelay06.ispgateway.de with esmtpsa  (TLS1.2) tls TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-	(Exim 4.98)
-	(envelope-from <chrys@linux-a11y.org>)
-	id 1tajOQ-000000004xk-153O
-	for speakup@linux-speakup.org;
-	Wed, 22 Jan 2025 23:40:14 +0100
-Content-Type: multipart/alternative;
- boundary="------------4GQuDWwgt0uuyAELXgBQtDI3"
-Message-ID: <9ee14d99-9197-4560-a97a-73dd8d4fc89a@linux-a11y.org>
-Date: Wed, 22 Jan 2025 23:40:13 +0100
+	id 322533818D8; Thu, 23 Jan 2025 04:43:15 -0500 (EST)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+	by befuddled.reisers.ca (Postfix) with ESMTP id E018738073C
+	for <speakup@linux-speakup.org>; Thu, 23 Jan 2025 04:43:13 -0500 (EST)
+Received: from [192.168.1.186] (212-194-64-62.abo.bbox.fr [212.194.64.62])
+	by darkstar.slint.fr (Postfix) with ESMTPSA id 7898662B68
+	for <speakup@linux-speakup.org>; Thu, 23 Jan 2025 09:42:45 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+	t=1737621765; bh=hKECD6n/Mrlrp8zSYahKX0V0qSDRsgznrCBSEPeacLM=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=up0+/mBPDaM6/ctomYQtv/D4UzQ6yDkeoW22v3ps5HEg87TJTZ9WTUME6n3Kl9MFU
+	 R3Qput3T9LE6Z4f7XsVE0hUkzv0/yZc3QzsQsCOakS3uAQ70hDJB6YI+gj4RSz92i8
+	 lhpusN6CYjrTGKLA79rcaNiJOYchi2MKeqAMAzoMrKfTkfQhBe9a4IaXnIX9geRm7g
+	 6FDE6CKjtDUZRwlGmQ/sYvjNR5Vnxm5BUHndX5O8PUVZqtF/nRY9STveCY2wCr2WoS
+	 IoWX9uhq1unqKD1YHtnORXp8LCHuPQBXaa1IV439Cmt+KnFA89MsCa2N9wjeRtV46y
+	 wm3oiEfs/szCw==
+Message-ID: <64579362-2eac-46a7-9f89-c341c3bfee90@slint.fr>
+Date: Thu, 23 Jan 2025 10:41:54 +0100
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -40,341 +46,55 @@ User-Agent: Mozilla Thunderbird
 Subject: Re: Good old Speakup
 To: speakup@linux-speakup.org
 References: <E1tafn8-000EhT-0P@wb5agz>
-Content-Language: de-DE
-From: chrys <chrys@linux-a11y.org>
-In-Reply-To: <E1tafn8-000EhT-0P@wb5agz>
-X-Df-Sender: Y2hyeXNAbGludXgtYTExeS5vcmc=
+ <9ee14d99-9197-4560-a97a-73dd8d4fc89a@linux-a11y.org>
+Content-Language: en-US
+From: Didier Spaier <didier@slint.fr>
+Autocrypt: addr=didier@slint.fr; keydata=
+ xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
+ dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
+ TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
+ jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
+ 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
+ AAHNH0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj7CwHkEEwEKACMCGwMHCwkIBwMC
+ AQYVCAIJCgsEFgIDAQIeAQIXgAUCYZVPGAAKCRDVAgLvYMA+6pOxCADB2pKmm/LgncWREzob
+ Z6M+RsvgzvGS/48ik/E/TH2KyPO/hn+Fzbj4MmMwQdqz5YPfdBmkcM7WyDzkPaukzfS8QUvl
+ VKyWQ92pqpbI/JUeShI+DLMKV7LZxiPinMBuKmpyLdpxuhk08g2+6F8X6ztbl8mbXQy5jcIZ
+ zKQ442N0D4wnn8VXM0tb0uonmqc6ly7dcmkQ/GI7Q0tF/hkn4n3g1Lh6+K1jBqEIC9vn/c6X
+ yf67ec+CwbE0GtgVM1FR1R0J1y/6vkYWr7gZHhnzgwKr6k1wzCGkVUyCSpFwB2oeANT9c0qP
+ rgn4YjoYQIHS3vMWd630vRyOfqwetWXmVjPxzsBNBFY6fG8BCACqDQKHSw0ElDkwPPpNguL0
+ ujOyygO30xlLyfW9pWOEycHSLhLzvDTlFkvr5IxvyCDBIFBdzpkeQqh1+ZxrFliwWyj+9/ro
+ JlIjxeAyNs2xQZ7tQM6K5xtbUs8O5YtkCCO3OegAiLgmzzgxes79Qy+V3ciKbl+vrsNu7T9r
+ o3zZhyinci1eOCcKEtXFPQW5P4woB+6+JheN9pIiDkjojmdC+xkvDadP7kJYKp19Itys/CbN
+ vxEoOLsgeJhsZSmNU2QNhXkLfr7+AC99fb/c5ZDTNPRBqgLJCp+gTxn1QVJrAbq2OP3refmS
+ RxdA3yUDMjxEeHwDNZJL9aEtTDlTzPk5ABEBAAHCwF8EGAEKAAkCGwwFAmGVT44ACgkQ1QIC
+ 72DAPuqjhwgApl0pdNIrbU+8Hn0mr3CTEXxPaTbAU2bYFPDiBaEvXsBGoz8xJ6EZQnywbC7o
+ l5wFtVT08LKDewLHaL78zS+Q8rv5sNmWwzMAaipFtZg67e/rU3V5tw4E12nUghyMzQpngUur
+ lZPMFlB9IZN9681cXuv2sZzAZlR2+3PsSAftpPQxReoSC7hj3dfiCiAis19G3A184HClA5MB
+ I5heGinSz7R/AXhkiej8HZZzz9ZPkS7aeL8HsZKqCwZvViutbGmpm+V70JnbRAHLFjYb+Se3
+ rdUWWAXcca4Ry8HCLTo5iK9xCTQh5gEuJ7ROdOXeY4SvMiqWjYhlrsR0qhTv9q/gfg==
+In-Reply-To: <9ee14d99-9197-4560-a97a-73dd8d4fc89a@linux-a11y.org>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-This is a multi-part message in MIME format.
---------------4GQuDWwgt0uuyAELXgBQtDI3
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 8bit
+Hi Chrys,
 
-Hi Martin,
-just some random small comments. (also if they do not belong here IMO)
-> I was rudely reminded of espeakup
-> which was a sleeping giant and awoke.  Both espeakup and fenrir
-> would simultaneously speak screen output in the command consoles,
-> each one at a different pitch and rate.
-well running multible screenreaders at once will never be a good idea. 
-they will read the input twice but also fight for exclusive access to 
-your keyboard (as both want to consume shortcuts not ment for the 
-terminal but the screenreader. only one application can have exclusive 
-access to an device.
+nice to hear from you!
 
-> 	Also, for some odd reason, Control-J (newline) and
-> Control-K cause the screenreader to say "," as in the comma
-> punctuation even there are no commas on the screen as near as i
-> can tell.
+On 22/01/2025 23:40, chrys wrote:
+> well running multible screenreaders at once will never be a good idea. they will
+> read the input twice but also fight for exclusive access to your keyboard (as
+> both want to consume shortcuts not ment for the terminal but the screenreader.
+> only one application can have exclusive access to an device.
 
-I guess what you see is fenrirs way to handle "pause" on some TTS 
-systems. to "emulate" an pause when communicating with an TTS fenrir 
-sends an , (comma) what is interpreted by the most TTS as a small break. 
-if this does not fit for you can just disable it:
-respectPunctuationPause=True
-newLinePause=True
+Well, that's of course true if you speak about screen readers on a console, like
+espeakup, fenrir (used on the console), speechd-up or tdsr.
 
-just set them to false.
+However there is no issue having a console screen reader + Orca or Cthulu
+running, so user have keep speech (with the same voice or not) when toggling
+between a console and a graphical environment, hearing one or the other but not
+both together.
 
->   It's easy to go through different punctuation levels
-> and change speech rates on the fly plus, if one sets the
-> punctuation to most, you do hear what one  needs to hear and that
-> is important when programming and doing administrative tasks.
-fenrir is also able to change this on the fly, maybe the shortcuts are 
-unbound as i implemented it using the quick menu. but you can just 
-rebind them
-
-   *     inc_sound_volume
-   *     inc_speech_pitch
-   *     inc_speech_rate
-   *     inc_speech_volume
-
-
-for in crease the given attribute and
-
-   *     dec_sound_volume
-   *     dec_speech_pitch
-   *     dec_speech_rate
-   *     dec_speech_volume
-
-or just using the quick menu.
-
-by the way... same for punctuation level: toggle_punctuation_level
-
-
-maybe a bit technical, but you can find all available commands here:
-
-https://github.com/chrys87/fenrir/tree/master/src/fenrirscreenreader/commands/commands
-
-maybe not all of them are bound by default. as i never used an 
-screenreader by my own, the default settings are mostly done by others.
-
-
-cheers chrys
-
-Am 22.01.25 um 19:49 schrieb Martin McCormick:
-> Those of us who use screen readers have things we particularly
-> like about them and stuff we dislike and a lot of that is
-> totally subjective which makes the job of programming them even
-> harder than simply coding.  I have used speakup or espeakup
-> depending on the time period we are talking about since 2009 or
-> thereabouts when I first got vinux to work and no longer had to
-> use a MSDOS PC running kermit and feeding a hardware speech
-> synthesizer so I know of what I speak.
->
-> 	I have a good and fast PC running debian bookworm with
-> orca and the speech is good under orca but I always have wanted
-> to have a pure command-line instance of old-school speakup for
-> use in command-line stuff such as programming in c++, perl and
-> shell scripts, PIC assembler and system administrative tasks.
->
-> 	There are at least 2 command line consoles that open text
-> terminal windows on Control-Alt-F3 and Control-Alt-F4.  They
-> don't talk so I installed fenrir and now, they talk but it's not
-> what I was hoping for.
->
-> 	By pure accident/stupidity on my part, I once installed
-> espeakup on here before finding out that that is not a good idea
-> because espeakup is not a user-space application and uses kernel
-> modules that might conflict with orca.
->
-> 	I forgot about the installation and have used orca a lot
-> with no trouble but when i installed fenrir and got pipewire
-> reconfigured to work with it, I was rudely reminded of espeakup
-> which was a sleeping giant and awoke.  Both espeakup and fenrir
-> would simultaneously speak screen output in the command consoles,
-> each one at a different pitch and rate.  It was kind of amusing
-> for about 15 seconds and then frustrating because the babble of
-> the 2 voices, both e-speak but at different settings, tended to
-> obscure what each was saying.
->
-> 	I worked on that issue on and off for a couple of days
-> before another happy accident which clued me in on what happened.
->
-> 	I pressed the PrintScreen button and one of the voices
-> said, "You killed speakup."  Pressing it again brought it back
-> like normal.
->
-> 	So now I knew it was espeakup and fenrir having the
-> babble battle.
->
-> 	I de-installed espeakup and fenrir now talks but it's not
-> the same thing.  If you set punctuations to some, one must do
-> that in the configuration file, then restart the service.  When
-> you do that, the = sign is not one of the punctuation marks that
-> is spoken, so much for programming.
->
-> 	Also, for some odd reason, Control-J (newline) and
-> Control-K cause the screenreader to say "," as in the comma
-> punctuation even there are no commas on the screen as near as i
-> can tell.
->
-> 	That, alone drives me batty since it is confusing to say
-> the least.
->
-> 	I am not trying to talk trash about fenrir because it's a
-> good idea and there are things I like about the interface but oh,
-> how I would like to just experience speakup in those command
-> consoles.  It's easy to go through different punctuation levels
-> and change speech rates on the fly plus, if one sets the
-> punctuation to most, you do hear what one  needs to hear and that
-> is important when programming and doing administrative tasks.
->
-> 	Any constructive ideas are appreciated.
->
-> 	Since espeakup did try to run, I have thought about
-> putting it back as it never bothered orca while it was installed
-> and then removing fenrir since both were trying to work at the
-> same time.
->
-> Martin
->
-
---------------4GQuDWwgt0uuyAELXgBQtDI3
-Content-Type: text/html; charset=UTF-8
-Content-Transfer-Encoding: 8bit
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  </head>
-  <body>
-    <div class="moz-cite-prefix">Hi Martin,</div>
-    <div class="moz-cite-prefix">just some random small comments. (also
-      if they do not belong here IMO)<br>
-    </div>
-    <div class="moz-cite-prefix">
-      <blockquote type="cite">
-        <pre wrap="" class="moz-quote-pre">I was rudely reminded of espeakup
-which was a sleeping giant and awoke.  Both espeakup and fenrir
-would simultaneously speak screen output in the command consoles,
-each one at a different pitch and rate. </pre>
-      </blockquote>
-      well running multible screenreaders at once will never be a good
-      idea. they will read the input twice but also fight for exclusive
-      access to your keyboard (as both want to consume shortcuts not
-      ment for the terminal but the screenreader. only one application
-      can have exclusive access to an device.<br>
-      <br>
-    </div>
-    <div class="moz-cite-prefix">
-      <blockquote type="cite">
-        <pre wrap="" class="moz-quote-pre">	Also, for some odd reason, Control-J (newline) and
-Control-K cause the screenreader to say "," as in the comma
-punctuation even there are no commas on the screen as near as i
-can tell.</pre>
-      </blockquote>
-      <br>
-    </div>
-    <div class="moz-cite-prefix">I guess what you see is fenrirs way to
-      handle "pause" on some TTS systems. to "emulate" an pause when
-      communicating with an TTS fenrir sends an , (comma) what is
-      interpreted by the most TTS as a small break. if this does not fit
-      for you can just disable it:<br>
-    </div>
-    <div class="moz-cite-prefix">respectPunctuationPause=True<br>
-      newLinePause=True</div>
-    <div class="moz-cite-prefix"><br>
-    </div>
-    <div class="moz-cite-prefix">just set them to false.</div>
-    <div class="moz-cite-prefix"><br>
-    </div>
-    <div class="moz-cite-prefix">
-      <blockquote type="cite">
-        <pre wrap="" class="moz-quote-pre"> It's easy to go through different punctuation levels
-and change speech rates on the fly plus, if one sets the
-punctuation to most, you do hear what one  needs to hear and that
-is important when programming and doing administrative tasks.</pre>
-      </blockquote>
-      fenrir is also able to change this on the fly, maybe the shortcuts
-      are unbound as i implemented it using the quick menu. but you can
-      just rebind them</div>
-    <div class="moz-cite-prefix"><br>
-    </div>
-    <div class="moz-cite-prefix">
-      <ul>
-        <li>    inc_sound_volume</li>
-        <li>    inc_speech_pitch</li>
-        <li>    inc_speech_rate</li>
-        <li>    inc_speech_volume</li>
-      </ul>
-      <br>
-      for in crease the given attribute and<br>
-      <br>
-      <ul>
-        <li>    dec_sound_volume</li>
-        <li>    dec_speech_pitch</li>
-        <li>    dec_speech_rate</li>
-        <li>    dec_speech_volume</li>
-      </ul>
-    </div>
-    <div class="moz-cite-prefix">or just using the quick menu.</div>
-    <p>by the way... same for punctuation level:
-      toggle_punctuation_level<br>
-    </p>
-    <p><br>
-    </p>
-    <p>maybe a bit technical, but you can find all available commands
-      here:</p>
-    <p><a class="moz-txt-link-freetext" href="https://github.com/chrys87/fenrir/tree/master/src/fenrirscreenreader/commands/commands">https://github.com/chrys87/fenrir/tree/master/src/fenrirscreenreader/commands/commands</a></p>
-    <p>maybe not all of them are bound by default. as i never used an
-      screenreader by my own, the default settings are mostly done by
-      others.<br>
-    </p>
-    <p><br>
-    </p>
-    <div class="moz-cite-prefix">cheers chrys<br>
-    </div>
-    <div class="moz-cite-prefix"><br>
-    </div>
-    <div class="moz-cite-prefix">Am 22.01.25 um 19:49 schrieb Martin
-      McCormick:<br>
-    </div>
-    <blockquote type="cite" cite="mid:E1tafn8-000EhT-0P@wb5agz">
-      <pre wrap="" class="moz-quote-pre">Those of us who use screen readers have things we particularly
-like about them and stuff we dislike and a lot of that is
-totally subjective which makes the job of programming them even
-harder than simply coding.  I have used speakup or espeakup
-depending on the time period we are talking about since 2009 or
-thereabouts when I first got vinux to work and no longer had to
-use a MSDOS PC running kermit and feeding a hardware speech
-synthesizer so I know of what I speak.
-
-	I have a good and fast PC running debian bookworm with
-orca and the speech is good under orca but I always have wanted
-to have a pure command-line instance of old-school speakup for
-use in command-line stuff such as programming in c++, perl and
-shell scripts, PIC assembler and system administrative tasks.
-
-	There are at least 2 command line consoles that open text
-terminal windows on Control-Alt-F3 and Control-Alt-F4.  They
-don't talk so I installed fenrir and now, they talk but it's not
-what I was hoping for.
-
-	By pure accident/stupidity on my part, I once installed
-espeakup on here before finding out that that is not a good idea
-because espeakup is not a user-space application and uses kernel
-modules that might conflict with orca.
-
-	I forgot about the installation and have used orca a lot
-with no trouble but when i installed fenrir and got pipewire
-reconfigured to work with it, I was rudely reminded of espeakup
-which was a sleeping giant and awoke.  Both espeakup and fenrir
-would simultaneously speak screen output in the command consoles,
-each one at a different pitch and rate.  It was kind of amusing
-for about 15 seconds and then frustrating because the babble of
-the 2 voices, both e-speak but at different settings, tended to
-obscure what each was saying.
-
-	I worked on that issue on and off for a couple of days
-before another happy accident which clued me in on what happened.
-
-	I pressed the PrintScreen button and one of the voices
-said, "You killed speakup."  Pressing it again brought it back
-like normal.
-
-	So now I knew it was espeakup and fenrir having the
-babble battle.
-
-	I de-installed espeakup and fenrir now talks but it's not
-the same thing.  If you set punctuations to some, one must do
-that in the configuration file, then restart the service.  When
-you do that, the = sign is not one of the punctuation marks that
-is spoken, so much for programming.
-
-	Also, for some odd reason, Control-J (newline) and
-Control-K cause the screenreader to say "," as in the comma
-punctuation even there are no commas on the screen as near as i
-can tell.
-
-	That, alone drives me batty since it is confusing to say
-the least.
-
-	I am not trying to talk trash about fenrir because it's a
-good idea and there are things I like about the interface but oh,
-how I would like to just experience speakup in those command
-consoles.  It's easy to go through different punctuation levels
-and change speech rates on the fly plus, if one sets the
-punctuation to most, you do hear what one  needs to hear and that
-is important when programming and doing administrative tasks.
-
-	Any constructive ideas are appreciated.
-
-	Since espeakup did try to run, I have thought about
-putting it back as it never bothered orca while it was installed
-and then removing fenrir since both were trying to work at the
-same time.
-
-Martin
-
-</pre>
-    </blockquote>
-    <p><br>
-    </p>
-  </body>
-</html>
-
---------------4GQuDWwgt0uuyAELXgBQtDI3--
+Cheers,
+Didier
 
