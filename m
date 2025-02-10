@@ -1,49 +1,41 @@
-Return-Path: <speakup+bounces-1241-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1242-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id CE2DEA2E129
-	for <lists+speakup@lfdr.de>; Sun,  9 Feb 2025 23:27:10 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 168EBA2F309
+	for <lists+speakup@lfdr.de>; Mon, 10 Feb 2025 17:19:33 +0100 (CET)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=XMGuXLyV;
+	dkim=pass (1024-bit key; unprotected) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=ic9Yn1U7;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 27C513821A5; Sun, 09 Feb 2025 17:27:08 -0500 (EST)
+	id F03D8382235; Mon, 10 Feb 2025 11:19:20 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0A4A93818E1
-	for <lists+speakup@lfdr.de>; Sun, 09 Feb 2025 17:27:08 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id D0DD738190A
+	for <lists+speakup@lfdr.de>; Mon, 10 Feb 2025 11:19:20 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4048B381976; Sun, 09 Feb 2025 17:27:01 -0500 (EST)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 3F18D380C76
-	for <speakup@linux-speakup.org>; Sun, 09 Feb 2025 17:27:00 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gregn.net; s=default;
-	t=1739139984; bh=paHJ6EBlNqr8zgRS4n3FpMucjKi5NAMerOzakXH2pno=;
-	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=XMGuXLyVgop03wok6LCiQ/BEMfge9hFVS2QXLGKeFxKLBCV+QGIdVfCZjFlaqD7Yn
-	 nFmEGxn2njBCox/2WW9jvdKL240qVSVgXqkKrDN4wWUC+80feYaMZPY/psCMjmwE+Z
-	 JD/79SHQ0jG4tnqo0HANwNn2gIo+6baAO+01OTdIljVrt/N+1zKON3GwStWhpFN5Mx
-	 WCX9sf52fnbAGtA48kbpYWSNfhwXvBMLRP44KY3oKXEuurN5G4vNEFJk+6dwSIKBre
-	 trWxpv5V0Et03UiFpiKUubUe2kRj7+nSexFNbkXLthaaGZmQzLlCb7kICnH795JYYN
-	 LfQmHbw9Drb/Q==
-Received: from vbox.gregn.net (unknown [172.56.83.90])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (secp384r1))
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id A72E45519;
-	Sun,  9 Feb 2025 14:26:24 -0800 (PST)
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 4D882C14F; Sun,  9 Feb 2025 15:26:23 -0700 (MST)
-Date: Sun, 9 Feb 2025 15:26:23 -0700
-From: Gregory Nowak <greg@gregn.net>
-To: Didier Spaier <didier@slint.fr>
-Cc: speakup@linux-speakup.org
-Subject: Re: speakup laptop keyboard question
-Message-ID: <Z6krj5S0iGNT3lqz@gregn.net>
-References: <Z6h5Qc3VPrCe6-_W@panix.com>
- <503f8cdc-b15c-48ae-8ee9-64c56d8d2ebe@slint.fr>
+	id E72C3381909; Mon, 10 Feb 2025 11:19:13 -0500 (EST)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 1887C3818C9
+	for <speakup@linux-speakup.org>; Mon, 10 Feb 2025 11:19:13 -0500 (EST)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4Ys8sQ0Tlqz4ssf
+	for <speakup@linux-speakup.org>; Mon, 10 Feb 2025 11:19:06 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1739204346; bh=HmB4haQZZHgz9A8APhvCYPF5ziQh+Jhcll/U5I3RsDM=;
+	h=Date:From:To:Subject;
+	b=ic9Yn1U7TxqkCVr/vldP9n3JlQ8gVfBozyVPC6KX6iNvG7RGSxS4x94PAxqMXAyBM
+	 /4BaP/hAvHxsGnu6pD8GnPO+dE1DnxVLTiMQRWQX2gmNeXgb4k6E4COAaciFouZ4qw
+	 bTJIqJLnngAtc41CG+E5lhzQYiyBCuADG1mjM7JE=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4Ys8sP6rnrzcbd; Mon, 10 Feb 2025 11:19:05 -0500 (EST)
+Date: Mon, 10 Feb 2025 11:19:05 -0500
+From: Jude DaShiell <jdashiel@panix.com>
+To: speakup@linux-speakup.org
+Subject: [sidaq.lotay07@gmail.com: Re: Does chromevox has any math content
+ (mathml/mathjax/etc) support?]
+Message-ID: <Z6om-Z5q7SIwTxp3@panix.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -55,58 +47,55 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <503f8cdc-b15c-48ae-8ee9-64c56d8d2ebe@slint.fr>
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 1.0.7 at vserver
-X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-The speakup key is numpad insert or capslock. There is no
-highlight/cursor tracking defined for machines without a dedicated
-numpad in the speakup keymap currently. If your contact's machine can
-emulate the numpad asterisk through the fn key, then use that, or
-attach a keyboard with a numpad, or just a numpad if your contact can
-get hold of one or has one.
+----- Forwarded message from Sidaqvir Singh Lotay <sidaq.lotay07@gmail.com> 
+-----
 
-Greg
+Date: Sun, 9 Feb 2025 14:14:35 -0800 (PST)
+From: Sidaqvir Singh Lotay <sidaq.lotay07@gmail.com>
+To: ChromeVox Discuss <chromevox-discuss@googlegroups.com>
+Subject: Re: Does chromevox has any math content (mathml/mathjax/etc) support?
 
+Okay so I don't now if google issued this update because of my post but if 
+we didn't have this previously and I was just doing things wrong we have 
+quite decent mathml/mathjax support now, it's honestly quite impressive if 
+this is an actual update. I can almost do all my webworks on my dynabook 
+chromeos flex now. Almost. Some bug with webwork and espeak pronouncing 
+letter by letter apparently for problems like peacewise function,
+f(x) = \begin{cases}
+               19         & \text{ if } x \lt -8 \\
+             -x+ 11 & \text{ if } -8 \le x \lt 8 \\
+                6     & \text{ if } x =8 \\
+               11       & \text{ if } x \gt 8.
+            \end{cases}
+And bug with the text app just announcing the first line of the f(x) and 
+nothing after until the empty "end of text" announcement. Nice work if 
+you've actually done it, Google.
+On Monday, February 3, 2025 at 10:29:50???a.m. UTC-5 Sidaqvir Singh Lotay 
+wrote:
 
-On Sun, Feb 09, 2025 at 12:06:28PM +0000, Didier Spaier wrote:
-> Hi Jude,
-> 
-> To use the "toggle cursoring" function, if your contact has (or can attach to
-> the computer) a keyboard with a numeric keypad, this is asterisk or '*' on the
-> keypad. Else (laptop without a numeric keypad) that would be press and hold the
-> "speakup key" usually Ctrl and press 8.
-> 
-> At least that's what I read in the file speakupmap.map here in
-> /usr/src/linux-6.12.8/drivers/accessibility/speakup/speakupmap.map
-> 
-> Cheers,
-> Didier
-> 
-> PS quote from spkguide.txt below
-> 
-> You may select among the various forms of cursor tracking using the keypad
-> asterisk key.
-> Each time you press this key, a new mode is selected, and Speakup speaks
-> the name of the new mode.  The names for the four possible states of cursor
-> tracking are: "cursoring on", "highlight tracking", "read window",
-> and "cursoring off."  The keypad asterisk key moves through the list of
-> modes in a circular fashion.uide.txt:
-> 
-> On 09/02/2025 09:45, Jude DaShiell wrote:
-> > On a Toshiba satellite laptop what key or keys get used to enable highlight 
-> > tracking?  A contact is trying to install a linux on one of these and I never 
-> > had one of these computers so don't know what to tell him.
-> 
-> 
-> 
+> Really. Should I understand then that there are no stem students with 
+> chromebooks?
+>
+> On Wednesday, January 8, 2025 at 12:28:02???a.m. UTC-5 Sidaqvir Singh Lotay 
+> wrote:
+>
+>> Hi,
+>> As much as I have problems with VO at least on the mac math content 
+>> although not perfect is supported out of the box. I haven't managed to get 
+>> chromevox read something meaningful out of webwork or mathml for example, 
+>> and since it's used a lot by students and chromevox is otherwise impressive 
+>> on the web I'd like to ask the community if google has anything planned for 
+>> that soon hopefully?
+>>
+>
 
 -- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
+You received this message because you are subscribed to the Google Groups "ChromeVox Discuss" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to chromevox-discuss+unsubscribe@googlegroups.com.
+To view this discussion visit https://groups.google.com/d/msgid/chromevox-discuss/4214a997-ee9e-44a7-b989-2971b610bae5n%40googlegroups.com.
 
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+
+----- End forwarded message -----
 
