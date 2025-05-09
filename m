@@ -1,34 +1,40 @@
-Return-Path: <speakup+bounces-1293-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1294-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 17BD2AB07D8
-	for <lists+speakup@lfdr.de>; Fri,  9 May 2025 04:20:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 9E782AB1FF6
+	for <lists+speakup@lfdr.de>; Sat, 10 May 2025 00:36:50 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; secure) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=scmJJeyq;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 53A96382A1F; Thu, 08 May 2025 22:20:06 -0400 (EDT)
+	id 4C8E4382A0B; Fri, 09 May 2025 18:36:39 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 412CB38298A
-	for <lists+speakup@lfdr.de>; Thu, 08 May 2025 22:20:06 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 2E7173820CC
+	for <lists+speakup@lfdr.de>; Fri, 09 May 2025 18:36:39 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9992A38298E; Thu, 08 May 2025 22:20:02 -0400 (EDT)
-Received: from atlas.bondproducts.com (atlas.bondproducts.com [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id D4D31382008
-	for <speakup@linux-speakup.org>; Thu, 08 May 2025 22:20:01 -0400 (EDT)
-Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id 247A940508
-	for <speakup@linux-speakup.org>; Thu,  8 May 2025 22:19:58 -0400 (EDT)
-Received: by users.shellworld.net (Postfix, from userid 1005)
-	id 60CE1100BDE; Thu,  8 May 2025 22:19:12 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id 5E6E41001AB
-	for <speakup@linux-speakup.org>; Thu,  8 May 2025 22:19:12 -0400 (EDT)
-Date: Thu, 8 May 2025 22:19:12 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: worldwide grant program for access related tech.
-Message-ID: <Pine.LNX.4.64.2505082213590.1271728@users.shellworld.net>
+	id 4E006382966; Fri, 09 May 2025 18:36:32 -0400 (EDT)
+Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id B48093820CC
+	for <speakup@linux-speakup.org>; Fri, 09 May 2025 18:36:31 -0400 (EDT)
+Received: from panix1.panix.com (panix1.panix.com [166.84.1.1])
+	by mailbackend.panix.com (Postfix) with ESMTP id 4ZvP4C5rpCz4l3t
+	for <speakup@linux-speakup.org>; Fri,  9 May 2025 18:36:27 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
+	t=1746830187; bh=C8ymh0BZPxwQPSrsZ5ufdPfwvlxnwXHw1sW/VKTXYIM=;
+	h=Date:From:To:Subject;
+	b=scmJJeyqGPw96hVORQjSS57aliEQJaTk3dPdYQqMb4Cq2AaNmbHzu8KPWSr/bmvl9
+	 AZIMGW1XZ3TXavDaXeU1RCaPmUv3Efk+lgt+zvYJsBEfXTR7oMHFgLN1y8BGFGjEer
+	 NqUjLaGUKQzaTlPJZelbf5JtxQVO1TYu4zJNYfUk=
+Received: by panix1.panix.com (Postfix, from userid 20712)
+	id 4ZvP4C5Yqyzcbd; Fri,  9 May 2025 18:36:27 -0400 (EDT)
+Date: Fri, 9 May 2025 18:36:27 -0400
+From: Jude DaShiell <jdashiel@panix.com>
+To: speakup@linux-speakup.org
+Subject: pipe-viewer for raspberry pi
+Message-ID: <aB6DawLVsG5kEuKH@panix.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -38,53 +44,10 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi All,
-  Sharing this information here for a few reasons.
-mostly because of the creative approaches many here have to access 
-technology, approaches I feel, speaking personally, are worthy of 
-investment.
-The grant is  for $50k, and is world wide.
-Speaking personally, perhaps a fine way to raise the command line with a 
-blending of true progress enhancement, allowing for individualized 
-customizing of tools.
-thoughts?
-
-From: Varun Chandak <varun@accesstosuccess.ca>
-Subject: Seeking accessibility startups for ATS's biggest year yet
-I'm happy to share that applications for Access to Success's biggest year
-are now open! The 2025 cohort features 5x the funding available ($10k last
-year > > $50k this year), new partnerships for our startups (Toyota Mobility
-Foundation, University Health Network), and even more benefits being added
-every week.
-
-I would be grateful if you could help us get the word out to startups in
-your network working on mobility, hearing, vision, cognition,
-neurodiversity, aging, rehabilitation and other disability-related areas.
-You are welcome to share our LinkedIn post or use the sample caption below:
-
-Our friends at @Access to Success Organization are seeking startups building
-life-changing innovations for people with disabilities. Their free, 3-month
-virtual accelerator will provide tailor-made programming, a global network
-of experts, and $50,000 in funding.
-
-ATS is open to worldwide startups addressing challenges in mobility,
-hearing, vision, cognition, neurodiversity, aging, rehabilitation and other
-disability-related areas. If that's you, up for their info session on May
-16: https://events.humanitix.com/ats-2025-info-session
-
-In the meantime, if there's anything at all I can do to help, please don't
-hesitate to let me know!
-
-Thanks,
-Varun
-
-Varun Chandak
-Access to Success
-
-Karen
-
+It's available though in the aur repository, and it may be pipe-viewer.git.
 
 
