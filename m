@@ -1,40 +1,57 @@
-Return-Path: <speakup+bounces-1297-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1298-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8AA72AC3252
-	for <lists+speakup@lfdr.de>; Sun, 25 May 2025 05:50:05 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; secure) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=Ww7WcySQ;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 72BB2ACE0EC
+	for <lists+speakup@lfdr.de>; Wed,  4 Jun 2025 17:06:27 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6ABB33824AA; Sat, 24 May 2025 23:49:53 -0400 (EDT)
+	id 1AC943824C3; Wed, 04 Jun 2025 10:58:22 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 4BD2A38211E
-	for <lists+speakup@lfdr.de>; Sat, 24 May 2025 23:49:53 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 046C0381905
+	for <lists+speakup@lfdr.de>; Wed, 04 Jun 2025 10:58:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4679F38213F; Sat, 24 May 2025 23:49:46 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id C5C2E380973
-	for <speakup@linux-speakup.org>; Sat, 24 May 2025 23:49:45 -0400 (EDT)
-Received: from panix5.panix.com (panix5.panix.com [166.84.1.5])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4b4lJn2gKWz4ky4
-	for <speakup@linux-speakup.org>; Sat, 24 May 2025 23:49:45 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1748144985; bh=X7gzohWMqzIXqn01zFacVVWv3FkUwGlAU4xa61F5jQA=;
-	h=Date:From:To:Subject;
-	b=Ww7WcySQpRZocEzLrPzpkhpjIezAGGeMUM1OHMdK5udOiZJ1I2G2DlpcWKu9y3Q7o
-	 eD2t7eoZlW4NoPDEjEASezZGNJE3Gm0afQmAjkn7IuXqBrDi2IS9iQYeyRyzQWovuq
-	 NVzgghlkdbVkCrsVTL1QpRI+90wfRLhw4SOUXEu0=
-Received: by panix5.panix.com (Postfix, from userid 20196)
-	id 4b4lJn2QftzfYm; Sat, 24 May 2025 23:49:45 -0400 (EDT)
-Date: Sat, 24 May 2025 23:49:45 -0400
-From: Rudy Vener <salt@panix.com>
-To: speakup@linux-speakup.org
-Subject: controling speakup silent/vocal from scripts
-Message-ID: <aDKTWd6xY5kZlvYv@panix.com>
+	id 37670381905; Wed, 04 Jun 2025 10:58:18 -0400 (EDT)
+Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id EAD1E380618
+	for <speakup@linux-speakup.org>; Wed, 04 Jun 2025 10:58:17 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by sonata.ens-lyon.org (Postfix) with ESMTP id 7A9C4A5E1A;
+	Wed,  4 Jun 2025 16:58:08 +0200 (CEST)
+Received: from sonata.ens-lyon.org ([127.0.0.1])
+	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id vTXMXiec2PkD; Wed,  4 Jun 2025 16:58:08 +0200 (CEST)
+Received: from begin (nat-inria-interne-52-gw-01-bso.bordeaux.inria.fr [194.199.1.52])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by sonata.ens-lyon.org (Postfix) with ESMTPSA id B481CA5DE2;
+	Wed,  4 Jun 2025 16:58:07 +0200 (CEST)
+Received: from samy by begin with local (Exim 4.98.2)
+	(envelope-from <samuel.thibault@ens-lyon.org>)
+	id 1uMpZ9-000000065Wf-16Fm;
+	Wed, 04 Jun 2025 16:58:07 +0200
+Date: Wed, 4 Jun 2025 16:58:07 +0200
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: Jagadeesh Yalapalli <jagadeesharm14@gmail.com>
+Cc: William Hubbs <w.d.hubbs@gmail.com>,
+	Chris Brannon <chris@the-brannons.com>,
+	Kirk Reiser <kirk@reisers.ca>, Thomas Gleixner <tglx@linutronix.de>,
+	Ingo Molnar <mingo@kernel.org>, speakup@linux-speakup.org,
+	linux-kernel@vger.kernel.org,
+	Jagadeesh Yalapalli <jagadeesh.yalapalli@einfochips.com>
+Subject: Re: [PATCH v1] speakup: Replace u_short with u16 for spk_chartab
+Message-ID: <aEBe_wji03rJPBwj@begin>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+	Jagadeesh Yalapalli <jagadeesharm14@gmail.com>,
+	William Hubbs <w.d.hubbs@gmail.com>,
+	Chris Brannon <chris@the-brannons.com>,
+	Kirk Reiser <kirk@reisers.ca>, Thomas Gleixner <tglx@linutronix.de>,
+	Ingo Molnar <mingo@kernel.org>, speakup@linux-speakup.org,
+	linux-kernel@vger.kernel.org,
+	Jagadeesh Yalapalli <jagadeesh.yalapalli@einfochips.com>
+References: <20250604135846.46184-1-jagadeesharm14@gmail.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -46,32 +63,45 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
+In-Reply-To: <20250604135846.46184-1-jagadeesharm14@gmail.com>
+Organization: I am not organized
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I use a lot of scripts which play audio streams and I can toggle
-speakup from vocal to silent and back again with:
+Hello,
 
-# speakup-toggle - toggle between speakup on and off
-echo key ctrl+kpenter | dotool
+Jagadeesh Yalapalli, le mer. 04 juin 2025 13:58:36 +0000, a ecrit:
+> From: Jagadeesh Yalapalli <jagadeesh.yalapalli@einfochips.com>
+> 
+> The spk_chartab array was previously declared as `u_short`,
+> which is a non-standard type and may vary in size across platforms.
+> Replace it with `u16` to ensure consistent 16-bit width and improve
+> code portability and readability.
 
-Mostly this works. When it doesn't it's because I pause the audio, switch to another screen, and
-leave speakup active when I return, and my script shuts it off upon completion.
+There is much more to it than just this line: there is also the
+declaration in speakup.h, and the comment above, and all related
+variables such as default_chartab, the variables in functions such as
+charclass, mask, char_type, ch_type, ...
 
-Is there a command I can run to  test if speakup is vocal or silent so I can
-fine tune speakup-on/off commands?
+Samuel
 
-At first I had high hopes for /sys/accessibility/speakup/silent, but alas
-that variable is write-only for whatever arcane reasons I can only guess at.
-
-Any wisdom this list can give me will be appreciated.
-
--- 
-Rudy Vener
-
-An audio release of Beast Hunt Vol 1, containing my short story Dragon Wing, is loose in the wild: https://www.amazon.com/dp/B0DPN1QGGJ
-Latest Limerick - Korean Destroyer Dumped Off Drydock https://limerickdude.substack.com/p/korean-destroyer-dumped-off-drydock
-Website: http://www.rudyvener.com
-
-
-
+> Signed-off-by: Jagadeesh Yalapalli <jagadeesh.yalapalli@einfochips.com>
+> ---
+>  drivers/accessibility/speakup/main.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/accessibility/speakup/main.c b/drivers/accessibility/speakup/main.c
+> index e68cf1d83787..34c7cb6a9b43 100644
+> --- a/drivers/accessibility/speakup/main.c
+> +++ b/drivers/accessibility/speakup/main.c
+> @@ -187,7 +187,7 @@ char *spk_default_chars[256] = {
+>   * initialized to default_chartab and user selectable via
+>   * /sys/module/speakup/parameters/chartab
+>   */
+> -u_short spk_chartab[256];
+> +u16 spk_chartab[256];
+>  
+>  static u_short default_chartab[256] = {
+>  	B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL,	/* 0-7 */
+> -- 
+> 2.43.0
 
