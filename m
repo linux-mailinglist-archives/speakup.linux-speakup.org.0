@@ -1,52 +1,67 @@
-Return-Path: <speakup+bounces-1299-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1300-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1C744AD0EB2
-	for <lists+speakup@lfdr.de>; Sat,  7 Jun 2025 19:15:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 17CD5AD2C1A
+	for <lists+speakup@lfdr.de>; Tue, 10 Jun 2025 05:10:46 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=math.wisc.edu header.i=@math.wisc.edu header.a=rsa-sha256 header.s=selector1 header.b=NG6X8jSW;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 64B5238228F; Sat, 07 Jun 2025 13:15:35 -0400 (EDT)
+	id 0CABA3824A5; Mon, 09 Jun 2025 23:03:40 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 44052382189
-	for <lists+speakup@lfdr.de>; Sat, 07 Jun 2025 13:15:35 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id DCDED38191A
+	for <lists+speakup@lfdr.de>; Mon, 09 Jun 2025 23:03:39 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6598D3818F1; Sat, 07 Jun 2025 13:15:31 -0400 (EDT)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 040AF3818ED
-	for <speakup@linux-speakup.org>; Sat, 07 Jun 2025 13:15:30 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id BF41BA1B44;
-	Sat,  7 Jun 2025 19:15:25 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id sRxGswBDeLw2; Sat,  7 Jun 2025 19:15:25 +0200 (CEST)
-Received: from begin.home (aamiens-653-1-40-48.w83-192.abo.wanadoo.fr [83.192.199.48])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 30295A04F2;
-	Sat,  7 Jun 2025 19:15:25 +0200 (CEST)
-Received: from samy by begin.home with local (Exim 4.98.2)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1uNx8e-00000008GCk-1ETj;
-	Sat, 07 Jun 2025 19:15:24 +0200
-Date: Sat, 7 Jun 2025 19:15:24 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Jagadeesh Yalapalli <jagadeesharm14@gmail.com>
-Cc: chris@the-brannons.com, jagadeesh.yalapalli@einfochips.com,
-	kirk@reisers.ca, linux-kernel@vger.kernel.org, mingo@kernel.org,
-	speakup@linux-speakup.org, tglx@linutronix.de, w.d.hubbs@gmail.com
-Subject: Re: [PATCH v2] speakup: Standardize character attribute types to u16
-Message-ID: <aERzrDo0Td8bTH2B@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Jagadeesh Yalapalli <jagadeesharm14@gmail.com>,
-	chris@the-brannons.com, jagadeesh.yalapalli@einfochips.com,
-	kirk@reisers.ca, linux-kernel@vger.kernel.org, mingo@kernel.org,
-	speakup@linux-speakup.org, tglx@linutronix.de, w.d.hubbs@gmail.com
-References: <20250604135846.46184-1-jagadeesharm14@gmail.com>
- <20250605050828.17011-1-jagadeesharm14@gmail.com>
+	id 9A9C438191B; Mon, 09 Jun 2025 23:03:32 -0400 (EDT)
+Received: from mx0a-007b0c01.pphosted.com (mx0a-007b0c01.pphosted.com [205.220.165.71])
+	by befuddled.reisers.ca (Postfix) with ESMTP id CCBC93818A4
+	for <speakup@linux-speakup.org>; Mon, 09 Jun 2025 23:03:31 -0400 (EDT)
+Received: from pps.filterd (m0316038.ppops.net [127.0.0.1])
+	by mx0a-007b0c01.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 55A2nJH4014473
+	for <speakup@linux-speakup.org>; Mon, 9 Jun 2025 22:03:29 -0500
+Received: from nam11-co1-obe.outbound.protection.outlook.com (mail-co1nam11on2079.outbound.protection.outlook.com [40.107.220.79])
+	by mx0a-007b0c01.pphosted.com (PPS) with ESMTPS id 4757x91362-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <speakup@linux-speakup.org>; Mon, 09 Jun 2025 22:03:29 -0500 (CDT)
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
+ b=QRv7EzqxXaxnMrwekFQAluxgR+cLjuxbldBWqDYKCoo2KEy1toH5r586mLMhUkXTUrn3bPYB9TYd8xEgDeZyoDCWlQYGtpkS69KwWwGHs1Lk79zDrlYuay3ggGQuDsRvEn5r5yowuqPoSt/5i2MyGVlPlGdKB1SRZJTnGyE/7dhMRhm/fl5yILia6IS8zAeqVj3ibWSDcZiV7YAoIN45nlBiXtf61m1dKxxUQJKW4xHEFuOTx8RJeTye+f2mSpdB4eSekNTTdZgYt1qPyDNxYD/jNV+6jzSEok4XRwtmWw4t+0U1oqylasWUNHzvbVqtaBxZ/Ln1BKA2D7MZg0ddzw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=OV/VBvXlPniHgEQO9iWR5M4DvugiH56T1iFWq7oUgI8=;
+ b=L3tsnCX0Wcjm9ab7KP2HlocpxUQN+ufQ3s8VZAHuEuXSK38f79xYACS6A5kxbtQK4caJcqeeMSM7GhhxzewPKM0adzLWA1z5ZYKNAEBm3MSa99VuGOatWvzqxPPDIJxpFDEqu1hrya9ih8NzIwQYQqn26LhyaeX0uX+mnbqoEgIku0yMLGFfGJpHEMkfadJh/xTZYKze6RzKrzYuRa1z4hnpn6Q16h1XsmjQ3Wp8oL5sdeu+pMU4RzyYAuDKXn+w4B8DH1WxNVzfIAEqVKOwvOXPs2QzLk5vsG2oKg3pI8GBNuDxea0GHWKIQ/b39NOzpto3EjMcRQKX4cqKfeyvbg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=math.wisc.edu; dmarc=pass action=none
+ header.from=math.wisc.edu; dkim=pass header.d=math.wisc.edu; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=math.wisc.edu;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=OV/VBvXlPniHgEQO9iWR5M4DvugiH56T1iFWq7oUgI8=;
+ b=NG6X8jSWtOaVaXTtg+xmIC8BATx6L9Zal75uKZ5ba1B0BxANUgApJs2yiSlyRtrkF3lJZyXZh6om9iO8bNkWDJiarlvK9oLlL+noeDkVQfqryAPh5/0aR61lm98fHjkmX91yC/dMfNq+gvi7mc/Sk1WH8uONVDIgQilO+u56D+EmsVelgnwPVPBX3f+BD/riYBVMEfUo+3gyz4DHhhzHI+itFHpTwmH+G46eS5RxLbfFxuOC4IVFS2P2B8j9jf0aGMy4dZhQynewp+ryqCU4UhQGcne9x2uY1geLSYACZK3qzO/UvIQaGdNHZWVhQ4og0nvXe3Qx3QlzT+W/75+VqQ==
+Received: from DS0PR06MB9877.namprd06.prod.outlook.com (2603:10b6:8:1d5::14)
+ by BLAPR06MB6753.namprd06.prod.outlook.com (2603:10b6:208:298::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8813.20; Tue, 10 Jun
+ 2025 03:03:26 +0000
+Received: from DS0PR06MB9877.namprd06.prod.outlook.com
+ ([fe80::a347:6162:9bfd:9b91]) by DS0PR06MB9877.namprd06.prod.outlook.com
+ ([fe80::a347:6162:9bfd:9b91%3]) with mapi id 15.20.8813.021; Tue, 10 Jun 2025
+ 03:03:26 +0000
+Message-ID: <29a0419a-e54f-457d-9e8f-68a0c98d2dae@math.wisc.edu>
+Date: Mon, 9 Jun 2025 22:03:25 -0500
+User-Agent: Mozilla Thunderbird
+Content-Language: en-US
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+From: "John G. Heim" <jheim@math.wisc.edu>
+Subject: GRML for Speakup
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-ClientProxiedBy: BLAPR03CA0076.namprd03.prod.outlook.com
+ (2603:10b6:208:329::21) To DS0PR06MB9877.namprd06.prod.outlook.com
+ (2603:10b6:8:1d5::14)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -56,467 +71,127 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <20250605050828.17011-1-jagadeesharm14@gmail.com>
-Organization: I am not organized
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DS0PR06MB9877:EE_|BLAPR06MB6753:EE_
+X-MS-Office365-Filtering-Correlation-Id: 344e0c1e-bfa8-4be1-f0cb-08dda7cb5ebc
+X-MS-Exchange-SenderADCheck: 1
+X-MS-Exchange-AntiSpam-Relay: 0
+X-Microsoft-Antispam: BCL:0;ARA:13230040|1800799024|366016|41320700013|376014;
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?VmFEOVVaNFhpOWhJd3JWY2tZdzZ5SStSQ1BtdUgvMmltUHIxNlJ3QTR5Q042?=
+ =?utf-8?B?RGZBS2hhTXp0UHZlQnRvSnd3UVozVnp1SjhNNTl2V0Nxa2VpUENja3I4eXJL?=
+ =?utf-8?B?Z2RPeGJ4TWROd3JPMkhOVFh3MlBOOEZHb0srKzArak1abS85a2FmdU5IaERO?=
+ =?utf-8?B?VC9YUHEyR1A4cXdhUGJ3VGR5MjE1Ym9aODJhb21xNjR5T0VpVkg2Qk40cWQ4?=
+ =?utf-8?B?RFVnRU9PUGhoczkvcTJ6ZEtacGlGbUMyZVQvNzlJdElIUFczeGE5MW9YM21Q?=
+ =?utf-8?B?YXErUzUzZnU0UU5LMmNtNzFSRzFuT2swbmNFNmo3aDAwVTF1dmFEWGhIVWZ2?=
+ =?utf-8?B?WDRSTmdwdE5tZ0hUNC9FTThVOG9tL3ZhbkVYMTRBRElmc2NoeTlpSklidEg1?=
+ =?utf-8?B?NmhaU0QrK2Q1RVpUMkx0UGZ4VEJJbkpvVnZPc2h1dE9YTG9zT3NvNUh3dVZr?=
+ =?utf-8?B?aTRqc2hQekpWK2xXcWJxaXZobnBNN0RJTlZQLy9XT3lleWIwMnV4Ym5wZlc0?=
+ =?utf-8?B?OENkdmNTaWlXTjhEemE0c2NTREltTEQ1VU5QdGhJeE0wVkNjMGtJV3QwODZE?=
+ =?utf-8?B?NEt0YnZ2bWE4RHVMZEFBbHRwcG9YeU9ZaStWRXN1a21yVloyOUhNL3RtY3JP?=
+ =?utf-8?B?S0ZvVmJ6N1VCekhRdkFtYm9YR3hmbWdpYkh0blBtUTE3d2ZSYWdBOUp0enNk?=
+ =?utf-8?B?RTNhT3NSZ2VTTEJmYkNkQVFaNXNrd3kydmExZXJvZ0R0Vm9SQmgzRUZ3c3Bj?=
+ =?utf-8?B?TTd0RXRCLzBFcTZIREpCa0pQNkwzWnhmT24xamFMRkc0Y1MvQkFkQnJNKytF?=
+ =?utf-8?B?QXJxSEtjSjBsbTkrYjNVNG0zYUFhblJYY3lGaVliYjVnY3JIc0tyOFlKWXVl?=
+ =?utf-8?B?UGNXcjBNTFFnQmpUc016anBURTNyckxXeTJ2a1dKMWZnM1MyOGM0RmIxeXcz?=
+ =?utf-8?B?SlJXbG42UHNzWFpySUlXUHVnSjRrcWJKYW1EcmlWWjVYSi96WnRQeGNlQnlj?=
+ =?utf-8?B?T3Fia0FTaG11cnI1M0F2TFhJdHdUMUNzT3pVeUF0MTIwdW1ldnFReUd0Mms0?=
+ =?utf-8?B?OWJiVDRudVJ1ZjdXdzY5RGR6MmRVUjZwVDB4Wm9KTGZiNlFvbHhjNk9HZ0xZ?=
+ =?utf-8?B?VWdES3BpcXhmQm85eG5vN01yNGtYMHVqNGJDS1ByOFRwVlM5TjFQTDNBaGdo?=
+ =?utf-8?B?dWdPNDdZRS9SR3p3Sy93TkNCZG9XMnJjNlRTaXZYbnFjclJCUThsYmpiRUtz?=
+ =?utf-8?B?YjdSZmsxTHI4WEJwaFA2U0s5VFk0d0RaRHJxaENIN281K2czTHNGbkNRQzVW?=
+ =?utf-8?B?dml0N1laRDdnQ2dMTXBBS3NvOEtKVlNEUW1EaVA4K3RIMno3U3pKMlJBakI2?=
+ =?utf-8?B?RnFGSk1MTUZZbWttMUhkd1hjbjRSclFjSU9pVU5laVN1ZDd0UFFXVmtGbi9j?=
+ =?utf-8?B?Z2MvK2lyZ1pRck9hdE1NK0hDNWZ2RlZYSjlaTW9vbEdkMmJzK0x1aldLdXFH?=
+ =?utf-8?B?Vm5WakZRY29vS0JYdURRTHNYQTQwVUpPNi9CL1RXUHpWZW1DeG1CWkY3SUV3?=
+ =?utf-8?B?ZXpUN1FWbSs5VERvSXZoRGRqTlZDQks2TnFFbHQwVlRYU1V5NzdKcUdZbkky?=
+ =?utf-8?B?ZDZOQWFuaFQ4c3NYTWdVWWV5N2lFQ2V5Z1FwaVovUzVySDhvQlFXdlREVUYy?=
+ =?utf-8?B?N044WlBKZGE3N2RBMHVEQVlzVmEvSndQNUpSMHRwK0tnSXdRWERYQ0NyUmhx?=
+ =?utf-8?B?a1RtUTRQWnIvOCtSUzNkTFUyL2Zab0ZNSXpRWTl2RTNwbTlaNmFpRm42K2dh?=
+ =?utf-8?Q?mlvcW00MyPzsKKWzKLY6ip6nQWjkf+s25m+dk=3D?=
+X-Forefront-Antispam-Report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:DS0PR06MB9877.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(41320700013)(376014);DIR:OUT;SFP:1101;
+X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
+X-MS-Exchange-AntiSpam-MessageData-0:
+	=?utf-8?B?UjN5OXdNTU5BOGg3a0s2TG9seWU3N1o4dWdvOGluZFRRSVJzY1FQdU9FanFN?=
+ =?utf-8?B?dGhweXRxeWJ2ZG1XTm1JbXlucFhPa2NZbitCZjZHR0pjRzgyV05WRFN5dHky?=
+ =?utf-8?B?dEkrU1pmTzJBOFVtWkR0bFAwOHdkQ3dyNUxldWFKWk1uQzJEZEFXV2tISHlY?=
+ =?utf-8?B?WW9PWC9xUkpkSEtzTWUrRVA2YUZFVHVzNHFEb0o0NmQyRmhLd2tkZm55bWhV?=
+ =?utf-8?B?R1Q3SElkdzM3WFhmdlBhMGdZUTlOdG9NbXV5dWJEMlZMVDlScjNicGt3eUpl?=
+ =?utf-8?B?RlQvc0RQbHM3bjFmOHN5ckNZa2I4OWlNWkpVeWd4eHZYa2tIaWtyeE1DZk1r?=
+ =?utf-8?B?dFFITm90S2hmeVBwdy9wOUJyUjcwRkdJU01GL0JpNmxIUGs4b3ErM0ZwWCtn?=
+ =?utf-8?B?OWp1Z3BHcVM4WHpGZnFhZHpSa3NzSXpHOFg4Ym02b05UbnVlaXFGMkdaQ0t5?=
+ =?utf-8?B?a2lhc3NtdWVCN3BRQTZGbG9qdzZiak9aeHBqTFU4V0xESXFncU04UTM5WGd1?=
+ =?utf-8?B?QUVkZXY3THVPOGVHRy9RTXVYcnJVZVB4RmR3STZjSVFkY21nbFZsLzlqV1A0?=
+ =?utf-8?B?V08xMlVRYXllQ09MUUtvOVBaQmM5VDdWMlZub3FNUktZTmhqR3ZOd0ZUZlV4?=
+ =?utf-8?B?RW9VaXpKOXE0RUp0OHRqNnF4M2RnU1BUSXdXbEhwM2dmbUNvUUhtVFRjWnZa?=
+ =?utf-8?B?bEJTSGtPbXpoQ2NCMzU4NGhKZjl3NGdGZjV6WnRBRkRWaDE5bk9zcVNUUmVD?=
+ =?utf-8?B?VExtV3NJVVZhK0lrT050SWw3WHpoOVJHNXYwWHU5M1V5SHphZTNMS2xLblJF?=
+ =?utf-8?B?UTYzeFp2MU10OTVKVEtmWHJTMytESU5DaS9BaUppa2xYd1libGVUV0RsWldX?=
+ =?utf-8?B?Vk5wZ1ZUVVdHaXN6UkUvRXdMMURNRTJjR0gzYlczRnk5dVljd041eEx3NlM1?=
+ =?utf-8?B?T3BaOXlmb3pkU0swbXhtdVJzczNFOGx3b0Ereml3QnhrOFhSNmlnUVEyMzBx?=
+ =?utf-8?B?M0pteFhNWk1MVm5iZUl4T1BzMklZcmZzU2JmY3NIaDVuaFVaV0VYQjFKM3JP?=
+ =?utf-8?B?UUVMVGRSZnVmL1hZbWJ1ajUwT1FkbjZmeDYxMWJ3R2FOdFRBcXREb0Q1VWE1?=
+ =?utf-8?B?VXRjQm5LSDJpOGFmUUsxNFlTRHczTFJtcWlyUGlWZS85S2I1ZmF2blViVjZo?=
+ =?utf-8?B?a2huTTNyY3V4cUJXZzlWL1V4VDZsM05qdE5SNVZXVVhtK1RKd2ZhanFKSkFC?=
+ =?utf-8?B?T21QQUc3S2ZvVm5yUlIyVmZEdTZKU0FzYmNCMTF3RndQNXRRa1ROZVU1clVr?=
+ =?utf-8?B?Qk1tYTBsR04zaDhYSXNqaE9aYjZJRlZxbUtuMGxrN0FQdmRpSDUvN2FhbXpM?=
+ =?utf-8?B?N09DQXMvRDJTcXcveWpaWmloWnBDdmlka0ZHVFhMUlR0WjgybUgxcFN0S2tY?=
+ =?utf-8?B?ZlVyRWh6OEovenJXR0poTlF0cmRjQXg5RzMxMjlyZEZhazV3TW9PM1pUQ2th?=
+ =?utf-8?B?eWZzYW5lSGtWMWZqaC85dDExSVZaTGNKRTZRQnhKUTk5WmdMN2NTWW5KaDVn?=
+ =?utf-8?B?WTVxV3p2dHQwdGNFYmZyb3RGTTd4cGV3N1JkRW1uZDlkUmkrWGJ6b0twQys1?=
+ =?utf-8?B?TExpLzR5SlhDT2xBRU1DZ29xVzZjNHZhRUY0dW91OVdadVpmaHppQ2Z2TURF?=
+ =?utf-8?B?NHp4Q2xDckh1bHdlV0h5dDF6aXkreHQ3YTFMSnRQdDhEMFd0Y3dyNzduMmZF?=
+ =?utf-8?B?OEdWenpTaFg3RnhiK0d5VVFuandPckE2M3JXVThKNllVVDNwYlpreG9UWU9H?=
+ =?utf-8?B?UUZobUJzOHNkaDBYRTZXOWRoUm8yWVRUaW5FeGRQL0ZnTzR0ZmNVU3lwazlp?=
+ =?utf-8?B?SjhpcHQwUjJpWFpjY2dNTGRyQlNWMkp2SlRTcE9OTzFiS2xyY2JNc0lEc3A2?=
+ =?utf-8?B?TWFaWkNzaFYrUVVqeFJtUVFzTGZNWWpFN25Pa3hoVEhnYlJVbWhBOTZxanVE?=
+ =?utf-8?B?ODlMQnprYllQVlBqcHFqVkpXTXdza2pzL3Q0R1JEcVRRZCtMVjZnTlJiUTkv?=
+ =?utf-8?B?R3NsekRFejBZMkFDaWF0dUZuT29HUzU5QnhNcStINVRZY0x5S2lObU1yYUIw?=
+ =?utf-8?Q?HTWM=3D?=
+X-OriginatorOrg: math.wisc.edu
+X-MS-Exchange-CrossTenant-Network-Message-Id: 344e0c1e-bfa8-4be1-f0cb-08dda7cb5ebc
+X-MS-Exchange-CrossTenant-AuthSource: DS0PR06MB9877.namprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jun 2025 03:03:26.8389
+ (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 2ca68321-0eda-4908-88b2-424a8cb4b0f9
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: wV0ahx2lMjOshH/5PhfRe7Z9ODsWuNifPPmdLe/EFuN9IL1jQCBhvC8gDYVZx8TI
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BLAPR06MB6753
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUwNjEwMDAyMiBTYWx0ZWRfX2XbBQt7FOI8N zdmzx8iKx6QEjUICbI8PsO7b7dho0QfkjPWnbgzkGBxJTyPjsGyJhGc/58Y9I2cQCKXJttzF5Hp 1ZU3RAhl6Skh3LsJ0uAgjn0BCMq+rerCa8w4NMU6cYioma4x2bKaWuK7IENcGYnUsbA+lKTHlFU
+ CJIP4h/1FZvv3nMD8RFK+2SNfFxBkYCGGV5aZOi0jnIhTQVfD5Uj63XldLQN7UmUHwLc+XJjKmn p4yy+mawiDxd98CkUSMgrbwE84vkUvlLTqanyDOKBeA//xAGj78uXAqIKl3j7zC+T77L0Gy9Qzx Pbd0bizCQRYM15jGRCGRhRU4XqT1+i+BSmfRReOrEYkWDsgHwuXJnsHpzAqCDYb6iSgvDStJWpq
+ ovxQlsWVao2XE/xMLbwFXdZr3rqSEIjoPkRoVsLVMvjVMX02lUKZsHkjskpDW4PANvjrKN+b
+X-Proofpoint-GUID: uU5uxovFuTanPhOIoiG3gJuaMllsz1AT
+X-Proofpoint-ORIG-GUID: uU5uxovFuTanPhOIoiG3gJuaMllsz1AT
+X-Authority-Analysis: v=2.4 cv=NdTm13D4 c=1 sm=1 tr=0 ts=6847a081 cx=c_pps a=kGn1I/FbrZpDzHfxqj10lA==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19 a=wKuvFiaSGQ0qltdbU6+NXLB8nM8=:19 a=Ol13hO9ccFRV9qXi2t6ftBPywas=:19
+ a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=6IFa9wvqVegA:10 a=lre9DRYkaIEA:10 a=DyznqomoAAAA:8 a=KwuCZCnDYSoU2qz5CjEA:9 a=QEXdDO2ut3YA:10
+X-Wisc_ValidFrom: true
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1099,Hydra:6.0.736,FMLib:17.12.80.40
+ definitions=2025-06-10_01,2025-06-09_02,2025-03-28_01
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0 priorityscore=1501
+ mlxlogscore=875 bulkscore=0 malwarescore=0 phishscore=0 clxscore=1015
+ mlxscore=0 suspectscore=0 impostorscore=0 adultscore=0 lowpriorityscore=0
+ spamscore=0 classifier=spam authscore=0 authtc=n/a authcc= route=outbound
+ adjust=0 reason=mlx scancount=1 engine=8.19.0-2505280000
+ definitions=main-2506100022
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Jagadeesh Yalapalli, le jeu. 05 juin 2025 05:08:24 +0000, a ecrit:
-> From: Jagadeesh Yalapalli <jagadeesh.yalapalli@einfochips.com>
-> 
-> This change replaces non-portable `u_short` types with standardized `u16`
-> throughout the speakup subsystem to ensure:
-> 1. Consistent 16-bit width across all architectures.
-> 2. Improved code portability and readability.
-> 3. Elimination of platform-dependent type sizes.
-> 4. Safe bitwise operations without sign-extension risks.
+With the help of someone on the GRML list, I created a script that can 
+modify a standard GRML image for a particular hardware synth. If you use 
+this script, you can create a GRML image that comes up talking via your 
+hardware synth or via software speech without having to type in the 
+commands after it boots.
 
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+GRML is a Debian fork designed for use by people who like the command 
+line. It is useful as a rescue system. You can activate speakup after it 
+bootsbut with my script, you don't have to type anything.
 
-Thanks!
+I pre-built images for the LiteTalk and for software speech. These 
+images and the script can be found here:
 
-> Signed-off-by: Jagadeesh Yalapalli <jagadeesh.yalapalli@einfochips.com>
-> ---
->  drivers/accessibility/speakup/keyhelp.c      | 10 +--
->  drivers/accessibility/speakup/kobjects.c     |  4 +-
->  drivers/accessibility/speakup/main.c         | 74 ++++++++++----------
->  drivers/accessibility/speakup/selection.c    |  2 +-
->  drivers/accessibility/speakup/speakup.h      | 10 +--
->  drivers/accessibility/speakup/speakup_dtlk.h |  2 +-
->  drivers/accessibility/speakup/spk_types.h    |  2 +-
->  drivers/accessibility/speakup/synth.c        |  2 +-
->  8 files changed, 53 insertions(+), 53 deletions(-)
-> 
-> diff --git a/drivers/accessibility/speakup/keyhelp.c b/drivers/accessibility/speakup/keyhelp.c
-> index 822ceac83068..9c6e488adc2a 100644
-> --- a/drivers/accessibility/speakup/keyhelp.c
-> +++ b/drivers/accessibility/speakup/keyhelp.c
-> @@ -14,8 +14,8 @@
->  #define MAXFUNCS 130
->  #define MAXKEYS 256
->  static const int num_key_names = MSG_KEYNAMES_END - MSG_KEYNAMES_START + 1;
-> -static u_short key_offsets[MAXFUNCS], key_data[MAXKEYS];
-> -static u_short masks[] = { 32, 16, 8, 4, 2, 1 };
-> +static u16 key_offsets[MAXFUNCS], key_data[MAXKEYS];
-> +static u16 masks[] = { 32, 16, 8, 4, 2, 1 };
->  
->  static short letter_offsets[26] = {
->  	-1, -1, -1, -1, -1, -1, -1, -1,
-> @@ -49,7 +49,7 @@ static int cur_item, nstates;
->  static void build_key_data(void)
->  {
->  	u_char *kp, counters[MAXFUNCS], ch, ch1;
-> -	u_short *p_key, key;
-> +	u16 *p_key, key;
->  	int i, offset = 1;
->  
->  	nstates = (int)(state_tbl[-1]);
-> @@ -129,12 +129,12 @@ static int help_init(void)
->  	return 0;
->  }
->  
-> -int spk_handle_help(struct vc_data *vc, u_char type, u_char ch, u_short key)
-> +int spk_handle_help(struct vc_data *vc, u_char type, u_char ch, u16 key)
->  {
->  	int i, n;
->  	char *name;
->  	u_char func, *kp;
-> -	u_short *p_keys, val;
-> +	u16 *p_keys, val;
->  
->  	if (letter_offsets[0] == -1)
->  		help_init();
-> diff --git a/drivers/accessibility/speakup/kobjects.c b/drivers/accessibility/speakup/kobjects.c
-> index 0dfdb6608e02..3c3b1a4efbfe 100644
-> --- a/drivers/accessibility/speakup/kobjects.c
-> +++ b/drivers/accessibility/speakup/kobjects.c
-> @@ -120,7 +120,7 @@ static ssize_t chars_chartab_store(struct kobject *kobj,
->  	ssize_t retval = count;
->  	unsigned long flags;
->  	unsigned long index = 0;
-> -	int charclass = 0;
-> +	u16 charclass = 0;
->  	int received = 0;
->  	int used = 0;
->  	int rejected = 0;
-> @@ -461,7 +461,7 @@ static ssize_t punc_show(struct kobject *kobj, struct kobj_attribute *attr,
->  	struct st_var_header *p_header;
->  	struct punc_var_t *var;
->  	struct st_bits_data *pb;
-> -	short mask;
-> +	u16 mask;
->  	unsigned long flags;
->  
->  	p_header = spk_var_header_by_name(attr->attr.name);
-> diff --git a/drivers/accessibility/speakup/main.c b/drivers/accessibility/speakup/main.c
-> index e68cf1d83787..4e52607fa2be 100644
-> --- a/drivers/accessibility/speakup/main.c
-> +++ b/drivers/accessibility/speakup/main.c
-> @@ -63,7 +63,7 @@ int spk_attrib_bleep, spk_bleeps, spk_bleep_time = 10;
->  int spk_no_intr, spk_spell_delay;
->  int spk_key_echo, spk_say_word_ctl;
->  int spk_say_ctrl, spk_bell_pos;
-> -short spk_punc_mask;
-> +u16 spk_punc_mask;
->  int spk_punc_level, spk_reading_punc;
->  int spk_cur_phonetic;
->  char spk_str_caps_start[MAXVARLEN + 1] = "\0";
-> @@ -183,13 +183,13 @@ char *spk_default_chars[256] = {
->  /* 251 */ "u circumflex", "u oomlaut", "y acute", "thorn", "y oomlaut"
->  };
->  
-> -/* array of 256 u_short (one for each character)
-> +/* array of 256 u16 (one for each character)
->   * initialized to default_chartab and user selectable via
->   * /sys/module/speakup/parameters/chartab
->   */
-> -u_short spk_chartab[256];
-> +u16 spk_chartab[256];
->  
-> -static u_short default_chartab[256] = {
-> +static u16 default_chartab[256] = {
->  	B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL,	/* 0-7 */
->  	B_CTL, B_CTL, A_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL,	/* 8-15 */
->  	B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL, B_CTL,	/*16-23 */
-> @@ -267,10 +267,10 @@ static void speakup_date(struct vc_data *vc)
->  	spk_y = spk_cy = vc->state.y;
->  	spk_pos = spk_cp = vc->vc_pos;
->  	spk_old_attr = spk_attr;
-> -	spk_attr = get_attributes(vc, (u_short *)spk_pos);
-> +	spk_attr = get_attributes(vc, (u16 *)spk_pos);
->  }
->  
-> -static void bleep(u_short val)
-> +static void bleep(u16 val)
->  {
->  	static const short vals[] = {
->  		350, 370, 392, 414, 440, 466, 491, 523, 554, 587, 619, 659
-> @@ -346,14 +346,14 @@ static void speakup_cut(struct vc_data *vc)
->  
->  	if (!mark_cut_flag) {
->  		mark_cut_flag = 1;
-> -		spk_xs = (u_short)spk_x;
-> -		spk_ys = (u_short)spk_y;
-> +		spk_xs = (u16)spk_x;
-> +		spk_ys = (u16)spk_y;
->  		spk_sel_cons = vc;
->  		synth_printf("%s\n", spk_msg_get(MSG_MARK));
->  		return;
->  	}
-> -	spk_xe = (u_short)spk_x;
-> -	spk_ye = (u_short)spk_y;
-> +	spk_xe = (u16)spk_x;
-> +	spk_ye = (u16)spk_y;
->  	mark_cut_flag = 0;
->  	synth_printf("%s\n", spk_msg_get(MSG_CUT));
->  
-> @@ -482,7 +482,7 @@ static void say_char(struct vc_data *vc)
->  	u16 ch;
->  
->  	spk_old_attr = spk_attr;
-> -	ch = get_char(vc, (u_short *)spk_pos, &spk_attr);
-> +	ch = get_char(vc, (u16 *)spk_pos, &spk_attr);
->  	if (spk_attr != spk_old_attr) {
->  		if (spk_attrib_bleep & 1)
->  			bleep(spk_y);
-> @@ -497,7 +497,7 @@ static void say_phonetic_char(struct vc_data *vc)
->  	u16 ch;
->  
->  	spk_old_attr = spk_attr;
-> -	ch = get_char(vc, (u_short *)spk_pos, &spk_attr);
-> +	ch = get_char(vc, (u16 *)spk_pos, &spk_attr);
->  	if (ch <= 0x7f && isalpha(ch)) {
->  		ch &= 0x1f;
->  		synth_printf("%s\n", phonetic[--ch]);
-> @@ -549,7 +549,7 @@ static u_long get_word(struct vc_data *vc)
->  	u_char temp;
->  
->  	spk_old_attr = spk_attr;
-> -	ch = get_char(vc, (u_short *)tmp_pos, &temp);
-> +	ch = get_char(vc, (u16 *)tmp_pos, &temp);
->  
->  /* decided to take out the sayword if on a space (mis-information */
->  	if (spk_say_word_ctl && ch == SPACE) {
-> @@ -558,26 +558,26 @@ static u_long get_word(struct vc_data *vc)
->  		return 0;
->  	} else if (tmpx < vc->vc_cols - 2 &&
->  		   (ch == SPACE || ch == 0 || (ch < 0x100 && IS_WDLM(ch))) &&
-> -		   get_char(vc, (u_short *)tmp_pos + 1, &temp) > SPACE) {
-> +		   get_char(vc, (u16 *)tmp_pos + 1, &temp) > SPACE) {
->  		tmp_pos += 2;
->  		tmpx++;
->  	} else {
->  		while (tmpx > 0) {
-> -			ch = get_char(vc, (u_short *)tmp_pos - 1, &temp);
-> +			ch = get_char(vc, (u16 *)tmp_pos - 1, &temp);
->  			if ((ch == SPACE || ch == 0 ||
->  			     (ch < 0x100 && IS_WDLM(ch))) &&
-> -			    get_char(vc, (u_short *)tmp_pos, &temp) > SPACE)
-> +			    get_char(vc, (u16 *)tmp_pos, &temp) > SPACE)
->  				break;
->  			tmp_pos -= 2;
->  			tmpx--;
->  		}
->  	}
-> -	attr_ch = get_char(vc, (u_short *)tmp_pos, &spk_attr);
-> +	attr_ch = get_char(vc, (u16 *)tmp_pos, &spk_attr);
->  	buf[cnt++] = attr_ch;
->  	while (tmpx < vc->vc_cols - 1 && cnt < ARRAY_SIZE(buf) - 1) {
->  		tmp_pos += 2;
->  		tmpx++;
-> -		ch = get_char(vc, (u_short *)tmp_pos, &temp);
-> +		ch = get_char(vc, (u16 *)tmp_pos, &temp);
->  		if (ch == SPACE || ch == 0 ||
->  		    (buf[cnt - 1] < 0x100 && IS_WDLM(buf[cnt - 1]) &&
->  		     ch > SPACE))
-> @@ -591,7 +591,7 @@ static u_long get_word(struct vc_data *vc)
->  static void say_word(struct vc_data *vc)
->  {
->  	u_long cnt = get_word(vc);
-> -	u_short saved_punc_mask = spk_punc_mask;
-> +	u16 saved_punc_mask = spk_punc_mask;
->  
->  	if (cnt == 0)
->  		return;
-> @@ -606,7 +606,7 @@ static void say_prev_word(struct vc_data *vc)
->  	u_char temp;
->  	u16 ch;
->  	enum edge edge_said = edge_none;
-> -	u_short last_state = 0, state = 0;
-> +	u16 last_state = 0, state = 0;
->  
->  	spk_parked |= 0x01;
->  
-> @@ -635,7 +635,7 @@ static void say_prev_word(struct vc_data *vc)
->  			spk_x--;
->  		}
->  		spk_pos -= 2;
-> -		ch = get_char(vc, (u_short *)spk_pos, &temp);
-> +		ch = get_char(vc, (u16 *)spk_pos, &temp);
->  		if (ch == SPACE || ch == 0)
->  			state = 0;
->  		else if (ch < 0x100 && IS_WDLM(ch))
-> @@ -661,7 +661,7 @@ static void say_next_word(struct vc_data *vc)
->  	u_char temp;
->  	u16 ch;
->  	enum edge edge_said = edge_none;
-> -	u_short last_state = 2, state = 0;
-> +	u16 last_state = 2, state = 0;
->  
->  	spk_parked |= 0x01;
->  	if (spk_x == vc->vc_cols - 1 && spk_y == vc->vc_rows - 1) {
-> @@ -669,7 +669,7 @@ static void say_next_word(struct vc_data *vc)
->  		return;
->  	}
->  	while (1) {
-> -		ch = get_char(vc, (u_short *)spk_pos, &temp);
-> +		ch = get_char(vc, (u16 *)spk_pos, &temp);
->  		if (ch == SPACE || ch == 0)
->  			state = 0;
->  		else if (ch < 0x100 && IS_WDLM(ch))
-> @@ -755,9 +755,9 @@ static int get_line(struct vc_data *vc)
->  	u_char tmp2;
->  
->  	spk_old_attr = spk_attr;
-> -	spk_attr = get_attributes(vc, (u_short *)spk_pos);
-> +	spk_attr = get_attributes(vc, (u16 *)spk_pos);
->  	for (i = 0; i < vc->vc_cols; i++) {
-> -		buf[i] = get_char(vc, (u_short *)tmp, &tmp2);
-> +		buf[i] = get_char(vc, (u16 *)tmp, &tmp2);
->  		tmp += 2;
->  	}
->  	for (--i; i >= 0; i--)
-> @@ -770,7 +770,7 @@ static void say_line(struct vc_data *vc)
->  {
->  	int i = get_line(vc);
->  	u16 *cp;
-> -	u_short saved_punc_mask = spk_punc_mask;
-> +	u16 saved_punc_mask = spk_punc_mask;
->  
->  	if (i == 0) {
->  		synth_printf("%s\n", spk_msg_get(MSG_BLANK));
-> @@ -817,12 +817,12 @@ static int say_from_to(struct vc_data *vc, u_long from, u_long to,
->  {
->  	int i = 0;
->  	u_char tmp;
-> -	u_short saved_punc_mask = spk_punc_mask;
-> +	u16 saved_punc_mask = spk_punc_mask;
->  
->  	spk_old_attr = spk_attr;
-> -	spk_attr = get_attributes(vc, (u_short *)from);
-> +	spk_attr = get_attributes(vc, (u16 *)from);
->  	while (from < to) {
-> -		buf[i++] = get_char(vc, (u_short *)from, &tmp);
-> +		buf[i++] = get_char(vc, (u16 *)from, &tmp);
->  		from += 2;
->  		if (i >= vc->vc_size_row)
->  			break;
-> @@ -895,10 +895,10 @@ static int get_sentence_buf(struct vc_data *vc, int read_punc)
->  	sentmarks[bn][0] = &sentbuf[bn][0];
->  	i = 0;
->  	spk_old_attr = spk_attr;
-> -	spk_attr = get_attributes(vc, (u_short *)start);
-> +	spk_attr = get_attributes(vc, (u16 *)start);
->  
->  	while (start < end) {
-> -		sentbuf[bn][i] = get_char(vc, (u_short *)start, &tmp);
-> +		sentbuf[bn][i] = get_char(vc, (u16 *)start, &tmp);
->  		if (i > 0) {
->  			if (sentbuf[bn][i] == SPACE &&
->  			    sentbuf[bn][i - 1] == '.' &&
-> @@ -1047,7 +1047,7 @@ static void say_position(struct vc_data *vc)
->  static void say_char_num(struct vc_data *vc)
->  {
->  	u_char tmp;
-> -	u16 ch = get_char(vc, (u_short *)spk_pos, &tmp);
-> +	u16 ch = get_char(vc, (u16 *)spk_pos, &tmp);
->  
->  	synth_printf(spk_msg_get(MSG_CHAR_INFO), ch, ch);
->  }
-> @@ -1080,7 +1080,7 @@ static void spkup_write(const u16 *in_buf, int count)
->  {
->  	static int rep_count;
->  	static u16 ch = '\0', old_ch = '\0';
-> -	static u_short char_type, last_type;
-> +	static u16 char_type, last_type;
->  	int in_count = count;
->  
->  	spk_keydown = 0;
-> @@ -1325,9 +1325,9 @@ void spk_reset_default_chartab(void)
->  
->  static const struct st_bits_data *pb_edit;
->  
-> -static int edit_bits(struct vc_data *vc, u_char type, u_char ch, u_short key)
-> +static int edit_bits(struct vc_data *vc, u_char type, u_char ch, u16 key)
->  {
-> -	short mask = pb_edit->mask, ch_type = spk_chartab[ch];
-> +	u16 mask = pb_edit->mask, ch_type = spk_chartab[ch];
->  
->  	if (type != KT_LATIN || (ch_type & B_NUM) || ch < SPACE)
->  		return -1;
-> @@ -1947,7 +1947,7 @@ static void speakup_bits(struct vc_data *vc)
->  	spk_special_handler = edit_bits;
->  }
->  
-> -static int handle_goto(struct vc_data *vc, u_char type, u_char ch, u_short key)
-> +static int handle_goto(struct vc_data *vc, u_char type, u_char ch, u16 key)
->  {
->  	static u_char goto_buf[8];
->  	static int num;
-> @@ -2105,7 +2105,7 @@ static void do_spkup(struct vc_data *vc, u_char value)
->  static const char *pad_chars = "0123456789+-*/\015,.?()";
->  
->  static int
-> -speakup_key(struct vc_data *vc, int shift_state, int keycode, u_short keysym,
-> +speakup_key(struct vc_data *vc, int shift_state, int keycode, u16 keysym,
->  	    int up_flag)
->  {
->  	unsigned long flags;
-> diff --git a/drivers/accessibility/speakup/selection.c b/drivers/accessibility/speakup/selection.c
-> index 7df7afad5ab4..1713ce4e0ba5 100644
-> --- a/drivers/accessibility/speakup/selection.c
-> +++ b/drivers/accessibility/speakup/selection.c
-> @@ -13,7 +13,7 @@
->  
->  #include "speakup.h"
->  
-> -unsigned short spk_xs, spk_ys, spk_xe, spk_ye; /* our region points */
-> +u16 spk_xs, spk_ys, spk_xe, spk_ye; /* our region points */
->  struct vc_data *spk_sel_cons;
->  
->  struct speakup_selection_work {
-> diff --git a/drivers/accessibility/speakup/speakup.h b/drivers/accessibility/speakup/speakup.h
-> index 54f1226ea061..984a729fd82d 100644
-> --- a/drivers/accessibility/speakup/speakup.h
-> +++ b/drivers/accessibility/speakup/speakup.h
-> @@ -62,7 +62,7 @@ int spk_set_num_var(int val, struct st_var_header *var, int how);
->  int spk_set_string_var(const char *page, struct st_var_header *var, int len);
->  int spk_set_mask_bits(const char *input, const int which, const int how);
->  extern special_func spk_special_handler;
-> -int spk_handle_help(struct vc_data *vc, u_char type, u_char ch, u_short key);
-> +int spk_handle_help(struct vc_data *vc, u_char type, u_char ch, u16 key);
->  int synth_init(char *name);
->  void synth_release(void);
->  
-> @@ -82,7 +82,7 @@ void synth_writeu(const char *buf, size_t count);
->  int synth_supports_indexing(void);
->  
->  extern struct vc_data *spk_sel_cons;
-> -extern unsigned short spk_xs, spk_ys, spk_xe, spk_ye; /* our region points */
-> +extern u16 spk_xs, spk_ys, spk_xe, spk_ye; /* our region points */
->  
->  extern wait_queue_head_t speakup_event;
->  extern struct kobject *speakup_kobj;
-> @@ -95,20 +95,20 @@ extern struct st_spk_t *speakup_console[];
->  extern struct spk_synth *synth;
->  extern char spk_pitch_buff[];
->  extern u_char *spk_our_keys[];
-> -extern short spk_punc_masks[];
-> +extern u16 spk_punc_masks[];
->  extern char spk_str_caps_start[], spk_str_caps_stop[], spk_str_pause[];
->  extern bool spk_paused;
->  extern const struct st_bits_data spk_punc_info[];
->  extern u_char spk_key_buf[600];
->  extern char *spk_characters[];
->  extern char *spk_default_chars[];
-> -extern u_short spk_chartab[];
-> +extern u16 spk_chartab[];
->  extern int spk_no_intr, spk_say_ctrl, spk_say_word_ctl, spk_punc_level;
->  extern int spk_reading_punc, spk_attrib_bleep, spk_bleeps;
->  extern int spk_bleep_time, spk_bell_pos;
->  extern int spk_spell_delay, spk_key_echo;
->  extern int spk_cur_phonetic;
-> -extern short spk_punc_mask;
-> +extern u16 spk_punc_mask;
->  extern short spk_pitch_shift, synth_flags;
->  extern bool spk_quiet_boot;
->  extern char *synth_name;
-> diff --git a/drivers/accessibility/speakup/speakup_dtlk.h b/drivers/accessibility/speakup/speakup_dtlk.h
-> index 9c378b58066e..4190c7badeaf 100644
-> --- a/drivers/accessibility/speakup/speakup_dtlk.h
-> +++ b/drivers/accessibility/speakup/speakup_dtlk.h
-> @@ -39,7 +39,7 @@
->  
->  				/* data returned by Interrogate command */
->  struct synth_settings {
-> -	u_short serial_number;	/* 0-7Fh:0-7Fh */
-> +	u16 serial_number;	/* 0-7Fh:0-7Fh */
->  	u_char rom_version[24]; /* null terminated string */
->  	u_char mode;		/* 0=Character; 1=Phoneme; 2=Text */
->  	u_char punc_level;	/* nB; 0-7 */
-> diff --git a/drivers/accessibility/speakup/spk_types.h b/drivers/accessibility/speakup/spk_types.h
-> index 08011518a28a..a5762330e249 100644
-> --- a/drivers/accessibility/speakup/spk_types.h
-> +++ b/drivers/accessibility/speakup/spk_types.h
-> @@ -53,7 +53,7 @@ enum var_id_t {
->  };
->  
->  typedef int (*special_func)(struct vc_data *vc, u_char type, u_char ch,
-> -		u_short key);
-> +		u16 key);
->  
->  #define COLOR_BUFFER_SIZE 160
->  
-> diff --git a/drivers/accessibility/speakup/synth.c b/drivers/accessibility/speakup/synth.c
-> index d8addbf3ad0d..d1ec1a7eb160 100644
-> --- a/drivers/accessibility/speakup/synth.c
-> +++ b/drivers/accessibility/speakup/synth.c
-> @@ -574,4 +574,4 @@ struct spk_synth *synth_current(void)
->  }
->  EXPORT_SYMBOL_GPL(synth_current);
->  
-> -short spk_punc_masks[] = { 0, SOME, MOST, PUNC, PUNC | B_SYM };
-> +u16 spk_punc_masks[] = { 0, SOME, MOST, PUNC, PUNC | B_SYM };
-> -- 
-> 2.43.0
-> 
+https://people.math.wisc.edu/~jheim/GRML/
 
--- 
-Samuel
-What's this script do?
-    unzip ; touch ; finger ; mount ; gasp ; yes ; umount ; sleep
-Hint for the answer: not everything is computer-oriented. Sometimes you're
-in a sleeping bag, camping out.
-(Contributed by Frans van der Zande.)
 
