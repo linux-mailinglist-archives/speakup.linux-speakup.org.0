@@ -1,48 +1,44 @@
-Return-Path: <speakup+bounces-1302-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1303-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 59369AD83A7
-	for <lists+speakup@lfdr.de>; Fri, 13 Jun 2025 09:08:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 3B911AD89F7
+	for <lists+speakup@lfdr.de>; Fri, 13 Jun 2025 13:06:06 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=the-brannons.com header.i=@the-brannons.com header.a=rsa-sha256 header.s=hurricane header.b=FnqmAiWD;
+	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=r+Mifvat;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7662B3822DB; Fri, 13 Jun 2025 03:08:13 -0400 (EDT)
+	id 7BCF03824AF; Fri, 13 Jun 2025 07:06:04 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 56FEB381913
-	for <lists+speakup@lfdr.de>; Fri, 13 Jun 2025 03:08:13 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 56F4838199F
+	for <lists+speakup@lfdr.de>; Fri, 13 Jun 2025 07:06:04 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7AB22381FD3; Fri, 13 Jun 2025 03:08:06 -0400 (EDT)
-Received: from hurricane.the-brannons.com (hurricane.the-brannons.com [216.252.162.32])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 94E7338190F
-	for <speakup@linux-speakup.org>; Fri, 13 Jun 2025 03:08:05 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; s=hurricane; bh=QVqgpbVjPA
-	FfV7093dIVSBGJjKsrs22IyEwDxJY26SE=; h=date:subject:to:from;
-	d=the-brannons.com; b=FnqmAiWDdc4DJzTaZsRVFJxXW1X28vyNRnDFoASgx9wG+G9Q
-	m9W5VhhCtbMVvOBALbLZDQHiWPxc1UX9bM9QF8lwrswP1cv3TX3JXOLEqaBdtDgKC4r4y4
-	H7x28An2btSL8P80nczNLnwc6BlMRjEPPriyVyGcJNglYWtkI2YQg=
-Received: 
-	by hurricane.the-brannons.com (OpenSMTPD) with ESMTPSA id 2c23a5c3 (TLSv1.3:TLS_AES_256_GCM_SHA384:256:NO) auth=yes user=chris
-	for <speakup@linux-speakup.org>;
-	Fri, 13 Jun 2025 07:07:53 +0000 (UTC)
-From: Chris Brannon <chris@the-brannons.com>
-To: speakup@linux-speakup.org
-Subject: my very public goodbye
-Autocrypt: addr=chris@the-brannons.com; prefer-encrypt=mutual; keydata=
- mDMEX37pCBYJKwYBBAHaRw8BAQdASkFrVm/MHGNpj7Oa+nq4b7eBg5LX5qnvS6ojH04ZE9+0LENo
- cmlzdG9waGVyIEJyYW5ub24gPGNocmlzQHRoZS1icmFubm9ucy5jb20+iJAEExYIADgWIQTFfzWT
- HzF7+QWPg09oJ1i8YNj4egUCX37pCAIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRBoJ1i8
- YNj4esVsAQCJXDxhj5gZjcrNMmSH6Z+X5RDdbvsTRvS5wwQXM3g4kAEAjOrdx/fvZDiKL8dylDhU
- YUVVSkwWeOD2UtmYjm/QtwG4OARffukIEgorBgEEAZdVAQUBAQdAOMaQorDR8QUdM34/Q9mUyBvS
- 9WFK0Mb76dHyNkERx2kDAQgHiHgEGBYIACAWIQTFfzWTHzF7+QWPg09oJ1i8YNj4egUCX37pCAIb
- DAAKCRBoJ1i8YNj4eo/8AQC4AX6NMv65KQQU7s95T/1Y4E+Z7KTbvhKJeSjdDfj88AEA/qzPnDvl
- dLmqqNTqsfZCK81teOxSoNhRlhWcQ8QQ/wY=
-Date: Fri, 13 Jun 2025 00:07:53 -0700
-Message-ID: <87h60kxgom.fsf@the-brannons.com>
-User-Agent: Gnus/5.13 (Gnus v5.13)
+	id 591E7382039; Fri, 13 Jun 2025 07:05:57 -0400 (EDT)
+Received: from out-172.mta1.migadu.com (out-172.mta1.migadu.com [95.215.58.172])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 48918381913
+	for <speakup@linux-speakup.org>; Fri, 13 Jun 2025 07:05:54 -0400 (EDT)
+Date: Fri, 13 Jun 2025 21:01:34 +1000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
+	t=1749812741;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 content-transfer-encoding:content-transfer-encoding:
+	 in-reply-to:in-reply-to:references:references;
+	bh=6RDVbjtDX23tBBHrmpZHm7kreew20HD+xPeHQUj3pFk=;
+	b=r+MifvatoJdvXi4ENIU/D1nxRe0bJ5LoDf5Iyt/op0KJbF9RiB8wCFcMMHV00ZuwcPF1Hx
+	GdzkNZxqfROvc+RXeRjO+ULYtgmCrS8pJMPx8FuH8WC5gHnGW5cEsksn4pAgjWKsigsxwS
+	NJMNF1hMZruqQXXyy6Pt9q8XIuJ0zp7Aavk9vfEWM7IhtanPI/kfr29xWz4jUBNlD3BHPf
+	7twFUteQFiYpOCH+dXejLawhzzBe0mFic4wojGcnoPSn2AjwAapQJHexhMw5AY7dwQoKI5
+	TaY5mqpkXRAOutCHXYBn2LD1kJOi49kNwrKn+/FhtrnEt9Fy5x0P2DDlVcGX4w==
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Jookia <contact@jookia.org>
+To: "John G. Heim" <jheim@math.wisc.edu>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: Tripletalk mini
+Message-ID: <aEwFDuQX7iT3xmzY@titan>
+References: <73297c7e-9945-483b-a9d3-e347ab217d59@math.wisc.edu>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -52,26 +48,25 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <73297c7e-9945-483b-a9d3-e347ab217d59@math.wisc.edu>
+X-Migadu-Flow: FLOW_OUT
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hello,
-This is now very public knowledge, and I want to say goodbye here, since
-I've been using Linux exclusively for about 25 years and I contributed
-to Speakup in the late 2000s / early 2010s.  This software and the
-community around it has been really important to me.
+I belive speakup does support USB serial devices nowadays.
+I don't know which Speakup driver you'd use for this.
 
-I'm dying.  More accurately, I've been dying for a while, but later
-today, I'm going to receive medical aid in dying AKA death with dignity.
-
-I wrote a blog post about my situation here:
-https://blog.the-brannons.com/post/Medical-Aid-in-Dying-My-Health-and-so-on
-Somehow it made it to the front page of Hackernews on Wednesday, and
-the denizens thereof proceeded to debate it.  I found the whole thing
-absurdly funny, but I also appreciate that this stuff is being discussed
-openly, frankly, and honestly.
-
-Wishing everyone the best.
-
--- Chris
+On Thu, Jun 12, 2025 at 11:06:42AM -0500, John G. Heim wrote:
+> I've been poking around to see if there are still any hardware synths
+> available. There is something called a Tripletalk Mini on the Blind  Mice
+> mega Mall.
+> 
+> https://www.blindmicemegamall.com/bmm/shop/Item_Detail?itemid=5323293
+> 
+> It does not seem to have a serial cable connector though. Correct me if I'm
+> wrong but that means it would not work with speakup, right?
+> 
+> 
 
