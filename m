@@ -1,49 +1,79 @@
-Return-Path: <speakup+bounces-1316-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1317-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 360CDB1D4AB
-	for <lists+speakup@lfdr.de>; Thu,  7 Aug 2025 11:26:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 6610EB389CB
+	for <lists+speakup@lfdr.de>; Wed, 27 Aug 2025 20:43:09 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=Y/0fDWCj;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=nzF11dPB;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 290AB3822BC; Thu, 07 Aug 2025 05:18:15 -0400 (EDT)
+	id 5E33638272F; Wed, 27 Aug 2025 14:42:59 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 150C838223C
-	for <lists+speakup@lfdr.de>; Thu, 07 Aug 2025 05:18:15 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3CAFD382272
+	for <lists+speakup@lfdr.de>; Wed, 27 Aug 2025 14:42:59 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 48B3C382060; Thu, 07 Aug 2025 05:18:11 -0400 (EDT)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 231E4381898
-	for <speakup@linux-speakup.org>; Thu, 07 Aug 2025 05:18:11 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 7935EA0493;
-	Thu,  7 Aug 2025 11:18:00 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id zKMl65vKd_rK; Thu,  7 Aug 2025 11:18:00 +0200 (CEST)
-Received: from begin (nat-inria-interne-52-gw-01-bso.bordeaux.inria.fr [194.199.1.52])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id EAA70A03B6;
-	Thu,  7 Aug 2025 11:17:59 +0200 (CEST)
-Received: from samy by begin with local (Exim 4.98.2)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1ujwl5-0000000ALFG-2frs;
-	Thu, 07 Aug 2025 11:17:59 +0200
-Date: Thu, 7 Aug 2025 11:17:59 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Xichao Zhao <zhao.xichao@vivo.com>
-Cc: w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
-	speakup@linux-speakup.org, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] accessibility: Use str_plural() to simplify the code
-Message-ID: <aJRvR9xEkzMix5zQ@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Xichao Zhao <zhao.xichao@vivo.com>, w.d.hubbs@gmail.com,
-	chris@the-brannons.com, kirk@reisers.ca, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org
-References: <20250807085930.429665-1-zhao.xichao@vivo.com>
+	id C6E3138225B; Wed, 27 Aug 2025 14:42:51 -0400 (EDT)
+Received: from fout-a3-smtp.messagingengine.com (fout-a3-smtp.messagingengine.com [103.168.172.146])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id A0B5338194D
+	for <speakup@linux-speakup.org>; Wed, 27 Aug 2025 14:42:50 -0400 (EDT)
+Received: from phl-compute-12.internal (phl-compute-12.internal [10.202.2.52])
+	by mailfout.phl.internal (Postfix) with ESMTP id 64EF7EC032D
+	for <speakup@linux-speakup.org>; Wed, 27 Aug 2025 14:42:49 -0400 (EDT)
+Received: from phl-mailfrontend-02 ([10.202.2.163])
+  by phl-compute-12.internal (MEProxy); Wed, 27 Aug 2025 14:42:49 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:content-type:content-type:date:date
+	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
+	:subject:to:to; s=fm2; t=1756320169; x=1756406569; bh=qnz7CB9uwD
+	pTNqtnw/+22V4fpxG8hsI0UmjGq64s1/Y=; b=Y/0fDWCjFFSgk+qWodfuSwYzYW
+	My0sxpAiBS+cwXfNvMnwOViYxVPcEbpfD4r9kVuA51guNQ58svL0irtPE5Whq5xy
+	uKYvnZNvxmVqfFkEUSHBijUX+YkwK3U64FF63noKP8J0LXGLMHWpfvuwK7O4MUaa
+	QDNACExPkkw0oz25NmllLEN64oy5r9NXs5rudqLI3vstuqWdztHuWHzdTIXDw/iQ
+	AxaHcZ2PR8oJUzyDKtFWwlN4e+WTP/vW6p5jlHFXaJBF9kTWYqgwD3WhVoi90Wkp
+	SeeFcfIj99rQrQGRisUWOHppSDpzWBqHb/saEG1DxUHPtcGHKPWNUJDbDBZQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:message-id
+	:mime-version:reply-to:subject:subject:to:to:x-me-proxy
+	:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=1756320169; x=
+	1756406569; bh=qnz7CB9uwDpTNqtnw/+22V4fpxG8hsI0UmjGq64s1/Y=; b=n
+	zF11dPBBkD1azl07gssfq4fwAL/V/3eOp7SrnuhbzJsGl/s39qB2S1p09PNnxdGS
+	6XMNyH8o8kyiqvEvI2adyveTi0x8/xY6fRwTvaBzsU/W0knzXUpBJVM306wkKjvj
+	12DeHaxBqPyGGkJEbsxMJQWcl0DY6dUmbZOlnJsv0x7+D23iEiB98vq6GV46azfr
+	arjxJ2oPMpzo2lArEk2AYpETp6HDndcnZSUhwME+s9jdXy8zsgz+uBcgJgZ3oPuq
+	gH+lXUApfgIlaJkcrS995XEiVAAJcJFcY+luE7HO/B0iEQNN7xcawaadODDIwrw9
+	twUBs29RXzEp/282hAJSw==
+X-ME-Sender: <xms:qFGvaCAsVvNhEyrANgSv0Y9zhWE-xR5MCFMlTif2BpBPI9eKwPkqHA>
+    <xme:qFGvaHxWhn2xDPzpH0VtbruwdqxHf-aZr7ATPlF903CxqVhbFGCEJUYp0e5A90P5u
+    0BOjHNXYAXwmSoxSNQ>
+X-ME-Received: <xmr:qFGvaGNP1gxbLD5RAGzUnWuIXCx5cOALzHqtn5mcsPilhj4lkLnpFOIQjYYOd5yBD3XmqyUJu8ZDr3vgZ05mNXXia6sx0tdmX5M>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdefgddujeekledtucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehmtderredttdelne
+    cuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhp
+    hhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpefguefgvefhteduueethedvvdelie
+    fgueeugfeiuddutdfguefhvdehffejvefhgfenucevlhhushhtvghrufhiiigvpedtnecu
+    rfgrrhgrmhepmhgrihhlfhhrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvg
+    ihrdgtohhmpdhnsggprhgtphhtthhopedupdhmohguvgepshhmthhpohhuthdprhgtphht
+    thhopehsphgvrghkuhhpsehlihhnuhigqdhsphgvrghkuhhprdhorhhg
+X-ME-Proxy: <xmx:qFGvaG8q-Yd2J3NQ__qVZe7US2YBVGqP8RdaOMztVVIqo0tgbklbSw>
+    <xmx:qFGvaGpMAIpVwM8QI3eJeRWs-utGlVPRgB492wAAmFARtY3DN4sAhw>
+    <xmx:qFGvaI66pAVhZTb10uXW9RptT_3QK9qcDgLUHDbvYFWl6yYo61T7_w>
+    <xmx:qFGvaGPvUUc0C9j9nH34VQsf8thRIqN6g1uehnReH7BPsFZ4_nTcaQ>
+    <xmx:qVGvaCbiQgmmzIwPQ-qfErUikm6X8Tw83XvC8LZDY_1xSqILXRlUDNuC>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA for
+ <speakup@linux-speakup.org>; Wed, 27 Aug 2025 14:42:48 -0400 (EDT)
+Date: Wed, 27 Aug 2025 11:42:47 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: speakup@linux-speakup.org
+Subject: Why Won't Speakup Announce this Charactor?
+Message-ID: <86f9ce9c-e2ab-c53a-5860-6b8bc0bd0aa1@hubert-humphrey.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -53,46 +83,28 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20250807085930.429665-1-zhao.xichao@vivo.com>
-Organization: I am not organized
+Content-Type: multipart/mixed; boundary="8323329-1090979311-1756320168=:142574"
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Xichao Zhao, le jeu. 07 août 2025 16:59:30 +0800, a ecrit:
-> Use the string choice helper function str_plural() to simplify the code.
-> 
-> Signed-off-by: Xichao Zhao <zhao.xichao@vivo.com>
+  This message is in MIME format.  The first part should be readable text,
+  while the remaining parts are likely unreadable without MIME-aware tools.
 
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+--8323329-1090979311-1756320168=:142574
+Content-Type: text/plain; charset=ISO-8859-15
+Content-Transfer-Encoding: 8BIT
 
-> ---
->  drivers/accessibility/speakup/kobjects.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/accessibility/speakup/kobjects.c b/drivers/accessibility/speakup/kobjects.c
-> index 0dfdb6608e02..57139971e997 100644
-> --- a/drivers/accessibility/speakup/kobjects.c
-> +++ b/drivers/accessibility/speakup/kobjects.c
-> @@ -98,7 +98,7 @@ static void report_char_chartab_status(int reset, int received, int used,
->  		if (rejected)
->  			snprintf(buf + (len - 1), sizeof(buf) - (len - 1),
->  				 " with %d reject%s\n",
-> -				 rejected, rejected > 1 ? "s" : "");
-> +				 rejected, str_plural(rejected));
->  		pr_info("%s", buf);
->  	}
->  }
-> @@ -740,7 +740,7 @@ static void report_msg_status(int reset, int received, int used,
->  		if (rejected)
->  			snprintf(buf + (len - 1), sizeof(buf) - (len - 1),
->  				 " with %d reject%s\n",
-> -				 rejected, rejected > 1 ? "s" : "");
-> +				 rejected, str_plural(rejected));
->  		pr_info("%s", buf);
->  	}
->  }
-> -- 
-> 2.34.1
+Hi All: I really miss Word Perfect-and-its Reveal Code f12 feature. Anyway, was 
+downloading a youtube video-and-noticed this. So, I asked 1 of my sighted Linux 
+experts what is this item?
+Destination: ./◈   WATCH NOW
+> After pasting it in, there are at least 2 carrots, which I didn't see or
+> missed, but still Speakup says nothing on an item just after ./
+My expert says,
+"It is an a with a carrot above it.  More properly, an accent circumflex.
+I'll log into chime later and see if the character is visible in less.  If
+so, I think we could add it to your dectalk config to pronounce it as an a"
+Back again live: I think Speakup would be in charge of announcing. Thanks in 
+advance
+Chime
+--8323329-1090979311-1756320168=:142574--
 
