@@ -1,48 +1,40 @@
-Return-Path: <speakup+bounces-1329-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1330-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 6E3E4B538A0
-	for <lists+speakup@lfdr.de>; Thu, 11 Sep 2025 18:04:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 13C82B53EF2
+	for <lists+speakup@lfdr.de>; Fri, 12 Sep 2025 01:04:22 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6374D3827FD; Thu, 11 Sep 2025 12:03:58 -0400 (EDT)
+	id 49C06382B75; Thu, 11 Sep 2025 19:04:21 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 4E5363827CA
-	for <lists+speakup@lfdr.de>; Thu, 11 Sep 2025 12:03:58 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 360B63827FD
+	for <lists+speakup@lfdr.de>; Thu, 11 Sep 2025 19:04:21 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 7A0463827D3; Thu, 11 Sep 2025 12:03:54 -0400 (EDT)
-Received: from nbsmtp1.nfbcal.org (nbsmtp1.nfbcal.org [45.79.226.29])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 4AD84382740
-	for <speakup@linux-speakup.org>; Thu, 11 Sep 2025 12:03:54 -0400 (EDT)
-Received: from nfbcal.org ([199.4.218.125])
-	by nbsmtp1.nfbcal.org (8.15.2/8.14.1-NFBNETBSD) with ESMTPS id 58BG3gos022883
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=FAIL);
-	Thu, 11 Sep 2025 09:03:42 -0700 (PDT)
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.103.1 at nbsmtp1.nfbcal.org
-Received: from nfbcal.org (localhost [127.0.0.1])
-	by nfbcal.org (8.18.1/8.15.2-NFBNETBSD) with ESMTPS id 58BG3ZVG011589
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
-	Thu, 11 Sep 2025 09:03:35 -0700 (PDT)
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.103.10 at lothlorien.nfbcal.org
-Received: (from buhrow@localhost)
-	by nfbcal.org (8.18.1/8.12.11) id 58BG3W3p018143;
-	Thu, 11 Sep 2025 09:03:32 -0700 (PDT)
-Message-Id: <202509111603.58BG3W3p018143@nfbcal.org>
-From: Brian Buhrow <buhrow@nfbcal.org>
-Date: Thu, 11 Sep 2025 09:03:32 -0700
-In-Reply-To: <537bf3ad-31bc-268b-4a11-8993ca64e752@reisers.ca>
-X-Mailer: Mail User's Shell (7.2.6 beta(4.pl1)+dynamic 20000103)
-To: Kirk Reiser <kirk@reisers.ca>, kperry@blinksoft.com
-Subject: RE: "your browser is not supported anymore" both lynx and elinks, what now?
-Cc: "'Willem van der Walt'" <wvdwalt@csir.co.za>,
-        "'Speakup is a screen review system for Linux.'" <speakup@linux-speakup.org>,
-        buhrow@nfbcal.org
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.4.3 (nbsmtp1.nfbcal.org [45.79.226.29]); Thu, 11 Sep 2025 09:03:43 -0700 (PDT)
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.4 (nfbcal.org [0.0.0.0]); Thu, 11 Sep 2025 09:03:36 -0700 (PDT)
+	id 5981A3827F1; Thu, 11 Sep 2025 19:04:17 -0400 (EDT)
+Received: from atlas.bondproducts.com (atlas.bondproducts.com [23.24.6.165])
+	by befuddled.reisers.ca (Postfix) with ESMTP id 4068C3827D9
+	for <speakup@linux-speakup.org>; Thu, 11 Sep 2025 19:04:17 -0400 (EDT)
+Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
+	by atlas.bondproducts.com (Postfix) with ESMTP id 2A94A4050A;
+	Thu, 11 Sep 2025 19:04:14 -0400 (EDT)
+Received: by users.shellworld.net (Postfix, from userid 1005)
+	id BA993100BDE; Thu, 11 Sep 2025 19:04:12 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by users.shellworld.net (Postfix) with ESMTP id BA1EA1000A3;
+	Thu, 11 Sep 2025 19:04:12 -0400 (EDT)
+Date: Thu, 11 Sep 2025 19:04:12 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: kperry@blinksoft.com
+cc: 'Willem van der Walt' <wvdwalt@csir.co.za>, 
+    "'Speakup is a screen review system for Linux.'" <speakup@linux-speakup.org>
+Subject: RE: "your browser is not supported anymore" both lynx and elinks,
+ what now?
+In-Reply-To: <001e01dc2307$12695b30$373c1190$@blinksoft.com>
+Message-ID: <Pine.LNX.4.64.2509111902520.3829403@users.shellworld.net>
+References: <f2b8f3d0-eb0d-8426-09e2-1afce33c713c@csir.co.za>
+ <001e01dc2307$12695b30$373c1190$@blinksoft.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,12 +43,40 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-	hello.  Does this w3 browser work with javascript?  If not, is ther a text based browser
-which works with javascript?  I know elinks says it works with javascript, but it doesn't
-implement the DOM model, so most pages with javascript don't work with it.
--thanks
--Brian
+Welcome to Google's decision after last week's court ruling around their 
+antitrust search monopoly.
+KAREN
 
+
+
+On Thu, 11 Sep 2025, kperry@blinksoft.com wrote:
+
+> You may want to look at the browsers that run in emacs. Emacspeak brings
+> access to the w3 browser and I think it is still up-to-date.  Iam not
+> currently using it but I might set it up and see today.
+>
+> Ken
+>
+> -----Original Message-----
+> From: Willem van der Walt <wvdwalt@csir.co.za>
+> Sent: Thursday, September 11, 2025 4:12 AM
+> Cc: Speakup is a screen review system for Linux. <speakup@linux-speakup.org>
+> Subject: "your browser is not supported anymore" both lynx and elinks, what
+> now?
+>
+> Good day list,
+> When trying to do a google search this morning, I got the above message.
+>  My Orca setup is currently broken, so I would like to know if there is a
+> console browser/searchengine combination that will still work?
+> TIA, Willem
+>
+>
+>
+>
+>
+>
 
