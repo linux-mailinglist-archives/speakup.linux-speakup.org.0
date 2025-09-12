@@ -1,43 +1,40 @@
-Return-Path: <speakup+bounces-1334-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1335-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7D487B53FE3
-	for <lists+speakup@lfdr.de>; Fri, 12 Sep 2025 03:28:50 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; secure) header.d=posteo.com.br header.i=@posteo.com.br header.a=rsa-sha256 header.s=2017 header.b=Fet4HxiN;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 91B65B54020
+	for <lists+speakup@lfdr.de>; Fri, 12 Sep 2025 04:04:23 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 800B3382BAB; Thu, 11 Sep 2025 21:28:49 -0400 (EDT)
+	id 838A1382BC8; Thu, 11 Sep 2025 22:04:22 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 603FC382AE5
-	for <lists+speakup@lfdr.de>; Thu, 11 Sep 2025 21:28:49 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6DBAF382B73
+	for <lists+speakup@lfdr.de>; Thu, 11 Sep 2025 22:04:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5F703382AE5; Thu, 11 Sep 2025 21:28:42 -0400 (EDT)
-Received: from mout01.posteo.de (mout01.posteo.de [185.67.36.65])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id F301F382AE0
-	for <speakup@linux-speakup.org>; Thu, 11 Sep 2025 21:28:40 -0400 (EDT)
-Received: from submission (posteo.de [185.67.36.169]) 
-	by mout01.posteo.de (Postfix) with ESMTPS id 24409240027
-	for <speakup@linux-speakup.org>; Fri, 12 Sep 2025 03:28:37 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=posteo.com.br;
-	s=2017; t=1757640518;
-	bh=COO7TdtqNTj1DUI1/mPZjjgV3Z1iJQc7o93qwxaC7eY=;
-	h=Message-ID:Date:MIME-Version:Subject:To:From:Content-Type:
-	 Content-Transfer-Encoding:From;
-	b=Fet4HxiNw4/hqXusaQuRjGCwUzTrBVpE5Fh00L/uI3Fir0bI8fAyfVOMnyxh0txXt
-	 RkgughweEOESJnKFycH4oW0Z7oEWcpKgE2MWqJOjJusW0SK7/mluq0jsbTCXLD+USv
-	 f05+18aWTTlesN6s5FwVwrebwlfdfWuaitSIgUdrcZdgqm5w/CWUNDTRrfcw022OMc
-	 0zsiSt/SCpbRt4D04lNPRtVqBGlpbAYIAa/4d+rv01zsF/SDuy7R2zlruN/4IrcWZu
-	 oQxxfAxPortnQxgP8fa3YxmJwlGVcqcZhIF88MqXdMGAZFfqcLjM/ZmDpWKWzzZBf+
-	 0vFDQ94ORhB5w==
-Received: from customer (localhost [127.0.0.1])
-	by submission (posteo.de) with ESMTPSA id 4cNGz82vP9z9rxR
-	for <speakup@linux-speakup.org>; Fri, 12 Sep 2025 03:28:35 +0200 (CEST)
-Message-ID: <579c5d9b-5ba1-4029-982a-01295fea3a61@posteo.com.br>
-Date: Fri, 12 Sep 2025 01:28:36 +0000
+	id AEC02382B1D; Thu, 11 Sep 2025 22:04:18 -0400 (EDT)
+Received: from atlas.bondproducts.com (atlas.bondproducts.com [23.24.6.165])
+	by befuddled.reisers.ca (Postfix) with ESMTP id 9565538280D
+	for <speakup@linux-speakup.org>; Thu, 11 Sep 2025 22:04:18 -0400 (EDT)
+Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
+	by atlas.bondproducts.com (Postfix) with ESMTP id 863B34050A;
+	Thu, 11 Sep 2025 22:04:11 -0400 (EDT)
+Received: by users.shellworld.net (Postfix, from userid 1005)
+	id 0F990100BDE; Thu, 11 Sep 2025 22:04:10 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by users.shellworld.net (Postfix) with ESMTP id 0B56C1000A3;
+	Thu, 11 Sep 2025 22:04:10 -0400 (EDT)
+Date: Thu, 11 Sep 2025 22:04:10 -0400 (EDT)
+From: Karen Lewellen <klewellen@shellworld.net>
+To: kperry@blinksoft.com
+cc: 'Willem van der Walt' <wvdwalt@csir.co.za>, 
+    "'Speakup is a screen review system for Linux.'" <speakup@linux-speakup.org>
+Subject: RE: "your browser is not supported anymore" both lynx and elinks,
+ what now?
+In-Reply-To: <001e01dc2307$12695b30$373c1190$@blinksoft.com>
+Message-ID: <Pine.LNX.4.64.2509112202510.3830807@users.shellworld.net>
+References: <f2b8f3d0-eb0d-8426-09e2-1afce33c713c@csir.co.za>
+ <001e01dc2307$12695b30$373c1190$@blinksoft.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -47,23 +44,40 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Subject: Re: "your browser is not supported anymore" both lynx and elinks,
- what now?
-To: speakup@linux-speakup.org
-References: <202509111603.58BG3W3p018143@nfbcal.org>
- <7a04c6dd-c761-4445-b53a-3c4525cf2a87@crosslink.net>
-Content-Language: pt-BR
-From: Cleverson Casarin Uliana <clul+speakup@posteo.com.br>
-In-Reply-To: <7a04c6dd-c761-4445-b53a-3c4525cf2a87@crosslink.net>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi all, what about Edbrowse? It claims to support Javascript, but the 
-dev team is small; I have no idea if they are able to keep up with the 
-modern web.
+How would this approach work in the Linux command line, or in a shell?
+Asking because there is a person overseas using a Linux Laptop who is 
+rather at a loss.
+Karen
 
-Regards,
-Cleverson
 
+
+On Thu, 11 Sep 2025, kperry@blinksoft.com wrote:
+
+> You may want to look at the browsers that run in emacs. Emacspeak brings
+> access to the w3 browser and I think it is still up-to-date.  Iam not
+> currently using it but I might set it up and see today.
+>
+> Ken
+>
+> -----Original Message-----
+> From: Willem van der Walt <wvdwalt@csir.co.za>
+> Sent: Thursday, September 11, 2025 4:12 AM
+> Cc: Speakup is a screen review system for Linux. <speakup@linux-speakup.org>
+> Subject: "your browser is not supported anymore" both lynx and elinks, what
+> now?
+>
+> Good day list,
+> When trying to do a google search this morning, I got the above message.
+>  My Orca setup is currently broken, so I would like to know if there is a
+> console browser/searchengine combination that will still work?
+> TIA, Willem
+>
+>
+>
+>
+>
+>
 
