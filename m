@@ -1,48 +1,46 @@
-Return-Path: <speakup+bounces-1341-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1342-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id EDCB5B54EEE
-	for <lists+speakup@lfdr.de>; Fri, 12 Sep 2025 15:11:37 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; secure) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=tPh+mnwk;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 715C6B551DC
+	for <lists+speakup@lfdr.de>; Fri, 12 Sep 2025 16:38:55 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D1E2F382C40; Fri, 12 Sep 2025 09:11:36 -0400 (EDT)
+	id 96157382C57; Fri, 12 Sep 2025 10:38:54 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id AF570382BA4
-	for <lists+speakup@lfdr.de>; Fri, 12 Sep 2025 09:11:36 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 817D9382C55
+	for <lists+speakup@lfdr.de>; Fri, 12 Sep 2025 10:38:54 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 8FFE7382BAA; Fri, 12 Sep 2025 09:11:29 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 8541A382B9F
-	for <speakup@linux-speakup.org>; Fri, 12 Sep 2025 09:11:28 -0400 (EDT)
-Received: from panix3.panix.com (panix3.panix.com [166.84.1.3])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4cNZZ71NKFz4MJ0
-	for <speakup@linux-speakup.org>; Fri, 12 Sep 2025 09:11:27 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1757682687; bh=GSPiBAJr83AiEdy/0D/w9KXDH+ZBVnrx311zYFQF/5s=;
-	h=Date:From:To:Subject:References:In-Reply-To;
-	b=tPh+mnwkkvhkXKHaxMLC1oElH/L7IGtwzMJ5Huw+5Hb7tfQ1Dc6T0xU14ydUXJ04F
-	 W8S22NWnY9c0GW8Zq4CS8o38ivG7HYXkgBM62FR2JHOixA10duPS9rMOWiv7Iq+jW5
-	 irLKqsxVqFh3CndRkzJeiKVkvpQHAL2Fb4+BNf4c=
-Received: by panix3.panix.com (Postfix, from userid 20196)
-	id 4cNZZ7168Nz1QXM; Fri, 12 Sep 2025 09:11:27 -0400 (EDT)
-Date: Fri, 12 Sep 2025 09:11:27 -0400
-From: Rudy Vener <salt@panix.com>
-To: speakup@linux-speakup.org
-Subject: Re: Question about blind CLI use (was Re: "your browser is not
- supported anymore" ...)
-Message-ID: <aMQb_2EHO0HYypga@panix.com>
-References: <202509111603.58BG3W3p018143@nfbcal.org>
- <7a04c6dd-c761-4445-b53a-3c4525cf2a87@crosslink.net>
- <579c5d9b-5ba1-4029-982a-01295fea3a61@posteo.com.br>
- <Pine.LNX.4.64.2509112223130.3830807@users.shellworld.net>
- <6d3f190e-733a-e5d5-a8f5-cc6eb2c05e65@hubert-humphrey.com>
- <Pine.LNX.4.64.2509120106350.3832376@users.shellworld.net>
- <aMOwSwrEWTBtFn60@titan>
+	id BB558382BBA; Fri, 12 Sep 2025 10:38:50 -0400 (EDT)
+Received: from nbsmtp1.nfbcal.org (nbsmtp1.nfbcal.org [45.79.226.29])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 81EFC382BAE
+	for <speakup@linux-speakup.org>; Fri, 12 Sep 2025 10:38:50 -0400 (EDT)
+Received: from nfbcal.org ([199.4.218.125])
+	by nbsmtp1.nfbcal.org (8.15.2/8.14.1-NFBNETBSD) with ESMTPS id 58CEcigQ003692
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=FAIL);
+	Fri, 12 Sep 2025 07:38:44 -0700 (PDT)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.103.1 at nbsmtp1.nfbcal.org
+Received: from nfbcal.org (localhost [127.0.0.1])
+	by nfbcal.org (8.18.1/8.15.2-NFBNETBSD) with ESMTPS id 58CEcaPF025845
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NO);
+	Fri, 12 Sep 2025 07:38:36 -0700 (PDT)
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.103.10 at lothlorien.nfbcal.org
+Received: (from buhrow@localhost)
+	by nfbcal.org (8.18.1/8.12.11) id 58CEcaRB012655;
+	Fri, 12 Sep 2025 07:38:36 -0700 (PDT)
+Message-Id: <202509121438.58CEcaRB012655@nfbcal.org>
+From: Brian Buhrow <buhrow@nfbcal.org>
+Date: Fri, 12 Sep 2025 07:38:36 -0700
+In-Reply-To: <7a04c6dd-c761-4445-b53a-3c4525cf2a87@crosslink.net>
+X-Mailer: Mail User's Shell (7.2.6 beta(4.pl1)+dynamic 20000103)
+To: Chevelle <cstrobel@crosslink.net>, speakup@linux-speakup.org
+Subject: Re: "your browser is not supported anymore" both lynx and elinks, what now?
+Cc: buhrow@nfbcal.org
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.4.3 (nbsmtp1.nfbcal.org [45.79.226.29]); Fri, 12 Sep 2025 07:38:44 -0700 (PDT)
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.4 (nfbcal.org [0.0.0.0]); Fri, 12 Sep 2025 07:38:37 -0700 (PDT)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -51,98 +49,19 @@ List-Unsubscribe: <mailto:speakup+unsubscribe@linux-speakup.org>
 List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <aMOwSwrEWTBtFn60@titan>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-When I use CLI with speakup I can focus on the job at hand.
-When I am forced to use GUI, I spend ten times the time for a tenth the result while
-fighting with the GUI interface all the way.
-In cli linux I execute a command, interact with the command using
-a vi text editor type interface and know exactly where I am and what I need to do to effect changes.
-With GUI I am flailing around wondering why my GUI screen reader is spouting nonsense at me.
+	Hello.  Some months ago, I looked into using https://lite.duckduckgo.com
+instead of Google as a search engine.  This was after Google began requiring Javascript to
+submit search queries in the US earlier this year.  I found it didn't work because in order to
+perform a search, I had to get through a capcha which included a bunch of images which, not
+surprisingly using lynx, were all titled [image].  As far as I could tell, there was no audio
+alternative.  To make matters worse, by default, Lynx doesn't store cookies to nonvolatile
+storage, so every time one restarts lynx, one has to get new cookies and work through the
+capcha again.  There is supposed to be a way to get lynx to save cookies to a cookie file, but
+I've never been able to get it to work.
 
-Example: I use lynx browser with ddg search engine and can hit ./search_term string to get to the results, or close to them.
-Once on the results I hit th j key to skip to the next result and the 
-screen reader keys to read the text or hit the enter key to follow the link.a When I'm finished 
-with the page or pages at that link the h key or series of h keys brings
-me right back to the result link on the ddg page.
-This is simple, well known and needs no more thinking on my part.
-  There may be people who use the GUI interface just as intuitively as I use the
-cli and speakup interface, but I am not one of them.
+-thanks
+-Brian
 
-  Also, with cli I can create my own applications. For example I listen to podcasts with
-applications that present me with the podcast menu in a vi buffer and let me select
-the item I want by  executing the same command with a line number.
-e.g. fnc lets me see today's fox news channel offerings. fnc 2 lets me hear the second item on the channel.
-
-Another command, fncl, which stands for fox news channel loop, puts me in a continuous loop of viewing the menu buffer in vi,
-entering a line number upon exiting vi to hear the item, and entering a blank line to exit the loop.
-
-Simple, easy. No fuss, no bother.
-
-  The tradeoff for this simplicity is either a learning curve (e.g. vi, lynx) or a design curve (e.g. fncl)
-
-Hope this helps.
-
--- 
-Rudy Vener
-
-An audio release of Beast Hunt Vol 1, containing my short story Dragon Wing, is loose in the wild: https://www.amazon.com/dp/B0DPN1QGGJ
-Ludicrous Limerick - News Of Trump's Death Were Greatly Exaggerated.  https://limerickdude.substack.com/p/news-of-trumps-death-were-greatly
-Website: http://www.rudyvener.com
-
-
-
-On Fri, Sep 12, 2025 at 03:31:55PM +1000, Jookia wrote:
-> Hi everyone,
-> 
-> I don't meant to hijack this thread but I'm a sighted person who's been
-> struggling to try and make the world a bit better with accessibility
-> stuff. I haven't really done anything useful yet, but I've spent a lot
-> of time talking to sighted people who scoff at the idea of people using
-> 'old' technology or being left behind because of their workflows.
-> 
-> I know this is the speakup list and I'm talking to an extremely niche
-> community here, but I'm genuinely interested to know: Why do you use
-> computers this way instead of like Windows or macOS? They can do much
-> more useful tasks.
-> 
-> I've thought for a while that this is simply because Linux has dropped
-> the ball hard with GUI accessibility, but I'm starting to wonder if it's
-> really just because GUIs suck for blind people altogether. I know that
-> screen readers themselves are kind of a nightmare for me to use with
-> having to remember a ton of buttons, but having to tab through a GUI
-> just to do things I could type is a headache. Maybe text is just a
-> better interface if you're blind? It's certainly more precise and
-> quicker. But I'm also aware there are things like hardware limitations
-> like systems not supporting hardware synths any more.
-> So I'm genuinely curious as to why you work the way you do.
-> 
-> ---
-> 
-> As a kind of side note, my current project is making an emulated
-> serial to speech synth API for the DOSBox-X emulator. I aim to implement
-> just enough of the DECTalk protocol to work with DOS screen readers and
-> speakup, then pass that to SAPI/NVDA or speech-dispatcher/espeak. I do
-> have pipe dream plans of turning this in to a USB espeak synth that
-> could be used to read early boot messages and panics on Linux.
-> 
-> But more widely I've just been thinking about how to make an application
-> like DOSBox-X accessible that relies on a little fake GUI for its
-> configuration menu. At first I thought of adding support for AccessKit
-> and Orca/NVDA. But that only works on some systems, and it's hard to
-> test and convince developers to test. They won't notice when it breaks.
-> It also kind of sucks to use as you have to tab through everything.
-> 
-> So I've kind of been more interested in adding a new interface a bit
-> like a command line or menu-based system, with output by TTS or Braille.
-> It would live in the application, be usable by sighted people too and be
-> easy for developers to test and reason about.
-> 
-> So if you have any feedback about any of this please tell me.
-> Jookia.
-> 
 
