@@ -1,53 +1,91 @@
-Return-Path: <speakup+bounces-1361-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1362-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id EF7A2B816C9
-	for <lists+speakup@lfdr.de>; Wed, 17 Sep 2025 21:06:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 90AA1B8191F
+	for <lists+speakup@lfdr.de>; Wed, 17 Sep 2025 21:20:33 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=ZVH6hol0;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=qonaQBez;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=RyoBWYHa;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 56B3C3827E5; Wed, 17 Sep 2025 15:06:32 -0400 (EDT)
+	id 5CD12382359; Wed, 17 Sep 2025 15:20:25 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 3269C381951
-	for <lists+speakup@lfdr.de>; Wed, 17 Sep 2025 15:06:32 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3B20E382185
+	for <lists+speakup@lfdr.de>; Wed, 17 Sep 2025 15:20:25 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E7E72381969; Wed, 17 Sep 2025 15:06:24 -0400 (EDT)
-Received: from out-172.mta1.migadu.com (out-172.mta1.migadu.com [95.215.58.172])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 7B2D538187A
-	for <speakup@linux-speakup.org>; Wed, 17 Sep 2025 15:06:23 -0400 (EDT)
-Date: Thu, 18 Sep 2025 05:02:57 +1000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
-	t=1758135961;
-	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
-	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
-	 in-reply-to:in-reply-to:references:references;
-	bh=gA+6LXpsGBnE13IT6AtKzJbudNYKXc5rXeHRILB8zQI=;
-	b=ZVH6hol0RUf4oEd2xm2+kvXL7cIviwhlry6inU0vVYo+WSw5wBDdWNcsuM6fug9tqCstEf
-	cjrgHNDQFA8vpEkXsv1x0XE7qh7lgZnkGRheHuC9Q5siQ1tSBcTtqvFX/FCZtNYvIOkv/j
-	kISYcxqKsEA6H61zkC19BNoloYZENfO4Jrb/jKr5R3mueJJtcRGSjTjRY+5Pf2QMHsbUNL
-	lR/Od2wIvqNYEWEJiI9yI8osdDJhWseb66y5tJx9Q+hEnffUtG+6y3NQinToaPPlmLdutF
-	NHU5FYbVabVmj8wvXKmVXx971zaz7BeyqJlC01hKoGdv9gT5a/SfEMhR5833tQ==
-X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
-From: Jookia <contact@jookia.org>
-To: Chime Hart <chime@hubert-humphrey.com>
-Cc: Karen Lewellen <klewellen@shellworld.net>,
-	Cleverson Casarin Uliana <clul+speakup@posteo.com.br>,
-	speakup@linux-speakup.org
+	id C2903382128; Wed, 17 Sep 2025 15:20:17 -0400 (EDT)
+Received: from fhigh-b1-smtp.messagingengine.com (fhigh-b1-smtp.messagingengine.com [202.12.124.152])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 490C03820D1
+	for <speakup@linux-speakup.org>; Wed, 17 Sep 2025 15:20:17 -0400 (EDT)
+Received: from phl-compute-12.internal (phl-compute-12.internal [10.202.2.52])
+	by mailfhigh.stl.internal (Postfix) with ESMTP id 411147A0183;
+	Wed, 17 Sep 2025 15:20:14 -0400 (EDT)
+Received: from phl-mailfrontend-02 ([10.202.2.163])
+  by phl-compute-12.internal (MEProxy); Wed, 17 Sep 2025 15:20:14 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1758136814;
+	 x=1758223214; bh=w2nn+lqSchC0qTQpUOeT9ltrrDA6HwcTDIVOrJSFLqU=; b=
+	qonaQBeznOY3mMo278bNO2tT+avCk7DKcWBoWazGL2cRl/KQrpo9DDaB7YJDKSuq
+	wg1sF3Vvyh89DgIxHGDHEeZVaApoII+R2uxIpSzVep6/YK6lyd4Mvp3iJlc4tBTp
+	A16qkNaGZiBRQ1oT7b6wiAwGPkDCHJx0gAPoU5m4n+1pDJx5BMDcSmOwTzxD7yP9
+	Fg8mlg7+OkaBg03DRaBxr7/iLiZwc9dDwtrtjnaABFCPCFIioIa9D/2jUlrznjA/
+	A8UA39IXMVrWlVBIMSNJozgka/jn9OMAl1x6CWwH5rA/YzvRTukdxRxubiuu1QFf
+	Ysd/4LlaHvCe7zYfgIbd2A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=
+	1758136814; x=1758223214; bh=w2nn+lqSchC0qTQpUOeT9ltrrDA6HwcTDIV
+	OrJSFLqU=; b=RyoBWYHa7nFeDR6XpM/z4YbuON+adwXIRzFVuFrS1nYF3cph47e
+	Bz4SKaQAzRssv2klPFDLpsU7AvLhwHRZJ1iYWdCghqKhiMF/bw4sorwmUAt9nM3d
+	XqhS/R0notiRD57Hdv6uFX05BLncLi+qGyMauginYE5DMjoXK5l8oPNd3GHdvtcW
+	xjAsYZ8beOiBve9RxfurnVF9pMThp37PMFaCc3vVIa5tbD83t15J1KjKOd6nq7EC
+	0wyNsLoNZO2gSaVxrC9Bee8Jf19am9OekD+Y41aXlu06WfATJk91tnE5bAGdJp1A
+	n2wZW1+NaqaPbhm7ZDK3fbyY+gqHArno2xQ==
+X-ME-Sender: <xms:7QnLaAAU0MlRVh5GHEQTf92KOWgQ6e2wUgX6F51Rb2S_PHaYkdiJoA>
+    <xme:7QnLaNGRer0dyX0GuGhwPnO_3sQdNkkUWzf11c2A8xwtUQ0rYWx_XBkRHuyqH-Jfk
+    zF0n9Ovm2TBUQFZQaY>
+X-ME-Received: <xmr:7QnLaALq_U86j3z0KTJznF4f9fhlksGwJh5lyehznA3TVrkzszeqCCFe7n_LHuV23lJTheejU4EvfKLpdrIbKNjDFkNmsq4eEn8>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggdeggedvkecutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpuffrtefokffrpgfnqfghnecuuegr
+    ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
+    hrpeffhffvvefujgfkfhggtgesthdtredttddtvdenucfhrhhomhepvehhihhmvgcujfgr
+    rhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomheqnecuggftrf
+    grthhtvghrnhepvdehgeeljeekgeeugfefleekjeeivdekkedvteeuveeufeeffffffeff
+    ledufedtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+    eptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomhdpnhgspghrtghpthht
+    ohepgedpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtoheptghonhhtrggtthesjhhooh
+    hkihgrrdhorhhgpdhrtghpthhtohepkhhlvgifvghllhgvnhesshhhvghllhifohhrlhgu
+    rdhnvghtpdhrtghpthhtoheptghluhhlodhsphgvrghkuhhpsehpohhsthgvohdrtghomh
+    drsghrpdhrtghpthhtohepshhpvggrkhhupheslhhinhhugidqshhpvggrkhhuphdrohhr
+    gh
+X-ME-Proxy: <xmx:7QnLaJmkc1KjWXriMllqjLGQzXi1pF0jEPXWy6m2rr-dxW9AcPzYMA>
+    <xmx:7QnLaATZwLrCK6PmxVTcDo1-5dhJJFUXDSoAXGT4JcOUZfJkUuSnAw>
+    <xmx:7QnLaDISsdbeUXcWqI2lrozvY4O0Ye-jyV5USpsKR3QVr9JUeT2Lbw>
+    <xmx:7QnLaOCRAr3Vy68Ha7wQLotxHoR6OUM4aEwa9AtUhzJuiLiVqvJFFA>
+    <xmx:7gnLaAFcuXvs38ZQGD-KaNYHxdPYY7fDrmxlVZvXm1VFHaxLO_3Yoj4A>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 17 Sep 2025 15:20:12 -0400 (EDT)
+Date: Wed, 17 Sep 2025 12:20:11 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: Jookia <contact@jookia.org>
+cc: Karen Lewellen <klewellen@shellworld.net>, 
+    Cleverson Casarin Uliana <clul+speakup@posteo.com.br>, 
+    speakup@linux-speakup.org
 Subject: Re: Question about blind CLI use (was Re: "your browser is not
  supported anymore" ...)
-Message-ID: <aMsF4T_1FAbaFEHz@titan>
-References: <202509111603.58BG3W3p018143@nfbcal.org>
- <7a04c6dd-c761-4445-b53a-3c4525cf2a87@crosslink.net>
- <579c5d9b-5ba1-4029-982a-01295fea3a61@posteo.com.br>
- <Pine.LNX.4.64.2509112223130.3830807@users.shellworld.net>
- <6d3f190e-733a-e5d5-a8f5-cc6eb2c05e65@hubert-humphrey.com>
- <Pine.LNX.4.64.2509120106350.3832376@users.shellworld.net>
- <aMOwSwrEWTBtFn60@titan>
- <45100fe1-7400-688a-c7fc-7eae1f81ef2b@hubert-humphrey.com>
+In-Reply-To: <aMsF4T_1FAbaFEHz@titan>
+Message-ID: <04cf9485-9346-d60c-8382-c0f340d5fea5@hubert-humphrey.com>
+References: <202509111603.58BG3W3p018143@nfbcal.org> <7a04c6dd-c761-4445-b53a-3c4525cf2a87@crosslink.net> <579c5d9b-5ba1-4029-982a-01295fea3a61@posteo.com.br> <Pine.LNX.4.64.2509112223130.3830807@users.shellworld.net> <6d3f190e-733a-e5d5-a8f5-cc6eb2c05e65@hubert-humphrey.com>
+ <Pine.LNX.4.64.2509120106350.3832376@users.shellworld.net> <aMOwSwrEWTBtFn60@titan> <45100fe1-7400-688a-c7fc-7eae1f81ef2b@hubert-humphrey.com> <aMsF4T_1FAbaFEHz@titan>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -57,60 +95,15 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <45100fe1-7400-688a-c7fc-7eae1f81ef2b@hubert-humphrey.com>
-X-Migadu-Flow: FLOW_OUT
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Chime,
+Hi Jukia: Well, as I lost alot of files-and-directories several years ago, 
+some1 was kind enough to send me Vocal-Eyes. Your plans sound quite 
+interesting. I have an outboard DecTalk USB. Obviously, if there are 
+experiments you want me to run, lets tackle that off-list. So are you saying 
+DOSemu won't do those same things as dos box? I still say dos e m u is much 
+more friendly in Linux with a screen-reader. Thanks in advance
+Chime
 
-Thanks for your input, I'm curious what windows explorer did wrong UI wise?
-
-DOSBox is nice because it runs on a host computer and can access host files, so
-you get the benefit of a DOS interface, DOS programs, but a 'real' computer
-that can handle multiple programs at once, filesystem safety, Internet access,
-modern devices. It also runs on ARM devices like Pis.
-
-I've had requests by people to add a way to have speech output from DOS to
-Windows and so my current project is to emulate a minimal DECTalk-like synth
-device that calls the host APIs or some other API. So on Windows or Wine this
-can be SAPI or NVDA, on Linux it could be speech-dispatcher or espeak.
-
-My plan is to have this compatible with any screen reader that supports an
-external TTS. This includes JAWS, Provox, ASAP, Speakup, and whatever else
-people can get running. If you have a hardware DECTalk none of this is
-necessary and you can connect it directly to DOSBox already. If you have a
-software DECTalk it may be usable in a similar way.
-
-It would be a lot of fun to try and get a Linux-compatible terminal emulator
-running in DOSBox too so you can use a DOS screenreader and Linux programs.
-
-Do you have a copy of Vocal-Eyes? I haven't been able to find one and would
-enjoy adding it to my testing situation.
-
-Jookia.
-
-On Fri, Sep 12, 2025 at 08:21:37AM -0700, Chime Hart wrote:
-> Well, Jookia, to adequately keep track of your questions, I cut-and-pasted them 
-> in nano in a separate console. 
-> I think to a larger extent, especially in my case, as I began a  computer 
-> journey in 1994, I became used to a text interface, although I appreciated 
-> menus which guided me. I was practicly forced in to windows95 as I needed a 
-> more powerful machine to begin enjoying mp3s in late 1997. To some extent I 
-> could manage with a simple windows desktop until they ruined it by switching to 
-> windows explorer. By 2006 with windows media player locking up my machine, we 
-> completely got rid of windows. All along the way I would launch a DOS prompt or 
-> telnet to read-and-write mail in Pine. I've tried ORCA but am not familliar or 
-> comfortable with its interface. 
-> Jookia, I think DOS emu works much better with a screen-reader. What do you 
-> like better about DosBox? Please, Kirk, cover your ears, but I would love to 
-> resume useing Vocal-Eyes with a DecTalk. With its exception dictionary-and-its 
-> ability to enjoy single-digit numbering, I was `extremely comfortable in that 
-> envirenment. In some ways I find a Chromebook easier than ORCA, but Chromevox 
-> doesn't support a numpad like Speakup-and-NVDA do. Anyway, I hope I've answered 
-> all of your items, but please understand, I am only a user-and-not a 
-> programmer.
-> Chime
-> 
 
