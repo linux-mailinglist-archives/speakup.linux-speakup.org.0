@@ -1,43 +1,88 @@
-Return-Path: <speakup+bounces-1373-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1374-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 05DBDB82B60
-	for <lists+speakup@lfdr.de>; Thu, 18 Sep 2025 05:09:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 16C70B82BCD
+	for <lists+speakup@lfdr.de>; Thu, 18 Sep 2025 05:18:50 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm2 header.b=Y9rtRX3J;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm1 header.b=A9pg8u3N;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6E469382BB3; Wed, 17 Sep 2025 23:09:10 -0400 (EDT)
+	id A476F382B96; Wed, 17 Sep 2025 23:18:48 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 523BC382B9A
-	for <lists+speakup@lfdr.de>; Wed, 17 Sep 2025 23:09:10 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 83705382AD6
+	for <lists+speakup@lfdr.de>; Wed, 17 Sep 2025 23:18:48 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5CE6E382A93; Wed, 17 Sep 2025 23:09:06 -0400 (EDT)
-Received: from atlas.bondproducts.com (atlas.bondproducts.com [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 3376F382815
-	for <speakup@linux-speakup.org>; Wed, 17 Sep 2025 23:09:06 -0400 (EDT)
-Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id F1F7940508;
-	Wed, 17 Sep 2025 23:09:01 -0400 (EDT)
-Received: by users.shellworld.net (Postfix, from userid 1005)
-	id 892D4100B94; Wed, 17 Sep 2025 23:09:00 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id 88A1A10009F;
-	Wed, 17 Sep 2025 23:09:00 -0400 (EDT)
-Date: Wed, 17 Sep 2025 23:09:00 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Rudy Vener <salt@panix.com>
-cc: speakup@linux-speakup.org
+	id 24BF1382ABC; Wed, 17 Sep 2025 23:18:41 -0400 (EDT)
+Received: from fout-a1-smtp.messagingengine.com (fout-a1-smtp.messagingengine.com [103.168.172.144])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 940BD3821AA
+	for <speakup@linux-speakup.org>; Wed, 17 Sep 2025 23:18:39 -0400 (EDT)
+Received: from phl-compute-04.internal (phl-compute-04.internal [10.202.2.44])
+	by mailfout.phl.internal (Postfix) with ESMTP id 1DBA5EC028B;
+	Wed, 17 Sep 2025 23:18:37 -0400 (EDT)
+Received: from phl-mailfrontend-02 ([10.202.2.163])
+  by phl-compute-04.internal (MEProxy); Wed, 17 Sep 2025 23:18:37 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1758165517;
+	 x=1758251917; bh=pUSHb6ILRdutvGuytyRI/g0heLDNrMOMSJYQ2AKraFQ=; b=
+	Y9rtRX3J+VD0Nos+eSuz6TkfYp1YMhwEUx6NTcThertM2i6w9VZi2jLeJjoNQTAR
+	F72RoQCWiFZUqn7eaVZwzehXi38Na9pBprgGK0ocosSVD/sMnpAmRv8W1VLUfu6s
+	psdR1rBLeoOEz3AQPgBtKbKIdacyY7ZMHiARJzSxq3MxURlEegJo+4a6OK7dD7iL
+	ofR7xyRmgl4zYlMrYChjkjEfcRWoxsNGxBytAeu2qeDyfyHYesA2q1l/A1Kx1XYa
+	BxvDMeXBS03LB/XIG69okWhScpYhB4osJCAdXN7HKWRNinisItOHlrn1U8yBZQPq
+	CFH+fSdq/k8M5mGxCWnJuA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=
+	1758165517; x=1758251917; bh=pUSHb6ILRdutvGuytyRI/g0heLDNrMOMSJY
+	Q2AKraFQ=; b=A9pg8u3NQFFh2Yh2Xi4UHJOS0zRcSXf4wa7jmXPwLUH+Grx7reC
+	SMDxlG/t3jgQiBAiUMgn8pFUjxafNF1YgcSTnmOYC2Yiv6HsJ2URFis5Ne5k4b3K
+	u0Ay1Fk+g8EBbtYHWRmCAKnHJwpUA8FI2CmZO7W8j87EdXGOFAj38dou+0EqoRTP
+	iipKrUzPNda5gpR1+E/unqMgy3Dpk0A8k3HlZCtylWRrRjDf1D4W89qt56KYcZIi
+	q9LRd63UTj9yRZD3qSRBCzsGaFVcitas+xoOS7VS0nj9Vu40mCblGPSo/2kyY0Vf
+	NRwvXbGtn6KEBRUuSyXDG3QkWe/dAt8Fsag==
+X-ME-Sender: <xms:DHrLaEmSQMMyaGxTc69YacK7k91bvlWLbviZto-DwHcAnq1sOg5SEg>
+    <xme:DHrLaNeRzCqNDlWPLmp4TtlOoNBSHCeD-OXJHTJC9l1xuPKkOZrpa-ltFFkDBKWoz
+    6udwdKP4nBQCmDKZ0g>
+X-ME-Received: <xmr:DHrLaCo6J5q35OL8Zmox8nqTsoIzj6HBYD-iPG50x7KQscxL9H8LmEonuDVaTB-_3enSqeKNg3KsY48cq-ZO6lygG52wCrn8b_4>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggdeghedvfecutefuodetggdotefrod
+    ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpuffrtefokffrpgfnqfghnecuuegr
+    ihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenucfjug
+    hrpeffhffvvefujgfkfhggtgesthdtredttddtvdenucfhrhhomhepvehhihhmvgcujfgr
+    rhhtuceotghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomheqnecuggftrf
+    grthhtvghrnhepvdehgeeljeekgeeugfefleekjeeivdekkedvteeuveeufeeffffffeff
+    ledufedtnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomh
+    eptghhihhmvgeshhhusggvrhhtqdhhuhhmphhhrhgvhidrtghomhdpnhgspghrtghpthht
+    ohepfedpmhhouggvpehsmhhtphhouhhtpdhrtghpthhtohepkhhlvgifvghllhgvnhessh
+    hhvghllhifohhrlhgurdhnvghtpdhrtghpthhtohepshgrlhhtsehprghnihigrdgtohhm
+    pdhrtghpthhtohepshhpvggrkhhupheslhhinhhugidqshhpvggrkhhuphdrohhrgh
+X-ME-Proxy: <xmx:DHrLaD6IKyAs_clMJC8ZEvVcfHwxD7Pyeek3uxdfjDjLMVaosjn1Ug>
+    <xmx:DHrLaAo64xQ865bUTlmgeEHXO8lEmoxeus2b6vMDqsPHj87jCd_9Bg>
+    <xmx:DHrLaNgtfqLsi-viKFXM_AaLdrhDNvDQhfkGmgcBy0rqJNSrTY6QVg>
+    <xmx:DHrLaCIWmypVT7O19--RZ6TeHdqzCQbFg1aM8kn-lHNfSj-uCUwCmw>
+    <xmx:DXrLaHqQbzgMjy3qL1SKLSKDnXNbRcskXViFaG9ouX1lBGRHffoItjBD>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 17 Sep 2025 23:18:36 -0400 (EDT)
+Date: Wed, 17 Sep 2025 20:18:35 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: Karen Lewellen <klewellen@shellworld.net>
+cc: Rudy Vener <salt@panix.com>, speakup@linux-speakup.org
 Subject: Re: Question about blind CLI use (was Re: "your browser is not
  supported anymore" ...)
-In-Reply-To: <aMt2KmWOCT_waaDM@panix.com>
-Message-ID: <Pine.LNX.4.64.2509172305390.3965817@users.shellworld.net>
-References: <6d3f190e-733a-e5d5-a8f5-cc6eb2c05e65@hubert-humphrey.com>
- <Pine.LNX.4.64.2509120106350.3832376@users.shellworld.net> <aMOwSwrEWTBtFn60@titan>
- <45100fe1-7400-688a-c7fc-7eae1f81ef2b@hubert-humphrey.com> <aMsF4T_1FAbaFEHz@titan>
- <aMsboMhBL4klsYZD@panix.com> <Pine.LNX.4.64.2509171823280.3962820@users.shellworld.net>
- <aMs6TdEMXhkXkkJP@titan> <Pine.LNX.4.64.2509171937230.3963832@users.shellworld.net>
- <17e1af06-81a0-40c3-a0df-19bab0242cfe@crosslink.net> <aMt2KmWOCT_waaDM@panix.com>
+In-Reply-To: <Pine.LNX.4.64.2509172305390.3965817@users.shellworld.net>
+Message-ID: <761b02c8-85cd-0ba9-48dc-a45b4f3f5a2f@hubert-humphrey.com>
+References: <6d3f190e-733a-e5d5-a8f5-cc6eb2c05e65@hubert-humphrey.com> <Pine.LNX.4.64.2509120106350.3832376@users.shellworld.net> <aMOwSwrEWTBtFn60@titan> <45100fe1-7400-688a-c7fc-7eae1f81ef2b@hubert-humphrey.com> <aMsF4T_1FAbaFEHz@titan> <aMsboMhBL4klsYZD@panix.com>
+ <Pine.LNX.4.64.2509171823280.3962820@users.shellworld.net> <aMs6TdEMXhkXkkJP@titan> <Pine.LNX.4.64.2509171937230.3963832@users.shellworld.net> <17e1af06-81a0-40c3-a0df-19bab0242cfe@crosslink.net> <aMt2KmWOCT_waaDM@panix.com>
+ <Pine.LNX.4.64.2509172305390.3965817@users.shellworld.net>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -47,248 +92,16 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi Rudy,
-Chime is speaking of the more currently available dectalk USB..which it 
-also seems has a standard serial port.
-business vision was sold by arctic technology.  They also sold the 
-transport among other tools.
-Perhaps I got my copy of vocal eyes via a door that bypassed that 
-situation.
+Well, earlier Jookia asked me about an inconvenient change in windows. 
+Windows95/98 the desktop was mostly just up-and-down, fairly easily go 
+in-and-out of folders. Maybe it was around the time when insert+f6 stopped 
+bringing up the desktop. No, windows+m wasn't so bad, but then came windows 
+explorer where you had to right arrow to open certain menus. Thats certainly 
+when Microsoft lost me. And unrelated, I got my DecTalk USB in 2005 from I 
+think it was Axsol Solutions.
+Chime
 
-
-
-On Wed, 17 Sep 2025, Rudy Veneer wrote:
-
-> Yes, The Dectalk Express is a standalone speech synth with an Rs-232 serial port.
-> It worked beautifully with Vocal Eyes.
-> Sorry, Karen, I'm not familiar with Business Voice. I do remember
-> that Vocal Eyes required a software license key which the user activated on first use and the software would
-> splash your name and license status across the screen every time you activated it.
->
-> Rudy
->
-> -- 
-> Rudy Vener
->
-> An audio release of Beast Hunt Vol 1, containing my short story Dragon Wing, is loose in the wild: https://www.amazon.com/dp/B0DPN1QGGJ
-> Serious Limerick - Charlie The Brave https://limerickdude.substack.com/p/charlie-the-brave
-> Website: http://www.rudyvener.com
->
->
->
-> On Wed, Sep 17, 2025 at 07:57:41PM -0400, Chevelle wrote:
->> I don't remember Dectalk USB.?? I think Dectalk Express had a serial port.??
->> Wasn't the price about $1200.?? The price of the BT Speak is less than that
->> now and it says it has DecTalk speech. You could call them and confirm
->> that.?? I'm not trying to sell anybody anything.?? I think Speech dispatcher
->> can already operate on a remote computer via a TCP/IP socket.
->>
->>
->>
->> On 9/17/25 7:47 PM, Karen Lewellen wrote:
->>> Its fine, happy to answer.
->>> Although it is quite a shame because business vision remains one of the
->>> most?? flexible and well designed screen readers I have ever used, to my
->>> understanding no work has been done.
->>> Part of the issue is legality.?? who owns the rights to the code, since,
->>> unlike say Linux programs, DOS screen readers were commercial products.
->>> Often sold with the synthesizers?? themselves.
->>> Which leads me to another question of yours.
->>> ??To insure maximum performance with screen reader features, specific
->>> drivers were written that supported access to specific synthesizers..of
->>> which there were many.
->>> companies like Apollo telesensory gw micro and so forth built their own
->>> devices, for which one needed a specific utility.
->>> Think of printer drivers, and you may get the idea.
->>> dectalk for example had several of their own.?? internal cards, external
->>> units, the dectalk express and so forth.
->>> some of those drivers allowed the synth to work on its own, one could
->>> copy files to them for example, or use them with Internet programs and
->>> the like.
->>> So, although I have not personally examined a Dectalk USB?? myself, even
->>> if the?? port is present, it does not automatically follow that, without
->>> a driver?? written to take advantage of its features, it will work.
->>> Does that resonate?
->>>
->>> Karen
->>>
->>>
->>>
->>> On Thu, 18 Sep 2025, Jookia wrote:
->>>
->>>> Hi Karen,
->>>>
->>>> I know this email wasn't addressed to me so please ignore it if
->>>> you're not
->>>> interested. No offense intended.
->>>>
->>>> Has there been any work to crack/reverse engineer business vision?
->>>>
->>>> Doesn't the DECTalk USB already have a RS232 PC serial port
->>>> connector? If it
->>>> supports the same DECTalk serial protocol (it probably should) then
->>>> it should
->>>> just be a matter of connecting it to serial and using the screen reader.
->>>>
->>>> If you mean connecting by a USB serial port adapter, that would
->>>> require some
->>>> kind of USB serial to PC serial emulation done in the DOS kernel, or
->>>> some setup
->>>> in a DOS emulator or VM.
->>>>
->>>> Jookia.
->>>>
->>>> On Wed, Sep 17, 2025 at 06:32:16PM -0400, Karen Lewellen wrote:
->>>>> Hi Rudy,
->>>>> You are confusing vocal eyes with business vision,?? the latter has a
->>>>> physical?? hardware key that fits into the parallel port.
->>>>> without it, one
->>>>> cannot run business vision..which remains my main screen reader
->>>>> of choice.
->>>>> Would you like a copy of vocal eyes?
->>>>> I have one.
->>>>> Granted I imagine it starts with knowing such is possible, but I
->>>>> have never
->>>>> encountered issues finding, or having custom built, computers
->>>>> for my DOS
->>>>> use.
->>>>> Finding knowledgeable Linux folks or machines is another matter though.
->>>>>
->>>>>
->>>>> ??Personally, I would love to discover if?? connecting a dectalk USB via
->>>>> serial?? port adapter would allow it to use DOS screen readers
->>>>> with dectalk
->>>>> drivers.
->>>>> For me personally, no driver exists for the reading edge in
->>>>> Linux..so no
->>>>> speakup.
->>>>> Wonder what is required to code a dectalk driver for a screen reading
->>>>> program allowing it to recognize a USB external synthesizer?
->>>>>
->>>>> Karen
->>>>>
->>>>>
->>>>>
->>>>> On Wed, 17 Sep 2025, Rudy Vener wrote:
->>>>>
->>>>>> I used to love my DOS PC running Smart Term terminal emulator
->>>>>> and Vocal Eyes as my interface into?? my Linux machine at
->>>>>> home, Sun workstation at
->>>>>> work?? or any Unix/Linux machine that had an RS-232 serial port.
->>>>>>
->>>>>> Eventually the technical issues and maintenance overhead to
->>>>>> operate DOS just became too cumbersome and I
->>>>>> migrated to?? speakup on my Linux machine.
->>>>>> I still have a working Dectalk Express speech synthesizer or
->>>>>> two around, but unfortunately any copy of Vocal Eyes I may
->>>>>> have had is long gone. Also, I seem to recall that Vocal Eyes needed
->>>>>> a?? licensing key sequence to operate, so just getting the
->>>>>> software is only the beginning of the battle.
->>>>>>
->>>>>> --
->>>>>> Rudy Vener
->>>>>>
->>>>>> An audio release of Beast Hunt Vol 1, containing my short
->>>>>> story Dragon Wing, is loose in the wild:
->>>>>> https://www.amazon.com/dp/B0DPN1QGGJ
->>>>>> Serious Limerick - Charlie The Brave
->>>>>> https://limerickdude.substack.com/p/charlie-the-brave
->>>>>> Website: http://www.rudyvener.com
->>>>>>
->>>>>>
->>>>>>
->>>>>> On Thu, Sep 18, 2025 at 05:02:57AM +1000, Jookia wrote:
->>>>>>> Hi Chime,
->>>>>>>
->>>>>>> Thanks for your input, I'm curious what windows explorer
->>>>>>> did wrong UI wise?
->>>>>>>
->>>>>>> DOSBox is nice because it runs on a host computer and
->>>>>>> can access host files, so
->>>>>>> you get the benefit of a DOS interface, DOS programs,
->>>>>>> but a 'real' computer
->>>>>>> that can handle multiple programs at once, filesystem
->>>>>>> safety, Internet access,
->>>>>>> modern devices. It also runs on ARM devices like Pis.
->>>>>>>
->>>>>>> I've had requests by people to add a way to have speech
->>>>>>> output from DOS to
->>>>>>> Windows and so my current project is to emulate a
->>>>>>> minimal DECTalk-like synth
->>>>>>> device that calls the host APIs or some other API. So on
->>>>>>> Windows or Wine this
->>>>>>> can be SAPI or NVDA, on Linux it could be
->>>>>>> speech-dispatcher or espeak.
->>>>>>>
->>>>>>> My plan is to have this compatible with any screen
->>>>>>> reader that supports an
->>>>>>> external TTS. This includes JAWS, Provox, ASAP, Speakup,
->>>>>>> and whatever else
->>>>>>> people can get running. If you have a hardware DECTalk
->>>>>>> none of this is
->>>>>>> necessary and you can connect it directly to DOSBox
->>>>>>> already. If you have a
->>>>>>> software DECTalk it may be usable in a similar way.
->>>>>>>
->>>>>>> It would be a lot of fun to try and get a
->>>>>>> Linux-compatible terminal emulator
->>>>>>> running in DOSBox too so you can use a DOS screenreader
->>>>>>> and Linux programs.
->>>>>>>
->>>>>>> Do you have a copy of Vocal-Eyes? I haven't been able to
->>>>>>> find one and would
->>>>>>> enjoy adding it to my testing situation.
->>>>>>>
->>>>>>> Jookia.
->>>>>>>
->>>>>>> On Fri, Sep 12, 2025 at 08:21:37AM -0700, Chime Hart wrote:
->>>>>>>> Well, Jookia, to adequately keep track of your
->>>>>>>> questions, I cut-and-pasted them
->>>>>>>> in nano in a separate console.
->>>>>>>> I think to a larger extent, especially in my case,
->>>>>>>> as I began a?? computer
->>>>>>>> journey in 1994, I became used to a text interface,
->>>>>>>> although I appreciated
->>>>>>>> menus which guided me. I was practicly forced in to
->>>>>>>> windows95 as I needed a
->>>>>>>> more powerful machine to begin enjoying mp3s in late
->>>>>>>> 1997. To some extent I
->>>>>>>> could manage with a simple windows desktop until
->>>>>>>> they ruined it by switching to
->>>>>>>> windows explorer. By 2006 with windows media player
->>>>>>>> locking up my machine, we
->>>>>>>> completely got rid of windows. All along the way I
->>>>>>>> would launch a DOS prompt or
->>>>>>>> telnet to read-and-write mail in Pine. I've tried
->>>>>>>> ORCA but am not familliar or
->>>>>>>> comfortable with its interface.
->>>>>>>> Jookia, I think DOS emu works much better with a
->>>>>>>> screen-reader. What do you
->>>>>>>> like better about DosBox? Please, Kirk, cover your
->>>>>>>> ears, but I would love to
->>>>>>>> resume useing Vocal-Eyes with a DecTalk. With its
->>>>>>>> exception dictionary-and-its
->>>>>>>> ability to enjoy single-digit numbering, I was
->>>>>>>> `extremely comfortable in that
->>>>>>>> envirenment. In some ways I find a Chromebook easier
->>>>>>>> than ORCA, but Chromevox
->>>>>>>> doesn't support a numpad like Speakup-and-NVDA do.
->>>>>>>> Anyway, I hope I've answered
->>>>>>>> all of your items, but please understand, I am only a user-and-not a
->>>>>>>> programmer.
->>>>>>>> Chime
->>>>>>>>
->>>>>>>
->>>>>>
->>>>>>
->>>>>
->>>>
->>>
->>
->>
->
->
 
