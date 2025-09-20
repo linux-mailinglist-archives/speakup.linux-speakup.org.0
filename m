@@ -1,44 +1,33 @@
-Return-Path: <speakup+bounces-1389-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1390-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8AF76B87E0E
-	for <lists+speakup@lfdr.de>; Fri, 19 Sep 2025 06:49:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 87364B8D288
+	for <lists+speakup@lfdr.de>; Sun, 21 Sep 2025 01:52:14 +0200 (CEST)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 14C15382C42; Fri, 19 Sep 2025 00:49:50 -0400 (EDT)
+	id AAD31382BC9; Sat, 20 Sep 2025 19:51:57 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 016D9382BC1
-	for <lists+speakup@lfdr.de>; Fri, 19 Sep 2025 00:49:50 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 978E0382B6A
+	for <lists+speakup@lfdr.de>; Sat, 20 Sep 2025 19:51:57 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3CC32382B95; Fri, 19 Sep 2025 00:49:46 -0400 (EDT)
-Received: from atlas.bondproducts.com (atlas.bondproducts.com [23.24.6.165])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 01DC1382B75
-	for <speakup@linux-speakup.org>; Fri, 19 Sep 2025 00:49:45 -0400 (EDT)
-Received: from users.shellworld.net (users.shellworld.net [50.116.47.71])
-	by atlas.bondproducts.com (Postfix) with ESMTP id 60E4640508;
-	Fri, 19 Sep 2025 00:49:44 -0400 (EDT)
-Received: by users.shellworld.net (Postfix, from userid 1005)
-	id D90011001BA; Fri, 19 Sep 2025 00:49:42 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by users.shellworld.net (Postfix) with ESMTP id D648E100056;
-	Fri, 19 Sep 2025 00:49:42 -0400 (EDT)
-Date: Fri, 19 Sep 2025 00:49:42 -0400 (EDT)
-From: Karen Lewellen <klewellen@shellworld.net>
-To: Gregory Nowak <greg@gregn.net>
-cc: Butch Bussen <butchb@shellworld.net>, Rudy Vener <salt@panix.com>, 
-    speakup@linux-speakup.org
-Subject: Re: accessible phones database? is  Question about blind CLI use
- (was Re: "your browser is not supported anymore" ...)
-In-Reply-To: <aMzL0NHxxCkf2j1M@gregn.net>
-Message-ID: <Pine.LNX.4.64.2509190048380.3984037@users.shellworld.net>
-References: <aMsF4T_1FAbaFEHz@titan> <aMsboMhBL4klsYZD@panix.com>
- <Pine.LNX.4.64.2509171823280.3962820@users.shellworld.net> <aMs6TdEMXhkXkkJP@titan>
- <Pine.LNX.4.64.2509171937230.3963832@users.shellworld.net>
- <17e1af06-81a0-40c3-a0df-19bab0242cfe@crosslink.net> <aMt2KmWOCT_waaDM@panix.com>
- <Pine.LNX.4.64.2509180709190.3974788@users.shellworld.net> <aMyPeEnybDhoh9rD@gregn.net>
- <Pine.LNX.4.64.2509182026130.3981456@users.shellworld.net> <aMzL0NHxxCkf2j1M@gregn.net>
+	id A9100382A93; Sat, 20 Sep 2025 19:51:53 -0400 (EDT)
+Received: from cloud (ip74-208-194-141.pbiaas.com [74.208.194.141])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 876423827DB
+	for <speakup@linux-speakup.org>; Sat, 20 Sep 2025 19:51:53 -0400 (EDT)
+Received: by cloud (Postfix, from userid 1000)
+	id 8E164201A0; Sat, 20 Sep 2025 23:51:41 +0000 (UTC)
+Date: Sat, 20 Sep 2025 23:51:41 +0000
+From: "Terry D. Cudney" <terry@cudneys.ca>
+To: "John G. Heim" <jheim@math.wisc.edu>
+Cc: speakup@linux-speakup.org
+Subject: Re: speakup from boot
+Message-ID: <aM8-DdAl1_NTcbI7@cudneys.ca>
+References: <aL5U_xg372xiMOJm@cudneys.ca>
+ <aL5dVITcCcq369vC@cudneys.ca>
+ <m3v7ltv3t4.wl-covici@ccs.covici.com>
+ <694cf51b-fbe8-4377-aeab-4afa0d753019@math.wisc.edu>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -48,14 +37,84 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <694cf51b-fbe8-4377-aeab-4afa0d753019@math.wisc.edu>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Sorry.
-Gari stands for global accessibility reporting initiative.
-so its gari with an I, not a y.
-Karen
+Hi John,
 
+   Thanks for your response!
 
+   I have verified that espeakup is "enabled". The problem is that it is running as "root".
 
+   I'm still convinced that the solution, if we are going to stick with systemd, is to start espeakup as a systemd service running as "user". In my case, as "terry".
+
+   I still havent got a good enough grasp of systemd to know how to accomplish this.
+
+   Still looking, in my spare time.
+
+   Thanks again!
+
+   --terry
+   
+=On Mon, Sep 08, 2025 at 10:39:52AM -0500, John G. Heim wrote:
+--> The OP was a little unclear on what he wants to do but if what he said at
+--> the end, "The goal is to have speakup talking before loggin in: is
+--> correct, then you don't have to mess with the initrd for that. Just
+--> enabling the espeakup systemd service should do it.
+--> 
+--> To check the status:
+--> systemctl status espeakup
+--> To enable the service:
+--> systemctl enable espeakup
+--> 
+--> 
+--> On 9/8/25 1:47 AM, John Covici wrote:
+--> > You would have to load the kernel module in your initrd and regenerate
+--> > the initrd in order to do this.  There is a script runs after the
+--> > initrd is generated, this may help.  Sorry, I can't remember how to do
+--> > this and I use a serial synth.
+--> > 
+--> > On Mon, 08 Sep 2025 00:36:36 -0400,
+--> > Terry D. Cudney wrote:
+--> > > Hi again,
+--> > > 
+--> > >     To give credit where credit is due...
+--> > > 
+--> > >     This little script (now modified) came from Kirk...
+--> > > 
+--> > >     This is how I get speakup to talk after logging in.
+--> > > 
+--> > >     First I must run this script,  as root:
+--> > > /* start of script */
+--> > > #!/bin/bash
+--> > > 
+--> > > systemctl stop espeakup
+--> > > /usr/bin/chown terry:terry /dev/softsynth*
+--> > > /usr/bin/chmod 1777 /run
+--> > > /* end of script */
+--> > > 
+--> > > 
+--> > > Then logged in as myself, I run espeakup as an application.
+--> > > /usr/bin/espeakup
+--> > > 
+--> > > 	From here on speakup talks normally on all tty's including the login prompts.
+--> > > 
+--> > > 	This is good, but not completely satisfactory, The goal is to have speakup talking before loggin in, ideally from power-on.
+--> > > 
+--> > > 	Thanks again for any suggestions/help ,
+--> > > 
+--> > > 	--terry
+--> > > -- 
+--> > > Name: Terry D. Cudney
+--> > > Telephone: 289-438-6828
+--> > > E-mail:terry@cudneys.ca
+--> > > 
+
+-- 
+Name: Terry D. Cudney
+Telephone: 289-438-6828
+E-mail: terry@cudneys.ca
+ 
 
