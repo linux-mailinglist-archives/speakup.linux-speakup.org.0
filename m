@@ -1,44 +1,45 @@
-Return-Path: <speakup+bounces-1394-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1395-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 81954B8D2D1
-	for <lists+speakup@lfdr.de>; Sun, 21 Sep 2025 02:49:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id A80E4B8D2FB
+	for <lists+speakup@lfdr.de>; Sun, 21 Sep 2025 03:05:18 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; secure) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=AhnHNJ+A;
+	dkim=pass (1024-bit key; secure) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=HywS4cOm;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 0704D382C54; Sat, 20 Sep 2025 20:49:56 -0400 (EDT)
+	id DAF8F382C6E; Sat, 20 Sep 2025 21:05:17 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id DA5C5382BE1
-	for <lists+speakup@lfdr.de>; Sat, 20 Sep 2025 20:49:55 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B71F5382BE7
+	for <lists+speakup@lfdr.de>; Sat, 20 Sep 2025 21:05:17 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A2A6B382BDD; Sat, 20 Sep 2025 20:49:48 -0400 (EDT)
+	id 8212C382BE5; Sat, 20 Sep 2025 21:05:10 -0400 (EDT)
 Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 3FE31382BD7
-	for <speakup@linux-speakup.org>; Sat, 20 Sep 2025 20:49:47 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 2D24A382BDD
+	for <speakup@linux-speakup.org>; Sat, 20 Sep 2025 21:05:09 -0400 (EDT)
 Received: from panix3.panix.com (panix3.panix.com [166.84.1.3])
-	by mailbackend.panix.com (Postfix) with ESMTP id 4cTnhB06l3zMLF
-	for <speakup@linux-speakup.org>; Sat, 20 Sep 2025 20:49:45 -0400 (EDT)
+	by mailbackend.panix.com (Postfix) with ESMTP id 4cTp1w3f16zMkT
+	for <speakup@linux-speakup.org>; Sat, 20 Sep 2025 21:05:08 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1758415786; bh=EwXEK9Z+NbaGQLRKykN2rENmfeP//d/2hN/++sMfMmM=;
+	t=1758416708; bh=GFR9t5+rwKye1NRrXj5eApfzHkDMzupse5hGtBOECu4=;
 	h=Date:From:To:Subject:References:In-Reply-To;
-	b=AhnHNJ+ATBM9xc4dgAljzjDi/6l70jQWSTGgqSyA/gthE4W+PZyDfyigBbmyvV6bB
-	 4NLWM3V9ytudL43qpwntQcSxDpXjk6q2O1yCXs0+jQDtPUjk2v3vpB1bRcB293rNNy
-	 fcFmnlH92m+CsScquHFj8HWxvJLzQeY7UV/PuskQ=
+	b=HywS4cOmqqvx4lGBuxOROgv1jqXiYsQZfDvbFiY9GrJ4uBst+SOpeeBqZBxniyJx/
+	 +nL25Qj6rUd3j2yd6gOJU+u1b/K+um5+mlA5SgiForZZB70Unba4YU4YM6JgST5qyQ
+	 npU5umfzxoPOONQJAPM2Wqwr4PfpxMEMWgX2LVWU=
 Received: by panix3.panix.com (Postfix, from userid 20196)
-	id 4cTnh83CJWz1QXM; Sat, 20 Sep 2025 20:49:44 -0400 (EDT)
-Date: Sat, 20 Sep 2025 20:49:44 -0400
+	id 4cTp1w3PYjz1QXM; Sat, 20 Sep 2025 21:05:08 -0400 (EDT)
+Date: Sat, 20 Sep 2025 21:05:08 -0400
 From: Rudy Vener <salt@panix.com>
 To: speakup@linux-speakup.org
 Subject: Re: speakup from boot
-Message-ID: <aM9LqMsaeVse7URd@panix.com>
+Message-ID: <aM9PRNDvSLjcx7-1@panix.com>
 References: <aL5U_xg372xiMOJm@cudneys.ca>
  <aL5dVITcCcq369vC@cudneys.ca>
  <aL9BrQYKOSsZg6NJ@gregn.net>
- <aM8_9UlZj_oQ4ktW@cudneys.ca>
+ <2a46280b-3f61-492b-b7a4-b7f685c41a4e@crosslink.net>
+ <aM9KHbWnRzHPHDr2@cudneys.ca>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,10 +51,24 @@ List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-In-Reply-To: <aM8_9UlZj_oQ4ktW@cudneys.ca>
+In-Reply-To: <aM9KHbWnRzHPHDr2@cudneys.ca>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-I can reccommend slint Linux which is based on slackware and speaks right from the console login screen.
+Slint Linux does this. I typically login on console and start up an Orca gui
+after switching to Console 2 via Alt-F2 and running a startx script,
+e.g:
+# run the first two lines only once
+# orca-on
+# session-chooser mate
+# clean out browser cache
+rm -fr $HOME/.cache/*
+startx
+
+Now both console and Orca are running and I switch  as needed
+with Alt-F7 to get to Orca and
+Alt-Ctrl-F1 to return to text console.
+
+If I screw up my Orca session, (frequently), I can Alt-Ctrl-F2 to get to the Console 2 and hit Ctrl-c to kill  the Orca process.
 
 -- 
 Rudy Vener
@@ -64,69 +79,71 @@ Website: http://www.rudyvener.com
 
 
 
-On Sat, Sep 20, 2025 at 11:59:49PM +0000, Terry D. Cudney wrote:
-> Hi Greg,
+On Sun, Sep 21, 2025 at 12:43:09AM +0000, Terry D. Cudney wrote:
+> Hi Chevelle,
 > 
->    Thanks for your response!
+>    With earlier installations of debian, speakup/speech was enabled from the installer and was running thereafter in the installed system.
 > 
->    I have tried voidlinux for a short while. It's a "whole different can of worms". I may still end up going that route, but for now I'm taunted by the idea of "vanquishing" systemd to do what I want.
+>    However, in more recent versions of the installer,, at least in my current setup, when I select "speech" during the installation, the installed system has "orca" running in the gui, but no speakup in the cli tty's.
 > 
->    If I  cant get systemd to obey me, a "systemd-free" distro may be in the future...
+>    What we want to have here is orca in the gui, concurrently with speakup/espeakup/espeak-ng in the consoles.
 > 
->    Thanks again,
+>    I am able to accomplish this by manually, after loggingin on a console,  stopping the espeakup.service (systemd), modifying the /dev/softsynth ownership from root:root to terry:terry and then running espeakup as a user application.
+> 
+>    The goal, as previously stated, is to have this all done/setup automatically from boot-time, so that we have an audible prompt before logging in on a console.
 > 
 >    --terry
 >    
-> On Mon, Sep 08, 2025 at 01:50:53PM -0700, Gregory Nowak wrote:
-> --> Switch to a systemd-free distro like devuan or void. Probably not the
-> --> advice you wanted.
+> 
+> On Mon, Sep 08, 2025 at 05:22:37PM -0400, Chevelle wrote:
+> --> On my Debian systems, Speakup does talk before login in.? I'm using
+> --> espeak-ng.? I'm not sure what 'softsynth' is, or why you need to stop
+> --> espeakup at all? On this system typing 'systemctl status espeakup' shows
+> --> it running.
 > --> 
-> --> Greg
 > --> 
 > --> 
-> --> On Mon, Sep 08, 2025 at 04:36:36AM +0000, Terry D. Cudney wrote:
-> --> > Hi again,
+> --> On 9/8/25 4:50 PM, Gregory Nowak wrote:
+> --> > Switch to a systemd-free distro like devuan or void. Probably not the
+> --> > advice you wanted.
 > --> > 
-> --> >    To give credit where credit is due...
-> --> > 
-> --> >    This little script (now modified) came from Kirk...
-> --> > 
-> --> >    This is how I get speakup to talk after logging in.  
-> --> > 
-> --> >    First I must run this script,  as root:
-> --> > /* start of script */
-> --> > #!/bin/bash
-> --> > 
-> --> > systemctl stop espeakup
-> --> > /usr/bin/chown terry:terry /dev/softsynth*
-> --> > /usr/bin/chmod 1777 /run
-> --> > /* end of script */
+> --> > Greg
 > --> > 
 > --> > 
-> --> > Then logged in as myself, I run espeakup as an application.
-> --> > /usr/bin/espeakup
-> --> > 
-> --> > 	From here on speakup talks normally on all tty's including the login prompts.
-> --> > 
-> --> > 	This is good, but not completely satisfactory, The goal is to have speakup talking before loggin in, ideally from power-on.
-> --> > 
-> --> > 	Thanks again for any suggestions/help ,
-> --> > 
-> --> > 	--terry
-> --> >  
-> --> > -- 
-> --> > Name: Terry D. Cudney
-> --> > Telephone: 289-438-6828
-> --> > E-mail: terry@cudneys.ca
-> --> >  
-> --> > 
-> --> 
-> --> -- 
-> --> web site: http://www.gregn.net
-> --> gpg public key: http://www.gregn.net/pubkey.asc
-> --> 
-> --> --
-> --> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+> --> > On Mon, Sep 08, 2025 at 04:36:36AM +0000, Terry D. Cudney wrote:
+> --> > > Hi again,
+> --> > > 
+> --> > >     To give credit where credit is due...
+> --> > > 
+> --> > >     This little script (now modified) came from Kirk...
+> --> > > 
+> --> > >     This is how I get speakup to talk after logging in.
+> --> > > 
+> --> > >     First I must run this script,  as root:
+> --> > > /* start of script */
+> --> > > #!/bin/bash
+> --> > > 
+> --> > > systemctl stop espeakup
+> --> > > /usr/bin/chown terry:terry /dev/softsynth*
+> --> > > /usr/bin/chmod 1777 /run
+> --> > > /* end of script */
+> --> > > 
+> --> > > 
+> --> > > Then logged in as myself, I run espeakup as an application.
+> --> > > /usr/bin/espeakup
+> --> > > 
+> --> > > 	From here on speakup talks normally on all tty's including the login prompts.
+> --> > > 
+> --> > > 	This is good, but not completely satisfactory, The goal is to have speakup talking before loggin in, ideally from power-on.
+> --> > > 
+> --> > > 	Thanks again for any suggestions/help ,
+> --> > > 
+> --> > > 	--terry
+> --> > > -- 
+> --> > > Name: Terry D. Cudney
+> --> > > Telephone: 289-438-6828
+> --> > > E-mail: terry@cudneys.ca
+> --> > > 
 > --> 
 > 
 > -- 
