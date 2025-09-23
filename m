@@ -1,46 +1,51 @@
-Return-Path: <speakup+bounces-1399-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1400-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 894D9B8ED4D
-	for <lists+speakup@lfdr.de>; Mon, 22 Sep 2025 04:59:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B0B29B9465D
+	for <lists+speakup@lfdr.de>; Tue, 23 Sep 2025 07:26:05 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=crosslink.net header.i=cstrobel@crosslink.net header.a=rsa-sha256 header.s=zoho header.b=c+QWYsSs;
+	dkim=pass (2048-bit key; unprotected) header.d=jookia.org header.i=@jookia.org header.a=rsa-sha256 header.s=key1 header.b=ZfuDmyce;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3E6AD3830BC; Sun, 21 Sep 2025 22:59:32 -0400 (EDT)
+	id C7A8238280F; Tue, 23 Sep 2025 01:25:53 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 1BE76382C4A
-	for <lists+speakup@lfdr.de>; Sun, 21 Sep 2025 22:59:32 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id A78D2382169
+	for <lists+speakup@lfdr.de>; Tue, 23 Sep 2025 01:25:53 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BFD64382C54; Sun, 21 Sep 2025 22:59:24 -0400 (EDT)
-Received: from sender4-op-o12.zoho.com (sender4-op-o12.zoho.com [136.143.188.12])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 4BCCB382C4A
-	for <speakup@linux-speakup.org>; Sun, 21 Sep 2025 22:59:24 -0400 (EDT)
-ARC-Seal: i=1; a=rsa-sha256; t=1758509960; cv=none; 
-	d=zohomail.com; s=zohoarc; 
-	b=RxufYwt7kCJyA6Sfdg4LDw6EHG12Mb/d733cOTmHRtF0aYDcdls7D6qTLnfbbwSJ1WPQOVkc2jPtYiHFUOLV8bIfuAJtEysf99YsyDJZyEMWIODAZI4K/1OWEmSaRJ1cXi4qfo30yIVRVTKnm9pn4QUflILFhWdK2YocdWYrnIQ=
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
-	t=1758509960; h=Content-Type:Content-Transfer-Encoding:Cc:Cc:Date:Date:From:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:Subject:To:To:Message-Id:Reply-To; 
-	bh=7BEh8tA+MVfLz9bN+Og/RgcKQRy/eSj0WcLg3CTjiNk=; 
-	b=TplFc7T+RfZcv8WR4CLW1vecJNeZdUCyz9Ooi9GkZrDeX7oUiv8j+adzXojwdKcvZzrUIjTEKdr9VCiYnlhLn/ccqxMocTNnMrnNwWrN7/U5/Pzoqfgh/egEgQwIKejip20j6mSUeTC8Impci97GajoS40VI8utW3h8Om1PJojQ=
-ARC-Authentication-Results: i=1; mx.zohomail.com;
-	dkim=pass  header.i=crosslink.net;
-	spf=pass  smtp.mailfrom=cstrobel@crosslink.net;
-	dmarc=pass header.from=<cstrobel@crosslink.net>
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1758509960;
-	s=zoho; d=crosslink.net; i=cstrobel@crosslink.net;
-	h=Message-ID:Date:Date:MIME-Version:Subject:Subject:To:To:Cc:Cc:References:From:From:In-Reply-To:Content-Type:Content-Transfer-Encoding:Message-Id:Reply-To;
-	bh=7BEh8tA+MVfLz9bN+Og/RgcKQRy/eSj0WcLg3CTjiNk=;
-	b=c+QWYsSsKCWx4pHMZi8IoHlOxyPffN7TJzfDtszf0Jn5/JZIo3yRagQzE80Gl/RA
-	YNxEEfxfzWpLc3NlxXeT9f5w9XiUbsNLPREzswYiEA9a1jxke0IhcK10+1bCdKEUDV4
-	XqWmeD/to1LJ78E1O5s2wnE4VWt9vbdjixvaDwX4=
-Received: by mx.zohomail.com with SMTPS id 1758509957774726.2671150986738;
-	Sun, 21 Sep 2025 19:59:17 -0700 (PDT)
-Message-ID: <7e08a446-ad79-4495-8749-9f86ec526c86@crosslink.net>
-Date: Sun, 21 Sep 2025 22:59:16 -0400
+	id 9563238216B; Tue, 23 Sep 2025 01:25:46 -0400 (EDT)
+Received: from out-186.mta1.migadu.com (out-186.mta1.migadu.com [95.215.58.186])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 45CC338213F
+	for <speakup@linux-speakup.org>; Tue, 23 Sep 2025 01:25:44 -0400 (EDT)
+Date: Tue, 23 Sep 2025 15:24:02 +1000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jookia.org; s=key1;
+	t=1758605139;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references;
+	bh=QIToTuDdhWGPD64pCrHh9YOeoKDoFoYixj7yEz/ZHh8=;
+	b=ZfuDmycei0rLIxnRCGT2oWl+j5ztefafyHSBVCXCEd3v9qP/AXKvbsRVrT2OxsONa/WsSp
+	sT4bgeP7cHpmGK4+dqo7MkvuNysW7+b8/kRpoQDzmXJxC13Nr4HG2uKLLpR66ZY6dOQjuD
+	ji3hvcB3A48AsG7jtXeG5SAG4uHF391cgR49KFtkMLtBaeQwA6WmhpyBfhO99JoWEl8rS6
+	FKht/FIm6Wjak9E7gn4sOCc0nVSo7mjxaCOdTIfMoXZqRcGJvPsssyBo5BwUWlF6jy5+6V
+	MqiccUrh6FJsa/GeIaBio5m3xZhT5rISSHlunzg0lYbGgRSj4y9pXdQUo+ewXw==
+X-Report-Abuse: Please report any abuse attempt to abuse@migadu.com and include these headers.
+From: Jookia <contact@jookia.org>
+To: Rudy Vener <salt@panix.com>
+Cc: speakup@linux-speakup.org
+Subject: Re: Question about blind CLI use (was Re: "your browser is not
+ supported anymore" ...)
+Message-ID: <aNIu8lpkSEQz7jJP@titan>
+References: <202509111603.58BG3W3p018143@nfbcal.org>
+ <7a04c6dd-c761-4445-b53a-3c4525cf2a87@crosslink.net>
+ <579c5d9b-5ba1-4029-982a-01295fea3a61@posteo.com.br>
+ <Pine.LNX.4.64.2509112223130.3830807@users.shellworld.net>
+ <6d3f190e-733a-e5d5-a8f5-cc6eb2c05e65@hubert-humphrey.com>
+ <Pine.LNX.4.64.2509120106350.3832376@users.shellworld.net>
+ <aMOwSwrEWTBtFn60@titan>
+ <aMQb_2EHO0HYypga@panix.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -50,131 +55,107 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: speakup from boot
-To: K0LNY ?? <glenn@ervin.email>, "Terry D. Cudney" <terry@cudneys.ca>
-Cc: speakup@linux-speakup.org
-References: <aL5U_xg372xiMOJm@cudneys.ca> <aL5dVITcCcq369vC@cudneys.ca>
- <aL9BrQYKOSsZg6NJ@gregn.net>
- <2a46280b-3f61-492b-b7a4-b7f685c41a4e@crosslink.net>
- <aM9KHbWnRzHPHDr2@cudneys.ca>
- <d7e9ebe2-9ae2-4864-9704-664ca30d0664@crosslink.net>
- <05dc01dc2b30$3b0a5630$01ffa8c0@nucwin10>
-Content-Language: en-US
-From: Chevelle <cstrobel@crosslink.net>
-In-Reply-To: <05dc01dc2b30$3b0a5630$01ffa8c0@nucwin10>
-Content-Type: text/plain; charset=UTF-8; format=flowed
-Content-Transfer-Encoding: 7bit
-X-ZohoMailClient: External
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <aMQb_2EHO0HYypga@panix.com>
+X-Migadu-Flow: FLOW_OUT
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-It is called Sound / Voice issues.
+Hi Rudy,
 
-On 9/21/25 3:45 PM, K0LNY ?? wrote:
-> Hi Chevelle,
-> I'm on that list, what is the subject of the common  thread?
-> I don't recall any more, which of the messages that may have come through on
-> this topic on the Debian list.
-> Thanks.
->
-> ----- Original Message -----
-> From: "Chevelle" <cstrobel@crosslink.net>
-> To: "Terry D. Cudney" <terry@cudneys.ca>
-> Cc: <speakup@linux-speakup.org>
-> Sent: Sunday, September 21, 2025 2:35 PM
-> Subject: Re: speakup from boot
->
->
-> Terry, possibly you are having the issue that is being discussed on
-> Debian Accessibility. I may not have hit the issue since I upgraded
-> from Bookworm to Trixie without using the installer. I set up a test
-> system and I'll see if I can figure out what the difference is. You
-> might want to join Debian Accessibility mailing list if you aren't on it
-> already.
-> https://lists.debian.org/debian-accessibility/
->
->
-> On 9/20/25 8:43 PM, Terry D. Cudney wrote:
->> Hi Chevelle,
->>
->>      With earlier installations of debian, speakup/speech was enabled from
->> the installer and was running thereafter in the installed system.
->>
->>      However, in more recent versions of the installer,, at least in my
->> current setup, when I select "speech" during the installation, the
->> installed system has "orca" running in the gui, but no speakup in the cli
->> tty's.
->>
->>      What we want to have here is orca in the gui, concurrently with
->> speakup/espeakup/espeak-ng in the consoles.
->>
->>      I am able to accomplish this by manually, after loggingin on a
->> console,  stopping the espeakup.service (systemd), modifying the
->> /dev/softsynth ownership from root:root to terry:terry and then running
->> espeakup as a user application.
->>
->>      The goal, as previously stated, is to have this all done/setup
->> automatically from boot-time, so that we have an audible prompt before
->> logging in on a console.
->>
->>      --terry
->>
->>
->> On Mon, Sep 08, 2025 at 05:22:37PM -0400, Chevelle wrote:
->> --> On my Debian systems, Speakup does talk before login in. I'm using
->> --> espeak-ng. I'm not sure what 'softsynth' is, or why you need to stop
->> --> espeakup at all? On this system typing 'systemctl status espeakup'
->> shows
->> --> it running.
->> -->
->> -->
->> -->
->> --> On 9/8/25 4:50 PM, Gregory Nowak wrote:
->> --> > Switch to a systemd-free distro like devuan or void. Probably not
->> the
->> --> > advice you wanted.
->> --> >
->> --> > Greg
->> --> >
->> --> >
->> --> > On Mon, Sep 08, 2025 at 04:36:36AM +0000, Terry D. Cudney wrote:
->> --> > > Hi again,
->> --> > >
->> --> > >     To give credit where credit is due...
->> --> > >
->> --> > >     This little script (now modified) came from Kirk...
->> --> > >
->> --> > >     This is how I get speakup to talk after logging in.
->> --> > >
->> --> > >     First I must run this script,  as root:
->> --> > > /* start of script */
->> --> > > #!/bin/bash
->> --> > >
->> --> > > systemctl stop espeakup
->> --> > > /usr/bin/chown terry:terry /dev/softsynth*
->> --> > > /usr/bin/chmod 1777 /run
->> --> > > /* end of script */
->> --> > >
->> --> > >
->> --> > > Then logged in as myself, I run espeakup as an application.
->> --> > > /usr/bin/espeakup
->> --> > >
->> --> > > From here on speakup talks normally on all tty's including the
->> login prompts.
->> --> > >
->> --> > > This is good, but not completely satisfactory, The goal is to have
->> speakup talking before loggin in, ideally from power-on.
->> --> > >
->> --> > > Thanks again for any suggestions/help ,
->> --> > >
->> --> > > --terry
->> --> > > --
->> --> > > Name: Terry D. Cudney
->> --> > > Telephone: 289-438-6828
->> --> > > E-mail: terry@cudneys.ca
->> --> > >
->> -->
->>
->
+Thanks for the interesting perspective. What programming languages and
+environments do you use to make your own tools?
 
+Jookia.
+
+On Fri, Sep 12, 2025 at 09:11:27AM -0400, Rudy Vener wrote:
+> When I use CLI with speakup I can focus on the job at hand.
+> When I am forced to use GUI, I spend ten times the time for a tenth the result while
+> fighting with the GUI interface all the way.
+> In cli linux I execute a command, interact with the command using
+> a vi text editor type interface and know exactly where I am and what I need to do to effect changes.
+> With GUI I am flailing around wondering why my GUI screen reader is spouting nonsense at me.
+> 
+> Example: I use lynx browser with ddg search engine and can hit ./search_term string to get to the results, or close to them.
+> Once on the results I hit th j key to skip to the next result and the 
+> screen reader keys to read the text or hit the enter key to follow the link.a When I'm finished 
+> with the page or pages at that link the h key or series of h keys brings
+> me right back to the result link on the ddg page.
+> This is simple, well known and needs no more thinking on my part.
+>   There may be people who use the GUI interface just as intuitively as I use the
+> cli and speakup interface, but I am not one of them.
+> 
+>   Also, with cli I can create my own applications. For example I listen to podcasts with
+> applications that present me with the podcast menu in a vi buffer and let me select
+> the item I want by  executing the same command with a line number.
+> e.g. fnc lets me see today's fox news channel offerings. fnc 2 lets me hear the second item on the channel.
+> 
+> Another command, fncl, which stands for fox news channel loop, puts me in a continuous loop of viewing the menu buffer in vi,
+> entering a line number upon exiting vi to hear the item, and entering a blank line to exit the loop.
+> 
+> Simple, easy. No fuss, no bother.
+> 
+>   The tradeoff for this simplicity is either a learning curve (e.g. vi, lynx) or a design curve (e.g. fncl)
+> 
+> Hope this helps.
+> 
+> -- 
+> Rudy Vener
+> 
+> An audio release of Beast Hunt Vol 1, containing my short story Dragon Wing, is loose in the wild: https://www.amazon.com/dp/B0DPN1QGGJ
+> Ludicrous Limerick - News Of Trump's Death Were Greatly Exaggerated.  https://limerickdude.substack.com/p/news-of-trumps-death-were-greatly
+> Website: http://www.rudyvener.com
+> 
+> 
+> 
+> On Fri, Sep 12, 2025 at 03:31:55PM +1000, Jookia wrote:
+> > Hi everyone,
+> > 
+> > I don't meant to hijack this thread but I'm a sighted person who's been
+> > struggling to try and make the world a bit better with accessibility
+> > stuff. I haven't really done anything useful yet, but I've spent a lot
+> > of time talking to sighted people who scoff at the idea of people using
+> > 'old' technology or being left behind because of their workflows.
+> > 
+> > I know this is the speakup list and I'm talking to an extremely niche
+> > community here, but I'm genuinely interested to know: Why do you use
+> > computers this way instead of like Windows or macOS? They can do much
+> > more useful tasks.
+> > 
+> > I've thought for a while that this is simply because Linux has dropped
+> > the ball hard with GUI accessibility, but I'm starting to wonder if it's
+> > really just because GUIs suck for blind people altogether. I know that
+> > screen readers themselves are kind of a nightmare for me to use with
+> > having to remember a ton of buttons, but having to tab through a GUI
+> > just to do things I could type is a headache. Maybe text is just a
+> > better interface if you're blind? It's certainly more precise and
+> > quicker. But I'm also aware there are things like hardware limitations
+> > like systems not supporting hardware synths any more.
+> > So I'm genuinely curious as to why you work the way you do.
+> > 
+> > ---
+> > 
+> > As a kind of side note, my current project is making an emulated
+> > serial to speech synth API for the DOSBox-X emulator. I aim to implement
+> > just enough of the DECTalk protocol to work with DOS screen readers and
+> > speakup, then pass that to SAPI/NVDA or speech-dispatcher/espeak. I do
+> > have pipe dream plans of turning this in to a USB espeak synth that
+> > could be used to read early boot messages and panics on Linux.
+> > 
+> > But more widely I've just been thinking about how to make an application
+> > like DOSBox-X accessible that relies on a little fake GUI for its
+> > configuration menu. At first I thought of adding support for AccessKit
+> > and Orca/NVDA. But that only works on some systems, and it's hard to
+> > test and convince developers to test. They won't notice when it breaks.
+> > It also kind of sucks to use as you have to tab through everything.
+> > 
+> > So I've kind of been more interested in adding a new interface a bit
+> > like a command line or menu-based system, with output by TTS or Braille.
+> > It would live in the application, be usable by sighted people too and be
+> > easy for developers to test and reason about.
+> > 
+> > So if you have any feedback about any of this please tell me.
+> > Jookia.
+> > 
+> 
 
