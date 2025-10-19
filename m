@@ -1,45 +1,38 @@
-Return-Path: <speakup+bounces-1433-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1434-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 196D0BEED16
-	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 23:18:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id D31F1BEED85
+	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 23:29:08 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=E2xh39Bs;
+	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=s4rQ3hdI;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A8C3F3821E5; Sun, 19 Oct 2025 17:18:36 -0400 (EDT)
+	id 5D62E382945; Sun, 19 Oct 2025 17:29:08 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 872C538190E
-	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 17:18:36 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 3CE83381941
+	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 17:29:08 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1C0EA381919; Sun, 19 Oct 2025 17:18:29 -0400 (EDT)
-Received: from mail70.out.titan.email (mail70.out.titan.email [3.216.99.52])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D72FD3818FC
-	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 17:18:28 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cqWcp6tzsz9rvn
-	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 21:18:18 +0000 (UTC)
-DKIM-Signature: a=rsa-sha256; bh=Xp4423ywMUIklxSm37P5z0ulGpy4CJn9l/B+KZHJpX0=;
-	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=message-id:reply-to:date:mime-version:from:to:subject:from:to:subject:date:message-id:reply-to:cc:in-reply-to:references;
-	q=dns/txt; s=titan1; t=1760908698; v=1;
-	b=E2xh39BsgqquiLteDGjT3GyHH16+dNNF+cAau0111P9rm/blL+viidmmnLez8RyVmKXRGRUq
-	MN/riWuHU/LVIxNx4bjFJwO5+KetEepwOVCujdj1hIskNpiHTGtrYsZo38D3cEt5nbkurjIh79I
-	t3hZeuNqWf6Fy1rcU/gfeN18=
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cqWcp4VpVz9rvY
-	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 21:18:18 +0000 (UTC)
-Message-ID: <021401dc413d$e3e246a0$01ffa8c0@nucwin10>
-Reply-To: "K0LNY ??" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY ??" <glenn@ervin.email>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Switching To Voxin
-Date: Sun, 19 Oct 2025 16:18:17 -0500
-Organization: Home
+	id 0D5B0382039; Sun, 19 Oct 2025 17:29:01 -0400 (EDT)
+Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
+	by befuddled.reisers.ca (Postfix) with ESMTP id 2D25F381941
+	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 17:29:00 -0400 (EDT)
+Received: from [10.184.133.159] (176-173-208-123.abo.bbox.fr [176.173.208.123])
+	by darkstar.slint.fr (Postfix) with ESMTPSA id 62B131602AE
+	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 21:24:10 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
+	t=1760901850; bh=PKUR08jCQiAK/iFRO9NOQHMqYc4n+fsJmG/ZDJdZ/2w=;
+	h=Date:Subject:To:References:From:In-Reply-To:From;
+	b=s4rQ3hdIaq5EYlBELBBz3shJ77U4U3hf0pH/H7QfgMmA+Q2bcZGVZcwNhRlGBTFrC
+	 pLDfM0P6vNSm6D80WJ5Ko4mIv/GhzpRz9YfJv0GW19W105+8yp4HMzIXCQxNEi3N3k
+	 iT0BQcis4MNQltjoDHUNadoikpy51Oho7ZirU4plum8TXYo7T320kjjlTIoYYPdTyz
+	 uMti7mJ4gZsx6IJrv4lCSk2FYkOIhcxwHOWoFpre+UGz0oq2EE4NUotWIOvuERaTC7
+	 6W+ucTZKGJ/52xwrx3XHBPlkOi3LMqsZU0KjecR3/j6gKzfZvDXOHQHaivk/0+aR2x
+	 rmRqIufpIQtBQ==
+Message-ID: <36b36e62-fecb-4bc9-8302-15dbe4f3b0fc@slint.fr>
+Date: Sun, 19 Oct 2025 23:28:57 +0200
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -49,82 +42,63 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_0211_01DC4113.FA984720"
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1760908698788658068.2350.8685961315590463468@prod-use1-smtp-out1003.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=GYTtnRXL c=1 sm=1 tr=0 ts=68f5559a
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=r77TgQKjGQsHNAKrUKIA:9
-	a=AR6RWPhoa1sB9bu1elQA:9 a=wPNLvfGTeEIA:10 a=ROu1sIqoyElQ6XBX_hUA:9
-	a=dLdiA2G3PL9aiMz9:21 a=_W_S_7VecoQA:10 a=P3K-DvM3-jjlTNsN-mCd:22
-	a=NWVoK91CQySWRX1oVYDe:22
+User-Agent: Mozilla Thunderbird
+Subject: Re: Switching To Voxin
+To: speakup@linux-speakup.org
+References: <021401dc413d$e3e246a0$01ffa8c0@nucwin10>
+Content-Language: en-US
+From: Didier Spaier <didier@slint.fr>
+Autocrypt: addr=didier@slint.fr; keydata=
+ xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
+ dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
+ TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
+ jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
+ 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
+ AAHNH0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj7CwHkEEwEKACMCGwMHCwkIBwMC
+ AQYVCAIJCgsEFgIDAQIeAQIXgAUCYZVPGAAKCRDVAgLvYMA+6pOxCADB2pKmm/LgncWREzob
+ Z6M+RsvgzvGS/48ik/E/TH2KyPO/hn+Fzbj4MmMwQdqz5YPfdBmkcM7WyDzkPaukzfS8QUvl
+ VKyWQ92pqpbI/JUeShI+DLMKV7LZxiPinMBuKmpyLdpxuhk08g2+6F8X6ztbl8mbXQy5jcIZ
+ zKQ442N0D4wnn8VXM0tb0uonmqc6ly7dcmkQ/GI7Q0tF/hkn4n3g1Lh6+K1jBqEIC9vn/c6X
+ yf67ec+CwbE0GtgVM1FR1R0J1y/6vkYWr7gZHhnzgwKr6k1wzCGkVUyCSpFwB2oeANT9c0qP
+ rgn4YjoYQIHS3vMWd630vRyOfqwetWXmVjPxzsBNBFY6fG8BCACqDQKHSw0ElDkwPPpNguL0
+ ujOyygO30xlLyfW9pWOEycHSLhLzvDTlFkvr5IxvyCDBIFBdzpkeQqh1+ZxrFliwWyj+9/ro
+ JlIjxeAyNs2xQZ7tQM6K5xtbUs8O5YtkCCO3OegAiLgmzzgxes79Qy+V3ciKbl+vrsNu7T9r
+ o3zZhyinci1eOCcKEtXFPQW5P4woB+6+JheN9pIiDkjojmdC+xkvDadP7kJYKp19Itys/CbN
+ vxEoOLsgeJhsZSmNU2QNhXkLfr7+AC99fb/c5ZDTNPRBqgLJCp+gTxn1QVJrAbq2OP3refmS
+ RxdA3yUDMjxEeHwDNZJL9aEtTDlTzPk5ABEBAAHCwF8EGAEKAAkCGwwFAmGVT44ACgkQ1QIC
+ 72DAPuqjhwgApl0pdNIrbU+8Hn0mr3CTEXxPaTbAU2bYFPDiBaEvXsBGoz8xJ6EZQnywbC7o
+ l5wFtVT08LKDewLHaL78zS+Q8rv5sNmWwzMAaipFtZg67e/rU3V5tw4E12nUghyMzQpngUur
+ lZPMFlB9IZN9681cXuv2sZzAZlR2+3PsSAftpPQxReoSC7hj3dfiCiAis19G3A184HClA5MB
+ I5heGinSz7R/AXhkiej8HZZzz9ZPkS7aeL8HsZKqCwZvViutbGmpm+V70JnbRAHLFjYb+Se3
+ rdUWWAXcca4Ry8HCLTo5iK9xCTQh5gEuJ7ROdOXeY4SvMiqWjYhlrsR0qhTv9q/gfg==
+In-Reply-To: <021401dc413d$e3e246a0$01ffa8c0@nucwin10>
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-This is a multi-part message in MIME format.
+Hi Glenn,
 
-------=_NextPart_000_0211_01DC4113.FA984720
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+that's not possible, espeakup can only use voices provided by espeak-ng
 
-Hi All again,
-Well I got the Voxin installed, and set up spd-conf to use voxin.
-Voxin talks with spd-say, and now espeak has no voice.
-Which almost solves the talking on startup, but not the right solution, =
-LOL
-So, how do I tell espeakup to use the Voxin, which is set up in =
-speech-dispatcher?
-Thanks.
+To use a Voxin voice on the console you need to use either speechd-up or fenrir
+as both communicate with speech-dispatcher, but espeakup does not.
 
-Glenn
+Cheers,
+Didier
 
-It used to be wine, women, and song,
-Now it's beer, the old lady, and TV.
-
-Glenn K0LNY & WSAT439
-
-------=_NextPart_000_0211_01DC4113.FA984720
-Content-Type: text/html;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD>
-<META content=3D"text/html; charset=3Diso-8859-1" =
-http-equiv=3DContent-Type>
-<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
-<STYLE></STYLE>
-</HEAD>
-<BODY bgColor=3D#ffffff>
-<DIV><FONT size=3D2 face=3DArial>Hi All again,</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Well I got the Voxin installed, and set =
-up spd-conf=20
-to use voxin.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Voxin talks with spd-say, and now =
-espeak has no=20
-voice.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Which almost solves the talking on =
-startup, but not=20
-the right solution, LOL</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>So, how do I tell espeakup to use the =
-Voxin, which=20
-is set up in speech-dispatcher?</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
-<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV><FONT size=3D2 =
-face=3DArial>
-<DIV><BR>It used to be wine, women, and song,<BR>Now it's beer, the old =
-lady,=20
-and TV.</DIV>
-<DIV>&nbsp;</DIV>
-<DIV>Glenn K0LNY &amp; WSAT439<BR></FONT></DIV></BODY></HTML>
-
-------=_NextPart_000_0211_01DC4113.FA984720--
+On 10/19/25 23:18, K0LNY ?? wrote:
+> Hi All again,
+> Well I got the Voxin installed, and set up spd-conf to use voxin.
+> Voxin talks with spd-say, and now espeak has no voice.
+> Which almost solves the talking on startup, but not the right solution, LOL
+> So, how do I tell espeakup to use the Voxin, which is set up in speech-dispatcher?
+> Thanks.
+>  
+> Glenn
+> 
+> It used to be wine, women, and song,
+> Now it's beer, the old lady, and TV.
+>  
+> Glenn K0LNY & WSAT439
 
 
