@@ -1,45 +1,45 @@
-Return-Path: <speakup+bounces-1430-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1431-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id C1BBEBEEC5B
-	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 22:45:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E4D3CBEEC64
+	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 22:53:19 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=XhJqTlbs;
+	dkim=pass (2048-bit key; secure) header.d=jasonjgw.net header.i=@jasonjgw.net header.a=rsa-sha256 header.s=mail header.b=tsFNOygy;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A9DDC382651; Sun, 19 Oct 2025 16:35:33 -0400 (EDT)
+	id 482FF38263A; Sun, 19 Oct 2025 16:53:18 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8B12B38210A
-	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 16:35:33 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 265A43818E1
+	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 16:53:18 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 212023818D6; Sun, 19 Oct 2025 16:35:26 -0400 (EDT)
-Received: from mail4.out.titan.email (mail4.out.titan.email [35.153.42.126])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id BACD63815C8
-	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 16:35:25 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cqVg948xYz9rvg
-	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 20:35:17 +0000 (UTC)
-DKIM-Signature: a=rsa-sha256; bh=Tkw9e9JDRfXX/TrFX+bofxwe3olgx3t2UIFBYCTDiU8=;
-	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=mime-version:from:message-id:reply-to:to:date:subject:from:to:subject:date:message-id:reply-to:cc:in-reply-to:references;
-	q=dns/txt; s=titan1; t=1760906117; v=1;
-	b=XhJqTlbsi+jaCyi5wqJ+A+p0O1lJtCRCf+1lF929MJx29tCzvi8UIhKLIL3IwJ/OaEXjimHF
-	BeqpiJ/VT3O7ecBJlJGebD6DcOYicLsLKJ389HrZU/EUjp7m88PALRNv16EVNx+BRCEcDR8x5jx
-	RwGMqZiSApxtjOmKUvBH5twY=
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cqVg91lcQz9rvn
-	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 20:35:17 +0000 (UTC)
-Message-ID: <01e601dc4137$e14192d0$01ffa8c0@nucwin10>
-Reply-To: "K0LNY ??" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY ??" <glenn@ervin.email>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Stop Espeakup From Starting Automatically
-Date: Sun, 19 Oct 2025 15:35:16 -0500
-Organization: Home
+	id BF49B3818E2; Sun, 19 Oct 2025 16:53:10 -0400 (EDT)
+Received: from svr.jasonjgw.net (svr.jasonjgw.net [192.155.90.172])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id E576D380EF8
+	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 16:53:09 -0400 (EDT)
+Received: from [IPV6:fd6e:ebcf:467e:2::1] (jpw.jasonjgw.net [IPv6:fd6e:ebcf:467e:2::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange x25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(Client did not present a certificate)
+	by svr.jasonjgw.net (Postfix) with ESMTPSA id 581BE32030
+	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 20:53:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jasonjgw.net;
+	s=mail; t=1760907182;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type:
+	 in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+	bh=KUhTEnJpePWSmnigXN17Yyz2Mo8EsDWKolkW7xDfvLI=;
+	b=tsFNOygyVPOzXZvoiqWN/3uBbMKSHc+d7nkEwuMgAgO2s9xQmrEwhTQ/w1A5Fg9Xo2IZFW
+	Wuq++i82nQVGExptHdRYxaqbe1HZBzfM5OYaqBIBlZ+lHiuVEb6uhB6Mj3YGwueU0TiGT/
+	cO3KhH0nd0oUPxhW3qZlIIATNrtNBE538kUiQGtTQpTHdK+gAPPNhACFNhDPAt38mHXOK0
+	Y93IP2hOZu9Lx5Igvi+fSeZsTZEDCWOPldttGGZRteynNP2nMlqf3te0BE1J70n7Vk9xPA
+	PllrsLnrQq1O82ZFW2ex88oRlxuAqNkGeokfUyE5Zw7187D//5tKgGjLKQxTug==
+Content-Type: multipart/alternative;
+ boundary="------------BsccUijnTAYdJ1JvlaQjjAao"
+Message-ID: <8eb4fc42-e67c-469a-b518-fe20303ac41b@jasonjgw.net>
+Date: Sun, 19 Oct 2025 16:52:51 -0400
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -49,72 +49,83 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_01E3_01DC410D.F7E60720"
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1760906117402544599.2350.5555069190919064806@prod-use1-smtp-out1003.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=GYTtnRXL c=1 sm=1 tr=0 ts=68f54b85
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=r77TgQKjGQsHNAKrUKIA:9
-	a=VJOwDrUOiHIpqWtf_y0A:9 a=wPNLvfGTeEIA:10 a=Djg-FPn87BpvTZoU2hwA:9
-	a=9bkV-ORXsPHIQFRi:21 a=_W_S_7VecoQA:10 a=P3K-DvM3-jjlTNsN-mCd:22
-	a=NWVoK91CQySWRX1oVYDe:22
+User-Agent: Mozilla Thunderbird
+Subject: Re: Stop Espeakup From Starting Automatically
+To: speakup@linux-speakup.org
+References: <01e601dc4137$e14192d0$01ffa8c0@nucwin10>
+Content-Language: en-US, en-AU-large, en-US-large
+From: "Jason J.G. White" <jason@jasonjgw.net>
+Autocrypt: addr=jason@jasonjgw.net; keydata=
+ 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
+ Jlx6Ar305Q==
+In-Reply-To: <01e601dc4137$e14192d0$01ffa8c0@nucwin10>
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
 This is a multi-part message in MIME format.
-
-------=_NextPart_000_01E3_01DC410D.F7E60720
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-Hi All,
-I installed espeakup on my Raspberry PI, and I don't want it to start =
-automatically.
-How do I prevent this?
-Thanks.
-
-Glenn
+--------------BsccUijnTAYdJ1JvlaQjjAao
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
 
 
-It used to be wine, women, and song,
-Now it's beer, the old lady, and TV.
+On 19/10/25 16:35, K0LNY ?? wrote:
+> I installed espeakup on my Raspberry PI, and I don't want it to start 
+> automatically.
+does "systemctl disable espeakup" work? Assuming you're running systemd, 
+you need to find and disable the relevant systemd unit.
+--------------BsccUijnTAYdJ1JvlaQjjAao
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: 7bit
 
-Glenn K0LNY & WSAT439
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <p><br>
+    </p>
+    <div class="moz-cite-prefix">On 19/10/25 16:35, K0LNY ?? wrote:<br>
+    </div>
+    <blockquote type="cite"
+      cite="mid:01e601dc4137$e14192d0$01ffa8c0@nucwin10">
+      <div><font size="2" face="Arial">I installed espeakup on my
+          Raspberry PI, and I don't want it to start automatically.</font></div>
+    </blockquote>
+    does "systemctl disable espeakup" work? Assuming you're running
+    systemd, you need to find and disable the relevant systemd unit.
+  </body>
+</html>
 
-------=_NextPart_000_01E3_01DC410D.F7E60720
-Content-Type: text/html;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD>
-<META content=3D"text/html; charset=3Diso-8859-1" =
-http-equiv=3DContent-Type>
-<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
-<STYLE></STYLE>
-</HEAD>
-<BODY bgColor=3D#ffffff>
-<DIV><FONT size=3D2 face=3DArial>Hi All,</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I installed espeakup on my Raspberry =
-PI, and I=20
-don't want it to start automatically.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>How do I prevent this?</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
-<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV>
-<DIV>&nbsp;</DIV><FONT size=3D2 face=3DArial>
-<DIV><BR>It used to be wine, women, and song,<BR>Now it's beer, the old =
-lady,=20
-and TV.</DIV>
-<DIV>&nbsp;</DIV>
-<DIV>Glenn K0LNY &amp; WSAT439<BR></FONT></DIV></BODY></HTML>
-
-------=_NextPart_000_01E3_01DC410D.F7E60720--
-
+--------------BsccUijnTAYdJ1JvlaQjjAao--
 
