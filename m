@@ -1,54 +1,45 @@
-Return-Path: <speakup+bounces-1429-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1430-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 8D849BAA3F6
-	for <lists+speakup@lfdr.de>; Mon, 29 Sep 2025 20:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id C1BBEBEEC5B
+	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 22:45:05 +0200 (CEST)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=XhJqTlbs;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 54DB53815DC; Mon, 29 Sep 2025 13:54:30 -0400 (EDT)
+	id A9DDC382651; Sun, 19 Oct 2025 16:35:33 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 3CEC838156E
-	for <lists+speakup@lfdr.de>; Mon, 29 Sep 2025 13:54:30 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 8B12B38210A
+	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 16:35:33 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4718738156E; Mon, 29 Sep 2025 13:54:26 -0400 (EDT)
-Received: from sonata.ens-lyon.org (sonata.ens-lyon.org [140.77.166.138])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 09B9338156A
-	for <speakup@linux-speakup.org>; Mon, 29 Sep 2025 13:54:26 -0400 (EDT)
+	id 212023818D6; Sun, 19 Oct 2025 16:35:26 -0400 (EDT)
+Received: from mail4.out.titan.email (mail4.out.titan.email [35.153.42.126])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id BACD63815C8
+	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 16:35:25 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by sonata.ens-lyon.org (Postfix) with ESMTP id 537A6A73B3;
-	Mon, 29 Sep 2025 19:54:16 +0200 (CEST)
-Received: from sonata.ens-lyon.org ([127.0.0.1])
-	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id UoYMWdPKLew2; Mon, 29 Sep 2025 19:54:16 +0200 (CEST)
-Received: from begin.home (aamiens-653-1-40-48.w83-192.abo.wanadoo.fr [83.192.199.48])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
-	(No client certificate requested)
-	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 4E869A0262;
-	Mon, 29 Sep 2025 19:54:15 +0200 (CEST)
-Received: from samy by begin.home with local (Exim 4.98.2)
-	(envelope-from <samuel.thibault@ens-lyon.org>)
-	id 1v3I4k-00000005MJZ-2MWB;
-	Mon, 29 Sep 2025 19:54:14 +0200
-Date: Mon, 29 Sep 2025 19:54:14 +0200
-From: Samuel Thibault <samuel.thibault@ens-lyon.org>
-To: Pavel Zhigulin <Pavel.Zhigulin@kaspersky.com>
-Cc: William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org, lvc-project@linuxtesting.org
-Subject: Re: [PATCH v2] speakup: keyhelp: guard letter_offsets possible
- out-of-range indexing
-Message-ID: <aNrHxtOpz9wxnY_0@begin>
-Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
-	Pavel Zhigulin <Pavel.Zhigulin@kaspersky.com>,
-	William Hubbs <w.d.hubbs@gmail.com>,
-	Chris Brannon <chris@the-brannons.com>,
-	Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org,
-	linux-kernel@vger.kernel.org, lvc-project@linuxtesting.org
-References: <20250929110346.2674287-1-Pavel.Zhigulin@kaspersky.com>
+	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cqVg948xYz9rvg
+	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 20:35:17 +0000 (UTC)
+DKIM-Signature: a=rsa-sha256; bh=Tkw9e9JDRfXX/TrFX+bofxwe3olgx3t2UIFBYCTDiU8=;
+	c=relaxed/relaxed; d=t39smtp-sign001.email;
+	h=mime-version:from:message-id:reply-to:to:date:subject:from:to:subject:date:message-id:reply-to:cc:in-reply-to:references;
+	q=dns/txt; s=titan1; t=1760906117; v=1;
+	b=XhJqTlbsi+jaCyi5wqJ+A+p0O1lJtCRCf+1lF929MJx29tCzvi8UIhKLIL3IwJ/OaEXjimHF
+	BeqpiJ/VT3O7ecBJlJGebD6DcOYicLsLKJ389HrZU/EUjp7m88PALRNv16EVNx+BRCEcDR8x5jx
+	RwGMqZiSApxtjOmKUvBH5twY=
+Received: from nucwin10 (unknown [140.228.165.201])
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cqVg91lcQz9rvn
+	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 20:35:17 +0000 (UTC)
+Message-ID: <01e601dc4137$e14192d0$01ffa8c0@nucwin10>
+Reply-To: "K0LNY ??" <glenn@ervin.email>
+Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
+From: "K0LNY ??" <glenn@ervin.email>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Stop Espeakup From Starting Automatically
+Date: Sun, 19 Oct 2025 15:35:16 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -58,108 +49,72 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <20250929110346.2674287-1-Pavel.Zhigulin@kaspersky.com>
-Organization: I am not organized
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_01E3_01DC410D.F7E60720"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-F-Verdict: SPFVALID
+X-Titan-Src-Out: 1760906117402544599.2350.5555069190919064806@prod-use1-smtp-out1003.
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.4 cv=GYTtnRXL c=1 sm=1 tr=0 ts=68f54b85
+	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
+	a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=r77TgQKjGQsHNAKrUKIA:9
+	a=VJOwDrUOiHIpqWtf_y0A:9 a=wPNLvfGTeEIA:10 a=Djg-FPn87BpvTZoU2hwA:9
+	a=9bkV-ORXsPHIQFRi:21 a=_W_S_7VecoQA:10 a=P3K-DvM3-jjlTNsN-mCd:22
+	a=NWVoK91CQySWRX1oVYDe:22
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Pavel Zhigulin, le lun. 29 sept. 2025 14:03:45 +0300, a ecrit:
-> help_init() builds letter_offsets[] by using the first byte of each
-> function name as an index via `(start & 31) - 1`. If function_names are
-> overridden from sysfs (root) with a name starting outside [a–z], the
-> index underflows or exceeds the array, leading to OOB write.
-> 
-> Function names can be overridden with the following commands as root:
-> 
->     modprobe speakup_soft
->     echo "0 _bad" > /sys/accessibility/speakup/i18n/function_names
->     # then press Insert+2 on /dev/tty
-> 
-> This fix checks the first letter in help_init(), and if it is not in the
-> [a–z] range the function returns an error to the caller. Eventually this
-> error is propagated to drivers/accessibility/speakup/main.c:2217, which
-> causes a bleep sound.
-> 
-> Fixes: c6e3fd22cd53 ("Staging: add speakup to the staging directory")
-> Signed-off-by: Pavel Zhigulin <Pavel.Zhigulin@kaspersky.com>
+This is a multi-part message in MIME format.
 
-Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
+------=_NextPart_000_01E3_01DC410D.F7E60720
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 
-Thanks!
+Hi All,
+I installed espeakup on my Raspberry PI, and I don't want it to start =
+automatically.
+How do I prevent this?
+Thanks.
+
+Glenn
 
 
-> ---
-> v2: Use a proper commit in the 'Fixes' trailer. Remove the redundant
-> NULL check in help_init() and make it return void as
-> Samuel Thibault <samuel.thibault@ens-lyon.org> suggested during
-> review.
-> 
->  drivers/accessibility/speakup/keyhelp.c | 17 ++++++++++++-----
->  1 file changed, 12 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/accessibility/speakup/keyhelp.c b/drivers/accessibility/speakup/keyhelp.c
-> index 822ceac83068..e632c53d6246 100644
-> --- a/drivers/accessibility/speakup/keyhelp.c
-> +++ b/drivers/accessibility/speakup/keyhelp.c
-> @@ -8,6 +8,7 @@
->   */
-> 
->  #include <linux/keyboard.h>
-> +#include <linux/ctype.h>
->  #include "spk_priv.h"
->  #include "speakup.h"
-> 
-> @@ -111,7 +112,7 @@ static void say_key(int key)
->  			     spk_msg_get(MSG_KEYNAMES_START + (key - 1)));
->  }
-> 
-> -static int help_init(void)
-> +static void help_init(void)
->  {
->  	char start = SPACE;
->  	int i;
-> @@ -120,13 +121,19 @@ static int help_init(void)
->  	state_tbl = spk_our_keys[0] + SHIFT_TBL_SIZE + 2;
->  	for (i = 0; i < num_funcs; i++) {
->  		char *cur_funcname = spk_msg_get(MSG_FUNCNAMES_START + i);
-> +		char first_letter;
-> 
-> -		if (start == *cur_funcname)
-> +		first_letter = tolower(*cur_funcname);
-> +
-> +		/* Accept only 'a'..'z' to index letter_offsets[] safely */
-> +		if (first_letter < 'a' || first_letter > 'z')
-> +			continue;
-> +
-> +		if (start == first_letter)
->  			continue;
-> -		start = *cur_funcname;
-> +		start = first_letter;
->  		letter_offsets[(start & 31) - 1] = i;
->  	}
-> -	return 0;
->  }
-> 
->  int spk_handle_help(struct vc_data *vc, u_char type, u_char ch, u_short key)
-> @@ -144,7 +151,7 @@ int spk_handle_help(struct vc_data *vc, u_char type, u_char ch, u_short key)
->  			synth_printf("%s\n", spk_msg_get(MSG_LEAVING_HELP));
->  			return 1;
->  		}
-> -		ch |= 32; /* lower case */
-> +		ch = tolower(ch);
->  		if (ch < 'a' || ch > 'z')
->  			return -1;
->  		if (letter_offsets[ch - 'a'] == -1) {
-> --
-> 2.43.0
-> 
+It used to be wine, women, and song,
+Now it's beer, the old lady, and TV.
 
--- 
-Samuel
- RM> Mauvais OS, changer d'OS (c)(r)(tm)
- J'ai windows 98 et comment faire pour changer l'os de windows 98?
- Dans ajout et suppression du programme et il ne parle pas d'os.
- -+- DN in : GNU -+- L'O.S. est las, hélas, c'est là qu'est l'os -+-
+Glenn K0LNY & WSAT439
+
+------=_NextPart_000_01E3_01DC410D.F7E60720
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3Diso-8859-1" =
+http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT size=3D2 face=3DArial>Hi All,</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I installed espeakup on my Raspberry =
+PI, and I=20
+don't want it to start automatically.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>How do I prevent this?</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Thanks.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
+<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV>
+<DIV>&nbsp;</DIV><FONT size=3D2 face=3DArial>
+<DIV><BR>It used to be wine, women, and song,<BR>Now it's beer, the old =
+lady,=20
+and TV.</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>Glenn K0LNY &amp; WSAT439<BR></FONT></DIV></BODY></HTML>
+
+------=_NextPart_000_01E3_01DC410D.F7E60720--
+
 
