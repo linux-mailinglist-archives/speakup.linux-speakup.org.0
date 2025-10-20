@@ -1,47 +1,47 @@
-Return-Path: <speakup+bounces-1453-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1454-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 7FD33BF2CBF
-	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 19:48:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id EE5F9BF2EAD
+	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 20:26:12 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=YVkUcESS;
+	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=g5BMT+r1;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id EE633382B49; Mon, 20 Oct 2025 13:48:24 -0400 (EDT)
+	id 6B807382B98; Mon, 20 Oct 2025 14:26:11 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id CC8213825CD
-	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 13:48:24 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 4A81D382A50
+	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 14:26:11 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1FF78382A48; Mon, 20 Oct 2025 13:48:17 -0400 (EDT)
-Received: from mail55.out.titan.email (mail55.out.titan.email [34.227.236.38])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id EC9093825CD
-	for <speakup@linux-speakup.org>; Mon, 20 Oct 2025 13:48:16 -0400 (EDT)
+	id E97D9382A45; Mon, 20 Oct 2025 14:26:03 -0400 (EDT)
+Received: from mail2.out.flockmail.com (mail2.out.flockmail.com [52.206.209.181])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id C0C8D382A46
+	for <speakup@linux-speakup.org>; Mon, 20 Oct 2025 14:26:03 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cr2vw6msmz2xGP;
-	Mon, 20 Oct 2025 17:48:12 +0000 (UTC)
-DKIM-Signature: a=rsa-sha256; bh=1PKzpy5t9gLJzm40BW7ILXOdMmA+c9SFau7Kti69oiU=;
+	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cr3lZ1cDfz9rwR;
+	Mon, 20 Oct 2025 18:26:02 +0000 (UTC)
+DKIM-Signature: a=rsa-sha256; bh=61J6rZxI4ahAJFP3H+fEwH2llS4K+RoF8axGvCKpoQA=;
 	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=cc:subject:references:date:mime-version:message-id:to:reply-to:from:from:to:cc:subject:date:message-id:reply-to:references:in-reply-to;
-	q=dns/txt; s=titan1; t=1760982492; v=1;
-	b=YVkUcESSZcJpQ9SbmO27ktVuAO5bisuSyWOqkqiHUgqEpFHNI0HKmEbb3dPEUZDAQslXwjN/
-	YE+L4Xglpwq62QOtKq9jVGe/YfWrUKqh3Xpoz8ogxHnKVIK0t35JeuKGz3kC4XmEX6caeiiyJ+X
-	yWhUjVIIHmYuUT53EvHb8bWQ=
+	h=message-id:from:cc:references:date:mime-version:reply-to:to:subject:from:to:cc:subject:date:message-id:reply-to:references:in-reply-to;
+	q=dns/txt; s=titan1; t=1760984762; v=1;
+	b=g5BMT+r1RsWeJQd02GMMELPPWB60suXtagQuHKJ5hOlPtH7JXo6Tm3yIqdE6SF7DYEjfPdPk
+	3AZ6aOsy8kWwu7wI6thhZ/Uo0H32s4wy2SN8DUOwIAXgZh5i5K48Gj/s7ihswFNvXv9euEV057O
+	BhH/JJVvUR7UBE41Yjs/q1bU=
 Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cr2vw3Sqhz2xCJ;
-	Mon, 20 Oct 2025 17:48:12 +0000 (UTC)
-Message-ID: <0b8b01dc41e9$b49d8600$01ffa8c0@nucwin10>
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cr3lY4Rq5z9rvY;
+	Mon, 20 Oct 2025 18:26:01 +0000 (UTC)
+Message-ID: <0b9001dc41ee$fd34f380$01ffa8c0@nucwin10>
 Reply-To: "K0LNY ??" <glenn@ervin.email>
 Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
 From: "K0LNY ??" <glenn@ervin.email>
 To: "K0LNY ??" <glenn@ervin.email>,
 	"Kirk Reiser" <kirk@reisers.ca>
 Cc: <speakup@linux-speakup.org>
-References: <0b4a01dc418a$c8105c80$01ffa8c0@nucwin10> <925db357-1d21-2b65-7882-45d0a49911cf@reisers.ca> <0b5701dc41ca$5edf3d40$01ffa8c0@nucwin10> <ca477f4f-952d-93c0-fc67-56a7c24f8f24@reisers.ca> <0b6401dc41e2$13de43a0$01ffa8c0@nucwin10> <981a2802-0dd0-5a10-3b4d-9fb4dc8ca8bb@reisers.ca> <0b7001dc41e5$edf14300$01ffa8c0@nucwin10> <c92501f4-a4ab-08d9-420b-aac383162dfb@reisers.ca> <0b8601dc41e9$06ff1cc0$01ffa8c0@nucwin10>
+References: <0b4a01dc418a$c8105c80$01ffa8c0@nucwin10> <925db357-1d21-2b65-7882-45d0a49911cf@reisers.ca> <0b5701dc41ca$5edf3d40$01ffa8c0@nucwin10> <ca477f4f-952d-93c0-fc67-56a7c24f8f24@reisers.ca> <0b6401dc41e2$13de43a0$01ffa8c0@nucwin10> <981a2802-0dd0-5a10-3b4d-9fb4dc8ca8bb@reisers.ca> <0b7001dc41e5$edf14300$01ffa8c0@nucwin10> <c92501f4-a4ab-08d9-420b-aac383162dfb@reisers.ca> <0b8601dc41e9$06ff1cc0$01ffa8c0@nucwin10> <0b8b01dc41e9$b49d8600$01ffa8c0@nucwin10>
 Subject: Re: Voxin With Espeakup
-Date: Mon, 20 Oct 2025 12:48:11 -0500
+Date: Mon, 20 Oct 2025 13:26:00 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -60,15 +60,30 @@ X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
 X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1760982492735738950.9701.7735958044125482725@prod-use1-smtp-out1001.
+X-Titan-Src-Out: 1760984762001215947.2350.5373885691291203865@prod-use1-smtp-out1003.
 X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=V5uH0fni c=1 sm=1 tr=0 ts=68f675dc
+X-CMAE-Analysis: v=2.4 cv=V5uH0fni c=1 sm=1 tr=0 ts=68f67eba
 	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
 	a=8nJEP1OIZ-IA:10 a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=rhghyxR7AAAA:8
-	a=qPKtzgQbAAAA:8 a=jtyxtVbukdTN4-KxqHIA:9 a=wPNLvfGTeEIA:10
+	a=qPKtzgQbAAAA:8 a=wPae8HNWboyDa8Q7QuUA:9 a=wPNLvfGTeEIA:10
 	a=3POYzjO64X90oOl-TX4z:22 a=OTAqJWGB1laLS8RTg9aS:22
 	a=P3K-DvM3-jjlTNsN-mCd:22 a=NWVoK91CQySWRX1oVYDe:22
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
+
+    I installed pulseaudio, and lost all audio.
+I checked with alsamixer and all settings were good.
+I ran spd-conf and selected pulseaudio and nothing from voxin after that.
+I put spd-conf back to alsa, and still no voxin.
+I then removed --purge  pulseaudio, and voxin is talking again.
+Still no voice from speechd-up though.
+Glenn
+----- Original Message ----- 
+From: "K0LNY ??" <glenn@ervin.email>
+To: "K0LNY ??" <glenn@ervin.email>; "Kirk Reiser" <kirk@reisers.ca>
+Cc: <speakup@linux-speakup.org>
+Sent: Monday, October 20, 2025 12:48 PM
+Subject: Re: Voxin With Espeakup
+
 
 I wonder if it has to do with pulseaudio or pipewire.
 I don't have pulseaudio installed.
@@ -246,6 +261,7 @@ On Mon, 20 Oct 2025, K0LNY ?? wrote:
 >>>
 >>
 >
+
 
 
 
