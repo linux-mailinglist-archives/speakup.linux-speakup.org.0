@@ -1,38 +1,38 @@
-Return-Path: <speakup+bounces-1439-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1440-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 13BDEBEF352
-	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 05:52:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 189CBBEF5BD
+	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 07:33:49 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=C/e956v5;
+	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=Ha4IpkiI;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A18CA3829BD; Sun, 19 Oct 2025 23:52:43 -0400 (EDT)
+	id 93126382A09; Mon, 20 Oct 2025 01:33:48 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 8245B382669
-	for <lists+speakup@lfdr.de>; Sun, 19 Oct 2025 23:52:43 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 729DD38222E
+	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 01:33:48 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 1E5DF382651; Sun, 19 Oct 2025 23:52:36 -0400 (EDT)
-Received: from mail121.out.titan.email (mail121.out.titan.email [54.208.145.58])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D47E6382226
-	for <speakup@linux-speakup.org>; Sun, 19 Oct 2025 23:52:35 -0400 (EDT)
+	id 0D6E93824FF; Mon, 20 Oct 2025 01:33:41 -0400 (EDT)
+Received: from mail115.out.titan.email (unknown [3.208.11.156])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id BE85838222E
+	for <speakup@linux-speakup.org>; Mon, 20 Oct 2025 01:33:40 -0400 (EDT)
 Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cqhMg29cTz9rwN;
-	Mon, 20 Oct 2025 03:52:31 +0000 (UTC)
-DKIM-Signature: a=rsa-sha256; bh=1Q0HtbjdrrvC314KIOcHC4vj5W5x9ALrU0jP90YVeCc=;
+	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cqkcF4yV7z2xBj;
+	Mon, 20 Oct 2025 05:33:33 +0000 (UTC)
+DKIM-Signature: a=rsa-sha256; bh=FvKNsbUsOqAPk9E4V+8gqTfzD20Yboy+is67RjZb8jc=;
 	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=reply-to:from:subject:mime-version:date:to:references:message-id:from:to:subject:date:message-id:reply-to:references:cc:in-reply-to;
-	q=dns/txt; s=titan1; t=1760932351; v=1;
-	b=C/e956v5ooXPMCB1YiAfWjE1yH0zvuJ1f450zrE8NnO6+xSlYop1F0ys8vyGm5W3VQcQiIBG
-	higvwUs4kpiqyivAIt+GBxXbAqiBbkoQ69oMLfKeE5zZWITFBU2LfK0d9wrK872pxlBkjyo7Y87
-	6tdJZ5MfFw1IrS6VskjNyfHI=
+	h=to:subject:date:message-id:reply-to:from:references:mime-version:from:to:subject:date:message-id:reply-to:references:cc:in-reply-to;
+	q=dns/txt; s=titan1; t=1760938413; v=1;
+	b=Ha4IpkiI2/rlkwMly8unpex+zQdt8FJ48jOvph1AnCz0Gurt+yKY6ps3fr0PZ/5WUpDTHJuD
+	WCwQKppcm0uGDBJpfUTlCxPK05k222AygLU/KLxLq2pkU5QL4Dvb7h/e8/BVYEZI2aB4ftJku2I
+	TSFkTCvVamFt509eIJwy8xJA=
 Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cqhMf6fMqz9rvw;
-	Mon, 20 Oct 2025 03:52:30 +0000 (UTC)
-Message-ID: <0ad601dc4174$f5d28aa0$01ffa8c0@nucwin10>
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cqkcF0XXJz2x9p;
+	Mon, 20 Oct 2025 05:33:32 +0000 (UTC)
+Message-ID: <0b3101dc4183$1346cac0$01ffa8c0@nucwin10>
 Reply-To: "K0LNY ??" <glenn@ervin.email>
 Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
 From: "K0LNY ??" <glenn@ervin.email>
@@ -40,7 +40,7 @@ To: <speakup@linux-speakup.org>,
 	"Cleverson Casarin Uliana" <clul+speakup@posteo.com.br>
 References: <021401dc413d$e3e246a0$01ffa8c0@nucwin10> <36b36e62-fecb-4bc9-8302-15dbe4f3b0fc@slint.fr> <bf1f95b5-63d5-4474-8f8e-888df7884bfb@posteo.com.br>
 Subject: Re: Switching To Voxin
-Date: Sun, 19 Oct 2025 22:52:30 -0500
+Date: Mon, 20 Oct 2025 00:33:27 -0500
 Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
@@ -59,9 +59,9 @@ X-MSMail-Priority: Normal
 X-Mailer: Microsoft Outlook Express 6.00.2900.2180
 X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
 X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1760932351141585955.2350.9079114015565524063@prod-use1-smtp-out1003.
+X-Titan-Src-Out: 1760938413513724186.9701.3141376565667347231@prod-use1-smtp-out1001.
 X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=aN4Kqa9m c=1 sm=1 tr=0 ts=68f5b1ff
+X-CMAE-Analysis: v=2.4 cv=aN4Kqa9m c=1 sm=1 tr=0 ts=68f5c9ad
 	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
 	a=IkcTkHD0fZMA:10 a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=NEAV23lmAAAA:8
 	a=G1MHl-R2AAAA:8 a=qPKtzgQbAAAA:8 a=lPOMcNn-Gnmsf6nzbe0A:9
@@ -69,16 +69,18 @@ X-CMAE-Analysis: v=2.4 cv=aN4Kqa9m c=1 sm=1 tr=0 ts=68f5b1ff
 	a=P3K-DvM3-jjlTNsN-mCd:22 a=NWVoK91CQySWRX1oVYDe:22
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-    Hi again All,
-Since the github thing didn't work, I thought I'd look at
-/etc/default/espeakup
-There is a line like 
-default synth=
-and it was blank, and I put in voxin, but that didn't change anything.
-Seems like a file named something like
-speech-dispatcher-voxin.conf or something, needs to go somewhere.
-Any ideas?
+I've been looking on-line, and still can't get espeakup to use Voxin.
+Voxin works with spd-say, and with voxin-say.
+But espeakup is silent.
+I tried:
+espeakup --default-voice=voxin
+and it did not like that until I used sudo with it.
+But that didn't fix the silence.
+Does anyone know where I can edit a conf file?
+I've edited /etc/default/espeakup to read default synth=voxin
+I don't know where else to look.
 Thanks.
+
 Glenn
 ----- Original Message ----- 
 From: "Cleverson Casarin Uliana" <clul+speakup@posteo.com.br>
