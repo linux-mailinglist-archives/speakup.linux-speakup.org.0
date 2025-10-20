@@ -1,48 +1,87 @@
-Return-Path: <speakup+bounces-1454-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1455-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id EE5F9BF2EAD
-	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 20:26:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id DDFC6BF2F34
+	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 20:35:12 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=g5BMT+r1;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=TKNIn66g;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm2 header.b=lJ5aEX/T;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6B807382B98; Mon, 20 Oct 2025 14:26:11 -0400 (EDT)
+	id 556D1382BA3; Mon, 20 Oct 2025 14:35:12 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 4A81D382A50
-	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 14:26:11 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 36040382A45
+	for <lists+speakup@lfdr.de>; Mon, 20 Oct 2025 14:35:12 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E97D9382A45; Mon, 20 Oct 2025 14:26:03 -0400 (EDT)
-Received: from mail2.out.flockmail.com (mail2.out.flockmail.com [52.206.209.181])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id C0C8D382A46
-	for <speakup@linux-speakup.org>; Mon, 20 Oct 2025 14:26:03 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4cr3lZ1cDfz9rwR;
-	Mon, 20 Oct 2025 18:26:02 +0000 (UTC)
-DKIM-Signature: a=rsa-sha256; bh=61J6rZxI4ahAJFP3H+fEwH2llS4K+RoF8axGvCKpoQA=;
-	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=message-id:from:cc:references:date:mime-version:reply-to:to:subject:from:to:cc:subject:date:message-id:reply-to:references:in-reply-to;
-	q=dns/txt; s=titan1; t=1760984762; v=1;
-	b=g5BMT+r1RsWeJQd02GMMELPPWB60suXtagQuHKJ5hOlPtH7JXo6Tm3yIqdE6SF7DYEjfPdPk
-	3AZ6aOsy8kWwu7wI6thhZ/Uo0H32s4wy2SN8DUOwIAXgZh5i5K48Gj/s7ihswFNvXv9euEV057O
-	BhH/JJVvUR7UBE41Yjs/q1bU=
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4cr3lY4Rq5z9rvY;
-	Mon, 20 Oct 2025 18:26:01 +0000 (UTC)
-Message-ID: <0b9001dc41ee$fd34f380$01ffa8c0@nucwin10>
-Reply-To: "K0LNY ??" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY ??" <glenn@ervin.email>
-To: "K0LNY ??" <glenn@ervin.email>,
-	"Kirk Reiser" <kirk@reisers.ca>
-Cc: <speakup@linux-speakup.org>
-References: <0b4a01dc418a$c8105c80$01ffa8c0@nucwin10> <925db357-1d21-2b65-7882-45d0a49911cf@reisers.ca> <0b5701dc41ca$5edf3d40$01ffa8c0@nucwin10> <ca477f4f-952d-93c0-fc67-56a7c24f8f24@reisers.ca> <0b6401dc41e2$13de43a0$01ffa8c0@nucwin10> <981a2802-0dd0-5a10-3b4d-9fb4dc8ca8bb@reisers.ca> <0b7001dc41e5$edf14300$01ffa8c0@nucwin10> <c92501f4-a4ab-08d9-420b-aac383162dfb@reisers.ca> <0b8601dc41e9$06ff1cc0$01ffa8c0@nucwin10> <0b8b01dc41e9$b49d8600$01ffa8c0@nucwin10>
+	id A839A382A5F; Mon, 20 Oct 2025 14:35:04 -0400 (EDT)
+Received: from fhigh-b3-smtp.messagingengine.com (fhigh-b3-smtp.messagingengine.com [202.12.124.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id DAC49382A5E
+	for <speakup@linux-speakup.org>; Mon, 20 Oct 2025 14:35:02 -0400 (EDT)
+Received: from phl-compute-04.internal (phl-compute-04.internal [10.202.2.44])
+	by mailfhigh.stl.internal (Postfix) with ESMTP id 60D8C7A00C8;
+	Mon, 20 Oct 2025 14:34:59 -0400 (EDT)
+Received: from phl-mailfrontend-01 ([10.202.2.162])
+  by phl-compute-04.internal (MEProxy); Mon, 20 Oct 2025 14:34:59 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm3; t=1760985299;
+	 x=1761071699; bh=vmrsVBeAvEdPvSoPRd52/0BZCFdqqw5wG1ELd40r8FQ=; b=
+	TKNIn66gTq3MKo922wF1Oxl1A2NmGzxPKbyv+vrOoEqD3xexUBByZcsb/uQNH/Vz
+	gU1qvBBQc7tD7ZjuwZX76bOhCcAISOPZYQoY+i+/wAlvP5AEOw7GrAbK3c4c2996
+	Zodac2L0ZSCfNCkSDMnGyhQz/1dMlyBbSGOl65PO0+43C9nOoNJKsLHXch5rziib
+	sN7xVbECLuSOUQ50FDxHz3TFVw2yTl+sOah+pSHG6e2G0jeGQCmR4g2R8TXKDk8v
+	wFPJe1FO6nPqdcq0caUckkjx4s+WccZBSpeH8ryWD4AAZgsiFrTzM3m89blLT3HD
+	NtjgCzb6DEvt/7nztMOong==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=
+	1760985299; x=1761071699; bh=vmrsVBeAvEdPvSoPRd52/0BZCFdqqw5wG1E
+	Ld40r8FQ=; b=lJ5aEX/TX+XZQgxX8zIG3A35y5+Qrpmrws6+Zn1bM28h0wfxTbB
+	RaqTe4a/SdP/NLhUZ0PqUl5KBe1MX0DLh60XFKoPywUdWxQq9K0KsoU4//fpJBaF
+	HiDHkUiBQt2KmeBL0+sMfm9icdqK4Cq+p/0CXY+ErPNmjiBY84YKcxTfPvQJIfTe
+	9en8dTQam5qRCO+UOD39M4nKYZ/grtLNwsEJtE297XSWZ7yQ1R5wxfThr2o92z0O
+	+hWqu6ji/NrgNKHjMLn2w3OlO6Zc61jH2En1E8gX2hCAPyrlJZL3gld4n+Rs8MGF
+	QY/1tgWMK+PbJ9KQQRWhMKJO8iCpWylL/rQ==
+X-ME-Sender: <xms:0oD2aOOOlOyCzAZF4xR3iMJHQoPeszqqN8q88G8XSJaRd4h1Q7NMbA>
+    <xme:0oD2aBS0fGS1racBOegDT6bkjcmljCfcO-ivVK0_VMRpJnbXMqCHxSUsdY9iKSRqQ
+    OxXn7hguAgTRRTDXu5JcrN9MiTngik3gBAYy8jIdUwp_fnbpqzdKLA>
+X-ME-Received: <xmr:0oD2aEZX5wgmOPiLZrpGXGhJz4fhiTw2qFE10FoKpGxZTK2XMwVC5bA8Ugf0>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeeffedrtdeggddufeekheehucetufdoteggodetrf
+    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
+    rghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmnecujf
+    gurhepfffhvfevufgjkfhfgggtsehttdertddttddvnecuhfhrohhmpeevhhhimhgvucfj
+    rghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmqeenucggtf
+    frrghtthgvrhhnpedvheegleejkeeguefgfeelkeejiedvkeekvdetueevueeffeffffef
+    ffeludeftdenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhroh
+    hmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvgihrdgtohhmpdhnsggprhgtphht
+    thhopeefpdhmohguvgepshhmthhpohhuthdprhgtphhtthhopehglhgvnhhnsegvrhhvih
+    hnrdgvmhgrihhlpdhrtghpthhtohepkhhirhhksehrvghishgvrhhsrdgtrgdprhgtphht
+    thhopehsphgvrghkuhhpsehlihhnuhigqdhsphgvrghkuhhprdhorhhg
+X-ME-Proxy: <xmx:0oD2aG0EQ31GzEJfHatVuGMZ0Tdh8jpu80KFFf6Q7XmHhsr46KQ1Zw>
+    <xmx:0oD2aMXYfFoApseqAkKKM35NCFc5kTzuBnMp5_Uy-IR_YigZudwUwA>
+    <xmx:0oD2aIXNT0aDqV0KIx7eJCsLNGEtFNFDLtQw7DreIKLwdtQ4grnfEg>
+    <xmx:0oD2aDd7ndlH2R7tNqwLwflwDE0m4bduyn-BGDrTKNeJ8boIIofXnw>
+    <xmx:04D2aJG2Wq3m_A2oFHPtK5SeCnJnICnv5b9QvlPZkfq18azoqwZzsH4s>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Mon,
+ 20 Oct 2025 14:34:58 -0400 (EDT)
+Date: Mon, 20 Oct 2025 11:34:57 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: K0LNY ?? <glenn@ervin.email>
+cc: Kirk Reiser <kirk@reisers.ca>, speakup@linux-speakup.org
 Subject: Re: Voxin With Espeakup
-Date: Mon, 20 Oct 2025 13:26:00 -0500
-Organization: Home
+In-Reply-To: <0b9001dc41ee$fd34f380$01ffa8c0@nucwin10>
+Message-ID: <7b79b410-05b6-c547-ecba-59cd1be2cb9f@hubert-humphrey.com>
+References: <0b4a01dc418a$c8105c80$01ffa8c0@nucwin10> <925db357-1d21-2b65-7882-45d0a49911cf@reisers.ca> <0b5701dc41ca$5edf3d40$01ffa8c0@nucwin10> <ca477f4f-952d-93c0-fc67-56a7c24f8f24@reisers.ca> <0b6401dc41e2$13de43a0$01ffa8c0@nucwin10>
+ <981a2802-0dd0-5a10-3b4d-9fb4dc8ca8bb@reisers.ca> <0b7001dc41e5$edf14300$01ffa8c0@nucwin10> <c92501f4-a4ab-08d9-420b-aac383162dfb@reisers.ca> <0b8601dc41e9$06ff1cc0$01ffa8c0@nucwin10> <0b8b01dc41e9$b49d8600$01ffa8c0@nucwin10>
+ <0b9001dc41ee$fd34f380$01ffa8c0@nucwin10>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -52,216 +91,13 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1760984762001215947.2350.5373885691291203865@prod-use1-smtp-out1003.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=V5uH0fni c=1 sm=1 tr=0 ts=68f67eba
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=8nJEP1OIZ-IA:10 a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=rhghyxR7AAAA:8
-	a=qPKtzgQbAAAA:8 a=wPae8HNWboyDa8Q7QuUA:9 a=wPNLvfGTeEIA:10
-	a=3POYzjO64X90oOl-TX4z:22 a=OTAqJWGB1laLS8RTg9aS:22
-	a=P3K-DvM3-jjlTNsN-mCd:22 a=NWVoK91CQySWRX1oVYDe:22
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-    I installed pulseaudio, and lost all audio.
-I checked with alsamixer and all settings were good.
-I ran spd-conf and selected pulseaudio and nothing from voxin after that.
-I put spd-conf back to alsa, and still no voxin.
-I then removed --purge  pulseaudio, and voxin is talking again.
-Still no voice from speechd-up though.
-Glenn
------ Original Message ----- 
-From: "K0LNY ??" <glenn@ervin.email>
-To: "K0LNY ??" <glenn@ervin.email>; "Kirk Reiser" <kirk@reisers.ca>
-Cc: <speakup@linux-speakup.org>
-Sent: Monday, October 20, 2025 12:48 PM
-Subject: Re: Voxin With Espeakup
-
-
-I wonder if it has to do with pulseaudio or pipewire.
-I don't have pulseaudio installed.
-speech-dispatcher is using alsa.
------ Original Message ----- 
-From: "K0LNY ??" <glenn@ervin.email>
-To: "Kirk Reiser" <kirk@reisers.ca>
-Cc: <speakup@linux-speakup.org>
-Sent: Monday, October 20, 2025 12:43 PM
-Subject: Re: Voxin With Espeakup
-
-
-Hi again Kirk,
-I am working here with two keyboards, one on the RPI, and one on the windows
-for SSH.
-I have tried all modes of commands on the direct keyboard, and nothing from
-speechd-up.
-I've tried caps lock numbers 1 through 6 hoping that maybe speechd-up's
-volume is down.
-I've tried
-sudo systemctl enable speechd-up
-then
-sudo systemctl restart speechd-up
-Still nothing.
-I've looked at /etc/speechd-up.conf, I think is the file, don't recall now
-if it has the .conf at the end.
-But everything in there has a # in front of it.
-The line with synth does not list any synth.
-Any other ideas?
-Thanks.
-
-Glenn
------ Original Message ----- 
-From: "Kirk Reiser" <kirk@reisers.ca>
-To: "K0LNY ??" <glenn@ervin.email>
-Cc: <speakup@linux-speakup.org>
-Sent: Monday, October 20, 2025 12:36 PM
-Subject: Re: Voxin With Espeakup
-
-
-If your system tells you that speechd-up is running then it is. What
-happens when you type ls or something like that on the rpi keyboard?
-
-If you are logged in with ssh then you get everything the system
-responds with typically.
-
-It has been many years since I used speech-dispatcher so I don't know
-how one tells how their system is configured.
-
-If you don't get an error I can only figure it is working correctly
-and some configuration step isn't right.
-
-On Mon, 20 Oct 2025, K0LNY ?? wrote:
-
-> Hi Kirk,
-> Well I can only see what happens if I run it in a SSH window.
-> And it says speechd-up is already running.
-> So, I do
-> sudo pkill speechd-up
-> and I tried
-> sudo speechd-up --probe
-> and it said that it wrote to a file.
-> Still no speech though, this is the windows screenreader telling me this.
-> I also did pkill again and tried
-> speechd-up -D voxin
-> and still nothing.
->
-> Glenn
-> ----- Original Message -----
-> From: "Kirk Reiser" <kirk@reisers.ca>
-> To: "K0LNY ??" <glenn@ervin.email>
-> Cc: <speakup@linux-speakup.org>
-> Sent: Monday, October 20, 2025 12:16 PM
-> Subject: Re: Voxin With Espeakup
->
->
-> What did the system tell you when you ran "sudo speechd-up"?
->
-> On Mon, 20 Oct 2025, K0LNY ?? wrote:
->
->> Hi Kirk and All,
->> So far, no luck.
->> I did:
->> sudo apt remove --purge espeakup
->> and
->> sudo apt remove --purge speechd-up
->> Then I did:
->> sudo apt install speechd-up
->> And I rebooted.
->> It didn't start as far as I know.
->> I tried with and without sudo, at the command-line:
->> speechd-up
->> and still nothing.
->> As mentioned before, voxin talks with spd-say and with voxin-say.
->> Other audio files work as well.
->> I sure someone has some more ideas.
->> Thanks.
->>
->> Glenn
->> ----- Original Message -----
->> From: "Kirk Reiser" <kirk@reisers.ca>
->> To: "K0LNY ??" <glenn@ervin.email>
->> Cc: <speakup@linux-speakup.org>
->> Sent: Monday, October 20, 2025 10:49 AM
->> Subject: Re: Voxin With Espeakup
->>
->>
->> Hello again Glen: I don't know what python-speech is but I don't think
->> it has anything to do with speech-dispatcher or speakup. As to whether
->> you need to uninstall espeakup, it depends on what you've installed
->> last speechd-up or espeakup. They are both connectors from speakup but
->> they connect to different synth packages. I believe they both are
->> set-up to be the default connector so probably the last one will be
->> the considered default. If speech-dispatcher is installed and
->> configured you should be able to run speechd-up by hand to make sure
->> that everything is working. Then you can look into whether speechd-up
->> is set-up to be the default connector used.
->>
->>   Kirk
->>
->> On Mon, 20 Oct 2025, K0LNY ?? wrote:
->>
->>> Hi Kirk,
->>> Thanks for getting back.
->>> I did install speechd-up after I installed speech-dispatcher, and
->>> python3-speechd .
->>> Do I need to uninstall espeakup?
->>> I've tried installing
->>> speakup
->>> but there seems to be no package by that name.
->>> Thanks.
->>>
->>> Glenn
->>> ----- Original Message -----
->>> From: "Kirk Reiser" <kirk@reisers.ca>
->>> To: "K0LNY ??" <glenn@ervin.email>
->>> Cc: <speakup@linux-speakup.org>
->>> Sent: Monday, October 20, 2025 7:31 AM
->>> Subject: Re: Voxin With Espeakup
->>>
->>>
->>> Hi Glen: I believe you wished to know if voxin works with speakup
->>> rather than espeakup. Espeakup is a connector between speakup and
->>> espeak as you have mentioned. If you wish to use speakup with speech
->>> dispatcher you need to install speechd-up. It used to be maintained by
->>> Chris Brannon who is no longer with us so I don't know who is
->>> maintaining it these days if any.
->>>
->>> I am CC'ing this to the speakup list so others might see it and answer
->>> your question if possible.
->>>
->>>   Kirk
->>>
->>>
->>> On Mon, 20 Oct 2025, K0LNY ?? wrote:
->>>
->>>> Hi Kirk,
->>>> I wonder if you can tell me if Voxin should work with espeakup.
->>>> I have voxin installed on my Raspberry PI, and it talks with spd-say
->>>> and
->>>> with voxin-say.
->>>> So that part is working.
->>>> When I installed espeakup, it was using espeak, and after I installed
->>>> speech-dispatcher and ran spd-conf to use voxin, then espeak no longer
->>>> talks.
->>>> It is still running, but I just cannot get it to use the voxin.
->>>> I changed the default synth in /etc/default/espeakup, but that didn't
->>>> fix
->>>> it.
->>>> If you could offer some guidance, it would be much appreciated.
->>>> Thanks.
->>>>
->>>> Glenn
->>>
->>>
->>
->
-
-
+Hi Glen-and-All: Have you gone in a voxin3.4 directory-and-run its installer? 
+Otherwise, like you did, there have been times I had to kill-and-restart 
+speechd-up. Last time I traded messages with Gilles, he was going to resume 
+working on Voxin this Summer.
+Chime
 
 
