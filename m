@@ -1,39 +1,49 @@
-Return-Path: <speakup+bounces-1460-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1461-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id CECCEC03B03
-	for <lists+speakup@lfdr.de>; Fri, 24 Oct 2025 00:40:12 +0200 (CEST)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=fail reason="key not found in DNS" header.d=slint.fr header.i=@slint.fr header.a=rsa-sha256 header.s=default header.b=ZVjIq4Wa;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id BC258C18D57
+	for <lists+speakup@lfdr.de>; Wed, 29 Oct 2025 09:05:45 +0100 (CET)
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 9A0F6382B49; Thu, 23 Oct 2025 18:34:05 -0400 (EDT)
+	id 6B7EA3819B7; Wed, 29 Oct 2025 03:56:34 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 760D5382654
-	for <lists+speakup@lfdr.de>; Thu, 23 Oct 2025 18:34:05 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 544B63818C4
+	for <lists+speakup@lfdr.de>; Wed, 29 Oct 2025 03:56:34 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 248773822D3; Thu, 23 Oct 2025 18:33:58 -0400 (EDT)
-Received: from darkstar.slint.fr (darkstar.slint.fr [172.105.89.79])
-	by befuddled.reisers.ca (Postfix) with ESMTP id F26D83822AC
-	for <speakup@linux-speakup.org>; Thu, 23 Oct 2025 18:33:56 -0400 (EDT)
-Received: from [10.184.133.164] (176-173-208-123.abo.bbox.fr [176.173.208.123])
-	by darkstar.slint.fr (Postfix) with ESMTPSA id 32A971602E8
-	for <speakup@linux-speakup.org>; Thu, 23 Oct 2025 22:28:57 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=slint.fr; s=default;
-	t=1761251337; bh=SAU7fGUT21M7xe7U1V2K7kyzBMEK+fYX+vF4p2eG6ho=;
-	h=Date:Subject:To:References:From:In-Reply-To:From;
-	b=ZVjIq4WacaWR2RD5DHC4p6tJ1Gcca52PsTaj2L7fGXybIILmDtT7i8L9YQ1EGtuH1
-	 ZnKMZ3jPD0IgJoHqayak49c3Y8agxqUbEV8bUemFjMbOF21f2VBtO8gIkx6jVRVrxw
-	 S6Io81hUIw6S/bbg8YPQA0NZQMVv0Hhrk0kZnV15OZ6xvI6W0NhdgKV9Eu4Z/LoiVh
-	 KBLGYM3q2/NWrHrKMpnWO+T1VR3DALpTyU04+RYWqGRf2FKWgyWzfA158h2CsPqs6i
-	 U6E3UFY3lhDzDAHwKuu3PC+5ZGHZfnua3P0bM0LBGdgECVtAq9xYsA8qgeFiSMmwxs
-	 lGKvgjoJh3E6Q==
-Content-Type: multipart/mixed; boundary="------------dliOmTV2Yf4vhzN9xx8caKna"
-Message-ID: <cced9a8b-61ec-45c0-8780-fc0632db0e6f@slint.fr>
-Date: Fri, 24 Oct 2025 00:33:52 +0200
+	id 696533818AF; Wed, 29 Oct 2025 03:56:30 -0400 (EDT)
+Received: from sonata.ens-lyon.org (domu-toccata.ens-lyon.fr [140.77.166.138])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 2C7A6380719
+	for <speakup@linux-speakup.org>; Wed, 29 Oct 2025 03:56:30 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by sonata.ens-lyon.org (Postfix) with ESMTP id 071F6A1C18;
+	Wed, 29 Oct 2025 08:56:22 +0100 (CET)
+Received: from sonata.ens-lyon.org ([127.0.0.1])
+	by localhost (sonata.ens-lyon.org [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id MyoH-mr6tvXg; Wed, 29 Oct 2025 08:56:21 +0100 (CET)
+Received: from begin (aamiens-653-1-40-48.w83-192.abo.wanadoo.fr [83.192.199.48])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest SHA256)
+	(No client certificate requested)
+	by sonata.ens-lyon.org (Postfix) with ESMTPSA id 6DA61A1C0D;
+	Wed, 29 Oct 2025 08:56:21 +0100 (CET)
+Received: from samy by begin with local (Exim 4.98.2)
+	(envelope-from <samuel.thibault@ens-lyon.org>)
+	id 1vE12a-00000009aGe-3kj4;
+	Wed, 29 Oct 2025 08:56:20 +0100
+Date: Wed, 29 Oct 2025 08:56:20 +0100
+From: Samuel Thibault <samuel.thibault@ens-lyon.org>
+To: Bo Liu <liubo03@inspur.com>
+Cc: w.d.hubbs@gmail.com, chris@the-brannons.com, kirk@reisers.ca,
+	speakup@linux-speakup.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] Accessiblity: speakup_soft: Fix double word in comments
+Message-ID: <aQHIpJ1XiMfDzhMs@begin>
+Mail-Followup-To: Samuel Thibault <samuel.thibault@ens-lyon.org>,
+	Bo Liu <liubo03@inspur.com>, w.d.hubbs@gmail.com,
+	chris@the-brannons.com, kirk@reisers.ca, speakup@linux-speakup.org,
+	linux-kernel@vger.kernel.org
+References: <20251029071629.17705-1-liubo03@inspur.com>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux."
@@ -43,277 +53,36 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-User-Agent: Mozilla Thunderbird
-Subject: Re: Voxin With Espeakup
-To: speakup@linux-speakup.org
-References: <0b4a01dc418a$c8105c80$01ffa8c0@nucwin10>
- <925db357-1d21-2b65-7882-45d0a49911cf@reisers.ca>
- <0b5701dc41ca$5edf3d40$01ffa8c0@nucwin10>
- <ca477f4f-952d-93c0-fc67-56a7c24f8f24@reisers.ca>
- <0ba201dc41f4$702375b0$01ffa8c0@nucwin10>
- <0c1e01dc42b2$ad05c280$01ffa8c0@nucwin10>
-Content-Language: en-US
-From: Didier Spaier <didier@slint.fr>
-Autocrypt: addr=didier@slint.fr; keydata=
- xsBNBFY6fG8BCADH4Hf/OaE2MwXRFMrU/9oDd+YPqR/wkhmIv0veDio84fsWA5qMz1De7TEv
- dNuxIVYTznuVOd/9lpdfxQ1KV9rgD7yoBPLmjbQA1vVjB+1QylIQUV0B9AYFUsxZP32Ic2pg
- TS3US/WiZyx+/jS50ri4kvT9iDtIEu7WBWFr8YMOoq3oLkHI8Y7gBG0WsK9XYN09glhtI+bA
- jLPr/ezwEg5M3FDb4U7XFq7GcA6EEzanKMAOHdZl3lta7dv5gpgdj+38j5jPfV1cJW+J1fha
- 63X72xxXGs7V6J7NGpnW7SAKfTAMXsPXZwwGIuqMQs1Z89I+2ZPJPOoV8zMncTsWzHStABEB
- AAHNH0RpZGllciBTcGFpZXIgPGRpZGllckBzbGludC5mcj7CwHkEEwEKACMCGwMHCwkIBwMC
- AQYVCAIJCgsEFgIDAQIeAQIXgAUCYZVPGAAKCRDVAgLvYMA+6pOxCADB2pKmm/LgncWREzob
- Z6M+RsvgzvGS/48ik/E/TH2KyPO/hn+Fzbj4MmMwQdqz5YPfdBmkcM7WyDzkPaukzfS8QUvl
- VKyWQ92pqpbI/JUeShI+DLMKV7LZxiPinMBuKmpyLdpxuhk08g2+6F8X6ztbl8mbXQy5jcIZ
- zKQ442N0D4wnn8VXM0tb0uonmqc6ly7dcmkQ/GI7Q0tF/hkn4n3g1Lh6+K1jBqEIC9vn/c6X
- yf67ec+CwbE0GtgVM1FR1R0J1y/6vkYWr7gZHhnzgwKr6k1wzCGkVUyCSpFwB2oeANT9c0qP
- rgn4YjoYQIHS3vMWd630vRyOfqwetWXmVjPxzsBNBFY6fG8BCACqDQKHSw0ElDkwPPpNguL0
- ujOyygO30xlLyfW9pWOEycHSLhLzvDTlFkvr5IxvyCDBIFBdzpkeQqh1+ZxrFliwWyj+9/ro
- JlIjxeAyNs2xQZ7tQM6K5xtbUs8O5YtkCCO3OegAiLgmzzgxes79Qy+V3ciKbl+vrsNu7T9r
- o3zZhyinci1eOCcKEtXFPQW5P4woB+6+JheN9pIiDkjojmdC+xkvDadP7kJYKp19Itys/CbN
- vxEoOLsgeJhsZSmNU2QNhXkLfr7+AC99fb/c5ZDTNPRBqgLJCp+gTxn1QVJrAbq2OP3refmS
- RxdA3yUDMjxEeHwDNZJL9aEtTDlTzPk5ABEBAAHCwF8EGAEKAAkCGwwFAmGVT44ACgkQ1QIC
- 72DAPuqjhwgApl0pdNIrbU+8Hn0mr3CTEXxPaTbAU2bYFPDiBaEvXsBGoz8xJ6EZQnywbC7o
- l5wFtVT08LKDewLHaL78zS+Q8rv5sNmWwzMAaipFtZg67e/rU3V5tw4E12nUghyMzQpngUur
- lZPMFlB9IZN9681cXuv2sZzAZlR2+3PsSAftpPQxReoSC7hj3dfiCiAis19G3A184HClA5MB
- I5heGinSz7R/AXhkiej8HZZzz9ZPkS7aeL8HsZKqCwZvViutbGmpm+V70JnbRAHLFjYb+Se3
- rdUWWAXcca4Ry8HCLTo5iK9xCTQh5gEuJ7ROdOXeY4SvMiqWjYhlrsR0qhTv9q/gfg==
-In-Reply-To: <0c1e01dc42b2$ad05c280$01ffa8c0@nucwin10>
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <20251029071629.17705-1-liubo03@inspur.com>
+Organization: I am not organized
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-This is a multi-part message in MIME format.
---------------dliOmTV2Yf4vhzN9xx8caKna
-Content-Type: text/plain; charset=UTF-8
-Content-Transfer-Encoding: 7bit
+Bo Liu, le mer. 29 oct. 2025 15:16:29 +0800, a ecrit:
+> Remove the repeated word "the" in comments.
+> 
+> Signed-off-by: Bo Liu <liubo03@inspur.com>
 
-Hi Glenn, answer in line.
+Reviewed-by: Samuel Thibault <samuel.thibault@ens-lyon.org>
 
-On 10/21/25 19:46, K0LNY ?? wrote:
-> I wonder if I could have used espeakup with saywith to use spd and have 
-> voxin working, rather than installing speechd-up?
-
-A quick look at the script saywith (attached) gives the answer: no.
-
-saywith can switch between espeakup and speechd-up (and choose the soft or a
-hardware synthesizer, that's all. To hear voxin voices in a console you need
-speechd-up (or fenrir). Or maybe voxinup, but I have no experience with it.
-
-As an aside I wrote a script name speak-with (attached) that does something
-similar to to saywith, also allowing to use fenrir if available, but you
-probably can't use it because it starts/stop daemons, not systemd services.
- > Is speechd-up as good as espeakup?
-
-Are apples better than oranges?That's matter or personal preferences, feel free
-to try both.
-
-Cheers
-Didier
---------------dliOmTV2Yf4vhzN9xx8caKna
-Content-Type: text/plain; charset=UTF-8; name="talkwith"
-Content-Disposition: attachment; filename="talkwith"
-Content-Transfer-Encoding: base64
-
-IyEvYmluL3NoCiMgCiMgdGFsa3dpdGggLS0gc3dpdGNoZXMgc3BlYWt1cCBzeW50aGVzaXpl
-cnMgb24gdGhlIGZseQojIAojIENvcHlyaWdodCAoYykgMjAwOSBieSAgdGhlIFNwZWFrdXAg
-VGVhbQojIENvcHlyaWdodCAoYykgMjAwOCwgMjAwOSBieSAgQ2hhcmxlcyBIYWxsZW5iZWNr
-CiMgCiMgIFRoaXMgcHJvZ3JhbSBpcyBmcmVlIHNvZnR3YXJlOiB5b3UgY2FuIHJlZGlzdHJp
-YnV0ZSBpdCBhbmQvb3IgbW9kaWZ5CiMgIGl0IHVuZGVyIHRoZSB0ZXJtcyBvZiB0aGUgR05V
-IEdlbmVyYWwgUHVibGljIExpY2Vuc2UgYXMgcHVibGlzaGVkIGJ5CiMgIHRoZSBGcmVlIFNv
-ZnR3YXJlIEZvdW5kYXRpb24sIGVpdGhlciB2ZXJzaW9uIDIgb2YgdGhlIExpY2Vuc2UsIG9y
-CiMgIChhdCB5b3VyIG9wdGlvbikgYW55IGxhdGVyIHZlcnNpb24uCiMKIyAgIFRoaXMgcHJv
-Z3JhbSBpcyBkaXN0cmlidXRlZCBpbiB0aGUgaG9wZSB0aGF0IGl0IHdpbGwgYmUgdXNlZnVs
-LAojICAgYnV0IFdJVEhPVVQgQU5ZIFdBUlJBTlRZOyB3aXRob3V0IGV2ZW4gdGhlIGltcGxp
-ZWQgd2FycmFudHkgb2YKIyAgIE1FUkNIQU5UQUJJTElUWSBvciBGSVRORVNTIEZPUiBBIFBB
-UlRJQ1VMQVIgUFVSUE9TRS4gIFNlZSB0aGUKIyAgIEdOVSBHZW5lcmFsIFB1YmxpYyBMaWNl
-bnNlIGZvciBtb3JlIGRldGFpbHMuCiMKIyAgWW91IHNob3VsZCBoYXZlIHJlY2VpdmVkIGEg
-Y29weSBvZiB0aGUgR05VIEdlbmVyYWwgUHVibGljIExpY2Vuc2UKIyAgIGFsb25nIHdpdGgg
-dGhpcyBwcm9ncmFtLiAgSWYgbm90LCBzZWUgPGh0dHA6Ly93d3cuZ251Lm9yZy9saWNlbnNl
-cy8+LgojCiMgUmVxdWlyZW1lbnRzOiBMaW51eCBzcGVha3VwIDMuMS4wIG9yIGxhdGVyCiMK
-IyBUbyBpbnN0YWxsLCBjb3B5IHRoaXMgc2NyaXB0IHRvIGEgZGlyZWN0b3J5IG9uIHRoZSBl
-eGVjdXRpb24gcGF0aAojIGUuZy4gL3Vzci9zYmluLCBvciAvdXNyL2xvY2FsL3NiaW4uCiMg
-VGhpcyBzY3JpcHQgc2hvdWxkIGJlIHJ1biBhcyByb290LgoKIyBiZSBzdXJlIHdlIGFyZSBy
-b290CmlmIFsgJChpZCAtcnUpIC1ndCAiMCIgXTsgdGhlbgoJZWNobyAiJChiYXNlbmFtZSAk
-MCkgbXVzdCBiZSBydW4gYXMgcm9vdC4iCglleGl0CmZpCgojIERlZmluZSBzb21lIHZhcmlh
-YmxlcwpTUEVBS1VQRElSPSIvc3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cCIKCiMgbWFrZSBz
-dXJlIHNwZWFrdXAgaXMgbG9hZGVkCmlmIFsgISAtZCAkU1BFQUtVUERJUiBdOyB0aGVuCgll
-Y2hvICJTcGVha3VwIGRvZXMgbm90IHNlZW0gdG8gYmUgaW5zdGFsbGVkLiIKCWV4aXQKZmkK
-CiMgQ2hlY2sgdGhlIGNvbW1hbmQgbGluZSBmb3Igb3B0aW9ucwoKaWYgWyAiJDEiID0gIiIg
-XTsgdGhlbgoJZWNobwoJZWNobyAiVXNhZ2U6ICQoYmFzZW5hbWUgJDApIDxzeW50aD4gPGRh
-ZW1vbj4gW29wdGlvbnNdIgoJZWNobwoJZWNobyAic3ludGggLSBhbnkgc3ludGhlc2l6ZXIg
-c3VwcG9ydGVkIGJ5IHNwZWFrdXAiCgllY2hvCgllY2hvICJkYWVtb24gLSBmb3IgdGhlICdz
-b2Z0JyBzeW50aGVzaXplciwgdGhpcyBzaG91bGQgYmUgZWl0aGVyIgoJZWNobyAic3BkIGZv
-ciBzcGVlY2hkLXVwLCBvciBlc3BlYWt1cCB0byBydW4gZXNwZWFrdXAuIgoJZWNobyAiRm9y
-IHRoZSBvdGhlciBzeW50aGVzaXplcnMsIHRoaXMgaXMgaWdub3JlZC4iCgllY2hvCgllY2hv
-ICJvcHRpb25zIC0gZm9yIGEgc29mdHdhcmUgc3ludGhlc2l6ZXIsIHRoZSByZXN0IG9mIHRo
-ZSBjb21tYW5kIGxpbmUiCgllY2hvICJpcyBwYXNzZWQgb24gdG8gdGhlIGRhZW1vbjsgb3Ro
-ZXJ3aXNlIGl0IGlzIGlnbm9yZWQuIgoJZWNobwoJZWNobyAiVGFsa3dpdGggZG9lcyBub3Qg
-aW5zdGFsbCBvciByZW1vdmUgbW9kdWxlcywgc28gbWFrZSBzdXJlIGFueSIKCWVjaG8gInJl
-cXVpcmVkIGRyaXZlciBtb2R1bGVzIGFyZSBpbnN0YWxsZWQgb3IgYnVpbHQgaW50byB0aGUg
-a2VybmVsIgoJZWNobyAiYmVmb3JlIHJ1bm5pbmcgdGFsa3dpdGguIgoJZWNobwoJZXhpdApm
-aQogCk5FV01PRD0kMQpzaGlmdAoKIyBmb3IgYmFja3dhcmQgY29tcGF0aWJpbGl0eQppZiBb
-ICIkTkVXTU9EIiA9ICJzcGQiICAtbyAiJE5FV01PRCIgPSAiZXNwZWFrdXAiIF07IHRoZW4K
-CURBRU1PTj0kTkVXTU9ECglORVdNT0Q9c29mdApmaQoKaWYgWyAiJE5FV01PRCIgPSAic29m
-dCIgXTsgdGhlbgoJaWYgd2hpY2ggZXNwZWFrdXAgPiAvZGV2L251bGwgMj4mMSA7IHRoZW4K
-CQlIQVZFX0VTUEVBS1VQPTEKCWZpCglpZiB3aGljaCBzcGVlY2hkLXVwID4gL2Rldi9udWxs
-IDI+JjEgOyB0aGVuCgkJSEFWRV9TUEQ9MQoJZmkKCQkJCglpZiBbIC16ICIkSEFWRV9FU1BF
-QUtVUCIgIC1hIC16ICIkSEFWRV9TUEQiIF07IHRoZW4KCQllY2hvICJubyBzb2Z0d2FyZSBz
-cGVlY2ggc3ludGhlc2l6ZXJzIGFyZSBpbnN0YWxsZWQuIgoJCWV4aXQKCWZpCgkJCQoJaWYg
-WyAteiAiJERBRU1PTiIgXTsgdGhlbgoJCURBRU1PTj0kMQoJCXNoaWZ0CglmaQoKCWlmIFsg
-LXogIiREQUVNT04iIC1hICEgLXogIiRIQVZFX0VTUEVBS1VQIiBdOyB0aGVuCgkJREFFTU9O
-PSJlc3BlYWt1cCIKCWVsaWYgWyAteiAiJERBRU1PTiIgLWEgISAteiAiJEhBVkVfU1BEIiBd
-OyB0aGVuCgkJREFFTU9OPSJzcGQiCglmaQoJCglpZiBbICIkREFFTU9OIiA9ICJlc3BlYWt1
-cCIgLWEgLXogIiRIQVZFX0VTUEVBS1VQIiBdOyB0aGVuCgkJZWNobyAiZXNwZWFrdXAgZG9l
-cyBub3QgYXBwZWFyIHRvIGJlIGF2YWlsYWJsZS4iCgkJZXhpdAoJZWxpZiBbICIkREFFTU9O
-IiA9ICJzcGQiIC1hIC16ICIkSEFWRV9TUEQiIF07IHRoZW4KCQllY2hvICJzcGVlY2hkLXVw
-IGRvZXMgbm90IGFwcGVhciB0byBiZSBhdmFpbGFibGUuIgoJCWV4aXQKCWZpCmZpCgpPTERN
-T0Q9IiQoY2F0ICRTUEVBS1VQRElSL3N5bnRoKSIKZWNobyAiJE5FV01PRCIgPiAkU1BFQUtV
-UERJUi9zeW50aCAyPiAvZGV2L251bGwKaWYgWyAkPyAhPSAwIF07IHRoZW4KCWVjaG8gIlVu
-YWJsZSB0byBzd2l0Y2ggdG8gdGhlICRORVdNT0Qgc3ludGhlc2l6ZXIuIgoJZWNobyAiVGhp
-cyBtZWFucyB0aGF0IHRoZSBkcml2ZXIgaXMgbm90IGJ1aWx0IGluLCB0aGUgbW9kdWxlIgoJ
-ZWNobyAiaXMgbm90IGxvYWRlZCwgb3IgJE5FV01PRCBpcyBub3QgYSB2YWxpZCBzeW50aGVz
-aXplci4iCglleGl0IDEKZmkKCmlmIFsgIiRPTERNT0QiID0gInNvZnQiIF07IHRoZW4KCWlm
-IFsgLWYgL3Zhci9ydW4vZXNwZWFrdXAucGlkIF07IHRoZW4KCQlraWxsICQoY2F0IC92YXIv
-cnVuL2VzcGVha3VwLnBpZCkgMj4gL2Rldi9udWxsCgkJaWYgWyAtZiAvdmFyL3J1bi9lc3Bl
-YWt1cC5waWQgXTsgdGhlbgoJCQlybSAtZiAvdmFyL3J1bi9lc3BlYWt1cC5waWQKCQlmaQoJ
-ZmkKCWlmIFsgLWYgL3Zhci9ydW4vc3BlZWNoZC11cC5waWQgXTsgdGhlbgoJCWtpbGwgJChj
-YXQgL3Zhci9ydW4vc3BlZWNoZC11cC5waWQpIDI+IC9kZXYvbnVsbAoJCWlmIFsgLWYgL3Zh
-ci9ydW4vc3BlZWNoZC11cC5waWQgXTsgdGhlbgoJCQlybSAtZiAvdmFyL3J1bi9zcGVlY2hk
-LXVwLnBpZAoJCWZpCglmaQoJc2xlZXAgMgpmaQoKaWYgWyAiJE5FV01PRCIgPSAibm9uZSIg
-XTsgdGhlbgoJZXhpdAplbGlmIFsgIiRORVdNT0QiID0gInNvZnQiIF07IHRoZW4KCWlmIFsg
-IiREQUVNT04iID0gImVzcGVha3VwIiBdOyB0aGVuCgkJZXNwZWFrdXAgJCoKCWVsaWYgWyAi
-JERBRU1PTiIgPSAic3BkIiBdOyB0aGVuCgkJbmljZSAtbiA1IHNwZWVjaGQtdXAgJCoKCWZp
-CmZpCg==
---------------dliOmTV2Yf4vhzN9xx8caKna
-Content-Type: text/plain; charset=UTF-8; name="speak-with"
-Content-Disposition: attachment; filename="speak-with"
-Content-Transfer-Encoding: base64
-
-IyEvYmluL3NoCiMgRGlkaWVyIFNwYWllciBkaWRpZXJhdHNsaW50ZG90ZnIgMjAxOQojIEkg
-d3JvdGUgdGhpcyBzY3JpcHQgZnJvbSBzY3JhdGNoIGFuZCBwdXQgaXQgaW4gdGhlIHB1Ymxp
-YyBkb21haW4uCiMgSSBhc3N1bWUgdGhhdCB0aGUgcGFja2FnZXMgZXNwZWFrdXAgYW5kIHNw
-ZWVjaGQtdXAgYXJlIGluc3RhbGxlZC4KIyBJZiBmZW5yaXIgaXMgaW5zdGFsbGVkLCBpdCBj
-YW4gYWxzbyBiZSB1c2VkLgpleHBvcnQgVEVYVERPTUFJTj1zbGludC1zY3JpcHRzCmNvbmZu
-b3RlPSIjIEZpbGUgd3JpdHRlbiBieSBzcGVhay13aXRoLiBEbyBub3QgZWRpdC4iCmlmIFsg
-ISAiJChpZCAtdSkiIC1lcSAwIF07IHRoZW4KCWdldHRleHQgIlBsZWFzZSBydW4gdGhpcyBz
-Y3JpcHQgYXMgcm9vdC4iOyBlY2hvCglleGl0CmZpCmlmIFsgLXggL3Vzci9iaW4vZXNwZWFr
-dXAgXTsgdGhlbgoJZXNwZWFrdXA9ImVzcGVha3VwIChDb25zb2xlIHNjcmVlbiByZWFkZXIg
-Y29ubmVjdGluZyBlc3BlYWstbmcgYW5kIHNwZWFrdXApXG4iCgluMT0iZXNwZWFrdXAiCmZp
-CmlmIFsgLXggL3Vzci9iaW4vc3BlZWNoZC11cCBdOyB0aGVuCglzcGVlY2hkX3VwPSJzcGVl
-Y2hkLXVwIChDb25zb2xlIHNjcmVlbiByZWFkZXIgY29ubmVjdGluZyBTcGVlY2ggRGlzcGF0
-Y2hlciBhbmQgc3BlYWt1cCkiCgluMj0ic3BlZWNoZC11cCIKZmkKaWYgWyAteCAvdXNyL2Jp
-bi9mZW5yaXIgXTsgdGhlbgoJZmVucmlyPSJmZW5yaXIgKE1vZHVsYXIsIGZsZXhpYmxlIGFu
-ZCBmYXN0IGNvbnNvbGUgc2NyZWVuIHJlYWRlcilcbiIKCW4zPSJmZW5yaXIiCmZpCnJlYWRl
-cnM9IiRlc3BlYWt1cCRmZW5yaXIkc3BlZWNoZF91cCIKaGFyZGxpc3Q9IiQoemdyZXAgU1BF
-QUtVUF9TIC9wcm9jL2NvbmZpZy5nenxncmVwICdbeW1dJ3xncmVwIC12IERVTU1ZfCBcCnNl
-ZCAncy9DT05GSUdfU1BFQUtVUF9TWU5USF8vLztzLy4uJC8vJ3x0ciAnWzp1cHBlcjpdJyAn
-Wzpsb3dlcjpdJykiCnVzYWdlKCkgewogIGdldHRleHQgIlVzYWdlOiBzcGVha193aXRoIDxz
-Y3JlZW4gcmVhZGVyPiBvciA8aGFyZCBzeW50aGVzaXplcj4gb3IgJ25vbmUnIjsgZWNobwog
-IGdldHRleHQgIkNob29zZSBhIGNvbnNvbGUgc2NyZWVuIHJlYWRlciB0byB0YWxrIHdpdGgg
-YW1vbmc6IjsgZWNobwogIHByaW50ZiAlYiAiJHJlYWRlcnMiOyBlY2hvCiAgZ2V0dGV4dCAi
-b3Igb25lIG9mIHRoZSBzdXBwb3J0ZWQgaGFyZCBzeW50aGVzaXplcnM6IjsgZWNobwogIGVj
-aG8gIiRoYXJkbGlzdCIKICBnZXR0ZXh0ICdvciB0eXBlICAic3BlYWstd2l0aCBub25lIiB0
-byBtdXRlIGFsbCBzY3JlZW4gcmVhZGVycy4nOyBlY2hvCiAgZWNobwogIGV4aXQKfQp0b19s
-b3dlcigpIHsKZWNobyAiJDEifHRyICdbOnVwcGVyOl0nICdbOmxvd2VyOl0nCn0KQVJHVU1F
-TlQ9IiQodG9fbG93ZXIgIiQxIikiCmlmIFsgJCMgLW5lIDEgXTsgdGhlbiB1c2FnZTsgZmkK
-aWYgWyAhICIkQVJHVU1FTlQiID0gIiRuMSIgXSAmJiBcCiAgIFsgISAiJEFSR1VNRU5UIiA9
-ICIkbjIiIF0gJiYgXAogICBbICEgIiRBUkdVTUVOVCIgPSAiJG4zIiBdICYmIFwKICAgISBl
-Y2hvICIkaGFyZGxpc3QifCBncmVwIC1xdyAiJEFSR1VNRU5UIiAmJiBcCiAgIFsgISAiJEFS
-R1VNRU5UIiA9ICJub25lIiBdOyB0aGVuCglwcmludGYgJyVzJyAiJEFSR1VNRU5UICIKCWdl
-dHRleHQgImlzIG5vdCBhIHZhbGlkIGFyZ3VtZW50IG9mIHRoaXMgY29tbWFuZC4iOyBlY2hv
-Cgl1c2FnZQoJZXhpdApmaQojIFdlIGZpcnN0IGNoZWNrIHdoaWNoIGNvbnNvbGUgc2NyZWVu
-IHJlYWRlciBpcyBhbHJlYWR5IHJ1bm5pbmcsIGlmIGFueS4KRkVOUklSPSJuIgpTUEVFQ0hE
-VVA9Im4iCkVTUEVBS1VQPSJuIgpbICEgIiQocHMgLUMgZmVucmlyIC0tbm9oZWFkZXJzfHdj
-IC1sKSIgPSAiMCIgXSAmJiBGRU5SSVI9InkiCmlmIFsgLWYgL3N5cy9hY2Nlc3NpYmlsaXR5
-L3NwZWFrdXAvc3ludGggXTsgdGhlbgoJU1BLU1lOVEg9IiQoY2F0IC9zeXMvYWNjZXNzaWJp
-bGl0eS9zcGVha3VwL3N5bnRoKSIKCWlmIFsgIiRTUEtTWU5USCIgPSAic29mdCIgXTsgdGhl
-biAKCQlbICEgIiQocHMgLUMgc3BlZWNoZC11cCAtLW5vaGVhZGVyc3x3YyAtbCkiID0gIjAi
-IF0gJiYgU1BFRUNIRFVQPSJ5IgoJCVsgISAiJChwcyAtQyBlc3BlYWt1cCAtLW5vaGVhZGVy
-c3x3YyAtbCkiID0gIjAiIF0gJiYgRVNQRUFLVVA9InkiCgkJZmkKCWVsc2UKCSMgJEhBUkQg
-aXMgdGhlIG5hbWUgb2YgdGhlIHNwZWFrdXAgZHJpdmVyIGZvciB0aGUgaGFyZCBzeW50aGVz
-aXplciBjdXJyZW50bHkgaW4gdXNlCgkjIGNhc2Ugb2NjdXJyaW5nCglIQVJEPSIkU1BLU1lO
-VEgiCmZpCiMgSWYgYSBoYXJkIHN5bnRoIGlzIGluIHVzZSBpdHMgbmFtZSAiJEhBUkQiIGhh
-cyBiZWVuIHN0b3JlZCBpbiAvZXRjL3NwZWFrdXAuY29uZiB3aGVyZQojIHdlIG5lZWQgCiMg
-dXNlIGEgc29mdCBzeW50aCBpbnN0ZWFkIGlmIHdpc2hlZCwgYnV0IHdlIG5lZWQgdG8gcmVz
-dG9yZSBpdCBpZiB0aGUKIyB1c2VyIGRvZXMgbm90IHdhbnQgYSBwZXJtYW5lbnQgY2hhbmdl
-LgppZiBbIC1mIC9ldGMvc3BlYWt1cC5jb25mIF07IHRoZW4KIyBzaGVsbGNoZWNrIHNvdXJj
-ZT0vZGV2L251bGwKCS4gL2V0Yy9zcGVha3VwLmNvbmYKZmkKY2FzZSAkQVJHVU1FTlQgaW4K
-CWVzcGVha3VwKQoJCVsgISAteCAvdXNyL2Jpbi9lc3BlYWt1cCBdICYmIGdldHRleHQgImVz
-cGVha3VwIGlzIG5vdCBpbnN0YWxsZWQuIiAmJiBlY2hvICYmIGV4aXQKCQlbICIkRVNQRUFL
-VVAiID0gInkiIF0gJiYgZ2V0dGV4dCAiZXNwZWFrdXAgaXMgYWxyZWFkeSBzdGFydGVkLiIg
-JiYgZWNobyAmJiBleGl0CgkJWyAiJEZFTlJJUiIgPSAieSIgXSAmJiBzaCAvZXRjL3JjLmQv
-cmMuZmVucmlyIHN0b3AKCQlbICIkU1BFRUNIRFVQIiA9ICJ5IiBdICYmIHNoIC9ldGMvcmMu
-ZC9yYy5zcGVlY2hkLXVwIHN0b3AKCQllY2hvICIkY29uZm5vdGUiID4gL2V0Yy9zcGVha3Vw
-LmNvbmYKCQllY2hvICJoYXJkPW5vbmUiID4+IC9ldGMvc3BlYWt1cC5jb25mCgkJCgkJc2gg
-L2V0Yy9yYy5kL3JjLmVzcGVha3VwIHN0YXJ0CgkJc2xlZXAgMQoJCWdldHRleHQgIlNob3Vs
-ZCBlc3BlYWt1cCBiZSBhbHNvIHN0YXJ0ZWQgYXQgbmV4dCBib290PyBbWS9uXSAiCgkJcmVh
-ZCAtciBBTlNXRVIKCQlpZiBbICEgIiQodG9fbG93ZXIgIiRBTlNXRVIiKSIgPSAibiIgXTsg
-dGhlbgoJCQljaG1vZCA3NTUgL2V0Yy9yYy5kL3JjLmVzcGVha3VwCgkJCVsgLWYgL2V0Yy9y
-Yy5kL3JjLnNwZWVjaGQtdXAgXSAmJiBjaG1vZCA2NDQgL2V0Yy9yYy5kL3JjLnNwZWVjaGQt
-dXAKCQkJWyAtZiAvZXRjL3JjLmQvcmMuZmVucmlyIF0gJiYgY2htb2QgNjQ0IC9ldGMvcmMu
-ZC9yYy5mZW5yaXIKCQkJZ2V0dGV4dCAiRG9uZS4iCgkJCWVjaG8KCQllbGlmIFsgIiRIQVJE
-IiBdOyB0aGVuCgkJCWVjaG8gIiRjb25mbm90ZSIgPiAvZXRjL3NwZWFrdXAuY29uZgoJCQll
-Y2hvIGhhcmQ9IiRIQVJEIiA+PiAvZXRjL3NwZWFrdXAuY29uZgoJCWZpCgk7OwoJc3BlZWNo
-ZC11cCkKCQlbICEgLXggL3Vzci9iaW4vc3BlZWNoZC11cCBdICYmIGdldHRleHQgInNwZWVj
-aGQtdXAgaXMgbm90IGluc3RhbGxlZC4iICYmIGVjaG8gJiYgZXhpdAoJCVsgIiRTUEVFQ0hE
-VVAiID0gInkiIF0gJiYgZ2V0dGV4dCAic3BlZWNoZC11cCBpcyBhbHJlYWR5IHN0YXJ0ZWQu
-IiAmJiBlY2hvICYmIGV4aXQKCQlbICIkRkVOUklSIiA9ICJ5IiBdICAmJiBzaCAvZXRjL3Jj
-LmQvcmMuZmVucmlyIHN0b3AKCQlbICIkRVNQRUFLVVAiID0gInkiIF0gJiYgc2ggL2V0Yy9y
-Yy5kL3JjLmVzcGVha3VwIHN0b3AKCQllY2hvICIkY29uZm5vdGUiID4gL2V0Yy9zcGVha3Vw
-LmNvbmYKCQllY2hvICJoYXJkPW5vbmUiID4+IC9ldGMvc3BlYWt1cC5jb25mCgkJc2ggL2V0
-Yy9yYy5kL3JjLnNwZWVjaGQtdXAgc3RhcnQKCQlzbGVlcCAxCgkJZ2V0dGV4dCAiU2hvdWxk
-IHNwZWVjaGQtdXAgYmUgYWxzbyBzdGFydGVkIGF0IG5leHQgYm9vdD8gW1kvbl0gIgoJCXJl
-YWQgLXIgQU5TV0VSCgkJaWYgWyAhICIkKHRvX2xvd2VyICIkQU5TV0VSIikiID0gIm4iIF07
-IHRoZW4KCQkJWyAtZiAvZXRjL3JjLmQvcmMuZXNwZWFrdXAgXSAmJiBjaG1vZCA2NDQgL2V0
-Yy9yYy5kL3JjLmVzcGVha3VwCgkJCVsgLWYgL2V0Yy9yYy5kL3JjLmZlbnJpciBdICYmIGNo
-bW9kIDY0NCAvZXRjL3JjLmQvcmMuZmVucmlyCgkJCWNobW9kIDc1NSAvZXRjL3JjLmQvcmMu
-c3BlZWNoZC11cAoJCQlnZXR0ZXh0ICJEb25lLiIKCQkJZWNobwoJCWVsaWYgWyAiJEhBUkQi
-IF07IHRoZW4KCQkJZWNobyAiJGNvbmZub3RlIiA+IC9ldGMvc3BlYWt1cC5jb25mCgkJCWVj
-aG8gaGFyZD0iJEhBUkQiID4+IC9ldGMvc3BlYWt1cC5jb25mCgkJZmkKCTs7CglmZW5yaXIp
-CgkJWyAhIC14IC91c3IvYmluL2ZlbnJpciBdICYmIGdldHRleHQgImZlbnJpciBpcyBub3Qg
-aW5zdGFsbGVkLiIgJiYgZWNobyAmJiBleGl0CgkJWyAiJEZFTlJJUiIgPSAieSIgXSAmJiBn
-ZXR0ZXh0ICJmZW5yaXIgaXMgYWxyZWFkeSBzdGFydGVkLiIgJiYgZWNobyAmJiBleGl0CgkJ
-WyAiJFNQRUVDSERVUCIgPSAieSIgXSAmJiBzaCAvZXRjL3JjLmQvcmMuc3BlZWNoZC11cCBz
-dG9wCgkJWyAiJEVTUEVBS1VQIiA9ICJ5IiBdICYmIHNoIC9ldGMvcmMuZC9yYy5lc3BlYWt1
-cCBzdG9wCgkJWyAiJFNQS1NZTlRIIiBdICYmIGVjaG8gbm9uZSA+IC9zeXMvYWNjZXNzaWJp
-bGl0eS9zcGVha3VwL3N5bnRoCgkJZWNobyAiJGNvbmZub3RlIiA+IC9ldGMvc3BlYWt1cC5j
-b25mCgkJZWNobyAiaGFyZD1ub25lIiA+PiAvZXRjL3NwZWFrdXAuY29uZgoJCXNoIC9ldGMv
-cmMuZC9yYy5mZW5yaXIgc3RhcnQKCQlzbGVlcCAxCgkJY2xlYXIKCQlnZXR0ZXh0ICJTaG91
-bGQgZmVucmlyIGJlIGFsc28gc3RhcnRlZCBhdCBuZXh0IGJvb3Q/IFtZL25dICIKCQlyZWFk
-IC1yIEFOU1dFUgoJCWlmIFsgISAiJCh0b19sb3dlciAiJEFOU1dFUiIpIiA9ICJuIiBdOyB0
-aGVuCgkJCVsgLWYgL2V0Yy9yYy5kL3JjLmVzcGVha3VwIF0gJiYgY2htb2QgNjQ0IC9ldGMv
-cmMuZC9yYy5lc3BlYWt1cAoJCQlbIC1mIC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwIF0gJiYg
-Y2htb2QgNjQ0IC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwCgkJCWNobW9kIDc1NSAvZXRjL3Jj
-LmQvcmMuZmVucmlyCgkJCWdldHRleHQgIkRvbmUuIgoJCQllY2hvCgkJZWxpZiBbICIkSEFS
-RCIgXTsgdGhlbgoJCQllY2hvICIkY29uZm5vdGUiID4gL2V0Yy9zcGVha3VwLmNvbmYKCQkJ
-ZWNobyBoYXJkPSIkSEFSRCIgPj4gL2V0Yy9zcGVha3VwLmNvbmYKCQlmaQoJOzsKCW5vbmUp
-CgkJWyAiJEZFTlJJUiIgPSAieSIgXSAmJiBzaCAvZXRjL3JjLmQvcmMuZmVucmlyIHN0b3AK
-CQlbICIkRVNQRUFLVVAiID0gInkiIF0gJiYgc2ggL2V0Yy9yYy5kL3JjLmVzcGVha3VwIHN0
-b3AKCQlbICIkU1BFRUNIRFVQIiA9ICJ5IiBdICYmIHNoIC9ldGMvcmMuZC9yYy5zcGVlY2hk
-LXVwIHN0b3AKCQlbICEgIiRTUEtTWU5USCIgPSAiIiBdICYmIGVjaG8gbm9uZSA+IC9zeXMv
-YWNjZXNzaWJpbGl0eS9zcGVha3VwL3N5bnRoCgkJZ2V0dGV4dCAiRG8geW91IGFsc28gd2Fu
-dCBhIG11dGUgY29uc29sZSBhdCBuZXh0IGJvb3Q/IFtZL25dICIKCQlyZWFkIC1yIEFOU1dF
-UgoJCWlmIFsgISAiJCh0b19sb3dlciAiJEFOU1dFUiIpIiA9ICJuIiBdOyB0aGVuCgkJCVsg
-LWYgL2V0Yy9yYy5kL3JjLmVzcGVha3VwIF0gJiYgY2htb2QgNjQ0IC9ldGMvcmMuZC9yYy5l
-c3BlYWt1cAoJCQlbIC1mIC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwIF0gJiYgY2htb2QgNjQ0
-IC9ldGMvcmMuZC9yYy5zcGVlY2hkLXVwCgkJCVsgLWYgL2V0Yy9yYy5kL3JjLmZlbnJpciBd
-ICYmIGNobW9kIDY0NCAvZXRjL3JjLmQvcmMuZmVucmlyCgkJCWVjaG8gIiRjb25mbm90ZSIg
-PiAvZXRjL3NwZWFrdXAuY29uZgoJCQllY2hvICJoYXJkPW5vbmUiID4+IC9ldGMvc3BlYWt1
-cC5jb25mCgkJCWdldHRleHQgIk9LIjsgZWNobwoJCWZpCgk7OwoJKikKCQlbICIkRkVOUklS
-IiA9ICJ5IiBdICYmIHNoIC9ldGMvcmMuZC9yYy5mZW5yaXIgc3RvcAoJCVsgIiRFU1BFQUtV
-UCIgPSAieSIgXSAmJiBzaCAvZXRjL3JjLmQvcmMuZXNwZWFrdXAgc3RvcAoJCVsgIiRTUEVF
-Q0hEVVAiID0gInkiIF0gJiYgc2ggL2V0Yy9yYy5kL3JjLnNwZWVjaGQtdXAgc3RvcAoJCWlm
-ICEgbW9kcHJvYmUgInNwZWFrdXBfJEFSR1VNRU5UIiAyPi9kZXYvbnVsbDsgdGhlbgoJCQln
-ZXR0ZXh0ICJVbmFibGUgdG8gc3dpdGNoIHRvIHRoZSBzeW50aGVzaXplciAiCgkJCWVjaG8g
-InNwZWFrdXBfJEFSR1VNRU5UIgoJCQllY2hvCgkJCWV4aXQgMQoJCWZpCgkJZWNobyAiJEFS
-R1VNRU5UIiAgPiAvc3lzL2FjY2Vzc2liaWxpdHkvc3BlYWt1cC9zeW50aAoJCWdldHRleHQg
-IkRvIHlvdSBhbHNvIHdhbnQgdG8gdXNlIHRoaXMgaGFyZCBzeW50aGVzaXplciBhdCBuZXh0
-IGJvb3Q/IFtZL25dICIKCQlyZWFkIC1yIEFOU1dFUgoJCWlmIFsgISAiJCh0b19sb3dlciAi
-JEFOU1dFUiIpIiA9ICJuIiBdOyB0aGVuCgkJCVsgLWYgL2V0Yy9yYy5kL3JjLnNwZWVjaGQt
-dXAgXSAmJiBjaG1vZCA2NDQgL2V0Yy9yYy5kL3JjLnNwZWVjaGQtdXAKCQkJWyAtZiAvZXRj
-L3JjLmQvcmMuZmVucmlyIF0gJiYgY2htb2QgNjQ0IC9ldGMvcmMuZC9yYy5mZW5yaXIKCQkJ
-WyAtZiAvZXRjL3JjLmQvcmMuZXNwZWFrdXAgXSAmJiBjaG1vZCA2NDQgL2V0Yy9yYy5kL3Jj
-LmVzcGVha3VwCgkJCWVjaG8gIiRjb25mbm90ZSIgPiAvZXRjL3NwZWFrdXAuY29uZgoJCQll
-Y2hvICJoYXJkPSRBUkdVTUVOVCIgPj4gL2V0Yy9zcGVha3VwLmNvbmYKCQkJZ2V0dGV4dCAi
-RG9uZS4iOyBlY2hvCgkJZmkKZXNhYwo=
-
---------------dliOmTV2Yf4vhzN9xx8caKna--
+> ---
+>  drivers/accessibility/speakup/speakup_soft.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/accessibility/speakup/speakup_soft.c b/drivers/accessibility/speakup/speakup_soft.c
+> index 6d446824677b..6549bfb96e7f 100644
+> --- a/drivers/accessibility/speakup/speakup_soft.c
+> +++ b/drivers/accessibility/speakup/speakup_soft.c
+> @@ -446,7 +446,7 @@ static int softsynth_adjust(struct spk_synth *synth, struct st_var_header *var)
+>  	if (var->var_id != PUNC_LEVEL)
+>  		return 0;
+>  
+> -	/* We want to set the the speech synthesis punctuation level
+> +	/* We want to set the speech synthesis punctuation level
+>  	 * accordingly, so it properly tunes speaking A_PUNC characters */
+>  	var_data = var->data;
+>  	if (!var_data)
+> -- 
+> 2.31.1
 
