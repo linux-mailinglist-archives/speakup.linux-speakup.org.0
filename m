@@ -1,46 +1,56 @@
-Return-Path: <speakup+bounces-1474-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1469-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 34470CDF4D4
-	for <lists+speakup@lfdr.de>; Sat, 27 Dec 2025 08:04:30 +0100 (CET)
-Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=lKL6UjRY;
-	dkim-atps=neutral
+	by mail.lfdr.de (Postfix) with ESMTP id 44779CDF4A8
+	for <lists+speakup@lfdr.de>; Sat, 27 Dec 2025 06:32:16 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1766812935;
+	bh=nXINjaasO90eKnX9r/aExRYw790eBHvpCBDWjq9h6VE=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Post:List-Help:
+	 List-Subscribe:From;
+	b=HHwEV0f7OTEt40cZB01+TZRdDKqJUmR1IMCRHjlP0MLnowuzYSC6JiQvTVQ7p9Mbe
+	 /fSO6Pfh88yDKjUSvheRnVVRi+t+A5ddj+IKfle52PAlerWOuni4A9Hq/Dlv1xpwA3
+	 YSKtIbJaWGSlErzFFmGcFLdJoMkVmfs+q+HUCwbU=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 4E2673817FB; Sat, 27 Dec 2025 02:04:29 -0500 (EST)
+	id 9F9CB38157C; Sat, 27 Dec 2025 00:22:15 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1766812935;
+	bh=nXINjaasO90eKnX9r/aExRYw790eBHvpCBDWjq9h6VE=;
+	h=Date:From:To:Subject:List-Id:List-Unsubscribe:List-Post:List-Help:
+	 List-Subscribe:From;
+	b=HHwEV0f7OTEt40cZB01+TZRdDKqJUmR1IMCRHjlP0MLnowuzYSC6JiQvTVQ7p9Mbe
+	 /fSO6Pfh88yDKjUSvheRnVVRi+t+A5ddj+IKfle52PAlerWOuni4A9Hq/Dlv1xpwA3
+	 YSKtIbJaWGSlErzFFmGcFLdJoMkVmfs+q+HUCwbU=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 301DE380E03
-	for <lists+speakup@lfdr.de>; Sat, 27 Dec 2025 02:04:29 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 7A5E3380979
+	for <lists+speakup@lfdr.de>; Sat, 27 Dec 2025 00:22:15 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
-Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 341C8380668; Fri, 26 Dec 2025 21:07:45 -0500 (EST)
-Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 88D0838057C
-	for <speakup@linux-speakup.org>; Fri, 26 Dec 2025 21:07:44 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gregn.net; s=default;
-	t=1766801262; bh=H87hTUu3w0Tq3b8qJxaynXdD4Wdwhrd7ynPJRpfpT4s=;
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1766812929;
+	bh=nXINjaasO90eKnX9r/aExRYw790eBHvpCBDWjq9h6VE=;
 	h=Date:From:To:Subject:From;
-	b=lKL6UjRYH76CwgV/0LR4DrHklxbH70vvDEFtPrz09UVxXyJ3zHnC/nU5pw55h1hRG
-	 TIahCfMb0dlGsueLZaOyI0CPO4YkWSZ+NM6t+H4j/LHXnXjg7P2BNJvrj5f5ztvGjd
-	 JEKAsWkoGYWzxOBxuFM7Z+JCd7fVQhDRaV5UO/wZVXiSypMtRZDLqafFFM+Jzahzkb
-	 uz4p2B8cV7Rq7HgaF7f49ctaZMRGW/18DAjvQcDJj2/98bHNkbihkyqady599aDS12
-	 3oCx7NWGgQdtk2UdUC3BOvBsHg8bAsoVGorYHGUyE5UcR4FwI8h5j9Q8MbFhn+PnJJ
-	 6gJI+o66HUtUw==
-Received: from vbox.gregn.net (unknown [IPv6:2607:fb91:4f8d:c97b:1a63:6a99:124c:cfcb])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
-	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id E5CA73C19
-	for <speakup@linux-speakup.org>; Fri, 26 Dec 2025 18:07:41 -0800 (PST)
-Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 4E230C1E4; Fri, 26 Dec 2025 19:07:41 -0700 (MST)
-Date: Fri, 26 Dec 2025 19:07:41 -0700
-From: Gregory Nowak <greg@gregn.net>
+	b=yfa1cFxXNcE7ROajMF4stDf3bE9o/81B2+OV5+I9HZKEaSNtai99DE6YiECvv7SCw
+	 x18C3IXr3Gi2rpWom6m070G3HsC4g00o3gmOanRC/FrrhJ72G3oGM/BMyQ+q8i1PUN
+	 SBHbdNjLODTgNkyZYyV92rmgebfBtvPrElDeoVvE=
+Received: by befuddled.reisers.ca (Postfix, from userid 65534)
+	id A006E380969; Sat, 27 Dec 2025 00:22:09 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1766812929;
+	bh=nXINjaasO90eKnX9r/aExRYw790eBHvpCBDWjq9h6VE=;
+	h=Date:From:To:Subject:From;
+	b=yfa1cFxXNcE7ROajMF4stDf3bE9o/81B2+OV5+I9HZKEaSNtai99DE6YiECvv7SCw
+	 x18C3IXr3Gi2rpWom6m070G3HsC4g00o3gmOanRC/FrrhJ72G3oGM/BMyQ+q8i1PUN
+	 SBHbdNjLODTgNkyZYyV92rmgebfBtvPrElDeoVvE=
+Received: from localhost (localhost [127.0.0.1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 80AC338092A
+	for <speakup@linux-speakup.org>; Sat, 27 Dec 2025 00:22:09 -0500 (EST)
+Date: Sat, 27 Dec 2025 00:22:09 -0500 (EST)
+From: Kirk Reiser <kirk@reisers.ca>
 To: speakup@linux-speakup.org
-Subject: who authored speakup_set_locale
-Message-ID: <aU8_bb5DiRWFHODE@gregn.net>
+Subject: testing this very bad boy
+Message-ID: <8bc5253d-1849-f79b-6943-c13a8e397b4f@reisers.ca>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -49,32 +59,11 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-X-PGP-Key: http://www.gregn.net/pubkey.asc
-X-Virus-Scanned: clamav-milter 1.0.9 at vserver
-X-Virus-Status: Clean
+Content-Type: text/plain; format=flowed; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi all.
+I don't think freeing null pointers is a good thing in today's day.
 
-We have an issue opened on the linux-speakup github page about the
-license of speakup-tools. Both speakupconf and talkwith are under gpl
-v2 or later. The author and license of speakup_set_locale are
-unknown. Is the author of speakup_set_locale here, or does someone
-here know for sure who wrote that script?
+   me
 
-The open issue is at:
-
-<https://github.com/linux-speakup/speakup-tools/issues/1>
-
-Greg
-
-
--- 
-web site: http://www.gregn.net
-gpg public key: http://www.gregn.net/pubkey.asc
-
---
-Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
