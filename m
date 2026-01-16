@@ -1,79 +1,49 @@
-Return-Path: <speakup+bounces-1501-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1502-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 5F572D14B5D
-	for <lists+speakup@lfdr.de>; Mon, 12 Jan 2026 19:18:20 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 1F9EED33048
+	for <lists+speakup@lfdr.de>; Fri, 16 Jan 2026 16:03:45 +0100 (CET)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm3 header.b=U2onWRAp;
-	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm2 header.b=cRIl1+Qx;
+	dkim=pass (1024-bit key; unprotected) header.d=a11y.nyc header.i=@a11y.nyc header.a=rsa-sha256 header.s=dkim header.b=qvpnGaU3;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id DB892381921; Mon, 12 Jan 2026 13:09:19 -0500 (EST)
+	id 8E09A381951; Fri, 16 Jan 2026 09:54:44 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id BDC04381825
-	for <lists+speakup@lfdr.de>; Mon, 12 Jan 2026 13:09:19 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 6F9DC3817DC
+	for <lists+speakup@lfdr.de>; Fri, 16 Jan 2026 09:54:44 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CCACB3818A4; Mon, 12 Jan 2026 13:09:13 -0500 (EST)
-Received: from fout-a6-smtp.messagingengine.com (fout-a6-smtp.messagingengine.com [103.168.172.149])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id CB8AE381825
-	for <speakup@linux-speakup.org>; Mon, 12 Jan 2026 13:09:12 -0500 (EST)
-Received: from phl-compute-10.internal (phl-compute-10.internal [10.202.2.50])
-	by mailfout.phl.internal (Postfix) with ESMTP id 23DD3EC021F
-	for <speakup@linux-speakup.org>; Mon, 12 Jan 2026 13:09:08 -0500 (EST)
-Received: from phl-frontend-04 ([10.202.2.163])
-  by phl-compute-10.internal (MEProxy); Mon, 12 Jan 2026 13:09:08 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	hubert-humphrey.com; h=cc:content-type:content-type:date:date
-	:from:from:in-reply-to:message-id:mime-version:reply-to:subject
-	:subject:to:to; s=fm3; t=1768241348; x=1768327748; bh=IkNgtIYP7B
-	+CZboHhB9ZcJhCbsFo76sWjtVPmyWoJLU=; b=U2onWRApI9Z4m2t+rNr2VnL632
-	F7PCYtJm6aUq6EUyV8GrKaH0FSPvuFmDMaI9VsCYgtZWN6y0/gIvrASKd1Ji4P+k
-	Hw9VfweO90VLHK8NpalJMNxR9vNNJYLRmzaVWiKhl1Ym+DE40SRqP5qYSyaWGkd8
-	Yg4U7K0PBJ4gHG/Hp9674NDsO0FOoj9M/MkMq1vpz8e/LIjehhn3iqqn+C8fR2IB
-	LLL6+4G3vDo0gvCFZESEJn3UhsqbTxvsX3lkOJTbBVChrvjL3ATRo/j5Hd/f7dFx
-	SWmn24aJkGIydPYF06eMMOFphe2kkRxeQ9Byx0b6OL7LIE2/UX84+C4Uspzw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
-	messagingengine.com; h=cc:content-type:content-type:date:date
-	:feedback-id:feedback-id:from:from:in-reply-to:message-id
-	:mime-version:reply-to:subject:subject:to:to:x-me-proxy
-	:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; t=1768241348; x=
-	1768327748; bh=IkNgtIYP7B+CZboHhB9ZcJhCbsFo76sWjtVPmyWoJLU=; b=c
-	RIl1+QxzDLVSDNo1GlYC/bAIyUo70ZD+eGsaQBU8w+vqyZuEmmrJHiyurQ9W8Awn
-	9b6sMNqlNN4Xz9HZ86Ra2uCv978Z42a8dIrGZLUTG1+WSTu+X6EhzpCAPzJh3nC5
-	7oetyKCC/Nv1qLmFjLC/tIpthHabLmLWJY0bla1HaWioIymGS7gxs+3CReciQJgI
-	UTiZomEbmjntGUpgJzS6vpvuE1O0ienqHXRW1KwM7/zNugorUBN2bZ/N4V+mItBI
-	E6/UjUiEzgFBNDG53JJFNpUOzfVfOT0i2FyvxxV7s+hCtpGrbAzOxibmuKpPZrCy
-	thAlrUik5eRPvxALxcKzw==
-X-ME-Sender: <xms:wzhlacF94_cBaq5tpMfaHTaYQqZnWf9d_-2V9fxFszRO7rm0mYPb4w>
-    <xme:wzhlabOCYa0gmB7PiFOIOxO4cymp-38mNsHiuD36poid8A-MRFk7j4BOU39Adcf0R
-    0q9cHATOQpueDRB3U-fac1GxgTv9ccJoH_UAUZmMQfgF4W2SHVMoA>
-X-ME-Received: <xmr:wzhlaRNFpi3TRnJFtuUmqXVp46VCou5j1LYrO2dbM6PZOZ5BUSaPkByxRfH4>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeefgedrtddtgdduudekudegucetufdoteggodetrf
-    dotffvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfurfetoffkrfgpnffqhgenuceu
-    rghilhhouhhtmecufedttdenucenucfjughrpeffhffvuffkgggtsehttdertddttddvne
-    cuhfhrohhmpeevhhhimhgvucfjrghrthcuoegthhhimhgvsehhuhgsvghrthdqhhhumhhp
-    hhhrvgihrdgtohhmqeenucggtffrrghtthgvrhhnpeejffffudejleeuffeivedtieette
-    dtkefggfekvdeujeetkedtheefhffhvdetkeenucevlhhushhtvghrufhiiigvpedtnecu
-    rfgrrhgrmhepmhgrihhlfhhrohhmpegthhhimhgvsehhuhgsvghrthdqhhhumhhphhhrvg
-    ihrdgtohhmpdhnsggprhgtphhtthhopedupdhmohguvgepshhmthhpohhuthdprhgtphht
-    thhopehsphgvrghkuhhpsehlihhnuhigqdhsphgvrghkuhhprdhorhhg
-X-ME-Proxy: <xmx:wzhlaa6P_p8GqudiJ4rrA17OmLBltXBALTNR9daGXV_B46e-nau9_Q>
-    <xmx:wzhlaV7sA6kQXbOyCc0Et9jBFEOqzuN3mrEBlsBKgYK1B266Jhl51Q>
-    <xmx:wzhlaS2ZJVCdhAhqR8T_ANb_-2ita18OtTjtZ645Gqqqz-vbbLXuTg>
-    <xmx:wzhlaZWbQcTTX2DN_v7WkOdGDbugQDeU64cG6fhKcCOCgtn2N96ybg>
-    <xmx:xDhlaT-_wTBLQtHyYEl-Kg00GrLYBMOUpXWuUmaxnjILJ6Bv_uWkv4vo>
-Feedback-ID: ia9b947fb:Fastmail
-Received: by mail.messagingengine.com (Postfix) with ESMTPA for
- <speakup@linux-speakup.org>; Mon, 12 Jan 2026 13:09:07 -0500 (EST)
-Date: Mon, 12 Jan 2026 10:09:06 -0800 (PST)
-From: Chime Hart <chime@hubert-humphrey.com>
-X-X-Sender: chime@chime.lan
+	id 7F26E3817F9; Fri, 16 Jan 2026 09:54:38 -0500 (EST)
+Received: from a11y.nyc (opera.a11y.nyc [66.228.34.147])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 0FFBE3817D8
+	for <speakup@linux-speakup.org>; Fri, 16 Jan 2026 09:54:38 -0500 (EST)
+Received: from opera.a11y.nyc (localhost [IPv6:::1])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (prime256v1) server-digest SHA256)
+	(No client certificate requested)
+	by a11y.nyc (Postfix) with ESMTPS id 9C8C2FA0D2
+	for <speakup@linux-speakup.org>; Fri, 16 Jan 2026 09:54:35 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=a11y.nyc; s=dkim;
+	t=1768575275;
+	h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+	 to:to:cc:mime-version:mime-version:content-type:content-type;
+	bh=xMQDR+il+55vPJHfE2t8KqFz/IElaxwhOkr/pqN8sJU=;
+	b=qvpnGaU3APsNKpZf0rbYuE33SkUNomu+EbihRx7b9q8ayMD8pWv5K4FYKmRh+GhxFKHe6M
+	3jKxyIBG09SYGH1rrN3sXGoofiAryFTGWzLyHZnJbRL3RCAvkoL6/S39BTjWnLkPxAdnU9
+	6zRxRnRwCfS3hKJHA9U8BdSaCI1O+KI=
+DMARC-Filter: OpenDMARC Filter v1.4.2 a11y.nyc 9C8C2FA0D2
+Authentication-Results: a11y.nyc; dmarc=pass (p=reject dis=none) header.from=a11y.nyc
+Authentication-Results: a11y.nyc; spf=pass smtp.mailfrom=a11y.nyc
+Received: (from janina@localhost)
+	by opera.a11y.nyc (8.18.1/8.16.1/Submit) id 60GEsYD8408199
+	for speakup@linux-speakup.org; Fri, 16 Jan 2026 09:54:34 -0500
+Date: Fri, 16 Jan 2026 09:54:34 -0500
+From: Janina Sajka <janina@a11y.nyc>
 To: speakup@linux-speakup.org
-Subject: Ajusting Repeating Charactors?
-Message-ID: <85030c18-3fb6-31d2-cf83-31c358c21ead@hubert-humphrey.com>
+Subject: Espeakup & Espeak Upgrades Broke Latency
+Message-ID: <aWpRKvcLNxlSLfbU@A11y.NYC>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -82,13 +52,52 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+X-Operating-System: Linux opera.a11y.nyc 6.18.3-100.fc42.x86_64
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hi All: With my DecTalk I am examining a Usenet binary group in TRN. Lately 
-when I hit a space-bar for the next thread or group of messages, an only way I 
-can get Speakup to read is with numpad+8  I remember Vocal-Eyes had a setting 
-to ajust repeating items, but I have no idea if Speakup has? Thanks so much in 
-advance
-Chime
+Hi All:
+
+For some years I've been on Espeakup 0.8, avoiding upgrades because
+upgrades failed to get speech working
+properly, either with Espeak or Espeak-ng. Meanwhile, Speakup was
+working brilliantly with the older Espeakup/Espeak version, so I had
+left welll enough alone.
+
+Until this last week. I decided to try again. To my surprise and delight
+I now have Espeak-NG and Espeakup fully updated. Almost everything is
+fine--except for Speakup's shut up commands! Not stopping speech
+sufficiently quickly is a very big deal, as we all know.
+
+I'm using a wired USB keyboard. Ctrl might shut speech up immediately,
+or it might take a second or so. Numpad enter is the same. Maybe it
+works as it should, but maybe it's very laggy. Likewise the various
+numpad screen review keys. Same story all around.
+
+My first instinct was to return everything to previous versions, because
+laser quick shutup is that important. Unfortunately, restoring the old
+didn't fix things. I have the same behavior, regardless whether I'm on
+Espeak or Espeak-NG, and regardless the version of Espeakup.
+
+So, what might possibly be the story here? Needless to say I want
+Speakup's brilliant responsiveness back. But what's broken? And how to
+fix?
+
+All suggestions most welcome and greatly appreciated!
+
+Best,
+Janina
+
+-- 
+
+Janina Sajka (she/her/hers)
+Accessibility Consultant https://linkedin.com/in/jsajka
+
+The World Wide Web Consortium (W3C), Web Accessibility Initiative (WAI)
+Co-Chair, Accessible Platform Architectures	http://www.w3.org/wai/apa
+
+Linux Foundation Fellow
+https://www.linuxfoundation.org/board-of-directors-2/
+
 
