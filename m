@@ -1,59 +1,51 @@
-Return-Path: <speakup+bounces-1513-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1514-lists+speakup=lfdr.de@linux-speakup.org>
 X-Original-To: lists+speakup@lfdr.de
 Delivered-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 36532D391A7
-	for <lists+speakup@lfdr.de>; Sun, 18 Jan 2026 00:27:57 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1768692476;
-	bh=L9OmoLItJ7+9h6gD7b1ODYsJRGgeZ4eVc6hvnfNrVhE=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
-	b=K9FlcknX6rTAsFt7H7eVAMRcyYtuYAl/XAVH7t2510LRhzuek2qv2NZ0pRv8Gto5O
-	 d28UCiIzQ+ZfV8WaQu/8pNN5zG02h14S6Zdv9fUV8y1Z3VuYflfBsyG+/49mrPNZh5
-	 8TOYymLLuztlTLO/D06L8nPu3PlAT5yC6PIXjzXk=
+	by mail.lfdr.de (Postfix) with ESMTP id E9288D39240
+	for <lists+speakup@lfdr.de>; Sun, 18 Jan 2026 03:37:37 +0100 (CET)
+Authentication-Results: befuddled.reisers.ca;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=AyAzH9O1;
+	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 6A7B538190F; Sat, 17 Jan 2026 18:27:56 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1768692476;
-	bh=L9OmoLItJ7+9h6gD7b1ODYsJRGgeZ4eVc6hvnfNrVhE=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
-	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
-	b=K9FlcknX6rTAsFt7H7eVAMRcyYtuYAl/XAVH7t2510LRhzuek2qv2NZ0pRv8Gto5O
-	 d28UCiIzQ+ZfV8WaQu/8pNN5zG02h14S6Zdv9fUV8y1Z3VuYflfBsyG+/49mrPNZh5
-	 8TOYymLLuztlTLO/D06L8nPu3PlAT5yC6PIXjzXk=
+	id 17B9A381901; Sat, 17 Jan 2026 21:37:37 -0500 (EST)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 498843817B9
-	for <lists+speakup@lfdr.de>; Sat, 17 Jan 2026 18:27:56 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id ED9493817B9
+	for <lists+speakup@lfdr.de>; Sat, 17 Jan 2026 21:37:36 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1768692470;
-	bh=L9OmoLItJ7+9h6gD7b1ODYsJRGgeZ4eVc6hvnfNrVhE=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
-	b=XZBhXS1+sFF40W/3GUXSCXZzIVr461r5NqqjOQkAOclILSQKuMmRTq/tHj/tFXp9H
-	 48sMc5fuBZPnQgIhT9ScMTGCCmh86aEFRqmL7UTMiWK+LrnDk06m5l5yxabQ3w/S1z
-	 5YyNERhZdJ7FvrHbNu+hZ6xx9DVc6YCGdvnN283c=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5F28D3817B8; Sat, 17 Jan 2026 18:27:50 -0500 (EST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
-	s=befuddled; t=1768692468;
-	bh=L9OmoLItJ7+9h6gD7b1ODYsJRGgeZ4eVc6hvnfNrVhE=;
-	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
-	b=ul0s73GbfS7pDknwGPnnHziwKDQQixNiKzsLfHE8AtFD3Nay+iIRKUaDoE7if48Bf
-	 muGVj1XPGDsNuXBed1daG48Zv2XAqXZQbAiJPBF7vM1BqHsRSghvYrOyDDAfuowTBG
-	 8rUXAAM9pJPjHtbgEVy55Xm8Q2eCoHwVWs14ooMA=
-Received: from localhost (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 4C14F3817B5;
-	Sat, 17 Jan 2026 18:27:48 -0500 (EST)
-Date: Sat, 17 Jan 2026 18:27:48 -0500 (EST)
-From: Kirk Reiser <kirk@reisers.ca>
-To: Gregory Nowak <greg@gregn.net>
-cc: Janina Sajka <janina@a11y.nyc>, speakup@linux-speakup.org
+	id 234083817B9; Sat, 17 Jan 2026 21:37:31 -0500 (EST)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 40DDE3817B4
+	for <speakup@linux-speakup.org>; Sat, 17 Jan 2026 21:37:30 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gregn.net; s=default;
+	t=1768703845; bh=3XWaLa7xUN1AMIa9i8aCfpQfzJ/VT6M8lQ+RxhEDFRo=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=AyAzH9O1KNZeziKDJDWnxlbDrjjrCWjjHdrwmmd5zKnCUQV4XH1ux7Ki0NaTHB/PG
+	 xouiFvC8nyEsLcuRR1UK+FCwOsy/jCI5mbWfbYiJtWgs2YJSB+AB4Dna21j9I1PJ8L
+	 vk8yjWPZN/LQvhWohAC7J/Vvy9XNxesXvLqWRVIfBXrZZdsJd0BHTONap2xKylaruo
+	 bNznPscKVoYby5zxtx9LsVlY1Ydf8rAr1jm/4E4zSeuVCLjgIsgLUFzOFxwN174R3m
+	 zfAqZx2xRX6/WQQ9GPKpO8LcXeHZZA9aXlpkYpj5EQft4bI8Z4cIrj6JmmryxpH6E2
+	 L/ZkH6/xN9COg==
+Received: from vbox.gregn.net (unknown [IPv6:2607:fb91:4f8d:c97b:14fd:2ee4:b7b8:49a3])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 34C803223;
+	Sat, 17 Jan 2026 18:37:25 -0800 (PST)
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 5989EC65A; Sat, 17 Jan 2026 19:37:24 -0700 (MST)
+Date: Sat, 17 Jan 2026 19:37:24 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: Kirk Reiser <kirk@reisers.ca>
+Cc: Janina Sajka <janina@a11y.nyc>, speakup@linux-speakup.org
 Subject: Re: Espeakup & Espeak Upgrades Broke Latency
-In-Reply-To: <aWrM5ulF9rgeEMRW@gregn.net>
-Message-ID: <470c3532-a524-5cdf-e351-38f5e8bd62e2@reisers.ca>
-References: <aWpRKvcLNxlSLfbU@A11y.NYC> <a004a67b-aa1b-4390-ad97-928e0dc680e2@reisers.ca> <aWrM5ulF9rgeEMRW@gregn.net>
+Message-ID: <aWxHZD6_uq52kCtm@gregn.net>
+References: <aWpRKvcLNxlSLfbU@A11y.NYC>
+ <a004a67b-aa1b-4390-ad97-928e0dc680e2@reisers.ca>
+ <aWrM5ulF9rgeEMRW@gregn.net>
+ <470c3532-a524-5cdf-e351-38f5e8bd62e2@reisers.ca>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -62,72 +54,57 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <470c3532-a524-5cdf-e351-38f5e8bd62e2@reisers.ca>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 1.4.3 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 
-Hello Greg and Jude, I'll try to address both posts in one.
+Kirk and all,
+as far as the latency issue, I find it interesting that downgrading
+espeakup/espeak-ng didn't resolve the issue for Janina. I'm wondering
+if it may be caused by intermediate software. None of my systems have
+pulseaudio, pipewire, or wire-plumber installed. I'm wondering if one
+or more of those packages could be causing the issue when upgraded? I
+believe wire-plumber is fairly new on the scene, so do those of you
+with the latency issue have it installed? If yes, does uninstalling
+wire-plumber fix it for you, assuming you don't need wire-plumber
+installed?
 
-You are correct about me using debian sid although I don't really
-think that is the issue. I am using all the same versions of debian on
-those boxes. I am running to other void linux systems which I do not
-have the espeakup issue on. One of the systems that does have the
-issue is a raspberry pi 4B although the others are desktops.
+The sound card espeakup uses is set in /etc/default/espeakup in
+debian, I don't know how that's set on arch. The key is to export the
+ALSA_CARD shell variable before starting espeakup.
 
-How did you figure out the frequency scaling problem Greg? I also guess I don't quite understand the issue?
+As far as the garbled speech during long reads issue, I stumbled on to
+the fix when playing with zenstates.py. Overclocking my CPU locks the
+frequency on all cores. When I do that, I can have speakup read as much
+text as I want as text scrolls on to the screen with no problems.
+This is also true if I simply just lock
+all cores at stock frequency without overclocking.
 
-   kirk
+Greg
 
-On Fri, 16 Jan 2026, Gregory Nowak wrote:
 
-> I'm not seeing latency issues with espeak/espeak-ng on machines
-> running devuan Daedalus, based on debian 12. I seem to recall Kirk is
-> running debian testing or unstable. Janina, what distribution are you
-> using?
->
-> I don't have anything running Devuan Excalibre yet. However, I don't
-> remember latency issues with espeakup/espeak-ng when I was testing
-> it. That was a couple of months ago though.
->
-> The garbled output when speech is long enough is due to frequency
-> scaling. Disable frequency scaling on your processor, and that issue
-> should go away, at the expense of your CPU always running at the same
-> speed. No one has yet figured out a way to cause this to happen
-> consistently, so until someone is able to, this won't get fixed.
->
-> Greg
->
->
-> On Fri, Jan 16, 2026 at 06:01:16PM -0500, Kirk Reiser wrote:
->> Hi Janina: Your question is very much a valid one. I was hoping
->> someone else would answer you and we might all benefit from a solid
->> answer.
->>
->> I use espeakup with espeak-ng on at least four computers and my
->> experience is that on a few it instantly flushes when a control or
->> another key is typed The exact reaction it was designed to be. But
->> more often than not on some computers it is not instantaneous and when
->> moving back across the screen with the review keys it becomes mushy
->> because the text sounds like it is all running together.
->>
->> The fact that I use debian on these boxes would somewhat seem to
->> indicate that the software should all be exactly the same but at las
->> it certainly doesn't seem so.
->>
->> Sometimes I can restart espeakup and it starts behaving itself
->> properly but other times theres no difference.
->>
->> Yes, it is very frustrating just like the jumbled speech towards the
->> bottom of the screen when you just allow the standard output to rattle
->> on.
->>
->> I'm sorry I don't have a nice answer for you but I wished to let you
->> know you are not alone with your experiences.
->>
->>   kirk
->>
->>
->>
->
->
->
+On Sat, Jan 17, 2026 at 06:27:48PM -0500, Kirk Reiser wrote:
+> Hello Greg and Jude, I'll try to address both posts in one.
+> 
+> You are correct about me using debian sid although I don't really
+> think that is the issue. I am using all the same versions of debian on
+> those boxes. I am running to other void linux systems which I do not
+> have the espeakup issue on. One of the systems that does have the
+> issue is a raspberry pi 4B although the others are desktops.
+> 
+> How did you figure out the frequency scaling problem Greg? I also guess I don't quite understand the issue?
+> 
+>   kirk
+> 
+
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
+
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
