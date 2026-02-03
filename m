@@ -1,44 +1,64 @@
-Return-Path: <speakup+bounces-1546-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1547-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id SLNmAqD/gWmYNgMAu9opvQ
-	(envelope-from <speakup+bounces-1546-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Tue, 03 Feb 2026 15:01:04 +0100
+	id WMjMMLwqgmnFPwMAu9opvQ
+	(envelope-from <speakup+bounces-1547-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Tue, 03 Feb 2026 18:05:00 +0100
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 36438DA4CE
-	for <lists+speakup@lfdr.de>; Tue, 03 Feb 2026 15:00:57 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTP id 8FEB7DC78B
+	for <lists+speakup@lfdr.de>; Tue, 03 Feb 2026 18:04:57 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1770138296;
+	bh=CG+dd9kGLG3P51JBET6YnBOYj5/jdYAvb5AiLxW0Erw=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=azr9j/31jLAfMNbxURIKC8gbeEZgxgmlGjN2IlvYpkeVgoiUuPaWrUrj1Eht4iDVE
+	 FWyoQWmO1UAznbfnOcKljPovSnhsRLbjIQ4UP+X8E13FzSPafeJ/Odajw7ccabxFrB
+	 FvcfqWSTdS9XJAfcmejpJj3SwaAV1plk66oFMwd0=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 205F13821BB; Tue, 03 Feb 2026 08:53:42 -0500 (EST)
+	id 1ED5A38191F; Tue, 03 Feb 2026 12:04:56 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1770138296;
+	bh=CG+dd9kGLG3P51JBET6YnBOYj5/jdYAvb5AiLxW0Erw=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:List-Id:
+	 List-Unsubscribe:List-Post:List-Help:List-Subscribe:From;
+	b=azr9j/31jLAfMNbxURIKC8gbeEZgxgmlGjN2IlvYpkeVgoiUuPaWrUrj1Eht4iDVE
+	 FWyoQWmO1UAznbfnOcKljPovSnhsRLbjIQ4UP+X8E13FzSPafeJ/Odajw7ccabxFrB
+	 FvcfqWSTdS9XJAfcmejpJj3SwaAV1plk66oFMwd0=
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 0E339381806
-	for <lists+speakup@lfdr.de>; Tue, 03 Feb 2026 08:53:42 -0500 (EST)
+	by befuddled.reisers.ca (Postfix) with ESMTP id EE98E381806
+	for <lists+speakup@lfdr.de>; Tue, 03 Feb 2026 12:04:55 -0500 (EST)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1770138290;
+	bh=CG+dd9kGLG3P51JBET6YnBOYj5/jdYAvb5AiLxW0Erw=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=Q5WUgoDqRP1yqOWSjylS+uLj+aPFtRni9Jx6xIQZ4G7sInNhn0vwEubYAs/bg8ydC
+	 c+KB7Z3aTPvNaW619zyMdusPd5bWWO8h+arxHKicT7IHO2wGOZ7iipFTAY1L7Td+wF
+	 tVTHzjMD0DEgbTOgEWwjxT6DKKkLHtnwMts+uGng=
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id E63BC38189F; Tue, 03 Feb 2026 08:53:38 -0500 (EST)
-Received: from a11y.nyc (opera.a11y.nyc [66.228.34.147])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id D3ACA38158A
-	for <speakup@linux-speakup.org>; Tue, 03 Feb 2026 08:53:38 -0500 (EST)
-Received: from opera.a11y.nyc (localhost [IPv6:::1])
-	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange x25519 server-signature ECDSA (prime256v1) server-digest SHA256)
-	(No client certificate requested)
-	by a11y.nyc (Postfix) with ESMTPS id 97DAFFA040
-	for <speakup@linux-speakup.org>; Tue, 03 Feb 2026 08:53:37 -0500 (EST)
-DMARC-Filter: OpenDMARC Filter v1.4.2 a11y.nyc 97DAFFA040
-Authentication-Results: a11y.nyc; dmarc=pass (p=reject dis=none) header.from=a11y.nyc
-Authentication-Results: a11y.nyc; spf=pass smtp.mailfrom=a11y.nyc
-Received: (from janina@localhost)
-	by opera.a11y.nyc (8.18.1/8.16.1/Submit) id 613Dra2X240514
-	for speakup@linux-speakup.org; Tue, 3 Feb 2026 08:53:36 -0500
-Date: Tue, 3 Feb 2026 08:53:36 -0500
-From: Janina Sajka <janina@a11y.nyc>
-To: speakup@linux-speakup.org
+	id 21D0238189F; Tue, 03 Feb 2026 12:04:50 -0500 (EST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=reisers.ca;
+	s=befuddled; t=1770138289;
+	bh=CG+dd9kGLG3P51JBET6YnBOYj5/jdYAvb5AiLxW0Erw=;
+	h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+	b=MUHYKaevmskVQ82tvQxzjXv14Ayq5OZBDv2v/GH+7/VvwiJBFFlfXERcIzUu4sWQQ
+	 2YgOn/rmU5heeK5Qi5SvKC/UzHcTLCVX7OXi3VpYNrDiGgVAo/xCJavc0NdN1QUras
+	 8pXIomLsRASoyKRJk3FQMFpb7BO5gWtc6Z0AyB60=
+Received: from localhost (localhost [127.0.0.1])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 5337838158A;
+	Tue, 03 Feb 2026 12:04:49 -0500 (EST)
+Date: Tue, 3 Feb 2026 12:04:49 -0500 (EST)
+From: Kirk Reiser <kirk@reisers.ca>
+To: Janina Sajka <janina@a11y.nyc>
+cc: speakup@linux-speakup.org
 Subject: Re: Mourning Didier Spaier
-Message-ID: <aYH94ERshKQMrOIz@A11y.NYC>
-References: <aX-8TUlSXevxffOL@gregn.net>
+In-Reply-To: <aYH94ERshKQMrOIz@A11y.NYC>
+Message-ID: <d5543615-3d43-6169-8ce4-18dba36d1b80@reisers.ca>
+References: <aX-8TUlSXevxffOL@gregn.net> <aYH94ERshKQMrOIz@A11y.NYC>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -47,80 +67,74 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-In-Reply-To: <aX-8TUlSXevxffOL@gregn.net>
-X-Operating-System: Linux opera.a11y.nyc 6.18.7-200.fc43.x86_64
+Content-Type: text/plain; charset=US-ASCII; format=flowed
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 X-Rspamd-Server: lfdr
-X-Spamd-Result: default: False [1.81 / 15.00];
-	DMARC_POLICY_REJECT(2.00)[a11y.nyc : No valid SPF, No valid DKIM,reject];
+X-Spamd-Result: default: False [-0.39 / 15.00];
+	R_DKIM_ALLOW(-0.20)[reisers.ca:s=befuddled];
 	MAILLIST(-0.18)[generic];
-	MIME_GOOD(-0.10)[text/plain];
 	RCVD_NO_TLS_LAST(0.10)[];
+	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
-	ARC_NA(0.00)[];
-	RCPT_COUNT_ONE(0.00)[1];
+	RCVD_COUNT_THREE(0.00)[4];
+	RCPT_COUNT_TWO(0.00)[2];
 	R_SPF_NA(0.00)[no SPF record];
-	MISSING_XM_UA(0.00)[];
-	RSPAMD_URIBL_FAIL(0.00)[eu.org:query timed out];
-	ASN_FAIL(0.00)[127.184.248.206.asn.rspamd.com:server fail];
+	ARC_NA(0.00)[];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
+	DMARC_NA(0.00)[reisers.ca];
+	TO_DN_SOME(0.00)[];
 	MIME_TRACE(0.00)[0:+];
-	TAGGED_RCPT(0.00)[speakup];
-	R_DKIM_NA(0.00)[];
+	TAGGED_FROM(0.00)[bounces-1547-lists,speakup=lfdr.de];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	FORGED_SENDER_MAILLIST(0.00)[];
-	FROM_NEQ_ENVFROM(0.00)[janina@a11y.nyc,speakup@linux-speakup.org];
+	NEURAL_HAM(-0.00)[-0.999];
+	FROM_NEQ_ENVFROM(0.00)[kirk@reisers.ca,speakup@linux-speakup.org];
 	FROM_HAS_DN(0.00)[];
+	DKIM_TRACE(0.00)[reisers.ca:+];
 	MID_RHS_MATCH_FROM(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[6];
-	TO_DN_NONE(0.00)[];
-	TAGGED_FROM(0.00)[bounces-1546-lists,speakup=lfdr.de];
-	NEURAL_HAM(-0.00)[-0.988];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[linkedin.com:url,linuxfoundation.org:url,gregn.net:url,A11y.NYC:mid,www.eu.org:url]
-X-Rspamd-Queue-Id: 36438DA4CE
+	ASN(0.00)[asn:5645, ipnet:206.248.128.0/18, country:CA];
+	TAGGED_RCPT(0.00)[speakup];
+	MISSING_XM_UA(0.00)[];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[lwn.net:url,eu.org:email,gregn.net:url,www.eu.org:url,befuddled.reisers.ca:helo,befuddled.reisers.ca:rdns]
+X-Rspamd-Queue-Id: 8FEB7DC78B
 X-Rspamd-Action: no action
 
-I am saddened by this news. Didier was indeed a frequent contributor
-here. But perhaps more specifically, he was always quick to respond when
-people needed help, and to respond directly and graciously. I know I've
-benefited from his responses, and I will miss that grace because of his
-passing.
+Yes, he will be missed. It's always hard to hear of ones passing when
+you've known them forever. As time goes bye one misses more and more
+folks.
 
-Thanks for the news, Gregory.
+   Kirk
 
-Warmly,
-Janina
+On Tue, 3 Feb 2026, Janina Sajka wrote:
 
-Gregory Nowak writes:
-> Hello all.
-> 
-> Since Didier was a frequent contributor to this group, I thought I
-> would post this here.
-> 
-> <https://lwn.net/Articles/1056384/>
-> 
-> Greg
-> 
-> 
-> -- 
-> web site: http://www.gregn.net
-> gpg public key: http://www.gregn.net/pubkey.asc
-> 
-> --
-> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
-
--- 
-
-Janina Sajka (she/her)
-https://linkedin.com/in/jsajka
-
-Digital Accessibility Standards Lead,
-Level Access https://www.levelaccess.com/
-
-W3C Accessible Platform Architectures	(APA) CoChair,
-http://www.w3.org/wai/apa
-
-Linux Foundation Fellow
-https://www.linuxfoundation.org/about/leadership#team-bio-janina-sajka
-
+> I am saddened by this news. Didier was indeed a frequent contributor
+> here. But perhaps more specifically, he was always quick to respond when
+> people needed help, and to respond directly and graciously. I know I've
+> benefited from his responses, and I will miss that grace because of his
+> passing.
+>
+> Thanks for the news, Gregory.
+>
+> Warmly,
+> Janina
+>
+> Gregory Nowak writes:
+>> Hello all.
+>>
+>> Since Didier was a frequent contributor to this group, I thought I
+>> would post this here.
+>>
+>> <https://lwn.net/Articles/1056384/>
+>>
+>> Greg
+>>
+>>
+>> --
+>> web site: http://www.gregn.net
+>> gpg public key: http://www.gregn.net/pubkey.asc
+>>
+>> --
+>> Free domains: http://www.eu.org/ or mail dns-manager@EU.org
+>
+>
 
