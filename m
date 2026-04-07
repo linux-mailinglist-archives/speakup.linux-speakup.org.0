@@ -1,54 +1,53 @@
-Return-Path: <speakup+bounces-1582-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1583-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id IHdsGg/l02n/ngcAu9opvQ
-	(envelope-from <speakup+bounces-1582-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Mon, 06 Apr 2026 18:53:35 +0200
+	id oO3fKDt51GlduQcAu9opvQ
+	(envelope-from <speakup+bounces-1583-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Tue, 07 Apr 2026 05:25:47 +0200
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3DEFC3A574B
-	for <lists+speakup@lfdr.de>; Mon, 06 Apr 2026 18:53:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 1E3103A9676
+	for <lists+speakup@lfdr.de>; Tue, 07 Apr 2026 05:25:47 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=a+FBKIMk;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=NCMpvaDr;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 2C0DD382621; Mon, 06 Apr 2026 12:53:34 -0400 (EDT)
+	id D5687382603; Mon, 06 Apr 2026 23:18:14 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 010073825B7
-	for <lists+speakup@lfdr.de>; Mon, 06 Apr 2026 12:53:34 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B5AE638219F
+	for <lists+speakup@lfdr.de>; Mon, 06 Apr 2026 23:18:14 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id AD5A83825B7; Mon, 06 Apr 2026 12:53:27 -0400 (EDT)
-Received: from mail97.out.titan.email (mail97.out.titan.email [3.219.11.208])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id C0AA8381854
-	for <speakup@linux-speakup.org>; Mon, 06 Apr 2026 12:53:26 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4fqFl35CXYz8sXk;
-	Mon,  6 Apr 2026 16:53:19 +0000 (UTC)
-X-Titan-User-Uid: eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..jJEuW2Qxka4BS9G7.Of3sBhWjiSVwKFjpwR2iVs81JuP2B9oSJu5wx2bwT1KwzhmFbdvCdpSA4aDwdPRmJHYv-pMndSNRVLIge8d9enmBHImPa2oEA-p0vqw.HDbpMfrWxfoghsj3xO-jyw
-DKIM-Signature: a=rsa-sha256; bh=urwB752QOA7bCIZh5E9sBoWfBdWXqgupHUv4wnJXbnQ=;
-	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=subject:from:to:mime-version:message-id:references:date:reply-to:from:to:subject:date:message-id:reply-to:references:cc:in-reply-to;
-	q=dns/txt; s=titan1; t=1775494399; v=1;
-	b=a+FBKIMkh8bywy2Urli3YV7G087kty4Z4kZYHCJpCmcKmlHMAxfAKQ/R8BcVyuujRbAFZ6z7
-	nIcjkujR3OdaW5U0+FKASKcCKfht4lDXQ0ZWfw0bkP+LMNILDJX0mJjOy5uXgX3orP/otJ4UezG
-	9Dgq3aplV6BoLruaODyy2zW8=
-X-AuthUser: glenn@ervin.email
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4fqFl3262fz8sXq;
-	Mon,  6 Apr 2026 16:53:19 +0000 (UTC)
-Message-ID: <112901dcc5e5$df7ac560$01ffa8c0@nucwin10>
-Reply-To: "K0LNY ??" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY ??" <glenn@ervin.email>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>,
-	"John G. Heim" <jheim@math.wisc.edu>
-References: <0b15c93b-1af7-4046-ace8-5a6057f22dd3@math.wisc.edu>
-Subject: Re: Rewriting docs: Live distros in the FAQ
-Date: Mon, 6 Apr 2026 11:53:19 -0500
-Organization: Home
+	id 946233825BC; Mon, 06 Apr 2026 23:18:08 -0400 (EDT)
+Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 32023381833
+	for <speakup@linux-speakup.org>; Mon, 06 Apr 2026 23:18:08 -0400 (EDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gregn.net; s=default;
+	t=1775531881; bh=Iw9KPyb7DmqRk9ole1RAH8r5+yMRZKyFWBZoapptCtM=;
+	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+	b=NCMpvaDr0fEQaHohuQvAJBtJzyRwupSGCMfpevcW1VJVpjTKX7Z9RV8wj+Yb6CE0v
+	 8pYbnU5sK+YBG/ExMfsWRHFQI5i4ozxjtjIvVrExzBLGeGdoVsFBpWKf24VzCYaHGq
+	 8bTMWXPxyx9Z4qJenFKTTdg8OMDLFTUamsQPm/Vy2Z28dg0NrgrilDugPsBu+LLy0o
+	 9fenrJrl2a/3p9C63u0S5mm1sprHJNHEafHtnUSzkpf7N30gdfnXWkzRG58+w5K0Z9
+	 W1PtMoqNEdarUGRQbwF4f87qVgE8c1BnmpJVWzqz91FhDv3Y+zJvV0JfR3yJF8QyKk
+	 z9yLGZJTNoGsg==
+Received: from vbox.gregn.net (unknown [IPv6:2607:fb91:4f09:8aec:80b9:c71b:c484:eb09])
+	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
+	(No client certificate requested)
+	by vserver.gregn.net (Postfix) with ESMTPSA id CFB732A96;
+	Mon,  6 Apr 2026 20:18:00 -0700 (PDT)
+Received: by vbox.gregn.net (Postfix, from userid 1000)
+	id 0D0ADC257; Mon,  6 Apr 2026 20:18:00 -0700 (MST)
+Date: Mon, 6 Apr 2026 20:18:00 -0700
+From: Gregory Nowak <greg@gregn.net>
+To: "John G. Heim" <jheim@math.wisc.edu>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: Rewriting docs: Configuration howto
+Message-ID: <adR3aEMAkJ_8Iekc@gregn.net>
+References: <6cfbf1a1-34d0-47cb-99e7-d1797005d7d9@math.wisc.edu>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -57,82 +56,79 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="UTF-8"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1775494399519129525.4746.5182326097211864626@prod-use1-smtp-out1008.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=CP0amxrD c=1 sm=1 tr=0 ts=69d3e4ff
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=IkcTkHD0fZMA:10 a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=qPKtzgQbAAAA:8
-	a=z50feZZFy3vYbzBMO2MA:9 a=QEXdDO2ut3YA:10 a=OTAqJWGB1laLS8RTg9aS:22
-	a=P3K-DvM3-jjlTNsN-mCd:22 a=NWVoK91CQySWRX1oVYDe:22
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+In-Reply-To: <6cfbf1a1-34d0-47cb-99e7-d1797005d7d9@math.wisc.edu>
+X-PGP-Key: http://www.gregn.net/pubkey.asc
+X-Virus-Scanned: clamav-milter 1.4.3 at vserver
+X-Virus-Status: Clean
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
-X-Spamd-Result: default: False [2.12 / 15.00];
-	OLD_X_MAILER(2.00)[];
-	MID_RHS_NOT_FQDN(0.50)[];
-	R_DKIM_ALLOW(-0.20)[t39smtp-sign001.email:s=titan1];
+X-Spamd-Result: default: False [-0.89 / 15.00];
+	DMARC_POLICY_ALLOW(-0.50)[gregn.net,none];
+	R_DKIM_ALLOW(-0.20)[gregn.net:s=default];
 	MAILLIST(-0.18)[generic];
 	MIME_GOOD(-0.10)[text/plain];
 	RCVD_NO_TLS_LAST(0.10)[];
 	HAS_LIST_UNSUB(-0.01)[];
-	RCPT_COUNT_TWO(0.00)[2];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
-	TO_DN_ALL(0.00)[];
-	R_SPF_NA(0.00)[no SPF record];
-	DMARC_NA(0.00)[ervin.email];
-	ARC_NA(0.00)[];
-	TAGGED_FROM(0.00)[bounces-1582-lists,speakup=lfdr.de];
 	MIME_TRACE(0.00)[0:+];
-	HAS_ORG_HEADER(0.00)[];
-	HAS_X_PRIO_THREE(0.00)[3];
+	DKIM_TRACE(0.00)[gregn.net:+];
+	RCPT_COUNT_TWO(0.00)[2];
+	TAGGED_FROM(0.00)[bounces-1583-lists,speakup=lfdr.de];
+	ARC_NA(0.00)[];
+	TO_DN_ALL(0.00)[];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	HAS_REPLYTO(0.00)[glenn@ervin.email];
-	RCVD_COUNT_FIVE(0.00)[6];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[wisc.edu:email,t39smtp-sign001.email:dkim,befuddled.reisers.ca:helo,befuddled.reisers.ca:rdns];
-	FROM_NEQ_ENVFROM(0.00)[glenn@ervin.email,speakup@linux-speakup.org];
-	FROM_HAS_DN(0.00)[];
-	DKIM_TRACE(0.00)[t39smtp-sign001.email:+];
-	NEURAL_HAM(-0.00)[-1.000];
-	FORGED_SENDER_MAILLIST(0.00)[];
-	TAGGED_RCPT(0.00)[speakup];
+	R_SPF_NA(0.00)[no SPF record];
+	MISSING_XM_UA(0.00)[];
 	ASN(0.00)[asn:5645, ipnet:206.248.128.0/18, country:CA];
+	RCVD_COUNT_FIVE(0.00)[6];
+	FROM_NEQ_ENVFROM(0.00)[greg@gregn.net,speakup@linux-speakup.org];
+	FROM_HAS_DN(0.00)[];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	NEURAL_HAM(-0.00)[-1.000];
+	TAGGED_RCPT(0.00)[speakup];
+	MID_RHS_MATCH_FROM(0.00)[];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
-	REPLYTO_EQ_FROM(0.00)[]
-X-Rspamd-Queue-Id: 3DEFC3A574B
+	DBL_BLOCKED_OPENRESOLVER(0.00)[gregn.net:dkim,gregn.net:mid,gregn.net:url,www.eu.org:url,eu.org:email]
+X-Rspamd-Queue-Id: 1E3103A9676
 X-Rspamd-Action: no action
 X-Rspamd-Server: lfdr
 
-The raspberry PI images have a light image that has no GUI, and I think this 
-would be relevant to that, as well as server images.
-Glenn
------ Original Message ----- 
-From: "John G. Heim" <jheim@math.wisc.edu>
-To: "Speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Monday, April 6, 2026 11:28 AM
-Subject: Rewriting docs: Live distros in the FAQ
+I would suggest also covering speakup-tools:
 
+<https://github.com/linux-speakup/speakup-tools>
 
-The Speakup FAQ used to have some stuff in it about using rawrite and
-boot images. I cut all that out. But it occurs to me that I think I
-should instead mention using live images like GRML.
+Greg
+ 
 
-Does anybody use Speakup in some other live image other than GRML? If
-not, I'm just going to write a few lines talking about GRML and
-directing the reader to the docs for GRML itself. You don't want to
-rewrite somebody else's docs in your FAQ. That's a good way to get
-obsolete/incorrect info in your FAQ.
+On Mon, Apr 06, 2026 at 10:44:48AM -0500, John G. Heim wrote:
+> I figure I'll write one document on how to setup and/or configure Speakup (a
+> howto) and another on how to use it (user's guide). Below is the outline I
+> put together for the configuration  howto:
+> 
+> 
+> 1. Configure Speakup with a software speech synthesizer
+> 1.1 espeakup
+> 1.2  speechd-up
+> 2. Configure Speakup with a hardware speech synthesizer
+> 2.1 Using modprobe
+> 2.1.1 List of supported hardware synths
+> 2.1.2 Kernel module parameters
+> 2.2 Using initramfs (serial synths only)
+> 2.3 Using udev rules (USB synths only)
+> 2.4 Via custom kernel (serial synths only)
+> 3. Changing settings on the fly
+> 
+> 
+> Anything else I need to cover in the configuration guide?
+> 
+> 
+> 
 
-Note: I would imagine some people use Ubuntu for their live image but
-then you probably don't use Speakup -- so that's not relevant. That
-would belong in the Orca FAQ.
+-- 
+web site: http://www.gregn.net
+gpg public key: http://www.gregn.net/pubkey.asc
 
-
-
+--
+Free domains: http://www.eu.org/ or mail dns-manager@EU.org
 
