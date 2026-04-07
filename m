@@ -1,53 +1,53 @@
-Return-Path: <speakup+bounces-1583-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1584-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id oO3fKDt51GlduQcAu9opvQ
-	(envelope-from <speakup+bounces-1583-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Tue, 07 Apr 2026 05:25:47 +0200
+	id mIH2F+x31GkxuQcAu9opvQ
+	(envelope-from <speakup+bounces-1584-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Tue, 07 Apr 2026 05:20:12 +0200
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 1E3103A9676
-	for <lists+speakup@lfdr.de>; Tue, 07 Apr 2026 05:25:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id BC4B23A960A
+	for <lists+speakup@lfdr.de>; Tue, 07 Apr 2026 05:20:10 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=NCMpvaDr;
+	dkim=pass (2048-bit key; unprotected) header.d=gregn.net header.i=@gregn.net header.a=rsa-sha256 header.s=default header.b=q5/OJOl7;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id D5687382603; Mon, 06 Apr 2026 23:18:14 -0400 (EDT)
+	id 635A9382745; Mon, 06 Apr 2026 23:20:05 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id B5AE638219F
-	for <lists+speakup@lfdr.de>; Mon, 06 Apr 2026 23:18:14 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 436EA3825BE
+	for <lists+speakup@lfdr.de>; Mon, 06 Apr 2026 23:20:05 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 946233825BC; Mon, 06 Apr 2026 23:18:08 -0400 (EDT)
+	id 1844C3825F7; Mon, 06 Apr 2026 23:19:59 -0400 (EDT)
 Received: from vserver.gregn.net (vserver.gregn.net [174.136.110.154])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 32023381833
-	for <speakup@linux-speakup.org>; Mon, 06 Apr 2026 23:18:08 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id CD59C3825BE
+	for <speakup@linux-speakup.org>; Mon, 06 Apr 2026 23:19:58 -0400 (EDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gregn.net; s=default;
-	t=1775531881; bh=Iw9KPyb7DmqRk9ole1RAH8r5+yMRZKyFWBZoapptCtM=;
+	t=1775531995; bh=Pc01aKwoZU+KzntbPAjuhNITjibz6EQVWthuc9M6f40=;
 	h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
-	b=NCMpvaDr0fEQaHohuQvAJBtJzyRwupSGCMfpevcW1VJVpjTKX7Z9RV8wj+Yb6CE0v
-	 8pYbnU5sK+YBG/ExMfsWRHFQI5i4ozxjtjIvVrExzBLGeGdoVsFBpWKf24VzCYaHGq
-	 8bTMWXPxyx9Z4qJenFKTTdg8OMDLFTUamsQPm/Vy2Z28dg0NrgrilDugPsBu+LLy0o
-	 9fenrJrl2a/3p9C63u0S5mm1sprHJNHEafHtnUSzkpf7N30gdfnXWkzRG58+w5K0Z9
-	 W1PtMoqNEdarUGRQbwF4f87qVgE8c1BnmpJVWzqz91FhDv3Y+zJvV0JfR3yJF8QyKk
-	 z9yLGZJTNoGsg==
+	b=q5/OJOl7SumVGSdT1lLz4aR/Q/L/25QqOcJDiPbdwOTmXIdiy2+YX+qvsVCvjiiWZ
+	 3eKjBqFj4ueBTSkVWJbAPjsaDFJyzhZt4yF1IeU/lAjbr+npM1FgWRYF9ArOj4OblJ
+	 ZJweJGCqfxSA4XGZ+NdFsM+QJZfBd7jHqqEMewxOr8JoP/kUPAddkwZZnSwFIVD2Xk
+	 oMuYszL9W9KZ3mxSkrqjmldbF9l40PmpBHo0YQA76azotKutgn1+cXh7oi0wVoyLph
+	 zVlkhnYJbGGuNY6tckmV77Q1oPXCY/gfJbxMfJ16uKtdNlqbXDWKjMCQu6IqU3Z5ER
+	 EVc9SWUwfuKRA==
 Received: from vbox.gregn.net (unknown [IPv6:2607:fb91:4f09:8aec:80b9:c71b:c484:eb09])
 	(using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
-	 key-exchange X25519 server-signature ECDSA (secp384r1) server-digest SHA384)
+	 key-exchange X25519 server-signature ECDSA (secp384r1))
 	(No client certificate requested)
-	by vserver.gregn.net (Postfix) with ESMTPSA id CFB732A96;
-	Mon,  6 Apr 2026 20:18:00 -0700 (PDT)
+	by vserver.gregn.net (Postfix) with ESMTPSA id 0425C2A9C;
+	Mon,  6 Apr 2026 20:19:55 -0700 (PDT)
 Received: by vbox.gregn.net (Postfix, from userid 1000)
-	id 0D0ADC257; Mon,  6 Apr 2026 20:18:00 -0700 (MST)
-Date: Mon, 6 Apr 2026 20:18:00 -0700
+	id 4C35CC257; Mon,  6 Apr 2026 20:19:54 -0700 (MST)
+Date: Mon, 6 Apr 2026 20:19:54 -0700
 From: Gregory Nowak <greg@gregn.net>
 To: "John G. Heim" <jheim@math.wisc.edu>
 Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: Re: Rewriting docs: Configuration howto
-Message-ID: <adR3aEMAkJ_8Iekc@gregn.net>
-References: <6cfbf1a1-34d0-47cb-99e7-d1797005d7d9@math.wisc.edu>
+Subject: Re: Rewriting docs: Live distros in the FAQ
+Message-ID: <adR32lZjzJrmAhFo@gregn.net>
+References: <0b15c93b-1af7-4046-ace8-5a6057f22dd3@math.wisc.edu>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -56,10 +56,9 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain; charset=iso-8859-1
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: 8bit
-In-Reply-To: <6cfbf1a1-34d0-47cb-99e7-d1797005d7d9@math.wisc.edu>
+In-Reply-To: <0b15c93b-1af7-4046-ace8-5a6057f22dd3@math.wisc.edu>
 X-PGP-Key: http://www.gregn.net/pubkey.asc
 X-Virus-Scanned: clamav-milter 1.4.3 at vserver
 X-Virus-Status: Clean
@@ -74,7 +73,7 @@ X-Spamd-Result: default: False [-0.89 / 15.00];
 	MIME_TRACE(0.00)[0:+];
 	DKIM_TRACE(0.00)[gregn.net:+];
 	RCPT_COUNT_TWO(0.00)[2];
-	TAGGED_FROM(0.00)[bounces-1583-lists,speakup=lfdr.de];
+	TAGGED_FROM(0.00)[bounces-1584-lists,speakup=lfdr.de];
 	ARC_NA(0.00)[];
 	TO_DN_ALL(0.00)[];
 	FORGED_RECIPIENTS_MAILLIST(0.00)[];
@@ -89,38 +88,32 @@ X-Spamd-Result: default: False [-0.89 / 15.00];
 	TAGGED_RCPT(0.00)[speakup];
 	MID_RHS_MATCH_FROM(0.00)[];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[gregn.net:dkim,gregn.net:mid,gregn.net:url,www.eu.org:url,eu.org:email]
-X-Rspamd-Queue-Id: 1E3103A9676
+	DBL_BLOCKED_OPENRESOLVER(0.00)[gregn.net:dkim,gregn.net:mid,gregn.net:url,devuan.org:url,www.eu.org:url,eu.org:email]
+X-Rspamd-Queue-Id: BC4B23A960A
 X-Rspamd-Action: no action
 X-Rspamd-Server: lfdr
 
-I would suggest also covering speakup-tools:
+I use speakup in minimal-live as well:
 
-<https://github.com/linux-speakup/speakup-tools>
+<https://www.devuan.org/get-devuan>
 
 Greg
- 
 
-On Mon, Apr 06, 2026 at 10:44:48AM -0500, John G. Heim wrote:
-> I figure I'll write one document on how to setup and/or configure Speakup (a
-> howto) and another on how to use it (user's guide). Below is the outline I
-> put together for the configuration  howto:
+
+On Mon, Apr 06, 2026 at 11:28:37AM -0500, John G. Heim wrote:
+> The Speakup FAQ used to have some stuff in it about using rawrite and boot
+> images. I cut all that out. But it occurs to me that I think I should
+> instead mention using live images like GRML.
 > 
+> Does anybody use Speakup in some other live image other than GRML? If not,
+> I'm just going to write a few lines talking about GRML and directing the
+> reader to the docs for GRML itself. You don't want to rewrite somebody
+> else's docs in your FAQ. That's a good way to get obsolete/incorrect info in
+> your FAQ.
 > 
-> 1. Configure Speakup with a software speech synthesizer
-> 1.1 espeakup
-> 1.2  speechd-up
-> 2. Configure Speakup with a hardware speech synthesizer
-> 2.1 Using modprobe
-> 2.1.1 List of supported hardware synths
-> 2.1.2 Kernel module parameters
-> 2.2 Using initramfs (serial synths only)
-> 2.3 Using udev rules (USB synths only)
-> 2.4 Via custom kernel (serial synths only)
-> 3. Changing settings on the fly
-> 
-> 
-> Anything else I need to cover in the configuration guide?
+> Note: I would imagine some people use Ubuntu for their live image but then
+> you probably don't use Speakup -- so that's not relevant. That would belong
+> in the Orca FAQ.
 > 
 > 
 > 
