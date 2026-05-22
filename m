@@ -1,72 +1,76 @@
-Return-Path: <speakup+bounces-1605-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1606-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id 8CnKJSZiDmpG+QUAu9opvQ
-	(envelope-from <speakup+bounces-1605-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Thu, 21 May 2026 03:38:46 +0200
+	id gCfjARN8EGrdXwYAu9opvQ
+	(envelope-from <speakup+bounces-1606-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Fri, 22 May 2026 17:53:55 +0200
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 92E7A59DB86
-	for <lists+speakup@lfdr.de>; Thu, 21 May 2026 03:38:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 186C25B7340
+	for <lists+speakup@lfdr.de>; Fri, 22 May 2026 17:53:53 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (2048-bit key; unprotected) header.d=math.wisc.edu header.i=@math.wisc.edu header.a=rsa-sha256 header.s=selector1 header.b=K3TKbvzj;
+	dkim=pass (2048-bit key; unprotected) header.d=math.wisc.edu header.i=@math.wisc.edu header.a=rsa-sha256 header.s=selector1 header.b=enYiVAlP;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id BF2D1382774; Wed, 20 May 2026 21:30:44 -0400 (EDT)
+	id CD00C382766; Fri, 22 May 2026 11:48:12 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 9998A38158A
-	for <lists+speakup@lfdr.de>; Wed, 20 May 2026 21:30:44 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id A93653825FD
+	for <lists+speakup@lfdr.de>; Fri, 22 May 2026 11:48:12 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 5EB56382149; Wed, 20 May 2026 21:30:38 -0400 (EDT)
+	id 602CE3825FD; Fri, 22 May 2026 11:48:06 -0400 (EDT)
 Received: from mx0b-007b0c01.pphosted.com (mx0b-007b0c01.pphosted.com [205.220.177.71])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 483F138158A
-	for <speakup@linux-speakup.org>; Wed, 20 May 2026 21:30:36 -0400 (EDT)
-Received: from pps.filterd (m0316044.ppops.net [127.0.0.1])
-	by mx0b-007b0c01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64L1MT8g1231214
-	for <speakup@linux-speakup.org>; Wed, 20 May 2026 20:30:25 -0500
-Received: from dm5pr21cu001.outbound.protection.outlook.com (mail-centralusazon11011068.outbound.protection.outlook.com [52.101.62.68])
-	by mx0b-007b0c01.pphosted.com (PPS) with ESMTPS id 4e9kv0sk9m-1
-	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT)
-	for <speakup@linux-speakup.org>; Wed, 20 May 2026 20:30:24 -0500 (CDT)
+	by befuddled.reisers.ca (Postfix) with ESMTPS id 2A4A03817B7
+	for <speakup@linux-speakup.org>; Fri, 22 May 2026 11:48:05 -0400 (EDT)
+Received: from pps.filterd (m0316042.ppops.net [127.0.0.1])
+	by mx0b-007b0c01.pphosted.com (8.18.1.11/8.18.1.11) with ESMTP id 64M90KwY666156;
+	Fri, 22 May 2026 10:47:57 -0500
+Received: from bn1pr04cu002.outbound.protection.outlook.com (mail-eastus2azon11010049.outbound.protection.outlook.com [52.101.56.49])
+	by mx0b-007b0c01.pphosted.com (PPS) with ESMTPS id 4ea6fnf6ah-1
+	(version=TLSv1.3 cipher=TLS_AES_256_GCM_SHA384 bits=256 verify=NOT);
+	Fri, 22 May 2026 10:47:57 -0500 (CDT)
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
- b=jTJe0aVBXpdUtyiEY3NNVE6iYVrgn7j9st6fEO2JuNw9ejCQlJ4jdrb56DRSxMSLnk2nEDiQaYQADq+2nqP7q0oxF6/dPY4VY1hDDAuIrl6eXrv0d+5KhjaXVLCh6apPsfF6BPxCIMqrwDxbw0BBt0vhYuI/keetLwuZw0Ow7lX0wFPv7/WgwbaxZbVuo8ntWQjjZM4Dh3BawojOCS5jcGYtPuo2mJFXn/AWaBLj/8TYHofqdvd9+zKAxft1GoADsmlWnS9Ia/7KoI+bIy/Jk5uEHf/LWhwUBf1srSNLg3OfBgz2/31XYtidwLEgtxlid2TPq1QCe/LiPCEk64zO/g==
+ b=N060YWni5QLjYv394uORwQxOUC206q+oUf9tfS/Wb6daJc9v1p80FsylbatWH4BLglfFImJy+4OGRVqjer9tAxJJ6Q0Go20EZEiznPIyN8sS/e9kKnE8xGLkRl8lgeKih7H3EoNOB3Udk2b/x5ODbivsv3bSGGwLRSqNdkwH+f8tRHnc1vIzNMcKYoiobwQ0VWgiZeyNtN+n1xGSJYpBa7SPr8wJlP8ZrJEl3Q6Y4CBh4RcBDEsydJs1Mo9mcKPi6DIYJXnyqSU6525JOLaVn4yFWgzrblzAnE4E4wB29g3UNSs6WVk8O7ghj8ylLUBLRLx7fJpmZDQTZvpVVVUu6w==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
  s=arcselector10001;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
- bh=KhtDkAxWpflIQp7rnuXNZw9impuLR817JK95cMJzPxY=;
- b=nzqrPfbKNKZlT5nl0XQgeFNWnxtCDrwQ32zQ8fYVkuhPpIOSVnVAgji11EiNqhdmOCbXXmm+uoNkE8cqLfj/ySK9dg6tSo2jbl+GdWfkKxp5VU/29soQ0U5BW47vhl7yvR64uohKXto/QJwzG5/L2fXrs3Kei5lhjLfYFb9uYfrMpAdBIv9qfLs7w14s0+im6r5B8rmkBzqirB26HfFpMFRjBMDdpcVLec4k2/0TnBCCo4m+niuYjV26Ptabf5TXo5/WBDjRFjAQDySZ0maKo5NFSIFIN46mb1qX4tXMjOwt/shMjCZOdepoD+vJpKBBMB+xa1TLV4IW/Kb6jTAAbA==
+ bh=oD4v/65A2ud9qrAzUgYhGvNXDH1uIMwpafXIQskA+uY=;
+ b=jzo1eyes6ksG2SxDrIRpOCnTNHuK6MTj2uGT3n3/4Lmgirzf+sbN/gz8KUgS00NdYxE2lN7PNBhkPalgVU8we7WItNBzyBO1z+1Pe5gjvYzariBNYsid1Ewn6RVNc6yLbYTwyGpkbIfghgNSsPdJ+ASmZ5+fUXQz910iZ+LYhbVUfYcLUyYCASObaz3cYaW3KvuV8pwiG8MmNfxcHLKmaWqncK7Xu/vwZwyLeGgXfDmZCRuzfxxZOnkka6wZC+WH2iAzsZ12k0sjJkENbp88orDXICEEG1ZPcFnznNs4fYIHp7vItzWwCC3qPurpP/pm04KDQRqqhiTT/s88B3cQXg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=math.wisc.edu; dmarc=pass action=none
  header.from=math.wisc.edu; dkim=pass header.d=math.wisc.edu; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=math.wisc.edu;
  s=selector1;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=KhtDkAxWpflIQp7rnuXNZw9impuLR817JK95cMJzPxY=;
- b=K3TKbvzjbrq5WZvTSdaoOFKbvYRZA9a4R5b++MflrjY0MaNADCYto9Lu+8BthG9Js2kMkEUzwsyHp/moNH1rGvAAvga4alORES6BgnbKn5k7ZQdHJXNg+/77QTMGMSv7hKbwzEEHQ3u1ZbZwYIGlakhSNNx0MzWYIx/6/hhpdpySz81ETQC2jXTNZtky2Qgq9My+hz/+3dy8hprm+8D82RKTBKEmhLbyRNOGtXANksITY3vfrMHw6LHMPY4o7H5He4IG/j5s0YzXihgKfjDPXx2JKYnye8+UWIJ7eotyG54BpWfGRNmISfiFU/wGTlJASBLpANUHbk29s0XGuzlCkA==
-Received: from PH0PR06MB8206.namprd06.prod.outlook.com (2603:10b6:510:c2::22)
- by CH3PR06MB9315.namprd06.prod.outlook.com (2603:10b6:610:1a5::9) with
+ bh=oD4v/65A2ud9qrAzUgYhGvNXDH1uIMwpafXIQskA+uY=;
+ b=enYiVAlPf4wXi9KLoX5OPzJsOtst2Kzz+QF3oYr986WdhZD8VT79u+wAzSec99n+4dekNDvFF4sOqQp6p/KBPMBja/c5FsL59kONP+/KIQdC/7zDyZiuufxFB/0ZE4rkp9gJ+azOTqFEpanrBfPTMXQdaE5GVNYBZwm6KzSGzrtT9/h/dKPk1L6bkdYJG8ZjRoNYiwHRLBF+HAMWUfpwz20MGMeVPVMceJm3EuHTTTmsSiclSTDQ+jL486KgZ3OIPb/jn0aCBj5LDrq4GLNxWsCJaixPR39Yhw26B4PEcWQG5E6M4vnMgMW0SVU/FdoyE2leFsTHLIb6QXy08iMowA==
+Received: from BY3PR06MB8195.namprd06.prod.outlook.com (2603:10b6:a03:3ce::19)
+ by DS1PR06MB10314.namprd06.prod.outlook.com (2603:10b6:8:20b::18) with
  Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.48.14; Thu, 21 May
- 2026 01:30:22 +0000
-Received: from PH0PR06MB8206.namprd06.prod.outlook.com
- ([fe80::9d74:8708:bfec:b7b9]) by PH0PR06MB8206.namprd06.prod.outlook.com
- ([fe80::9d74:8708:bfec:b7b9%4]) with mapi id 15.21.0048.016; Thu, 21 May 2026
- 01:30:22 +0000
-Message-ID: <4a3acf6a-66dd-4aec-a22c-ece3e2664dc7@math.wisc.edu>
-Date: Wed, 20 May 2026 20:30:20 -0500
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.25.23; Fri, 22 May
+ 2026 15:47:56 +0000
+Received: from BY3PR06MB8195.namprd06.prod.outlook.com
+ ([fe80::a7ad:fb62:4389:fd8b]) by BY3PR06MB8195.namprd06.prod.outlook.com
+ ([fe80::a7ad:fb62:4389:fd8b%4]) with mapi id 15.21.0048.016; Fri, 22 May 2026
+ 15:47:54 +0000
+Message-ID: <f2303e15-9e88-40ed-b1c8-164e8b1119d0@math.wisc.edu>
+Date: Fri, 22 May 2026 10:47:52 -0500
 User-Agent: Mozilla Thunderbird
+Subject: Re: Kernel parm modules-load
+To: Samuel Thibault <samuel.thibault@aquilenet.fr>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <4a3acf6a-66dd-4aec-a22c-ece3e2664dc7@math.wisc.edu>
+ <ahAgc09FRRuDi-8w@end>
 Content-Language: en-US
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 From: "John G. Heim" <jheim@math.wisc.edu>
-Subject: Kernel parm modules-load
+In-Reply-To: <ahAgc09FRRuDi-8w@end>
 Content-Type: text/plain; charset=UTF-8; format=flowed
 Content-Transfer-Encoding: 8bit
-X-ClientProxiedBy: CH5P220CA0002.NAMP220.PROD.OUTLOOK.COM
- (2603:10b6:610:1ef::10) To PH0PR06MB8206.namprd06.prod.outlook.com
- (2603:10b6:510:c2::22)
+X-ClientProxiedBy: CH2PR20CA0028.namprd20.prod.outlook.com
+ (2603:10b6:610:58::38) To BY3PR06MB8195.namprd06.prod.outlook.com
+ (2603:10b6:a03:3ce::19)
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -76,95 +80,95 @@ List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-TrafficTypeDiagnostic: PH0PR06MB8206:EE_|CH3PR06MB9315:EE_
-X-MS-Office365-Filtering-Correlation-Id: 9e0f9686-d037-4424-cbbb-08deb6d8868e
+X-MS-TrafficTypeDiagnostic: BY3PR06MB8195:EE_|DS1PR06MB10314:EE_
+X-MS-Office365-Filtering-Correlation-Id: 9dc8baa4-c348-4f37-f623-08deb8197cb2
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
 X-Microsoft-Antispam:
-	BCL:0;ARA:13230040|366016|376014|1800799024|41320700013|786006|18002099003|56012099003;
+	BCL:0;ARA:13230040|1800799024|41320700013|366016|376014|786006|22082099003|56012099003|18002099003|4143699003;
 X-Microsoft-Antispam-Message-Info:
-	KsOr3mYbSgvaDPE6yIqGXyGU/pDxGmawBKS5K71Ip8xI8ltflx0rts9oIM5y80Pdz2lQ6obtPlrs+BJafZ9HIZOXV1UR5tuP4duTTGyv7EKyE8aTvs2pGTtiCxEMTd7DqSVYGa8Td6RqRTm1U+fs3uDbp37I6fIA9odd2B0eTSupaGU3Tc1r22fOPFvg2I6jZ6BvFtdkbDTGdlc46MS4b96kSbnjTbFQfSlMSjAv75nMhp9XrM6HjlPQBDvlcxoYydwEInDehycNnXYmfSUzBlrdLg6iLFwLyhX9aXamADmHMPPKriQO1F1TfOWzxiJ4mC/EsdqALVQ1UNs4hUf/Iog302xYUSwBvAbLtFhN1zXr+qQTSNX26KIAfH5BjaEBGsdVI+friCsRNyFJIwma59DmHe78KxUianJxevACSCI+5JrxMHTzGAVvbF439KlBmswNFgice12cDkuJBE9Rg2e6TWES+BrQL6FJTnpfwHB7gy7U+XmCqgeNEROfIJ6fH5EmYgbtZrEZQahnugjh3jimr21JGMKs4K3TS0x+vcm8WHJ00Pio6lU0bl3ccWEfQewDKnFdjeme0jbwUnedWCl8bJeBdyf0vbZLwYmSxN6WlsdfSGkBBEv8qgj57tOGGGC/tyKzKBXrlEDCr9s1yAvoTSJJELlyy9sWUPfqg/GT7dT4rS6giBgeUjzHEMAy
+	CfzwKxGL+bKaL1WxnR7xFixmH0tkNeNEokPesfhDQU8ttnE0oNUZa3OUvKjj77n5cubKhDKJWGUVUA955qlGWzeuwML3b3XxANT5I3WfI5nsdIGuYAL1sYNwemCvo4Ss/MuEO9IUxSH8ZfPQyYt5fVb/UoHL1mZ3FjINyD1r1N0RUKhe1DFiNOE+RbGWscrckmBvR9srbffqeSLZefRVpncKMtW3hqs3XccmH05jZGjBdKPKrv/x59FREsaz+Q3q5V+aEsfXE0CL7omhKjIdM67SiZVie50GoCBNOr99wA9eAEYsYef3/bFAfP6ctk4HWzBaujzXDQTMXgWXBtSDAzG6emtDjLzZdSQJfVen6ZBNAu0gEhQGJNQtLdcajK+QwvcbrLzteQD/tDJBCLYDvp+WyxdzpVmFQ4mgWblCzEPlNbfOscfsbzV++KyDBPlnCZheqx4aR5KPkYJv91KhavlBbg+0cCTk5G/GyJABYBESjWDzOrSNP0M5ZE/7sT46puJ1NGTu7UgBSWWezDdh5nWRidNCgjRNSNLycZGXTRkFOTPTjHO/M0T44bLH7Itq3H0X6zBU2HcZLbTEUOvMPSKKSvuipKmLqX/I9LSVG0/Uc7y1ixN7ElxSaxjPTnnT59PlcT9ujWgSROWAZl/cIR2Cz9NC3HlG24FPsxYS+VmMuURuLUCVu4cYa0V/WMd1
 X-Forefront-Antispam-Report:
-	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:PH0PR06MB8206.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(376014)(1800799024)(41320700013)(786006)(18002099003)(56012099003);DIR:OUT;SFP:1101;
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BY3PR06MB8195.namprd06.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(41320700013)(366016)(376014)(786006)(22082099003)(56012099003)(18002099003)(4143699003);DIR:OUT;SFP:1101;
 X-MS-Exchange-AntiSpam-MessageData-ChunkCount: 1
 X-MS-Exchange-AntiSpam-MessageData-0:
-	=?utf-8?B?a2pGRVpwd1J3SVRKVUFlWmJNOUZmbWdhODk3TjNUbXhHY09uZWNrdmRZZ052?=
- =?utf-8?B?dmc5eVg5V2xJUktKN0RmWGVaQkFybE52YnZlZ2lUNlZDVXA5Q1VGbVJPN2FU?=
- =?utf-8?B?dW4ycUdZV1ZLamZaSGI0V29TRjNoOHFPekdLOWRjbm9RclJIeWp0S1pVNTV5?=
- =?utf-8?B?MVBWdnUyZkxOdnZnSW5vQ1hCU0FBb3k5TEtSSTdNYmFDdldHKzFaNEJ5OXhw?=
- =?utf-8?B?YUY4dXpsUE4zWXNCTDFnMXd5aURaTUlYcjhEUlJKbFhaQVY5dll1UEJacTZN?=
- =?utf-8?B?eXBjUkh2b1c3Ly81TXpPVXVCV3hKR1RsVDVSZ1pEUFhNQ050dkc1elNSU2g4?=
- =?utf-8?B?WUcraHZ1UmhDUTNMMzY0eUVBeHNaNm40Wi9XcTgyK3gzV0lpY3pYU25BdW1M?=
- =?utf-8?B?Q09qcExQSk5qenpIWVVMeHV3ZytmUUs0ckppNXJQN1dNNDNZTWp4S0Y2eHR2?=
- =?utf-8?B?UVVDU1JRaTA0UjdmTEhKQTI2bjNXdU9HZFRWQmkyb3hPcVNra25xdWR2WXdp?=
- =?utf-8?B?WnFkY2ErNjVhNk1Rc2tHYXpPRE1jSFRMQStuOGpTSUhBVDY3enFRT1M5OVVx?=
- =?utf-8?B?QnkzUUpJRnlNaVFlcWRQVUZXWjBuVGE2WnZpYjN1WmhHMWdRRmdwZ0N1akZC?=
- =?utf-8?B?U0taS0g4ekI4dE03L2dhTmVJeVY3VTRvUGVVQ0FwREhsQjJuc2hsanY0NGpZ?=
- =?utf-8?B?RDQ0TmJlZ3VWd1Iwa0RvS29SYVFFUGNUQWtueE9DRFpFOWxhV21sUEs3bnBB?=
- =?utf-8?B?YlZmM3Z4NmxMZzc5aTZQSFUrb1hFc1ROZ3RlczByN245dmZjKzYrWTA5YXZU?=
- =?utf-8?B?UXFramxiajdERDdwanRuVVhsY3dDMW1SS1NlTmxjSTNmdGdVaE5hUVpUb1cw?=
- =?utf-8?B?VDZUZE5ZMGwwN3VSWnAvQm5VVElvdFBCU2dpcVhLaXlobmJOOE15b1kwYStw?=
- =?utf-8?B?c25FY1ZGTHhGeS9VRmxOTFcwSXJtZzY1cHllNlBhaVJEVlh6dWhvTE5mdTVE?=
- =?utf-8?B?UDcxTS9hRmlQQUlacW5nenhTRWtWS2ErOHNEUGpqZXlYcWJEUXQxUE5hK3Mr?=
- =?utf-8?B?ZXFTRTJENG5qZWtGTElTY1R1M0tpdEtyVmZkNGFsUHdnTE5nSUpIVHNMV21p?=
- =?utf-8?B?MDEyUjNwZjFJYlFYTVhsSklTQ1NaVTJiZHBJSUJoWS82alhqSldrSkEzRE1V?=
- =?utf-8?B?Q3VNbTBtZ2s1R3NhQS9LQU1CZ1hXMnZ2bGpPSlhFSlErMGJhWndocjZnallV?=
- =?utf-8?B?K2g5VnhTSUNsYVBNbVlmSDZQTkt2NEJ3MHZ6YjBCWTVrMm1xMURteVV1Vko1?=
- =?utf-8?B?SEZBRUNPOEZQK0FrY3pWbjFNZHlEdkhrajlmZU9OR0FnN0htTGc0bjZhM2Qr?=
- =?utf-8?B?OENZL1Flbk4rMXhyUnBRcTJlT3IrcUFQSlRYNDRhZ05EN0dJUXlPQktEYks5?=
- =?utf-8?B?VHZXUTU5TzFncXFlNHEyemhkbm9zSWZlMHZkYWxpM28zeTdrV1ZXUkRKQVo3?=
- =?utf-8?B?VEw5V2lKSDlDWTU3M240R1paVld6a0FON3F4TUNKMDZ5eDRlSCtWek1tTWJ3?=
- =?utf-8?B?T3RwU1dObWdQUTFTZ1VhSFgxTWo1Nk9zL3lOdmFkL2pjcDhNdEhWT2Z4Kzdh?=
- =?utf-8?B?eG5hYlhpNWZudDdTMEEzRkdXb09GNzYwRU9qNEJ3MnVxOFhWMmxKbUN5elZk?=
- =?utf-8?B?SGhsTkQ1dW1SMERoSDZmUDFHd2ZoMEFiZHRzV1ZLc1B3R2NiTitYZVREN3Vk?=
- =?utf-8?B?TjhMS3lKMmV6TnBxajZRTG1UYjE1UG1hSGxLN1lhUENmLytZNFEvbXZ6b2hy?=
- =?utf-8?B?VVg3Y3RSN2FURzBlb1lQTzE0aXJrTko1b3l2UmNaeS9vVVdhTkRyNDdDZG0r?=
- =?utf-8?B?Vzd1bXRCS3NHMzI1ZjZWTjdGdVVIWXJZK0FxbG0xVkhzYlRBb2x5MXYySWFz?=
- =?utf-8?B?UzlSeUlUenZoMlB4WlNySlh3WTkwc0VRbjdOUzhEQ0R2Tm5vWnA2UHFhWml5?=
- =?utf-8?B?QWVvckh0RkJXTWlYWUVEUFU2V1o3TEJaK0JRb0phK2REUEtFR0lFNU9yNTAy?=
- =?utf-8?B?NURTOXZYamExRUpXcUp3TlplYzgrcTdWcUVJb0FTdk9mY2x1K3AzeTJxOWpp?=
- =?utf-8?B?Y2JYdk94YXcxenNnVkswMytaa2FSeW5BZ0tLc0d1UjNVWFZRVXZCSTZaSVMr?=
- =?utf-8?B?aCtXd2VMaVlqZlhGWFIvL2pobUR2aDRPTzlqTC81c0tacWFxeVhjVjhwNU15?=
- =?utf-8?B?MmZxTllQek5CSit3SGw4UEI2c0dtQ3ZMK2RHbWVNYVJOcm56cG0wYm9OaXh6?=
- =?utf-8?Q?DN+8iGrYVkC/2NvGad?=
+	=?utf-8?B?RDYvTFZYMDVWQXZlcEVhNDMzcng5SkpGUWo0ZkI0TFNOVlJOczFKcy9wOFBp?=
+ =?utf-8?B?WHhjR3dTazlnZTA5cTRXNW5vN0NxTFNKRDdYNEltZW5VRE0rRXZMTjNoSjMw?=
+ =?utf-8?B?V1NIaWQvSHFXMEpreURBKzV0K0pBeE1oRlV2SE16VjBUNCtrdUVaMEZJVkla?=
+ =?utf-8?B?cXpMekdTYXpaMmFFZ2JldXViTVlGRUloTnAwcnROVzBWSUQvYlIzUDNCNWJ0?=
+ =?utf-8?B?NHY4WlAyQ3drQkRaem1OZ3NqcWFPc09neDhaY1BqUUtVRHUzYnZsYklvbUhY?=
+ =?utf-8?B?d3hIQWcxQTBlVkJLcmZpWHh5MEFvVWVkUnc4UVYzd0JISFZEOTB1RW92aWdI?=
+ =?utf-8?B?WDZ6c0pHQlVRUE45NnpoZThGUTN5cGpVbUl0R1hjaThKYmplU0FRMnZZclpC?=
+ =?utf-8?B?L1lWandEUk5KZHdtaVg1NTVFa3BwWk13emhVSWxFQmpLMlBUNUZmbnpzaXp0?=
+ =?utf-8?B?ME1SUk5nZkZhVnc0bXpmVnZhQWNFYnA3RjlCbS9CK1o4K25Yc0k1WUtYcXo1?=
+ =?utf-8?B?cm9jVWVabkNLM0tJb25hTlY3MjBIZWFRaUhlSE1ocXExSE5hL3hXdXZxUVBp?=
+ =?utf-8?B?Z1RQcVZwdmM5TEtaWENEeSt6Y2tRZUx5dXIwVElNRHYvWXhqemEwbUxzcmlZ?=
+ =?utf-8?B?cFM4TXJrNVBmMVZicjdBTWdIb0dpaXVpT3NNOXY5N2FrdTNLZzU2Wlk1eU5m?=
+ =?utf-8?B?S3dHRDVYVVAzL0dxRksxTk5XdDJUSi9jWFNRclF5S091OTdGa3ZNcmZDZEdo?=
+ =?utf-8?B?bVNrdW92TUVvem1hWnNiZS9NMXhSZ0NLZXRoOXJyMUYvSEVTNG1BRHQ2azYy?=
+ =?utf-8?B?SG5sWlk1MjhyK1pZZmU0UmpIZzc3VzIzd0tWU1V4SEpIK2lFMlF5N0FZQ2NX?=
+ =?utf-8?B?K0xxTzU3UHRrQ2dEcm9pTzNZZkdUaHE5d3M3YURYZ1ZUcmhEeFlEZDdmUGRj?=
+ =?utf-8?B?RFBzcTM1Q21hWE5rbUR1SmJtS0lBYjZYU2grNFo0T0I3SGM2WVpoNDFaRks3?=
+ =?utf-8?B?S3J2ZWZRQ21XN2t2SXhpcng3d3JTYnlwcmdCaXVWdDNFelRYaWZ2OU00U3dF?=
+ =?utf-8?B?U3FUS2VxNHBoK2Z3Q2dNdk9RNEFmaEVMYkRXWGlyaEFMU1Z4MWM1SDJiaUdF?=
+ =?utf-8?B?eE5LekRzYzlvZXowdmFudUVvSGNMUkErcUdBTWZVMGE2a0JpZk45cHEzL3RZ?=
+ =?utf-8?B?bnMxS1E2Z0dxcjZTMVJIbFNZa3BLWDNVMTIyNktpdERnY0FQVG1McWtmODJU?=
+ =?utf-8?B?dmdrTTYwTVdHTmpnc2JaVXY5N0V6YU5sdXVmVUVIa3FmSjY5ZFZUc2NPRnVC?=
+ =?utf-8?B?ZzduK0lZMTRwaEEvZUpzdzZzSmlvQXBjWS8zV3dIdHVJVjh4bGVNU05FOHp2?=
+ =?utf-8?B?cm9rSmcySlNWMTZyN1Yxc3p2NG9wMUczcktNOWpHeFJQd0RUZUZIaXBmWS9N?=
+ =?utf-8?B?YkRSenJKYnVpbms1Vm9Hc3Z4NUVrdFEyT1RGMnluYzhDQUR3OWV1dnhRMndB?=
+ =?utf-8?B?UFFWMFBOK1dmTWlOaFRNUDZhOHMzZUdzOFJyNlZMSnN3V0MyVGRTekNNOHZB?=
+ =?utf-8?B?S214WWt6SmtDRkwrRFh4VEdQZ3BubkVQSGdzeVlHM1ZMSDY4d3pic3ZRRUxT?=
+ =?utf-8?B?NUpsOEtlUll6OWt6eVk2QUp0Ui92RXBveTB5cTVwb3FEQzBLSUgwcE5KWWtJ?=
+ =?utf-8?B?aXlHalhhSkp1Mnp5ZWlLb0x5VEFWaEtVbjBteVVrVWl5THk5K3RWQ0dqS2RR?=
+ =?utf-8?B?akV6dW9EakYwTVBaWFpsczNvVEVDRWpHdUlEbmltSEJsRGZqWC9rY0VxU0dC?=
+ =?utf-8?B?Ky9SNURWT1ViU3BnaG1NRnFyU3FXQ1c5NEpYOTUwS0dZdFVtaERBSXhGaUZJ?=
+ =?utf-8?B?WTFQMEZoVlU4alB2eTRrVGJtaWQ0T01ZU0J1cjRTVWY5UmVCSDN1VCt1clox?=
+ =?utf-8?B?Tnk2ZVlMWkszdnBjTUsyRlpaamY1bk9sc1dLei9vSUR0WURjNjE1a2Ywa2Jh?=
+ =?utf-8?B?MVJXeDlwV29CUk0yK1h4TmV0MysrUXJqcHFQb3VJL1VLT29oNXRvVXprM2hO?=
+ =?utf-8?B?dVlRcGdnVGNEZSs3NWZtVGllMDdKZ1EzUzd6bXlXWWNRN3VJWFpLNHJ2eUlh?=
+ =?utf-8?B?d2N2MEZIeDl4djlVOFB0K1VjbjVFKzZxUWUwaTF5WkpzaTlWeVVHY0V1K0lp?=
+ =?utf-8?B?ZXI2N2VtbXkxcE8rWjJ4cTZRTXBBcFFGaGhLN3loTGV1Q3BTZDFsazZXd1E3?=
+ =?utf-8?B?Q2xoV3FVK01qWUhQWDZHb1pNOHlxUG4yeFlLS1k4ZWtPZnB6OFFSaW5EcGY2?=
+ =?utf-8?Q?6sSVyyOCJBi7gZrnVb?=
 X-Exchange-RoutingPolicyChecked:
-	qJwdTxauf+5i5tHSdppe7mbR0BV7YrJrLShtpTae+1Co4waz5obO5b+JGX1mh+ZEWBE0mYVBkwoog2FnXj2LvBrGaJl3JBl8a/x6rMIirPm66EVI41t0FQoUTr2EaZToPLnt2pSSOsGX3aK7W/plE/vWESlnCwLG/JuGCGGbIr/Ff/CarnMrn064uiwA74FbBEbOHjlocUFg4i1rUVU6guDNvBlMFbHSJNErxWSf1XoIZm5zqhvELAeYvsf55nSZfZHUwZRu7agCW56JEUxe0nv1ZudSoGuECkI1owc5N32EcRxkV+vWLYVvUv1Z0IUZlUy27BdWTse9P+Kr+Q92+Q==
+	oi1oC8mhpMZxvdfRyZIaJim0E9xtVENdfm6G4iE3ckIWv3ZOn3LCH+w7DUJB0FWgXSrW4WE9qcO6b174zXC9/6hY9YYZr6O/YwsMkrMFb+QrftpBfrfJfbwAC6InE+zz7tpunsOwfJvUpFFHQW+9ZcqDqkmv/Ke1yh3oOy6EJiThYC4FRmuEfxS2SPT3yozncsHDq91k7QTQo5FfqcYpRT2P9MOcp/rgJ0Vo7jI34+etku0sPnkI8n4ONwejf5hBRbirpkO8C4lg2uJJdzfOFehPdaSA2IMupVNEE4mesOqLfnKR1vHJ0jYvslDwERpHDZ6qjjPHkf1+we5sgvjGvQ==
 X-OriginatorOrg: math.wisc.edu
-X-MS-Exchange-CrossTenant-Network-Message-Id: 9e0f9686-d037-4424-cbbb-08deb6d8868e
-X-MS-Exchange-CrossTenant-AuthSource: PH0PR06MB8206.namprd06.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9dc8baa4-c348-4f37-f623-08deb8197cb2
+X-MS-Exchange-CrossTenant-AuthSource: BY3PR06MB8195.namprd06.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Internal
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 21 May 2026 01:30:22.1940
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 May 2026 15:47:54.2899
  (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 2ca68321-0eda-4908-88b2-424a8cb4b0f9
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: 6RI2CVOOQfUGwWTY2brudj0wkdK4EiXMbVvjqeDsZiRVicLzPV3qt3b+6n/Njbrv
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH3PR06MB9315
-X-Proofpoint-GUID: m0zO034MuL0BJ7UUNPTIRJu3Ll8bmDdF
-X-Proofpoint-ORIG-GUID: m0zO034MuL0BJ7UUNPTIRJu3Ll8bmDdF
-X-Authority-Analysis: v=2.4 cv=f4x4wuyM c=1 sm=1 tr=0 ts=6a0e6030 cx=c_pps
- a=q0rL5DqQyazLQqY8Xi1ihA==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
+X-MS-Exchange-CrossTenant-UserPrincipalName: Bm9pjp3TK+8pluSFImbEeoAYePN7XcBGTV7X5rRVtn/7aV7+Mxgec1UFCbbwPbY+
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DS1PR06MB10314
+X-Proofpoint-ORIG-GUID: qJlux5DhRxHrqkiQz206cY01yE0GEJyg
+X-Authority-Analysis: v=2.4 cv=btJ8wkai c=1 sm=1 tr=0 ts=6a107aad cx=c_pps
+ a=gJeMUiwA5g2xtJW4k6eMww==:117 a=6eWqkTHjU83fiwn7nKZWdM+Sl24=:19
  a=z/mQ4Ysz8XfWz/Q5cLBRGdckG28=:19 a=lCpzRmAYbLLaTzLvsPZ7Mbvzbb8=:19
  a=xqWC_Br6kY4A:10 a=IkcTkHD0fZMA:10 a=NGcC8JguVDcA:10 a=lre9DRYkaIEA:10
- a=VkNPw1HP01LnGYTKEx00:22 a=ZyELlZqCvD1aXIDzc3I-:22 a=PmXMWaiFgSq4GZTC792z:22
- a=y488-X5u6SCckGmZ0P8A:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
-X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIxMDAxMiBTYWx0ZWRfX+VcXiK9W9Y0p
- Nch+8TFghK5yPzBfNr7JpL73tnSHCN7ngSBRrm9F+CAZlUOfDD23U8F7J5ho1sQxAS0i4AHW0+u
- 3oAlbNcQNPPzGEGalAug6X7o6yeLdBxb/MLJW3ew4MejGIpgVhYJXPq6VLEx28scjPpO97/B8l2
- UiIBugB7HaEMSz1qhGgoahJuR7wqVPFroXfZCiHp0sMSI/1MmmI/fT7f+geLOvmjPFRC/4uXCJo
- MdMs7ZhuStuo8ZllI9i5NUYpa+uPuC3tHNvvlqbMsFfUhAsEFMoLS/un6Bj37KMDk9LkLHZiYHI
- nTQ++f7adKjcY7GqMNbRyd9PHlpiT360X9vXmHt0P3HTNzWezzcmDRoXFoQxpgKCo8+H+XfUCSO
- JMMM/hpODEYpvp2G4cfr7dCNbpUwMuewsvFYbRYaAU+oZpDZPXdldHaucew1X+Q6E2mXC3wR2D0
- hKQzussUGgjNhBrj2vA==
+ a=VkNPw1HP01LnGYTKEx00:22 a=ZyELlZqCvD1aXIDzc3I-:22 a=88-R7LcPEwPXXGSWJaMA:22
+ a=lnTdNS7WdMPmqTlt0QgA:9 a=3ZKOabzyN94A:10 a=QEXdDO2ut3YA:10
+X-Proofpoint-GUID: qJlux5DhRxHrqkiQz206cY01yE0GEJyg
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNTIyMDE1NiBTYWx0ZWRfX0x8uN+xPMiRv
+ Zm4BtJttqaajfNXJQjg24v7W+KDFiNdrtIBtuUFKdXZ6QUuG3yHdweZy5jmYlDdcHODNM881VrT
+ u4XXllwFbTRVvx727e9n/SADQn4ECdD57tK8dAlQvrJ2IF2kxMqKe73yC8Zs0prbpQ+pevVcS2g
+ XZxKj2ZZj3Z9E2jWQeCv2uut1Cf9Yw48AP+Hdm+q0ZMnp55QUYRpj76rk2L++065xrxpenlMc+J
+ OugmM/NTUXOYMYbg140rNkauxxODlOSXP+teTheN0wURl4KjG7//fA7LpbxJzvTOCJkKEFWwhe3
+ geNYTArKD896FuWyV1shpP9Esq9Tbv1cStdcAA7VKwpYYUO3QjuanRxkkJOidWmr9VzWDio3vsX
+ aeLopBpPnr2jXbIGoblzMCFMmxYAxwtC0Oes51MGHMpmQw+ZDZnpD5bTOdpjnNAz/BzeG4+C7Qy
+ 72JEqMOgk84Bn7UTGow==
 X-Wisc_ValidFrom: true
 X-Proofpoint-Virus-Version: vendor=baseguard
  engine=ICAP:2.0.293,Aquarius:18.0.1143,Hydra:6.1.51,FMLib:17.12.100.49
- definitions=2026-05-20_03,2026-05-18_01,2025-10-01_01
+ definitions=2026-05-22_04,2026-05-18_01,2025-10-01_01
 X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- clxscore=1015 priorityscore=1501 adultscore=0 suspectscore=0 phishscore=0
- bulkscore=0 impostorscore=0 malwarescore=0 spamscore=0 lowpriorityscore=0
+ priorityscore=1501 phishscore=0 adultscore=0 suspectscore=0 bulkscore=0
+ clxscore=1011 spamscore=0 impostorscore=0 malwarescore=0 lowpriorityscore=0
  classifier=typeunknown authscore=0 authtc= authcc= route=outbound adjust=0
- reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605210012
+ reason=mlx scancount=1 engine=8.22.0-2605130000 definitions=main-2605220156
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 X-Spamd-Result: default: False [-1.89 / 15.00];
 	ARC_ALLOW(-1.00)[microsoft.com:s=arcselector10001:i=1];
@@ -174,44 +178,64 @@ X-Spamd-Result: default: False [-1.89 / 15.00];
 	RCVD_NO_TLS_LAST(0.10)[];
 	MIME_GOOD(-0.10)[text/plain];
 	HAS_LIST_UNSUB(-0.01)[];
+	FORGED_SENDER_MAILLIST(0.00)[];
 	NEURAL_HAM(-0.00)[-1.000];
 	ASN(0.00)[asn:5645, ipnet:206.248.128.0/18, country:CA];
-	RCPT_COUNT_ONE(0.00)[1];
-	MIME_TRACE(0.00)[0:+];
-	FORGED_SENDER_MAILLIST(0.00)[];
 	TAGGED_RCPT(0.00)[speakup];
+	MIME_TRACE(0.00)[0:+];
 	R_SPF_NA(0.00)[no SPF record];
 	MID_RHS_MATCH_FROM(0.00)[];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	FROM_NEQ_ENVFROM(0.00)[jheim@math.wisc.edu,speakup@linux-speakup.org];
 	FROM_HAS_DN(0.00)[];
 	DBL_BLOCKED_OPENRESOLVER(0.00)[math.wisc.edu:mid,math.wisc.edu:dkim];
 	DKIM_TRACE(0.00)[math.wisc.edu:+];
 	TO_DN_ALL(0.00)[];
-	TAGGED_FROM(0.00)[bounces-1605-lists,speakup=lfdr.de];
+	TAGGED_FROM(0.00)[bounces-1606-lists,speakup=lfdr.de];
+	RCPT_COUNT_TWO(0.00)[2];
 	RCVD_COUNT_SEVEN(0.00)[8]
-X-Rspamd-Queue-Id: 92E7A59DB86
+X-Rspamd-Queue-Id: 186C25B7340
 X-Rspamd-Action: no action
 X-Rspamd-Server: lfdr
 
-I have confirmed my earlier guess that you can configure grub to start 
-speakup during boot. On Debian, you would edit the /etc/defaults/grub  
-file.  Look for a line that sets the value of GRUB_CMDLINE_LINUX. Add 
-"modules-load=speakup_<yourSynth>" to that line. For example, for the 
-LiteTalk  synth, it would be:
-
-
-GRUB_CMDLINE_LINUX="modules-load=speakup_ltlk"
-
-
-Then run update-grub and reboot.
-
-At this point,  I am not sure if this gives  you speech earlier or later 
-than adding it to the initrd. I suspect it is  later. On the other hand, 
-it is easier than configuring it in the initrd.
-
+On 5/22/26 4:22 AM, Samuel Thibault wrote:
+> Hello,
+>
+> John G. Heim, le mer. 20 mai 2026 20:30:20 -0500, a ecrit:
+>> I have confirmed my earlier guess that you can configure grub to start
+>> speakup during boot. On Debian, you would edit the /etc/defaults/grub
+>> GRUB_CMDLINE_LINUX="modules-load=speakup_ltlk"
+> Wouldn't putting
+>
+> speakup_ltlk
+>
+> in /etc/modules do the same? That is what the debian installer does to
+> enable hardware synths.
 
 
 
+Yes, this is just one more way to enable speakup at boot. If you add 
+your module to the initrd, you get speech sooner than if you configure 
+it as a kernel parameter. I would say the biggest advantage of enabling 
+speakup via a kernel parameter is that you can use it with a live distro 
+like Grml.
+
+So there at least 4 ways to enable speakup:
+
+1. Compile it into the kernel. This gives you speech at the earliest 
+possible time.
+
+2. Add  it to the initrd. This is easy and gives you speech fairly early.
+
+3. Add it as a kernel parameter. Also very easy. Most useful for live 
+distros.
+
+4. Type in a modprobe command after booting is finished.
+
+I intend to document all of this in my rewrite of the speakup docs. I 
+just thought I'd mention it here for people who don't read docs.
 
 
+
+> Samuel
 
