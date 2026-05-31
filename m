@@ -1,52 +1,89 @@
-Return-Path: <speakup+bounces-1609-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1610-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id xFOlApjFHGqTSQkAu9opvQ
-	(envelope-from <speakup+bounces-1609-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Mon, 01 Jun 2026 01:34:48 +0200
+	id EG4lJfDHHGrtSQkAu9opvQ
+	(envelope-from <speakup+bounces-1610-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Mon, 01 Jun 2026 01:44:48 +0200
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 0BBAA6184B5
-	for <lists+speakup@lfdr.de>; Mon, 01 Jun 2026 01:34:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id A17EB618534
+	for <lists+speakup@lfdr.de>; Mon, 01 Jun 2026 01:44:46 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=UEf7NtqN;
+	dkim=pass (2048-bit key; unprotected) header.d=hubert-humphrey.com header.i=@hubert-humphrey.com header.a=rsa-sha256 header.s=fm1 header.b=Tc6f1n1D;
+	dkim=pass (2048-bit key; unprotected) header.d=messagingengine.com header.i=@messagingengine.com header.a=rsa-sha256 header.s=fm3 header.b=PG6fVydf;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 872CB3828BE; Sun, 31 May 2026 19:25:45 -0400 (EDT)
+	id D31B03828C0; Sun, 31 May 2026 19:32:22 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 67D603818CB
-	for <lists+speakup@lfdr.de>; Sun, 31 May 2026 19:25:45 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id B10FF381976
+	for <lists+speakup@lfdr.de>; Sun, 31 May 2026 19:32:22 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 3B894381952; Sun, 31 May 2026 19:25:39 -0400 (EDT)
-Received: from mail412.out.titan.email (mail412.out.titan.email [98.80.1.170])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id E8B3E3817D9
-	for <speakup@linux-speakup.org>; Sun, 31 May 2026 19:25:38 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4gTCrC3RW0z1xmm
-	for <speakup@linux-speakup.org>; Sun, 31 May 2026 23:25:31 +0000 (UTC)
-X-Titan-User-Uid: eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..eqDCIolu3fwGDExw.ClHH5_R5WpW5YvjbK40xe3-eVYStyM6k4yPBPKi4sOIceCR4mRGH32IlmWDvAt9ukAltKXUSArVJbJO1SCdT1uYZD1KcNfwADWUTNzk.Bsq5bIfhXYIGySuOqohpbQ
-DKIM-Signature: a=rsa-sha256; bh=hYBhIo3JKbS8RcKFxC/AeiwZ82wG8nd5C7SJOpvNkQU=;
-	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=reply-to:subject:date:message-id:from:to:mime-version:from:to:subject:date:message-id:reply-to:cc:in-reply-to:references;
-	q=dns/txt; s=titan1; t=1780269931; v=1;
-	b=UEf7NtqNI50QqhOckJdKz5SW2QP04oLv64ULMwOtBXNhpEu+0ScJYjHMKLxDOQVzbfyo0Yqc
-	1mxSJrRE+V6SPIeFa74f9/g7GHZiuersUkx9+PSUQePw3qATvsWJwRGHkos5tBsnj8z1Xw3GHXo
-	S6tYOJsPpm+yGw4XilJTyAfU=
-X-AuthUser: glenn@ervin.email
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4gTCrC0jwcz1xmj
-	for <speakup@linux-speakup.org>; Sun, 31 May 2026 23:25:30 +0000 (UTC)
-Message-ID: <03d401dcf154$c5e86180$8d01f80a@nucwin10>
-Reply-To: "K0LNY ??" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY ??" <glenn@ervin.email>
-To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-Subject: you killed speakup
-Date: Sun, 31 May 2026 18:25:30 -0500
-Organization: Home
+	id 87BF6382384; Sun, 31 May 2026 19:32:16 -0400 (EDT)
+Received: from fout-a3-smtp.messagingengine.com (fout-a3-smtp.messagingengine.com [103.168.172.146])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id D3BD8381976
+	for <speakup@linux-speakup.org>; Sun, 31 May 2026 19:32:15 -0400 (EDT)
+Received: from phl-compute-02.internal (phl-compute-02.internal [10.202.2.42])
+	by mailfout.phl.internal (Postfix) with ESMTP id 2087AEC00DB;
+	Sun, 31 May 2026 19:32:13 -0400 (EDT)
+Received: from phl-frontend-03 ([10.202.2.162])
+  by phl-compute-02.internal (MEProxy); Sun, 31 May 2026 19:32:13 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm1; t=1780270333;
+	 x=1780356733; bh=qG4fIQQGHDRB420Fy6bpDYJC/81p5VuFLW6Ad6bdCLg=; b=
+	Tc6f1n1Di6pfzP14qRyshNQJ/y1PWTL5amv+JQUu/mP0Vb5eHXfeATi1nIg60pg1
+	yuGBgUO7cBSZLWM8GO1BQjX/jx4llsvyXaPVJOohXOS8+czxoTPUJ0u8Bn2g7wpC
+	N008q9JBMlsRIXtv2+6UosrwqUVuXm9NuJW6Ty6RZ0p5+8ZTjvxwEehgEJLGP0bq
+	6UvYHRUkqEseOUIuG/0BH/mnhRIOzJ3iN7w7KS6LNbl0/oLD8szlJDFt64iV6C/F
+	q+jjTOZIj/NpFcL8d8BxzyDuIYz3ryvAx8XC2LwnP2IEfdAsMqvPsw79Mg+bn3JL
+	QvSLHkfSh6PoXXZn4JNqBg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; t=
+	1780270333; x=1780356733; bh=qG4fIQQGHDRB420Fy6bpDYJC/81p5VuFLW6
+	Ad6bdCLg=; b=PG6fVydf50mNA4YGhxBHKkZALdcJlkqZOHqoQf87VJEOwcahItR
+	XfFZYcJbU8ZcibTWiSVD4Ghor0R7X5LfB7Jee44xk9JAvHSnRzdgXGy5wgex+6yZ
+	AWdAdbxDXOBo0QRhd4UMDq8BIs5meixnSnxNCbHy+TWYuOh6FNfT0xkE6FpU9imQ
+	ifKoySTLXkEADR20xIk9NV9Y8JP8ySqy74DplUgJ04uClYvujniEbkz9YSz5rFUu
+	goCWHtKnGPhLfcLsSjseo8i/K+awsty7d84FoVLg8E6gwGWtEVNztTriUmHJFNaT
+	Dc93CmyvNzj3WmQxOUnBoIkjnAcqwI1FVnQ==
+X-ME-Sender: <xms:_cQcak_cJfzH-MNZBSJtfpFENkNnf3RGThxdFLeBinzSYnU0KGuFyg>
+    <xme:_cQcapC0jLz_5MMkiqfTCS_roSyU0j6eUQjGhGmC1ymQT3av0NYHNNZh8vbjV4q37
+    C5dMVVb4yhElEU2WC8-PouHPM7qwSZ825qt0GTmCWjPj-m3LOYg9pY>
+X-ME-Received: <xmr:_cQcasxK4RUJQBAiGiehsXf4C02wY-4e-rvgWwWAPU8cpSkaVwYiPT_rnQgS>
+X-ME-Proxy-Cause: dmFkZTESsJPirnoje6SU326PlT1uWEWPs1deUpFgprs8ksiK6QbmMbj5Jesf5TL+ukTY4L
+    svz5eIaOQXcXTZh0g9FtNTZACXbQxD8dFbCOAoNBtaIbes6el1/N2N/2SNaL+W44kfbz/o
+    scA1Fqs/i6HCVbhVbTECiPJsoLjEl5JUlNVKd2dhkG7BvomfRm0RBOA8bwaowWjzop7fSc
+    ocByXIFuaMg0s5lx+7QBtpvnSHBIvgjhiJ3mqgcc2p44eEnqUCifp5Q2WkDB6bcMIKxWh/
+    mnRutiYsgL2PrZPJSM1OS8DJpba2NuOlLVYSDXqwUebpJXAIFUJv5l2UegmnmXYtZaz3az
+    rZgUZJL4Sb+RwnGLpP/zcdrDwNG2NQCEQHTg5gbu18rt4TBLScVleUmXq7/FzNWc9t7Jft
+    v6N2NDOCYMBXXWTGJHGfQ11EZW2iOw53NSAGtjpcoJWQF+TXgbe3Dm1waXYYvYf79wTH1m
+    kTY4O/um78tGGxydFwtJ0BUKFFVIpn/As2eKIHg7arw1ghPE+5JJCVkixbfx4FbbggDyOd
+    /jPEsrSJK3ntFFF6m3vwxmSmwTsSciaRyENkS1uExmkyrMz0lmKiu4XcXFNZRU4iGLO6AC
+    uQ3toLx1qZCPio8wkLLB4e/F4sL+UPi4502LcGOjekiwUy6sw+zG8hjJUi+A
+X-ME-Proxy: <xmx:_cQcamTAw27A_NaWjZQZgkw_jZhVJzeOPnEp3Bsfufkmcv5rlOSk8g>
+    <xmx:_cQcar-4q1BlXklzcVF4hPolRQln8W8yzYH5Y7lM8baOqWDLpjfrmQ>
+    <xmx:_cQcalqMB7v5J5Pvj84mFJcLZv4eq31HmrHcoccIGDTXu5JRt79QUA>
+    <xmx:_cQcagkcDsNdU5d5sZPKRtZj7MS1FpTHBhwAmsBWaytsOdMlRv4EqA>
+    <xmx:_cQcasQeY594uWm_9YK8awS5YnV8Qr3PAI9L88_CsVdBghNOswjxg2Nx>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Sun,
+ 31 May 2026 19:32:12 -0400 (EDT)
+Date: Sun, 31 May 2026 16:32:10 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: K0LNY ?? <glenn@ervin.email>
+cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: Re: you killed speakup
+In-Reply-To: <03d401dcf154$c5e86180$8d01f80a@nucwin10>
+Message-ID: <aaf97d32-facf-cb71-8c00-fa20e22bfacf@hubert-humphrey.com>
+References: <03d401dcf154$c5e86180$8d01f80a@nucwin10>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -55,114 +92,40 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative;
-	boundary="----=_NextPart_000_03D1_01DCF12A.DC8F46D0"
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1780269931288805580.32333.7369356426891592280@prod-use1-smtp-out1003.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=K98S2SWI c=1 sm=1 tr=0 ts=6a1cc36b
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=r77TgQKjGQsHNAKrUKIA:9
-	a=kU8mcblDKfQzzrIqsa0A:9 a=wPNLvfGTeEIA:10 a=wx4m7dFGSJivKYz_sIQA:9
-	a=XDPa82nxXYzZ82Cu:21 a=_W_S_7VecoQA:10 a=P3K-DvM3-jjlTNsN-mCd:22
-	a=NWVoK91CQySWRX1oVYDe:22
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
-X-Spamd-Result: default: False [2.12 / 15.00];
-	OLD_X_MAILER(2.00)[];
-	MID_RHS_NOT_FQDN(0.50)[];
-	R_DKIM_ALLOW(-0.20)[t39smtp-sign001.email:s=titan1];
+X-Spamd-Result: default: False [-0.89 / 15.00];
+	DMARC_POLICY_ALLOW(-0.50)[hubert-humphrey.com,none];
+	R_DKIM_ALLOW(-0.20)[hubert-humphrey.com:s=fm1,messagingengine.com:s=fm3];
 	MAILLIST(-0.18)[generic];
-	MIME_GOOD(-0.10)[multipart/alternative,text/plain];
+	MIME_GOOD(-0.10)[text/plain];
 	RCVD_NO_TLS_LAST(0.10)[];
 	HAS_LIST_UNSUB(-0.01)[];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
-	TO_DN_ALL(0.00)[];
 	R_SPF_NA(0.00)[no SPF record];
-	TAGGED_FROM(0.00)[bounces-1609-lists,speakup=lfdr.de];
-	MIME_TRACE(0.00)[0:+,1:+,2:~];
-	DMARC_NA(0.00)[ervin.email];
-	HAS_ORG_HEADER(0.00)[];
-	RCPT_COUNT_ONE(0.00)[1];
-	HAS_X_PRIO_THREE(0.00)[3];
+	DKIM_TRACE(0.00)[hubert-humphrey.com:+,messagingengine.com:+];
+	TAGGED_FROM(0.00)[bounces-1610-lists,speakup=lfdr.de];
+	RCPT_COUNT_TWO(0.00)[2];
 	FORGED_SENDER_MAILLIST(0.00)[];
-	HAS_REPLYTO(0.00)[glenn@ervin.email];
-	RCVD_COUNT_FIVE(0.00)[6];
-	FROM_NEQ_ENVFROM(0.00)[glenn@ervin.email,speakup@linux-speakup.org];
-	FROM_HAS_DN(0.00)[];
-	DKIM_TRACE(0.00)[t39smtp-sign001.email:+];
-	NEURAL_HAM(-0.00)[-1.000];
-	ARC_NA(0.00)[];
-	TAGGED_RCPT(0.00)[speakup];
+	TO_DN_ALL(0.00)[];
+	MIME_TRACE(0.00)[0:+];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
+	MISSING_XM_UA(0.00)[];
 	ASN(0.00)[asn:5645, ipnet:206.248.128.0/18, country:CA];
+	FROM_NEQ_ENVFROM(0.00)[chime@hubert-humphrey.com,speakup@linux-speakup.org];
+	FROM_HAS_DN(0.00)[];
+	ARC_NA(0.00)[];
+	NEURAL_HAM(-0.00)[-1.000];
+	TAGGED_RCPT(0.00)[speakup];
+	MID_RHS_MATCH_FROM(0.00)[];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
-	REPLYTO_EQ_FROM(0.00)[]
-X-Rspamd-Queue-Id: 0BBAA6184B5
+	RCVD_COUNT_SEVEN(0.00)[7]
+X-Rspamd-Queue-Id: A17EB618534
 X-Rspamd-Action: no action
 X-Rspamd-Server: lfdr
 
-This is a multi-part message in MIME format.
-
-------=_NextPart_000_03D1_01DCF12A.DC8F46D0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-I'm trying to remember how to make speakup silent.
-I remember I've pressed a key combo on my netbook where it says
-you killed speakup
-and pressing it again says
-I'm alive
-What is that command?
-Thanks
-
-Glenn
-
-It used to be wine, women, and song,
-Now it's beer, the old lady, and TV.
-
-Glenn K0LNY & WSAT439
-My TGIF TalkGroup is 4499
-
-------=_NextPart_000_03D1_01DCF12A.DC8F46D0
-Content-Type: text/html;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML><HEAD>
-<META content=3D"text/html; charset=3Diso-8859-1" =
-http-equiv=3DContent-Type>
-<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
-<STYLE></STYLE>
-</HEAD>
-<BODY bgColor=3D#ffffff>
-<DIV><FONT size=3D2 face=3DArial>Hi,</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I'm trying to remember how to make =
-speakup=20
-silent.</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I remember I've pressed a key combo on =
-my netbook=20
-where it says</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>you killed speakup</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>and pressing it again says</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>I'm alive</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>What is that command?</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial>Thanks</FONT></DIV>
-<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
-<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV><FONT size=3D2 =
-face=3DArial>
-<DIV><BR>It used to be wine, women, and song,<BR>Now it's beer, the old =
-lady,=20
-and TV.</DIV>
-<DIV>&nbsp;</DIV>
-<DIV>Glenn K0LNY &amp; WSAT439<BR>My TGIF TalkGroup is=20
-4499<BR></FONT></DIV></BODY></HTML>
-
-------=_NextPart_000_03D1_01DCF12A.DC8F46D0--
+Well Glen, you can easily kill Speakup with the print screen key, also by 
+pushing insert+the right insert. Maybe some would say insert+numpad0. Both of 
+these are on a console-by-console basis.
+Chime
 
 
