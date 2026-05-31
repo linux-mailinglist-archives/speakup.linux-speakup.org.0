@@ -1,46 +1,52 @@
-Return-Path: <speakup+bounces-1608-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1609-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by lfdr with LMTP
-	id QNAyElC9EGqjdAYAu9opvQ
-	(envelope-from <speakup+bounces-1608-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Fri, 22 May 2026 22:32:16 +0200
+	id xFOlApjFHGqTSQkAu9opvQ
+	(envelope-from <speakup+bounces-1609-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Mon, 01 Jun 2026 01:34:48 +0200
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 5AF3A5BA14B
-	for <lists+speakup@lfdr.de>; Fri, 22 May 2026 22:32:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id 0BBAA6184B5
+	for <lists+speakup@lfdr.de>; Mon, 01 Jun 2026 01:34:46 +0200 (CEST)
 Authentication-Results: befuddled.reisers.ca;
-	dkim=pass (1024-bit key; secure) header.d=panix.com header.i=@panix.com header.a=rsa-sha256 header.s=panix header.b=bHw1LXnw;
+	dkim=pass (1024-bit key; unprotected) header.d=t39smtp-sign001.email header.i=@t39smtp-sign001.email header.a=rsa-sha256 header.s=titan1 header.b=UEf7NtqN;
 	dkim-atps=neutral
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CC0CC3826E9; Fri, 22 May 2026 16:32:13 -0400 (EDT)
+	id 872CB3828BE; Sun, 31 May 2026 19:25:45 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id AA2BE3825FD
-	for <lists+speakup@lfdr.de>; Fri, 22 May 2026 16:32:13 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 67D603818CB
+	for <lists+speakup@lfdr.de>; Sun, 31 May 2026 19:25:45 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id A5ABE382605; Fri, 22 May 2026 16:32:07 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 1A5C33825F9
-	for <speakup@linux-speakup.org>; Fri, 22 May 2026 16:32:07 -0400 (EDT)
-Received: from [192.168.4.27] (24.115.246.146.res-cmts.sm3.ptd.net [24.115.246.146])
-	by mailbackend.panix.com (Postfix) with ESMTPSA id 4gMcQ94w6kz4jcn;
-	Fri, 22 May 2026 16:32:01 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1779481921; bh=rH+jBFtnycXSRewOaIJ0icZeZdDutMrO6X/UTenKPEU=;
-	h=Date:Subject:In-Reply-To:From:To;
-	b=bHw1LXnwF56i/2usIISv9alY3Mz+EmTRIwkfyzJm0h0x77olOeyiqB2xL6tW/BICD
-	 zfyYqJm0QwWts/qRoM+7QNsHDiWThof4DekLApzY+sp9N3iBt4eTjwLdMnp0uWUuGu
-	 pAdCzUeubdyOh32vwHLspMr5579E6jNH13iIRG/o=
-SavedFromEmail: jdashiel@panix.com
-Date: Fri, 22 May 2026 16:32:00 -0400
-Subject: RE: Fedora and Espeakup
-In-Reply-To: <fb65c199-a58d-4510-80de-eeea023a468e@math.wisc.edu>
-Importance: normal
-From: jdashiel <jdashiel@panix.com>
-To: "John G. Heim" <jheim@math.wisc.edu>, "Speakup is a screen review system
- for Linux." <speakup@linux-speakup.org>
+	id 3B894381952; Sun, 31 May 2026 19:25:39 -0400 (EDT)
+Received: from mail412.out.titan.email (mail412.out.titan.email [98.80.1.170])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id E8B3E3817D9
+	for <speakup@linux-speakup.org>; Sun, 31 May 2026 19:25:38 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by smtp-out.flockmail.com (Postfix) with ESMTP id 4gTCrC3RW0z1xmm
+	for <speakup@linux-speakup.org>; Sun, 31 May 2026 23:25:31 +0000 (UTC)
+X-Titan-User-Uid: eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..eqDCIolu3fwGDExw.ClHH5_R5WpW5YvjbK40xe3-eVYStyM6k4yPBPKi4sOIceCR4mRGH32IlmWDvAt9ukAltKXUSArVJbJO1SCdT1uYZD1KcNfwADWUTNzk.Bsq5bIfhXYIGySuOqohpbQ
+DKIM-Signature: a=rsa-sha256; bh=hYBhIo3JKbS8RcKFxC/AeiwZ82wG8nd5C7SJOpvNkQU=;
+	c=relaxed/relaxed; d=t39smtp-sign001.email;
+	h=reply-to:subject:date:message-id:from:to:mime-version:from:to:subject:date:message-id:reply-to:cc:in-reply-to:references;
+	q=dns/txt; s=titan1; t=1780269931; v=1;
+	b=UEf7NtqNI50QqhOckJdKz5SW2QP04oLv64ULMwOtBXNhpEu+0ScJYjHMKLxDOQVzbfyo0Yqc
+	1mxSJrRE+V6SPIeFa74f9/g7GHZiuersUkx9+PSUQePw3qATvsWJwRGHkos5tBsnj8z1Xw3GHXo
+	S6tYOJsPpm+yGw4XilJTyAfU=
+X-AuthUser: glenn@ervin.email
+Received: from nucwin10 (unknown [140.228.165.201])
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4gTCrC0jwcz1xmj
+	for <speakup@linux-speakup.org>; Sun, 31 May 2026 23:25:30 +0000 (UTC)
+Message-ID: <03d401dcf154$c5e86180$8d01f80a@nucwin10>
+Reply-To: "K0LNY ??" <glenn@ervin.email>
+Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
+From: "K0LNY ??" <glenn@ervin.email>
+To: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+Subject: you killed speakup
+Date: Sun, 31 May 2026 18:25:30 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -49,102 +55,114 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative; boundary="--_com.samsung.android.email_41365741559380"
-Message-Id: <20260522203213.AA2BE3825FD@befuddled.reisers.ca>
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_03D1_01DCF12A.DC8F46D0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-F-Verdict: SPFVALID
+X-Titan-Src-Out: 1780269931288805580.32333.7369356426891592280@prod-use1-smtp-out1003.
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.4 cv=K98S2SWI c=1 sm=1 tr=0 ts=6a1cc36b
+	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
+	a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=r77TgQKjGQsHNAKrUKIA:9
+	a=kU8mcblDKfQzzrIqsa0A:9 a=wPNLvfGTeEIA:10 a=wx4m7dFGSJivKYz_sIQA:9
+	a=XDPa82nxXYzZ82Cu:21 a=_W_S_7VecoQA:10 a=P3K-DvM3-jjlTNsN-mCd:22
+	a=NWVoK91CQySWRX1oVYDe:22
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
-X-Spamd-Result: default: False [0.21 / 15.00];
-	MIME_BASE64_TEXT_BOGUS(1.00)[];
-	DMARC_POLICY_ALLOW(-0.50)[panix.com,none];
-	R_DKIM_ALLOW(-0.20)[panix.com:s=panix];
+X-Spamd-Result: default: False [2.12 / 15.00];
+	OLD_X_MAILER(2.00)[];
+	MID_RHS_NOT_FQDN(0.50)[];
+	R_DKIM_ALLOW(-0.20)[t39smtp-sign001.email:s=titan1];
 	MAILLIST(-0.18)[generic];
-	MIME_BASE64_TEXT(0.10)[];
 	MIME_GOOD(-0.10)[multipart/alternative,text/plain];
 	RCVD_NO_TLS_LAST(0.10)[];
 	HAS_LIST_UNSUB(-0.01)[];
-	TAGGED_FROM(0.00)[bounces-1608-lists,speakup=lfdr.de];
-	RCPT_COUNT_TWO(0.00)[2];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
 	TO_DN_ALL(0.00)[];
-	ARC_NA(0.00)[];
-	MIME_TRACE(0.00)[0:+,1:+,2:~];
-	DKIM_TRACE(0.00)[panix.com:+];
 	R_SPF_NA(0.00)[no SPF record];
+	TAGGED_FROM(0.00)[bounces-1609-lists,speakup=lfdr.de];
+	MIME_TRACE(0.00)[0:+,1:+,2:~];
+	DMARC_NA(0.00)[ervin.email];
+	HAS_ORG_HEADER(0.00)[];
+	RCPT_COUNT_ONE(0.00)[1];
+	HAS_X_PRIO_THREE(0.00)[3];
 	FORGED_SENDER_MAILLIST(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[5];
-	FROM_NEQ_ENVFROM(0.00)[jdashiel@panix.com,speakup@linux-speakup.org];
+	HAS_REPLYTO(0.00)[glenn@ervin.email];
+	RCVD_COUNT_FIVE(0.00)[6];
+	FROM_NEQ_ENVFROM(0.00)[glenn@ervin.email,speakup@linux-speakup.org];
 	FROM_HAS_DN(0.00)[];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	NEURAL_HAM(-0.00)[-0.899];
-	RCVD_VIA_SMTP_AUTH(0.00)[];
+	DKIM_TRACE(0.00)[t39smtp-sign001.email:+];
+	NEURAL_HAM(-0.00)[-1.000];
+	ARC_NA(0.00)[];
 	TAGGED_RCPT(0.00)[speakup];
-	MISSING_XM_UA(0.00)[];
 	ASN(0.00)[asn:5645, ipnet:206.248.128.0/18, country:CA];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[wisc.edu:email,panix.com:dkim,befuddled.reisers.ca:rdns,befuddled.reisers.ca:mid,befuddled.reisers.ca:helo,linux-speakup.org:email]
-X-Rspamd-Queue-Id: 5AF3A5BA14B
+	RCVD_VIA_SMTP_AUTH(0.00)[];
+	REPLYTO_EQ_FROM(0.00)[]
+X-Rspamd-Queue-Id: 0BBAA6184B5
 X-Rspamd-Action: no action
 X-Rspamd-Server: lfdr
 
-----_com.samsung.android.email_41365741559380
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: base64
+This is a multi-part message in MIME format.
 
-U2VudCBmcm9tIG15IEdhbGF4eVlvdSBhcmUgY2lycmVjNSwgZGZlZG9yYXlvdSBheHJlIGNvcnJl
-Y3QgZmVkb3JhIGFuZCBnZW50b28gcm9sbCB0aHJlaXIgb3duIGplcm5lbHMgd2hpY2ggZXhjbHVk
-ZSBlc3BlYWt1cC4gSSB1c2VkIGZlZG9yYSBmb3IgYSB3aGlsZSBsYXN0IHllYXIgYW5kIHNwZWNp
-ZmljbHkgc2VhcmNoZWQgZm9yIGVzcGVha3VwIGFuZCBlc3BlYWt1cCBpcyBub3QgaW4gYW55IGZl
-ZG9yYSBkaXN0cmlidXRpb24uwqAgV2l0aCBnZW50b28geW91IGNhbiBwYXRjaCB0aGUga2VybmVs
-IGFuZCBhZGQgZXNwZWFrdXAgdG8gaXQuwqAgbGlrZWx5IGFuIGVhc2llciBwb3NzaWJpbGl0eSBm
-b3IgZ2VudG9vIGlzIHRkc3Igc2luY2UgdGhhdCBkb2Vzbid0IG1lc3Mgd2l0aCB0aGUga2VybmVs
-LsKgCi0tLS0tLS0tIE9yaWdpbmFsIG1lc3NhZ2UgLS0tLS0tLS1Gcm9tOiAiSm9obiBHLiBIZWlt
-IiA8amhlaW1AbWF0aC53aXNjLmVkdT4gRGF0ZTogNS8yMi8yNiAgMTY6MTYgIChHTVQtMDU6MDAp
-IFRvOiAiU3BlYWt1cCBpcyBhIHNjcmVlbiByZXZpZXcgc3lzdGVtIGZvciBMaW51eC4iIDxzcGVh
-a3VwQGxpbnV4LXNwZWFrdXAub3JnPiBTdWJqZWN0OiBGZWRvcmEgYW5kIEVzcGVha3VwIEkgd2Fz
-IGFib3V0IHRvIHdyaXRlwqAgdGhlIHBhcnQgb2YgdGhlIFNwZWFrdXDCoCBkb2NzIGFib3V0IGlu
-c3RhbGxpbmcgYW5kIGNvbmZpZ3VyaW5nIEVzcGVha3VwIHdoZW4gSSByYW4gaW50byB0cm91Ymxl
-IG9uIEZlZG9yYS4gSXQgbG9va3MgYXMgaWYgdGhlcmUgaXMgbm8gRXNwZWFrdXAgcGFja2FnZSBm
-b3IgRmVkb3JhLiBDYW4gYW55b25lIGNvbmZpcm0/VGhpcyB3b3VsZCBtZWFuIGEgRmVkb3JhIHVz
-ZXIgY2Fubm90IHVzZSBzb2Z0d2FyZSBzcGVlY2ggLS0gd2hpY2ggc2VlbXMgaW1wb3NzaWJsZSB0
-byBtZS4gSWbCoCB5b3XCoCBhcmUgYSBGZWRvcmEgb3IgUmVkIEhhdCBzeXMgYWRtaW4swqAgeW91
-IGNhbm5vdCB1c2Ugc29mdHdhcmUgc3BlZWNoPyBUaGF0IHdvdWxkwqAgYmUgYmFkLiBJIGd1ZXNz
-IHlvdcKgIGNvdWxkwqAgZ2V0IHlvdXIgam9iIGRvbmUgdmlhwqAgYcKgIGNvbWJpbmF0aW9uIG9m
-IHNzaCwgYSBoYXJkd2FyZSBzeW50aCwgYW5kIHVzaW5nIE9yY2EgaW7CoCB0aGUgR1VJLg==
+------=_NextPart_000_03D1_01DCF12A.DC8F46D0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 
-----_com.samsung.android.email_41365741559380
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: base64
+Hi,
+I'm trying to remember how to make speakup silent.
+I remember I've pressed a key combo on my netbook where it says
+you killed speakup
+and pressing it again says
+I'm alive
+What is that command?
+Thanks
 
-PGh0bWw+PGhlYWQ+PG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0
-L2h0bWw7IGNoYXJzZXQ9VVRGLTgiPjwvaGVhZD48Ym9keSBkaXI9ImF1dG8iPjxkaXYgZGlyPSJh
-dXRvIj48YnI+PC9kaXY+PGRpdiBkaXI9ImF1dG8iPjxicj48L2Rpdj48ZGl2IGRpcj0iYXV0byI+
-PGJyPjwvZGl2PjxkaXYgZGlyPSJhdXRvIj48YnI+PC9kaXY+PGRpdiBpZD0iY29tcG9zZXJfc2ln
-bmF0dXJlIiBkaXI9ImF1dG8iPjxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxNHB4O2NvbG9yOiM5MDkw
-OTAiIGRpcj0iYXV0byI+U2VudCBmcm9tIG15IEdhbGF4eTwvZGl2PjwvZGl2PjxkaXYgZGlyPSJh
-dXRvIj5Zb3UgYXJlIGNpcnJlYzUsIGRmZWRvcmF5b3UgYXhyZSBjb3JyZWN0IGZlZG9yYSBhbmQg
-Z2VudG9vIHJvbGwgdGhyZWlyIG93biBqZXJuZWxzIHdoaWNoIGV4Y2x1ZGUgZXNwZWFrdXAuIEkg
-dXNlZCBmZWRvcmEgZm9yIGEgd2hpbGUgbGFzdCB5ZWFyIGFuZCBzcGVjaWZpY2x5IHNlYXJjaGVk
-IGZvciBlc3BlYWt1cCBhbmQgZXNwZWFrdXAgaXMgbm90IGluIGFueSBmZWRvcmEgZGlzdHJpYnV0
-aW9uLiZuYnNwOyBXaXRoIGdlbnRvbyB5b3UgY2FuIHBhdGNoIHRoZSBrZXJuZWwgYW5kIGFkZCBl
-c3BlYWt1cCB0byBpdC4mbmJzcDsgbGlrZWx5IGFuIGVhc2llciBwb3NzaWJpbGl0eSBmb3IgZ2Vu
-dG9vIGlzIHRkc3Igc2luY2UgdGhhdCBkb2Vzbid0IG1lc3Mgd2l0aCB0aGUga2VybmVsLjwvZGl2
-PjxkaXYgZGlyPSJhdXRvIj48YnI+PC9kaXY+PGRpdiBkaXI9ImF1dG8iPiZuYnNwOzwvZGl2Pjxk
-aXY+PGJyPjwvZGl2PjxkaXYgYWxpZ249ImxlZnQiIGRpcj0iYXV0byIgc3R5bGU9ImZvbnQtc2l6
-ZToxMDAlO2NvbG9yOiMwMDAwMDAiPjxkaXY+LS0tLS0tLS0gT3JpZ2luYWwgbWVzc2FnZSAtLS0t
-LS0tLTwvZGl2PjxkaXY+RnJvbTogIkpvaG4gRy4gSGVpbSIgJmx0O2poZWltQG1hdGgud2lzYy5l
-ZHUmZ3Q7IDwvZGl2PjxkaXY+RGF0ZTogNS8yMi8yNiAgMTY6MTYgIChHTVQtMDU6MDApIDwvZGl2
-PjxkaXY+VG86ICJTcGVha3VwIGlzIGEgc2NyZWVuIHJldmlldyBzeXN0ZW0gZm9yIExpbnV4LiIg
-Jmx0O3NwZWFrdXBAbGludXgtc3BlYWt1cC5vcmcmZ3Q7IDwvZGl2PjxkaXY+U3ViamVjdDogRmVk
-b3JhIGFuZCBFc3BlYWt1cCA8L2Rpdj48ZGl2Pjxicj48L2Rpdj48L2Rpdj5JIHdhcyBhYm91dCB0
-byB3cml0ZSZuYnNwOyB0aGUgcGFydCBvZiB0aGUgU3BlYWt1cCZuYnNwOyBkb2NzIGFib3V0IGlu
-c3RhbGxpbmcgYW5kIDxicj5jb25maWd1cmluZyBFc3BlYWt1cCB3aGVuIEkgcmFuIGludG8gdHJv
-dWJsZSBvbiBGZWRvcmEuIEl0IGxvb2tzIGFzIGlmIDxicj50aGVyZSBpcyBubyBFc3BlYWt1cCBw
-YWNrYWdlIGZvciBGZWRvcmEuIENhbiBhbnlvbmUgY29uZmlybT88YnI+PGJyPlRoaXMgd291bGQg
-bWVhbiBhIEZlZG9yYSB1c2VyIGNhbm5vdCB1c2Ugc29mdHdhcmUgc3BlZWNoIC0tIHdoaWNoIHNl
-ZW1zIDxicj5pbXBvc3NpYmxlIHRvIG1lLiBJZiZuYnNwOyB5b3UmbmJzcDsgYXJlIGEgRmVkb3Jh
-IG9yIFJlZCBIYXQgc3lzIGFkbWluLCZuYnNwOyB5b3UgPGJyPmNhbm5vdCB1c2Ugc29mdHdhcmUg
-c3BlZWNoPyBUaGF0IHdvdWxkJm5ic3A7IGJlIGJhZC4gSSBndWVzcyB5b3UmbmJzcDsgY291bGQm
-bmJzcDsgZ2V0IDxicj55b3VyIGpvYiBkb25lIHZpYSZuYnNwOyBhJm5ic3A7IGNvbWJpbmF0aW9u
-IG9mIHNzaCwgYSBoYXJkd2FyZSBzeW50aCwgYW5kIHVzaW5nIDxicj5PcmNhIGluJm5ic3A7IHRo
-ZSBHVUkuPGJyPjxicj48YnI+PGJyPjwvYm9keT48L2h0bWw+
+Glenn
 
-----_com.samsung.android.email_41365741559380--
+It used to be wine, women, and song,
+Now it's beer, the old lady, and TV.
+
+Glenn K0LNY & WSAT439
+My TGIF TalkGroup is 4499
+
+------=_NextPart_000_03D1_01DCF12A.DC8F46D0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3Diso-8859-1" =
+http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 11.00.10570.1001">
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT size=3D2 face=3DArial>Hi,</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I'm trying to remember how to make =
+speakup=20
+silent.</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I remember I've pressed a key combo on =
+my netbook=20
+where it says</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>you killed speakup</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>and pressing it again says</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>I'm alive</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>What is that command?</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial>Thanks</FONT></DIV>
+<DIV><FONT size=3D2 face=3DArial></FONT>&nbsp;</DIV>
+<DIV><FONT size=3D2 face=3DArial>Glenn</FONT></DIV><FONT size=3D2 =
+face=3DArial>
+<DIV><BR>It used to be wine, women, and song,<BR>Now it's beer, the old =
+lady,=20
+and TV.</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>Glenn K0LNY &amp; WSAT439<BR>My TGIF TalkGroup is=20
+4499<BR></FONT></DIV></BODY></HTML>
+
+------=_NextPart_000_03D1_01DCF12A.DC8F46D0--
 
 
