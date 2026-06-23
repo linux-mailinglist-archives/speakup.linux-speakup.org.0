@@ -1,47 +1,55 @@
-Return-Path: <speakup+bounces-1613-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1614-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by mail.lfdr.de with LMTP
-	id yxLPIfSXOmozBAgAu9opvQ
-	(envelope-from <speakup+bounces-1613-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Tue, 23 Jun 2026 16:28:04 +0200
+	id 6OfzIBuzOmoLEQgAu9opvQ
+	(envelope-from <speakup+bounces-1614-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Tue, 23 Jun 2026 18:23:55 +0200
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id 3C3556B7DF8
-	for <lists+speakup@lfdr.de>; Tue, 23 Jun 2026 16:28:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id E069A6B8B32
+	for <lists+speakup@lfdr.de>; Tue, 23 Jun 2026 18:23:54 +0200 (CEST)
 Authentication-Results: mail.lfdr.de;
-	dkim=pass header.d=panix.com header.s=panix header.b=pyXnBoat;
-	spf=none (mail.lfdr.de: domain of "speakup+bounces-1613-lists+speakup=lfdr.de@linux-speakup.org" has no SPF policy when checking 206.248.184.127) smtp.mailfrom="speakup+bounces-1613-lists+speakup=lfdr.de@linux-speakup.org";
-	dmarc=pass (policy=none) header.from=panix.com
+	dkim=pass header.d=t39smtp-sign001.email header.s=titan1 header.b=axQUcthB;
+	spf=none (mail.lfdr.de: domain of "speakup+bounces-1614-lists+speakup=lfdr.de@linux-speakup.org" has no SPF policy when checking 206.248.184.127) smtp.mailfrom="speakup+bounces-1614-lists+speakup=lfdr.de@linux-speakup.org";
+	dmarc=none
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 47CB338266A; Tue, 23 Jun 2026 10:28:00 -0400 (EDT)
+	id 10363382631; Tue, 23 Jun 2026 12:23:48 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 2A706381902
-	for <lists+speakup@lfdr.de>; Tue, 23 Jun 2026 10:28:00 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id E21B83821A9
+	for <lists+speakup@lfdr.de>; Tue, 23 Jun 2026 12:23:47 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 140793820A0; Tue, 23 Jun 2026 10:27:54 -0400 (EDT)
-Received: from mailbackend.panix.com (mailbackend.panix.com [166.84.1.89])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id A0F3E381902
-	for <speakup@linux-speakup.org>; Tue, 23 Jun 2026 10:27:53 -0400 (EDT)
-Received: from [192.168.4.27] (24.115.246.146.res-cmts.sm3.ptd.net [24.115.246.146])
-	by mailbackend.panix.com (Postfix) with ESMTPSA id 4gl6qB0r68z12H2;
-	Tue, 23 Jun 2026 10:27:50 -0400 (EDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=panix.com; s=panix;
-	t=1782224870; bh=L9CzgaJqE18xEOOnbrj7b4fVpd+c+CC84BQrQikxgu0=;
-	h=Date:Subject:In-Reply-To:From:To;
-	b=pyXnBoattMWEwfhRrnoRi2t28gltMIhdToqxjxlTBWVGYjD6naoCbgMw8UmrnyMTL
-	 89EIJNAZEQF8Gumgtx2A6LOsme7d6Om0RFyz4yioS01D4lxR+L5OtutLt49fRga6U8
-	 vg4usvFTvJdvO3lCO91K5VVuYi4gQTp9yXLs2o2g=
-SavedFromEmail: jdashiel@panix.com
-Date: Tue, 23 Jun 2026 10:27:49 -0400
+	id DB4D53821A9; Tue, 23 Jun 2026 12:23:41 -0400 (EDT)
+Received: from mail412.out.titan.email (mail412.out.titan.email [98.80.1.170])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id ADA513817CB
+	for <speakup@linux-speakup.org>; Tue, 23 Jun 2026 12:23:41 -0400 (EDT)
+Received: from localhost (localhost [127.0.0.1])
+	by smtp-out.flockmail.com (Postfix) with ESMTP id 4gl9Np4FKhz1xrj;
+	Tue, 23 Jun 2026 16:23:38 +0000 (UTC)
+X-Titan-User-Uid: eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..9ntnQ-hrrisFMVz0.ofWmDhbKESGpiLt9GYpFjr9mt51gYc0fnm7Aj4JScwBZDcJ-N8kYuTlVXaZ18d-T4VEz875iXZppvdENeemBPsgk7HegWxsmUU583Ic.5QBc9eZVaoQN3xvcjL_Wxg
+DKIM-Signature: a=rsa-sha256; bh=3UB7EhBtYwM6P92f9/nhqqvGm0zLp7gQ2v16LkDW4sk=;
+	c=relaxed/relaxed; d=t39smtp-sign001.email;
+	h=from:to:message-id:reply-to:references:mime-version:cc:subject:date:from:to:cc:subject:date:message-id:reply-to:references:in-reply-to;
+	q=dns/txt; s=titan1; t=1782231818; v=1;
+	b=axQUcthBIBxN0ZxHBRakgr5cehwZAhmoGsxcV7zL09ZI9OqYib79xbO5vYuXsHXNRcV1uOs9
+	hpeqPTDzcA70LMeTx9WmNpUKaWvnDQbIIqLeDWrCDvyIXIpMlfClOIIKYUyh5A6cmfqjp06lI6V
+	UaFHc0ADo3NoPBmiZBJV+f1k=
+X-AuthUser: glenn@ervin.email
+Received: from nucwin10 (unknown [140.228.165.201])
+	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4gl9Np0qNMz1xsm;
+	Tue, 23 Jun 2026 16:23:38 +0000 (UTC)
+Message-ID: <036601dd032c$a63f17e0$8b01f80a@nucwin10>
+Reply-To: "K0LNY ??" <glenn@ervin.email>
+Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
+From: "K0LNY ??" <glenn@ervin.email>
+To: "John G. Heim" <jheim@math.wisc.edu>
+Cc: "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
+References: <aa9f5623-dba3-4686-9b5c-8144e409425f@math.wisc.edu> <031401dd02c6$798d33a0$8b01f80a@nucwin10> <d6e07425-3566-407a-a371-a4d8055e9764@math.wisc.edu>
 Subject: Re: Speechd-up -- nice!
-In-Reply-To: <031401dd02c6$798d33a0$8b01f80a@nucwin10>
-Importance: normal
-From: jdashiel <jdashiel@panix.com>
-To: K0LNY ?? <glenn@ervin.email>, "Speakup is a screen review system for
- Linux." <speakup@linux-speakup.org>, "John G. Heim" <jheim@math.wisc.edu>
+Date: Tue, 23 Jun 2026 11:23:38 -0500
+Organization: Home
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -50,127 +58,133 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: multipart/alternative; boundary="--_com.samsung.android.email_199631066419580"
-Message-Id: <20260623142800.2A706381902@befuddled.reisers.ca>
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2900.2180
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+X-F-Verdict: SPFVALID
+X-Titan-Src-Out: 1782231818406780044.32333.629873446629470687@prod-use1-smtp-out1003.
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.4 cv=eeENubEH c=1 sm=1 tr=0 ts=6a3ab30a
+	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
+	a=IkcTkHD0fZMA:10 a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=qPKtzgQbAAAA:8
+	a=G1YoVP_uH81tgqB0C8EA:9 a=QEXdDO2ut3YA:10 a=mWFacF0p99gW8SnQVrlR:22
+	a=OTAqJWGB1laLS8RTg9aS:22 a=P3K-DvM3-jjlTNsN-mCd:22
+	a=NWVoK91CQySWRX1oVYDe:22
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 X-Rspamd-Action: no action
-X-Spamd-Result: default: False [0.21 / 15.00];
-	MIME_BASE64_TEXT_BOGUS(1.00)[];
-	DMARC_POLICY_ALLOW(-0.50)[panix.com,none];
-	R_DKIM_ALLOW(-0.20)[panix.com:s=panix];
+X-Spamd-Result: default: False [2.12 / 15.00];
+	OLD_X_MAILER(2.00)[];
+	MID_RHS_NOT_FQDN(0.50)[];
+	R_DKIM_ALLOW(-0.20)[t39smtp-sign001.email:s=titan1];
 	MAILLIST(-0.18)[generic];
-	MIME_BASE64_TEXT(0.10)[];
-	MIME_GOOD(-0.10)[multipart/alternative,text/plain];
+	MIME_GOOD(-0.10)[text/plain];
 	RCVD_NO_TLS_LAST(0.10)[];
 	HAS_LIST_UNSUB(-0.01)[];
-	TO_DN_ALL(0.00)[];
-	TAGGED_FROM(0.00)[bounces-1613-lists,speakup=lfdr.de];
+	RCPT_COUNT_TWO(0.00)[2];
+	RECEIVED_HELO_LOCALHOST(0.00)[];
+	FORGED_RECIPIENTS(0.00)[m:jheim@math.wisc.edu,s:lists@lfdr.de];
+	DMARC_NA(0.00)[ervin.email];
+	DBL_BLOCKED_OPENRESOLVER(0.00)[ervin.email:replyto,ervin.email:email,ervin.email:from_mime];
+	FORGED_SENDER(0.00)[glenn@ervin.email,speakup@linux-speakup.org];
 	SUBJECT_ENDS_EXCLAIM(0.00)[];
-	MIME_TRACE(0.00)[0:+,1:+,2:~];
 	ARC_NA(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:glenn@ervin.email,m:jheim@math.wisc.edu,s:lists@lfdr.de];
+	TO_DN_ALL(0.00)[];
+	MIME_TRACE(0.00)[0:+];
+	HAS_ORG_HEADER(0.00)[];
 	FORWARDED(0.00)[lists@lfdr.de];
-	FORGED_SENDER(0.00)[jdashiel@panix.com,speakup@linux-speakup.org];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
-	R_SPF_NA(0.00)[no SPF record];
-	RCPT_COUNT_THREE(0.00)[3];
-	FORGED_SENDER_MAILLIST(0.00)[];
+	TAGGED_FROM(0.00)[bounces-1614-lists,speakup=lfdr.de];
+	DKIM_TRACE(0.00)[t39smtp-sign001.email:+];
+	HAS_REPLYTO(0.00)[glenn@ervin.email];
 	FORGED_SENDER_FORWARDING(0.00)[];
-	RCVD_COUNT_FIVE(0.00)[5];
-	FROM_NEQ_ENVFROM(0.00)[jdashiel@panix.com,speakup@linux-speakup.org];
+	RCVD_COUNT_FIVE(0.00)[6];
+	R_SPF_NA(0.00)[no SPF record];
 	FROM_HAS_DN(0.00)[];
-	DKIM_TRACE(0.00)[panix.com:+];
+	FROM_NEQ_ENVFROM(0.00)[glenn@ervin.email,speakup@linux-speakup.org];
+	HAS_X_PRIO_THREE(0.00)[3];
 	ALIAS_RESOLVED(0.00)[];
 	TAGGED_RCPT(0.00)[speakup];
-	MISSING_XM_UA(0.00)[];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	FORGED_RECIPIENTS_FORWARDING(0.00)[];
 	ASN(0.00)[asn:5645, ipnet:206.248.128.0/18, country:CA];
+	FORGED_SENDER_MAILLIST(0.00)[];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[wisc.edu:email,panix.com:dkim,panix.com:from_mime,befuddled.reisers.ca:helo,befuddled.reisers.ca:rdns,befuddled.reisers.ca:mid]
+	REPLYTO_EQ_FROM(0.00)[]
 X-Rspamd-Server: lfdr
-X-Rspamd-Queue-Id: 3C3556B7DF8
+X-Rspamd-Queue-Id: E069A6B8B32
 
-----_com.samsung.android.email_199631066419580
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: base64
+I started out with an Artic internal card, and I enjoyed having that.
+I think now that Espeak sounds a lot like my artic card.
+Perhaps it is the default Espeak that grates on me if I listen to it too
+long.
+It is far better than that crap in the Roku devices, or that was, I don't
+know if they still use that crappy voice.
+I could not even enter my password because I could not distinguish some of
+the characters.
+I suggested to Roku that they use Espeak, because it is free, but after I
+contacted them, I only heard crickets.
+I have heard some variances in Espeak-ng that aren't bad in my opinion.
+When I used to set up NVDA for clients, and Espeak came up, usually they
+started laughing.
+But hey, any TTS is better than nothing.
+Glenn
 
-U3BlZWNoIHN5bnRoZXNpemVycyBzaG93ZWQgdXAgaW4gMTk2MyBpbiBmaWdodGVyIGpldHMgYW5k
-IHBpbG90cyBkaWQgbm90IHdhbnQgaHVtYW4gc291bmRpbmcgc3BlZWNoIGluIG9yZGVyIHRvIGRp
-c3Rpbmd1aXNoIGl0IGZyb20gcmFkaW8gYW5kIGludGVyY29tIHRyYWZmaWMuU2VudCBmcm9tIG15
-IEdhbGF4eQotLS0tLS0tLSBPcmlnaW5hbCBtZXNzYWdlIC0tLS0tLS0tRnJvbTogSzBMTlkgPz8g
-PGdsZW5uQGVydmluLmVtYWlsPiBEYXRlOiA2LzIzLzI2ICAwMDoxMiAgKEdNVC0wNTowMCkgVG86
-ICJTcGVha3VwIGlzIGEgc2NyZWVuIHJldmlldyBzeXN0ZW0gZm9yIExpbnV4LiIgPHNwZWFrdXBA
-bGludXgtc3BlYWt1cC5vcmc+LCAiSm9obiBHLiBIZWltIiA8amhlaW1AbWF0aC53aXNjLmVkdT4g
-U3ViamVjdDogUmU6IFNwZWVjaGQtdXAgLS0gbmljZSEgSSBkcmVhZCB0aGUgZGF5IHRoYXQgaHVt
-YW4gc291bmRpbmcgdm9pY2VzIGFyZSBhbGwgd2UgaGF2ZS5JIGhhdGUgU3BlYWt1cCwgYWx0aG91
-Z2ggaXQgaXMgcXVpdGUgaW50ZWxsaWdpYmxlLCBidXQgSSBuZXZlciB3YW50IGFueXRoaW5nIGJ1
-dCBFbG9xdWVuY2Uvdm94aW4uSHVtYW4gc291bmRpbmcgdm9pY2VzIG1pZ2h0IGJlIG9rYXkgZm9y
-IHJlYWRpbmcgYSBib29rLCBidXQgbm90IGZvciBjb21wdXRlciB1c2UgaW4gbXkgb3Bpbmlvbi4t
-LS0tLSBPcmlnaW5hbCBNZXNzYWdlIC0tLS0tIEZyb206ICJKb2huIEcuIEhlaW0iIDxqaGVpbUBt
-YXRoLndpc2MuZWR1PlRvOiAiU3BlYWt1cCBpcyBhIHNjcmVlbiByZXZpZXcgc3lzdGVtIGZvciBM
-aW51eC4iIDxzcGVha3VwQGxpbnV4LXNwZWFrdXAub3JnPlNlbnQ6IE1vbmRheSwgSnVuZSAyMiwg
-MjAyNiAxMDo0NSBQTVN1YmplY3Q6IFNwZWVjaGQtdXAgLS0gbmljZSFOb3QgbXVjaCBtZW50aW9u
-IG9mIHNwZWVjaGQtdXAgb24gdGhpcyBsaXN0IG92ZXIgdGhlIHllYXJzLiBUdXJucyBvdXRpdCdz
-IHByZXR0eSBuaWNlLiBXaGlsZSB3b3JraW5nIG9uIHJld3JpdGluZyB0aGUgZG9jcyBmb3IgU3Bl
-YWt1cCwgSWdhdmUgc3BlZWNoZC11cCBhIHRyeSBhbmQgaXQgd29ya3MgZ3JlYXQuIEknbSB1c2lu
-ZyB0aGF0IFZveGluIGRlZmF1bHR2b2ljZSwgRWxvcXVlbmNlLCBhdCB0aGUgY29tbWFuZCBsaW5l
-LiBZb3UgY2FuJ3QgZG8gdGhhdCB3aXRoIGVzcGVha3VwLlNwZWVjaGQtdXAgbWlnaHQgYmUgdGhl
-IHdheSB0byBnbyBpbiB0aGUgZnV0dXJlIGJlY2F1c2Ugdm9pY2VzIHRoYXQgYXJlbm90IHJlc291
-cmNlIGhvZ3MgYW5kIGFyZSBtb3JlIGh1bWFuIHNvdW5kaW5nIGFyZSBjb21pbmcuIFdlbGwsIHRo
-ZXlhbHJlYWR5IGV4aXN0IGV4Y2VwdCBJIGRvbid0IGtub3cgaG93IHRvIGdldCB0aGVtIHRvIHdv
-cmsgd2l0aCBTcGVlY2hEaXNwYXRjaGVyLiBBRkFJSywgbm9ib2R5IGRvZXMuIExpa2UsIEkgaGF2
-ZSBhIGxpY2Vuc2UgZm9yIFNhbWFudGhhIGJ1dGRhcm5lZCBpZiBJIGNhbiBnZXQgaXQgdG8gd29y
-ayB3aXRoIFNwZWVjaCBEaXNwYXRjaGVyLkFueXdheSwgb25jZSB0aGF0IGtpbmQgb2YgdGhpbmcg
-Z2V0cyB3b3JrZWQgb3V0LCB5b3UnbGwgYmUgYWJsZSB0byBoYXZlaHVtYW4gc291bmRpbmcgdm9p
-Y2VzIGF0IHRoZSBMaW51eCBjb21tYW5kIGxpbmUu
+----- Original Message ----- 
+From: "John G. Heim" <jheim@math.wisc.edu>
+To: "K0LNY ??" <glenn@ervin.email>
+Sent: Tuesday, June 23, 2026 10:24 AM
+Subject: Re: Speechd-up -- nice!
 
-----_com.samsung.android.email_199631066419580
-Content-Type: text/html; charset=utf-8
-Content-Transfer-Encoding: base64
 
-PGh0bWw+PGhlYWQ+PG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0
-L2h0bWw7IGNoYXJzZXQ9VVRGLTgiPjwvaGVhZD48Ym9keSBkaXI9ImF1dG8iPjxkaXYgZGlyPSJh
-dXRvIj5TcGVlY2ggc3ludGhlc2l6ZXJzIHNob3dlZCB1cCBpbiAxOTYzIGluIGZpZ2h0ZXIgamV0
-cyBhbmQgcGlsb3RzIGRpZCBub3Qgd2FudCBodW1hbiBzb3VuZGluZyBzcGVlY2ggaW4gb3JkZXIg
-dG8gZGlzdGluZ3Vpc2ggaXQgZnJvbSByYWRpbyBhbmQgaW50ZXJjb20gdHJhZmZpYy48L2Rpdj48
-ZGl2IGRpcj0iYXV0byI+PGJyPjwvZGl2PjxkaXYgZGlyPSJhdXRvIj48YnI+PC9kaXY+PGRpdiBk
-aXI9ImF1dG8iPjxicj48L2Rpdj48ZGl2IGRpcj0iYXV0byI+PGJyPjwvZGl2PjxkaXYgZGlyPSJh
-dXRvIj48YnI+PC9kaXY+PGRpdiBpZD0iY29tcG9zZXJfc2lnbmF0dXJlIiBkaXI9ImF1dG8iPjxk
-aXYgc3R5bGU9ImZvbnQtc2l6ZToxNHB4O2NvbG9yOiM5MDkwOTAiIGRpcj0iYXV0byI+U2VudCBm
-cm9tIG15IEdhbGF4eTwvZGl2PjwvZGl2PjxkaXYgZGlyPSJhdXRvIj48YnI+PC9kaXY+PGRpdj48
-YnI+PC9kaXY+PGRpdiBhbGlnbj0ibGVmdCIgZGlyPSJhdXRvIiBzdHlsZT0iZm9udC1zaXplOjEw
-MCU7Y29sb3I6IzAwMDAwMCI+PGRpdj4tLS0tLS0tLSBPcmlnaW5hbCBtZXNzYWdlIC0tLS0tLS0t
-PC9kaXY+PGRpdj5Gcm9tOiBLMExOWSA/PyAmbHQ7Z2xlbm5AZXJ2aW4uZW1haWwmZ3Q7IDwvZGl2
-PjxkaXY+RGF0ZTogNi8yMy8yNiAgMDA6MTIgIChHTVQtMDU6MDApIDwvZGl2PjxkaXY+VG86ICJT
-cGVha3VwIGlzIGEgc2NyZWVuIHJldmlldyBzeXN0ZW0gZm9yIExpbnV4LiIgJmx0O3NwZWFrdXBA
-bGludXgtc3BlYWt1cC5vcmcmZ3Q7LCAiSm9obiBHLiBIZWltIiAmbHQ7amhlaW1AbWF0aC53aXNj
-LmVkdSZndDsgPC9kaXY+PGRpdj5TdWJqZWN0OiBSZTogU3BlZWNoZC11cCAtLSBuaWNlISA8L2Rp
-dj48ZGl2Pjxicj48L2Rpdj48L2Rpdj5JIGRyZWFkIHRoZSBkYXkgdGhhdCBodW1hbiBzb3VuZGlu
-ZyB2b2ljZXMgYXJlIGFsbCB3ZSBoYXZlLjxicj5JIGhhdGUgU3BlYWt1cCwgYWx0aG91Z2ggaXQg
-aXMgcXVpdGUgaW50ZWxsaWdpYmxlLCBidXQgSSBuZXZlciB3YW50IGFueXRoaW5nIDxicj5idXQg
-RWxvcXVlbmNlL3ZveGluLjxicj5IdW1hbiBzb3VuZGluZyB2b2ljZXMgbWlnaHQgYmUgb2theSBm
-b3IgcmVhZGluZyBhIGJvb2ssIGJ1dCBub3QgZm9yIGNvbXB1dGVyIDxicj51c2UgaW4gbXkgb3Bp
-bmlvbi48YnI+LS0tLS0gT3JpZ2luYWwgTWVzc2FnZSAtLS0tLSA8YnI+RnJvbTogIkpvaG4gRy4g
-SGVpbSIgJmx0O2poZWltQG1hdGgud2lzYy5lZHUmZ3Q7PGJyPlRvOiAiU3BlYWt1cCBpcyBhIHNj
-cmVlbiByZXZpZXcgc3lzdGVtIGZvciBMaW51eC4iIDxicj4mbHQ7c3BlYWt1cEBsaW51eC1zcGVh
-a3VwLm9yZyZndDs8YnI+U2VudDogTW9uZGF5LCBKdW5lIDIyLCAyMDI2IDEwOjQ1IFBNPGJyPlN1
-YmplY3Q6IFNwZWVjaGQtdXAgLS0gbmljZSE8YnI+PGJyPjxicj5Ob3QgbXVjaCBtZW50aW9uIG9m
-IHNwZWVjaGQtdXAgb24gdGhpcyBsaXN0IG92ZXIgdGhlIHllYXJzLiBUdXJucyBvdXQ8YnI+aXQn
-cyBwcmV0dHkgbmljZS4gV2hpbGUgd29ya2luZyBvbiByZXdyaXRpbmcgdGhlIGRvY3MgZm9yIFNw
-ZWFrdXAsIEk8YnI+Z2F2ZSBzcGVlY2hkLXVwIGEgdHJ5IGFuZCBpdCB3b3JrcyBncmVhdC4gSSdt
-IHVzaW5nIHRoYXQgVm94aW4gZGVmYXVsdDxicj52b2ljZSwgRWxvcXVlbmNlLCBhdCB0aGUgY29t
-bWFuZCBsaW5lLiBZb3UgY2FuJ3QgZG8gdGhhdCB3aXRoIGVzcGVha3VwLjxicj48YnI+U3BlZWNo
-ZC11cCBtaWdodCBiZSB0aGUgd2F5IHRvIGdvIGluIHRoZSBmdXR1cmUgYmVjYXVzZSB2b2ljZXMg
-dGhhdCBhcmU8YnI+bm90IHJlc291cmNlIGhvZ3MgYW5kIGFyZSBtb3JlIGh1bWFuIHNvdW5kaW5n
-IGFyZSBjb21pbmcuIFdlbGwsIHRoZXk8YnI+YWxyZWFkeSBleGlzdCBleGNlcHQgSSBkb24ndCBr
-bm93IGhvdyB0byBnZXQgdGhlbSB0byB3b3JrIHdpdGggU3BlZWNoPGJyPkRpc3BhdGNoZXIuIEFG
-QUlLLCBub2JvZHkgZG9lcy4gTGlrZSwgSSBoYXZlIGEgbGljZW5zZSBmb3IgU2FtYW50aGEgYnV0
-PGJyPmRhcm5lZCBpZiBJIGNhbiBnZXQgaXQgdG8gd29yayB3aXRoIFNwZWVjaCBEaXNwYXRjaGVy
-Ljxicj48YnI+QW55d2F5LCBvbmNlIHRoYXQga2luZCBvZiB0aGluZyBnZXRzIHdvcmtlZCBvdXQs
-IHlvdSdsbCBiZSBhYmxlIHRvIGhhdmU8YnI+aHVtYW4gc291bmRpbmcgdm9pY2VzIGF0IHRoZSBM
-aW51eCBjb21tYW5kIGxpbmUuPGJyPjxicj48YnI+PGJyPjxicj48YnI+PGJyPjwvYm9keT48L2h0
-bWw+
+I am convinced it's just what you are used to. It's like if you listen
+to English with a British accent every day, that sounds clearer than
+English spoken with an American accent. If you listen to podcasts at 1.5
+speed, at first it's hard to understand but then you get used to it. As
+someone who switches back and forth between the espeak-ng voice Gene
+and Eloquence, I am absolutely convinced there is not a meaningful
+difference.
 
-----_com.samsung.android.email_199631066419580--
+Your mileage may vary. I'm not a neurologist. But I'd bet my house that
+it's just what you are used to.
+
+
+
+On 6/22/26 11:12 PM, K0LNY ?? wrote:
+> I dread the day that human sounding voices are all we have.
+> I hate Speakup, although it is quite intelligible, but I never want 
+> anything
+> but Eloquence/voxin.
+> Human sounding voices might be okay for reading a book, but not for 
+> computer
+> use in my opinion.
+> ----- Original Message -----
+> From: "John G. Heim" <jheim@math.wisc.edu>
+> To: "Speakup is a screen review system for Linux."
+> <speakup@linux-speakup.org>
+> Sent: Monday, June 22, 2026 10:45 PM
+> Subject: Speechd-up -- nice!
+>
+>
+> Not much mention of speechd-up on this list over the years. Turns out
+> it's pretty nice. While working on rewriting the docs for Speakup, I
+> gave speechd-up a try and it works great. I'm using that Voxin default
+> voice, Eloquence, at the command line. You can't do that with espeakup.
+>
+> Speechd-up might be the way to go in the future because voices that are
+> not resource hogs and are more human sounding are coming. Well, they
+> already exist except I don't know how to get them to work with Speech
+> Dispatcher. AFAIK, nobody does. Like, I have a license for Samantha but
+> darned if I can get it to work with Speech Dispatcher.
+>
+> Anyway, once that kind of thing gets worked out, you'll be able to have
+> human sounding voices at the Linux command line.
+>
+>
+>
+>
+> 
 
 
