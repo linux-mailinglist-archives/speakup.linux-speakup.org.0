@@ -1,55 +1,91 @@
-Return-Path: <speakup+bounces-1630-lists+speakup=lfdr.de@linux-speakup.org>
+Return-Path: <speakup+bounces-1631-lists+speakup=lfdr.de@linux-speakup.org>
 Delivered-To: lists+speakup@lfdr.de
 Received: from mail.lfdr.de
 	by mail.lfdr.de with LMTP
-	id MlPZNT4APGq5iAgAu9opvQ
-	(envelope-from <speakup+bounces-1630-lists+speakup=lfdr.de@linux-speakup.org>)
-	for <lists+speakup@lfdr.de>; Wed, 24 Jun 2026 18:05:18 +0200
+	id RdvPD5MCPGogiggAu9opvQ
+	(envelope-from <speakup+bounces-1631-lists+speakup=lfdr.de@linux-speakup.org>)
+	for <lists+speakup@lfdr.de>; Wed, 24 Jun 2026 18:15:15 +0200
 X-Original-To: lists+speakup@lfdr.de
 Received: from befuddled.reisers.ca (befuddled.reisers.ca [206.248.184.127])
-	by mail.lfdr.de (Postfix) with ESMTP id B61E66BFE31
-	for <lists+speakup@lfdr.de>; Wed, 24 Jun 2026 18:05:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTP id B96996BFEED
+	for <lists+speakup@lfdr.de>; Wed, 24 Jun 2026 18:15:14 +0200 (CEST)
 Authentication-Results: mail.lfdr.de;
-	dkim=pass header.d=t39smtp-sign001.email header.s=titan1 header.b=gPMNqQ6I;
-	spf=none (mail.lfdr.de: domain of "speakup+bounces-1630-lists+speakup=lfdr.de@linux-speakup.org" has no SPF policy when checking 206.248.184.127) smtp.mailfrom="speakup+bounces-1630-lists+speakup=lfdr.de@linux-speakup.org";
-	dmarc=none
+	dkim=pass header.d=hubert-humphrey.com header.s=fm2 header.b=mPJ6Kxwv;
+	dkim=pass header.d=messagingengine.com header.s=fm1 header.b=Np18VXWK;
+	spf=none (mail.lfdr.de: domain of "speakup+bounces-1631-lists+speakup=lfdr.de@linux-speakup.org" has no SPF policy when checking 206.248.184.127) smtp.mailfrom="speakup+bounces-1631-lists+speakup=lfdr.de@linux-speakup.org";
+	dmarc=pass (policy=none) header.from=hubert-humphrey.com
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id 23866382691; Wed, 24 Jun 2026 12:05:16 -0400 (EDT)
+	id 2A03F38268F; Wed, 24 Jun 2026 12:15:14 -0400 (EDT)
 Received: from befuddled.reisers.ca (localhost [127.0.0.1])
-	by befuddled.reisers.ca (Postfix) with ESMTP id 037DC38263E
-	for <lists+speakup@lfdr.de>; Wed, 24 Jun 2026 12:05:16 -0400 (EDT)
+	by befuddled.reisers.ca (Postfix) with ESMTP id 0959D382660
+	for <lists+speakup@lfdr.de>; Wed, 24 Jun 2026 12:15:14 -0400 (EDT)
 X-Original-To: speakup@linux-speakup.org
 Delivered-To: speakup@linux-speakup.org
 Received: by befuddled.reisers.ca (Postfix, from userid 65534)
-	id CA7C4382649; Wed, 24 Jun 2026 12:05:09 -0400 (EDT)
-Received: from mail64.out.titan.email (mail64.out.titan.email [44.205.83.93])
-	by befuddled.reisers.ca (Postfix) with ESMTPS id 8557F382631
-	for <speakup@linux-speakup.org>; Wed, 24 Jun 2026 12:05:09 -0400 (EDT)
-Received: from localhost (localhost [127.0.0.1])
-	by smtp-out.flockmail.com (Postfix) with ESMTP id 4glmx03C5fz1xm7;
-	Wed, 24 Jun 2026 16:05:08 +0000 (UTC)
-X-Titan-User-Uid: eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..auAH9-6uoYP0cfBh.gEUBsQAXdBsmbZuCvsa4B8FrbUCTZB-v_cUggdLKqdUQ7M0h7HG24_Of2CEJbnsBoRp6q0wu8oS1RfHMguG8aes6HcOBb9KAAPxkEN8.R-26lzmCcjzP7nLIY1VaUw
-DKIM-Signature: a=rsa-sha256; bh=xWv/du/15qw55yPjxJtPEvTBnYNfdGNEIYyoRyICZYk=;
-	c=relaxed/relaxed; d=t39smtp-sign001.email;
-	h=mime-version:reply-to:from:to:date:message-id:references:subject:from:to:subject:date:message-id:reply-to:references:cc:in-reply-to;
-	q=dns/txt; s=titan1; t=1782317108; v=1;
-	b=gPMNqQ6IMoIH/nhzvuUQxr+nBfQmF9J4VqkPvgMYRq6DFKNuD+1P581F3Ss0j+M77CiS1fta
-	fqzOogLc52+Hs+5Pql2MENo5YyHzG6x3ncr+/ioAj8MKUtjNfX3+G6MRsT2xr8yJMK63LJm9Ao9
-	WYsK1/inqLE0HGyCjUnAvlNA=
-X-AuthUser: glenn@ervin.email
-Received: from nucwin10 (unknown [140.228.165.201])
-	by smtp-out.flockmail.com (Postfix) with ESMTPA id 4glmwz685jz1xpY;
-	Wed, 24 Jun 2026 16:05:07 +0000 (UTC)
-Message-ID: <0c6901dd03f3$3a48f8e0$8b01f80a@nucwin10>
-Reply-To: "K0LNY ??" <glenn@ervin.email>
-Feedback-ID: :glenn@ervin.email:ervin.email:flockmailId
-From: "K0LNY ??" <glenn@ervin.email>
-To: "Georgina Joyce" <gena@m0ebp.uk>,
-	"Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
-References: <D7D21247-9059-4643-85A4-BEF006828EDA@m0ebp.uk>
+	id CC054382664; Wed, 24 Jun 2026 12:15:07 -0400 (EDT)
+Received: from fhigh-a7-smtp.messagingengine.com (fhigh-a7-smtp.messagingengine.com [103.168.172.158])
+	by befuddled.reisers.ca (Postfix) with ESMTPS id AD27D382649
+	for <speakup@linux-speakup.org>; Wed, 24 Jun 2026 12:15:07 -0400 (EDT)
+Received: from phl-compute-08.internal (phl-compute-08.internal [10.202.2.48])
+	by mailfhigh.phl.internal (Postfix) with ESMTP id 6167A14001EB;
+	Wed, 24 Jun 2026 12:15:07 -0400 (EDT)
+Received: from phl-frontend-03 ([10.202.2.162])
+  by phl-compute-08.internal (MEProxy); Wed, 24 Jun 2026 12:15:07 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	hubert-humphrey.com; h=cc:cc:content-type:content-type:date:date
+	:from:from:in-reply-to:in-reply-to:message-id:mime-version
+	:references:reply-to:subject:subject:to:to; s=fm2; t=1782317707;
+	 x=1782404107; bh=nXTrNrOajsxwb0L5DqsAPp2WViYmf8+ejmgci4oYTh8=; b=
+	mPJ6Kxwvzec2kj9umKDZrswJ8LLmWQlFXo+nz7JKs4eI1tD3DqpFIm6RcI9fnQXz
+	P3wE86Ikrac7Dg5tz6vV/SaPamcC6q47y6iUF6Ebm873FujFXV2jJbX9JPMPjUPQ
+	qRZ0nQ5n1DUNP+XVXp5QW2hA0Mox+ZIPTQbXylg0myFeQxpDINDJnDP3ZktZQvey
+	ihDOydzAk0P9ASD0eY80Z2v7NSwkiWX2Bmm6yOYJVRYfcTwWt50EE8lOyY7T2xtw
+	nXihRnDXp50g/XEUv3XdTG7OM3hHTuk+R4CJ/1Lx9xX/ctAD3W38WxhDCvGAFYvV
+	zDEx6tytK30UEySHMdciAw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+	messagingengine.com; h=cc:cc:content-type:content-type:date:date
+	:feedback-id:feedback-id:from:from:in-reply-to:in-reply-to
+	:message-id:mime-version:references:reply-to:subject:subject:to
+	:to:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm1; t=
+	1782317707; x=1782404107; bh=nXTrNrOajsxwb0L5DqsAPp2WViYmf8+ejmg
+	ci4oYTh8=; b=Np18VXWKYc6DgPNsyDaW8gGM+NctZsexyULldWcMQmheXc3CVcN
+	L1RxkaF9NfNXx5anHRipQf9sNXWyN1SGQ5FOGOBe+gueG2dt1bjXEkcIo+irp9zg
+	2sSbtGbBF/GVqzjgTY3j0CqiNVXvDdOtKuooHXs3OZK++kvDxlsTxRvRPkh+atI/
+	ZAT/lBrh9YMQi45W48B4u1o1iJH7S661rkXyjA3Hf4DFbPpaTwfT8k4kJTBXEmkt
+	t7FeXwIV0tWMhuGb2jSjnL0mRBUC15agLqljuBREuKefUOhr53MS4j9TvQOHsE39
+	qT5cdrNk8kjvpxcyYjUozjeTC3QsAd6jfsw==
+X-ME-Sender: <xms:iwI8aiEKkDrcI7uvjCi-dpYWZT-pg7t-2xdd7WNk2-9FU-P7WEY67A>
+    <xme:iwI8anrhcepYsF6EaP2ISfuyWpSs0pM6JBXHnwanOF5XGVvD9F_SU-bRQfYLgAJU-
+    9IUHpKfSvjQzN3xwl8Q_F4gbM2rmdmlMflYyaXFBxSkTC5UFnFkCcw>
+X-ME-Received: <xmr:iwI8arRPHadGNRtRjOnbLdfZHUtfUTYufFA0wK5VIwzWXCmfE1Lpu_pVAGVp>
+X-ME-Proxy-Cause: dmFkZTFEMBVOiKGzXPmsyR/pg9Hlg/Lrj1l/WFv5aeYQ48II64m+Rnj6wEyejyPfpqepGR
+    RGlz8ReGgPNvvRB6+qgpUETi7orhfTmyyMgLgeptiZK8/JS7TW0Szjax4slRVlqNI1tBQ/
+    aP32N+3BxhEOIK2KQNQd6ge/E7J4ezdfSLdUW1bECCtmvchjJU8gG09sSGZIpNJ68bCf2Z
+    6JEjCkf2e6AMjjrOLMGgps4psTUc+PTlH62q21BrQLyInAFNHDANx09ekMUb6wuGdcMryL
+    K1xLKvIIyMHKImV4DpZrq2Gw+tbxWav93pPyJe3AIPXcYw4ddeIpt/8yT+nXYAvpCDgLFs
+    d2kwK7ZKX55fnP0AYSTVuuPfOzbElk5ok4oNDjIrdi+IqmkDHCieGFA7Y5NwjnObvxlFN/
+    0GIbN8FVfadUZ2TR0y7oUCQ0X3GM9+BGwpsaYeXqGLfEtad0iHmCDichStkEEq5Hun5PnY
+    g8kdmW3He7U2AarLjrNYudr+2EUqmzISMDEyxlEVdRhMSMRK8aHJc2oKV5IgA9el9n3GvU
+    DOn40vloKbVA6jZ8M2l2QQwqiITvH6UeHcOBT0bXxt+8luSywAjbrhlUvvdJbZPqgc2M0t
+    Z4zuJ6DXhqZlWJAgjJrGkmGDxQZbu4Xyg9Y7S4XZU9Jh4NGHFmy+CwTb10+Q
+X-ME-Proxy: <xmx:iwI8akOf2MAPOaeVuBlHGGP2rQoXHtnYckjnRbicGYrfJ8jF_Y_FIg>
+    <xmx:iwI8auMJlNsQ8LV9umrxcbOVkt2Y0t0EETQBCp_35gtrWLEMicB9lg>
+    <xmx:iwI8akur-F63rjK285MG38jR7roPpys4rgmRBIT4UzvOYrr31MCY4g>
+    <xmx:iwI8aoXMSzcikvaDuExwktDVYHsOAmYqjFHWRUx2_WMo0xfdOTBchQ>
+    <xmx:iwI8aixbKg4XC1zrgl6P9Hht_yNmkQNPwhbzjpsSd0N4XXdr0p-QQevd>
+Feedback-ID: ia9b947fb:Fastmail
+Received: by mail.messagingengine.com (Postfix) with ESMTPA; Wed,
+ 24 Jun 2026 12:15:06 -0400 (EDT)
+Date: Wed, 24 Jun 2026 09:15:05 -0700 (PDT)
+From: Chime Hart <chime@hubert-humphrey.com>
+X-X-Sender: chime@chime.lan
+To: K0LNY ?? <glenn@ervin.email>
+cc: Georgina Joyce <gena@m0ebp.uk>, 
+    "Speakup is a screen review system for Linux." <speakup@linux-speakup.org>
 Subject: Re: Social media from the terminal
-Date: Wed, 24 Jun 2026 11:05:06 -0500
-Organization: Home
+In-Reply-To: <0c6901dd03f3$3a48f8e0$8b01f80a@nucwin10>
+Message-ID: <fd643665-25e1-858d-9c7d-a8349aa27656@hubert-humphrey.com>
+References: <D7D21247-9059-4643-85A4-BEF006828EDA@m0ebp.uk> <0c6901dd03f3$3a48f8e0$8b01f80a@nucwin10>
 X-BeenThere: speakup@linux-speakup.org
 Precedence: list
 List-Id: "Speakup is a screen review system for Linux." <speakup.linux-speakup.org>
@@ -58,98 +94,45 @@ List-Post: <mailto:speakup@linux-speakup.org>
 List-Help: <mailto:speakup+help@linux-speakup.org>
 List-Subscribe: <mailto:speakup+subscribe@linux-speakup.org>
 MIME-Version: 1.0
-Content-Type: text/plain;
-	charset="iso-8859-1"
-Content-Transfer-Encoding: 7bit
-X-Priority: 3
-X-MSMail-Priority: Normal
-X-Mailer: Microsoft Outlook Express 6.00.2900.2180
-X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
-X-F-Verdict: SPFVALID
-X-Titan-Src-Out: 1782317108201222209.32333.8405035020436282112@prod-use1-smtp-out1003.
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.4 cv=P9oKQCAu c=1 sm=1 tr=0 ts=6a3c0034
-	a=sfY17wZm961WJQkZ7MXrtw==:117 a=sfY17wZm961WJQkZ7MXrtw==:17
-	a=8nJEP1OIZ-IA:10 a=MKtGQD3n3ToA:10 a=CEWIc4RMnpUA:10 a=vggBfdFIAAAA:8
-	a=qPKtzgQbAAAA:8 a=SlEAobzoFEweJzvmDsIA:9 a=wPNLvfGTeEIA:10
-	a=OTAqJWGB1laLS8RTg9aS:22 a=P3K-DvM3-jjlTNsN-mCd:22
-	a=NWVoK91CQySWRX1oVYDe:22
+Content-Type: text/plain; charset=US-ASCII
 X-Bogosity: Ham, tests=bogofilter, spamicity=0.000000, version=1.2.5
 X-Rspamd-Action: no action
-X-Spamd-Result: default: False [2.12 / 15.00];
-	OLD_X_MAILER(2.00)[];
-	MID_RHS_NOT_FQDN(0.50)[];
-	R_DKIM_ALLOW(-0.20)[t39smtp-sign001.email:s=titan1];
+X-Spamd-Result: default: False [-0.89 / 15.00];
+	DMARC_POLICY_ALLOW(-0.50)[hubert-humphrey.com,none];
+	R_DKIM_ALLOW(-0.20)[hubert-humphrey.com:s=fm2,messagingengine.com:s=fm1];
 	MAILLIST(-0.18)[generic];
-	RCVD_NO_TLS_LAST(0.10)[];
 	MIME_GOOD(-0.10)[text/plain];
+	RCVD_NO_TLS_LAST(0.10)[];
 	HAS_LIST_UNSUB(-0.01)[];
-	RCPT_COUNT_TWO(0.00)[2];
-	RECEIVED_HELO_LOCALHOST(0.00)[];
-	FORGED_RECIPIENTS(0.00)[m:gena@m0ebp.uk,s:lists@lfdr.de];
-	R_SPF_NA(0.00)[no SPF record];
-	DMARC_NA(0.00)[ervin.email];
+	TAGGED_FROM(0.00)[bounces-1631-lists,speakup=lfdr.de];
+	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	MIME_TRACE(0.00)[0:+];
 	ARC_NA(0.00)[];
 	TO_DN_ALL(0.00)[];
+	FORGED_RECIPIENTS(0.00)[m:glenn@ervin.email,m:gena@m0ebp.uk,s:lists@lfdr.de];
 	FORWARDED(0.00)[lists@lfdr.de];
-	FORGED_SENDER(0.00)[glenn@ervin.email,speakup@linux-speakup.org];
-	HAS_ORG_HEADER(0.00)[];
-	TAGGED_FROM(0.00)[bounces-1630-lists,speakup=lfdr.de];
-	DKIM_TRACE(0.00)[t39smtp-sign001.email:+];
-	HAS_REPLYTO(0.00)[glenn@ervin.email];
-	RCVD_COUNT_FIVE(0.00)[6];
-	DBL_BLOCKED_OPENRESOLVER(0.00)[befuddled.reisers.ca:rdns,befuddled.reisers.ca:helo,linux-speakup.org:from_smtp,linux-speakup.org:email,t39smtp-sign001.email:dkim];
+	FORGED_SENDER(0.00)[chime@hubert-humphrey.com,speakup@linux-speakup.org];
+	DKIM_TRACE(0.00)[hubert-humphrey.com:+,messagingengine.com:+];
+	RCPT_COUNT_THREE(0.00)[3];
+	R_SPF_NA(0.00)[no SPF record];
+	MISSING_XM_UA(0.00)[];
 	FORGED_SENDER_FORWARDING(0.00)[];
-	FROM_HAS_DN(0.00)[];
-	FROM_NEQ_ENVFROM(0.00)[glenn@ervin.email,speakup@linux-speakup.org];
-	HAS_X_PRIO_THREE(0.00)[3];
 	ALIAS_RESOLVED(0.00)[];
+	FROM_NEQ_ENVFROM(0.00)[chime@hubert-humphrey.com,speakup@linux-speakup.org];
+	FROM_HAS_DN(0.00)[];
+	FORGED_SENDER_MAILLIST(0.00)[];
+	MID_RHS_MATCH_FROM(0.00)[];
 	TAGGED_RCPT(0.00)[speakup];
-	FORGED_RECIPIENTS_MAILLIST(0.00)[];
 	FORGED_RECIPIENTS_FORWARDING(0.00)[];
 	ASN(0.00)[asn:5645, ipnet:206.248.128.0/18, country:CA];
-	FORGED_SENDER_MAILLIST(0.00)[];
 	RCVD_VIA_SMTP_AUTH(0.00)[];
-	REPLYTO_EQ_FROM(0.00)[]
+	RCVD_COUNT_SEVEN(0.00)[7]
 X-Rspamd-Server: lfdr
-X-Rspamd-Queue-Id: B61E66BFE31
+X-Rspamd-Queue-Id: B96996BFEED
 
-Hi All,
-On this note, I wonder if there are any podcasts/videos of people accessing 
-sites, social media as well as sites like Amazon.com using lynx.
-I've used lynx, but just the basics, and it would be interesting to have 
-someone demonstrate how they can do things like social media, or making 
-purchases on-line with lynx.
-Glenn
------ Original Message ----- 
-From: "Georgina Joyce" <gena@m0ebp.uk>
-To: "Speakup is a screen review system for Linux." 
-<speakup@linux-speakup.org>
-Sent: Wednesday, June 24, 2026 10:48 AM
-Subject: Social media from the terminal
-
-
-Hello All,
-
-I just thought I would ask if anyone was using the terminal to access social 
-media? I received an email that promoted a particular adaptive tech 
-company's facebook pages. It got me thinking I have never been able to 
-manage the facebook interface. I understood they also prevented access to 
-the mobile site. I see that in 2012 there was fbcmd app. I'll look later to 
-see if it is still available. I recall twitter was easy from the command 
-line some time ago. However, I have no interest in X. I also believe there 
-is an easy to listen to youtube videos option but the BT Speak requires a 
-GUI browser to log into a Google account. So I am not sure if there are any 
-pure terminal options now-a-days?
-
-Perhaps, I'm too old! LOL!
-
-Are there simpler social media options than IOS and Android?
-Thanks,
-
-
-Gena
-
+Well, Glen, I just searched lynx browser in youtube-viewer, 49 of the first 50 
+results are mostly about setting up lynx, 1 item was about bro.sh. I just tried 
+"purchasing on amazon with lynx" but so-far nothing found.
+Chime
 
 
